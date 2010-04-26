@@ -37,17 +37,31 @@
       <div id="page">
 	<div id="content">
 	  <div class="post">
-	    <h1 class="title"><a href="#">Welcome to Pressurized </a></h1>
+	    <h1 class="title">My GitHub Repositories <small><i>(from <a href="https://github.com/askin">https://github.com/askin</a>)</i></small></h1>
 	    <div class="entry">
-	      <p>This is <strong>Pressurized</strong>, a free, fully standards-compliant CSS template designed by FreeCssTemplates<a href="http://www.nodethirtythree.com/"></a> for <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>. The photo used in this design is from <a href="http://www.pdphoto.org/">PDPhoto.rog</a>. This free template is released under a <a href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attributions 2.5</a> license, so you’re pretty much free to do whatever you want with it (even use it commercially) provided you keep the links in the footer intact. Aside from that, have fun with it :)</p>
-	      <p>Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum ipsum. Proin imperdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in felis. Donec ut ante. In id eros. Suspendisse lacus turpis, cursus egestas at sem.</p>
+              <!-- GitHub Badge -->
+              <div class="container">
+                <div id="github-badge"></div>
+              </div>
+              <!--[if gte IE 6]><!-->
+              <script src="static/mootools.js" type="text/javascript"> </script>
+              <script src="static/SubtleTemplate.js" type="text/javascript"> </script>
+              <script src="static/mootools-github-badge.js" type="text/javascript"> </script>
+
+              <script type="text/javascript" charset="utf-8">
+                new SubtleTemplate.GitHubBadge.Basic({ username:'askin' });
+              </script>
 	    </div>
-	    <p class="meta">Posted by <a href="#">Someone</a> on March 10, 2008
-	      &nbsp;&bull;&nbsp; <a href="#" class="comments">Comments (64)</a> &nbsp;&bull;&nbsp; <a href="#" class="permalink">Full article</a></p>
 	  </div>
-	</div>
-	<!-- end #content -->
-	<div id="sidebar">
+        <div class="post">
+          <h1 class="title"><a href="http://blog.yollu.com" target="_blank">My Blog</a></h1>
+          <div class="entry">
+            <script src="http://feeds.feedburner.com/askin?format=sigpro" type="text/javascript" ></script>
+          </div>
+        </div>
+        </div>
+        <!-- end #content -->
+        <div id="sidebar">
 	  <ul>
             <li>
               <center>
@@ -62,9 +76,9 @@
               </center>
             </li>
 	    <li>
-	      <h2>Projects</h2>
-	      <li>...</li>
-              <li>...</li>
+	    <h2>Projects</h2>
+	    <li>...</li>
+            <li>...</li>
 	    </li>
             <li>
               <h2>Twitter!</h2>
@@ -75,13 +89,13 @@
               <script type="text/javascript" src="http://twitter.com/statuses/user_timeline/kelebeks.json?callback=twitterCallback2&amp;count=5"></script>
             </li>
 	  </ul>
-	</div>
-	<!-- end #sidebar -->
-	<div style="clear: both;">&nbsp;</div>
+        </div>
+        <!-- end #sidebar -->
+        <div style="clear: both;">&nbsp;</div>
       </div>
       <!-- end #page -->
       <div id="footer">
-	<p>Copyleft (l) 2008 Aşkın Yollu. Some rights reserved. Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>
+        <p>Copyleft (l) 2008 Aşkın Yollu. Some rights reserved. Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>
       </div>
       <!-- end #footer -->
     </div>
