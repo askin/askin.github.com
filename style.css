@@ -253,13 +253,13 @@ a:hover {
 }
 
 #sidebar li li {
-	line-height: 35px;
+	line-height: 20px;
 	border-bottom: 1px dashed #590000;
 }
 
 #sidebar li li span {
 	display: block;
-	margin-top: -20px;
+	margin-top: 5px;
 	padding: 0;
 	font-size: 11px;
 	font-style: italic;
@@ -329,4 +329,27 @@ a:hover {
 #footer a {
 	color: #FFFFFF;
 	border-bottom: 1px #FFFFFF dotted;
+}
+
+#github-badge .repos {
+    height: 160px;
+}
+
+#github-badge .repos ul#repo_listing {
+    height: 160px;
+}
+
+#askinhc68kohuqd3liaufmm5nimbuq8 p.date {
+    float: right;
+    font-size: x-small;
+}
+
+#twitter_div ul {
+    margin: 0;
+    padding: 0;
+}
+
+#twitter_div ul li{
+    margin: 0;
+    padding: 0;
 }
