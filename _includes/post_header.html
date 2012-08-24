@@ -15,8 +15,7 @@
     <span class="author">{{ page.author }}</span>
 
     <!-- FIXME Comment -->
-    <span class="addcomment"><a href="#respond">Leave a comment</a></span>
-    <span class="comments"><a href="#comments">Go to comments</a></span>
+    <span class="addcomment"><a href="#disqus_thread">Leave a comment</a></span>
 
     <div class="fixed"></div>
   </div>
@@ -46,6 +45,8 @@
 <!-- FIXME: Comments
 <?php include('templates/comments.php'); ?>
 -->
+
+{% include disqus.html %}
 
 <!-- FIXME : prev next post -->
 <div id="postnavi">
