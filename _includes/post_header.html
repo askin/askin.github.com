@@ -49,7 +49,15 @@
 
 <!-- FIXME : prev next post -->
 <div id="postnavi">
-  <span class="prev"><a>prev post link</a></span>
-  <span class="next"><a>next post link</a></span>
+  {% if page.previous.url %}
+  <span class="prev">
+    <a href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}">Previous Blog Post</a>
+  </span>
+  {% endif %}
+  {% if page.previous.url %}
+  <span class="next">
+    <a href="{{page.next.url}}" title="Next Post: {{page.next.title}}">Next Blog Post</a>
+  </span>
+  {% endif %}
   <div class="fixed"></div>
 </div>
