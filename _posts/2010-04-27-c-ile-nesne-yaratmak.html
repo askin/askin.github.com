@@ -1,0 +1,58 @@
+--- 
+layout: post
+title: C ile Nesne Yaratmak
+published: true
+meta: 
+  _edit_last: "1"
+  _sexybookmarks_permaHash: 72622a502df068870c8aef11b5865329
+  _sexybookmarks_shortUrl: http://goo.gl/t9a1s
+tags: 
+- c/c++
+- Gezegen
+- Nesne
+- OOP
+- Programlama
+type: post
+status: publish
+---
+<img src="http://blog.yollu.com/wp-content/uploads/2010/04/c3po.jpg" alt="" title="C-3PO" width="143" height="150" align="left" />Evet kışkırtıcı bir başlık attım :)
+Aslında yapacağımız olay bir structı nesne gibi kullanmak. Buna benzer bir kodu yıllar önce görmüştüm. O günden bu güne sürekli böyle bir şeyi nasıl yaparım diye araştırdım. Anca bugün çözebildim olayı ;)
+Kodu aşağıda yorum satırıyla beraber veriyorum. Yorumlarda gerekli açıklamaları yaptım.
+
+Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşıma bu çıktı, bende boş durmasın dedim :)
+
+<pre lang="C" lineno="1">/*                                                                                                                                                             
+ * Sınıfımızı yaratıyoruz                                                                                                                                      
+ */
+struct _myobject {
+  // alt alanlar                                                                                                                                               
+  int a, b;
+  /*                                                                                                                                                           
+   * Metod                                                                                                                                                     
+   * Burada fonksiyon pointerı tanımlıyoruz                                                                                                                    
+   */
+  int (*add)(struct _myobject*);
+};
+
+// struct ön ekinden kurtuluyoruz                                                                                                                              
+typedef struct _myobject MyObject;
+
+/*                                                                                                                                                             
+ * Asıl işi yapacak fonksiyonu tanımlıyoruz                                                                                                                    
+ * MyObject structını parametre olarak alıyor                                                                                                                  
+ */
+int realAdd(MyObject* a) {
+  return a->a + a->b;
+}
+
+int main ( void ) {
+  /*                                                                                                                                                           
+   * Nesnemizi oluşturuyoruz.                                                                                                                                  
+   * add pointerına fonksiyonu atıyoruz                                                                                                                        
+   */
+  MyObject mo = {1, 2, realAdd};
+  printf("A + B = %d\n", mo.add(&mo));
+  return 0;
+}</pre>
+
+Kodun başına stdio.h headerını eklemekte fayda var. WP sıkıntı çıkarttığı için silmek zorunda kaldım. Kodun düzgün halini <a href="http://github.com/askin/misc/raw/master/fun/struct-function.c" target="_blank">burada</a> bulabilirsiniz.

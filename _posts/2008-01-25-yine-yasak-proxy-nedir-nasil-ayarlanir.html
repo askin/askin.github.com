@@ -1,0 +1,63 @@
+--- 
+layout: post
+title: "Yine Yasak - Proxy nedir? Nas\xC4\xB1l ayarlan\xC4\xB1r."
+published: true
+meta: 
+  _edit_last: "1"
+  _sexybookmarks_permaHash: 1f5537c7836ac65cffd94a8c88ef1ff3
+  _sexybookmarks_shortUrl: http://goo.gl/v3XiL
+tags: 
+- AQ
+- "\xC4\xB0nternet"
+- Proxy
+- Telekom
+- Yasak
+type: post
+status: publish
+---
+<p>Youtube son haberlere göre arka arkaya 3. kez kapatılacak. Şuan girebiliyorum sorun yok. Ama yakında bişiler olacak:) Geçen kapandığında DNS adresini değiştirmemiz de işe yaramamıştı. Şimdi yapacağımız şey ise proxy kullanmak olacak. Gerçi proxy kullanmak sakat bi yöntem, bütün trafiğimiz başka bir bilgisayar üzerinden geçeceği için verilerimizin dinlenme ihtimali var. Bu nedenle proxy kullanırken dikkatli olmakta fayda var.</p>
+<p>Proxy olayında biz isteklerimizi bir vekil sunucuya iletiyoruz. Sunucuda bizim yerimize ilgili sitenin içeriğini alıyor ve bize sunuyor. Kabaca bu şekilde tanımlayabiliriz.</p>
+<!--more-->
+<p>Proxy ayarlarını yapmak için browserın(tarayıcının) ayarlarını yapmamız gerekiyor.</p>
+<p>Firefox için düzen yada araçlar -> seçenekler -> gelişmiş -> ağ -> vekil sunucu ayarlarına geldiğimizde çıkan kutucuğa(sadece ilkine) aşağıdaki ipleri ve port numaralarını gireceğiz.<br /><br />
+<img src='http://www.bobrektasi.org/wp-content/uploads/2008/01/ff.jpg' alt='Yine Yasak - Proxy nedir? Nasıl ayarlanır Firefox' /></p>
+
+<p>İnternet explorer için Araçlar > İnternet Seçenekleri > Bağlantılar > Yerel Ağ Lan Ayarları > Proxy Sunucusu Kutucuğunu İşaretle ve kutucuğa aşağıdaki iplerden birini bağlantı noktasınada port numarasını giriniz.<br /><br />
+<img src='http://www.bobrektasi.org/wp-content/uploads/2008/01/ie.jpg' alt='Yine Yasak - Proxy nedir? Nasıl ayarlanır İnternet explorer' /> </p>
+<p>Daha detaylı bir açıklama ve biraz daha üst seviye işler için <a href='http://www.bobrektasi.org/wp-content/uploads/2008/01/ssh_tunneling_over_cf.pdf' title='ssh tunelling'>Bu Dökümana</a> bi göz atın.</p>
+
+Proxy Listesi
+<table style="border-collapse: collapse;" border="1" bordercolor="#111111" cellpadding="0" cellspacing="0" width="18%">
+<tbody>
+<tr>
+<td width="100%"><b>IP</b></td>
+<td width="57%"><b>PORT</b></td>
+</tr>
+<tr>
+<td width="100%">200.65.127.161</td>
+<td width="57%">3128</td>
+</tr>
+<tr>
+<td width="100%">165.228.128.11<br /></td>
+<td width="57%">80</td>
+</tr>
+<tr>
+<td width="100%">165.228.132.11</td>
+<td width="57%">80</td>
+</tr>
+<tr>
+<td width="100%">203.144.144.163</td>
+<td width="57%">80</td>
+</tr>
+<tr>
+<td width="100%">203.144.144.164</td>
+<td width="57%">80</td>
+</tr>
+<tr>
+<td width="100%">203.144.144.163</td>
+<td width="57%">8080</td>
+</tr>
+</tbody></table>
+Bu adresler siz denediğiniz zaman aktif olmamayabilir. Gugıldan aktif proxy listesi ve ya proxy list tarzında bi araştırma yaparsanız karşınıza onlarca proxy çıkacaktır. Birkaç denemeyle amacınıza ulaşabilirsiniz.
+
+Resimler ve ip numaraları için <a href="http://www.eno7.org/">http://www.eno7.org/</a>'a teşekürler.

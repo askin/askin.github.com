@@ -1,0 +1,32 @@
+--- 
+layout: post
+title: Pardus - Atheros AR242x - WPA2
+published: true
+meta: 
+  _edit_last: "1"
+  _sexybookmarks_permaHash: 5f99df96a2833151202d05faa6b3fe71
+  _sexybookmarks_shortUrl: http://goo.gl/h0h1g
+tags: 
+- ar242x
+- atheros
+- Gezegen
+- Linux
+- pardus
+- wicd
+- wpa2
+type: post
+status: publish
+---
+<img src="http://blog.yollu.com/wp-content/uploads/2009/06/wifi.jpeg" alt="Wi-Fi" title="Wi-Fi" width="126" height="87" class="alignleft size-full wp-image-309" />Pardus 2008 kurulumla beraber Atheros AR242x kablosuz ağ kartını tanıyor, fakat nedense başka ağları görmesine rağmen evimde WPA2 ile kurulu kablosuz ağımı göremiyordu. Bende diğer dağıtımlarda kullandığım ndiswrapper ile sorunumu çözmeyi denedim. 
+Öncelikle ndiswrapperı kurduktan sonra windows için yazılmış driverları seçmemiz gerekiyor. Ardından 
+<code>/etc/modules.autoload.d/kernel-2.6</code>
+dosyasına 
+<code>ndiswrapper</code> 
+satırını ve 
+<code>/etc/modprobe.d/blacklist-compat</code> 
+dosyasına da 
+<code>blacklist ath_pci</code> 
+satırını eklemek gerekiyor. Bunları ekledikten sonra kde'de ağ programcığıyla bağlanabiliyorsunuz. 
+Fakat XFCE kullanıyorsanız wicd kullanmanız gerekiyor. Wicd ile doğrudan kullanamıyoruz. Öncelikle birkaç ufak düzenleme yapmak gerekiyor.
+Wicd -> Tercihler yolunu takip ettikten sonra WPA Suplicant Sürücüsü: kısmına <em>wext</em>, Kablosuz arabirim kısmına da <em>wlan0</em> yazmak gerekiyor. 
+Bu ayarlarla kolaylıkla kullanabilirsiniz, kolay gelsin.

@@ -1,0 +1,25 @@
+--- 
+layout: post
+title: "Al\xC4\xB1n size bir g\xC3\xBCzel kod:)"
+published: true
+meta: 
+  _edit_last: "1"
+  _sexybookmarks_permaHash: 5f214fa2c6cfc60672d3a2bee547911a
+  _sexybookmarks_shortUrl: http://goo.gl/r9xIO
+tags: 
+- Programlama
+- Scheme
+type: post
+status: publish
+---
+Alın size bir güzel kod:) Benim hoşuma gitti eminim sizin hoşunuzada gidecek. 
+<pre lang="scheme" lineno="0">(define (goster str)
+  (let loop ((str str))
+    (if (equal? str "")
+        (begin
+          (sleep 0)
+          (display ""))
+        (begin
+          (sleep 1/2)
+          (display (string-ref str 0))
+          (loop (substring str 1))))))</pre>

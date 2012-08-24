@@ -1,0 +1,26 @@
+--- 
+layout: post
+title: PyGtk ve Thread Sorunu
+published: true
+meta: 
+  _edit_last: "1"
+  _sexybookmarks_permaHash: f052e778d80c08a36cc25c70833b3e53
+  _sexybookmarks_shortUrl: http://goo.gl/TU4hN
+tags: 
+- gdk
+- Gezegen
+- gtk
+- Programlama
+- pygtk
+- python
+- thread
+type: post
+status: publish
+---
+<img src="http://blog.yollu.com/wp-content/uploads/2010/04/gtk.png" alt="Gtk" title="Gtk" width="130" align="left" />PyGtk ile ara yüzüzünü hazırladığım bir program içinde thread kullanmam gerekiyordu. Kod çalışıyordu fakat thread işlemi istediğim gibi çalışmıyordu. Arayüzde bir değişiklik olduğu zaman thread çalışıyor, onun dışında hiç bir şekilde tepki vermiyordu.
+
+Uzun süre hatanın kodda olabileceğini düşündüm. Ama sonunda python gtk.main() ve thread 3'lüsünü aynı sorgu içinde googleda aratınca cevabı buldum. Gtk'ya thread kullandığımı anlatmam gerekiyordu :)
+
+<pre lang="python">gtk.gdk.threads_init()</pre>Bu satırı kodumun başına eklediğimde herşey istediğim gibi çalışmaya başladı :)
+
+Sizde böyle bir sorunla karşılaşırsanız aklınızda bulunsun :)

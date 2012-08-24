@@ -1,0 +1,43 @@
+--- 
+layout: post
+title: "Yasakl\xC4\xB1 sitelere girme - Open DNS"
+published: true
+meta: 
+  _edit_last: "1"
+  _sexybookmarks_permaHash: fc50e3339e775d8c48436a7717c47794
+  _sexybookmarks_shortUrl: http://goo.gl/qkv6w
+tags: 
+- AQ
+- "\xC4\xB0nternet"
+- OpenDNS
+- Proxy
+- Telekom
+- Yasak
+type: post
+status: publish
+---
+Yasaklı sitelere girebilmek için çok çeşitli yöntemler kullanabilirsiniz. Ben çok sıklıkla <a title="İzlenme Gizlen" href="http://www.gizlen.net">www.gizlen.net</a>'i kullanabilirsiniz. Bu siteye giriyorsunuz ve sayfanın üstündeki kutucuğa gireceğiniz siteyi yazıyorsunuz, oda size gireceğiniz siteyi sunuyor. Eğer daha kalıcı bir çözüm istiyorsanız proxy(vekil sunucu) kullanabilirsiniz. İnternetten ufak bir arama ile onlarca proxy adresine sahip olabilirsiniz. Ancak birçok kişi tarafınfan kullanılan ve tavsiye edilen <a title="Open DNS sitesine gitmek için tıklayın: " href="http://www.opendns.com/">Open DNS</a> işinizi çok rahatlıkla görebilir. Gerçi Open DNS bir proxy değil. O bir Name Server. Bizim www.bobrektasi.org gibi girmeye çalıştığımız sitelerin ip adreslerini çözümleyip bizi doğru makineye yönlendiriyor. Bu bu yönlenme işini Open DNS üzerinden yaptığımız için TTnet'in bizim girdiğimiz sitelere müdahale etme şansı kalmıyor.
+Adresi: <a title="Open DNS sitesine gitmek için tıklayın: " href="http://www.opendns.com/">http://www.opendns.com/</a>
+<a title="Ayarları Görmek İçin Tıklayın: " href="https://www.opendns.com/start">https://www.opendns.com/start</a> Bu adresten ayarların nasıl yapıldığını öğrenebilirsiniz.
+
+Ubuntu için ayarlar:
+İlk önce Networ Admin Proramını açıyoruz:
+<ul>
+	<li>Sistem ->Yönetim -> Ağ yolunu takip ederekte çabilirsiniz.</li>
+	<li>[Alt + F2] yapıp <em>gksu network-admin</em> yazarakta açabilirsiniz.</li>
+	<li>konsoldan <code>$ sudo network-admin</code> komutunu vererekte açabilirsiniz.</li>
+</ul>
+
+Burda DNS sekmesi altına 
+<code>208.67.222.222
+208.67.220.220</code> iplerini ekliyorsunuz.
+
+Ardından konsolda 
+<pre lang="bash">sudo cp /etc/resolv.conf /etc/resolv.conf.auto
+sudo gedit /etc/dhcp3/dhclient.conf</pre> komutlarını giriyorsunuz.
+Karşınıza çıkan editöre 
+<code># append the following line to the document
+prepend domain-name-servers 208.67.222.222,208.67.220.220;
+# save and exit</code>
+satırlarını ekliyorsunuz. ve <pre lang="bash">$ sudo ifdown eth0 && sudo ifup eth0</pre> komutunu veriyorsunuz. Eğer bu komutlarda bi hata verirse, ya da dns değişmemişse bilgisayarı açıp kapatın artık özgürsünüz.Şimdi <a href="http://www.youtube.com,">www.youtube.com</a>'a girerek deneyebilirsiniz çalışıyormu diye:)
+

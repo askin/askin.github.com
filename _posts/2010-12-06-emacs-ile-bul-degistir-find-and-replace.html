@@ -1,0 +1,28 @@
+--- 
+layout: post
+title: "Emacs ile bul de\xC4\x9Fi\xC5\x9Ftir / find and replace"
+published: true
+meta: 
+  _edit_last: "1"
+  _sexybookmarks_permaHash: 830b25e6a42fc9e1c03ff60097172b02
+  _wp_old_slug: ""
+  _sexybookmarks_shortUrl: http://goo.gl/EZA4J
+tags: 
+- emacs
+- find
+- Gezegen
+- Linux
+- replace
+type: post
+status: publish
+---
+<pre>M-x
+replace-string RET aranan_string RET yerine_konulacak_string</pre>
+Bunu regexli yapmak için replace-string yerine replace-regex kullanabilirsiniz.
+Birde buna kısayol eklesek tadından yenmez.
+
+.emacs dosyamıza aşağıdaki satırı ekliyoruz.
+<pre lang="lisp">;; Find and Replace                                                                                                                                                                                        
+(global-set-key (kbd "C-q") 'replace-string) </pre>
+
+C-q kombinasyonuna bastığımıza işlem başlamış oluyor.

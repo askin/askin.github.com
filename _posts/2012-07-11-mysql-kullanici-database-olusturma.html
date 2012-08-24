@@ -1,0 +1,40 @@
+--- 
+layout: post
+title: "Mysql Kullan\xC4\xB1c\xC4\xB1 - Database Olu\xC5\x9Fturma"
+published: true
+meta: 
+  _edit_last: "1"
+  Hide SexyBookmarks: "0"
+  Hide OgTags: "0"
+tags: 
+- create
+- database
+- Gezegen
+- grant
+- Linux
+- mysql
+- sql
+- user
+type: post
+status: publish
+---
+Herzaman unutup google'a bakacağıma buraya bakayım daha kolay :)
+
+Önce mysql sunucusuna bağlanalım:
+<code lang="bash">mysql -u root -p</code>
+
+Kullanıcı oluşturma:
+<code lang="sql">create user kullaniciadi;</code>
+
+Veritabanı oluşturma:
+<pre lang="sql">create database veritabaniadi;</pre>
+
+Kullanıcı yetkilerini verme:
+Tüm yetkiler:
+<pre lang="sql">grant all on veritabaniadi.* to kullaniciadi@localhost identified by 'parola';</pre>
+
+Sadece okuma (select):
+<pre lang="sql">grant select on veritabaniadi.* to kullaniciadi@localhost;</pre>
+
+Yetkiler hemen devreye girsin:
+<code lang="sql">flush privileges;</code>

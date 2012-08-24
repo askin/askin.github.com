@@ -1,0 +1,30 @@
+--- 
+layout: post
+title: "Mysql Data Dizinini De\xC4\x9Fi\xC5\x9Ftirme"
+published: true
+meta: 
+  _edit_last: "1"
+  _sexybookmarks_permaHash: 17d677efcf116d551f4e940be29ca9c2
+  _sexybookmarks_shortUrl: http://goo.gl/rSjBX
+tags: 
+- data
+- Gezegen
+- Linux
+- mysql
+- pardus
+- server
+type: post
+status: publish
+---
+<img src="http://blog.yollu.com/wp-content/uploads/2009/07/mysql.png" alt="Mysql" title="Mysql" width="84" height="85" class="alignleft size-full wp-image-356" />Mysql data dizini ön tanımlı <strong>/var/lib/mysql</strong> olarak belirlenmiştir. Çeşitli ihtiyaçlardan dolayı bunun yerini değiştirmemiz gerekebilir. Mesela ben ayrı bir bölümde tuttuğum <strong>/home</strong> dizini altına  taşımak istiyorum. Tüm işlemleri <em>root</em> yetkisiyle yapıyoruz. Öncelikle mysql servisini durduralım.
+Ben pardus kullandığım için
+<pre lang="bash"># service mysql-server stop</pre>
+Diğer dağıtımlarda farklı olabilir.
+Ardından ilgili dizini yeni yerine kopyalayalım.
+<pre lang="bash"># cp -a /var/lib/mysql /home</pre>
+Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. <strong>/etc/mysql/my.cnf </strong>dosyasında
+<code>datadir = /var/lib/mysql</code> olan satırı
+<code>datadir = /home/mysql</code> olarak değiştirelim.
+Şimdi servisi yeniden başlatabiliriz.
+<pre lang="bash"># service mysql-server start</pre>
+Eğer düzgün bir şekilde çalışıyorsa <strong>/var/lib/mysql</strong> dizinini silebiliriz. Ama ismini değiştirip birkaç gün her ihtimale karşı saklamak çok mantıklı.

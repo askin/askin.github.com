@@ -1,0 +1,45 @@
+--- 
+layout: post
+title: "Python, Fonksiyona Parametre Olarak Fonksiyon Ge\xC3\xA7irmek"
+published: true
+meta: 
+  _edit_last: "1"
+  _sexybookmarks_permaHash: 70d8b85d053472ce2a5aa2e87f4ce2bc
+  _sexybookmarks_shortUrl: http://goo.gl/VnMcI
+tags: 
+- fonksiyon
+- Gezegen
+- parametre
+- Programlama
+- python
+type: post
+status: publish
+---
+Bu yazıyı asıl yazma sebebim parametre olarak geçirilen fonksiyona geçirilecek parametreler :)
+Parametre olarak geçireceğimiz fonksiyonlar belli bir sayıda parametre alıyorsa yapacağımız iş basit,
+
+Mesela:
+<pre lang="python" lineno="1">def Merhaba(isim):
+    print "Merhaba %s" % isim</pre>
+Bunun gibi sadece tek parametre alan bir fonksiyon için aşağıdaki gibi bir fonksiyon yeterli olacaktır. 
+<pre lang="python" lineno="1">def BuyukAbi(func, param):
+    func(param)</pre>
+
+<pre lang="python">BuyukAbi(Merhaba, "kelebek")
+Merhaba kelebek
+</pre>
+Bu fonksiyon parametre olarak aldığı func fonksiyonuna param parametresini geçirecektir.
+Eğer fonksiyonun aldığı parametre sayısı belirsiz ise, yani farklı sayıda parametre alan fonksiyonlarla uğraşmak gerekiyorsa yanına birkaç ekleme daha yapmamız gerekiyor.
+<pre lang="python" lineno="1">def BuyukBuyukAbi(func, param):
+    func(*param)</pre>
+
+param parametresi bir liste olmak durumunda. Geçirilen fonksiyon kaç parametre alıyorsa listenin uzunluğu okadar olmalı.
+<pre lang="python">BuyukBuyukAbi(Merhaba, ["kelebek"])
+Merhaba kelebek
+</pre>
+
+<pre lang="python" lineno="1">def HepinizeMerhaba(isim1, isim2):
+    print "Merhaba %s, merhaba %s" % (isim1, isim2)</pre>
+<pre lang="python">BuyukBuyukAbi(HerpinizeMerhaba, ["kelebek", "Aşkın"])
+Merhaba kelebek, merhaba Aşkın
+</pre>

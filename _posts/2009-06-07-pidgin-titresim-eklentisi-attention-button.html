@@ -1,0 +1,28 @@
+--- 
+layout: post
+title: "Pidgin Titre\xC5\x9Fim Eklentisi - Attention Button"
+published: true
+meta: 
+  _edit_last: "1"
+  _sexybookmarks_permaHash: 9a3cfea3c04a4fa0921d9f1dc063aea2
+  _sexybookmarks_shortUrl: http://goo.gl/AuIeR
+tags: 
+- attention button
+- Gezegen
+- gnome
+- im
+- Linux
+- pidgin
+- plugin
+type: post
+status: publish
+---
+<img src="http://blog.yollu.com/wp-content/uploads/2009/06/pidgin.png" alt="Pidgin" title="Pidgin" width="107" height="185" class="alignleft size-full wp-image-319" />Pidginin en sevdiğim özelliklerinden bir tanesi, sohbet ettiğiniz kişi size tireşim gönderdiğinde ekrana sadece <strong>"... size uyarı gönderdi"</strong> yazması. Bu özelliğer sahip olmasının birde dezavantajı var tabiki, siz de başkalarına titreşim yollayamıyorsunuz. Bugün bu eksikliği fazlasıyla hissedince ufak çaplı bir araştırma yaptım ve <a href="http://code.google.com/p/pidgin-attentionbutton/">Attention Button</a> eklentisiyle karşılaştım. 
+Kurulumu çok basit. <a href="http://code.google.com/p/pidgin-attentionbutton/downloads/list">Burdan</a> en güncel sürümünü indiriyorsunuz (şimdilik <a href="http://pidgin-attentionbutton.googlecode.com/files/attentionbutton-0.3.tar.gz">0.3</a>), arşivden çıkartıp <em>.so</em> uzantılı dosyayı ev dizininiz altında <em>.purple/plugins/</em> dizinine kopyalıyorsunuz. Ardından pidgine gidip eklentiler(plugins) kısmından aktif ediyorsunuz.
+Konsoldan halletmek isterseniz:
+<pre lang="bash">$ wget http://pidgin-attentionbutton.googlecode.com/files/attentionbutton-0.3.tar.gz
+$ tar -xvzf attentionbutton-0.3.tar.gz
+$ mkdir $HOME/.purple/plugins
+$ mv attentionbutton.so $HOME/.purple/plugins/
+$ rm attentionbutton-0.3.tar.gz attentionbutton.c </pre>
+Bu eklentinin birkaç güzel özelliğide var. Mesela karşı tarafa sınırsız sayıda titreşim yollayabilirsiniz. Ve karşı taraf çevrim dışı bile görünse titretebilirsiniz. Tabi aşırı kullanım sağlığa zararlı :)
