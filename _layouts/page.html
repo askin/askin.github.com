@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<div class="post" id="post-id">
+  <h2><a class="title" href="{{ page.url }}" rel="bookmark">{{ page.title }}</a></h2>
+  <div class="info">
+    <span class="date">{{ page.date | date: "%B %e, %Y" }}</span>
+    <span class="author"><a>Author Link</a></span>
+    <span class="comments">
+      <a href="{{ page.url }}#disqus_thread">Comment Link</a>
+    </span>
+    <div class="fixed"></div>
+  </div>
+  <div class="content">
+    {{ content }}
+    <div class="fixed"></div>
+  </div>
+  <div class="under">
+    <span class="categories">{{ page.category }}</span>
+    <span class="tags">Tags: </span>
+    <span>
+      {% for tag in page.tags %}
+      <a href="/tags/{{ tag }}" title="View posts tagged with &quot;{{ tag }}&quot;">{{ tag }}</a>
+      {% if forloop.last != true %} {% endif %} {% endfor %}
+    </span>
+  </div>
+</div>
