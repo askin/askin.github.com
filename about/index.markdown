@@ -6,10 +6,11 @@ published: true
 type: page
 status: publish
 ---
-* <strong>Ben/Me :</strong> Aşkın Yollu
-* <strong>Cinsiyet/Sex :</strong> Erkek/Male
-* <strong>Meslek/Job :</strong> Öğrenci/Student
-* <strong>Bölüm/Department :</strong> Bilgisayar Müh./Computer Eng.
-* <strong>Üniversite/Universty :</strong> Dokuz Eylül Universitesi
-* <strong>E-posta/E-mail :</strong> askin [at] askin.ws
-* <strong>Jabber :</strong> kelebek [at] jabber.org
+
+* **Ben/Me :** Aşkın Yollu
+* **Cinsiyet/Sex :** Erkek/Male
+* **Meslek/Job :** Yazılım Geliştirici/Software Developer
+* **Bölüm/Department :** Bilgisayar Müh./Computer Eng.
+* **Üniversite/Universty :** Dokuz Eylül Universitesi
+* **E-posta/E-mail :** askin [at] askin.ws
+* **Jabber :** kelebek [at] jabber.org
