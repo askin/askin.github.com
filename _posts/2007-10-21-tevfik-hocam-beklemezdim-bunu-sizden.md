@@ -1,14 +1,15 @@
---- 
+---
 layout: post
+category: programming
 title: Tevfik Hocam Beklemezdim Bunu Sizden
 published: true
-meta: 
+meta:
   _edit_last: "1"
   _sexybookmarks_permaHash: de1591776880a6902f67dce8e5372beb
   _sexybookmarks_shortUrl: http://goo.gl/9yYxd
-tags: 
+tags:
 - AQ
-- "\xC3\x96\xC4\x9Frenci Hali"
+- Öğrenci Hali
 - Programlama
 - Scheme
 type: post
