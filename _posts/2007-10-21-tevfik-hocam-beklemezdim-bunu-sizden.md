@@ -1,6 +1,5 @@
 ---
 layout: post
-category: programming
 title: Tevfik Hocam Beklemezdim Bunu Sizden
 published: true
 meta:

@@ -1,6 +1,5 @@
 ---
 layout: post
-category: programming
 title: "Scheme hakkında birkaç kitap"
 published: true
 meta:
