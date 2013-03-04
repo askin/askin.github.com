@@ -1,18 +1,18 @@
---- 
+---
 layout: post
-title: "Bubble sort  algoritmas\xC4\xB1 ve scheme \xC3\xA7\xC3\xB6z\xC3\xBCm\xC3\xBC"
+title: "Bubble sort  algoritması ve scheme çözümü"
 published: true
-meta: 
+meta:
   _edit_last: "1"
   _sexybookmarks_permaHash: ed709a6310daf3e75ac3f44e15824fe2
   _wp_old_slug: binary-sort-ikili-siralama-algoritmasi-ve-scheme-cozum
   _sexybookmarks_shortUrl: http://goo.gl/KGSrh
-tags: 
+tags:
 - Algoritma
 - Bubble
 - Programlama
 - Scheme
-- "S\xC4\xB1ralama"
+- Sıralama
 - Sort
 type: post
 status: publish
@@ -29,19 +29,19 @@ Bubble sort algoritması kabaca: verilen dizideki elemanları ikili olarak karş
 Son durumda 7 elemanlı bir dizi için 6 kontrol yaptık ve en büyük elemanı sona attık. Şimdiki karşılaştırmalarımızda artık son elamanı yok sayabiliriz. Yani problemimiz artık 6 elemanlı bir diziyi sıralamak oldu. Aynı işlemleri 6 eleman varsayarak yaptığımızda sırasıyla problem 5, 4, 3, 2 ve 1 elemanlı dizileri sıralamaya dönüşecek. 1 elemanlı dizi herzaman sıralı olduğu için hiç bi derdimiz sıkıntımızda kalmayacak:) Bu şekilde işlemleride 6 defa yaptık.
 Şimdi sıra geldi koda
 
-<pre lang="scheme" lineno="0">(define vector-bubble-sort 
+<pre lang="scheme" lineno="0">(define vector-bubble-sort
   (lambda (vec op)
     (let ((tmp 0) (stop-do #f))
       (do ((i 0 (+ i 1))) ((or (= i (vector-length vec)) stop-do))
         (set! stop-do #t)
         (do ((j 0 (+ j 1))) ((= j (- (vector-length vec) i 1)))
           (if (not (op (vector-ref vec j) (vector-ref vec (+ j 1))))
-              (begin 
+              (begin
                 (set! tmp (vector-ref vec j))
                 (vector-set! vec j (vector-ref vec (+ j 1)))
                 (vector-set! vec (+ j 1) tmp)
                 (set! stop-do #f))))))
     vec))</pre>
 
-DrScheme de etkileşim penceresine 
+DrScheme de etkileşim penceresine
 <pre lang="scheme">(vector-bubble-sort #(5 11 8 4 6 84 7) < )</pre> şeklide giriş yapmamız gerekiyor. "< " işareti yerine ">" işaretide koyabiliriz. Bu sayede birde büyükten küçüğe sıralamak için aynı kodları yazmamıza gerek kalmayacak. </pre>

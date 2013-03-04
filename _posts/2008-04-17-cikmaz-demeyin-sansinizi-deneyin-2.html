@@ -1,18 +1,15 @@
---- 
+---
 layout: post
-title: "\xC3\x87\xC4\xB1kmaz demeyin \xC5\x9Fans\xC4\xB1n\xC4\xB1z\xC4\xB1 deneyin - 2"
+title: "Çıkmaz demeyin şansınızı deneyin - 2"
 published: true
-meta: 
+meta:
   _edit_last: "1"
   _sexybookmarks_permaHash: 9c8a8b1bdf16d443aa46f2d9a55cf6b0
   _sexybookmarks_shortUrl: http://goo.gl/6clQN
-tags: 
+tags:
 - Java
 - Programlama
-- !binary |
-  xZ5hbnM=
-
-- "Say\xC4\xB1sal"
+- Sayısal
 type: post
 status: publish
 ---
@@ -24,27 +21,27 @@ status: publish
 		int sira = 0;
 		while (sira < 6) {
 			_num = (int) (1 + Math.random() * 49);
-			if (!varmi(_kupon, _num)) 
+			if (!varmi(_kupon, _num))
 				_kupon[sira++] = _num;
 		}
 	}
-	
+
 	private boolean varmi(int[] kupon, int num) {
 		for (int x: kupon) {if (x == num) return true;}
 		return false;
 	}
-	
+
 	public String toString(){
 	   String kuponStr = "";
 	   for (int i = 0; i < 6; i++) kuponStr += (_kupon[i] + " ");
 		return kuponStr;
 	}
-	
+
 	public static void main(String[] args){
 		byte kuponSayisi;
 		if (args.length == 0) kuponSayisi = 1;
 			else kuponSayisi = Byte.parseByte(args[0]);
-			
+
 		for (int i = 1; i <= kuponSayisi; i++){
 			System.out.print(" " + i + ".kupon: ");
 		System.out.println((new Sayisal()).toString());

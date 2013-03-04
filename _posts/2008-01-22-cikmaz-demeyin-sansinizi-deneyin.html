@@ -1,14 +1,8 @@
---- 
+---
 layout: post
-title: !binary |
-  w4fEsWttYXogRGVtZXlpbiDFnmFuc8SxbsSxesSxIERlbmV5aW4=
-
+title: "Çıkmaz demeyin şansınızı deneyin"
 published: true
-meta: 
-  _edit_last: "1"
-  _sexybookmarks_permaHash: b300a73fa4d97afd9ca9443cdf9f21c6
-  _sexybookmarks_shortUrl: http://goo.gl/TJf9p
-tags: 
+tags:
 - Piyango
 - Programlama
 - Scheme
@@ -24,14 +18,14 @@ Probleme göre kod bana çok uzun geldi. Belki ilerde optimize edebilirim. Ama �
   (display "Oynamak istediginiz kolan sayisini giriniz: \n")
   (let ((kolon (read)))
     (do ((i 1 (+ i 1))) ((> i kolon))
-      (let loop ((lst (list (+ (random 49) 1))) 
+      (let loop ((lst (list (+ (random 49) 1)))
                    (sayi (+ 1 (random 49))))
         (if (= (length lst) 6)
             (printf "~a. kolon: ~a\n" i (sort lst < ))
             (if (member sayi lst)
                 (loop lst (+ (random 49) 1))
-                (loop (append lst (list sayi)) 
+                (loop (append lst (list sayi))
                        (+ (random 49) 1))))))))
-(sayisal);burası kodun çalıştırılması için. 
+(sayisal);burası kodun çalıştırılması için.
 ;aslında define kısmı çıkartılarak buna gerek kalmamayabilir
 ;ama  ilerde belki başka birşey içinde kullanırım:)</pre></pre>

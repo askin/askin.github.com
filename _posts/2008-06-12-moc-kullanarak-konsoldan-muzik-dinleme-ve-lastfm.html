@@ -1,20 +1,17 @@
---- 
+---
 layout: post
-title: "Moc kullanarak konsoldan m\xC3\xBCzik dinleme ve lastfm"
+title: "Moc kullanarak konsoldan müzik dinleme ve lastfm"
 published: true
-meta: 
+meta:
   _edit_last: "1"
   _sexybookmarks_permaHash: f8ce85194c37c3ae676da21ae54948f8
   _sexybookmarks_shortUrl: http://goo.gl/XfGXQ
-tags: 
+tags:
 - konsol
 - lastfm
 - lastfmsubmitd
 - Linux
 - moc
-- !binary |
-  TcO8emlr
-
 type: post
 status: publish
 ---
@@ -26,14 +23,14 @@ status: publish
 * pardus
 <code>sudo pisi it moc</code>
 
-Şimdi konsoldan 
+Şimdi konsoldan
 <code>mocp</code>
 komutunu verelim. Gerçekten renkli şık bi tasarımı var. Grafik ekranı hiç aratmıyor:). Eğer renkleri beğenmezseniz <strong>[Shift] + [T]</strong> kombinasyonu ile farklı renkler seçebilirsiniz. Bunun bi kötü yanı var moc temayı bir sonraki açılışında hatırlamayacak. Hatırlaması için <em>~/.moc/config</em> dosyasını oluşturup içeriğini düzenlemeniz gerekiyor. Ben düzenlemedim tam olarak nasıl yapılıyor bilmiyorum. Bunun için <a href="http://dreamore.wordpress.com/2007/07/01/konsol-fantazyasi-3/">burayı</a> biraz zorlasanız fena olmaz.
 <div class="dikkat">Tamamdır olay çözüldü. <a href="http://www.bobrektasi.org/wp-content/uploads/2008/06/config.example">Burdan</a> benim config dosyamı indirebilirsiniz. Yapmanız gereken bu dosyayı <em>~/.moc/</em> dizinine <em>config</em> adı ile kaydetmek.
 Aşağıda config dosyasına bi satır daha eklemeniz gerekiyor. bu örnek dosyada o satır eklenmiş durumda. Eğer Bu örnek dosyadı kullanırsanız o adımı atlayabilirsiniz.</div>
 
 Şimdi gelelim moc ile dinlediğimiz parçaların last.fm'e gönderilmesine.
-Bunun için lastfmsubmitd adında bir program kullanacağız. Bu program deamon olarak çalışarak göndermesini istediğimiz bilgileri last.fm'e yollamayı kendine amaç edinmiş bir servis. 
+Bunun için lastfmsubmitd adında bir program kullanacağız. Bu program deamon olarak çalışarak göndermesini istediğimiz bilgileri last.fm'e yollamayı kendine amaç edinmiş bir servis.
 
 <strong>Kurulum:</strong>:
 * debian - ubuntu - vs.
@@ -67,7 +64,7 @@ satırını ekleyin.
 Eğer sorunlarınız olursa yazıyı baştan birdaha okuyun. Hala sorunlarınız devam ediyorsa aşağıdaki kaynaklara bir göz atın, ve hala sorunları çözemediyseniz yorum yazın:)
 
 <strong>Kaynaklar</strong>:
-<ul> 
+<ul>
 	<li><a href="http://dreamore.wordpress.com/2007/07/01/konsol-fantazyasi-3/">Dreamore</a></li>
 	<li><a href="http://devnulll.blogspot.com/2007/08/how-to-submit-songs-to-lastfm-whilst_03.html">/home/plb</a></li>
 	<li><a href="http://wiki.linux-sevenler.org/index.php/Mpd">Lapis Wiki</a></li>
