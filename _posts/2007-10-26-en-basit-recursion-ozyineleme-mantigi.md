@@ -6,8 +6,8 @@ meta:
   _edit_last: "1"
 tags:
 - AQ
-- Programlama
-- Scheme
+- programlama
+- scheme
 type: post
 status: publish
 ---

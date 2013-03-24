@@ -5,9 +5,9 @@ published: true
 tags:
 - binary
 - cat
-- Gezegen
+- gezegen
 - konsol
-- Linux
+- linux
 - reset
 type: post
 status: publish

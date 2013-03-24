@@ -7,8 +7,8 @@ meta:
 tags:
 - book
 - e-book
-- Programlama
-- Scheme
+- programlama
+- scheme
 type: post
 status: publish
 ---

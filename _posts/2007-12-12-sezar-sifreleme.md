@@ -4,10 +4,10 @@ title: "Sezar şifreleme"
 published: true
 tags:
 - Algoritma
-- Programlama
-- Scheme
-- Sezar
-- Şifreleme
+- programlama
+- scheme
+- sezar
+- şifreleme
 type: post
 status: publish
 ---
