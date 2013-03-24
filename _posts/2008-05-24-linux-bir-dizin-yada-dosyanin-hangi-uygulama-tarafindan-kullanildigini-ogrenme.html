@@ -1,24 +1,20 @@
---- 
+---
 layout: post
 title: "Linux - bir dizin yada dosyanın hangi uygulama tarafından kullanıldığını öğrenme"
 published: true
-meta: 
-  _edit_last: "1"
-  _sexybookmarks_permaHash: 3aac8106752aef53dcb2deb9f280176e
-  _sexybookmarks_shortUrl: http://goo.gl/URrBQ
-tags: 
-- Kabuk
+tags:
+- kabuk
 - linux
 - shell
 type: post
 status: publish
 ---
-Bazen bir dosyayı silmeye çalıştığımızda yada bir diski ayırmaya çalıştığımızda, dosyanın meşgul olduğunu belirten bir uyarı çıkar ve işimizi yapmamızı engeller. Bu gibi durumlarda 
+Bazen bir dosyayı silmeye çalıştığımızda yada bir diski ayırmaya çalıştığımızda, dosyanın meşgul olduğunu belirten bir uyarı çıkar ve işimizi yapmamızı engeller. Bu gibi durumlarda
 <code>fuser -m -u /dosya-dizin</code>
-komutunu kullanarak hangi sürecin (process) bize engel olduğunu öğreniriz. 
+komutunu kullanarak hangi sürecin (process) bize engel olduğunu öğreniriz.
 <em>-u</em> paramatresi sürecin sahibini gösterir.
 <code>kill <pid></pid></code>
-komutunu kullanarak süreci sonlandırıp işimizi tamamlayabiliriz, yada 
+komutunu kullanarak süreci sonlandırıp işimizi tamamlayabiliriz, yada
 <code>ps auxw</code>
 komutunu kullanarak sürecin hangi uygulamaya ait olduğunuz öğrenebiliriz.
 
