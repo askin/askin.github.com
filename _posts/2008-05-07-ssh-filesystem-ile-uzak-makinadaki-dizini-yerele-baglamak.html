@@ -1,25 +1,20 @@
---- 
+---
 layout: post
 title: "SSH Filesystem ile uzak makinadaki dizini yerele bağlamak"
 published: true
-meta: 
-  _edit_last: "1"
-  _sexybookmarks_permaHash: e536f63fe89979d39a3881853d70f048
-  _sexybookmarks_shortUrl: http://goo.gl/NhdED
-tags: 
-- "Bağlamak"
-- Dizin
-- Linux
-- Mount
+tags:
+- dizin
+- linux
+- mount
 - ssh
 - umount
-- Uzak makina
+- uzak makina
 type: post
 status: publish
 ---
 Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz.
 Ben daha önce bahsettiğim <a href="http://blog.yollu.com/2008/02/21/telekom-artik-kork-benden/">internet canavarı:)</a> için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu.
-Kullanacağımız programın adı sshfs yani SSH Filesystem. 
+Kullanacağımız programın adı sshfs yani SSH Filesystem.
 Kurulum:
 <ul>
 	<li>Debian && Ubuntu && vb.
@@ -44,19 +39,18 @@ Bu şekide kullanırsanız bağladığınız dizine ancak root yetkileriyle ula�
 	<code>> sshfs -o allow_other hostname:dizin bağlamanoktası</code>
 <strong>Parametreler	</strong>
 -o parametresini kullanarak uid ve gid değerlerini ayarlayabilirsiniz.
-<ul>	
+<ul>
 	<li><code>-o idmap=user</code></li>
 	<li><code>-o uid=&lt;uid&gt;</code></li>
 	<li><code>-o gid=&lt;gid&gt;</code></li>
 	<li><code>-o ro</code> //read only - salt okunur mod</li>
 </ul>
-	
+
 <strong>fstab dosyasını kullanarak mount etme</strong>
 <code>sshfs#USERNAME@REMOTE_HOST:REMOTE_PATH MOUNT_POINT fuse SSHFS_OPTIONS 0 0</code>
 <strong>örnek</strong>
 <code>sshfs#guest@guest.login.com:data /mnt/guest fuse uid=1003,gid=100,umask=0,allow_other 0 0</code>
-	
+
 <strong>proje sayfası</strong>	:<a href=" http://fuse.sourceforge.net/sshfs.html"> http://fuse.sourceforge.net/sshfs.html</a>
 <strong>wiki sayfası</strong>	:<a href="http://fuse.sourceforge.net/sshfs.html"> http://fuse.sourceforge.net/sshfs.html</a>
 wiki sayfasını kulanarak birçok bilgiye ulaşabilirsiniz..
-
