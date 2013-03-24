@@ -3,7 +3,7 @@ layout: post
 title: "Sezar şifreleme"
 published: true
 tags:
-- Algoritma
+- algoritma
 - programlama
 - scheme
 - sezar
