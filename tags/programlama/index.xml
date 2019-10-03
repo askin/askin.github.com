@@ -20,7 +20,7 @@
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/var-olan-bir-svn-deposunun-adresini-degistirme/</guid>
       <description>Herhangi bir nedenle üzerinde çalıştığınız svn deposunun adresi değişirse aşağıdaki komutla gerekli değişikliği yapabilirsiniz.
-svn switch --relocate http://svn.example.com/path/to/repository/path/within/repository http://svnnew.example.com/new/repository/path/within/repository</description>
+svn switch --relocate \ http://svn.example.com/path/to/repository/path/within/repository \ http://svnnew.example.com/new/repository/path/within/repository  </description>
     </item>
     
     <item>

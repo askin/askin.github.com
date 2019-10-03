@@ -30,9 +30,8 @@ Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşı
       <pubDate>Fri, 10 Jul 2009 18:01:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/c-ile-komut-satiri-argumanlari-ve-parametreleri/</guid>
-      <description>Komut satırı programları -h yada &amp;ndash;help gibi parametreler alırlar. Bu alınan parametrelerin kolay kullanılması için getopt adında bir kütüphane yaratılmış. Bu kütüphane kullanlanılarak çok rahat böyle programlar yazılabilir.
-Bende bunun için küçük bir örnek yazdım.
-Örnek</description>
+      <description>Komut satırı programları -h yada &amp;ndash;help gibi parametreler alırlar. Bu alınan parametrelerin kolay kullanılması için getopt adında bir kütüphane yaratılmış. Bu kütüphane kullanlanılarak çok rahat böyle programlar yazılabilir. Bende bunun için küçük bir örnek yazdım.
+#include &amp;lt;stdio.h&amp;gt; #include &amp;lt;stdlib.h&amp;gt; #include &amp;lt;getopt.h&amp;gt; int print_usage ( void ); int main (int argc, char* argv[]) { int next_option; char* output; char* input; char color = 47; /** * kisa parametler burda tanimli * ardindan parametre alanlar : ile bitiyor * orn: o: bir parametre aliyor b almiyor * -o kelebek yada -b gibi */ const char* const short_options = &amp;quot;hbro:i:&amp;quot;; /** * Burdada uzun hallerini tanimliyoruz.</description>
     </item>
     
   </channel>

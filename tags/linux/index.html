@@ -463,10 +463,10 @@ depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu do
   <i class="fas fa-calendar"></i>&nbsp;Posted on August 3, 2012
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;2&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;267&nbsp;words
   
   
     
@@ -480,15 +480,9 @@ depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu do
     </p>
     <div class="post-entry">
         
-        <p>
-Sunucu:  
-<script type="text/javascript" src="https://gist.github.com/3247107.js?file=udp-server.c"></script>
-</p>
-<p>
-İstemci:  
-<script type="text/javascript" src="https://gist.github.com/3247107.js?file=upd-client.c"></script>
-</p>
-
+        Sunucu:
+#include &lt;stdio.h&gt; #include &lt;string.h&gt; #include &lt;sys/types.h&gt; #include &lt;sys/socket.h&gt; #include &lt;netinet/in.h&gt; #define MY_PORT 3333 int main(int argc, char *argv[]) { int sockfd, new_fd; struct sockaddr_in my_addr; // hedef adres struct sockaddr_in their_addr; // baglanti yapan adres int sin_size, rt; // gelen verinin tutuldugu buffer char buf[32]; // islem yapmak icin gerekli dosya gosterici sockfd = socket(AF_INET, SOCK_DGRAM, 0); sin_size = sizeof(struct sockaddr_in); // adres ile ilgili ayarlar my_addr.sin_family = AF_INET; my_addr.
+        <a href="https://blog.askin.ws/blog/udp-broadcast-sunucu-istemci/" class="post-read-more">[Read More]</a>
         
     </div>
 

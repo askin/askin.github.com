@@ -8,11 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <title>Mysql Data Dizinini Değiştirme - Aşkın Özgür</title>
-  <meta name="description" content="Mysql data dizini ön tanımlı /var/lib/mysql olarak belirlenmiştir. Çeşitli ihtiyaçlardan dolayı bunun yerini değiştirmemiz gerekebilir. Mesela ben ayrı bir bölümde tuttuğum /home dizini altına taşımak istiyorum. Tüm işlemleri root yetkisiyle yapıyoruz. Öncelikle mysql servisini durduralım.
-Ben pardus kullandığım için
-# service mysql-server stop  Diğer dağıtımlarda farklı olabilir.
-Ardından ilgili dizini yeni yerine kopyalayalım.
-# cp -a /var/lib/mysql /home  Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. /etc/mysql/my.cnf dosyasında">
+  <meta name="description" content="Mysql data dizini ön tanımlı /var/lib/mysql olarak belirlenmiştir. Çeşitli ihtiyaçlardan dolayı bunun yerini değiştirmemiz gerekebilir. Mesela ben ayrı bir bölümde tuttuğum /home dizini altına taşımak istiyorum. Tüm işlemleri root yetkisiyle yapıyoruz. Öncelikle mysql servisini durduralım. Ben pardus kullandığım için
+$ service mysql-server stop  Diğer dağıtımlarda farklı olabilir. Ardından ilgili dizini yeni yerine kopyalayalım.
+$ cp -a /var/lib/mysql /home  Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. /etc/mysql/my.cnf dosyasında datadir = /var/lib/mysql olan satırı datadir = /home/mysql olarak değiştirelim.">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -61,7 +59,7 @@ Ardından ilgili dizini yeni yerine kopyalayalım.
     "name" : "askin"
   },
   "headline": "Mysql Data Dizinini Değiştirme",
-  "description" : "Mysql data dizini ön tanımlı \/var\/lib\/mysql olarak belirlenmiştir. Çeşitli ihtiyaçlardan dolayı bunun yerini değiştirmemiz gerekebilir. Mesela ben ayrı bir bölümde tuttuğum \/home dizini altına taşımak istiyorum. Tüm işlemleri root yetkisiyle yapıyoruz. Öncelikle mysql servisini durduralım.\nBen pardus kullandığım için\n# service mysql-server stop  Diğer dağıtımlarda farklı olabilir.\nArdından ilgili dizini yeni yerine kopyalayalım.\n# cp -a \/var\/lib\/mysql \/home  Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. \/etc\/mysql\/my.cnf dosyasında",
+  "description" : "Mysql data dizini ön tanımlı \/var\/lib\/mysql olarak belirlenmiştir. Çeşitli ihtiyaçlardan dolayı bunun yerini değiştirmemiz gerekebilir. Mesela ben ayrı bir bölümde tuttuğum \/home dizini altına taşımak istiyorum. Tüm işlemleri root yetkisiyle yapıyoruz. Öncelikle mysql servisini durduralım. Ben pardus kullandığım için\n$ service mysql-server stop  Diğer dağıtımlarda farklı olabilir. Ardından ilgili dizini yeni yerine kopyalayalım.\n$ cp -a \/var\/lib\/mysql \/home  Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. \/etc\/mysql\/my.cnf dosyasında datadir = \/var\/lib\/mysql olan satırı datadir = \/home\/mysql olarak değiştirelim.",
   "inLanguage" : "en",
   "wordCount":  105 ,
   "datePublished" : "2009-07-14T02:11:00",
@@ -83,11 +81,9 @@ Ardından ilgili dizini yeni yerine kopyalayalım.
 </script>
 
 <meta property="og:title" content="Mysql Data Dizinini Değiştirme" />
-<meta property="og:description" content="Mysql data dizini ön tanımlı /var/lib/mysql olarak belirlenmiştir. Çeşitli ihtiyaçlardan dolayı bunun yerini değiştirmemiz gerekebilir. Mesela ben ayrı bir bölümde tuttuğum /home dizini altına taşımak istiyorum. Tüm işlemleri root yetkisiyle yapıyoruz. Öncelikle mysql servisini durduralım.
-Ben pardus kullandığım için
-# service mysql-server stop  Diğer dağıtımlarda farklı olabilir.
-Ardından ilgili dizini yeni yerine kopyalayalım.
-# cp -a /var/lib/mysql /home  Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. /etc/mysql/my.cnf dosyasında">
+<meta property="og:description" content="Mysql data dizini ön tanımlı /var/lib/mysql olarak belirlenmiştir. Çeşitli ihtiyaçlardan dolayı bunun yerini değiştirmemiz gerekebilir. Mesela ben ayrı bir bölümde tuttuğum /home dizini altına taşımak istiyorum. Tüm işlemleri root yetkisiyle yapıyoruz. Öncelikle mysql servisini durduralım. Ben pardus kullandığım için
+$ service mysql-server stop  Diğer dağıtımlarda farklı olabilir. Ardından ilgili dizini yeni yerine kopyalayalım.
+$ cp -a /var/lib/mysql /home  Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. /etc/mysql/my.cnf dosyasında datadir = /var/lib/mysql olan satırı datadir = /home/mysql olarak değiştirelim.">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
 <meta property="og:url" content="https://blog.askin.ws/blog/mysql-data-dizinini-degistirme/" />
 <meta property="og:type" content="website" />
@@ -261,24 +257,24 @@ Ardından ilgili dizini yeni yerine kopyalayalım.
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p><img src="/uploads/2009/07/mysql.png" alt="Mysql" title="Mysql" />Mysql data dizini ön tanımlı <strong>/var/lib/mysql</strong> olarak belirlenmiştir. Çeşitli ihtiyaçlardan dolayı bunun yerini değiştirmemiz gerekebilir. Mesela ben ayrı bir bölümde tuttuğum <strong>/home</strong> dizini altına taşımak istiyorum. Tüm işlemleri <em>root</em> yetkisiyle yapıyoruz. Öncelikle mysql servisini durduralım.<br />
+        <p><img src="/uploads/2009/07/mysql.png" alt="Mysql" title="Mysql" />Mysql data dizini ön tanımlı <strong>/var/lib/mysql</strong> olarak belirlenmiştir. Çeşitli ihtiyaçlardan dolayı bunun yerini değiştirmemiz gerekebilir. Mesela ben ayrı bir bölümde tuttuğum <strong>/home</strong> dizini altına taşımak istiyorum. Tüm işlemleri <em>root</em> yetkisiyle yapıyoruz. Öncelikle mysql servisini durduralım.
 Ben pardus kullandığım için</p>
 
-<pre><code class="language-bash"># service mysql-server stop
+<pre><code class="language-bash">$ service mysql-server stop
 </code></pre>
 
-<p>Diğer dağıtımlarda farklı olabilir.<br />
+<p>Diğer dağıtımlarda farklı olabilir.
 Ardından ilgili dizini yeni yerine kopyalayalım.</p>
 
-<pre><code class="language-bash"># cp -a /var/lib/mysql /home
+<pre><code class="language-bash">$ cp -a /var/lib/mysql /home
 </code></pre>
 
-<p>Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. <strong>/etc/mysql/my.cnf</strong> dosyasında<br />
-<code>datadir = /var/lib/mysql</code> olan satırı<br />
-<code>datadir = /home/mysql</code> olarak değiştirelim.<br />
+<p>Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. <strong>/etc/mysql/my.cnf</strong> dosyasında
+<code>datadir = /var/lib/mysql</code> olan satırı
+<code>datadir = /home/mysql</code> olarak değiştirelim.
 Şimdi servisi yeniden başlatabiliriz.</p>
 
-<pre><code class="language-bash"># service mysql-server start
+<pre><code class="language-bash">$ service mysql-server start
 </code></pre>
 
 <p>Eğer düzgün bir şekilde çalışıyorsa <strong>/var/lib/mysql</strong> dizinini silebiliriz. Ama ismini değiştirip birkaç gün her ihtimale karşı saklamak çok mantıklı.</p>

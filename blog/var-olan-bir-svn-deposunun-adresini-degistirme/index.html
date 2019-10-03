@@ -9,7 +9,7 @@
 
   <title>Var olan bir SVN deposunun adresini değiştirme - Aşkın Özgür</title>
   <meta name="description" content="Herhangi bir nedenle üzerinde çalıştığınız svn deposunun adresi değişirse aşağıdaki komutla gerekli değişikliği yapabilirsiniz.
-svn switch --relocate http://svn.example.com/path/to/repository/path/within/repository http://svnnew.example.com/new/repository/path/within/repository">
+svn switch --relocate \ http://svn.example.com/path/to/repository/path/within/repository \ http://svnnew.example.com/new/repository/path/within/repository  ">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -58,9 +58,9 @@ svn switch --relocate http://svn.example.com/path/to/repository/path/within/repo
     "name" : "askin"
   },
   "headline": "Var olan bir SVN deposunun adresini değiştirme",
-  "description" : "Herhangi bir nedenle üzerinde çalıştığınız svn deposunun adresi değişirse aşağıdaki komutla gerekli değişikliği yapabilirsiniz.\nsvn switch --relocate http:\/\/svn.example.com\/path\/to\/repository\/path\/within\/repository http:\/\/svnnew.example.com\/new\/repository\/path\/within\/repository",
+  "description" : "Herhangi bir nedenle üzerinde çalıştığınız svn deposunun adresi değişirse aşağıdaki komutla gerekli değişikliği yapabilirsiniz.\nsvn switch --relocate \\ http:\/\/svn.example.com\/path\/to\/repository\/path\/within\/repository \\ http:\/\/svnnew.example.com\/new\/repository\/path\/within\/repository  ",
   "inLanguage" : "en",
-  "wordCount":  19 ,
+  "wordCount":  21 ,
   "datePublished" : "2012-04-09T10:48:00",
   "dateModified" : "2012-04-09T10:48:00",
   "image" : "https:\/\/blog.askin.ws\/uploads\/avatar.png",
@@ -81,7 +81,7 @@ svn switch --relocate http://svn.example.com/path/to/repository/path/within/repo
 
 <meta property="og:title" content="Var olan bir SVN deposunun adresini değiştirme" />
 <meta property="og:description" content="Herhangi bir nedenle üzerinde çalıştığınız svn deposunun adresi değişirse aşağıdaki komutla gerekli değişikliği yapabilirsiniz.
-svn switch --relocate http://svn.example.com/path/to/repository/path/within/repository http://svnnew.example.com/new/repository/path/within/repository">
+svn switch --relocate \ http://svn.example.com/path/to/repository/path/within/repository \ http://svnnew.example.com/new/repository/path/within/repository  ">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
 <meta property="og:url" content="https://blog.askin.ws/blog/var-olan-bir-svn-deposunun-adresini-degistirme/" />
 <meta property="og:type" content="website" />
@@ -89,7 +89,7 @@ svn switch --relocate http://svn.example.com/path/to/repository/path/within/repo
 
   <meta name="twitter:title" content="Var olan bir SVN deposunun adresini değiştirme" />
   <meta name="twitter:description" content="Herhangi bir nedenle üzerinde çalıştığınız svn deposunun adresi değişirse aşağıdaki komutla gerekli değişikliği yapabilirsiniz.
-svn switch --relocate …">
+svn switch --relocate \ …">
   <meta name="twitter:image" content="https://blog.askin.ws/uploads/avatar.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@kelebeks" />
@@ -258,7 +258,10 @@ svn switch --relocate …">
       <article role="main" class="blog-post">
         <p>Herhangi bir nedenle üzerinde çalıştığınız svn deposunun adresi değişirse aşağıdaki komutla gerekli değişikliği yapabilirsiniz.</p>
 
-<p><code>svn switch --relocate http://svn.example.com/path/to/repository/path/within/repository http://svnnew.example.com/new/repository/path/within/repository</code></p>
+<pre><code class="language-bash">svn switch --relocate \
+    http://svn.example.com/path/to/repository/path/within/repository \
+    http://svnnew.example.com/new/repository/path/within/repository
+</code></pre>
 
 
         

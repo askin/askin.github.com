@@ -223,7 +223,7 @@
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;19&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;21&nbsp;words
   
   
     
@@ -239,7 +239,10 @@
         
         <p>Herhangi bir nedenle üzerinde çalıştığınız svn deposunun adresi değişirse aşağıdaki komutla gerekli değişikliği yapabilirsiniz.</p>
 
-<p><code>svn switch --relocate http://svn.example.com/path/to/repository/path/within/repository http://svnnew.example.com/new/repository/path/within/repository</code></p>
+<pre><code class="language-bash">svn switch --relocate \
+    http://svn.example.com/path/to/repository/path/within/repository \
+    http://svnnew.example.com/new/repository/path/within/repository
+</code></pre>
 
         
     </div>

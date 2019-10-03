@@ -61,7 +61,7 @@ Cd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte.">
   "headline": "Bir GNU\/Linux kurulumunu başka bir harddiske\/bölüme taşımak",
   "description" : "Öncelikle bir çalışan cd ile sistem açılır, benim tercihim gparted live cd. Sizin elinizin altında ne varsa kabuldur. İlla çalışan cd olmasına gerek yok, herhangi bir linux cdside olabilir. Bize mount, cp ve nano komutları lazım. Bunları sağlayan herhangi bir cd kullanılabilir.\nTaşınacak kurulumun hangi disk bölümünde olduğu bilinmeli. Ben 2. bölümdeki kurulumu 1. bölüme taşıyacağım. Yani \/dev\/hdc3 den \/dev\/hdc1 e taşıma yapacağım(sizdeki disk isimleri muhtemelen farklıdır).\nCd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte.",
   "inLanguage" : "en",
-  "wordCount":  226 ,
+  "wordCount":  222 ,
   "datePublished" : "2009-04-06T22:22:00",
   "dateModified" : "2009-04-06T22:22:00",
   "image" : "https:\/\/blog.askin.ws\/uploads\/avatar.png",
@@ -267,17 +267,17 @@ Cd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte.">
 
 <p>Önce diskleri mount ediyoruz</p>
 
-<pre><code class="language-bash"># mkdir /target /source
-# mount /dev/hdc1 /target
-# mount /dev/hdc3 -o ro /source
+<pre><code class="language-bash">mkdir /target /source
+mount /dev/hdc1 /target
+mount /dev/hdc3 -o ro /source
 </code></pre>
 
 <p>Mount işleminden sonra kopyalamaya başlayabiliriz.</p>
 
-<pre><code class="language-bash"># cp -a /source/* /target
+<pre><code class="language-bash">cp -a /source/* /target
 </code></pre>
 
-<p>Bu işlem kopyalanacak verinin boyutuna göre uzunca sürebilir.<br />
+<p>Bu işlem kopyalanacak verinin boyutuna göre uzunca sürebilir.
 Kopyalama tamamlandıktan sonra yeni diskteki /etc/fstab dosyasını ve eski diskteki /boot/grub/menu.lst dosyalarını değiştirmemiz gerekiyor. fstab dosyasında &ldquo;/&rdquo; dizininin bağlanacağı yeni bölümü gösteriyoruz. menu.lst dosyasında ise yeni bölümün boot edilebilmesi için gerekli ayarları yapıyoruz.</p>
 
 <p>Eğer eski bölümü silecek veya orayı başka amaç için kullanacaksanız mbr kaydını yenilemeniz gerekmektedir, yani grubu tekrar yeni disk için kurmalısınız.</p>
