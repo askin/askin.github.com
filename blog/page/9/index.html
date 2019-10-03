@@ -603,11 +603,7 @@ Yaklaşık 1 saat boyunda jaguar ic100 webcam sürücüsü aradım dün. Kimi si
     <div class="post-entry">
         
         Benin algılamakta en zorluk çektiğim kavramdı. Ancak öğrenince çok çok işe yarıyor.
-(define (lst-length lst)
-(if (null? lst)
-0
-(+ 1 (lst-length (cdr lst)))))
-Kodu tanımlayacak olursak (null? lst) lst değişkeninde tuttuğumuz listenin boş olup olmadığını kontrol ediyor. Boş listenin eleman sayısının 0 olduğunu biliyoruz. Listemiz genelde ilk halinde boş olmayacağı için if condition direk #f verip 2. satıra geçecek. özyinelemenin can damarı aslında burda. Biz 1 eksik elemanlı listenin eleman sayısıyla 1i topluyoruz.
+(define (lst-length lst) (if (null? lst) 0 (+ 1 (lst-length (cdr lst)))))  Kodu tanımlayacak olursak (null? lst) lst değişkeninde tuttuğumuz listenin boş olup olmadığını kontrol ediyor. Boş listenin eleman sayısının 0 olduğunu biliyoruz. Listemiz genelde ilk halinde boş olmayacağı için if condition direk #f verip 2. satıra geçecek. özyinelemenin can damarı aslında burda. Biz 1 eksik elemanlı listenin eleman sayısıyla 1i topluyoruz.
         <a href="https://blog.askin.ws/blog/en-basit-recursion-ozyineleme-mantigi/" class="post-read-more">[Read More]</a>
         
     </div>
