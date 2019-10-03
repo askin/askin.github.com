@@ -1,0 +1,113 @@
+baseURL = "https://blog.askin.ws/"
+languageCode = "en-us"
+title = "Aşkın Özgür"
+
+# theme = "bingo"
+# theme = "indigo"
+theme = "beautifulhugo"
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 10
+
+# [params]
+
+#   [params.gravatar]
+#     email = "askin@askin.ws"
+
+#   [[params.social]]
+#     name = "github"
+#     url = "https://github.com/askin"
+#     weight = 10
+
+#   [[params.social]]
+#     name = "bitbucket"
+#     url = "https://bitbucket.com/askin"
+#     weight = 10
+
+#   [[params.social]]
+#     name = "twitter"
+#     url = "https://twitter.com/kelebeks"
+#     weight = 30
+
+#   [[params.social]]
+#     name = "linkedin"
+#     url = "https://www.linkedin.com/in/askinyollu"
+#     weight = 20
+
+
+[Params]
+  #  homeTitle = "Beautiful Hugo Theme" # Set a different text for the header on the home page
+  subtitle = "Aşkın Özgür'ün Web Günlüğü"
+  mainSections = ["blog"]
+  # logo = "img/avatar-icon.png" # Expecting square dimensions
+  logo = "uploads/avatar.png" # Expecting square dimensions
+  favicon = "img/favicon.ico"
+  dateFormat = "January 2, 2006"
+  commit = false
+  rss = true
+  comments = true
+  readingTime = true
+  wordCount = true
+  useHLJS = true
+  socialShare = true
+  delayDisqus = true
+  showRelatedPosts = true
+#  hideAuthor = true
+#  gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
+
+#[[Params.bigimg]]
+#  src = "img/triangle.jpg"
+#  desc = "Triangle"
+#[[Params.bigimg]]
+#  src = "img/sphere.jpg"
+#  desc = "Sphere"
+#  # position: see values of CSS background-position.
+#  position = "center top"
+#[[Params.bigimg]]
+#  src = "img/hexagon.jpg"
+#  desc = "Hexagon"
+
+[Author]
+  name = "Aşkın Özgür"
+  website = "https://blog.askin.ws"
+  email = "askin@askin.ws"
+  facebook = "askinyollu"
+  github = "askin"
+  gitlab = "askinozgur"
+  bitbucket = "askin"
+  twitter = "kelebeks"
+  linkedin = "askin.yollu"
+  # instagram = "username"
+  # youtube = "user/username" # or channel/channelname
+  # soundcloud = "username"
+  # spotify = "username"
+  # bandcamp = "username"
+  # itchio = "username"
+  # vk = "username"
+  # paypal = "username"
+  telegram = "kelebeks"
+  # 500px = "username"
+  # codepen = "username"
+  # mastodon = "url"
+  # kaggle = "username"
+  # weibo = "username"
+  # slack = "username"
+
+[[menu.main]]
+    name = "Hakkımda"
+    url = "about/"
+    weight = 11
+
+[[menu.main]]
+    name = "İbretlik Tavsiyeler"
+    url = "ibretlik-tavsiyeler/"
+    weight = 12
+
+[[menu.main]]
+    name = "Tags"
+    url = "tags"
+    weight = 21
