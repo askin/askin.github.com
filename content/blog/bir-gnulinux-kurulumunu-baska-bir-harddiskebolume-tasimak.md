@@ -19,18 +19,18 @@ Yapacağımız işlemler için root olmamız gerekiyor. Bu işlemi yapacak cesar
 Önce diskleri mount ediyoruz
 
 ```bash
-# mkdir /target /source
-# mount /dev/hdc1 /target
-# mount /dev/hdc3 -o ro /source
+mkdir /target /source
+mount /dev/hdc1 /target
+mount /dev/hdc3 -o ro /source
 ```
 
 Mount işleminden sonra kopyalamaya başlayabiliriz.
 
 ```bash
-# cp -a /source/* /target
+cp -a /source/* /target
 ```
 
-Bu işlem kopyalanacak verinin boyutuna göre uzunca sürebilir.  
+Bu işlem kopyalanacak verinin boyutuna göre uzunca sürebilir.
 Kopyalama tamamlandıktan sonra yeni diskteki /etc/fstab dosyasını ve eski diskteki /boot/grub/menu.lst dosyalarını değiştirmemiz gerekiyor. fstab dosyasında "/" dizininin bağlanacağı yeni bölümü gösteriyoruz. menu.lst dosyasında ise yeni bölümün boot edilebilmesi için gerekli ayarları yapıyoruz.
 
 Eğer eski bölümü silecek veya orayı başka amaç için kullanacaksanız mbr kaydını yenilemeniz gerekmektedir, yani grubu tekrar yeni disk için kurmalısınız.

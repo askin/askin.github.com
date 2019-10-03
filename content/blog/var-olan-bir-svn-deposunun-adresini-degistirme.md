@@ -10,4 +10,8 @@ Status: published
 
 Herhangi bir nedenle üzerinde çalıştığınız svn deposunun adresi değişirse aşağıdaki komutla gerekli değişikliği yapabilirsiniz.
 
-`svn switch --relocate http://svn.example.com/path/to/repository/path/within/repository http://svnnew.example.com/new/repository/path/within/repository`
+``` bash
+svn switch --relocate \
+    http://svn.example.com/path/to/repository/path/within/repository \
+    http://svnnew.example.com/new/repository/path/within/repository
+```

@@ -20,7 +20,7 @@ Biraz inceledikten sonra, önce pencereyi gizleyen, ardından boyutunu eski hali
 bu komut bana gtk\_window\_reshow\_with\_initial\_size fonksiyonun nerelerde olduğunu gösterdi.
 Bu fonksiyonunun içine bakınca istediğim kodu hemen buldum :)
 
-```c
+```C
 gtk_window_reshow_with_initial_size (GtkWindow *window)
 {
   GtkWidget *widget;
