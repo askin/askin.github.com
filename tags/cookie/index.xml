@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cookie on Aşkın Özgür</title>
+    <link>https://blog.askin.ws/tags/cookie/</link>
+    <description>Recent content in cookie on Aşkın Özgür</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
+    <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
+    <lastBuildDate>Wed, 10 Jul 2013 17:18:00 +0300</lastBuildDate>
+    
+	<atom:link href="https://blog.askin.ws/tags/cookie/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>cURL ile GET/POST ve cookie kullanımı</title>
+      <link>https://blog.askin.ws/blog/curl-ile-getpost-ve-cookie-kullanimi/</link>
+      <pubDate>Wed, 10 Jul 2013 17:18:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/curl-ile-getpost-ve-cookie-kullanimi/</guid>
+      <description>cURL kullanarak komut satırından istediğimiz bir web sayfasına get/post istekleri yapabiliriz. &amp;ndash;data parametresi ile post edilecek verileri gönderebiliryoruz. Url sonuna ekleyeceğimiz parametreler de get olarak gönderilecektir.
+curl --data &amp;quot;param1=value1&amp;amp;param2=value2&amp;quot; http://example.com/index.php  Web sayfasının döndürdüğü sonu doğrudan ekrana basılacaktır, bunu bir dosyaya aktarmak için
+curl --data &amp;quot;param1=value1&amp;amp;param2=value2&amp;quot; http://example.com/index.php &amp;gt; result.html  bir değişkene aktarmak için
+result=$(curl --data &amp;quot;param1=value1&amp;amp;param2=value2&amp;quot; http://example.com/index.php)  kullanabiliriz. Erişmek istediğimiz web sayfası kullanıcı girişi istiyorsa cookie kullanrak bunu yapabiliriz.</description>
+    </item>
+    
+  </channel>
+</rss>

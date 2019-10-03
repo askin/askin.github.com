@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pem on Aşkın Özgür</title>
+    <link>https://blog.askin.ws/tags/pem/</link>
+    <description>Recent content in pem on Aşkın Özgür</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
+    <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
+    <lastBuildDate>Sat, 05 Dec 2009 02:02:00 +0300</lastBuildDate>
+    
+	<atom:link href="https://blog.askin.ws/tags/pem/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Pardus ile Eduroam ağına bağlanma</title>
+      <link>https://blog.askin.ws/blog/pardus-ile-eduroam-agina-baglanma/</link>
+      <pubDate>Sat, 05 Dec 2009 02:02:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/pardus-ile-eduroam-agina-baglanma/</guid>
+      <description>Pardusun ağ yöneticisi gayet şık bir arayüze sahip, fakat bize Eduroam ağına bağlanma özelliği sunmuyor.
+Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız için yeterli. Bu araçlar wpa_supplicant ve dhcpcd. Wpa_supplicant ağda kimlik denetimini sağlamak için, dhcpcd ise ağdan ip almamız için gerekli.
+Öncelikle wpa_supplicant için ayar dosyası oluşturmamız gerekiyor.
+network={ ssid=&amp;quot;eduroam&amp;quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap=TTLS phase2=&amp;quot;auth=PAP&amp;quot; anonymous_identity=&amp;quot;anonymous@ogr.deu.edu.tr&amp;quot; identity=&amp;quot;ogrencinumarasi@ogr.deu.edu.tr&amp;quot; password=&amp;quot;sifre&amp;quot; }  Bu ayarlar Dokuz Eylül Üniversitesi için.</description>
+    </item>
+    
+  </channel>
+</rss>

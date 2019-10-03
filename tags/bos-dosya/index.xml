@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bos dosya on Aşkın Özgür</title>
+    <link>https://blog.askin.ws/tags/bos-dosya/</link>
+    <description>Recent content in bos dosya on Aşkın Özgür</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
+    <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
+    <lastBuildDate>Wed, 07 Nov 2012 13:44:00 +0300</lastBuildDate>
+    
+	<atom:link href="https://blog.askin.ws/tags/bos-dosya/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bir dosyanın boş olup olmadığını kontrol etme</title>
+      <link>https://blog.askin.ws/blog/bir-dosyanin-bos-olup-olmadigini-kontrol-etme/</link>
+      <pubDate>Wed, 07 Nov 2012 13:44:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/bir-dosyanin-bos-olup-olmadigini-kontrol-etme/</guid>
+      <description>Shell script yazarken bir dosyanın boş olup olmadığını kontrol etmemiz gerekebilir. Bunu yapmak için birkaç yöntem yazacağım.
+satirsayisi=`wc -l 194.27.108.90 | awk &#39;{split($0,a,&amp;quot; &amp;quot;); print a[1]}&#39;` if [ $satirsayisi == 0 ]; then echo &amp;quot;dosya bos&amp;quot;; fi  if [ -z $(cat dosyaadi) ]; then echo &amp;quot;dosya bos&amp;quot;; fi  if [ -z `cat dosyaadi` ]; then echo &amp;quot;dosya bos&amp;quot;; fi  Ve en güzeli
+if [ -s dosyaadi ]; then echo &amp;quot;Dosya dolu&amp;quot;; else echo &amp;quot;Dosya bos&amp;quot;; fi  </description>
+    </item>
+    
+  </channel>
+</rss>

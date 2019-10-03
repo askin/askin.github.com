@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>list on Aşkın Özgür</title>
+    <link>https://blog.askin.ws/tags/list/</link>
+    <description>Recent content in list on Aşkın Özgür</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
+    <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
+    <lastBuildDate>Sat, 13 Jul 2013 15:50:00 +0300</lastBuildDate>
+    
+	<atom:link href="https://blog.askin.ws/tags/list/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Listeler ile ilgili garip bir döküman</title>
+      <link>https://blog.askin.ws/blog/listeler-ile-ilgili-garip-bir-dokuman/</link>
+      <pubDate>Sat, 13 Jul 2013 15:50:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/listeler-ile-ilgili-garip-bir-dokuman/</guid>
+      <description>Bu yazı oluşturulurken http://www.pythonforbeginners.com/python-lists-cheat-sheet/ adresindeki yazı referans alınmıştır. Bir çok yeri doğrudan çeviri olmakla beraber bir kısmını kendim baştan yazdım. Yazım - Mantık hataları vs. bulursanız yorum yazmaktan çekinmeyin.
+ Liste Nedir?  Bir veya birden fazla elemanı tutmak için kullanılan en basit veri yapısıdır. Liste elemanlar topluluğudur (string, integer ve hatta diğer listeler). Listedeki her bir elemana index değeri atanır.
+Listeler köşeli parantezler ile açılıp kapatılır. Listedeki her bir eleman virgül ile ayrılır.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1035 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on Aşkın Özgür</title>
+    <link>https://blog.askin.ws/blog/</link>
+    <description>Recent content in Blogs on Aşkın Özgür</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
+    <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
+    <lastBuildDate>Thu, 07 Jun 2018 10:40:00 +0300</lastBuildDate>
+    
+	<atom:link href="https://blog.askin.ws/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Soyadım Değişti</title>
+      <link>https://blog.askin.ws/blog/soyadim-degisti/</link>
+      <pubDate>Thu, 07 Jun 2018 10:40:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/soyadim-degisti/</guid>
+      <description>Malum sıkıntılı bir soyada sahiptim, 3 aylık uğraş sonucunda soyadımı değiştirmeyi başardım. İleride belki bunun için bir blog yazarım. Yeni soyadım Özgür :)</description>
+    </item>
+    
+    <item>
+      <title>Let&#39;s Encrypt</title>
+      <link>https://blog.askin.ws/blog/lets-encrypt/</link>
+      <pubDate>Mon, 06 Feb 2017 15:09:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/lets-encrypt/</guid>
+      <description>Daha önceki yazılarımda belirtiğim gibi ssl için startssl kullanıyordum. Ücretsiz sertifika verdiği için startssl uzun süre işimi gördü. Fakat son dönemde Let&amp;rsquo;s Encrypti keşfettim. Çok basit bir şekilde sertifika oluşturmamızı sağlıyor. İlk denememden sonra tüm kullandığım websitelerinde ve servislerde Let&amp;rsquo;s Encrypt kullanmaya karar verdim. Sizde seveceksiniz bundan eminim. Yaklaşık 12 sertifika oluşturdum, bunların takibini yapmak biraz sıkıntılı olacak. Bir de Let&amp;rsquo;s Encrypt sertifikaları 3 aylık oluşturuyor. Birşeylerin gözden kaçması çok mümkün.</description>
+    </item>
+    
+    <item>
+      <title>SSL Enabled</title>
+      <link>https://blog.askin.ws/blog/ssl-enabled/</link>
+      <pubDate>Tue, 11 Mar 2014 18:51:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/ssl-enabled/</guid>
+      <description>Son çıkan internet yasalarından sonra her siteye bir ssl sertifikası lazım olacak gibi. Sağolsun StartSSL ücretsiz SSL sertifikası veriyor, onu kullanarak başta blogum olmak üzere kendi host ettiğim her web sistesine sertifika ekliyorum. Şuan hem http hem de https olarak çalışıyor. Bir süre sonra tüm http trafiğini ssl&amp;rsquo;e yönlendireceğim.</description>
+    </item>
+    
+    <item>
+      <title>Slurm - Linux için bant genişliği takip aracı</title>
+      <link>https://blog.askin.ws/blog/slurm-linux-icin-bant-genisligi-takip-araci/</link>
+      <pubDate>Thu, 19 Dec 2013 12:15:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/slurm-linux-icin-bant-genisligi-takip-araci/</guid>
+      <description>Slurm temel olarak ağ trafiğini görüntülemek için kullanılan bir araçtır. Ağ kullanımını görselleştirerek kullanışlı bir çıktı üretir.
+Debian tabanlı sistemlerde aşağıdaki gibi kurulum yapabihlirsiniz.
+apt-get install slurm  Kurulumu tamamladıktan sonra komut satırından ağ trafiğinizi takip edebilirsiniz. En basit şekliyle aşağıdaki formatta komutu kullanabilirsiniz.
+slurm -i [Ağ Arayüzü]  -i parametresi hangi ağ arayüzünün kullanılacanı belirtir.
+slurm -i wlan0  slurm -i eth1  Klavye kısa yolları: Slurm etkileşim için birçok farklı tuşu destekler:</description>
+    </item>
+    
+    <item>
+      <title>Screen ile Irssi Kullanım Kılavuzu</title>
+      <link>https://blog.askin.ws/blog/screen-ile-irssi-kullanim-kilavuzu/</link>
+      <pubDate>Fri, 15 Nov 2013 17:17:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/screen-ile-irssi-kullanim-kilavuzu/</guid>
+      <description>irssi~[1]~ komut satırından çalışan ve bir çok geliştirici için popüler olan bir IRC istemcisidir. Irssi GNU Screen~[2]~ programı ile birlikte kullanılarak çıkış yapmadan bir veya birden fazla kabuk yaratabilirsiniz. Sürekli biligisayar değiltirip fakat irssi&amp;rsquo;a kaldığınız yerden devam etmek istediğinizde çok kullanılışılır.
+Avantajları:
+ Kişiler size mesaj bırakabilir. Siz dışardayken yapılan görüşmeleri sonradan yakalayabilirsiniz (genellikle &amp;ldquo;scroolback&amp;rdquo; olarak adlandırılır).  Yönergeler:
+ Bir adet linux VPS edinin ya da sık sık yeniden başlatılmayacak, ihtiyacınız olan yerden bağlanabileceğiniz *nix makina üzerinde ssh hesabı edinin.</description>
+    </item>
+    
+    <item>
+      <title>Hediyemiz Emeğimiz 2 - Adana Demirspor</title>
+      <link>https://blog.askin.ws/blog/hediyemiz-emegimiz-2-adana-demirspor/</link>
+      <pubDate>Sat, 19 Oct 2013 18:16:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/hediyemiz-emegimiz-2-adana-demirspor/</guid>
+      <description>Ev arkadaşım İdris ile birlikte onun odasına Adana Demirspor arması çizdir. Bu sefer bayağı bir uğraştık. Birçok yerini silip yeniden çizdik. Sonunda içimize sinen başarılı bir çalışma oldu.</description>
+    </item>
+    
+    <item>
+      <title>Hediyemiz Emeğimiz</title>
+      <link>https://blog.askin.ws/blog/hediyemiz-emegimiz/</link>
+      <pubDate>Sun, 29 Sep 2013 18:47:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/hediyemiz-emegimiz/</guid>
+      <description>Ablamın doğum günü için arkadaşım İdris ile birlikte ablamın odasının duvarına aşağıdak armayı çizdik. Sanırım bir Karşıyaka fanatiği için daha güzel bir hediye olmazdı :)</description>
+    </item>
+    
+    <item>
+      <title>MySQL veritabanı ile ilgili bazı bilgileri öğrenmek</title>
+      <link>https://blog.askin.ws/blog/mysql-veritabani-ile-ilgili-bazi-bilgileri-ogrenmek/</link>
+      <pubDate>Fri, 06 Sep 2013 12:59:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/mysql-veritabani-ile-ilgili-bazi-bilgileri-ogrenmek/</guid>
+      <description>MySQL kullanıyorsanız, phpMyAdmin gibi bir arayüzünüz olmadığı zaman veritabanı ile ilgili bilgi almak için aşağıdaki sorguları kullanabilirsiniz.
+Var olan veritabanlarını görmek:
+show databases;  Bir veritabanını kullanmak için seçmek:
+use veritabani_ismi;  Bir veritabanındaki tabloları listelemek:
+show tables;  show tables from veritabani_ismi;  Bir tablonun oluşturulma scriptini görme:
+show create table tablo_ismi  Bir tablonun kolonlarını görme:
+describe tablo_adi  </description>
+    </item>
+    
+    <item>
+      <title>Konsoldan Rastgele String Oluşturma</title>
+      <link>https://blog.askin.ws/blog/konsoldan-rastgele-string-olusturma/</link>
+      <pubDate>Tue, 13 Aug 2013 12:34:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/konsoldan-rastgele-string-olusturma/</guid>
+      <description>Konsoldan rastgele stringler oluşturmak için bir çok yöntem var, bunların bir çoğu random ve urandom aygıtlarını kullanıyor. Benim şimdi anlatacağım yöntemle urandom aygıtını kullanıyoruz.
+&amp;lt; /dev/urandom tr -dc A-Za-z0-9  Burada tr komutuna standart girdi olarak /dev/urandom aygıtını gösteriyoruz. urandom rastgele değerler üretir, bu üretilen değerlerin bazıları yazdırılabilir bazıları da yazdırılamayan karakterlere denk gelir. Biz tr komutu ile bu rastgele üretilen değerlerden alfanümerik olanları ayıklıyoruz. Tabi bu komut sonsuza kadar çıktı üretir, sadece istediğimiz kadarını almak için head komutunu kullanabiliriz.</description>
+    </item>
+    
+    <item>
+      <title>Linux&#39;ta disk doluluk oranının yanlış hesaplanması</title>
+      <link>https://blog.askin.ws/blog/linuxta-disk-doluluk-oraninin-yanlis-hesaplanmasi/</link>
+      <pubDate>Mon, 22 Jul 2013 15:13:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/linuxta-disk-doluluk-oraninin-yanlis-hesaplanmasi/</guid>
+      <description>Bir sunucuda garip bir problemle karşılaştım, diskte yer kalmadığını söylüyordu fakat ne yaparsam yapayım diski dolduran dosyaları bulamıyordum. Biraz araştırınca sorunu ve çözümünü buldum. Senaryo şöyle idi:
+ Dosya bir program tarafından okumak için açılır. Başka bir program bu dosyayı siler.  Bu senaryo gerçekleştiğinde, her ne kadar dosya silinmiş olsa da, hala diskte yer tutmaya devam edecektir. &amp;ldquo;du&amp;rdquo; komutuyla baktığınızda yer tutmayacaktır, ancak df ile kontrol ettiğimizde disk dolu olarak görünecektir.</description>
+    </item>
+    
+    <item>
+      <title>Python Sözlük Hızlı Rehber</title>
+      <link>https://blog.askin.ws/blog/python-sozluk-hizli-rehber/</link>
+      <pubDate>Sat, 20 Jul 2013 15:32:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/python-sozluk-hizli-rehber/</guid>
+      <description>Başlığında söylediği gibi, Python sözlük hızlı rehber
+# Anahtar/değer çiftleriyle sözlük tanımlama dict = { &#39;anahtar1′ : &#39;deger1′, &#39;anahtar2′ : &#39;deger2′, &#39;anahtar3′ : &#39;deger3′ } # Tüm anahtarları al sozluk.keys() # Tüm değerleri al sozluk.values() # Düzenleme sozluk[&#39;anahtar2&#39;] = &#39;deger8′ # Erişim print sozluk[&#39;anahtar1&#39;] # &#39;deger2&#39;yi yazdır print sozluk[&#39;anahtar2&#39;] # Boş sözlük tanımlama ve değer atama bosSozluk = {} bosSozluk[&#39;anahtar4&#39;] = &#39;deger4&#39; # Sözlük üzerinde döngü kurma (foreach) for anahtar in sozluk: print sozluk[anahtar] # Anahtarları sıralayıp, o sıraya göre değerleri yazdırmak anahtarlar = sozluk.</description>
+    </item>
+    
+    <item>
+      <title>Listeler ile ilgili garip bir döküman</title>
+      <link>https://blog.askin.ws/blog/listeler-ile-ilgili-garip-bir-dokuman/</link>
+      <pubDate>Sat, 13 Jul 2013 15:50:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/listeler-ile-ilgili-garip-bir-dokuman/</guid>
+      <description>Bu yazı oluşturulurken http://www.pythonforbeginners.com/python-lists-cheat-sheet/ adresindeki yazı referans alınmıştır. Bir çok yeri doğrudan çeviri olmakla beraber bir kısmını kendim baştan yazdım. Yazım - Mantık hataları vs. bulursanız yorum yazmaktan çekinmeyin.
+ Liste Nedir?  Bir veya birden fazla elemanı tutmak için kullanılan en basit veri yapısıdır. Liste elemanlar topluluğudur (string, integer ve hatta diğer listeler). Listedeki her bir elemana index değeri atanır.
+Listeler köşeli parantezler ile açılıp kapatılır. Listedeki her bir eleman virgül ile ayrılır.</description>
+    </item>
+    
+    <item>
+      <title>Off the Record Messaging (OTR)</title>
+      <link>https://blog.askin.ws/blog/off-the-record-messaging-otr/</link>
+      <pubDate>Sat, 13 Jul 2013 14:35:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/off-the-record-messaging-otr/</guid>
+      <description>Off the Record Messaging (OTR) anlık mesajlaşma servislerinde güvenli olarak mesajlaşmak için geliştirilmiş bir protokoldür. Birçok anlık mesajlaşma uygulaması için eklentileri geliştirilmiştir. Ben pidgin ile birlikte kullanıyorum. Özel olarak kalmasını istediğiniz sohbetlerinizi OTR kullanarak güvenli bir şekilde yapabilirsiniz. [1] adresinde OTR ile ilgili wikipedia sayfasını bulabilirsiniz. [2] adresinde OTR ana sayfası bulunmakta.
+Pidgin ve Ubuntu kullanıcıları için kurulum çok basit:
+sudo apt-get install pidgin-otr  Bir çok dağıtım deposunda OTR hazır olarak gelmektedir.</description>
+    </item>
+    
+    <item>
+      <title>cURL ile GET/POST ve cookie kullanımı</title>
+      <link>https://blog.askin.ws/blog/curl-ile-getpost-ve-cookie-kullanimi/</link>
+      <pubDate>Wed, 10 Jul 2013 17:18:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/curl-ile-getpost-ve-cookie-kullanimi/</guid>
+      <description>cURL kullanarak komut satırından istediğimiz bir web sayfasına get/post istekleri yapabiliriz. &amp;ndash;data parametresi ile post edilecek verileri gönderebiliryoruz. Url sonuna ekleyeceğimiz parametreler de get olarak gönderilecektir.
+curl --data &amp;quot;param1=value1&amp;amp;param2=value2&amp;quot; http://example.com/index.php  Web sayfasının döndürdüğü sonu doğrudan ekrana basılacaktır, bunu bir dosyaya aktarmak için
+curl --data &amp;quot;param1=value1&amp;amp;param2=value2&amp;quot; http://example.com/index.php &amp;gt; result.html  bir değişkene aktarmak için
+result=$(curl --data &amp;quot;param1=value1&amp;amp;param2=value2&amp;quot; http://example.com/index.php)  kullanabiliriz. Erişmek istediğimiz web sayfası kullanıcı girişi istiyorsa cookie kullanrak bunu yapabiliriz.</description>
+    </item>
+    
+    <item>
+      <title>Pidgin ile kendi domain&#39;imizden gtalk</title>
+      <link>https://blog.askin.ws/blog/pidgin-ile-kendi-domainimizden-gtalk/</link>
+      <pubDate>Wed, 03 Apr 2013 16:53:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/pidgin-ile-kendi-domainimizden-gtalk/</guid>
+      <description>Eğer kendi domain adımızla gmail kullanıyorsak, aynı adres ile gtalk da kullanabiliyoruz. Gmail web arayüzünden doğrudan gtalk kullanabiliyoruz, fakat iş pidgin gibi harici bir programla bunu yapmaya geldiğinde bir iki ayar yapmamız gerekiyor.
+Kendi adresim için nasıl bir ayar yaptığımı göstereceğim. Adresim askin [at] askin.ws. Aşağıdaki resimde yapılması gereken ayarlar yazıyor.</description>
+    </item>
+    
+    <item>
+      <title>Usb bellek üzerinde Raspberry PI</title>
+      <link>https://blog.askin.ws/blog/usb-bellek-uzerinde-raspberry-pi/</link>
+      <pubDate>Sun, 24 Mar 2013 20:39:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/usb-bellek-uzerinde-raspberry-pi/</guid>
+      <description>Malesef sd kart olmadan raspberry pi&amp;rsquo;yı boot etmemiz mümkün olmuyor. Benim elimde 1GB&amp;rsquo;lık bir sd kart vardı ve 2GB dan daha ufak imaj dosyaları bulamadım. Bu nedenle usb bellek ile boot etme ihtiyacı duydum.
+Benim sistemimde usb bellek ve sd kart aşağıdaki şekilde tanındı:
+- usb: /dev/sdd
+- sd: /dev/sde
+Öncelikle indirdiğimiz imaj dosyasını usb belleğimize kopyalıyoruz
+dd if=2013-02-09-wheezy-raspbian.img of=/dev/sdd  Elimizde bulunan sd karta 1 adet fat32 bölüm oluşturuyoruz (oluşturduğunuz bölüm hem ilk sırada hem de birincil bir bölüm olmalı).</description>
+    </item>
+    
+    <item>
+      <title>MySQL Yedek Alma</title>
+      <link>https://blog.askin.ws/blog/mysql-yedek-alma/</link>
+      <pubDate>Mon, 11 Mar 2013 16:42:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/mysql-yedek-alma/</guid>
+      <description>Yedek almak için mysqldump aracını kullanıyoruz.
+mysqldump -u kullanici_adi -h sunucu_adi db_adi -p &amp;gt; db_adi_yedek.sql  Alınan yedeği tekrar yüklemek için mysql komutunu kullanıyoruz
+mysql -u kullanici_adi -h sunucu_adi db_adi -p &amp;lt; db_adi_yedek.sql  </description>
+    </item>
+    
+    <item>
+      <title>Emacs ile identi.ca kullanımı</title>
+      <link>https://blog.askin.ws/blog/emacs-ile-identi-ca-kullanimi/</link>
+      <pubDate>Mon, 04 Mar 2013 11:55:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/emacs-ile-identi-ca-kullanimi/</guid>
+      <description>Identi.ca hesabini emacs ile takip etmek çok basit ve eğlenceli. identica-mode kullanarak identi.ca hesabini takip edebiliyoruz. identica-mode elpa ya da marmalade deposunda bulunmuyor. Bunun için eski yöntemle kurmak gerek.
+Öncelikle gerekli dosyaları gerekli yerlere indiriyoruz(git deposundan alacağım).
+cd ~/.elisp git clone http://git.savannah.gnu.org/cgit/identica-mode.git  Şimdi .emacs dosyamıza gerekli satırları ekleyelim.
+(setq load-path (cons &amp;quot;~/.elisp/identica-mode&amp;quot; load-path)) (require &#39;identica-mode) (setq identica-username &amp;quot;userName&amp;quot;)  Parolasız giriş yapabilmek için ~/.authinfo adinda bir dosya olusturup içini aşağıdaki gibi dolduralım.</description>
+    </item>
+    
+    <item>
+      <title>web2py demo mode</title>
+      <link>https://blog.askin.ws/blog/web2py-demo-mod/</link>
+      <pubDate>Tue, 26 Feb 2013 15:28:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/web2py-demo-mod/</guid>
+      <description>Bugün web2py ile uğraşırken, localhost üzerinde çalıştırmadığım için oluşan ticketları göremedim, o an için localhost&amp;rsquo;ta çalıştıramadığımdan dolayı web2py&amp;rsquo;yi demo modundan çalıştırmak zorunda kaldım. Bunu yapmak için applications/admin/models/0.py dosyasında 7. satırdaki
+DEMO_MODE = False  satırını
+DEMO_MODE = True  olarak değiştirmem yetti.</description>
+    </item>
+    
+    <item>
+      <title>Spam</title>
+      <link>https://blog.askin.ws/blog/spam/</link>
+      <pubDate>Thu, 07 Feb 2013 15:57:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/spam/</guid>
+      <description>Buradaki yazımda 8000 spam olunca tekrar yazacağım demiştim. 8000&amp;rsquo;i geçeli çok olmuş şuan akismet tarafından engelenen toplam 15292 spam mesaj bulunmakta. Son 6 ayda 4297 spam yorum almışım :)
+Bu arada yeni farkettim akismet bayağı detaylı istatistikler, göze hoş görünen grafikler sunuyor. İncelemenizi tavsiye ederim.</description>
+    </item>
+    
+    <item>
+      <title>Bir dosyanın boş olup olmadığını kontrol etme</title>
+      <link>https://blog.askin.ws/blog/bir-dosyanin-bos-olup-olmadigini-kontrol-etme/</link>
+      <pubDate>Wed, 07 Nov 2012 13:44:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/bir-dosyanin-bos-olup-olmadigini-kontrol-etme/</guid>
+      <description>Shell script yazarken bir dosyanın boş olup olmadığını kontrol etmemiz gerekebilir. Bunu yapmak için birkaç yöntem yazacağım.
+satirsayisi=`wc -l 194.27.108.90 | awk &#39;{split($0,a,&amp;quot; &amp;quot;); print a[1]}&#39;` if [ $satirsayisi == 0 ]; then echo &amp;quot;dosya bos&amp;quot;; fi  if [ -z $(cat dosyaadi) ]; then echo &amp;quot;dosya bos&amp;quot;; fi  if [ -z `cat dosyaadi` ]; then echo &amp;quot;dosya bos&amp;quot;; fi  Ve en güzeli
+if [ -s dosyaadi ]; then echo &amp;quot;Dosya dolu&amp;quot;; else echo &amp;quot;Dosya bos&amp;quot;; fi  </description>
+    </item>
+    
+    <item>
+      <title>Subversion sunucu kurulumu</title>
+      <link>https://blog.askin.ws/blog/subversion-sunucu-kurulumu/</link>
+      <pubDate>Thu, 23 Aug 2012 18:16:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/subversion-sunucu-kurulumu/</guid>
+      <description>Linux üzerinde kurulumdan bahsedeceğim. Öncelikle kullandığınız dağıtımın paket deposundan subversion paketini kurmalısınız. Ben debian kullandığım için
+sudo apt-get install subversion  Kurulum tamamlandıktan sonra gerekli tüm araçlara sahip olmuş oluyoruz.
+Bir depo oluşturalım.
+svnadmin create depom  depom adli dizinde bir depo oluşturmuş olduk. Bu depo üzerinde gerekli düzenlemeleri yapalım.
+depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu dosyayı açıp [general] başlığı altındaki ayarları düzenliyoruz. Burdaki tüm ayarlar yorum satırı haline getirişmiş, bunlardan işimize yarayanları aktif hale getirmemiz gerekiyor.</description>
+    </item>
+    
+    <item>
+      <title>UDP Broadcast sunucu - istemci</title>
+      <link>https://blog.askin.ws/blog/udp-broadcast-sunucu-istemci/</link>
+      <pubDate>Fri, 03 Aug 2012 15:31:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/udp-broadcast-sunucu-istemci/</guid>
+      <description> Sunucu:   İstemci:  </description>
+    </item>
+    
+    <item>
+      <title>Mysql Kullanıcı - Database Oluşturma</title>
+      <link>https://blog.askin.ws/blog/mysql-kullanici-database-olusturma/</link>
+      <pubDate>Wed, 11 Jul 2012 13:54:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/mysql-kullanici-database-olusturma/</guid>
+      <description>Herzaman unutup google&amp;rsquo;a bakacağıma buraya bakayım daha kolay :)
+Önce mysql sunucusuna bağlanalım:
+mysql -u root -p  Kullanıcı oluşturma:
+create user kullaniciadi;  Veritabanı oluşturma:
+create database veritabaniadi;  Kullanıcı yetkilerini verme: Tüm yetkiler:
+grant all on veritabaniadi.* to kullaniciadi@localhost identified by &#39;parola&#39;;  Sadece okuma (select):
+grant select on veritabaniadi.* to kullaniciadi@localhost;  Yetkiler hemen devreye girsin:
+flush privileges;  </description>
+    </item>
+    
+    <item>
+      <title>FSF</title>
+      <link>https://blog.askin.ws/blog/fsf-10889/</link>
+      <pubDate>Fri, 22 Jun 2012 12:21:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/fsf-10889/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Solariste Özyinelemeli grep</title>
+      <link>https://blog.askin.ws/blog/solariste-ozyinelemeli-grep/</link>
+      <pubDate>Wed, 06 Jun 2012 16:43:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/solariste-ozyinelemeli-grep/</guid>
+      <description>Özyinelemeli grep çok kullanışlı bir araç. Malesef solariste bulunan grep öz yinelemeli çalışmıyor. Ama bunu aşmak çok zor değil.
+$ grep &#39;ara&#39; `find . -name &#39;*&#39;`  </description>
+    </item>
+    
+    <item>
+      <title>Var olan bir SVN deposunun adresini değiştirme</title>
+      <link>https://blog.askin.ws/blog/var-olan-bir-svn-deposunun-adresini-degistirme/</link>
+      <pubDate>Mon, 09 Apr 2012 10:48:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/var-olan-bir-svn-deposunun-adresini-degistirme/</guid>
+      <description>Herhangi bir nedenle üzerinde çalıştığınız svn deposunun adresi değişirse aşağıdaki komutla gerekli değişikliği yapabilirsiniz.
+svn switch --relocate http://svn.example.com/path/to/repository/path/within/repository http://svnnew.example.com/new/repository/path/within/repository</description>
+    </item>
+    
+    <item>
+      <title>Android Galaxy Ace ile ekran görüntüsü alma</title>
+      <link>https://blog.askin.ws/blog/android-galaxy-ace-ile-ekran-goruntusu-alma/</link>
+      <pubDate>Sun, 08 Apr 2012 18:07:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/android-galaxy-ace-ile-ekran-goruntusu-alma/</guid>
+      <description>Android telefonumla uzun zamandır yanlışlıkla ekran görüntüsü alıyordum, birçok tuş kombinasyonunu denememe rağmen nasıl yapıldığını bulamamıştım. Bugün şans eseri nasıl yapıldığını buldum.
+Önce &amp;ldquo;Ana Sayfa&amp;rdquo; tuşu ile &amp;ldquo;Geri&amp;rdquo; tuşuna birlikte basıyoruz. Ardından &amp;ldquo;Geri&amp;rdquo; tuşuna tekrar basınca ekran görüntüsü alınıp kaydediliyor.
+Bukadar basitmiş :)</description>
+    </item>
+    
+    <item>
+      <title>HY-1602B9 16x2 LCD Display</title>
+      <link>https://blog.askin.ws/blog/hy-1602b9-16x2-lcd-display/</link>
+      <pubDate>Thu, 04 Aug 2011 16:40:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/hy-1602b9-16x2-lcd-display/</guid>
+      <description>Eğer elinizde yukardaki gibi bir LCD ekran varsa, aman dikkatli olunuz. Üzerinde yazan bacak numaralarına inanmayınız. Sonra bizim gibi ekranları tek tek yakarsınız.
+Normalde üzerinde
+ 1 2 3 4 &amp;hellip;. 16
+ şeklinde bir numaralandırma var. Ama aslında
+ 14 13 12 &amp;hellip;&amp;hellip;. 1 15 16
+ şeklinde numaralandırılıyor.</description>
+    </item>
+    
+    <item>
+      <title>Caps Lock&#39;a ne gerek var.</title>
+      <link>https://blog.askin.ws/blog/caps-locka-ne-gerek-var/</link>
+      <pubDate>Sun, 27 Mar 2011 21:37:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/caps-locka-ne-gerek-var/</guid>
+      <description>Hiç gerek yok.
+setxkbmap -option ctrl:nocaps  </description>
+    </item>
+    
+    <item>
+      <title>Yaşasın Spam</title>
+      <link>https://blog.askin.ws/blog/yasasin-spam/</link>
+      <pubDate>Sun, 27 Feb 2011 03:12:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/yasasin-spam/</guid>
+      <description>buradaki yazımda 2000spamı devirdiğimi yazmıştım. Şimdi olmuş toplam spam sayısı 4000, ikiye katlandıkça tekrar bir girdi yazmayı düşünüyorum :) 8000. spamda buluşmak dileğiyle :P</description>
+    </item>
+    
+    <item>
+      <title>Linux, Paralel Port ile 2x16 LCD Ekran Kullanımı</title>
+      <link>https://blog.askin.ws/blog/linux-paralel-port-ile-2x16-lcd-ekran-kullanimi/</link>
+      <pubDate>Sun, 27 Feb 2011 03:08:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/linux-paralel-port-ile-2x16-lcd-ekran-kullanimi/</guid>
+      <description>Çalıştığım projede linuxta paralel port ile lcd ekran kullanmam gerekti. Neredeyse internetin altını üstüne getirdim ama işime yarar çok birşey bulamadım. Sonunda DOS için yazılmış bir kod buldum. Bu kodu biraz inceleyip, gerekli püf noktaları bulunca kodu linux&amp;rsquo;a uydurmak çok zor olmadı. Hatta neredeyse sadece kullanılan fonksiyonun adını ve parametre yerlerini değiştirdim :)
+Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read/write seçimi için kullanılıyor.</description>
+    </item>
+    
+    <item>
+      <title>Java ile server socket yapımı</title>
+      <link>https://blog.askin.ws/blog/java-ile-server-socket-yapimi/</link>
+      <pubDate>Sat, 11 Dec 2010 04:25:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/java-ile-server-socket-yapimi/</guid>
+      <description>Bir proje için server sockete ihtiyaç duydum. Öncelikli dilim python olmasına rağmen, sunucu solaris olunca java ile yazmak daha cazip geldi. Öncelikli olarak test amaçlı birkaç satır kod yazdım. Akla gelen ilk örnek echo server oluyor :) aşağıda multi thread çalışan, birden fazla kullanıcıya cevap verebilecek bir echo server var:)
+Server.java
+/** * @author: Aşkın Yollu */ import java.net.*; import java.io.*; class Server { public static void main(String args[]) throws Exception { ServerSocket myService = null; Socket client = null; Worker tmpworker = null; try { // 1234 nolu portu dinle myService = new ServerSocket(1234); } catch (IOException e) { System.</description>
+    </item>
+    
+    <item>
+      <title>Saçmalayan konsol ekranını temizleme</title>
+      <link>https://blog.askin.ws/blog/sacmalayan-konsol-ekranini-temizleme/</link>
+      <pubDate>Wed, 08 Dec 2010 11:51:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/sacmalayan-konsol-ekranini-temizleme/</guid>
+      <description>Bir binary dosyayı cat ile görüntüleyince konsol ekranı sapıtabiliyor :) Böyle bir durumda konsolu adam etmek için
+reset  komutunu kullanabiliriz. Her seferinde komutu unutup neydi neydi diye düşünüyorum. Buraya yazıyorum ki bir daha unutursam hemen bakıp bulayım :)</description>
+    </item>
+    
+    <item>
+      <title>Emacs ile bul değiştir / find and replace</title>
+      <link>https://blog.askin.ws/blog/emacs-ile-bul-degistir-find-and-replace/</link>
+      <pubDate>Mon, 06 Dec 2010 18:04:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/emacs-ile-bul-degistir-find-and-replace/</guid>
+      <description>M-x replace-string RET aranan_string RET yerine_konulacak_string  Bunu regexli yapmak için replace-string yerine replace-regex kullanabilirsiniz. Birde buna kısayol eklesek tadından yenmez.
+.emacs dosyamıza aşağıdaki satırı ekliyoruz.
+;; Find and Replace (global-set-key (kbd &amp;quot;C-q&amp;quot;) &#39;replace-string)  C-q kombinasyonuna bastığımıza işlem başlamış oluyor.</description>
+    </item>
+    
+    <item>
+      <title>BusyBox - date ile saat ve tarihi ayarlamak</title>
+      <link>https://blog.askin.ws/blog/busybox-date-ile-saat-ve-tarihi-ayarlamak/</link>
+      <pubDate>Wed, 01 Dec 2010 13:42:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/busybox-date-ile-saat-ve-tarihi-ayarlamak/</guid>
+      <description>BusyBox içinde gelen date komutunun kullanımı biraz daha farklı. Saat ayarlamada bir değişiklik yok fakat tarihi ayarlamak biraz daha farklı. Saat ayarlama:
+date -s &amp;quot;23:59:59&amp;quot;  Tarih ve saati ayarlama
+date -s AAGGSSDDYYYY date -s 123123592010  12-31-2010 23:59&amp;rsquo;a karşılık geliyor.</description>
+    </item>
+    
+    <item>
+      <title>Genius!</title>
+      <link>https://blog.askin.ws/blog/genius/</link>
+      <pubDate>Wed, 24 Nov 2010 14:11:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/genius/</guid>
+      <description>Scp ile sembolik linkleri takip etmeden indirme işlemi yapmak için araştırma yaptığımda, aşağıdaki kodu buldum. Böyle bir kullanım 40 yıl düşünsem aklıma gelmezdi.
+cd /destination/directory ssh user@remote.host &amp;quot;cd /original/directory; tar cf - ./&amp;quot; | tar xvf -  Kaynak</description>
+    </item>
+    
+    <item>
+      <title>Java ile Oracle Veritabanına bağlanmak.</title>
+      <link>https://blog.askin.ws/blog/java-ile-oracle-veritabanina-baglanmak/</link>
+      <pubDate>Mon, 08 Nov 2010 20:29:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/java-ile-oracle-veritabanina-baglanmak/</guid>
+      <description>Öncelikle http://www.oracle.com/technetwork/database/enterprise-edition/jdbc101040-094982.html adresinden classes12.jar dosyasını indiriyoruz.
+Bu dosyayı bir dizine atıp, içeriğini bu dizine çıkartıyoruz. Bu dizini classpath değişkeninde belirtip kodlamaya başlıyoruz.
+import java.io.*; import java.sql.*; public class OraThin { public static void main(String[] args) { try { Connection con = null; Class.forName(&amp;quot;oracle.jdbc.driver.OracleDriver&amp;quot;); con=DriverManager.getConnection( &amp;quot;jdbc:oracle:thin:@localhost:1521:dbname&amp;quot;, &amp;quot;username&amp;quot;, &amp;quot;password&amp;quot;); Statement s = con.createStatement(); ResultSet rs = s.executeQuery(&amp;quot;SELECT * FROM KISI&amp;quot;); String name; String surname; while(rs.next()) { name = rs.getString(&amp;quot;AD&amp;quot;); surname = rs.getString(&amp;quot;SOYAD&amp;quot;); System.</description>
+    </item>
+    
+    <item>
+      <title>Python, Fonksiyona Parametre Olarak Fonksiyon Geçirmek</title>
+      <link>https://blog.askin.ws/blog/python-fonksiyona-parametre-olarak-fonksiyon-gecirmek/</link>
+      <pubDate>Sat, 01 May 2010 03:51:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/python-fonksiyona-parametre-olarak-fonksiyon-gecirmek/</guid>
+      <description>Bu yazıyı asıl yazma sebebim parametre olarak geçirilen fonksiyona geçirilecek parametreler :)
+Parametre olarak geçireceğimiz fonksiyonlar belli bir sayıda parametre alıyorsa yapacağımız iş basit,
+Mesela:
+def Merhaba(isim): print &amp;quot;Merhaba %s&amp;quot; % isim  Bunun gibi sadece tek parametre alan bir fonksiyon için aşağıdaki gibi bir fonksiyon yeterli olacaktır.
+def BuyukAbi(func, param): func(param)  BuyukAbi(Merhaba, &amp;quot;kelebek&amp;quot;) Merhaba kelebek  Bu fonksiyon parametre olarak aldığı func fonksiyonuna param parametresini geçirecektir.
+Eğer fonksiyonun aldığı parametre sayısı belirsiz ise, yani farklı sayıda parametre alan fonksiyonlarla uğraşmak gerekiyorsa yanına birkaç ekleme daha yapmamız gerekiyor.</description>
+    </item>
+    
+    <item>
+      <title>C ile Nesne Yaratmak</title>
+      <link>https://blog.askin.ws/blog/c-ile-nesne-yaratmak/</link>
+      <pubDate>Tue, 27 Apr 2010 04:08:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/c-ile-nesne-yaratmak/</guid>
+      <description>Evet kışkırtıcı bir başlık attım :) Aslında yapacağımız olay bir structı nesne gibi kullanmak. Buna benzer bir kodu yıllar önce görmüştüm. O günden bu güne sürekli böyle bir şeyi nasıl yaparım diye araştırdım. Anca bugün çözebildim olayı ;) Kodu aşağıda yorum satırıyla beraber veriyorum. Yorumlarda gerekli açıklamaları yaptım.
+Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşıma bu çıktı, bende boş durmasın dedim :)
+/* * Sınıfımızı yaratıyoruz */ struct _myobject { // alt alanlar int a, b; /* * Metod * Burada fonksiyon pointerı tanımlıyoruz */ int (*add)(struct _myobject*); }; // struct ön ekinden kurtuluyoruz typedef struct _myobject MyObject; /* * Asıl işi yapacak fonksiyonu tanımlıyoruz * MyObject structını parametre olarak alıyor */ int realAdd(MyObject* a) { return a-&amp;gt;a + a-&amp;gt;b; } int main ( void ) { /* * Nesnemizi oluşturuyoruz.</description>
+    </item>
+    
+    <item>
+      <title>Gtk &lt;= 2.18.9 Pencere Gizleme Sorunu</title>
+      <link>https://blog.askin.ws/blog/gtk-2-18-9-pencere-gizleme-sorunu/</link>
+      <pubDate>Thu, 08 Apr 2010 06:19:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/gtk-2-18-9-pencere-gizleme-sorunu/</guid>
+      <description>Gece gece uyku tutmadı var olan bir programı kurcalamaya başladım. Amacım programın sitem çekmecesinden çalışabilir hale getirmekti.
+Her şeyi yaptım fakat bir türlü pencereyi gizleyemiyordum :) Doküman gtk_window_get_mnemonics_visible () fonksiyonunu kullanmamı söylüyordu, fakat kullandığım gtk sürümünde bu fonksiyon tanımlı değildi(2.18.7). Eski sürüm için olan dokümanı incelediğimde bu işi yapan bir fonksiyon yoktu. Sistemde kurulu gtk ve python ile bu işi yapabiliyordum. Normal olarak c ile de yapabilmem lazımdı:) Biraz inceledikten sonra, önce pencereyi gizleyen, ardından boyutunu eski haline getirip sonra tekrar gösteren bir fonksiyon olduğunu fark ettim.</description>
+    </item>
+    
+    <item>
+      <title>Blogger&#39;a Kendi Alan Adınızı Yönlendirme</title>
+      <link>https://blog.askin.ws/blog/bloggera-kendi-alan-adinizi-yonlendirme/</link>
+      <pubDate>Thu, 08 Apr 2010 02:28:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/bloggera-kendi-alan-adinizi-yonlendirme/</guid>
+      <description>Daha önce birkaç kez yapmıştım, fakat her seferinde neler yaptığımı unutup acaba olmadı mı diye kuşkulanmıştım. En güzeli böyle bir yere yazıp gerektiğinde kopya çekmek :)
+Öncelikle bloggerda bir blogunuz olduğunu varsayıyorum :D
+Blooger hesabımıza giriş yapıyoruz.
+Şu adımları takip ediyoruz.
+Özelleştir -&amp;gt; Ayarlar -&amp;gt; Yayıncılık -&amp;gt; Özel Alan-&amp;gt; Gelişmiş Ayarlara Geçiş Yapın
+Buradaki kutuya alan adını yazın.
+&amp;ldquo;Eksik dosya barındırma sistemini mi kullanıyorsunuz?&amp;rdquo; kısmını olduğu gibi bırakıp, kelime doğrulamayı yapıp ayarları kaydediyoruz.</description>
+    </item>
+    
+    <item>
+      <title>PyGtk ile Sistem Çekmecesi</title>
+      <link>https://blog.askin.ws/blog/pygtk-ile-sistem-cekmecesi/</link>
+      <pubDate>Wed, 07 Apr 2010 21:53:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/pygtk-ile-sistem-cekmecesi/</guid>
+      <description>Gtk ile çok kolay bir şekilde geliştirdiğiniz uygulamayı sistem çekmecesinde gösterebilirsiniz.
+Ufak bir örnek kod veriyorum. Onun üzerinden anlatacağım.
+import pygtk import gtk class ShowIcon: def __init__(self): self.icon = gtk.StatusIcon() self.icon.set_from_file(&#39;gtk.png&#39;) self.icon.set_tooltip_text(&#39;Hello Python!!!&#39;) self.icon.set_visible(True) self.icon.connect(&amp;quot;activate&amp;quot;, self.hello) gtk.main() def hello(self, widget): print &#39;Hello Python !!!&#39; if __name__ == &#39;__main__&#39;: icon = ShowIcon()  6. satırda asıl işimizi yapacak olan StatusIcon nesnesini yaratıyoruz.
+7. satırda sistem çekmecesinde hangi ikonun görüntüleneceğini belirtiyoruz. set_from_file ikonu dosyadan alacağımız anlamına geliyor.</description>
+    </item>
+    
+    <item>
+      <title>PyGtk ve Thread Sorunu</title>
+      <link>https://blog.askin.ws/blog/pygtk-ve-thread-sorunu/</link>
+      <pubDate>Tue, 06 Apr 2010 23:03:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/pygtk-ve-thread-sorunu/</guid>
+      <description>PyGtk ile ara yüzüzünü hazırladığım bir program içinde thread kullanmam gerekiyordu. Kod çalışıyordu fakat thread işlemi istediğim gibi çalışmıyordu. Arayüzde bir değişiklik olduğu zaman thread çalışıyor, onun dışında hiç bir şekilde tepki vermiyordu.
+Uzun süre hatanın kodda olabileceğini düşündüm. Ama sonunda python gtk.main() ve thread 3&amp;rsquo;lüsünü aynı sorgu içinde googleda aratınca cevabı buldum. Gtk&amp;rsquo;ya thread kullandığımı anlatmam gerekiyordu :)
+gtk.gdk.threads_init()  Bu satırı kodumun başına eklediğimde herşey istediğim gibi çalışmaya başladı :)</description>
+    </item>
+    
+    <item>
+      <title>Pardus Ağ Yöneticisi İle Eduroam Ağına Bağlanmak</title>
+      <link>https://blog.askin.ws/blog/pardus-ag-yoneticisi-ile-eduroam-agina-baglanmak/</link>
+      <pubDate>Mon, 07 Dec 2009 09:45:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/pardus-ag-yoneticisi-ile-eduroam-agina-baglanmak/</guid>
+      <description>Bikaç gündür Pardus ve Eduroam ile uğraşıyordum. Eduroama bağlanmak için pratik yollar buldum fakat hiç birisi Ağ Yöneticisi kullanarak bağlanmanın zevkini vermiyordu.
+2 gün boyunca Ağ Yöneticisinin neresini değiştirmem gerektiğini arayıp durdum. Sonunda wireless-tools adlı paketin aradığım paket olduğunu keşfettim :) wireless tools paketi wpa_supplicant kullanarak wpa şifreleme kullanan ağlara bağlanmaya yarıyor. Sağolsun Pardus geliştiricileri wpa_supplicant paketi için dbus kullanan bir python betiği yazmışlar. Bu betik içinde tanımlanan methodlarla wpa_supplicantı yönetebiliyoruz.</description>
+    </item>
+    
+    <item>
+      <title>Pardus ile Eduroam ağına bağlanma</title>
+      <link>https://blog.askin.ws/blog/pardus-ile-eduroam-agina-baglanma/</link>
+      <pubDate>Sat, 05 Dec 2009 02:02:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/pardus-ile-eduroam-agina-baglanma/</guid>
+      <description>Pardusun ağ yöneticisi gayet şık bir arayüze sahip, fakat bize Eduroam ağına bağlanma özelliği sunmuyor.
+Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız için yeterli. Bu araçlar wpa_supplicant ve dhcpcd. Wpa_supplicant ağda kimlik denetimini sağlamak için, dhcpcd ise ağdan ip almamız için gerekli.
+Öncelikle wpa_supplicant için ayar dosyası oluşturmamız gerekiyor.
+network={ ssid=&amp;quot;eduroam&amp;quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap=TTLS phase2=&amp;quot;auth=PAP&amp;quot; anonymous_identity=&amp;quot;anonymous@ogr.deu.edu.tr&amp;quot; identity=&amp;quot;ogrencinumarasi@ogr.deu.edu.tr&amp;quot; password=&amp;quot;sifre&amp;quot; }  Bu ayarlar Dokuz Eylül Üniversitesi için.</description>
+    </item>
+    
+    <item>
+      <title>TrekStor maxi g.u 500GB harici hard disk</title>
+      <link>https://blog.askin.ws/blog/trekstor-maxi-g-u-500gb-harici-hard-disk/</link>
+      <pubDate>Wed, 16 Sep 2009 20:32:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/trekstor-maxi-g-u-500gb-harici-hard-disk/</guid>
+      <description>Geçen hafta bilgisayarım bozulunca, verilerimi kurtarmak için bir harici disk almak zorunda kaldım.
+Malum servisler arıza ne olursa olsun hemen format atma merakındalar.
+Tekrar bulamayacağım 20GB kadar, film müzik derken 100GB kadar verim vardı. Diski alınca benim hard diski arkadaşın bilgisayarına takıp hepsini aldım.
+Birazda harici diskten bahsedeyim.
+Disk biraz büyük gibi. Gerçi daha büyüklerini de gördüm, ama biraz daha ufak olabilirdi. Gayet hafif, Yanında taşımamız gereken bir adaptörü olmasa tadından yenmez.</description>
+    </item>
+    
+    <item>
+      <title>post 2 del.icio.us</title>
+      <link>https://blog.askin.ws/blog/post-2-del-icio-us/</link>
+      <pubDate>Tue, 15 Sep 2009 20:15:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/post-2-del-icio-us/</guid>
+      <description>Daha önce post to del.icio.us eklentisinden bahsetmiştim.
+Hazır eklentiye el atmışken birkaç özellik ekledim.
+ Gizli gönderim Var olan linkin üzerine yazılma seçeneği Türkçe desteği  Ön tanımlı atanan kısayolu linuxta gizli gezinme kısayolu ile çakıştığı için değiştirdim. Fakat windowsta yer imleri kısayolu ile çakışmaya başladı bu sefer.
+Bir sonraki ekleyeceğim özellik bu kısa yolun kullanıcı tarafından değiştirilebilmesini sağlamak olacak.
+Eklentinin proje sayfası burası. Proje sayfasından eklentinin ekran görüntülerine bakabilirsiniz.</description>
+    </item>
+    
+    <item>
+      <title>Ah şu spamcılar</title>
+      <link>https://blog.askin.ws/blog/ah-su-spamcilar/</link>
+      <pubDate>Tue, 01 Sep 2009 20:25:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/ah-su-spamcilar/</guid>
+      <description>Bugün akismet&amp;lsquo;e takılmış 34 spam vardı kutumda. Silmeden önce hep bi göz atarım ne yazmışlar diye. Genelde mesajın tamamı linklerden oluşur. Çok nadir olarak sadece 1 link olur ve ingilizcedir herzaman.
+Bugün gelen spamlardan biri türkçeydi ve hiç link yoktu. Sadece websitesi bömünde acayip bi site vardı. Mesajın içeriği de yazıyla tamamen uyumluydu. Tam elim spam değil tuşuna gideceği sırada garip duygularla yorumun yapıldığı yazıya bakma ihtiyacı duydum ve ardından gülümsedim :) Kahraman spamcımız gelen mesajı aynen almış, site kısmına reklamını yapacağı siteyi yazıp tekrar yollamış.</description>
+    </item>
+    
+    <item>
+      <title>Post to del.icio.us</title>
+      <link>https://blog.askin.ws/blog/post-to-del-icio-us/</link>
+      <pubDate>Sat, 29 Aug 2009 23:48:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/post-to-del-icio-us/</guid>
+      <description>Delicious için kullanılabilecek en güze eklenti bence Post to del.icio.us eklentisi. Fakat firefox 3.5 ile uyumsuz olduğu için kurmak sıkıntılı oluyordu. Bugune kadar .mozilla dizinimi hiç silmediğim için uyumsuz demesine rağmen kullanabildim. Fakat nedense bugün çalışmıyordu. Bende açtım içini baktım nesi var diye :)
+install.rdf dosyası içinde maxVersion tagları arasında 3.0.* yazıyordu, buda 3.1 ve üzeri sürümde çalışmaz manasına geliyor. Düzenleyip bide xpi dosyası haline getirdim. Burdan kullanabilirsiniz.</description>
+    </item>
+    
+    <item>
+      <title>2000&#39;i devirdik, yaşasın SPAM</title>
+      <link>https://blog.askin.ws/blog/2000i-devirdik-yasasin-spam/</link>
+      <pubDate>Mon, 03 Aug 2009 22:17:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/2000i-devirdik-yasasin-spam/</guid>
+      <description>An itibariyle bloguma 2004 adet spam yorum atılmış. Bıkmayıp usanmayıp spam bot hazılıyan spamcılara ve bu spam yorumları yakalayan akismet&amp;lsquo;e teşekürlerimi sunuyorum.
+Tabi gmailin üstün spam ayıklama kabiliyetini de unutmamak lazım. Arada sırada spam olmayan mailleride engellemesine rağmen çok iyi iş çıkartıyor.</description>
+    </item>
+    
+    <item>
+      <title>Pardus 2009</title>
+      <link>https://blog.askin.ws/blog/pardus-2009/</link>
+      <pubDate>Sat, 25 Jul 2009 01:09:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/pardus-2009/</guid>
+      <description>Sonunda Pardus 2009&amp;rsquo;u bilgisayarıma kurabildim. Ailemin yanına geldiğim için Pardus&amp;rsquo;u indiremiyordum. Malum kotalı internet, sıkıntı yaratıyor.
+Kurulum sorunsuz tamamlandı. Kurulum arayüzü çok hoş olmuş. Çok kullanışlı ve çok kolay bir arayüzü olmuş. Bilgisayarıma en hızlı kurulabilen Pardus sürümü. Saat tutmadım ama, 20 dakka ile 30 dakka arasında bir sürede kurulduğunu tahmin ediyorum.
+Kablosuz ağ kartımı sorunsuz tanıdı ve WPA2 şifreli ağıma çok kolay bir şekilde bağlandı. Daha önce de tanıyordu, fakat ağımı göremiyordu, ben de mecburen ndiswraper ile kullanıyordum.</description>
+    </item>
+    
+    <item>
+      <title>Mysql Data Dizinini Değiştirme</title>
+      <link>https://blog.askin.ws/blog/mysql-data-dizinini-degistirme/</link>
+      <pubDate>Tue, 14 Jul 2009 02:11:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/mysql-data-dizinini-degistirme/</guid>
+      <description>Mysql data dizini ön tanımlı /var/lib/mysql olarak belirlenmiştir. Çeşitli ihtiyaçlardan dolayı bunun yerini değiştirmemiz gerekebilir. Mesela ben ayrı bir bölümde tuttuğum /home dizini altına taşımak istiyorum. Tüm işlemleri root yetkisiyle yapıyoruz. Öncelikle mysql servisini durduralım.
+Ben pardus kullandığım için
+# service mysql-server stop  Diğer dağıtımlarda farklı olabilir.
+Ardından ilgili dizini yeni yerine kopyalayalım.
+# cp -a /var/lib/mysql /home  Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. /etc/mysql/my.cnf dosyasında</description>
+    </item>
+    
+    <item>
+      <title>C ile Komut Satırı Argumanları ve Parametreleri</title>
+      <link>https://blog.askin.ws/blog/c-ile-komut-satiri-argumanlari-ve-parametreleri/</link>
+      <pubDate>Fri, 10 Jul 2009 18:01:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/c-ile-komut-satiri-argumanlari-ve-parametreleri/</guid>
+      <description>Komut satırı programları -h yada &amp;ndash;help gibi parametreler alırlar. Bu alınan parametrelerin kolay kullanılması için getopt adında bir kütüphane yaratılmış. Bu kütüphane kullanlanılarak çok rahat böyle programlar yazılabilir.
+Bende bunun için küçük bir örnek yazdım.
+Örnek</description>
+    </item>
+    
+    <item>
+      <title>Pidgin Titreşim Eklentisi - Attention Button</title>
+      <link>https://blog.askin.ws/blog/pidgin-titresim-eklentisi-attention-button/</link>
+      <pubDate>Sun, 07 Jun 2009 21:20:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/pidgin-titresim-eklentisi-attention-button/</guid>
+      <description>Pidginin en sevdiğim özelliklerinden bir tanesi, sohbet ettiğiniz kişi size tireşim gönderdiğinde ekrana sadece &amp;rdquo;&amp;hellip; size uyarı gönderdi&amp;rdquo; yazması. Bu özelliğer sahip olmasının birde dezavantajı var tabiki, siz de başkalarına titreşim yollayamıyorsunuz. Bugün bu eksikliği fazlasıyla hissedince ufak çaplı bir araştırma yaptım ve Attention Button eklentisiyle karşılaştım.
+Kurulumu çok basit. Burdan en güncel sürümünü indiriyorsunuz (şimdilik 0.3), arşivden çıkartıp .so uzantılı dosyayı ev dizininiz altında .purple/plugins/ dizinine kopyalıyorsunuz. Ardından pidgine gidip eklentiler(plugins) kısmından aktif ediyorsunuz.</description>
+    </item>
+    
+    <item>
+      <title>Pardus - Atheros AR242x - WPA2</title>
+      <link>https://blog.askin.ws/blog/pardus-atheros-ar242x-wpa2/</link>
+      <pubDate>Tue, 02 Jun 2009 21:48:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/pardus-atheros-ar242x-wpa2/</guid>
+      <description>Pardus 2008 kurulumla beraber Atheros AR242x kablosuz ağ kartını tanıyor, fakat nedense başka ağları görmesine rağmen evimde WPA2 ile kurulu kablosuz ağımı göremiyordu. Bende diğer dağıtımlarda kullandığım ndiswrapper ile sorunumu çözmeyi denedim.
+Öncelikle ndiswrapperı kurduktan sonra windows için yazılmış driverları seçmemiz gerekiyor. Ardından
+/etc/modules.autoload.d/kernel-2.6
+dosyasına
+ndiswrapper
+satırını ve
+/etc/modprobe.d/blacklist-compat
+dosyasına da
+blacklist ath_pci
+satırını eklemek gerekiyor. Bunları ekledikten sonra kde&amp;rsquo;de ağ programcığıyla bağlanabiliyorsunuz.
+Fakat XFCE kullanıyorsanız wicd kullanmanız gerekiyor. Wicd ile doğrudan kullanamıyoruz.</description>
+    </item>
+    
+    <item>
+      <title>Pardus 2009 yaz stajı ve ben:)</title>
+      <link>https://blog.askin.ws/blog/pardus-2009-yaz-staji-ve-ben/</link>
+      <pubDate>Sat, 09 May 2009 01:23:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/pardus-2009-yaz-staji-ve-ben/</guid>
+      <description>Bugün hayatımdaki en güzel günlerden biri. Pardus 2009 yaz stajı için kabul edilen 13 kişiden birisi oldum. Yazın staj yapmak için adam akıllı bi yer ararken Pardusa kabul edilmem çok muhteşem birşey. Yazın pardus ve özgür yazılım için elimden geleni yapacağım. Benimle beraber kabul edilen diğer arkadaşlara başarılar diliyorum.
+http://www.ozgurlukicin.com/haber/pardus09-yaz-staji-sonuclari/</description>
+    </item>
+    
+    <item>
+      <title>Bir GNU/Linux kurulumunu başka bir harddiske/bölüme taşımak</title>
+      <link>https://blog.askin.ws/blog/bir-gnulinux-kurulumunu-baska-bir-harddiskebolume-tasimak/</link>
+      <pubDate>Mon, 06 Apr 2009 22:22:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/bir-gnulinux-kurulumunu-baska-bir-harddiskebolume-tasimak/</guid>
+      <description>Öncelikle bir çalışan cd ile sistem açılır, benim tercihim gparted live cd. Sizin elinizin altında ne varsa kabuldur. İlla çalışan cd olmasına gerek yok, herhangi bir linux cdside olabilir. Bize mount, cp ve nano komutları lazım. Bunları sağlayan herhangi bir cd kullanılabilir.
+Taşınacak kurulumun hangi disk bölümünde olduğu bilinmeli. Ben 2. bölümdeki kurulumu 1. bölüme taşıyacağım. Yani /dev/hdc3 den /dev/hdc1 e taşıma yapacağım(sizdeki disk isimleri muhtemelen farklıdır).
+Cd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte.</description>
+    </item>
+    
+    <item>
+      <title>Pardus-Linux.Org e-dergi bana süpriz yaptı...</title>
+      <link>https://blog.askin.ws/blog/pardus-linuxorg-e-dergi-bana-supriz-yapti/</link>
+      <pubDate>Wed, 11 Mar 2009 01:36:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/pardus-linuxorg-e-dergi-bana-supriz-yapti/</guid>
+      <description>Dergi son sayısında ki (Sayı 6) site tanıtımında benim bloguma yer verdi, kendilerine buradan çok teşekür ediyorum. Bu jestleri bana blog yazmada ve Özgür Yazılım çabalarımda güç verecek.
+Derginin bu sayısını gerçekten beğendim, hele hele tamamen özgür yazılım araçlarıyla oluşturulması, arkasında hiçbir mali destek olmadan sadece topluluk katkısıyla ve güzel bir motivasyon ile düzenli olarak çıkması derginin gönlümde olan yerini iyice pekiştirdi.
+Dergi kapağında 8 Mart Dünya Emekçi Kadınla Günü yazsaydı daha güzel ve anlamlı olurdu:) ama hatırlamak ve önem vermek çok daha önemli.</description>
+    </item>
+    
+    <item>
+      <title>Komut satırından resimleri pdf slaytına dönüştürme</title>
+      <link>https://blog.askin.ws/blog/komut-satirindan-resimleri-pdf-slaytina-donusturme/</link>
+      <pubDate>Fri, 27 Feb 2009 20:29:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/komut-satirindan-resimleri-pdf-slaytina-donusturme/</guid>
+      <description>Lanet dersimiz File System için hocamız pptx uzantılı bir dosya verince banada bunu bir şekilde pdf&amp;rsquo;e çevirmek düştü.
+Önce openoffice ile açmayı denedim, açıyordu fakat anlaşılır bir halde değildi. Bende alıp arkadaşımın bilgisayarına gittim, fakat onda da pdf&amp;rsquo;e dönüştüremiyordum. Dönüştürebildiğim formatlara bakarken .jpg&amp;rsquo;i gördüm. Nasılsa linuxta bu bi şekilde pdf&amp;rsquo;e dönüştürüm diyerek kendimden emin bi şekilde dönüşümü yapıp odama geçtim.
+2 buçuk dakikalık bir arama ile aradığımı buldum, ImageMagick bu işi yapabiliyormuş.</description>
+    </item>
+    
+    <item>
+      <title>Linuxta kullandığım programlar - Güncellendi</title>
+      <link>https://blog.askin.ws/blog/linuxta-kullandigim-programlar-guncellendi/</link>
+      <pubDate>Sun, 15 Feb 2009 02:56:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/linuxta-kullandigim-programlar-guncellendi/</guid>
+      <description>&lt;p&gt;Uzun zamandır canım sıkılıyor, yapacak bir iş bulamıyordum, can sıkıntısından eski yazılarımı kurcalarken kullandığım programların çoğunun değiştiğini farkettim, ve bu yazıyı güncellemeye karar verdim. Sıkıntıdan bir yarım saat çaldım:) mutlu sayılırım, umarım işinize yarar.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Metin Düzenleyici: &lt;a href=&#34;http://www.xfce.org/projects/mousepad/&#34;&gt;Mousepad&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+Uzun zaman gedit kullandım, hatta program yazarken bile gedit kullandım. Ancak yaptığım işlere bakarak, programın çok kastığını farkettim. Birde üstüne geany programının geditten hızlı açıldığı görünce başka arayışlara girdim, bu noktada mousepad beni tatmin etti. Bir xfce projesi olan mousepad gerçekten basit, sade ve hızlı.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Müzik: &lt;a href=&#34;http://mpd.wikia.com/&#34;&gt;MPD&lt;/a&gt; &lt;a href=&#34;http://sonata.berlios.de/&#34;&gt;Sonata&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+Müzik dinlerken kullandığım programın elimin altında dolaşmasını pek sevmem, gerçi birçok program kendini araç çubuğunda saklayabiliyor, ancak her bilgisayarı açtığımda yeniden müzik programını açmak pek hoşuma gitmiyor. MPD daha x açılmadan bana müziğimi sunmaya başlıyor. Gerçi okulda bilgisayarı açtığımda sıkıntı çıkabiliyor:)&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Wordpress 2.7</title>
+      <link>https://blog.askin.ws/blog/wordpress-27/</link>
+      <pubDate>Thu, 11 Dec 2008 23:23:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/wordpress-27/</guid>
+      <description>Az önce wordpress&amp;rsquo;i güncelledim. 2.5&amp;rsquo;in arayüzü çok hoştu ama biraz kullanışsız gelmişti bana, şimdi çok hoş olmuş. Yazı yaz, yazı yaz diye bağırıyor sanki. Bende kırmıyor yazıyorum&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Gentoo Karasuları</title>
+      <link>https://blog.askin.ws/blog/gentoo-karasulari/</link>
+      <pubDate>Fri, 05 Sep 2008 17:54:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/gentoo-karasulari/</guid>
+      <description>06-09-2008 saat 00:25 itibariyle gentooda temel sorunlarımı çözmüş bulunmaktayım. Bugünden itiberen bilgisayarın güç düğmesine bastıktan sonra açılacak olan sistem gentoo. Umarım bu birlikteliğim uzun sürer.
+Temel sorunlarım:
+ Ses: Artık benim de bilgisayarım ses çıkartıyor:) Wifi: Artık benim de bilgisayarım kablosuz internete bağlanabiliyor:)  </description>
+    </item>
+    
+    <item>
+      <title>Firefox&#39;ta ferahlık</title>
+      <link>https://blog.askin.ws/blog/firefoxta-ferahlik/</link>
+      <pubDate>Wed, 20 Aug 2008 08:36:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/firefoxta-ferahlik/</guid>
+      <description>Firefoxta araç çubuklarının çok yer kaplamasına sinir oluyorum, bu nedenle elimden geldiğince ekranı genişletmeye çalışıyorum.
+Yaklaşık 1 yıldır bookmark toolbar olmadan kullanıyorum, site adreslerini aklımda tutabildiğim için elimin altında bookmarklara ihtiyaç duymuyorum, gerektiğinde zaten birkaç tıkla yer imlerine ulaşabiliyorum. Bugünde adres çubuğunu, ileri - geri - yenile - durdur düğmeleriyle google arama kutusunu yukarı çıkartıp navigation toolbarı sildim, Tiny Menu adlı eklentiyi kurup menuleri tek bir başlık altında topladım, artık 4 çubukta yaptığım işi 2 çubukta yapıyorum, hatta tek sayfa açıksa ortalıkta sadece 1 çubuk oluyor :)</description>
+    </item>
+    
+    <item>
+      <title>İlk .deb paketim</title>
+      <link>https://blog.askin.ws/blog/ilk-deb-paketim/</link>
+      <pubDate>Fri, 01 Aug 2008 22:10:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/ilk-deb-paketim/</guid>
+      <description>Sonunda ilk .deb paketimi yapmayı başardım:) aslında okadar zor bi iş değilmiş, biraz kaynak koddan derleme pratiği yapıp, üzerine birkaç döküman okuyunca çabubak oluyor.
+Bu şanslı pakatimiz PCmanfm oldu. Normalde depoda bulunuyor ama ben experimental sürümünü kullanıyorum. Uzun zamandır derleyerek kullanıyordum. Ama aklıma birden esti hadi şunun .deb paketini yapayım dedim ve yaptım.
+Bu sürümde ssh, samba yada ftp üzerinden bir makinaya bağlanıp oranın dizinlerini kullanabiliyoruz. Bir kere ayarını yaptığında artık kenarda hazır bekleyip senin bağlan demeni bekliyor.</description>
+    </item>
+    
+    <item>
+      <title>Moc kullanarak konsoldan müzik dinleme ve lastfm</title>
+      <link>https://blog.askin.ws/blog/moc-kullanarak-konsoldan-muzik-dinleme-ve-lastfm/</link>
+      <pubDate>Thu, 12 Jun 2008 16:25:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/moc-kullanarak-konsoldan-muzik-dinleme-ve-lastfm/</guid>
+      <description>Moc player konsolda çalışan bir müzik çalıcı. Açılımı Music on Console. Mocun en çok sevdiğim özelliği x ortamı yeniden başlasa, kapansa, göçse bile hiç sorun çıkarmadan çalmaya devam ediyor. Yani depremde, selde ve yangında 7*24 hizmet:)
+Kurulum
+* debian - ubuntu - vs.
+sudo apt-get install moc
+* pardus
+sudo pisi it moc
+Şimdi konsoldan
+mocp
+komutunu verelim. Gerçekten renkli şık bi tasarımı var. Grafik ekranı hiç aratmıyor:). Eğer renkleri beğenmezseniz [Shift] + [T] kombinasyonu ile farklı renkler seçebilirsiniz.</description>
+    </item>
+    
+    <item>
+      <title>Linux - Bir dizin yada dosyanın hangi uygulama tarafından kullanıldığını öğrenme</title>
+      <link>https://blog.askin.ws/blog/linux-bir-dizin-yada-dosyanin-hangi-uygulama-tarafindan-kullanildigini-ogrenme/</link>
+      <pubDate>Sat, 24 May 2008 13:30:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/linux-bir-dizin-yada-dosyanin-hangi-uygulama-tarafindan-kullanildigini-ogrenme/</guid>
+      <description>Bazen bir dosyayı silmeye çalıştığımızda yada bir diski ayırmaya çalıştığımızda, dosyanın meşgul olduğunu belirten bir uyarı çıkar ve işimizi yapmamızı engeller. Bu gibi durumlarda
+fuser -m -u /dosya-dizin
+komutunu kullanarak hangi sürecin (process) bize engel olduğunu öğreniriz.
+-u paramatresi sürecin sahibini gösterir.
+kill
+komutunu kullanarak süreci sonlandırıp işimizi tamamlayabiliriz, yada
+ps auxw
+komutunu kullanarak sürecin hangi uygulamaya ait olduğunuz öğrenebiliriz.
+kaynak: linux focus</description>
+    </item>
+    
+    <item>
+      <title>Linuxda kullandığım programlar</title>
+      <link>https://blog.askin.ws/blog/linuxda-kullandigim-programlar/</link>
+      <pubDate>Thu, 15 May 2008 14:20:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/linuxda-kullandigim-programlar/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Metin Düzenleyici: &lt;a href=&#34;http://www.gedit.org&#34;&gt;Gedit&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+Linuxda düz metinlerle uğraşırken genelde gedit kullanıyorum. Hatta çoğu zaman program yazarken gedit kullanıyorum. Kodları renklendirebilmesi sayesinde ne yazdığımı sorun yaşamadan anlıyorum. Ayırıca eklentilerden Embeded terminal(tümleşik terminal)i kullanarak terminal açmaya gerek duymadan kodlarımı derleyebiliyorum.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Müzik: &lt;a href=&#34;http://www.gnome.org/projects/rhythmbox&#34;&gt;Rhythmbox&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+Müzik dinlerken kullandığım programın elime ayağıma dolaşmasını pek sevmem, ve gerektiği zamanda hemen ulaşabilmek isterim. Rhythmbox araç çubuğuna yerleşebildiği için hem elime dolaşmıyor hemde istediğimde hemen ulaşabiliyrum. Lastfm ekletsi ile lastfm&amp;rsquo;in niğmetlerinden yararlanabiliyorum,&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Rhythmbox m4a - mp4 faad</title>
+      <link>https://blog.askin.ws/blog/rhythmbox-m4a-mp4-faad/</link>
+      <pubDate>Tue, 13 May 2008 14:07:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/rhythmbox-m4a-mp4-faad/</guid>
+      <description>Bügün m4a uzantılı mp4 dosyalarını rhythmboxda çalma listesine eklemeye çalışırken, rhythmbox bana hiç bir tepki vermiyordu. Aynı dosyayı totem ile sorunsuz açabiliyordum. Biraz araştırınca rhythmboxın faad adlı eklentiye(aslında konsoldan çalışan bir nevi medya oynatıcı) ihtiyaç duyduğunu öğrendim.
+Eğer debian temelli bir dağıtım kullanıyorsanız aşağıdaki komut işinizi görecektir.
+aptitude install faad</description>
+    </item>
+    
+    <item>
+      <title>SSH Filesystem ile uzak makinadaki dizini yerele bağlamak</title>
+      <link>https://blog.askin.ws/blog/ssh-filesystem-ile-uzak-makinadaki-dizini-yerele-baglamak/</link>
+      <pubDate>Wed, 07 May 2008 10:36:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/ssh-filesystem-ile-uzak-makinadaki-dizini-yerele-baglamak/</guid>
+      <description>Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz.
+Ben daha önce bahsettiğim internet canavarı:) için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu.</description>
+    </item>
+    
+    <item>
+      <title>Çıkmaz demeyin şansınızı deneyin - 2</title>
+      <link>https://blog.askin.ws/blog/cikmaz-demeyin-sansinizi-deneyin-2/</link>
+      <pubDate>Thu, 17 Apr 2008 12:27:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/cikmaz-demeyin-sansinizi-deneyin-2/</guid>
+      <description>Buradaki yazımdan esinlenip yazdım bunu. Azıcık java öğrendim artık uygulama yapma zamanıdır. Eminim daha güzel (hatta belki benim ki iğrenç bi koddur(:) yazılabilir. Ama şimdilik bunu yapabiliyorum.
+public class Sayisal { int[] _kupon = new int[6]; int _num; public Sayisal(){ int sira = 0; while (sira &amp;lt; 6) { _num = (int) (1 + Math.random() * 49); if (!varmi(_kupon, _num)) _kupon[sira++] = _num; } } private boolean varmi(int[] kupon, int num) { for (int x: kupon) {if (x == num) return true;} return false; } public String toString(){ String kuponStr = &amp;quot;&amp;quot;; for (int i = 0; i &amp;lt; 6; i++) kuponStr += (_kupon[i] + &amp;quot; &amp;quot;); return kuponStr; } public static void main(String[] args){ byte kuponSayisi; if (args.</description>
+    </item>
+    
+    <item>
+      <title>Güzel bir java dökümanı</title>
+      <link>https://blog.askin.ws/blog/guzel-bir-java-dokumani/</link>
+      <pubDate>Tue, 15 Apr 2008 19:44:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/guzel-bir-java-dokumani/</guid>
+      <description>Bugun harıl harıl güzel bir java dökümanı arıyordum. Karşıma http://www.godoro.com çıktı. İçinde gayet güzel bilgiler bulunuyor.Şuraya da güzel bir java kitabı koymuşlar. Giriş için gayet hoş bir kitap olmuş, yeterince açıklayıcı ve bol örnekleri de koymayı unutmamışlar. Arkadaşlara yaptıklarından dolayı teşekür ediyorum. Kitabı çevrim dışı kullanmak isterseniz buradan indirip kullanabilirsiniz.</description>
+    </item>
+    
+    <item>
+      <title>Yine Yasak - Proxy nedir? Nasıl ayarlanır.</title>
+      <link>https://blog.askin.ws/blog/yine-yasak-proxy-nedir-nasil-ayarlanir/</link>
+      <pubDate>Fri, 25 Jan 2008 17:43:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/yine-yasak-proxy-nedir-nasil-ayarlanir/</guid>
+      <description>&lt;p&gt;Youtube son haberlere göre arka arkaya 3. kez kapatılacak. Şuan girebiliyorum sorun yok. Ama yakında bişiler olacak:) Geçen kapandığında DNS adresini değiştirmemiz de işe yaramamıştı. Şimdi yapacağımız şey ise proxy kullanmak olacak. Gerçi proxy kullanmak sakat bi yöntem, bütün trafiğimiz başka bir bilgisayar üzerinden geçeceği için verilerimizin dinlenme ihtimali var. Bu nedenle proxy kullanırken dikkatli olmakta fayda var.&lt;/p&gt;
+
+&lt;p&gt;Proxy olayında biz isteklerimizi bir vekil sunucuya iletiyoruz. Sunucuda bizim yerimize ilgili sitenin içeriğini alıyor ve bize sunuyor. Kabaca bu şekilde tanımlayabiliriz.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Bir dönem daha bitti</title>
+      <link>https://blog.askin.ws/blog/bir-donem-daha-bitti/</link>
+      <pubDate>Fri, 25 Jan 2008 09:18:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/bir-donem-daha-bitti/</guid>
+      <description>Sonunda bir dönem daha bitti. Yav aslında çokta olmadı başlayalı. Neyse ikinci döneme bomba gibi başlamak dileğiyle bu dönemi bitirelim.</description>
+    </item>
+    
+    <item>
+      <title>Çıkmaz Demeyin Şansınızı Deneyin</title>
+      <link>https://blog.askin.ws/blog/cikmaz-demeyin-sansinizi-deneyin/</link>
+      <pubDate>Tue, 22 Jan 2008 17:29:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/cikmaz-demeyin-sansinizi-deneyin/</guid>
+      <description>Bu girdi Burdaki girdiden esinlenilerek yazıldı.
+E madem pyton ile sayısal kuponu yapılıyor biz niye scheme ile yapmayalım bunu demi:)
+Probleme göre kod bana çok uzun geldi. Belki ilerde optimize edebilirim. Ama şimdilik böyle oynayalım demi:)
+(define (sayisal) (display &amp;quot;Oynamak istediginiz kolan sayisini giriniz: \n&amp;quot;) (let ((kolon (read))) (do ((i 1 (+ i 1))) ((&amp;gt; i kolon)) (let loop ((lst (list (+ (random 49) 1))) (sayi (+ 1 (random 49)))) (if (= (length lst) 6) (printf &amp;quot;~a.</description>
+    </item>
+    
+    <item>
+      <title>Yazık bu windowsçulara - Win32/IRCBot.AAL</title>
+      <link>https://blog.askin.ws/blog/yazik-bu-windowsculara-win32ircbotaal/</link>
+      <pubDate>Tue, 22 Jan 2008 10:10:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/yazik-bu-windowsculara-win32ircbotaal/</guid>
+      <description>Bu günlerde bi msn virüsü yayılmaya başladı. Msn üzerinden kişilere bu senin resmin mi?, oh sen çıplak gibisinden mesajlar ve bir adet link (http://members.lycos.co.uk/facebookphotos/?msn_adresiniz gibisinden) yolluyor. eğer bu linke tıklarsanız size resim dosyası görünümünde bir virüs yolluyor. Sizde buna tıklayınca olan oluyor:) Artık sizin kişi listenizdeki kişilere bu mesajlar gidiyor ve onlara da olan oluyor. Geçen gün bu virüsü bir bilgisayardan temizledim. Belki işinize yarar diye yazıyorum buraya.
+ Bu linkteki dosyayı indirin.</description>
+    </item>
+    
+    <item>
+      <title>Yasaklı sitelere girme - Open DNS</title>
+      <link>https://blog.askin.ws/blog/yasakli-sitelere-gitme-open-dns/</link>
+      <pubDate>Fri, 18 Jan 2008 18:52:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/yasakli-sitelere-gitme-open-dns/</guid>
+      <description>Yasaklı sitelere girebilmek için çok çeşitli yöntemler kullanabilirsiniz. Ben çok sıklıkla www.gizlen.net&amp;lsquo;i kullanabilirsiniz. Bu siteye giriyorsunuz ve sayfanın üstündeki kutucuğa gireceğiniz siteyi yazıyorsunuz, oda size gireceğiniz siteyi sunuyor. Eğer daha kalıcı bir çözüm istiyorsanız proxy(vekil sunucu) kullanabilirsiniz. İnternetten ufak bir arama ile onlarca proxy adresine sahip olabilirsiniz. Ancak birçok kişi tarafınfan kullanılan ve tavsiye edilen Open DNS işinizi çok rahatlıkla görebilir. Gerçi Open DNS bir proxy değil. O bir Name Server.</description>
+    </item>
+    
+    <item>
+      <title>DrScheme v372 Çıktı</title>
+      <link>https://blog.askin.ws/blog/drscheme-v372-cikti/</link>
+      <pubDate>Sat, 29 Dec 2007 13:40:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/drscheme-v372-cikti/</guid>
+      <description>DrScheme v372 çıktı. Bu versiyonunda birçok hatanın düzeltildiği ve birkaç yeni özellik eklendiği belirtiliyor. Sanırım beni ençok etkileyen özellik kod tamamlama özelliği. Siz bir kod yazarken o size ekleyebileceğiniz konutları sıralıyor. Ancak bu özellik çok kullanışlı bir halde gelmiyor. Tamamlama istediğimiz zaman [ Ctrl / ] tuş kombinasyonunu kullanmamız gerekmekte. Bende [ Ctrl Shift 7 ] kombinasyonunun kullanılması gerekiyor.
+Ayrıca burdan indirebilirsiniz.</description>
+    </item>
+    
+    <item>
+      <title>Alın size bir güzel kod:)</title>
+      <link>https://blog.askin.ws/blog/alin-size-bir-guzel-kod/</link>
+      <pubDate>Fri, 28 Dec 2007 16:29:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/alin-size-bir-guzel-kod/</guid>
+      <description>Alın size bir güzel kod:) Benim hoşuma gitti eminim sizin hoşunuzada gidecek.
+(define (goster str) (let loop ((str str)) (if (equal? str &amp;quot;&amp;quot;) (begin (sleep 0) (display &amp;quot;&amp;quot;)) (begin (sleep 1/2) (display (string-ref str 0)) (loop (substring str 1))))))  </description>
+    </item>
+    
+    <item>
+      <title>Project Euler - Problem sitesi:)</title>
+      <link>https://blog.askin.ws/blog/project-euler-problem-sitesi/</link>
+      <pubDate>Thu, 27 Dec 2007 10:32:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/project-euler-problem-sitesi/</guid>
+      <description>Project Euler adlı bir site ile karşılaştım. Bu sitede yaklaşık 170 adet problem var ve bu problemleri sizden çözmeniz bekleniyor. Aralarında 14163 kez çözülmüş olanıda var 116kez çözülenide. İstediğiniz bir dilde çözüp çözümlerinizi yayınlayabiliyorsunuz. Kolay gelsin.
+Adres: http://www.projecteuler.net/</description>
+    </item>
+    
+    <item>
+      <title>Scheme ile ekrana içi boş dikdörtgen bastırmak</title>
+      <link>https://blog.askin.ws/blog/scheme-ile-ekrana-ici-bos-kare-bastirmak/</link>
+      <pubDate>Thu, 20 Dec 2007 09:13:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/scheme-ile-ekrana-ici-bos-kare-bastirmak/</guid>
+      <description>(define (kare x y) (do ((i 0 (+ i 1))) ((= i x)) (newline) (do ((j 0 (+ j 1))) ((= j y)) (if (or (= i 0) (= i (- x 1))) (display &amp;quot;*&amp;quot;) (if (or (= j 0) (= j (- y 1))) (display &amp;quot;*&amp;quot;) (display &amp;quot; &amp;quot;))))))  bu kod aşağıdaki gibi bir şekil oluşruracak
+********** * * * * * * * * * * * * * * * * **********  Ancak bu şekil pek hoş değil.</description>
+    </item>
+    
+    <item>
+      <title>Tanrı Kent</title>
+      <link>https://blog.askin.ws/blog/tanri-kent/</link>
+      <pubDate>Thu, 20 Dec 2007 07:23:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/tanri-kent/</guid>
+      <description>Tanrıkent tv8 23.15 20/12/2007
+ Film, Rio de Janeiro’nun gecekondu mahallelerinde geçiyor ve şehre hakim olan çetelerin arasında büyüyen ve acımasız uyuşturucu pazarında kendilerine bir yer kapmaya, daha da önemlisi hayatta kalmaya çalışan küçük çocukların yaşamını anlatıyor. Tanrıkent, 1960’larda, sefil koşullarda yaşayan halkı ev sahibi yapmak için başlatılan bir toplu konut bölgesine verilen isimdir. Film, 1980’lerde Rio de Janeiro’nun en tehlikeli mahallelerinden biri haline gelen Tanrıkent’te yaşayan ve yolları defalarca keşişen insanların yıllar boyunca süren hikayelerini anlatır.</description>
+    </item>
+    
+    <item>
+      <title>Bubble sort  algoritması ve scheme çözümü</title>
+      <link>https://blog.askin.ws/blog/bubble-sort-algoritmasi-ve-scheme-cozumu/</link>
+      <pubDate>Mon, 17 Dec 2007 15:11:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/bubble-sort-algoritmasi-ve-scheme-cozumu/</guid>
+      <description>Bubble sort algoritması kabaca: verilen dizideki elemanları ikili olarak karşılaştırıp gerekli olduğunda yerlerini değiştirmek esasına dayanır. Elimizde 11 5 8 4 6 84 7 sayılarında oluşan bir dizi olduğunu var sayalım ve bu diziyi küçükten büyüğe sıralamak isteyelim.
+ önce 11 ile 5i karşılaştırırız, 11 5&amp;rsquo;ten büyük olduğu için 11 ile 5in yerini değiştiririz; 5 11 8 4 6 84 7 sonra 11 ile 8i karşılaştırırız ve 11 ile 8&amp;rsquo;in yerini değiştiririz 5 8 11 4 6 84 7 11 ile 4; 5 8 4 11 6 84 7 11 ile 6; 5 8 4 6 11 84 7 11 ile 84; 84 büyük olduğu için sıralamaya dokunmayız.</description>
+    </item>
+    
+    <item>
+      <title>Sezar şifreleme</title>
+      <link>https://blog.askin.ws/blog/sezar-sifreleme/</link>
+      <pubDate>Wed, 12 Dec 2007 05:35:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/sezar-sifreleme/</guid>
+      <description>&lt;p&gt;Sezar şifreleme için yazdığım ilk kod aşağıdaki gibiydi&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scheme&#34;&gt;(define str2 &amp;quot;&amp;quot;)
+(define (sezar str lst)
+  (do ((i 0 (+ i 1)) (j 0 (+ j 1))) ((= j (string-length str)))
+    (if (= i (length lst))
+        (set! i 0))
+    (set! str2 
+          (string-append
+           str2
+           (string (integer-&amp;gt;char
+                    (+ (list-ref lst i )
+                       (char-&amp;gt;integer (string-ref str j)))))))))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ancak bu kod pek hoşuma gitmedi üzerinde biraz daha oynama yapmak gerekiyordu. Mesela en baştaki&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scheme&#34;&gt;(define str2 &amp;quot;&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;pek hoş durmuyordu ve hiç bir sonuç gönmüyordu. Ekstradan srt2 nin değerini sorgulamak gerekiyordu.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Bir son dakka görevi daha başarıyla tamamlandı</title>
+      <link>https://blog.askin.ws/blog/bir-son-dakka-gorevi-daha-basariyla-tamamlandi/</link>
+      <pubDate>Tue, 11 Dec 2007 18:02:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/bir-son-dakka-gorevi-daha-basariyla-tamamlandi/</guid>
+      <description>Kim demişse iyi demiş son dakkalar olmazsa hiç bir iş yeteişmez diye:) Bir son dakka görevimi daha başarıyla tamamladım. Pbl ödevimden sonra (bknz: http://blog.yollu.com/2007/11/21/same-oyunu/) proje ödevimi de son anda teslim ettim. Şimdi sırada yeni pbl ödevim var. Hadi hayırlısı.</description>
+    </item>
+    
+    <item>
+      <title>Same oyunu</title>
+      <link>https://blog.askin.ws/blog/same-oyunu/</link>
+      <pubDate>Wed, 21 Nov 2007 17:10:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/same-oyunu/</guid>
+      <description>Merhaba arkadaşlarımın isteği üzerine ödev olarak verilmiş olan same oyununun kendi yazdığım scheme kodlarını internete koydum. Olaki bigün sizden de scheme ile same oyunu yazmanızı isterlerse bu kodlardan faydalanabilirsiniz.
+http://www.askin.ws/doc/same.scm</description>
+    </item>
+    
+    <item>
+      <title>jaguar veya jtech ic100 webcam sürücüleri</title>
+      <link>https://blog.askin.ws/blog/jaguar-veya-jtech-ic100-webcam-suruculeri/</link>
+      <pubDate>Sun, 28 Oct 2007 15:32:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/jaguar-veya-jtech-ic100-webcam-suruculeri/</guid>
+      <description>Yaklaşık 1 saat boyunda jaguar ic100 webcam sürücüsü aradım dün. Kimi siteler üyelik istiyor kimisi bilgisayardaki eksik sürücüleri bulacağını vaad eden programlar yüklemmek istiyor. Ama biliyorum ki hiç birisi benim isteğimle ilgilenmiyor. Ancak sonunda bir site bana o sürücülerin olduğu adresi verdi. İsmini hatırlamamakla birlikte googleda baya arkalarda olduğunu hatırlıyorum. Eger olaki bu sitenin başına bir iş gelmezse ve size de bu sürücü lazım olursa burdan indirebilirsiniz.
+jaguar - jtech ic100 webcam driver - sürücü</description>
+    </item>
+    
+    <item>
+      <title>En basit recursion - özyineleme mantığı</title>
+      <link>https://blog.askin.ws/blog/en-basit-recursion-ozyineleme-mantigi/</link>
+      <pubDate>Fri, 26 Oct 2007 16:09:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/en-basit-recursion-ozyineleme-mantigi/</guid>
+      <description>Benin algılamakta en zorluk çektiğim kavramdı. Ancak öğrenince çok çok işe yarıyor.
+(define (lst-length lst)
+(if (null? lst)
+0
+(+ 1 (lst-length (cdr lst)))))
+Kodu tanımlayacak olursak (null? lst) lst değişkeninde tuttuğumuz listenin boş olup olmadığını kontrol ediyor. Boş listenin eleman sayısının 0 olduğunu biliyoruz. Listemiz genelde ilk halinde boş olmayacağı için if condition direk #f verip 2. satıra geçecek. özyinelemenin can damarı aslında burda. Biz 1 eksik elemanlı listenin eleman sayısıyla 1i topluyoruz.</description>
+    </item>
+    
+    <item>
+      <title>Scheme hakkında birkaç kitap</title>
+      <link>https://blog.askin.ws/blog/scheme-hakkinda-birkac-kitap/</link>
+      <pubDate>Thu, 18 Oct 2007 06:37:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/scheme-hakkinda-birkac-kitap/</guid>
+      <description>Madem tekrardan scheme öğrenmeye başladım o konu hakkında braz yazı yazalım değilmi. İşe bir kitap ile başlayalım.
+Öncelikle scheme kitaplarıyla başlasak mantıklı olacak gibi geliyor.scheme hakkında birçok kitap bulunabilir fakat ben aramada ilk karşıma çıkan seçenekleri burda vereceğim biraz google güvenilir gibi geldi bu konuda.
+How to Design Programs // Dr scheme projesiyle birlikte yürüyen bir kitap bu açıdan en sağlam kaynaklardan biri olduğu görüşündeyim. Sitesi aşağıda. Site üzerinden e-book olarak kitaba ulaşabilirsiniz.</description>
+    </item>
+    
+    <item>
+      <title>Merhaba!</title>
+      <link>https://blog.askin.ws/blog/hello-world/</link>
+      <pubDate>Wed, 02 May 2007 10:46:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/hello-world/</guid>
+      <description>Merhaba işte yeniden karşınızdayım.
+Hostumuzu değiştirip geldik. .</description>
+    </item>
+    
+  </channel>
+</rss>

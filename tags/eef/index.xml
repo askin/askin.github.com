@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>EEF on Aşkın Özgür</title>
+    <link>https://blog.askin.ws/tags/eef/</link>
+    <description>Recent content in EEF on Aşkın Özgür</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
+    <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
+    <lastBuildDate>Mon, 06 Feb 2017 15:09:00 +0300</lastBuildDate>
+    
+	<atom:link href="https://blog.askin.ws/tags/eef/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Let&#39;s Encrypt</title>
+      <link>https://blog.askin.ws/blog/lets-encrypt/</link>
+      <pubDate>Mon, 06 Feb 2017 15:09:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/lets-encrypt/</guid>
+      <description>Daha önceki yazılarımda belirtiğim gibi ssl için startssl kullanıyordum. Ücretsiz sertifika verdiği için startssl uzun süre işimi gördü. Fakat son dönemde Let&amp;rsquo;s Encrypti keşfettim. Çok basit bir şekilde sertifika oluşturmamızı sağlıyor. İlk denememden sonra tüm kullandığım websitelerinde ve servislerde Let&amp;rsquo;s Encrypt kullanmaya karar verdim. Sizde seveceksiniz bundan eminim. Yaklaşık 12 sertifika oluşturdum, bunların takibini yapmak biraz sıkıntılı olacak. Bir de Let&amp;rsquo;s Encrypt sertifikaları 3 aylık oluşturuyor. Birşeylerin gözden kaçması çok mümkün.</description>
+    </item>
+    
+  </channel>
+</rss>

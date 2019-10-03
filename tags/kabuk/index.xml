@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kabuk on Aşkın Özgür</title>
+    <link>https://blog.askin.ws/tags/kabuk/</link>
+    <description>Recent content in Kabuk on Aşkın Özgür</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
+    <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
+    <lastBuildDate>Sat, 24 May 2008 13:30:00 +0300</lastBuildDate>
+    
+	<atom:link href="https://blog.askin.ws/tags/kabuk/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux - Bir dizin yada dosyanın hangi uygulama tarafından kullanıldığını öğrenme</title>
+      <link>https://blog.askin.ws/blog/linux-bir-dizin-yada-dosyanin-hangi-uygulama-tarafindan-kullanildigini-ogrenme/</link>
+      <pubDate>Sat, 24 May 2008 13:30:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/linux-bir-dizin-yada-dosyanin-hangi-uygulama-tarafindan-kullanildigini-ogrenme/</guid>
+      <description>Bazen bir dosyayı silmeye çalıştığımızda yada bir diski ayırmaya çalıştığımızda, dosyanın meşgul olduğunu belirten bir uyarı çıkar ve işimizi yapmamızı engeller. Bu gibi durumlarda
+fuser -m -u /dosya-dizin
+komutunu kullanarak hangi sürecin (process) bize engel olduğunu öğreniriz.
+-u paramatresi sürecin sahibini gösterir.
+kill
+komutunu kullanarak süreci sonlandırıp işimizi tamamlayabiliriz, yada
+ps auxw
+komutunu kullanarak sürecin hangi uygulamaya ait olduğunuz öğrenebiliriz.
+kaynak: linux focus</description>
+    </item>
+    
+  </channel>
+</rss>

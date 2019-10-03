@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on Aşkın Özgür</title>
+    <link>https://blog.askin.ws/tags/java/</link>
+    <description>Recent content in Java on Aşkın Özgür</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
+    <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
+    <lastBuildDate>Sat, 11 Dec 2010 04:25:00 +0300</lastBuildDate>
+    
+	<atom:link href="https://blog.askin.ws/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java ile server socket yapımı</title>
+      <link>https://blog.askin.ws/blog/java-ile-server-socket-yapimi/</link>
+      <pubDate>Sat, 11 Dec 2010 04:25:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/java-ile-server-socket-yapimi/</guid>
+      <description>Bir proje için server sockete ihtiyaç duydum. Öncelikli dilim python olmasına rağmen, sunucu solaris olunca java ile yazmak daha cazip geldi. Öncelikli olarak test amaçlı birkaç satır kod yazdım. Akla gelen ilk örnek echo server oluyor :) aşağıda multi thread çalışan, birden fazla kullanıcıya cevap verebilecek bir echo server var:)
+Server.java
+/** * @author: Aşkın Yollu */ import java.net.*; import java.io.*; class Server { public static void main(String args[]) throws Exception { ServerSocket myService = null; Socket client = null; Worker tmpworker = null; try { // 1234 nolu portu dinle myService = new ServerSocket(1234); } catch (IOException e) { System.</description>
+    </item>
+    
+    <item>
+      <title>Java ile Oracle Veritabanına bağlanmak.</title>
+      <link>https://blog.askin.ws/blog/java-ile-oracle-veritabanina-baglanmak/</link>
+      <pubDate>Mon, 08 Nov 2010 20:29:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/java-ile-oracle-veritabanina-baglanmak/</guid>
+      <description>Öncelikle http://www.oracle.com/technetwork/database/enterprise-edition/jdbc101040-094982.html adresinden classes12.jar dosyasını indiriyoruz.
+Bu dosyayı bir dizine atıp, içeriğini bu dizine çıkartıyoruz. Bu dizini classpath değişkeninde belirtip kodlamaya başlıyoruz.
+import java.io.*; import java.sql.*; public class OraThin { public static void main(String[] args) { try { Connection con = null; Class.forName(&amp;quot;oracle.jdbc.driver.OracleDriver&amp;quot;); con=DriverManager.getConnection( &amp;quot;jdbc:oracle:thin:@localhost:1521:dbname&amp;quot;, &amp;quot;username&amp;quot;, &amp;quot;password&amp;quot;); Statement s = con.createStatement(); ResultSet rs = s.executeQuery(&amp;quot;SELECT * FROM KISI&amp;quot;); String name; String surname; while(rs.next()) { name = rs.getString(&amp;quot;AD&amp;quot;); surname = rs.getString(&amp;quot;SOYAD&amp;quot;); System.</description>
+    </item>
+    
+    <item>
+      <title>Çıkmaz demeyin şansınızı deneyin - 2</title>
+      <link>https://blog.askin.ws/blog/cikmaz-demeyin-sansinizi-deneyin-2/</link>
+      <pubDate>Thu, 17 Apr 2008 12:27:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/cikmaz-demeyin-sansinizi-deneyin-2/</guid>
+      <description>Buradaki yazımdan esinlenip yazdım bunu. Azıcık java öğrendim artık uygulama yapma zamanıdır. Eminim daha güzel (hatta belki benim ki iğrenç bi koddur(:) yazılabilir. Ama şimdilik bunu yapabiliyorum.
+public class Sayisal { int[] _kupon = new int[6]; int _num; public Sayisal(){ int sira = 0; while (sira &amp;lt; 6) { _num = (int) (1 + Math.random() * 49); if (!varmi(_kupon, _num)) _kupon[sira++] = _num; } } private boolean varmi(int[] kupon, int num) { for (int x: kupon) {if (x == num) return true;} return false; } public String toString(){ String kuponStr = &amp;quot;&amp;quot;; for (int i = 0; i &amp;lt; 6; i++) kuponStr += (_kupon[i] + &amp;quot; &amp;quot;); return kuponStr; } public static void main(String[] args){ byte kuponSayisi; if (args.</description>
+    </item>
+    
+    <item>
+      <title>Güzel bir java dökümanı</title>
+      <link>https://blog.askin.ws/blog/guzel-bir-java-dokumani/</link>
+      <pubDate>Tue, 15 Apr 2008 19:44:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/guzel-bir-java-dokumani/</guid>
+      <description>Bugun harıl harıl güzel bir java dökümanı arıyordum. Karşıma http://www.godoro.com çıktı. İçinde gayet güzel bilgiler bulunuyor.Şuraya da güzel bir java kitabı koymuşlar. Giriş için gayet hoş bir kitap olmuş, yeterince açıklayıcı ve bol örnekleri de koymayı unutmamışlar. Arkadaşlara yaptıklarından dolayı teşekür ediyorum. Kitabı çevrim dışı kullanmak isterseniz buradan indirip kullanabilirsiniz.</description>
+    </item>
+    
+  </channel>
+</rss>

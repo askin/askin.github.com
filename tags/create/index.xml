@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>create on Aşkın Özgür</title>
+    <link>https://blog.askin.ws/tags/create/</link>
+    <description>Recent content in create on Aşkın Özgür</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
+    <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
+    <lastBuildDate>Wed, 11 Jul 2012 13:54:00 +0300</lastBuildDate>
+    
+	<atom:link href="https://blog.askin.ws/tags/create/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mysql Kullanıcı - Database Oluşturma</title>
+      <link>https://blog.askin.ws/blog/mysql-kullanici-database-olusturma/</link>
+      <pubDate>Wed, 11 Jul 2012 13:54:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/mysql-kullanici-database-olusturma/</guid>
+      <description>Herzaman unutup google&amp;rsquo;a bakacağıma buraya bakayım daha kolay :)
+Önce mysql sunucusuna bağlanalım:
+mysql -u root -p  Kullanıcı oluşturma:
+create user kullaniciadi;  Veritabanı oluşturma:
+create database veritabaniadi;  Kullanıcı yetkilerini verme: Tüm yetkiler:
+grant all on veritabaniadi.* to kullaniciadi@localhost identified by &#39;parola&#39;;  Sadece okuma (select):
+grant select on veritabaniadi.* to kullaniciadi@localhost;  Yetkiler hemen devreye girsin:
+flush privileges;  </description>
+    </item>
+    
+  </channel>
+</rss>

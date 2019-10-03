@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>busybox on Aşkın Özgür</title>
+    <link>https://blog.askin.ws/tags/busybox/</link>
+    <description>Recent content in busybox on Aşkın Özgür</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
+    <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
+    <lastBuildDate>Wed, 01 Dec 2010 13:42:00 +0300</lastBuildDate>
+    
+	<atom:link href="https://blog.askin.ws/tags/busybox/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>BusyBox - date ile saat ve tarihi ayarlamak</title>
+      <link>https://blog.askin.ws/blog/busybox-date-ile-saat-ve-tarihi-ayarlamak/</link>
+      <pubDate>Wed, 01 Dec 2010 13:42:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/busybox-date-ile-saat-ve-tarihi-ayarlamak/</guid>
+      <description>BusyBox içinde gelen date komutunun kullanımı biraz daha farklı. Saat ayarlamada bir değişiklik yok fakat tarihi ayarlamak biraz daha farklı. Saat ayarlama:
+date -s &amp;quot;23:59:59&amp;quot;  Tarih ve saati ayarlama
+date -s AAGGSSDDYYYY date -s 123123592010  12-31-2010 23:59&amp;rsquo;a karşılık geliyor.</description>
+    </item>
+    
+  </channel>
+</rss>

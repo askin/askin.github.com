@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>move on Aşkın Özgür</title>
+    <link>https://blog.askin.ws/tags/move/</link>
+    <description>Recent content in move on Aşkın Özgür</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
+    <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
+    <lastBuildDate>Mon, 06 Apr 2009 22:22:00 +0300</lastBuildDate>
+    
+	<atom:link href="https://blog.askin.ws/tags/move/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bir GNU/Linux kurulumunu başka bir harddiske/bölüme taşımak</title>
+      <link>https://blog.askin.ws/blog/bir-gnulinux-kurulumunu-baska-bir-harddiskebolume-tasimak/</link>
+      <pubDate>Mon, 06 Apr 2009 22:22:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/bir-gnulinux-kurulumunu-baska-bir-harddiskebolume-tasimak/</guid>
+      <description>Öncelikle bir çalışan cd ile sistem açılır, benim tercihim gparted live cd. Sizin elinizin altında ne varsa kabuldur. İlla çalışan cd olmasına gerek yok, herhangi bir linux cdside olabilir. Bize mount, cp ve nano komutları lazım. Bunları sağlayan herhangi bir cd kullanılabilir.
+Taşınacak kurulumun hangi disk bölümünde olduğu bilinmeli. Ben 2. bölümdeki kurulumu 1. bölüme taşıyacağım. Yani /dev/hdc3 den /dev/hdc1 e taşıma yapacağım(sizdeki disk isimleri muhtemelen farklıdır).
+Cd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte.</description>
+    </item>
+    
+  </channel>
+</rss>

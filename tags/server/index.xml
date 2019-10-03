@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>server on Aşkın Özgür</title>
+    <link>https://blog.askin.ws/tags/server/</link>
+    <description>Recent content in server on Aşkın Özgür</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
+    <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
+    <lastBuildDate>Thu, 23 Aug 2012 18:16:00 +0300</lastBuildDate>
+    
+	<atom:link href="https://blog.askin.ws/tags/server/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Subversion sunucu kurulumu</title>
+      <link>https://blog.askin.ws/blog/subversion-sunucu-kurulumu/</link>
+      <pubDate>Thu, 23 Aug 2012 18:16:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/subversion-sunucu-kurulumu/</guid>
+      <description>Linux üzerinde kurulumdan bahsedeceğim. Öncelikle kullandığınız dağıtımın paket deposundan subversion paketini kurmalısınız. Ben debian kullandığım için
+sudo apt-get install subversion  Kurulum tamamlandıktan sonra gerekli tüm araçlara sahip olmuş oluyoruz.
+Bir depo oluşturalım.
+svnadmin create depom  depom adli dizinde bir depo oluşturmuş olduk. Bu depo üzerinde gerekli düzenlemeleri yapalım.
+depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu dosyayı açıp [general] başlığı altındaki ayarları düzenliyoruz. Burdaki tüm ayarlar yorum satırı haline getirişmiş, bunlardan işimize yarayanları aktif hale getirmemiz gerekiyor.</description>
+    </item>
+    
+    <item>
+      <title>Java ile server socket yapımı</title>
+      <link>https://blog.askin.ws/blog/java-ile-server-socket-yapimi/</link>
+      <pubDate>Sat, 11 Dec 2010 04:25:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/java-ile-server-socket-yapimi/</guid>
+      <description>Bir proje için server sockete ihtiyaç duydum. Öncelikli dilim python olmasına rağmen, sunucu solaris olunca java ile yazmak daha cazip geldi. Öncelikli olarak test amaçlı birkaç satır kod yazdım. Akla gelen ilk örnek echo server oluyor :) aşağıda multi thread çalışan, birden fazla kullanıcıya cevap verebilecek bir echo server var:)
+Server.java
+/** * @author: Aşkın Yollu */ import java.net.*; import java.io.*; class Server { public static void main(String args[]) throws Exception { ServerSocket myService = null; Socket client = null; Worker tmpworker = null; try { // 1234 nolu portu dinle myService = new ServerSocket(1234); } catch (IOException e) { System.</description>
+    </item>
+    
+  </channel>
+</rss>

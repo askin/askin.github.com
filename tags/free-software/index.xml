@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>free software on Aşkın Özgür</title>
+    <link>https://blog.askin.ws/tags/free-software/</link>
+    <description>Recent content in free software on Aşkın Özgür</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
+    <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
+    <lastBuildDate>Fri, 22 Jun 2012 12:21:00 +0300</lastBuildDate>
+    
+	<atom:link href="https://blog.askin.ws/tags/free-software/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>FSF</title>
+      <link>https://blog.askin.ws/blog/fsf-10889/</link>
+      <pubDate>Fri, 22 Jun 2012 12:21:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/fsf-10889/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Aşkın Özgür</title>
+    <link>https://blog.askin.ws/tags/linux/</link>
+    <description>Recent content in Linux on Aşkın Özgür</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
+    <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
+    <lastBuildDate>Fri, 15 Nov 2013 17:17:00 +0300</lastBuildDate>
+    
+	<atom:link href="https://blog.askin.ws/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Screen ile Irssi Kullanım Kılavuzu</title>
+      <link>https://blog.askin.ws/blog/screen-ile-irssi-kullanim-kilavuzu/</link>
+      <pubDate>Fri, 15 Nov 2013 17:17:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/screen-ile-irssi-kullanim-kilavuzu/</guid>
+      <description>irssi~[1]~ komut satırından çalışan ve bir çok geliştirici için popüler olan bir IRC istemcisidir. Irssi GNU Screen~[2]~ programı ile birlikte kullanılarak çıkış yapmadan bir veya birden fazla kabuk yaratabilirsiniz. Sürekli biligisayar değiltirip fakat irssi&amp;rsquo;a kaldığınız yerden devam etmek istediğinizde çok kullanılışılır.
+Avantajları:
+ Kişiler size mesaj bırakabilir. Siz dışardayken yapılan görüşmeleri sonradan yakalayabilirsiniz (genellikle &amp;ldquo;scroolback&amp;rdquo; olarak adlandırılır).  Yönergeler:
+ Bir adet linux VPS edinin ya da sık sık yeniden başlatılmayacak, ihtiyacınız olan yerden bağlanabileceğiniz *nix makina üzerinde ssh hesabı edinin.</description>
+    </item>
+    
+    <item>
+      <title>Usb bellek üzerinde Raspberry PI</title>
+      <link>https://blog.askin.ws/blog/usb-bellek-uzerinde-raspberry-pi/</link>
+      <pubDate>Sun, 24 Mar 2013 20:39:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/usb-bellek-uzerinde-raspberry-pi/</guid>
+      <description>Malesef sd kart olmadan raspberry pi&amp;rsquo;yı boot etmemiz mümkün olmuyor. Benim elimde 1GB&amp;rsquo;lık bir sd kart vardı ve 2GB dan daha ufak imaj dosyaları bulamadım. Bu nedenle usb bellek ile boot etme ihtiyacı duydum.
+Benim sistemimde usb bellek ve sd kart aşağıdaki şekilde tanındı:
+- usb: /dev/sdd
+- sd: /dev/sde
+Öncelikle indirdiğimiz imaj dosyasını usb belleğimize kopyalıyoruz
+dd if=2013-02-09-wheezy-raspbian.img of=/dev/sdd  Elimizde bulunan sd karta 1 adet fat32 bölüm oluşturuyoruz (oluşturduğunuz bölüm hem ilk sırada hem de birincil bir bölüm olmalı).</description>
+    </item>
+    
+    <item>
+      <title>Bir dosyanın boş olup olmadığını kontrol etme</title>
+      <link>https://blog.askin.ws/blog/bir-dosyanin-bos-olup-olmadigini-kontrol-etme/</link>
+      <pubDate>Wed, 07 Nov 2012 13:44:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/bir-dosyanin-bos-olup-olmadigini-kontrol-etme/</guid>
+      <description>Shell script yazarken bir dosyanın boş olup olmadığını kontrol etmemiz gerekebilir. Bunu yapmak için birkaç yöntem yazacağım.
+satirsayisi=`wc -l 194.27.108.90 | awk &#39;{split($0,a,&amp;quot; &amp;quot;); print a[1]}&#39;` if [ $satirsayisi == 0 ]; then echo &amp;quot;dosya bos&amp;quot;; fi  if [ -z $(cat dosyaadi) ]; then echo &amp;quot;dosya bos&amp;quot;; fi  if [ -z `cat dosyaadi` ]; then echo &amp;quot;dosya bos&amp;quot;; fi  Ve en güzeli
+if [ -s dosyaadi ]; then echo &amp;quot;Dosya dolu&amp;quot;; else echo &amp;quot;Dosya bos&amp;quot;; fi  </description>
+    </item>
+    
+    <item>
+      <title>Subversion sunucu kurulumu</title>
+      <link>https://blog.askin.ws/blog/subversion-sunucu-kurulumu/</link>
+      <pubDate>Thu, 23 Aug 2012 18:16:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/subversion-sunucu-kurulumu/</guid>
+      <description>Linux üzerinde kurulumdan bahsedeceğim. Öncelikle kullandığınız dağıtımın paket deposundan subversion paketini kurmalısınız. Ben debian kullandığım için
+sudo apt-get install subversion  Kurulum tamamlandıktan sonra gerekli tüm araçlara sahip olmuş oluyoruz.
+Bir depo oluşturalım.
+svnadmin create depom  depom adli dizinde bir depo oluşturmuş olduk. Bu depo üzerinde gerekli düzenlemeleri yapalım.
+depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu dosyayı açıp [general] başlığı altındaki ayarları düzenliyoruz. Burdaki tüm ayarlar yorum satırı haline getirişmiş, bunlardan işimize yarayanları aktif hale getirmemiz gerekiyor.</description>
+    </item>
+    
+    <item>
+      <title>UDP Broadcast sunucu - istemci</title>
+      <link>https://blog.askin.ws/blog/udp-broadcast-sunucu-istemci/</link>
+      <pubDate>Fri, 03 Aug 2012 15:31:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/udp-broadcast-sunucu-istemci/</guid>
+      <description> Sunucu:   İstemci:  </description>
+    </item>
+    
+    <item>
+      <title>Mysql Kullanıcı - Database Oluşturma</title>
+      <link>https://blog.askin.ws/blog/mysql-kullanici-database-olusturma/</link>
+      <pubDate>Wed, 11 Jul 2012 13:54:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/mysql-kullanici-database-olusturma/</guid>
+      <description>Herzaman unutup google&amp;rsquo;a bakacağıma buraya bakayım daha kolay :)
+Önce mysql sunucusuna bağlanalım:
+mysql -u root -p  Kullanıcı oluşturma:
+create user kullaniciadi;  Veritabanı oluşturma:
+create database veritabaniadi;  Kullanıcı yetkilerini verme: Tüm yetkiler:
+grant all on veritabaniadi.* to kullaniciadi@localhost identified by &#39;parola&#39;;  Sadece okuma (select):
+grant select on veritabaniadi.* to kullaniciadi@localhost;  Yetkiler hemen devreye girsin:
+flush privileges;  </description>
+    </item>
+    
+    <item>
+      <title>Android Galaxy Ace ile ekran görüntüsü alma</title>
+      <link>https://blog.askin.ws/blog/android-galaxy-ace-ile-ekran-goruntusu-alma/</link>
+      <pubDate>Sun, 08 Apr 2012 18:07:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/android-galaxy-ace-ile-ekran-goruntusu-alma/</guid>
+      <description>Android telefonumla uzun zamandır yanlışlıkla ekran görüntüsü alıyordum, birçok tuş kombinasyonunu denememe rağmen nasıl yapıldığını bulamamıştım. Bugün şans eseri nasıl yapıldığını buldum.
+Önce &amp;ldquo;Ana Sayfa&amp;rdquo; tuşu ile &amp;ldquo;Geri&amp;rdquo; tuşuna birlikte basıyoruz. Ardından &amp;ldquo;Geri&amp;rdquo; tuşuna tekrar basınca ekran görüntüsü alınıp kaydediliyor.
+Bukadar basitmiş :)</description>
+    </item>
+    
+    <item>
+      <title>Saçmalayan konsol ekranını temizleme</title>
+      <link>https://blog.askin.ws/blog/sacmalayan-konsol-ekranini-temizleme/</link>
+      <pubDate>Wed, 08 Dec 2010 11:51:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/sacmalayan-konsol-ekranini-temizleme/</guid>
+      <description>Bir binary dosyayı cat ile görüntüleyince konsol ekranı sapıtabiliyor :) Böyle bir durumda konsolu adam etmek için
+reset  komutunu kullanabiliriz. Her seferinde komutu unutup neydi neydi diye düşünüyorum. Buraya yazıyorum ki bir daha unutursam hemen bakıp bulayım :)</description>
+    </item>
+    
+    <item>
+      <title>Emacs ile bul değiştir / find and replace</title>
+      <link>https://blog.askin.ws/blog/emacs-ile-bul-degistir-find-and-replace/</link>
+      <pubDate>Mon, 06 Dec 2010 18:04:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/emacs-ile-bul-degistir-find-and-replace/</guid>
+      <description>M-x replace-string RET aranan_string RET yerine_konulacak_string  Bunu regexli yapmak için replace-string yerine replace-regex kullanabilirsiniz. Birde buna kısayol eklesek tadından yenmez.
+.emacs dosyamıza aşağıdaki satırı ekliyoruz.
+;; Find and Replace (global-set-key (kbd &amp;quot;C-q&amp;quot;) &#39;replace-string)  C-q kombinasyonuna bastığımıza işlem başlamış oluyor.</description>
+    </item>
+    
+    <item>
+      <title>BusyBox - date ile saat ve tarihi ayarlamak</title>
+      <link>https://blog.askin.ws/blog/busybox-date-ile-saat-ve-tarihi-ayarlamak/</link>
+      <pubDate>Wed, 01 Dec 2010 13:42:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/busybox-date-ile-saat-ve-tarihi-ayarlamak/</guid>
+      <description>BusyBox içinde gelen date komutunun kullanımı biraz daha farklı. Saat ayarlamada bir değişiklik yok fakat tarihi ayarlamak biraz daha farklı. Saat ayarlama:
+date -s &amp;quot;23:59:59&amp;quot;  Tarih ve saati ayarlama
+date -s AAGGSSDDYYYY date -s 123123592010  12-31-2010 23:59&amp;rsquo;a karşılık geliyor.</description>
+    </item>
+    
+    <item>
+      <title>Genius!</title>
+      <link>https://blog.askin.ws/blog/genius/</link>
+      <pubDate>Wed, 24 Nov 2010 14:11:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/genius/</guid>
+      <description>Scp ile sembolik linkleri takip etmeden indirme işlemi yapmak için araştırma yaptığımda, aşağıdaki kodu buldum. Böyle bir kullanım 40 yıl düşünsem aklıma gelmezdi.
+cd /destination/directory ssh user@remote.host &amp;quot;cd /original/directory; tar cf - ./&amp;quot; | tar xvf -  Kaynak</description>
+    </item>
+    
+    <item>
+      <title>Pardus ile Eduroam ağına bağlanma</title>
+      <link>https://blog.askin.ws/blog/pardus-ile-eduroam-agina-baglanma/</link>
+      <pubDate>Sat, 05 Dec 2009 02:02:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/pardus-ile-eduroam-agina-baglanma/</guid>
+      <description>Pardusun ağ yöneticisi gayet şık bir arayüze sahip, fakat bize Eduroam ağına bağlanma özelliği sunmuyor.
+Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız için yeterli. Bu araçlar wpa_supplicant ve dhcpcd. Wpa_supplicant ağda kimlik denetimini sağlamak için, dhcpcd ise ağdan ip almamız için gerekli.
+Öncelikle wpa_supplicant için ayar dosyası oluşturmamız gerekiyor.
+network={ ssid=&amp;quot;eduroam&amp;quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap=TTLS phase2=&amp;quot;auth=PAP&amp;quot; anonymous_identity=&amp;quot;anonymous@ogr.deu.edu.tr&amp;quot; identity=&amp;quot;ogrencinumarasi@ogr.deu.edu.tr&amp;quot; password=&amp;quot;sifre&amp;quot; }  Bu ayarlar Dokuz Eylül Üniversitesi için.</description>
+    </item>
+    
+    <item>
+      <title>Pardus 2009</title>
+      <link>https://blog.askin.ws/blog/pardus-2009/</link>
+      <pubDate>Sat, 25 Jul 2009 01:09:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/pardus-2009/</guid>
+      <description>Sonunda Pardus 2009&amp;rsquo;u bilgisayarıma kurabildim. Ailemin yanına geldiğim için Pardus&amp;rsquo;u indiremiyordum. Malum kotalı internet, sıkıntı yaratıyor.
+Kurulum sorunsuz tamamlandı. Kurulum arayüzü çok hoş olmuş. Çok kullanışlı ve çok kolay bir arayüzü olmuş. Bilgisayarıma en hızlı kurulabilen Pardus sürümü. Saat tutmadım ama, 20 dakka ile 30 dakka arasında bir sürede kurulduğunu tahmin ediyorum.
+Kablosuz ağ kartımı sorunsuz tanıdı ve WPA2 şifreli ağıma çok kolay bir şekilde bağlandı. Daha önce de tanıyordu, fakat ağımı göremiyordu, ben de mecburen ndiswraper ile kullanıyordum.</description>
+    </item>
+    
+    <item>
+      <title>Mysql Data Dizinini Değiştirme</title>
+      <link>https://blog.askin.ws/blog/mysql-data-dizinini-degistirme/</link>
+      <pubDate>Tue, 14 Jul 2009 02:11:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/mysql-data-dizinini-degistirme/</guid>
+      <description>Mysql data dizini ön tanımlı /var/lib/mysql olarak belirlenmiştir. Çeşitli ihtiyaçlardan dolayı bunun yerini değiştirmemiz gerekebilir. Mesela ben ayrı bir bölümde tuttuğum /home dizini altına taşımak istiyorum. Tüm işlemleri root yetkisiyle yapıyoruz. Öncelikle mysql servisini durduralım.
+Ben pardus kullandığım için
+# service mysql-server stop  Diğer dağıtımlarda farklı olabilir.
+Ardından ilgili dizini yeni yerine kopyalayalım.
+# cp -a /var/lib/mysql /home  Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. /etc/mysql/my.cnf dosyasında</description>
+    </item>
+    
+    <item>
+      <title>Pidgin Titreşim Eklentisi - Attention Button</title>
+      <link>https://blog.askin.ws/blog/pidgin-titresim-eklentisi-attention-button/</link>
+      <pubDate>Sun, 07 Jun 2009 21:20:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/pidgin-titresim-eklentisi-attention-button/</guid>
+      <description>Pidginin en sevdiğim özelliklerinden bir tanesi, sohbet ettiğiniz kişi size tireşim gönderdiğinde ekrana sadece &amp;rdquo;&amp;hellip; size uyarı gönderdi&amp;rdquo; yazması. Bu özelliğer sahip olmasının birde dezavantajı var tabiki, siz de başkalarına titreşim yollayamıyorsunuz. Bugün bu eksikliği fazlasıyla hissedince ufak çaplı bir araştırma yaptım ve Attention Button eklentisiyle karşılaştım.
+Kurulumu çok basit. Burdan en güncel sürümünü indiriyorsunuz (şimdilik 0.3), arşivden çıkartıp .so uzantılı dosyayı ev dizininiz altında .purple/plugins/ dizinine kopyalıyorsunuz. Ardından pidgine gidip eklentiler(plugins) kısmından aktif ediyorsunuz.</description>
+    </item>
+    
+    <item>
+      <title>Pardus - Atheros AR242x - WPA2</title>
+      <link>https://blog.askin.ws/blog/pardus-atheros-ar242x-wpa2/</link>
+      <pubDate>Tue, 02 Jun 2009 21:48:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/pardus-atheros-ar242x-wpa2/</guid>
+      <description>Pardus 2008 kurulumla beraber Atheros AR242x kablosuz ağ kartını tanıyor, fakat nedense başka ağları görmesine rağmen evimde WPA2 ile kurulu kablosuz ağımı göremiyordu. Bende diğer dağıtımlarda kullandığım ndiswrapper ile sorunumu çözmeyi denedim.
+Öncelikle ndiswrapperı kurduktan sonra windows için yazılmış driverları seçmemiz gerekiyor. Ardından
+/etc/modules.autoload.d/kernel-2.6
+dosyasına
+ndiswrapper
+satırını ve
+/etc/modprobe.d/blacklist-compat
+dosyasına da
+blacklist ath_pci
+satırını eklemek gerekiyor. Bunları ekledikten sonra kde&amp;rsquo;de ağ programcığıyla bağlanabiliyorsunuz.
+Fakat XFCE kullanıyorsanız wicd kullanmanız gerekiyor. Wicd ile doğrudan kullanamıyoruz.</description>
+    </item>
+    
+    <item>
+      <title>Pardus 2009 yaz stajı ve ben:)</title>
+      <link>https://blog.askin.ws/blog/pardus-2009-yaz-staji-ve-ben/</link>
+      <pubDate>Sat, 09 May 2009 01:23:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/pardus-2009-yaz-staji-ve-ben/</guid>
+      <description>Bugün hayatımdaki en güzel günlerden biri. Pardus 2009 yaz stajı için kabul edilen 13 kişiden birisi oldum. Yazın staj yapmak için adam akıllı bi yer ararken Pardusa kabul edilmem çok muhteşem birşey. Yazın pardus ve özgür yazılım için elimden geleni yapacağım. Benimle beraber kabul edilen diğer arkadaşlara başarılar diliyorum.
+http://www.ozgurlukicin.com/haber/pardus09-yaz-staji-sonuclari/</description>
+    </item>
+    
+    <item>
+      <title>Bir GNU/Linux kurulumunu başka bir harddiske/bölüme taşımak</title>
+      <link>https://blog.askin.ws/blog/bir-gnulinux-kurulumunu-baska-bir-harddiskebolume-tasimak/</link>
+      <pubDate>Mon, 06 Apr 2009 22:22:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/bir-gnulinux-kurulumunu-baska-bir-harddiskebolume-tasimak/</guid>
+      <description>Öncelikle bir çalışan cd ile sistem açılır, benim tercihim gparted live cd. Sizin elinizin altında ne varsa kabuldur. İlla çalışan cd olmasına gerek yok, herhangi bir linux cdside olabilir. Bize mount, cp ve nano komutları lazım. Bunları sağlayan herhangi bir cd kullanılabilir.
+Taşınacak kurulumun hangi disk bölümünde olduğu bilinmeli. Ben 2. bölümdeki kurulumu 1. bölüme taşıyacağım. Yani /dev/hdc3 den /dev/hdc1 e taşıma yapacağım(sizdeki disk isimleri muhtemelen farklıdır).
+Cd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte.</description>
+    </item>
+    
+    <item>
+      <title>Pardus-Linux.Org e-dergi bana süpriz yaptı...</title>
+      <link>https://blog.askin.ws/blog/pardus-linuxorg-e-dergi-bana-supriz-yapti/</link>
+      <pubDate>Wed, 11 Mar 2009 01:36:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/pardus-linuxorg-e-dergi-bana-supriz-yapti/</guid>
+      <description>Dergi son sayısında ki (Sayı 6) site tanıtımında benim bloguma yer verdi, kendilerine buradan çok teşekür ediyorum. Bu jestleri bana blog yazmada ve Özgür Yazılım çabalarımda güç verecek.
+Derginin bu sayısını gerçekten beğendim, hele hele tamamen özgür yazılım araçlarıyla oluşturulması, arkasında hiçbir mali destek olmadan sadece topluluk katkısıyla ve güzel bir motivasyon ile düzenli olarak çıkması derginin gönlümde olan yerini iyice pekiştirdi.
+Dergi kapağında 8 Mart Dünya Emekçi Kadınla Günü yazsaydı daha güzel ve anlamlı olurdu:) ama hatırlamak ve önem vermek çok daha önemli.</description>
+    </item>
+    
+    <item>
+      <title>Komut satırından resimleri pdf slaytına dönüştürme</title>
+      <link>https://blog.askin.ws/blog/komut-satirindan-resimleri-pdf-slaytina-donusturme/</link>
+      <pubDate>Fri, 27 Feb 2009 20:29:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/komut-satirindan-resimleri-pdf-slaytina-donusturme/</guid>
+      <description>Lanet dersimiz File System için hocamız pptx uzantılı bir dosya verince banada bunu bir şekilde pdf&amp;rsquo;e çevirmek düştü.
+Önce openoffice ile açmayı denedim, açıyordu fakat anlaşılır bir halde değildi. Bende alıp arkadaşımın bilgisayarına gittim, fakat onda da pdf&amp;rsquo;e dönüştüremiyordum. Dönüştürebildiğim formatlara bakarken .jpg&amp;rsquo;i gördüm. Nasılsa linuxta bu bi şekilde pdf&amp;rsquo;e dönüştürüm diyerek kendimden emin bi şekilde dönüşümü yapıp odama geçtim.
+2 buçuk dakikalık bir arama ile aradığımı buldum, ImageMagick bu işi yapabiliyormuş.</description>
+    </item>
+    
+    <item>
+      <title>Linuxta kullandığım programlar - Güncellendi</title>
+      <link>https://blog.askin.ws/blog/linuxta-kullandigim-programlar-guncellendi/</link>
+      <pubDate>Sun, 15 Feb 2009 02:56:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/linuxta-kullandigim-programlar-guncellendi/</guid>
+      <description>&lt;p&gt;Uzun zamandır canım sıkılıyor, yapacak bir iş bulamıyordum, can sıkıntısından eski yazılarımı kurcalarken kullandığım programların çoğunun değiştiğini farkettim, ve bu yazıyı güncellemeye karar verdim. Sıkıntıdan bir yarım saat çaldım:) mutlu sayılırım, umarım işinize yarar.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Metin Düzenleyici: &lt;a href=&#34;http://www.xfce.org/projects/mousepad/&#34;&gt;Mousepad&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+Uzun zaman gedit kullandım, hatta program yazarken bile gedit kullandım. Ancak yaptığım işlere bakarak, programın çok kastığını farkettim. Birde üstüne geany programının geditten hızlı açıldığı görünce başka arayışlara girdim, bu noktada mousepad beni tatmin etti. Bir xfce projesi olan mousepad gerçekten basit, sade ve hızlı.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Müzik: &lt;a href=&#34;http://mpd.wikia.com/&#34;&gt;MPD&lt;/a&gt; &lt;a href=&#34;http://sonata.berlios.de/&#34;&gt;Sonata&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+Müzik dinlerken kullandığım programın elimin altında dolaşmasını pek sevmem, gerçi birçok program kendini araç çubuğunda saklayabiliyor, ancak her bilgisayarı açtığımda yeniden müzik programını açmak pek hoşuma gitmiyor. MPD daha x açılmadan bana müziğimi sunmaya başlıyor. Gerçi okulda bilgisayarı açtığımda sıkıntı çıkabiliyor:)&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>İlk .deb paketim</title>
+      <link>https://blog.askin.ws/blog/ilk-deb-paketim/</link>
+      <pubDate>Fri, 01 Aug 2008 22:10:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/ilk-deb-paketim/</guid>
+      <description>Sonunda ilk .deb paketimi yapmayı başardım:) aslında okadar zor bi iş değilmiş, biraz kaynak koddan derleme pratiği yapıp, üzerine birkaç döküman okuyunca çabubak oluyor.
+Bu şanslı pakatimiz PCmanfm oldu. Normalde depoda bulunuyor ama ben experimental sürümünü kullanıyorum. Uzun zamandır derleyerek kullanıyordum. Ama aklıma birden esti hadi şunun .deb paketini yapayım dedim ve yaptım.
+Bu sürümde ssh, samba yada ftp üzerinden bir makinaya bağlanıp oranın dizinlerini kullanabiliyoruz. Bir kere ayarını yaptığında artık kenarda hazır bekleyip senin bağlan demeni bekliyor.</description>
+    </item>
+    
+    <item>
+      <title>Linux - Bir dizin yada dosyanın hangi uygulama tarafından kullanıldığını öğrenme</title>
+      <link>https://blog.askin.ws/blog/linux-bir-dizin-yada-dosyanin-hangi-uygulama-tarafindan-kullanildigini-ogrenme/</link>
+      <pubDate>Sat, 24 May 2008 13:30:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/linux-bir-dizin-yada-dosyanin-hangi-uygulama-tarafindan-kullanildigini-ogrenme/</guid>
+      <description>Bazen bir dosyayı silmeye çalıştığımızda yada bir diski ayırmaya çalıştığımızda, dosyanın meşgul olduğunu belirten bir uyarı çıkar ve işimizi yapmamızı engeller. Bu gibi durumlarda
+fuser -m -u /dosya-dizin
+komutunu kullanarak hangi sürecin (process) bize engel olduğunu öğreniriz.
+-u paramatresi sürecin sahibini gösterir.
+kill
+komutunu kullanarak süreci sonlandırıp işimizi tamamlayabiliriz, yada
+ps auxw
+komutunu kullanarak sürecin hangi uygulamaya ait olduğunuz öğrenebiliriz.
+kaynak: linux focus</description>
+    </item>
+    
+    <item>
+      <title>Linuxda kullandığım programlar</title>
+      <link>https://blog.askin.ws/blog/linuxda-kullandigim-programlar/</link>
+      <pubDate>Thu, 15 May 2008 14:20:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/linuxda-kullandigim-programlar/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Metin Düzenleyici: &lt;a href=&#34;http://www.gedit.org&#34;&gt;Gedit&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+Linuxda düz metinlerle uğraşırken genelde gedit kullanıyorum. Hatta çoğu zaman program yazarken gedit kullanıyorum. Kodları renklendirebilmesi sayesinde ne yazdığımı sorun yaşamadan anlıyorum. Ayırıca eklentilerden Embeded terminal(tümleşik terminal)i kullanarak terminal açmaya gerek duymadan kodlarımı derleyebiliyorum.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Müzik: &lt;a href=&#34;http://www.gnome.org/projects/rhythmbox&#34;&gt;Rhythmbox&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+Müzik dinlerken kullandığım programın elime ayağıma dolaşmasını pek sevmem, ve gerektiği zamanda hemen ulaşabilmek isterim. Rhythmbox araç çubuğuna yerleşebildiği için hem elime dolaşmıyor hemde istediğimde hemen ulaşabiliyrum. Lastfm ekletsi ile lastfm&amp;rsquo;in niğmetlerinden yararlanabiliyorum,&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Rhythmbox m4a - mp4 faad</title>
+      <link>https://blog.askin.ws/blog/rhythmbox-m4a-mp4-faad/</link>
+      <pubDate>Tue, 13 May 2008 14:07:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/rhythmbox-m4a-mp4-faad/</guid>
+      <description>Bügün m4a uzantılı mp4 dosyalarını rhythmboxda çalma listesine eklemeye çalışırken, rhythmbox bana hiç bir tepki vermiyordu. Aynı dosyayı totem ile sorunsuz açabiliyordum. Biraz araştırınca rhythmboxın faad adlı eklentiye(aslında konsoldan çalışan bir nevi medya oynatıcı) ihtiyaç duyduğunu öğrendim.
+Eğer debian temelli bir dağıtım kullanıyorsanız aşağıdaki komut işinizi görecektir.
+aptitude install faad</description>
+    </item>
+    
+    <item>
+      <title>SSH Filesystem ile uzak makinadaki dizini yerele bağlamak</title>
+      <link>https://blog.askin.ws/blog/ssh-filesystem-ile-uzak-makinadaki-dizini-yerele-baglamak/</link>
+      <pubDate>Wed, 07 May 2008 10:36:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/ssh-filesystem-ile-uzak-makinadaki-dizini-yerele-baglamak/</guid>
+      <description>Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz.
+Ben daha önce bahsettiğim internet canavarı:) için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu.</description>
+    </item>
+    
+  </channel>
+</rss>

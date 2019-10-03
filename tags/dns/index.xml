@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dns on Aşkın Özgür</title>
+    <link>https://blog.askin.ws/tags/dns/</link>
+    <description>Recent content in dns on Aşkın Özgür</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
+    <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
+    <lastBuildDate>Thu, 08 Apr 2010 02:28:00 +0300</lastBuildDate>
+    
+	<atom:link href="https://blog.askin.ws/tags/dns/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Blogger&#39;a Kendi Alan Adınızı Yönlendirme</title>
+      <link>https://blog.askin.ws/blog/bloggera-kendi-alan-adinizi-yonlendirme/</link>
+      <pubDate>Thu, 08 Apr 2010 02:28:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/bloggera-kendi-alan-adinizi-yonlendirme/</guid>
+      <description>Daha önce birkaç kez yapmıştım, fakat her seferinde neler yaptığımı unutup acaba olmadı mı diye kuşkulanmıştım. En güzeli böyle bir yere yazıp gerektiğinde kopya çekmek :)
+Öncelikle bloggerda bir blogunuz olduğunu varsayıyorum :D
+Blooger hesabımıza giriş yapıyoruz.
+Şu adımları takip ediyoruz.
+Özelleştir -&amp;gt; Ayarlar -&amp;gt; Yayıncılık -&amp;gt; Özel Alan-&amp;gt; Gelişmiş Ayarlara Geçiş Yapın
+Buradaki kutuya alan adını yazın.
+&amp;ldquo;Eksik dosya barındırma sistemini mi kullanıyorsunuz?&amp;rdquo; kısmını olduğu gibi bırakıp, kelime doğrulamayı yapıp ayarları kaydediyoruz.</description>
+    </item>
+    
+  </channel>
+</rss>

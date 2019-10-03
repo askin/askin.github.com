@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>grep on Aşkın Özgür</title>
+    <link>https://blog.askin.ws/tags/grep/</link>
+    <description>Recent content in grep on Aşkın Özgür</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
+    <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
+    <lastBuildDate>Wed, 06 Jun 2012 16:43:00 +0300</lastBuildDate>
+    
+	<atom:link href="https://blog.askin.ws/tags/grep/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Solariste Özyinelemeli grep</title>
+      <link>https://blog.askin.ws/blog/solariste-ozyinelemeli-grep/</link>
+      <pubDate>Wed, 06 Jun 2012 16:43:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/solariste-ozyinelemeli-grep/</guid>
+      <description>Özyinelemeli grep çok kullanışlı bir araç. Malesef solariste bulunan grep öz yinelemeli çalışmıyor. Ama bunu aşmak çok zor değil.
+$ grep &#39;ara&#39; `find . -name &#39;*&#39;`  </description>
+    </item>
+    
+    <item>
+      <title>Gtk &lt;= 2.18.9 Pencere Gizleme Sorunu</title>
+      <link>https://blog.askin.ws/blog/gtk-2-18-9-pencere-gizleme-sorunu/</link>
+      <pubDate>Thu, 08 Apr 2010 06:19:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/gtk-2-18-9-pencere-gizleme-sorunu/</guid>
+      <description>Gece gece uyku tutmadı var olan bir programı kurcalamaya başladım. Amacım programın sitem çekmecesinden çalışabilir hale getirmekti.
+Her şeyi yaptım fakat bir türlü pencereyi gizleyemiyordum :) Doküman gtk_window_get_mnemonics_visible () fonksiyonunu kullanmamı söylüyordu, fakat kullandığım gtk sürümünde bu fonksiyon tanımlı değildi(2.18.7). Eski sürüm için olan dokümanı incelediğimde bu işi yapan bir fonksiyon yoktu. Sistemde kurulu gtk ve python ile bu işi yapabiliyordum. Normal olarak c ile de yapabilmem lazımdı:) Biraz inceledikten sonra, önce pencereyi gizleyen, ardından boyutunu eski haline getirip sonra tekrar gösteren bir fonksiyon olduğunu fark ettim.</description>
+    </item>
+    
+  </channel>
+</rss>

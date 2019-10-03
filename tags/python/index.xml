@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on Aşkın Özgür</title>
+    <link>https://blog.askin.ws/tags/python/</link>
+    <description>Recent content in python on Aşkın Özgür</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
+    <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
+    <lastBuildDate>Sat, 20 Jul 2013 15:32:00 +0300</lastBuildDate>
+    
+	<atom:link href="https://blog.askin.ws/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python Sözlük Hızlı Rehber</title>
+      <link>https://blog.askin.ws/blog/python-sozluk-hizli-rehber/</link>
+      <pubDate>Sat, 20 Jul 2013 15:32:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/python-sozluk-hizli-rehber/</guid>
+      <description>Başlığında söylediği gibi, Python sözlük hızlı rehber
+# Anahtar/değer çiftleriyle sözlük tanımlama dict = { &#39;anahtar1′ : &#39;deger1′, &#39;anahtar2′ : &#39;deger2′, &#39;anahtar3′ : &#39;deger3′ } # Tüm anahtarları al sozluk.keys() # Tüm değerleri al sozluk.values() # Düzenleme sozluk[&#39;anahtar2&#39;] = &#39;deger8′ # Erişim print sozluk[&#39;anahtar1&#39;] # &#39;deger2&#39;yi yazdır print sozluk[&#39;anahtar2&#39;] # Boş sözlük tanımlama ve değer atama bosSozluk = {} bosSozluk[&#39;anahtar4&#39;] = &#39;deger4&#39; # Sözlük üzerinde döngü kurma (foreach) for anahtar in sozluk: print sozluk[anahtar] # Anahtarları sıralayıp, o sıraya göre değerleri yazdırmak anahtarlar = sozluk.</description>
+    </item>
+    
+    <item>
+      <title>web2py demo mode</title>
+      <link>https://blog.askin.ws/blog/web2py-demo-mod/</link>
+      <pubDate>Tue, 26 Feb 2013 15:28:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/web2py-demo-mod/</guid>
+      <description>Bugün web2py ile uğraşırken, localhost üzerinde çalıştırmadığım için oluşan ticketları göremedim, o an için localhost&amp;rsquo;ta çalıştıramadığımdan dolayı web2py&amp;rsquo;yi demo modundan çalıştırmak zorunda kaldım. Bunu yapmak için applications/admin/models/0.py dosyasında 7. satırdaki
+DEMO_MODE = False  satırını
+DEMO_MODE = True  olarak değiştirmem yetti.</description>
+    </item>
+    
+    <item>
+      <title>PyGtk ile Sistem Çekmecesi</title>
+      <link>https://blog.askin.ws/blog/pygtk-ile-sistem-cekmecesi/</link>
+      <pubDate>Wed, 07 Apr 2010 21:53:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/pygtk-ile-sistem-cekmecesi/</guid>
+      <description>Gtk ile çok kolay bir şekilde geliştirdiğiniz uygulamayı sistem çekmecesinde gösterebilirsiniz.
+Ufak bir örnek kod veriyorum. Onun üzerinden anlatacağım.
+import pygtk import gtk class ShowIcon: def __init__(self): self.icon = gtk.StatusIcon() self.icon.set_from_file(&#39;gtk.png&#39;) self.icon.set_tooltip_text(&#39;Hello Python!!!&#39;) self.icon.set_visible(True) self.icon.connect(&amp;quot;activate&amp;quot;, self.hello) gtk.main() def hello(self, widget): print &#39;Hello Python !!!&#39; if __name__ == &#39;__main__&#39;: icon = ShowIcon()  6. satırda asıl işimizi yapacak olan StatusIcon nesnesini yaratıyoruz.
+7. satırda sistem çekmecesinde hangi ikonun görüntüleneceğini belirtiyoruz. set_from_file ikonu dosyadan alacağımız anlamına geliyor.</description>
+    </item>
+    
+    <item>
+      <title>PyGtk ve Thread Sorunu</title>
+      <link>https://blog.askin.ws/blog/pygtk-ve-thread-sorunu/</link>
+      <pubDate>Tue, 06 Apr 2010 23:03:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/pygtk-ve-thread-sorunu/</guid>
+      <description>PyGtk ile ara yüzüzünü hazırladığım bir program içinde thread kullanmam gerekiyordu. Kod çalışıyordu fakat thread işlemi istediğim gibi çalışmıyordu. Arayüzde bir değişiklik olduğu zaman thread çalışıyor, onun dışında hiç bir şekilde tepki vermiyordu.
+Uzun süre hatanın kodda olabileceğini düşündüm. Ama sonunda python gtk.main() ve thread 3&amp;rsquo;lüsünü aynı sorgu içinde googleda aratınca cevabı buldum. Gtk&amp;rsquo;ya thread kullandığımı anlatmam gerekiyordu :)
+gtk.gdk.threads_init()  Bu satırı kodumun başına eklediğimde herşey istediğim gibi çalışmaya başladı :)</description>
+    </item>
+    
+    <item>
+      <title>Pardus Ağ Yöneticisi İle Eduroam Ağına Bağlanmak</title>
+      <link>https://blog.askin.ws/blog/pardus-ag-yoneticisi-ile-eduroam-agina-baglanmak/</link>
+      <pubDate>Mon, 07 Dec 2009 09:45:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/pardus-ag-yoneticisi-ile-eduroam-agina-baglanmak/</guid>
+      <description>Bikaç gündür Pardus ve Eduroam ile uğraşıyordum. Eduroama bağlanmak için pratik yollar buldum fakat hiç birisi Ağ Yöneticisi kullanarak bağlanmanın zevkini vermiyordu.
+2 gün boyunca Ağ Yöneticisinin neresini değiştirmem gerektiğini arayıp durdum. Sonunda wireless-tools adlı paketin aradığım paket olduğunu keşfettim :) wireless tools paketi wpa_supplicant kullanarak wpa şifreleme kullanan ağlara bağlanmaya yarıyor. Sağolsun Pardus geliştiricileri wpa_supplicant paketi için dbus kullanan bir python betiği yazmışlar. Bu betik içinde tanımlanan methodlarla wpa_supplicantı yönetebiliyoruz.</description>
+    </item>
+    
+  </channel>
+</rss>

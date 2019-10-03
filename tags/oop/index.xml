@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OOP on Aşkın Özgür</title>
+    <link>https://blog.askin.ws/tags/oop/</link>
+    <description>Recent content in OOP on Aşkın Özgür</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
+    <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
+    <lastBuildDate>Tue, 27 Apr 2010 04:08:00 +0300</lastBuildDate>
+    
+	<atom:link href="https://blog.askin.ws/tags/oop/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>C ile Nesne Yaratmak</title>
+      <link>https://blog.askin.ws/blog/c-ile-nesne-yaratmak/</link>
+      <pubDate>Tue, 27 Apr 2010 04:08:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/c-ile-nesne-yaratmak/</guid>
+      <description>Evet kışkırtıcı bir başlık attım :) Aslında yapacağımız olay bir structı nesne gibi kullanmak. Buna benzer bir kodu yıllar önce görmüştüm. O günden bu güne sürekli böyle bir şeyi nasıl yaparım diye araştırdım. Anca bugün çözebildim olayı ;) Kodu aşağıda yorum satırıyla beraber veriyorum. Yorumlarda gerekli açıklamaları yaptım.
+Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşıma bu çıktı, bende boş durmasın dedim :)
+/* * Sınıfımızı yaratıyoruz */ struct _myobject { // alt alanlar int a, b; /* * Metod * Burada fonksiyon pointerı tanımlıyoruz */ int (*add)(struct _myobject*); }; // struct ön ekinden kurtuluyoruz typedef struct _myobject MyObject; /* * Asıl işi yapacak fonksiyonu tanımlıyoruz * MyObject structını parametre olarak alıyor */ int realAdd(MyObject* a) { return a-&amp;gt;a + a-&amp;gt;b; } int main ( void ) { /* * Nesnemizi oluşturuyoruz.</description>
+    </item>
+    
+  </channel>
+</rss>

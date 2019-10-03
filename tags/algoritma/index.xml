@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Algoritma on Aşkın Özgür</title>
+    <link>https://blog.askin.ws/tags/algoritma/</link>
+    <description>Recent content in Algoritma on Aşkın Özgür</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
+    <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
+    <lastBuildDate>Thu, 27 Dec 2007 10:32:00 +0300</lastBuildDate>
+    
+	<atom:link href="https://blog.askin.ws/tags/algoritma/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Project Euler - Problem sitesi:)</title>
+      <link>https://blog.askin.ws/blog/project-euler-problem-sitesi/</link>
+      <pubDate>Thu, 27 Dec 2007 10:32:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/project-euler-problem-sitesi/</guid>
+      <description>Project Euler adlı bir site ile karşılaştım. Bu sitede yaklaşık 170 adet problem var ve bu problemleri sizden çözmeniz bekleniyor. Aralarında 14163 kez çözülmüş olanıda var 116kez çözülenide. İstediğiniz bir dilde çözüp çözümlerinizi yayınlayabiliyorsunuz. Kolay gelsin.
+Adres: http://www.projecteuler.net/</description>
+    </item>
+    
+    <item>
+      <title>Bubble sort  algoritması ve scheme çözümü</title>
+      <link>https://blog.askin.ws/blog/bubble-sort-algoritmasi-ve-scheme-cozumu/</link>
+      <pubDate>Mon, 17 Dec 2007 15:11:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/bubble-sort-algoritmasi-ve-scheme-cozumu/</guid>
+      <description>Bubble sort algoritması kabaca: verilen dizideki elemanları ikili olarak karşılaştırıp gerekli olduğunda yerlerini değiştirmek esasına dayanır. Elimizde 11 5 8 4 6 84 7 sayılarında oluşan bir dizi olduğunu var sayalım ve bu diziyi küçükten büyüğe sıralamak isteyelim.
+ önce 11 ile 5i karşılaştırırız, 11 5&amp;rsquo;ten büyük olduğu için 11 ile 5in yerini değiştiririz; 5 11 8 4 6 84 7 sonra 11 ile 8i karşılaştırırız ve 11 ile 8&amp;rsquo;in yerini değiştiririz 5 8 11 4 6 84 7 11 ile 4; 5 8 4 11 6 84 7 11 ile 6; 5 8 4 6 11 84 7 11 ile 84; 84 büyük olduğu için sıralamaya dokunmayız.</description>
+    </item>
+    
+    <item>
+      <title>Sezar şifreleme</title>
+      <link>https://blog.askin.ws/blog/sezar-sifreleme/</link>
+      <pubDate>Wed, 12 Dec 2007 05:35:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/sezar-sifreleme/</guid>
+      <description>&lt;p&gt;Sezar şifreleme için yazdığım ilk kod aşağıdaki gibiydi&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scheme&#34;&gt;(define str2 &amp;quot;&amp;quot;)
+(define (sezar str lst)
+  (do ((i 0 (+ i 1)) (j 0 (+ j 1))) ((= j (string-length str)))
+    (if (= i (length lst))
+        (set! i 0))
+    (set! str2 
+          (string-append
+           str2
+           (string (integer-&amp;gt;char
+                    (+ (list-ref lst i )
+                       (char-&amp;gt;integer (string-ref str j)))))))))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ancak bu kod pek hoşuma gitmedi üzerinde biraz daha oynama yapmak gerekiyordu. Mesela en baştaki&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scheme&#34;&gt;(define str2 &amp;quot;&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;pek hoş durmuyordu ve hiç bir sonuç gönmüyordu. Ekstradan srt2 nin değerini sorgulamak gerekiyordu.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

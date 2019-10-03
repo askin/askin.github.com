@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>e-book on Aşkın Özgür</title>
+    <link>https://blog.askin.ws/tags/e-book/</link>
+    <description>Recent content in e-book on Aşkın Özgür</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
+    <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
+    <lastBuildDate>Thu, 18 Oct 2007 06:37:00 +0300</lastBuildDate>
+    
+	<atom:link href="https://blog.askin.ws/tags/e-book/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Scheme hakkında birkaç kitap</title>
+      <link>https://blog.askin.ws/blog/scheme-hakkinda-birkac-kitap/</link>
+      <pubDate>Thu, 18 Oct 2007 06:37:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/scheme-hakkinda-birkac-kitap/</guid>
+      <description>Madem tekrardan scheme öğrenmeye başladım o konu hakkında braz yazı yazalım değilmi. İşe bir kitap ile başlayalım.
+Öncelikle scheme kitaplarıyla başlasak mantıklı olacak gibi geliyor.scheme hakkında birçok kitap bulunabilir fakat ben aramada ilk karşıma çıkan seçenekleri burda vereceğim biraz google güvenilir gibi geldi bu konuda.
+How to Design Programs // Dr scheme projesiyle birlikte yürüyen bir kitap bu açıdan en sağlam kaynaklardan biri olduğu görüşündeyim. Sitesi aşağıda. Site üzerinden e-book olarak kitaba ulaşabilirsiniz.</description>
+    </item>
+    
+  </channel>
+</rss>
