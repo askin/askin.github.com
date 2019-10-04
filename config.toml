@@ -6,6 +6,8 @@ title = "Aşkın Özgür"
 # theme = "indigo"
 theme = "beautifulhugo"
 
+disqusShortname = "askin-ozgurun-web-gunlugu"
+
 [menu]
   [[menu.main]]
     identifier = "home"
