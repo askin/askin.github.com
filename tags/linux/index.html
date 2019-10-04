@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <title>Overview of all pages with the tag #Linux - Aşkın Özgür</title>
-  <meta name="description" content="Overview of all pages with the tag #Linux, such as: Screen ile Irssi Kullanım Kılavuzu">
+  <meta name="description" content="Overview of all pages with the tag #Linux, such as: Linuxda du kullanırken gizli dosyaları dahil etmek">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -204,6 +204,55 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
         <div class="posts-list">
+          
+            <article class="post-preview">
+    <a href="https://blog.askin.ws/blog/du-wildcard-ile-gizli-dosyalar/">
+        <h2 class="post-title">Linuxda du kullanırken gizli dosyaları dahil etmek</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on October 4, 2019
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;91&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;askin
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        du komutunu çok sık kullanıyorum. Makinede yer sıkıntısı yaşadığım zaman kesinlikle hayat kurtarıyor. Genellikle aşağıdaki şekilde kullanıyorum.
+du -sh * | sort -h  Bu komut anlaşılır bir birimle tüm alt dizinlerin boyutlarını hesaplayıp küçükten büyüğe doğru sıralıyor. Bu komutun ve birçok linux komutunun sıkıntısı, wildcard kullanıldığında gizli dosyaları/dizinleri göstermiyor. Tabi bu kullandığınız kabukla ilgili. Ben bash kullanıyorum. Bunu aşmak için komutu aşağıdaki şekilde kullanabilirsiniz.
+du -sh .[!.] * | sort -h  Bu komutun da biraz sıkıntılar var.
+        <a href="https://blog.askin.ws/blog/du-wildcard-ile-gizli-dosyalar/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://blog.askin.ws//tags/linux/">linux</a>&nbsp;
+        
+    </div>
+    
+
+</article>
           
             <article class="post-preview">
     <a href="https://blog.askin.ws/blog/screen-ile-irssi-kullanim-kilavuzu/">
@@ -779,72 +828,6 @@ Birde buna kısayol eklesek tadından yenmez.</p>
 
 </article>
           
-            <article class="post-preview">
-    <a href="https://blog.askin.ws/blog/busybox-date-ile-saat-ve-tarihi-ayarlamak/">
-        <h2 class="post-title">BusyBox - date ile saat ve tarihi ayarlamak</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on December 1, 2010
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;39&nbsp;words
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;askin
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        <p>BusyBox içinde gelen date komutunun kullanımı biraz daha farklı. Saat ayarlamada bir değişiklik yok fakat tarihi ayarlamak biraz daha farklı. Saat ayarlama:</p>
-
-<pre><code class="language-bash">date -s &quot;23:59:59&quot;
-</code></pre>
-
-<p>Tarih ve saati ayarlama</p>
-
-<pre><code class="language-bash">date -s AAGGSSDDYYYY
-date -s 123123592010
-</code></pre>
-
-<p>12-31-2010 23:59&rsquo;a karşılık geliyor.</p>
-
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://blog.askin.ws//tags/bash/">bash</a>&nbsp;
-        
-        <a href="https://blog.askin.ws//tags/busybox/">busybox</a>&nbsp;
-        
-        <a href="https://blog.askin.ws//tags/date/">date</a>&nbsp;
-        
-        <a href="https://blog.askin.ws//tags/linux/">Linux</a>&nbsp;
-        
-        <a href="https://blog.askin.ws//tags/saat/">saat</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
         </div>
         
           <ul class="pager main-pager">
@@ -951,7 +934,7 @@ date -s 123123592010
 
           &nbsp;&bull;&nbsp;&copy;
           
-            2018
+            2019
           
 
           

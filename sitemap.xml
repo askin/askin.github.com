@@ -4,12 +4,27 @@
   
   <url>
     <loc>https://blog.askin.ws/</loc>
-    <lastmod>2018-06-07T10:40:00+03:00</lastmod>
+    <lastmod>2019-10-04T12:04:25+03:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.askin.ws/blog/</loc>
-    <lastmod>2018-06-07T10:40:00+03:00</lastmod>
+    <lastmod>2019-10-04T12:04:25+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.askin.ws/tags/linux/</loc>
+    <lastmod>2019-10-04T12:04:25+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.askin.ws/blog/du-wildcard-ile-gizli-dosyalar/</loc>
+    <lastmod>2019-10-04T12:04:25+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.askin.ws/tags/</loc>
+    <lastmod>2019-10-04T12:04:25+03:00</lastmod>
   </url>
   
   <url>
@@ -39,11 +54,6 @@
   
   <url>
     <loc>https://blog.askin.ws/tags/security/</loc>
-    <lastmod>2017-02-06T15:09:00+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.askin.ws/tags/</loc>
     <lastmod>2017-02-06T15:09:00+03:00</lastmod>
   </url>
   
@@ -79,11 +89,6 @@
   
   <url>
     <loc>https://blog.askin.ws/tags/irssi/</loc>
-    <lastmod>2013-11-15T17:17:00+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.askin.ws/tags/linux/</loc>
     <lastmod>2013-11-15T17:17:00+03:00</lastmod>
   </url>
   
