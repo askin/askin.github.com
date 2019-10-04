@@ -379,6 +379,20 @@ sudo apt-get install pidgin-otr  Bir çok dağıtım deposunda OTR hazır olarak
 
       
         
+          
+          <div class="disqus-comments">                  
+            <button id="show-comments" class="btn btn-default" type="button">Show <span class="disqus-comment-count" data-disqus-url="https://blog.askin.ws/blog/off-the-record-messaging-otr">comments</span></button>
+            <div id="disqus_thread"></div>
+
+            <script type="text/javascript">
+              var disqus_config = function () {
+              this.page.url = 'https:\/\/blog.askin.ws\/blog\/off-the-record-messaging-otr';
+            };
+
+          </script>
+          </div>
+          
+        
         
       
 
@@ -508,6 +522,28 @@ sudo apt-get install pidgin-otr  Bir çok dağıtım deposunda OTR hazır olarak
 
 
 
+
+
+
+<script type="text/javascript">
+$(function(){
+  $('#show-comments').on('click', function(){
+    var disqus_shortname = 'askin-ozgurun-web-gunlugu.disqus.com';
+      
+    (function() {
+      var disqus = document.createElement('script'); 
+      disqus.type = 'text/javascript'; 
+      disqus.async = true;
+      disqus.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(disqus);
+    })();
+      
+    $(this).hide(); 
+    });
+  });
+      
+</script>
+<script id="dsq-count-scr" src="//askin-ozgurun-web-gunlugu.disqus.com.disqus.com/count.js" async></script>
 
 
 
