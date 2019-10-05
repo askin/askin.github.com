@@ -3,7 +3,7 @@ Title: Linux, Paralel Port ile 2x16 LCD Ekran Kullanımı
 Date: 2011-02-27T03:08:00+03:00
 Author: askin
 Category: Programlama
-Tags: ["c", "lcd", "liux", "parallel port"]
+Tags: ["c/c++", "lcd", "linux", "parallel port"]
 Slug: linux-paralel-port-ile-2x16-lcd-ekran-kullanimi
 Status: published
 ---

@@ -3,7 +3,7 @@ Title: Gtk <= 2.18.9 Pencere Gizleme Sorunu
 Date: 2010-04-08T06:19:00+03:00
 Author: askin
 Category: Programlama
-Tags: ["c", "grep", "gtk"]
+Tags: ["c/c++", "grep", "gtk"]
 Slug: gtk-2-18-9-pencere-gizleme-sorunu
 Status: published
 ---
