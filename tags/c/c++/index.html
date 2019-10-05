@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <title>Overview of all pages with the tag #c/c&#43;&#43; - Aşkın Özgür</title>
-  <meta name="description" content="Overview of all pages with the tag #c/c&#43;&#43;, such as: C ile Nesne Yaratmak">
+  <meta name="description" content="Overview of all pages with the tag #c/c&#43;&#43;, such as: UDP Broadcast sunucu - istemci">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -206,6 +206,116 @@
         <div class="posts-list">
           
             <article class="post-preview">
+    <a href="https://blog.askin.ws/blog/udp-broadcast-sunucu-istemci/">
+        <h2 class="post-title">UDP Broadcast sunucu - istemci</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on August 3, 2012
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;267&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;askin
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        Sunucu:
+#include &lt;stdio.h&gt; #include &lt;string.h&gt; #include &lt;sys/types.h&gt; #include &lt;sys/socket.h&gt; #include &lt;netinet/in.h&gt; #define MY_PORT 3333 int main(int argc, char *argv[]) { int sockfd, new_fd; struct sockaddr_in my_addr; // hedef adres struct sockaddr_in their_addr; // baglanti yapan adres int sin_size, rt; // gelen verinin tutuldugu buffer char buf[32]; // islem yapmak icin gerekli dosya gosterici sockfd = socket(AF_INET, SOCK_DGRAM, 0); sin_size = sizeof(struct sockaddr_in); // adres ile ilgili ayarlar my_addr.sin_family = AF_INET; my_addr.
+        <a href="https://blog.askin.ws/blog/udp-broadcast-sunucu-istemci/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://blog.askin.ws//tags/c/c&#43;&#43;/">c/c&#43;&#43;</a>&nbsp;
+        
+        <a href="https://blog.askin.ws//tags/linux/">Linux</a>&nbsp;
+        
+        <a href="https://blog.askin.ws//tags/network/">network</a>&nbsp;
+        
+        <a href="https://blog.askin.ws//tags/programming/">programming</a>&nbsp;
+        
+        <a href="https://blog.askin.ws//tags/socket/">socket</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://blog.askin.ws/blog/linux-paralel-port-ile-2x16-lcd-ekran-kullanimi/">
+        <h2 class="post-title">Linux, Paralel Port ile 2x16 LCD Ekran Kullanımı</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on February 27, 2011
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;358&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;askin
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        Çalıştığım projede linuxta paralel port ile lcd ekran kullanmam gerekti. Neredeyse internetin altını üstüne getirdim ama işime yarar çok birşey bulamadım. Sonunda DOS için yazılmış bir kod buldum. Bu kodu biraz inceleyip, gerekli püf noktaları bulunca kodu linux&rsquo;a uydurmak çok zor olmadı. Hatta neredeyse sadece kullanılan fonksiyonun adını ve parametre yerlerini değiştirdim :)
+Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read/write seçimi için kullanılıyor.
+        <a href="https://blog.askin.ws/blog/linux-paralel-port-ile-2x16-lcd-ekran-kullanimi/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://blog.askin.ws//tags/c/c&#43;&#43;/">c/c&#43;&#43;</a>&nbsp;
+        
+        <a href="https://blog.askin.ws//tags/lcd/">lcd</a>&nbsp;
+        
+        <a href="https://blog.askin.ws//tags/linux/">linux</a>&nbsp;
+        
+        <a href="https://blog.askin.ws//tags/parallel-port/">parallel port</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="https://blog.askin.ws/blog/c-ile-nesne-yaratmak/">
         <h2 class="post-title">C ile Nesne Yaratmak</h2>
         
@@ -252,6 +362,58 @@ Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşı
         <a href="https://blog.askin.ws//tags/nesne/">Nesne</a>&nbsp;
         
         <a href="https://blog.askin.ws//tags/oop/">OOP</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://blog.askin.ws/blog/gtk-2-18-9-pencere-gizleme-sorunu/">
+        <h2 class="post-title">Gtk &lt;= 2.18.9 Pencere Gizleme Sorunu</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on April 8, 2010
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;160&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;askin
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        Gece gece uyku tutmadı var olan bir programı kurcalamaya başladım. Amacım programın sitem çekmecesinden çalışabilir hale getirmekti.
+Her şeyi yaptım fakat bir türlü pencereyi gizleyemiyordum :) Doküman gtk_window_get_mnemonics_visible () fonksiyonunu kullanmamı söylüyordu, fakat kullandığım gtk sürümünde bu fonksiyon tanımlı değildi(2.18.7). Eski sürüm için olan dokümanı incelediğimde bu işi yapan bir fonksiyon yoktu. Sistemde kurulu gtk ve python ile bu işi yapabiliyordum. Normal olarak c ile de yapabilmem lazımdı:) Biraz inceledikten sonra, önce pencereyi gizleyen, ardından boyutunu eski haline getirip sonra tekrar gösteren bir fonksiyon olduğunu fark ettim.
+        <a href="https://blog.askin.ws/blog/gtk-2-18-9-pencere-gizleme-sorunu/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://blog.askin.ws//tags/c/c&#43;&#43;/">c/c&#43;&#43;</a>&nbsp;
+        
+        <a href="https://blog.askin.ws//tags/grep/">grep</a>&nbsp;
+        
+        <a href="https://blog.askin.ws//tags/gtk/">gtk</a>&nbsp;
         
     </div>
     

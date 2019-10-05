@@ -8,8 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <title>SSH Filesystem ile uzak makinadaki dizini yerele bağlamak - Aşkın Özgür</title>
-  <meta name="description" content="Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz.
-Ben daha önce bahsettiğim internet canavarı:) için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu.">
+  <meta name="description" content="Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz. Ben daha önce bahsettiğim internet canavarı:) için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu. Kullanacağımız programın adı sshfs yani SSH Filesystem.">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -58,13 +57,13 @@ Ben daha önce bahsettiğim internet canavarı:) için bu sistemi kullanıyorum.
     "name" : "askin"
   },
   "headline": "SSH Filesystem ile uzak makinadaki dizini yerele bağlamak",
-  "description" : "Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz.\nBen daha önce bahsettiğim internet canavarı:) için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu.",
+  "description" : "Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz. Ben daha önce bahsettiğim internet canavarı:) için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu. Kullanacağımız programın adı sshfs yani SSH Filesystem.",
   "inLanguage" : "en",
-  "wordCount":  208 ,
+  "wordCount":  205 ,
   "datePublished" : "2008-05-07T10:36:00",
   "dateModified" : "2008-05-07T10:36:00",
   "image" : "https:\/\/blog.askin.ws\/uploads\/avatar.png",
-  "keywords" : [ "Bağlamak, Dizin, Linux, Mount, ssh, umount" ],
+  "keywords" : [ "linux, mount, ssh" ],
   "mainEntityOfPage" : "https:\/\/blog.askin.ws\/blog\/ssh-filesystem-ile-uzak-makinadaki-dizini-yerele-baglamak\/",
   "publisher" : {
     "@type": "Organization",
@@ -80,8 +79,7 @@ Ben daha önce bahsettiğim internet canavarı:) için bu sistemi kullanıyorum.
 </script>
 
 <meta property="og:title" content="SSH Filesystem ile uzak makinadaki dizini yerele bağlamak" />
-<meta property="og:description" content="Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz.
-Ben daha önce bahsettiğim internet canavarı:) için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu.">
+<meta property="og:description" content="Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz. Ben daha önce bahsettiğim internet canavarı:) için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu. Kullanacağımız programın adı sshfs yani SSH Filesystem.">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
 <meta property="og:url" content="https://blog.askin.ws/blog/ssh-filesystem-ile-uzak-makinadaki-dizini-yerele-baglamak/" />
 <meta property="og:type" content="website" />
@@ -255,69 +253,75 @@ Ben daha önce bahsettiğim internet canavarı:) için bu sistemi kullanıyorum.
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz.<br />
-Ben daha önce bahsettiğim <a href="http://blog.yollu.com/2008/02/21/telekom-artik-kork-benden/">internet canavarı:)</a> için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu.<br />
-Kullanacağımız programın adı sshfs yani SSH Filesystem.<br />
+        <p>Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz.
+Ben daha önce bahsettiğim <a href="http://blog.yollu.com/2008/02/21/telekom-artik-kork-benden/">internet canavarı:)</a> için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu.
+Kullanacağımız programın adı sshfs yani SSH Filesystem.
 Kurulum:</p>
 
 <ul>
-<li>Debian &amp;&amp; Ubuntu &amp;&amp; vb.<br />
-<code>&gt; aptitude install sshfs</code></li>
-<li>Kaynak koddan derleme<br />
-<code>&gt; ./Configure</code><br />
-<code>&gt; make</code><br />
-<code>&gt; make install (root yetkileriyle)</code></li>
+<li><p>Debian &amp;&amp; Ubuntu &amp;&amp; vb.</p>
+
+<pre><code class="language-bash">aptitude install sshfs
+</code></pre></li>
+
+<li><p>Kaynak koddan derleme</p>
+
+<pre><code class="language-bash">./configure
+make
+make install # root yetkileriyle
+</code></pre></li>
+
+<li><p>Kullanımı - Uzak makinadaki bir dizini bağlamak</p>
+
+<pre><code class="language-bash">sshfs hostname:dizin bağlamanoktası (root yetkileriyle)
+</code></pre></li>
+
+<li><p>Umount - Bağı koparma</p>
+
+<pre><code class="language-bash">umount bağlamanoktası
+# ya da
+fusermount -u bağlamanoktası
+</code></pre></li>
 </ul>
 
-<!-- -->
+<p>Bu şekide kullanırsanız bağladığınız dizine ancak root yetkileriyle ulaşabilirsiniz. Her kullanıcının tüm haklarla(hangi kullanıcı ile ssh bağlantısı gerçekleştirdiyseniz onun haklarına sahip oluyosunuz) bağladığınız dizini kulanabilmesini istiyorsanız</p>
 
-<ul>
-<li>Kullanımı - Uzak makinadaki bir dizini bağlamak<br />
-<code>&gt; sshfs hostname:dizin bağlamanoktası (root yetkileriyle)</code></li>
-<li>Umount - Bağı koparma
+<pre><code class="language-bash">sshfs -o allow_other hostname:dizin bağlamanoktası
+</code></pre>
 
-<ul>
-<li><code>&gt; umount bağlamanoktası</code></li>
-<li><code>&gt; fusermount -u bağlamanoktası</code></li>
-</ul></li>
-</ul>
-
-<p>Bu şekide kullanırsanız bağladığınız dizine ancak root yetkileriyle ulaşabilirsiniz. Her kullanıcının tüm haklarla(hangi kullanıcı ile ssh bağlantısı gerçekleştirdiyseniz onun haklarına sahip oluyosunuz) bağladığınız dizini kulanabilmesini istiyorsanız<br />
-<code>&gt; sshfs -o allow_other hostname:dizin bağlamanoktası</code><br />
-<strong>Parametreler</strong><br />
+<p><strong>Parametreler</strong>
 -o parametresini kullanarak uid ve gid değerlerini ayarlayabilirsiniz.</p>
 
+<pre><code class="language-bash">-o idmap=user
+-o uid=&lt;uid&gt;
+-o gid=&lt;gid&gt;
+-o ro # read only - salt okunur mod
+</code></pre>
+
+<p><strong>fstab dosyasını kullanarak mount etme</strong></p>
+
+<pre><code>sshfs#USERNAME@REMOTE_HOST:REMOTE_PATH MOUNT_POINT fuse SSHFS_OPTIONS 0 0
+</code></pre>
+
+<p><strong>örnek</strong></p>
+
+<pre><code>sshfs#guest@guest.login.com:data /mnt/guest fuse uid=1003,gid=100,umask=0,allow_other 0 0
+</code></pre>
+
 <ul>
-<li><code>-o idmap=user</code></li>
-<li><code>-o uid=&lt;uid&gt;</code></li>
-<li><code>-o gid=&lt;gid&gt;</code></li>
-<li><code>-o ro</code> //read only - salt okunur mod</li>
+<li><strong>Proje sayfası</strong> :<a href="%20http://fuse.sourceforge.net/sshfs.html">http://fuse.sourceforge.net/sshfs.html</a></li>
+<li><strong>Wiki sayfası</strong> :<a href="http://fuse.sourceforge.net/sshfs.html">http://fuse.sourceforge.net/sshfs.html</a>. Wiki sayfasını kulanarak birçok bilgiye ulaşabilirsiniz..</li>
 </ul>
-
-<p><strong>fstab dosyasını kullanarak mount etme</strong><br />
-<code>sshfs#USERNAME@REMOTE_HOST:REMOTE_PATH MOUNT_POINT fuse SSHFS_OPTIONS 0 0</code><br />
-<strong>örnek</strong><br />
-<code>sshfs#guest@guest.login.com:data /mnt/guest fuse uid=1003,gid=100,umask=0,allow_other 0 0</code></p>
-
-<p><strong>proje sayfası</strong> :<a href="%20http://fuse.sourceforge.net/sshfs.html">http://fuse.sourceforge.net/sshfs.html</a><br />
-<strong>wiki sayfası</strong> :<a href="http://fuse.sourceforge.net/sshfs.html">http://fuse.sourceforge.net/sshfs.html</a><br />
-wiki sayfasını kulanarak birçok bilgiye ulaşabilirsiniz..</p>
 
 
         
           <div class="blog-tags">
             
-              <a href="https://blog.askin.ws//tags/ba%C4%9Flamak/">Bağlamak</a>&nbsp;
+              <a href="https://blog.askin.ws//tags/linux/">linux</a>&nbsp;
             
-              <a href="https://blog.askin.ws//tags/dizin/">Dizin</a>&nbsp;
-            
-              <a href="https://blog.askin.ws//tags/linux/">Linux</a>&nbsp;
-            
-              <a href="https://blog.askin.ws//tags/mount/">Mount</a>&nbsp;
+              <a href="https://blog.askin.ws//tags/mount/">mount</a>&nbsp;
             
               <a href="https://blog.askin.ws//tags/ssh/">ssh</a>&nbsp;
-            
-              <a href="https://blog.askin.ws//tags/umount/">umount</a>&nbsp;
             
           </div>
         
@@ -389,15 +393,11 @@ wiki sayfasını kulanarak birçok bilgiye ulaşabilirsiniz..</p>
                   <ul>
                 
                 
-                    <li><a href="/blog/screen-ile-irssi-kullanim-kilavuzu/">Screen ile Irssi Kullanım Kılavuzu</a></li>
+                    <li><a href="/blog/du-wildcard-ile-gizli-dosyalar/">Linuxda du kullanırken gizli dosyaları dahil etmek</a></li>
                 
-                    <li><a href="/blog/usb-bellek-uzerinde-raspberry-pi/">Usb bellek üzerinde Raspberry PI</a></li>
+                    <li><a href="/blog/linux-paralel-port-ile-2x16-lcd-ekran-kullanimi/">Linux, Paralel Port ile 2x16 LCD Ekran Kullanımı</a></li>
                 
-                    <li><a href="/blog/bir-dosyanin-bos-olup-olmadigini-kontrol-etme/">Bir dosyanın boş olup olmadığını kontrol etme</a></li>
-                
-                    <li><a href="/blog/subversion-sunucu-kurulumu/">Subversion sunucu kurulumu</a></li>
-                
-                    <li><a href="/blog/udp-broadcast-sunucu-istemci/">UDP Broadcast sunucu - istemci</a></li>
+                    <li><a href="/blog/genius/">Genius!</a></li>
                 
               </ul>
 

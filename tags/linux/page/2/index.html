@@ -206,6 +206,70 @@
         <div class="posts-list">
           
             <article class="post-preview">
+    <a href="https://blog.askin.ws/blog/emacs-ile-bul-degistir-find-and-replace/">
+        <h2 class="post-title">Emacs ile bul değiştir / find and replace</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on December 6, 2010
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;39&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;askin
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        <pre><code>M-x
+replace-string RET aranan_string RET yerine_konulacak_string
+</code></pre>
+
+<p>Bunu regexli yapmak için replace-string yerine replace-regex kullanabilirsiniz.
+Birde buna kısayol eklesek tadından yenmez.</p>
+
+<p>.emacs dosyamıza aşağıdaki satırı ekliyoruz.</p>
+
+<pre><code class="language-lisp">;; Find and Replace
+(global-set-key (kbd &quot;C-q&quot;) 'replace-string)
+</code></pre>
+
+<p>C-q kombinasyonuna bastığımıza işlem başlamış oluyor.</p>
+
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://blog.askin.ws//tags/emacs/">emacs</a>&nbsp;
+        
+        <a href="https://blog.askin.ws//tags/find/">find</a>&nbsp;
+        
+        <a href="https://blog.askin.ws//tags/linux/">Linux</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="https://blog.askin.ws/blog/busybox-date-ile-saat-ve-tarihi-ayarlamak/">
         <h2 class="post-title">BusyBox - date ile saat ve tarihi ayarlamak</h2>
         
@@ -733,63 +797,6 @@ Cd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte.
         <a href="https://blog.askin.ws//tags/partition/">partition</a>&nbsp;
         
         <a href="https://blog.askin.ws//tags/shell/">Shell</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://blog.askin.ws/blog/pardus-linuxorg-e-dergi-bana-supriz-yapti/">
-        <h2 class="post-title">Pardus-Linux.Org e-dergi bana süpriz yaptı...</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on March 11, 2009
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;145&nbsp;words
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;askin
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        Dergi son sayısında ki (Sayı 6) site tanıtımında benim bloguma yer verdi, kendilerine buradan çok teşekür ediyorum. Bu jestleri bana blog yazmada ve Özgür Yazılım çabalarımda güç verecek.
-Derginin bu sayısını gerçekten beğendim, hele hele tamamen özgür yazılım araçlarıyla oluşturulması, arkasında hiçbir mali destek olmadan sadece topluluk katkısıyla ve güzel bir motivasyon ile düzenli olarak çıkması derginin gönlümde olan yerini iyice pekiştirdi.
-Dergi kapağında 8 Mart Dünya Emekçi Kadınla Günü yazsaydı daha güzel ve anlamlı olurdu:) ama hatırlamak ve önem vermek çok daha önemli.
-        <a href="https://blog.askin.ws/blog/pardus-linuxorg-e-dergi-bana-supriz-yapti/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://blog.askin.ws//tags/ben/">Ben</a>&nbsp;
-        
-        <a href="https://blog.askin.ws//tags/blog/">Blog</a>&nbsp;
-        
-        <a href="https://blog.askin.ws//tags/e-dergi/">e-dergi</a>&nbsp;
-        
-        <a href="https://blog.askin.ws//tags/linux/">Linux</a>&nbsp;
-        
-        <a href="https://blog.askin.ws//tags/pardus/">pardus</a>&nbsp;
         
     </div>
     

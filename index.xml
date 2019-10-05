@@ -823,8 +823,7 @@ aptitude install faad</description>
       <pubDate>Wed, 07 May 2008 10:36:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/ssh-filesystem-ile-uzak-makinadaki-dizini-yerele-baglamak/</guid>
-      <description>Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz.
-Ben daha önce bahsettiğim internet canavarı:) için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu.</description>
+      <description>Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz. Ben daha önce bahsettiğim internet canavarı:) için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu. Kullanacağımız programın adı sshfs yani SSH Filesystem.</description>
     </item>
     
     <item>

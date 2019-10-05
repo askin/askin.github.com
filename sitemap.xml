@@ -408,7 +408,7 @@
   </url>
   
   <url>
-    <loc>https://blog.askin.ws/tags/c/</loc>
+    <loc>https://blog.askin.ws/tags/c/c&#43;&#43;/</loc>
     <lastmod>2012-08-03T15:31:00+03:00</lastmod>
   </url>
   
@@ -588,11 +588,6 @@
   </url>
   
   <url>
-    <loc>https://blog.askin.ws/tags/liux/</loc>
-    <lastmod>2011-02-27T03:08:00+03:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.askin.ws/tags/parallel-port/</loc>
     <lastmod>2011-02-27T03:08:00+03:00</lastmod>
   </url>
@@ -699,11 +694,6 @@
   
   <url>
     <loc>https://blog.askin.ws/blog/c-ile-nesne-yaratmak/</loc>
-    <lastmod>2010-04-27T04:08:00+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.askin.ws/tags/c/c&#43;&#43;/</loc>
     <lastmod>2010-04-27T04:08:00+03:00</lastmod>
   </url>
   
@@ -1218,27 +1208,12 @@
   </url>
   
   <url>
-    <loc>https://blog.askin.ws/tags/ba%C4%9Flamak/</loc>
-    <lastmod>2008-05-07T10:36:00+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.askin.ws/tags/dizin/</loc>
-    <lastmod>2008-05-07T10:36:00+03:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.askin.ws/tags/mount/</loc>
     <lastmod>2008-05-07T10:36:00+03:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.askin.ws/blog/ssh-filesystem-ile-uzak-makinadaki-dizini-yerele-baglamak/</loc>
-    <lastmod>2008-05-07T10:36:00+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.askin.ws/tags/umount/</loc>
     <lastmod>2008-05-07T10:36:00+03:00</lastmod>
   </url>
   
