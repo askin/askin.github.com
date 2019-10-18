@@ -20,7 +20,7 @@ Bu komut anlaşılır bir birimle tüm alt dizinlerin boyutlarını hesaplayıp 
 kullandığınız kabukla ilgili. Ben bash kullanıyorum. Bunu aşmak için komutu aşağıdaki şekilde kullanabilirsiniz.
 
 ```bash
-du -sh .[!.] * | sort -h
+du -sh .[!.]* * | sort -h
 ```
 
 Bu komutun da biraz sıkıntılar var. Mesela dosya ismi iki nokta ile başlıyorsa listelemeyecek malesef. Fakat bu şekilde
