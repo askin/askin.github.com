@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mysql on Aşkın Özgür</title>
@@ -21,11 +21,11 @@
       <guid>https://blog.askin.ws/blog/mysql-veritabani-ile-ilgili-bazi-bilgileri-ogrenmek/</guid>
       <description>MySQL kullanıyorsanız, phpMyAdmin gibi bir arayüzünüz olmadığı zaman veritabanı ile ilgili bilgi almak için aşağıdaki sorguları kullanabilirsiniz.
 Var olan veritabanlarını görmek:
-show databases;  Bir veritabanını kullanmak için seçmek:
-use veritabani_ismi;  Bir veritabanındaki tabloları listelemek:
-show tables;  show tables from veritabani_ismi;  Bir tablonun oluşturulma scriptini görme:
-show create table tablo_ismi  Bir tablonun kolonlarını görme:
-describe tablo_adi  </description>
+show databases; Bir veritabanını kullanmak için seçmek:
+use veritabani_ismi; Bir veritabanındaki tabloları listelemek:
+show tables; show tables from veritabani_ismi; Bir tablonun oluşturulma scriptini görme:
+show create table tablo_ismi Bir tablonun kolonlarını görme:
+describe tablo_adi </description>
     </item>
     
     <item>
@@ -45,14 +45,14 @@ mysql -u kullanici_adi -h sunucu_adi db_adi -p &amp;lt; db_adi_yedek.sql  </desc
       <pubDate>Wed, 11 Jul 2012 13:54:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/mysql-kullanici-database-olusturma/</guid>
-      <description>Herzaman unutup google&amp;rsquo;a bakacağıma buraya bakayım daha kolay :)
+      <description>Herzaman unutup google&#39;a bakacağıma buraya bakayım daha kolay :)
 Önce mysql sunucusuna bağlanalım:
-mysql -u root -p  Kullanıcı oluşturma:
-create user kullaniciadi;  Veritabanı oluşturma:
-create database veritabaniadi;  Kullanıcı yetkilerini verme: Tüm yetkiler:
-grant all on veritabaniadi.* to kullaniciadi@localhost identified by &#39;parola&#39;;  Sadece okuma (select):
-grant select on veritabaniadi.* to kullaniciadi@localhost;  Yetkiler hemen devreye girsin:
-flush privileges;  </description>
+mysql -u root -p Kullanıcı oluşturma:
+create user kullaniciadi; Veritabanı oluşturma:
+create database veritabaniadi; Kullanıcı yetkilerini verme: Tüm yetkiler:
+grant all on veritabaniadi.* to kullaniciadi@localhost identified by &amp;#39;parola&amp;#39;; Sadece okuma (select):
+grant select on veritabaniadi.* to kullaniciadi@localhost; Yetkiler hemen devreye girsin:
+flush privileges; </description>
     </item>
     
     <item>
@@ -62,8 +62,8 @@ flush privileges;  </description>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/mysql-data-dizinini-degistirme/</guid>
       <description>Mysql data dizini ön tanımlı /var/lib/mysql olarak belirlenmiştir. Çeşitli ihtiyaçlardan dolayı bunun yerini değiştirmemiz gerekebilir. Mesela ben ayrı bir bölümde tuttuğum /home dizini altına taşımak istiyorum. Tüm işlemleri root yetkisiyle yapıyoruz. Öncelikle mysql servisini durduralım. Ben pardus kullandığım için
-$ service mysql-server stop  Diğer dağıtımlarda farklı olabilir. Ardından ilgili dizini yeni yerine kopyalayalım.
-$ cp -a /var/lib/mysql /home  Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. /etc/mysql/my.cnf dosyasında datadir = /var/lib/mysql olan satırı datadir = /home/mysql olarak değiştirelim.</description>
+$ service mysql-server stop Diğer dağıtımlarda farklı olabilir. Ardından ilgili dizini yeni yerine kopyalayalım.
+$ cp -a /var/lib/mysql /home Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. /etc/mysql/my.cnf dosyasında datadir = /var/lib/mysql olan satırı datadir = /home/mysql olarak değiştirelim.</description>
     </item>
     
   </channel>

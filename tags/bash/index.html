@@ -42,7 +42,7 @@
   <meta name="twitter:site" content="@kelebeks" />
   <meta name="twitter:creator" content="@kelebeks" />
   <link href='https://blog.askin.ws/img/favicon.ico' rel='icon' type='image/x-icon'/>
-  <meta name="generator" content="Hugo 0.58.3" />
+  <meta name="generator" content="Hugo 0.62.0" />
   <link rel="alternate" href="https://blog.askin.ws/index.xml" type="application/rss+xml" title="Aşkın Özgür"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://blog.askin.ws/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -238,22 +238,13 @@
     <div class="post-entry">
         
         <p>Shell script yazarken bir dosyanın boş olup olmadığını kontrol etmemiz gerekebilir. Bunu yapmak için birkaç yöntem yazacağım.</p>
-
-<pre><code class="language-bash">satirsayisi=`wc  -l 194.27.108.90  | awk '{split($0,a,&quot; &quot;); print a[1]}'`
-if [ $satirsayisi == 0 ]; then echo &quot;dosya bos&quot;; fi
-</code></pre>
-
-<pre><code class="language-bash">if [ -z $(cat dosyaadi) ]; then echo &quot;dosya bos&quot;; fi
-</code></pre>
-
-<pre><code class="language-bash">if [ -z `cat dosyaadi` ]; then echo &quot;dosya bos&quot;; fi
-</code></pre>
-
-<p>Ve en güzeli</p>
-
-<pre><code class="language-bash">if [ -s dosyaadi ]; then echo &quot;Dosya dolu&quot;; else echo &quot;Dosya bos&quot;; fi
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">satirsayisi<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>wc  -l 194.27.108.90  | awk <span style="color:#e6db74">&#39;{split($0,a,&#34; &#34;); print a[1]}&#39;</span><span style="color:#e6db74">`</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $satirsayisi <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span> echo <span style="color:#e6db74">&#34;dosya bos&#34;</span>; <span style="color:#66d9ef">fi</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -z <span style="color:#66d9ef">$(</span>cat dosyaadi<span style="color:#66d9ef">)</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span> echo <span style="color:#e6db74">&#34;dosya bos&#34;</span>; <span style="color:#66d9ef">fi</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -z <span style="color:#e6db74">`</span>cat dosyaadi<span style="color:#e6db74">`</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span> echo <span style="color:#e6db74">&#34;dosya bos&#34;</span>; <span style="color:#66d9ef">fi</span>
+</code></pre></div><p>Ve en güzeli</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -s dosyaadi <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span> echo <span style="color:#e6db74">&#34;Dosya dolu&#34;</span>; <span style="color:#66d9ef">else</span> echo <span style="color:#e6db74">&#34;Dosya bos&#34;</span>; <span style="color:#66d9ef">fi</span>
+</code></pre></div>
         
     </div>
 
@@ -308,10 +299,8 @@ if [ $satirsayisi == 0 ]; then echo &quot;dosya bos&quot;; fi
     <div class="post-entry">
         
         <p>Özyinelemeli grep çok kullanışlı bir araç. Malesef solariste bulunan grep öz yinelemeli çalışmıyor. Ama bunu aşmak çok zor değil.</p>
-
-<pre><code class="language-bash">$ grep 'ara' `find . -name '*'`
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ grep <span style="color:#e6db74">&#39;ara&#39;</span> <span style="color:#e6db74">`</span>find . -name <span style="color:#e6db74">&#39;*&#39;</span><span style="color:#e6db74">`</span>
+</code></pre></div>
         
     </div>
 
@@ -364,10 +353,8 @@ if [ $satirsayisi == 0 ]; then echo &quot;dosya bos&quot;; fi
     <div class="post-entry">
         
         <p>Hiç gerek yok.</p>
-
-<pre><code class="language-sh">setxkbmap -option ctrl:nocaps
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">setxkbmap -option ctrl:nocaps
+</code></pre></div>
         
     </div>
 
@@ -420,17 +407,11 @@ if [ $satirsayisi == 0 ]; then echo &quot;dosya bos&quot;; fi
     <div class="post-entry">
         
         <p>BusyBox içinde gelen date komutunun kullanımı biraz daha farklı. Saat ayarlamada bir değişiklik yok fakat tarihi ayarlamak biraz daha farklı. Saat ayarlama:</p>
-
-<pre><code class="language-bash">date -s &quot;23:59:59&quot;
-</code></pre>
-
-<p>Tarih ve saati ayarlama</p>
-
-<pre><code class="language-bash">date -s AAGGSSDDYYYY
-date -s 123123592010
-</code></pre>
-
-<p>12-31-2010 23:59&rsquo;a karşılık geliyor.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">date -s <span style="color:#e6db74">&#34;23:59:59&#34;</span>
+</code></pre></div><p>Tarih ve saati ayarlama</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">date -s AAGGSSDDYYYY
+date -s <span style="color:#ae81ff">123123592010</span>
+</code></pre></div><p>12-31-2010 23:59'a karşılık geliyor.</p>
 
         
     </div>
@@ -486,12 +467,9 @@ date -s 123123592010
     <div class="post-entry">
         
         <p>Scp ile sembolik linkleri takip etmeden indirme işlemi yapmak için araştırma yaptığımda, aşağıdaki kodu buldum. Böyle bir kullanım 40 yıl düşünsem aklıma gelmezdi.</p>
-
-<pre><code class="language-bash">cd /destination/directory
-ssh user@remote.host &quot;cd /original/directory; tar cf - ./&quot; | tar xvf -
-</code></pre>
-
-<p><a href="http://www.linuxquestions.org/questions/linux-general-1/recursive-scp-w-o-following-links-658857/">Kaynak</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /destination/directory
+ssh user@remote.host <span style="color:#e6db74">&#34;cd /original/directory; tar cf - ./&#34;</span> | tar xvf -
+</code></pre></div><p><a href="http://www.linuxquestions.org/questions/linux-general-1/recursive-scp-w-o-following-links-658857/">Kaynak</a></p>
 
         
     </div>
@@ -627,7 +605,7 @@ ssh user@remote.host &quot;cd /original/directory; tar cf - ./&quot; | tar xvf -
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.58.3</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          <a href="https://gohugo.io">Hugo v0.62.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>

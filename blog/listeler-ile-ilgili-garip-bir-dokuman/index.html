@@ -61,7 +61,7 @@ Listeler köşeli parantezler ile açılıp kapatılır. Listedeki her bir elema
   "headline": "Listeler ile ilgili garip bir döküman",
   "description" : "Bu yazı oluşturulurken http:\/\/www.pythonforbeginners.com\/python-lists-cheat-sheet\/ adresindeki yazı referans alınmıştır. Bir çok yeri doğrudan çeviri olmakla beraber bir kısmını kendim baştan yazdım. Yazım - Mantık hataları vs. bulursanız yorum yazmaktan çekinmeyin.\n Liste Nedir?  Bir veya birden fazla elemanı tutmak için kullanılan en basit veri yapısıdır. Liste elemanlar topluluğudur (string, integer ve hatta diğer listeler). Listedeki her bir elemana index değeri atanır.\nListeler köşeli parantezler ile açılıp kapatılır. Listedeki her bir eleman virgül ile ayrılır.",
   "inLanguage" : "en",
-  "wordCount":  1125 ,
+  "wordCount":  1122 ,
   "datePublished" : "2013-07-13T15:50:00",
   "dateModified" : "2013-07-13T15:50:00",
   "image" : "https:\/\/blog.askin.ws\/uploads\/avatar.png",
@@ -96,7 +96,7 @@ Listeler köşeli parantezler ile açılıp kapatılır. Listedeki her bir elema
   <meta name="twitter:site" content="@kelebeks" />
   <meta name="twitter:creator" content="@kelebeks" />
   <link href='https://blog.askin.ws/img/favicon.ico' rel='icon' type='image/x-icon'/>
-  <meta name="generator" content="Hugo 0.58.3" />
+  <meta name="generator" content="Hugo 0.62.0" />
   <link rel="alternate" href="https://blog.askin.ws/index.xml" type="application/rss+xml" title="Aşkın Özgür"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://blog.askin.ws/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -257,305 +257,230 @@ Listeler köşeli parantezler ile açılıp kapatılır. Listedeki her bir elema
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        
-
-<blockquote>
+        <blockquote>
 <p>Bu yazı oluşturulurken <a href="http://www.pythonforbeginners.com/python-lists-cheat-sheet/">http://www.pythonforbeginners.com/python-lists-cheat-sheet/</a> adresindeki yazı referans alınmıştır. Bir çok yeri doğrudan çeviri olmakla beraber bir kısmını kendim baştan yazdım. Yazım - Mantık hataları vs. bulursanız yorum yazmaktan çekinmeyin.</p>
 </blockquote>
-
 <h2 id="liste-nedir">Liste Nedir?</h2>
-
 <blockquote>
-<p>Bir veya birden fazla elemanı tutmak için kullanılan en basit veri yapısıdır. Liste elemanlar topluluğudur (string, integer ve hatta diğer listeler). Listedeki her bir elemana index değeri atanır.<br />
+<p>Bir veya birden fazla elemanı tutmak için kullanılan en basit veri yapısıdır. Liste elemanlar topluluğudur (string, integer ve hatta diğer listeler). Listedeki her bir elemana index değeri atanır.<br>
 Listeler köşeli parantezler ile açılıp kapatılır. Listedeki her bir eleman virgül ile ayrılır. Stringlerin aksine listeler mutable - değişkendir, bunun manası listeler değiştirilebilir.</p>
 </blockquote>
-
 <h2 id="liste-yaratma">Liste Yaratma</h2>
-
 <blockquote>
-<p>Listeler köşeli parantez ile açılıp kapatılan, virgülle ayrılmış elamanlarla yaratılır.<br />
-Listeler bir takım değerler tutar (aynı stringlerin karakter serileri barındırması gibi).<br />
+<p>Listeler köşeli parantez ile açılıp kapatılan, virgülle ayrılmış elamanlarla yaratılır.<br>
+Listeler bir takım değerler tutar (aynı stringlerin karakter serileri barındırması gibi).<br>
 Listeler çok kolay yaratılır, aşağıda liste oluşturmanın birkaç yolu vardır</p>
 </blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">emptyList <span style="color:#f92672">=</span> [ ]  
 
-<pre><code class="language-python">emptyList = [ ]  
-
-list1 = ['one, two, three, four, five']
+list1 <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">one, two, three, four, five</span><span style="color:#e6db74">&#39;</span>]
  
-numlist = [1, 3, 5, 7, 9]
+numlist <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">9</span>]
  
-mixlist = ['yellow', 'red', 'blue', 'green', 'black']
+mixlist <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">yellow</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">red</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">blue</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">green</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">black</span><span style="color:#e6db74">&#39;</span>]
  
-# Boş bir liste adece köşeli parantez kullanılarak oluşturulur:
-list = []
-</code></pre>
-
-<h2 id="liste-boyu">Liste Boyu</h2>
-
+<span style="color:#75715e"># Boş bir liste adece köşeli parantez kullanılarak oluşturulur:</span>
+list <span style="color:#f92672">=</span> []
+</code></pre></div><h2 id="liste-boyu">Liste Boyu</h2>
 <blockquote>
 <p>len fonksiyonunu kullanarak listenin boyunu alabiliriz.</p>
 </blockquote>
-
-<pre><code class="language-python">list = [&quot;1&quot;, &quot;hello&quot;, 2, &quot;world&quot;]
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">list <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">1</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">hello</span><span style="color:#e6db74">&#34;</span>, <span style="color:#ae81ff">2</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">world</span><span style="color:#e6db74">&#34;</span>]
 len(list)
-&gt;&gt;&gt; 4
-</code></pre>
-
-<h2 id="list-append-ekleme">List Append (Ekleme)</h2>
-
+<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">4</span>
+</code></pre></div><h2 id="list-append-ekleme">List Append (Ekleme)</h2>
 <blockquote>
-<p>Append listenin sonuna eleman ekleyecektir. Eğer listenin başına ekleme yapmak istiyorsanız insert fonksiyonunu kullanabilirsiniz.<br />
+<p>Append listenin sonuna eleman ekleyecektir. Eğer listenin başına ekleme yapmak istiyorsanız insert fonksiyonunu kullanabilirsiniz.<br>
 list.insert(0, &ldquo;Files&rdquo;)</p>
 </blockquote>
-
-<pre><code class="language-python">list = [&quot;Movies&quot;, &quot;Music&quot;, &quot;Pictures&quot;]
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">list <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Movies</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Music</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Pictures</span><span style="color:#e6db74">&#34;</span>]
   
-# list.append(x) listenin sonuna bir eleman ekleyecektir
-list.append(&quot;Files&quot;)
+<span style="color:#75715e"># list.append(x) listenin sonuna bir eleman ekleyecektir</span>
+list<span style="color:#f92672">.</span>append(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Files</span><span style="color:#e6db74">&#34;</span>)
  
-print list
-&gt;&gt;&gt; ['Movies', 'Music', 'Pictures', 'Files']
-</code></pre>
-
-<h2 id="list-insert-araya-ekleme">List Insert (Araya ekleme)</h2>
-
+<span style="color:#66d9ef">print</span> list
+<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Movies</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Music</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Pictures</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Files</span><span style="color:#e6db74">&#39;</span>]
+</code></pre></div><h2 id="list-insert-araya-ekleme">List Insert (Araya ekleme)</h2>
 <blockquote>
 <p>Syntax: list.insert(x, y) # y elemanını x. elemanın önüne yerleştirecektir</p>
 </blockquote>
-
-<pre><code class="language-python">list = [&quot;Movies&quot;, &quot;Music&quot;, &quot;Pictures&quot;] 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">list <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Movies</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Music</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Pictures</span><span style="color:#e6db74">&#34;</span>] 
  
-list.insert(2,&quot;Documents&quot;)
+list<span style="color:#f92672">.</span>insert(<span style="color:#ae81ff">2</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Documents</span><span style="color:#e6db74">&#34;</span>)
  
-print list
-['Movies', 'Music', 'Documents', 'Pictures', 'Files']
+<span style="color:#66d9ef">print</span> list
+[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Movies</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Music</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Documents</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Pictures</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Files</span><span style="color:#e6db74">&#39;</span>]
  
-# Listede istediğiniz bir yere eleman ekleyebilirsiniz
+<span style="color:#75715e"># Listede istediğiniz bir yere eleman ekleyebilirsiniz</span>
  
-list = [&quot;Movies&quot;, &quot;Music&quot;, &quot;Pictures&quot;] 
-list.insert(3, &quot;Apps&quot;)
-</code></pre>
-
-<h2 id="list-remove-eleman-çıkartma">List Remove (eleman çıkartma)</h2>
-
+list <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Movies</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Music</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Pictures</span><span style="color:#e6db74">&#34;</span>] 
+list<span style="color:#f92672">.</span>insert(<span style="color:#ae81ff">3</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Apps</span><span style="color:#e6db74">&#34;</span>)
+</code></pre></div><h2 id="list-remove-eleman-kartma">List Remove (eleman çıkartma)</h2>
 <blockquote>
 <p>Listeden bir elemanı çıkartmak için remove metodu kullanılır. Eğer eleman listede birden fazla tekrar ediyorsa, sadece ilk eleman çıkartılır, diğerleri kalır.</p>
-
 <p>Syntax: list.remove(x)</p>
 </blockquote>
-
-<pre><code class="language-python">List = ['Movies', 'Music', 'Files', 'Documents', 'Pictures']
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">List <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Movies</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Music</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Files</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Documents</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Pictures</span><span style="color:#e6db74">&#39;</span>]
  
-list.remove(&quot;Files&quot;)
+list<span style="color:#f92672">.</span>remove(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Files</span><span style="color:#e6db74">&#34;</span>)
  
-print list
-['Movies', 'Music', 'Documents', 'Pictures']
+<span style="color:#66d9ef">print</span> list
+[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Movies</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Music</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Documents</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Pictures</span><span style="color:#e6db74">&#39;</span>]
  
-a = [1, 2, 3, 4]
-a.remove(2)
-print a
-&gt;&gt;&gt; [1, 3, 4]
-</code></pre>
-
-<h2 id="list-extend-liste-genişletme">List Extend (Liste genişletme)</h2>
-
+a <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>]
+a<span style="color:#f92672">.</span>remove(<span style="color:#ae81ff">2</span>)
+<span style="color:#66d9ef">print</span> a
+<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>]
+</code></pre></div><h2 id="list-extend-liste-geniletme">List Extend (Liste genişletme)</h2>
 <blockquote>
-<p>Listeleri birleştirmek istediğimz zaman extend metodunu kullanabiliriz.<br />
+<p>Listeleri birleştirmek istediğimz zaman extend metodunu kullanabiliriz.<br>
 Syntax: list.extend(x) # x listesinin elamanlarını listeye ekleyecektir</p>
 </blockquote>
-
-<pre><code class="language-python">list2 = [&quot;Music2&quot;, &quot;Movies2&quot;]
-list1.extend(list2)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">list2 <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Music2</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Movies2</span><span style="color:#e6db74">&#34;</span>]
+list1<span style="color:#f92672">.</span>extend(list2)
  
-print list1
-&gt;&gt;&gt; ['Movies', 'Music', 'Documents', 'Pictures', 'Music2', 'Movies2']
-</code></pre>
-
-<h2 id="list-del-listeden-silme">List Del (Listeden silme)</h2>
-
+<span style="color:#66d9ef">print</span> list1
+<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Movies</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Music</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Documents</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Pictures</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Music2</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Movies2</span><span style="color:#e6db74">&#39;</span>]
+</code></pre></div><h2 id="list-del-listeden-silme">List Del (Listeden silme)</h2>
 <blockquote>
 <p>Belli bir indexteki elemanı çıkartmak için del fonksiyonunu kullanırız.</p>
 </blockquote>
-
-<pre><code class="language-python">list = [&quot;Matthew&quot;, &quot;Mark&quot;, &quot;Luke&quot;, &quot;John&quot;]
-del list[1]
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">list <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Matthew</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Mark</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Luke</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">John</span><span style="color:#e6db74">&#34;</span>]
+<span style="color:#66d9ef">del</span> list[<span style="color:#ae81ff">1</span>]
  
-print list
-&gt;&gt;&gt; [&quot;Matthew&quot;, &quot;Luke&quot;, &quot;John&quot;]
-</code></pre>
-
-<h2 id="list-keywords">List Keywords</h2>
-
+<span style="color:#66d9ef">print</span> list
+<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Matthew</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Luke</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">John</span><span style="color:#e6db74">&#34;</span>]
+</code></pre></div><h2 id="list-keywords">List Keywords</h2>
 <blockquote>
 <p>&ldquo;in&rdquo; terimi bir elemanın listede olup olmadığını kontrol etmek için kullanılabilir.</p>
 </blockquote>
-
-<pre><code class="language-python">list = [&quot;red&quot;, &quot;orange&quot;, &quot;green&quot;, &quot;blue&quot;]
-if &quot;red&quot; in list:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">list <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">red</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">orange</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">green</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">blue</span><span style="color:#e6db74">&#34;</span>]
+<span style="color:#66d9ef">if</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">red</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">in</span> list:
     do_something()
      
-# &quot;not&quot; terimi &quot;in&quot; ile birlikte kullanılabilir
+<span style="color:#75715e"># &#34;not&#34; terimi &#34;in&#34; ile birlikte kullanılabilir</span>
  
-list = [&quot;red&quot;, &quot;orange&quot;, &quot;green&quot;, &quot;blue&quot;]
-if &quot;purple&quot; not in list:
+list <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">red</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">orange</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">green</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">blue</span><span style="color:#e6db74">&#34;</span>]
+<span style="color:#66d9ef">if</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">purple</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> list:
     do_something()
-</code></pre>
-
-<h2 id="list-reverse-liste-tersi">List Reverse (Liste tersi)</h2>
-
+</code></pre></div><h2 id="list-reverse-liste-tersi">List Reverse (Liste tersi)</h2>
 <blockquote>
 <p>Reverse metodu tüm listenin sıralamasını tersine çevirecektir.</p>
 </blockquote>
-
-<pre><code class="language-python">L1 = [&quot;One&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;]
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">L1 <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">One</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">two</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">three</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">four</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">five</span><span style="color:#e6db74">&#34;</span>]
   
-# Listeyi olduğu gibi yazdır
-print L1
-&gt;&gt;&gt; [&quot;One&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;]
+<span style="color:#75715e"># Listeyi olduğu gibi yazdır</span>
+<span style="color:#66d9ef">print</span> L1
+<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">One</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">two</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">three</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">four</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">five</span><span style="color:#e6db74">&#34;</span>]
 
-# Listeyi tersten yazdır
-for i in L1[::-1]:
-    print i
+<span style="color:#75715e"># Listeyi tersten yazdır</span>
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> L1[::<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]:
+    <span style="color:#66d9ef">print</span> i
  
-# YADA
+<span style="color:#75715e"># YADA</span>
  
-L = [0, 10, 20, 40]
-L.reverse()
+L <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">40</span>]
+L<span style="color:#f92672">.</span>reverse()
  
-print L
-&gt;&gt;&gt; [40, 20, 10, 0]
-</code></pre>
-
-<h2 id="list-sorting-sıralama">List Sorting (Sıralama)</h2>
-
+<span style="color:#66d9ef">print</span> L
+<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> [<span style="color:#ae81ff">40</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">0</span>]
+</code></pre></div><h2 id="list-sorting-sralama">List Sorting (Sıralama)</h2>
 <blockquote>
-<p>Bir listeyi sıralamanın en kolay yolu sorted fonksiyonunu kullanmaktır.<br />
+<p>Bir listeyi sıralamanın en kolay yolu sorted fonksiyonunu kullanmaktır.<br>
 Bu fonksiyon parametre olarak bir fonksiyon alır ve sıralanmış olarak yeni bir liste döndürür. Asıl liste değişikliğe uğramaz.</p>
-
 <p>sorted() fonksiyonu opsiyonel parametrelerle özelleştirilebilir. &ldquo;reverse=True&rdquo; parametresi listeyi tersten sıralanmış olarak döndürecektir. sorted(list, reverse=True)</p>
 </blockquote>
-
-<pre><code class="language-python"># içinde bazı numaralar olan bir liste oluştur
-numbers = [5, 1, 4, 3, 2, 6, 7, 9]
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># içinde bazı numaralar olan bir liste oluştur</span>
+numbers <span style="color:#f92672">=</span> [<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">9</span>]
   
-# numaraları sıralı olarak yazdır
-print sorted(numbers)
+<span style="color:#75715e"># numaraları sıralı olarak yazdır</span>
+<span style="color:#66d9ef">print</span> sorted(numbers)
   
-# asıl listenin elemanları bir değişikliğe uğramadı
-print numbers
-my_string = ['aa', 'BB', 'zz', 'CC', 'dd', &quot;EE&quot;]
+<span style="color:#75715e"># asıl listenin elemanları bir değişikliğe uğramadı</span>
+<span style="color:#66d9ef">print</span> numbers
+my_string <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">aa</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">BB</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">zz</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">CC</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">dd</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">EE</span><span style="color:#e6db74">&#34;</span>]
  
-# Eğer hiç bir parametre kullanılmazsa ön tanımlı değerler kullanılacaktır (Büyük - Küçük duyarlı)
-print sorted(my_string)
+<span style="color:#75715e"># Eğer hiç bir parametre kullanılmazsa ön tanımlı değerler kullanılacaktır (Büyük - Küçük duyarlı)</span>
+<span style="color:#66d9ef">print</span> sorted(my_string)
  
-# reverse parametresi ile tersten sıralayacaktır
-print sorted(strs, reverse=True)   # ['zz', 'aa', 'CC', 'BB']
+<span style="color:#75715e"># reverse parametresi ile tersten sıralayacaktır</span>
+<span style="color:#66d9ef">print</span> sorted(strs, reverse<span style="color:#f92672">=</span>True)   <span style="color:#75715e"># [&#39;zz&#39;, &#39;aa&#39;, &#39;CC&#39;, &#39;BB&#39;]</span>
 
-# Bu bir sonuç döndürmeyecektir, listeyi değiştirecektir
-list.sort()
-</code></pre>
-
-<h2 id="list-split-dilimleme">List Split (Dilimleme)</h2>
-
+<span style="color:#75715e"># Bu bir sonuç döndürmeyecektir, listeyi değiştirecektir</span>
+list<span style="color:#f92672">.</span>sort()
+</code></pre></div><h2 id="list-split-dilimleme">List Split (Dilimleme)</h2>
 <blockquote>
 <p>Bir stringi dilimleyip liste haline getirebiliriz. Bunu yapmak için split metodunu kullanırız. Eğer metoda parametre geçirmezsek boşluk karakterine göre dilimleyecektir.</p>
 </blockquote>
-
-<pre><code class="language-python">list = 'one, two, three, four, five'
-newlist = list.split(',')
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">list <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">one, two, three, four, five</span><span style="color:#e6db74">&#39;</span>
+newlist <span style="color:#f92672">=</span> list<span style="color:#f92672">.</span>split(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">,</span><span style="color:#e6db74">&#39;</span>)
  
-print newlist
-&gt;&gt;&gt; ['one', ' two', ' three', ' four', 'five']
-</code></pre>
-
-<h2 id="list-indexing">List Indexing</h2>
-
+<span style="color:#66d9ef">print</span> newlist
+<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">one</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74"> two</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74"> three</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74"> four</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">five</span><span style="color:#e6db74">&#39;</span>]
+</code></pre></div><h2 id="list-indexing">List Indexing</h2>
 <blockquote>
 <p>Listedeki her bir elamana 0dan başlayacak şekilde bir numara atanır. Bu numaraya index adı verilir. Bu index kullanılarak listenin elemanına doğrudan erişebiliriz.</p>
 </blockquote>
-
-<pre><code class="language-python">list    = [&quot;first&quot;, &quot;second&quot;, &quot;third&quot;]
-list[0] == &quot;first&quot;
-list[1] == &quot;second&quot;
-list[2] == &quot;third&quot;
-</code></pre>
-
-<h2 id="list-slicing">List Slicing</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">list    <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">first</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">second</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">third</span><span style="color:#e6db74">&#34;</span>]
+list[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">first</span><span style="color:#e6db74">&#34;</span>
+list[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">second</span><span style="color:#e6db74">&#34;</span>
+list[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">third</span><span style="color:#e6db74">&#34;</span>
+</code></pre></div><h2 id="list-slicing">List Slicing</h2>
 <blockquote>
 <p>Bazen listenin bir kısmına ulaşmak isteyebiliriz. Python bunu dahali olarak destekler. Bir listenin elemanına ulaşmaya çalışır gibi, başlangıç ve bitiş indexleri vererek belirli bir aralıktaki değerleri liste olarak alabiliriz.</p>
 </blockquote>
-
-<pre><code class="language-python">colors = ['yellow', 'red', 'blue', 'green', 'black']
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">colors <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">yellow</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">red</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">blue</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">green</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">black</span><span style="color:#e6db74">&#39;</span>]
  
-print colors[0]
-&gt;&gt;&gt; yellow
+<span style="color:#66d9ef">print</span> colors[<span style="color:#ae81ff">0</span>]
+<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> yellow
      
-print colors [1:]
-&gt;&gt;&gt; red, blue, green, black
-</code></pre>
-
-<p><a href="http://stackoverflow.com/questions/509211/the-python-slice-notation">Bu</a> stackoverflow sayfasından alınan örneğe bakalım.</p>
-
-<pre><code class="language-python"># baslangictan, son indexine kadar (son dahil değil)
+<span style="color:#66d9ef">print</span> colors [<span style="color:#ae81ff">1</span>:]
+<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> red, blue, green, black
+</code></pre></div><p><a href="http://stackoverflow.com/questions/509211/the-python-slice-notation">Bu</a> stackoverflow sayfasından alınan örneğe bakalım.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># baslangictan, son indexine kadar (son dahil değil)</span>
 a[baslangic:son]
-# baslangic indexinden listenin sonuna kadar
+<span style="color:#75715e"># baslangic indexinden listenin sonuna kadar</span>
 a[baslangic:]
-# listenin basindan, son indexine kadar (son dahil değil)
+<span style="color:#75715e"># listenin basindan, son indexine kadar (son dahil değil)</span>
 a[:son]
-# tüm listenin kopyası
+<span style="color:#75715e"># tüm listenin kopyası</span>
 a[:]
-</code></pre>
-
-<p>Birde kullanabileceğimiz adım sayısı vardır.</p>
-
-<pre><code class="language-python"># belirli adimlara göre
+</code></pre></div><p>Birde kullanabileceğimiz adım sayısı vardır.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># belirli adimlara göre</span>
 a[start:end:step]
-</code></pre>
-
-<p>FIXME: hem anlatım bozukluğuna bak, hemde test et<br />
+</code></pre></div><p>FIXME: hem anlatım bozukluğuna bak, hemde test et<br>
 Bir diğer özellik de başlangıç ve bitiş değerleri negatif sayı olabilir, bu durumda listenin başından değilde sonundan itibaren saymamız gerekir.</p>
-
-<pre><code class="language-python"># listedeki son eleman
-a[-1]
-# listenin son iki elemanı
-a[-2:]
-# son iki eleman hariç listenin tüm elemanları
-a[:-2]
-</code></pre>
-
-<h2 id="list-loops">List Loops</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># listedeki son eleman</span>
+a[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+<span style="color:#75715e"># listenin son iki elemanı</span>
+a[<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>:]
+<span style="color:#75715e"># son iki eleman hariç listenin tüm elemanları</span>
+a[:<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>]
+</code></pre></div><h2 id="list-loops">List Loops</h2>
 <blockquote>
 <p>Bazen bir liste üzerindeki elemanları kullanacak bir döngü kurmak isteriz. Pythonda bunu &ldquo;in&rdquo; terimi kullanarak rahatlıkla yapabiliriz.</p>
 </blockquote>
-
-<pre><code class="language-python"># Buna benzeyebilir
-matching = []
-for term in mylist:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Buna benzeyebilir</span>
+matching <span style="color:#f92672">=</span> []
+<span style="color:#66d9ef">for</span> term <span style="color:#f92672">in</span> mylist:
     do something
  
-# Bir koşulu saylayan liste elemanlarını başka bir listeye atmak
-matching = []    # Boş bir liste oluştur
-for term in mylist:
-    if test(term):
-        matching.append(term)
+<span style="color:#75715e"># Bir koşulu saylayan liste elemanlarını başka bir listeye atmak</span>
+matching <span style="color:#f92672">=</span> []    <span style="color:#75715e"># Boş bir liste oluştur</span>
+<span style="color:#66d9ef">for</span> term <span style="color:#f92672">in</span> mylist:
+    <span style="color:#66d9ef">if</span> test(term):
+        matching<span style="color:#f92672">.</span>append(term)
  
-# İçinde eleman olan bir listeyi bu şekilde döngüye sokabiliriz
-items = [ 1, 2, 3, 4, 5 ]
-for i in items:
-    print i
-</code></pre>
-
-<h2 id="list-methods">List Methods</h2>
-
+<span style="color:#75715e"># İçinde eleman olan bir listeyi bu şekilde döngüye sokabiliriz</span>
+items <span style="color:#f92672">=</span> [ <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span> ]
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> items:
+    <span style="color:#66d9ef">print</span> i
+</code></pre></div><h2 id="list-methods">List Methods</h2>
 <blockquote>
 <p>Calls to list methods have the list they operate on appear before the method name.</p>
-
-<p>Any other values the method needs to do its job is provided in the normal way as<br />
+<p>Any other values the method needs to do its job is provided in the normal way as<br>
 an extra argument inside the round brackets.</p>
 </blockquote>
-
 <pre><code>s = ['h','e','l','l','o']  # liste oluştur
 s.append('d')               # listenin sonuna ekle
 len(s)                      # listedeki eleman sayısı
@@ -570,35 +495,27 @@ s.count('o')                # listede bulunan 'o' ların sayısı
 s = range(0,10)             # 0 - 10 aralığındaki sayılardan oluşan bir liste oluştur
 s = range(0,10,2)           # yukardaki benzeri fakat bir de adım değeri belirle
 </code></pre>
-
-<h2 id="örnekler">Örnekler</h2>
-
+<h2 id="rnekler">Örnekler</h2>
 <blockquote>
 <p>Bu makaleyi bazı liste örnekleri göstererek bitirelim.</p>
 </blockquote>
-
 <p>İlk olarak sadece sayılardan oluşan bir liste oluşturalım.</p>
-
-<pre><code class="language-python">list = [1,2,3,5,8,2,5.2]    # 1,2,3,5,8,2,5.2 değerlerini tutan bir liste oluştur
-i = 0
-while i &lt; len(list):     # Listenin her bir elemanını yazdıran while döngüsüin the list
-    print list[i]        # Her elemana index değeriyle ulaşılıyor
-    i = i + 1            # While döngüsü her çalıştığında i değişkenini 1 arttır
-</code></pre>
-
-<p>Bir sonraki örnek listedeki elemanların ortalama değerini hesaplama.</p>
-
-<pre><code class="language-python">list = [1,2,3,5,8,2,5.2]
-total = 0
-i = 0
-while i &lt; len(list):
-    total = total + list[i]
-    i = i + 1
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">list <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">5.2</span>]    <span style="color:#75715e"># 1,2,3,5,8,2,5.2 değerlerini tutan bir liste oluştur</span>
+i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">while</span> i <span style="color:#f92672">&lt;</span> len(list):     <span style="color:#75715e"># Listenin her bir elemanını yazdıran while döngüsüin the list</span>
+    <span style="color:#66d9ef">print</span> list[i]        <span style="color:#75715e"># Her elemana index değeriyle ulaşılıyor</span>
+    i <span style="color:#f92672">=</span> i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>            <span style="color:#75715e"># While döngüsü her çalıştığında i değişkenini 1 arttır</span>
+</code></pre></div><p>Bir sonraki örnek listedeki elemanların ortalama değerini hesaplama.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">list <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">5.2</span>]
+total <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">while</span> i <span style="color:#f92672">&lt;</span> len(list):
+    total <span style="color:#f92672">=</span> total <span style="color:#f92672">+</span> list[i]
+    i <span style="color:#f92672">=</span> i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
  
-average = total / len(list)
-print average
-</code></pre>
-
+average <span style="color:#f92672">=</span> total <span style="color:#f92672">/</span> len(list)
+<span style="color:#66d9ef">print</span> average
+</code></pre></div>
 
         
           <div class="blog-tags">
@@ -831,7 +748,7 @@ print average
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.58.3</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          <a href="https://gohugo.io">Hugo v0.62.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>

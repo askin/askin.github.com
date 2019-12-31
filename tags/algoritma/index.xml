@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Algoritma on Aşkın Özgür</title>
@@ -30,7 +30,7 @@ Adres: http://www.projecteuler.net/</description>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/bubble-sort-algoritmasi-ve-scheme-cozumu/</guid>
       <description>Bubble sort algoritması kabaca: verilen dizideki elemanları ikili olarak karşılaştırıp gerekli olduğunda yerlerini değiştirmek esasına dayanır. Elimizde 11 5 8 4 6 84 7 sayılarında oluşan bir dizi olduğunu var sayalım ve bu diziyi küçükten büyüğe sıralamak isteyelim.
- önce 11 ile 5i karşılaştırırız, 11 5&amp;rsquo;ten büyük olduğu için 11 ile 5in yerini değiştiririz; 5 11 8 4 6 84 7 sonra 11 ile 8i karşılaştırırız ve 11 ile 8&amp;rsquo;in yerini değiştiririz 5 8 11 4 6 84 7 11 ile 4; 5 8 4 11 6 84 7 11 ile 6; 5 8 4 6 11 84 7 11 ile 84; 84 büyük olduğu için sıralamaya dokunmayız.</description>
+ önce 11 ile 5i karşılaştırırız, 11 5&#39;ten büyük olduğu için 11 ile 5in yerini değiştiririz; 5 11 8 4 6 84 7 sonra 11 ile 8i karşılaştırırız ve 11 ile 8&#39;in yerini değiştiririz 5 8 11 4 6 84 7 11 ile 4; 5 8 4 11 6 84 7 11 ile 6; 5 8 4 6 11 84 7 11 ile 84; 84 büyük olduğu için sıralamaya dokunmayız.</description>
     </item>
     
     <item>
@@ -40,26 +40,20 @@ Adres: http://www.projecteuler.net/</description>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/sezar-sifreleme/</guid>
       <description>&lt;p&gt;Sezar şifreleme için yazdığım ilk kod aşağıdaki gibiydi&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-scheme&#34;&gt;(define str2 &amp;quot;&amp;quot;)
-(define (sezar str lst)
-  (do ((i 0 (+ i 1)) (j 0 (+ j 1))) ((= j (string-length str)))
-    (if (= i (length lst))
-        (set! i 0))
-    (set! str2 
-          (string-append
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-scheme&#34; data-lang=&#34;scheme&#34;&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;define &lt;/span&gt;str2 &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;)
+(&lt;span style=&#34;color:#66d9ef&#34;&gt;define &lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;sezar&lt;/span&gt; str lst)
+  (&lt;span style=&#34;color:#66d9ef&#34;&gt;do &lt;/span&gt;((&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; (+ i &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)) (&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; (+ j &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;))) ((= j (string-length str)))
+    (&lt;span style=&#34;color:#66d9ef&#34;&gt;if &lt;/span&gt;(= i (length lst))
+        (&lt;span style=&#34;color:#66d9ef&#34;&gt;set! &lt;/span&gt;i &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;))
+    (&lt;span style=&#34;color:#66d9ef&#34;&gt;set! &lt;/span&gt;str2 
+          (&lt;span style=&#34;color:#a6e22e&#34;&gt;string-append&lt;/span&gt;
            str2
-           (string (integer-&amp;gt;char
+           (string (&lt;span style=&#34;color:#a6e22e&#34;&gt;integer-&amp;gt;char&lt;/span&gt;
                     (+ (list-ref lst i )
                        (char-&amp;gt;integer (string-ref str j)))))))))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Ancak bu kod pek hoşuma gitmedi üzerinde biraz daha oynama yapmak gerekiyordu. Mesela en baştaki&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-scheme&#34;&gt;(define str2 &amp;quot;&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;pek hoş durmuyordu ve hiç bir sonuç gönmüyordu. Ekstradan srt2 nin değerini sorgulamak gerekiyordu.&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ancak bu kod pek hoşuma gitmedi üzerinde biraz daha oynama yapmak gerekiyordu. Mesela en baştaki&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-scheme&#34; data-lang=&#34;scheme&#34;&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;define &lt;/span&gt;str2 &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;pek hoş durmuyordu ve hiç bir sonuç gönmüyordu. Ekstradan srt2 nin değerini sorgulamak gerekiyordu.&lt;/p&gt;</description>
     </item>
     
   </channel>

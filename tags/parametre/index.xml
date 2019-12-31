@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>parametre on Aşkın Özgür</title>
@@ -22,8 +22,8 @@
       <description>Bu yazıyı asıl yazma sebebim parametre olarak geçirilen fonksiyona geçirilecek parametreler :)
 Parametre olarak geçireceğimiz fonksiyonlar belli bir sayıda parametre alıyorsa yapacağımız iş basit,
 Mesela:
-def Merhaba(isim): print &amp;quot;Merhaba %s&amp;quot; % isim  Bunun gibi sadece tek parametre alan bir fonksiyon için aşağıdaki gibi bir fonksiyon yeterli olacaktır.
-def BuyukAbi(func, param): func(param)  BuyukAbi(Merhaba, &amp;quot;kelebek&amp;quot;) Merhaba kelebek  Bu fonksiyon parametre olarak aldığı func fonksiyonuna param parametresini geçirecektir.
+def Merhaba(isim): print &amp;#34;Merhaba %s&amp;#34; % isim Bunun gibi sadece tek parametre alan bir fonksiyon için aşağıdaki gibi bir fonksiyon yeterli olacaktır.
+def BuyukAbi(func, param): func(param) BuyukAbi(Merhaba, &amp;#34;kelebek&amp;#34;) Merhaba kelebek Bu fonksiyon parametre olarak aldığı func fonksiyonuna param parametresini geçirecektir.
 Eğer fonksiyonun aldığı parametre sayısı belirsiz ise, yani farklı sayıda parametre alan fonksiyonlarla uğraşmak gerekiyorsa yanına birkaç ekleme daha yapmamız gerekiyor.</description>
     </item>
     

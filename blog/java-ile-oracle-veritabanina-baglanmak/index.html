@@ -10,7 +10,7 @@
   <title>Java ile Oracle Veritabanına bağlanmak. - Aşkın Özgür</title>
   <meta name="description" content="Öncelikle http://www.oracle.com/technetwork/database/enterprise-edition/jdbc101040-094982.html adresinden classes12.jar dosyasını indiriyoruz.
 Bu dosyayı bir dizine atıp, içeriğini bu dizine çıkartıyoruz. Bu dizini classpath değişkeninde belirtip kodlamaya başlıyoruz.
-import java.io.*; import java.sql.*; public class OraThin { public static void main(String[] args) { try { Connection con = null; Class.forName(&quot;oracle.jdbc.driver.OracleDriver&quot;); con=DriverManager.getConnection( &quot;jdbc:oracle:thin:@localhost:1521:dbname&quot;, &quot;username&quot;, &quot;password&quot;); Statement s = con.createStatement(); ResultSet rs = s.executeQuery(&quot;SELECT * FROM KISI&quot;); String name; String surname; while(rs.next()) { name = rs.getString(&quot;AD&quot;); surname = rs.getString(&quot;SOYAD&quot;); System.">
+import java.io.*; import java.sql.*; public class OraThin { public static void main(String[] args) { try { Connection con = null; Class.forName(&#34;oracle.jdbc.driver.OracleDriver&#34;); con=DriverManager.getConnection( &#34;jdbc:oracle:thin:@localhost:1521:dbname&#34;, &#34;username&#34;, &#34;password&#34;); Statement s = con.createStatement(); ResultSet rs = s.executeQuery(&#34;SELECT * FROM KISI&#34;); String name; String surname; while(rs.next()) { name = rs.getString(&#34;AD&#34;); surname = rs.getString(&#34;SOYAD&#34;); System.">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -59,7 +59,7 @@ import java.io.*; import java.sql.*; public class OraThin { public static void m
     "name" : "askin"
   },
   "headline": "Java ile Oracle Veritabanına bağlanmak.",
-  "description" : "Öncelikle http:\/\/www.oracle.com\/technetwork\/database\/enterprise-edition\/jdbc101040-094982.html adresinden classes12.jar dosyasını indiriyoruz.\nBu dosyayı bir dizine atıp, içeriğini bu dizine çıkartıyoruz. Bu dizini classpath değişkeninde belirtip kodlamaya başlıyoruz.\nimport java.io.*; import java.sql.*; public class OraThin { public static void main(String[] args) { try { Connection con = null; Class.forName(\x26quot;oracle.jdbc.driver.OracleDriver\x26quot;); con=DriverManager.getConnection( \x26quot;jdbc:oracle:thin:@localhost:1521:dbname\x26quot;, \x26quot;username\x26quot;, \x26quot;password\x26quot;); Statement s = con.createStatement(); ResultSet rs = s.executeQuery(\x26quot;SELECT * FROM KISI\x26quot;); String name; String surname; while(rs.next()) { name = rs.getString(\x26quot;AD\x26quot;); surname = rs.getString(\x26quot;SOYAD\x26quot;); System.",
+  "description" : "Öncelikle http:\/\/www.oracle.com\/technetwork\/database\/enterprise-edition\/jdbc101040-094982.html adresinden classes12.jar dosyasını indiriyoruz.\nBu dosyayı bir dizine atıp, içeriğini bu dizine çıkartıyoruz. Bu dizini classpath değişkeninde belirtip kodlamaya başlıyoruz.\nimport java.io.*; import java.sql.*; public class OraThin { public static void main(String[] args) { try { Connection con = null; Class.forName(\x26#34;oracle.jdbc.driver.OracleDriver\x26#34;); con=DriverManager.getConnection( \x26#34;jdbc:oracle:thin:@localhost:1521:dbname\x26#34;, \x26#34;username\x26#34;, \x26#34;password\x26#34;); Statement s = con.createStatement(); ResultSet rs = s.executeQuery(\x26#34;SELECT * FROM KISI\x26#34;); String name; String surname; while(rs.next()) { name = rs.getString(\x26#34;AD\x26#34;); surname = rs.getString(\x26#34;SOYAD\x26#34;); System.",
   "inLanguage" : "en",
   "wordCount":  88 ,
   "datePublished" : "2010-11-08T20:29:00",
@@ -83,7 +83,7 @@ import java.io.*; import java.sql.*; public class OraThin { public static void m
 <meta property="og:title" content="Java ile Oracle Veritabanına bağlanmak." />
 <meta property="og:description" content="Öncelikle http://www.oracle.com/technetwork/database/enterprise-edition/jdbc101040-094982.html adresinden classes12.jar dosyasını indiriyoruz.
 Bu dosyayı bir dizine atıp, içeriğini bu dizine çıkartıyoruz. Bu dizini classpath değişkeninde belirtip kodlamaya başlıyoruz.
-import java.io.*; import java.sql.*; public class OraThin { public static void main(String[] args) { try { Connection con = null; Class.forName(&quot;oracle.jdbc.driver.OracleDriver&quot;); con=DriverManager.getConnection( &quot;jdbc:oracle:thin:@localhost:1521:dbname&quot;, &quot;username&quot;, &quot;password&quot;); Statement s = con.createStatement(); ResultSet rs = s.executeQuery(&quot;SELECT * FROM KISI&quot;); String name; String surname; while(rs.next()) { name = rs.getString(&quot;AD&quot;); surname = rs.getString(&quot;SOYAD&quot;); System.">
+import java.io.*; import java.sql.*; public class OraThin { public static void main(String[] args) { try { Connection con = null; Class.forName(&#34;oracle.jdbc.driver.OracleDriver&#34;); con=DriverManager.getConnection( &#34;jdbc:oracle:thin:@localhost:1521:dbname&#34;, &#34;username&#34;, &#34;password&#34;); Statement s = con.createStatement(); ResultSet rs = s.executeQuery(&#34;SELECT * FROM KISI&#34;); String name; String surname; while(rs.next()) { name = rs.getString(&#34;AD&#34;); surname = rs.getString(&#34;SOYAD&#34;); System.">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
 <meta property="og:url" content="https://blog.askin.ws/blog/java-ile-oracle-veritabanina-baglanmak/" />
 <meta property="og:type" content="website" />
@@ -97,7 +97,7 @@ Bu dosyayı bir dizine atıp, içeriğini bu dizine …">
   <meta name="twitter:site" content="@kelebeks" />
   <meta name="twitter:creator" content="@kelebeks" />
   <link href='https://blog.askin.ws/img/favicon.ico' rel='icon' type='image/x-icon'/>
-  <meta name="generator" content="Hugo 0.58.3" />
+  <meta name="generator" content="Hugo 0.62.0" />
   <link rel="alternate" href="https://blog.askin.ws/index.xml" type="application/rss+xml" title="Aşkın Özgür"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://blog.askin.ws/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -259,41 +259,38 @@ Bu dosyayı bir dizine atıp, içeriğini bu dizine …">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
         <p>Öncelikle <a href="http://www.oracle.com/technetwork/database/enterprise-edition/jdbc101040-094982.html">http://www.oracle.com/technetwork/database/enterprise-edition/jdbc101040-094982.html</a> adresinden classes12.jar dosyasını indiriyoruz.</p>
-
 <p>Bu dosyayı bir dizine atıp, içeriğini bu dizine çıkartıyoruz. Bu dizini classpath değişkeninde belirtip kodlamaya başlıyoruz.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.io.*<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.sql.*<span style="color:#f92672">;</span>
 
-<pre><code class="language-java">import java.io.*;
-import java.sql.*;
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">OraThin</span> <span style="color:#f92672">{</span>                                                                                                                                                                
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[</span><span style="color:#f92672">]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>                                                                                                                                          
+        <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>                                                                                                                                                                         
+            Connection con <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+            Class<span style="color:#f92672">.</span><span style="color:#a6e22e">forName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;oracle.jdbc.driver.OracleDriver&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>              
+            con<span style="color:#f92672">=</span>DriverManager<span style="color:#f92672">.</span><span style="color:#a6e22e">getConnection</span><span style="color:#f92672">(</span>
+                <span style="color:#e6db74">&#34;jdbc:oracle:thin:@localhost:1521:dbname&#34;</span><span style="color:#f92672">,</span>
+                <span style="color:#e6db74">&#34;username&#34;</span><span style="color:#f92672">,</span>
+                <span style="color:#e6db74">&#34;password&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            Statement s <span style="color:#f92672">=</span> con<span style="color:#f92672">.</span><span style="color:#a6e22e">createStatement</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            ResultSet rs <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">executeQuery</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;SELECT * FROM KISI&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-public class OraThin {                                                                                                                                                                
-    public static void main(String[] args) {                                                                                                                                          
-        try {                                                                                                                                                                         
-            Connection con = null;
-            Class.forName(&quot;oracle.jdbc.driver.OracleDriver&quot;);              
-            con=DriverManager.getConnection(
-                &quot;jdbc:oracle:thin:@localhost:1521:dbname&quot;,
-                &quot;username&quot;,
-                &quot;password&quot;);
-            Statement s = con.createStatement();
-            ResultSet rs = s.executeQuery(&quot;SELECT * FROM KISI&quot;);
+            String name<span style="color:#f92672">;</span>
+            String surname<span style="color:#f92672">;</span>
 
-            String name;
-            String surname;
+            <span style="color:#66d9ef">while</span><span style="color:#f92672">(</span>rs<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                name    <span style="color:#f92672">=</span> rs<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;AD&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+                surname <span style="color:#f92672">=</span> rs<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;SOYAD&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-            while(rs.next()) {
-                name    = rs.getString(&quot;AD&quot;);
-                surname = rs.getString(&quot;SOYAD&quot;);
+                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Name: &#34;</span> <span style="color:#f92672">+</span> name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, Surmame: &#34;</span> <span style="color:#f92672">+</span> surname<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
 
-                System.out.println(&quot;Name: &quot; + name + &quot;, Surmame: &quot; + surname);
-            }
-
-            s.close();
-            con.close();
-        } catch(Exception e){e.printStackTrace();}
-    }
-} 
-</code></pre>
-
+            s<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            con<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span><span style="color:#f92672">{</span>e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span><span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span> 
+</code></pre></div>
 
         
           <div class="blog-tags">
@@ -549,7 +546,7 @@ public class OraThin {
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.58.3</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          <a href="https://gohugo.io">Hugo v0.62.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>

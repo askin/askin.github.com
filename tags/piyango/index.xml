@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Piyango on Aşkın Özgür</title>
@@ -22,7 +22,7 @@
       <description>Bu girdi Burdaki girdiden esinlenilerek yazıldı.
 E madem pyton ile sayısal kuponu yapılıyor biz niye scheme ile yapmayalım bunu demi:)
 Probleme göre kod bana çok uzun geldi. Belki ilerde optimize edebilirim. Ama şimdilik böyle oynayalım demi:)
-(define (sayisal) (display &amp;quot;Oynamak istediginiz kolan sayisini giriniz: \n&amp;quot;) (let ((kolon (read))) (do ((i 1 (+ i 1))) ((&amp;gt; i kolon)) (let loop ((lst (list (+ (random 49) 1))) (sayi (+ 1 (random 49)))) (if (= (length lst) 6) (printf &amp;quot;~a.</description>
+(define (sayisal) (display &amp;#34;Oynamak istediginiz kolan sayisini giriniz: \n&amp;#34;) (let ((kolon (read))) (do ((i 1 (+ i 1))) ((&amp;gt; i kolon)) (let loop ((lst (list (+ (random 49) 1))) (sayi (+ 1 (random 49)))) (if (= (length lst) 6) (printf &amp;#34;~a.</description>
     </item>
     
   </channel>

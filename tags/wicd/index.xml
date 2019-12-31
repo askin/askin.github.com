@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>wicd on Aşkın Özgür</title>
@@ -28,7 +28,7 @@ satırını ve
 /etc/modprobe.d/blacklist-compat
 dosyasına da
 blacklist ath_pci
-satırını eklemek gerekiyor. Bunları ekledikten sonra kde&amp;rsquo;de ağ programcığıyla bağlanabiliyorsunuz.
+satırını eklemek gerekiyor. Bunları ekledikten sonra kde&#39;de ağ programcığıyla bağlanabiliyorsunuz.
 Fakat XFCE kullanıyorsanız wicd kullanmanız gerekiyor. Wicd ile doğrudan kullanamıyoruz.</description>
     </item>
     

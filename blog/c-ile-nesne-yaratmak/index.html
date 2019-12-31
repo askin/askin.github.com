@@ -10,7 +10,7 @@
   <title>C ile Nesne Yaratmak - Aşkın Özgür</title>
   <meta name="description" content="Evet kışkırtıcı bir başlık attım :) Aslında yapacağımız olay bir structı nesne gibi kullanmak. Buna benzer bir kodu yıllar önce görmüştüm. O günden bu güne sürekli böyle bir şeyi nasıl yaparım diye araştırdım. Anca bugün çözebildim olayı ;) Kodu aşağıda yorum satırıyla beraber veriyorum. Yorumlarda gerekli açıklamaları yaptım.
 Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşıma bu çıktı, bende boş durmasın dedim :)
-/* * Sınıfımızı yaratıyoruz */ struct _myobject { // alt alanlar int a, b; /* * Metod * Burada fonksiyon pointerı tanımlıyoruz */ int (*add)(struct _myobject*); }; // struct ön ekinden kurtuluyoruz typedef struct _myobject MyObject; /* * Asıl işi yapacak fonksiyonu tanımlıyoruz * MyObject structını parametre olarak alıyor */ int realAdd(MyObject* a) { return a-&gt;a &#43; a-&gt;b; } int main ( void ) { /* * Nesnemizi oluşturuyoruz.">
+/* * Sınıfımızı yaratıyoruz */ struct _myobject { // alt alanlar  int a, b; /* * Metod * Burada fonksiyon pointerı tanımlıyoruz */ int (*add)(struct _myobject*); }; // struct ön ekinden kurtuluyoruz typedef struct _myobject MyObject; /* * Asıl işi yapacak fonksiyonu tanımlıyoruz * MyObject structını parametre olarak alıyor */ int realAdd(MyObject* a) { return a-&gt;a &#43; a-&gt;b; } int main ( void ) { /* * Nesnemizi oluşturuyoruz.">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -59,7 +59,7 @@ Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşı
     "name" : "askin"
   },
   "headline": "C ile Nesne Yaratmak",
-  "description" : "Evet kışkırtıcı bir başlık attım :) Aslında yapacağımız olay bir structı nesne gibi kullanmak. Buna benzer bir kodu yıllar önce görmüştüm. O günden bu güne sürekli böyle bir şeyi nasıl yaparım diye araştırdım. Anca bugün çözebildim olayı ;) Kodu aşağıda yorum satırıyla beraber veriyorum. Yorumlarda gerekli açıklamaları yaptım.\nBu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşıma bu çıktı, bende boş durmasın dedim :)\n\/* * Sınıfımızı yaratıyoruz *\/ struct _myobject { \/\/ alt alanlar int a, b; \/* * Metod * Burada fonksiyon pointerı tanımlıyoruz *\/ int (*add)(struct _myobject*); }; \/\/ struct ön ekinden kurtuluyoruz typedef struct _myobject MyObject; \/* * Asıl işi yapacak fonksiyonu tanımlıyoruz * MyObject structını parametre olarak alıyor *\/ int realAdd(MyObject* a) { return a-\x26gt;a \x2b a-\x26gt;b; } int main ( void ) { \/* * Nesnemizi oluşturuyoruz.",
+  "description" : "Evet kışkırtıcı bir başlık attım :) Aslında yapacağımız olay bir structı nesne gibi kullanmak. Buna benzer bir kodu yıllar önce görmüştüm. O günden bu güne sürekli böyle bir şeyi nasıl yaparım diye araştırdım. Anca bugün çözebildim olayı ;) Kodu aşağıda yorum satırıyla beraber veriyorum. Yorumlarda gerekli açıklamaları yaptım.\nBu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşıma bu çıktı, bende boş durmasın dedim :)\n\/* * Sınıfımızı yaratıyoruz *\/ struct _myobject { \/\/ alt alanlar  int a, b; \/* * Metod * Burada fonksiyon pointerı tanımlıyoruz *\/ int (*add)(struct _myobject*); }; \/\/ struct ön ekinden kurtuluyoruz typedef struct _myobject MyObject; \/* * Asıl işi yapacak fonksiyonu tanımlıyoruz * MyObject structını parametre olarak alıyor *\/ int realAdd(MyObject* a) { return a-\x26gt;a \x2b a-\x26gt;b; } int main ( void ) { \/* * Nesnemizi oluşturuyoruz.",
   "inLanguage" : "en",
   "wordCount":  177 ,
   "datePublished" : "2010-04-27T04:08:00",
@@ -83,7 +83,7 @@ Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşı
 <meta property="og:title" content="C ile Nesne Yaratmak" />
 <meta property="og:description" content="Evet kışkırtıcı bir başlık attım :) Aslında yapacağımız olay bir structı nesne gibi kullanmak. Buna benzer bir kodu yıllar önce görmüştüm. O günden bu güne sürekli böyle bir şeyi nasıl yaparım diye araştırdım. Anca bugün çözebildim olayı ;) Kodu aşağıda yorum satırıyla beraber veriyorum. Yorumlarda gerekli açıklamaları yaptım.
 Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşıma bu çıktı, bende boş durmasın dedim :)
-/* * Sınıfımızı yaratıyoruz */ struct _myobject { // alt alanlar int a, b; /* * Metod * Burada fonksiyon pointerı tanımlıyoruz */ int (*add)(struct _myobject*); }; // struct ön ekinden kurtuluyoruz typedef struct _myobject MyObject; /* * Asıl işi yapacak fonksiyonu tanımlıyoruz * MyObject structını parametre olarak alıyor */ int realAdd(MyObject* a) { return a-&gt;a &#43; a-&gt;b; } int main ( void ) { /* * Nesnemizi oluşturuyoruz.">
+/* * Sınıfımızı yaratıyoruz */ struct _myobject { // alt alanlar  int a, b; /* * Metod * Burada fonksiyon pointerı tanımlıyoruz */ int (*add)(struct _myobject*); }; // struct ön ekinden kurtuluyoruz typedef struct _myobject MyObject; /* * Asıl işi yapacak fonksiyonu tanımlıyoruz * MyObject structını parametre olarak alıyor */ int realAdd(MyObject* a) { return a-&gt;a &#43; a-&gt;b; } int main ( void ) { /* * Nesnemizi oluşturuyoruz.">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
 <meta property="og:url" content="https://blog.askin.ws/blog/c-ile-nesne-yaratmak/" />
 <meta property="og:type" content="website" />
@@ -96,7 +96,7 @@ Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşı
   <meta name="twitter:site" content="@kelebeks" />
   <meta name="twitter:creator" content="@kelebeks" />
   <link href='https://blog.askin.ws/img/favicon.ico' rel='icon' type='image/x-icon'/>
-  <meta name="generator" content="Hugo 0.58.3" />
+  <meta name="generator" content="Hugo 0.62.0" />
   <link rel="alternate" href="https://blog.askin.ws/index.xml" type="application/rss+xml" title="Aşkın Özgür"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://blog.askin.ws/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -257,48 +257,44 @@ Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşı
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p><img src="/uploads/2010/04/c3po.jpg" alt="" title="C-3PO" />Evet kışkırtıcı bir başlık attım :)
+        <p><img src="/uploads/2010/04/c3po.jpg" alt="" title="C-3PO">Evet kışkırtıcı bir başlık attım :)
 Aslında yapacağımız olay bir structı nesne gibi kullanmak. Buna benzer bir kodu yıllar önce görmüştüm. O günden bu güne sürekli böyle bir şeyi nasıl yaparım diye araştırdım. Anca bugün çözebildim olayı ;)
 Kodu aşağıda yorum satırıyla beraber veriyorum. Yorumlarda gerekli açıklamaları yaptım.</p>
-
 <p>Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşıma bu çıktı, bende boş durmasın dedim :)</p>
-
-<pre><code class="language-c">/*
- * Sınıfımızı yaratıyoruz
- */
-struct _myobject {
-  // alt alanlar
-  int a, b;
-  /*
-   * Metod
-   * Burada fonksiyon pointerı tanımlıyoruz
-   */
-  int (*add)(struct _myobject*);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">/*
+</span><span style="color:#75715e"> * Sınıfımızı yaratıyoruz
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">struct</span> _myobject {
+  <span style="color:#75715e">// alt alanlar
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> a, b;
+  <span style="color:#75715e">/*
+</span><span style="color:#75715e">   * Metod
+</span><span style="color:#75715e">   * Burada fonksiyon pointerı tanımlıyoruz
+</span><span style="color:#75715e">   */</span>
+  <span style="color:#66d9ef">int</span> (<span style="color:#f92672">*</span>add)(<span style="color:#66d9ef">struct</span> _myobject<span style="color:#f92672">*</span>);
 };
 
-// struct ön ekinden kurtuluyoruz
-typedef struct _myobject MyObject;
+<span style="color:#75715e">// struct ön ekinden kurtuluyoruz
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> _myobject MyObject;
 
-/*
- * Asıl işi yapacak fonksiyonu tanımlıyoruz
- * MyObject structını parametre olarak alıyor
- */
-int realAdd(MyObject* a) {
-  return a-&gt;a + a-&gt;b;
+<span style="color:#75715e">/*
+</span><span style="color:#75715e"> * Asıl işi yapacak fonksiyonu tanımlıyoruz
+</span><span style="color:#75715e"> * MyObject structını parametre olarak alıyor
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">realAdd</span>(MyObject<span style="color:#f92672">*</span> a) {
+  <span style="color:#66d9ef">return</span> a<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>a <span style="color:#f92672">+</span> a<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>b;
 }
 
-int main ( void ) {
-  /*
-   * Nesnemizi oluşturuyoruz.
-   * add pointerına fonksiyonu atıyoruz
-   */
-  MyObject mo = {1, 2, realAdd};
-  printf(&quot;A + B = %d\n&quot;, mo.add(&amp;mo));
-  return 0;
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span> ( <span style="color:#66d9ef">void</span> ) {
+  <span style="color:#75715e">/*
+</span><span style="color:#75715e">   * Nesnemizi oluşturuyoruz.
+</span><span style="color:#75715e">   * add pointerına fonksiyonu atıyoruz
+</span><span style="color:#75715e">   */</span>
+  MyObject mo <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, realAdd};
+  printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">A + B = %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, mo.add(<span style="color:#f92672">&amp;</span>mo));
+  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 }
-</code></pre>
-
-<p>Kodun başına stdio.h headerını eklemekte fayda var. WP sıkıntı çıkarttığı için silmek zorunda kaldım. Kodun düzgün halini <a href="http://github.com/askin/misc/raw/master/fun/struct-function.c">burada</a> bulabilirsiniz.</p>
+</code></pre></div><p>Kodun başına stdio.h headerını eklemekte fayda var. WP sıkıntı çıkarttığı için silmek zorunda kaldım. Kodun düzgün halini <a href="http://github.com/askin/misc/raw/master/fun/struct-function.c">burada</a> bulabilirsiniz.</p>
 
 
         
@@ -553,7 +549,7 @@ int main ( void ) {
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.58.3</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          <a href="https://gohugo.io">Hugo v0.62.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>

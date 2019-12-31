@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ağ on Aşkın Özgür</title>
@@ -21,9 +21,9 @@
       <guid>https://blog.askin.ws/blog/slurm-linux-icin-bant-genisligi-takip-araci/</guid>
       <description>Slurm temel olarak ağ trafiğini görüntülemek için kullanılan bir araçtır. Ağ kullanımını görselleştirerek kullanışlı bir çıktı üretir.
 Debian tabanlı sistemlerde aşağıdaki gibi kurulum yapabihlirsiniz.
-apt-get install slurm  Kurulumu tamamladıktan sonra komut satırından ağ trafiğinizi takip edebilirsiniz. En basit şekliyle aşağıdaki formatta komutu kullanabilirsiniz.
-slurm -i [Ağ Arayüzü]  -i parametresi hangi ağ arayüzünün kullanılacanı belirtir.
-slurm -i wlan0  slurm -i eth1  Klavye kısa yolları: Slurm etkileşim için birçok farklı tuşu destekler:</description>
+apt-get install slurm Kurulumu tamamladıktan sonra komut satırından ağ trafiğinizi takip edebilirsiniz. En basit şekliyle aşağıdaki formatta komutu kullanabilirsiniz.
+slurm -i [Ağ Arayüzü] -i parametresi hangi ağ arayüzünün kullanılacanı belirtir.
+slurm -i wlan0 slurm -i eth1 Klavye kısa yolları: Slurm etkileşim için birçok farklı tuşu destekler:</description>
     </item>
     
   </channel>

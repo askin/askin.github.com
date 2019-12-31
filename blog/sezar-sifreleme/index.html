@@ -9,8 +9,7 @@
 
   <title>Sezar şifreleme - Aşkın Özgür</title>
   <meta name="description" content="Sezar şifreleme için yazdığım ilk kod aşağıdaki gibiydi
-
-(define str2 &quot;&quot;)
+(define str2 &#34;&#34;)
 (define (sezar str lst)
   (do ((i 0 (&#43; i 1)) (j 0 (&#43; j 1))) ((= j (string-length str)))
     (if (= i (length lst))
@@ -21,13 +20,8 @@
            (string (integer-&gt;char
                     (&#43; (list-ref lst i )
                        (char-&gt;integer (string-ref str j)))))))))
-
-
 Ancak bu kod pek hoşuma gitmedi üzerinde biraz daha oynama yapmak gerekiyordu. Mesela en baştaki
-
-(define str2 &quot;&quot;)
-
-
+(define str2 &#34;&#34;)
 pek hoş durmuyordu ve hiç bir sonuç gönmüyordu. Ekstradan srt2 nin değerini sorgulamak gerekiyordu.">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
@@ -77,7 +71,7 @@ pek hoş durmuyordu ve hiç bir sonuç gönmüyordu. Ekstradan srt2 nin değerin
     "name" : "askin"
   },
   "headline": "Sezar şifreleme",
-  "description" : "Sezar şifreleme için yazdığım ilk kod aşağıdaki gibiydi\n(define str2 \x26quot;\x26quot;) (define (sezar str lst) (do ((i 0 (\x2b i 1)) (j 0 (\x2b j 1))) ((= j (string-length str))) (if (= i (length lst)) (set! i 0)) (set! str2 (string-append str2 (string (integer-\x26gt;char (\x2b (list-ref lst i ) (char-\x26gt;integer (string-ref str j)))))))))  Ancak bu kod pek hoşuma gitmedi üzerinde biraz daha oynama yapmak gerekiyordu. Mesela en baştaki\n(define str2 \x26quot;\x26quot;)  pek hoş durmuyordu ve hiç bir sonuç gönmüyordu. Ekstradan srt2 nin değerini sorgulamak gerekiyordu.\n",
+  "description" : "Sezar şifreleme için yazdığım ilk kod aşağıdaki gibiydi\n(define str2 \x26#34;\x26#34;) (define (sezar str lst) (do ((i 0 (\x2b i 1)) (j 0 (\x2b j 1))) ((= j (string-length str))) (if (= i (length lst)) (set! i 0)) (set! str2 (string-append str2 (string (integer-\x26gt;char (\x2b (list-ref lst i ) (char-\x26gt;integer (string-ref str j))))))))) Ancak bu kod pek hoşuma gitmedi üzerinde biraz daha oynama yapmak gerekiyordu. Mesela en baştaki\n(define str2 \x26#34;\x26#34;) pek hoş durmuyordu ve hiç bir sonuç gönmüyordu. Ekstradan srt2 nin değerini sorgulamak gerekiyordu.\n",
   "inLanguage" : "en",
   "wordCount":  253 ,
   "datePublished" : "2007-12-12T05:35:00",
@@ -100,8 +94,7 @@ pek hoş durmuyordu ve hiç bir sonuç gönmüyordu. Ekstradan srt2 nin değerin
 
 <meta property="og:title" content="Sezar şifreleme" />
 <meta property="og:description" content="Sezar şifreleme için yazdığım ilk kod aşağıdaki gibiydi
-
-(define str2 &quot;&quot;)
+(define str2 &#34;&#34;)
 (define (sezar str lst)
   (do ((i 0 (&#43; i 1)) (j 0 (&#43; j 1))) ((= j (string-length str)))
     (if (= i (length lst))
@@ -112,13 +105,8 @@ pek hoş durmuyordu ve hiç bir sonuç gönmüyordu. Ekstradan srt2 nin değerin
            (string (integer-&gt;char
                     (&#43; (list-ref lst i )
                        (char-&gt;integer (string-ref str j)))))))))
-
-
 Ancak bu kod pek hoşuma gitmedi üzerinde biraz daha oynama yapmak gerekiyordu. Mesela en baştaki
-
-(define str2 &quot;&quot;)
-
-
+(define str2 &#34;&#34;)
 pek hoş durmuyordu ve hiç bir sonuç gönmüyordu. Ekstradan srt2 nin değerini sorgulamak gerekiyordu.">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
 <meta property="og:url" content="https://blog.askin.ws/blog/sezar-sifreleme/" />
@@ -127,8 +115,7 @@ pek hoş durmuyordu ve hiç bir sonuç gönmüyordu. Ekstradan srt2 nin değerin
 
   <meta name="twitter:title" content="Sezar şifreleme" />
   <meta name="twitter:description" content="Sezar şifreleme için yazdığım ilk kod aşağıdaki gibiydi
-
-(define str2 &quot;&quot;)
+(define str2 &#34;&#34;)
 (define (sezar str lst)
   (do ((i 0 (&#43; i 1)) (j 0 (&#43; j 1))) ((= j (string-length str)))
     (if (= i (length lst)) …">
@@ -137,7 +124,7 @@ pek hoş durmuyordu ve hiç bir sonuç gönmüyordu. Ekstradan srt2 nin değerin
   <meta name="twitter:site" content="@kelebeks" />
   <meta name="twitter:creator" content="@kelebeks" />
   <link href='https://blog.askin.ws/img/favicon.ico' rel='icon' type='image/x-icon'/>
-  <meta name="generator" content="Hugo 0.58.3" />
+  <meta name="generator" content="Hugo 0.62.0" />
   <link rel="alternate" href="https://blog.askin.ws/index.xml" type="application/rss+xml" title="Aşkın Özgür"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://blog.askin.ws/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -299,69 +286,53 @@ pek hoş durmuyordu ve hiç bir sonuç gönmüyordu. Ekstradan srt2 nin değerin
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
         <p>Sezar şifreleme için yazdığım ilk kod aşağıdaki gibiydi</p>
-
-<pre><code class="language-scheme">(define str2 &quot;&quot;)
-(define (sezar str lst)
-  (do ((i 0 (+ i 1)) (j 0 (+ j 1))) ((= j (string-length str)))
-    (if (= i (length lst))
-        (set! i 0))
-    (set! str2 
-          (string-append
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scheme" data-lang="scheme">(<span style="color:#66d9ef">define </span>str2 <span style="color:#e6db74">&#34;&#34;</span>)
+(<span style="color:#66d9ef">define </span>(<span style="color:#a6e22e">sezar</span> str lst)
+  (<span style="color:#66d9ef">do </span>((<span style="color:#a6e22e">i</span> <span style="color:#ae81ff">0</span> (+ i <span style="color:#ae81ff">1</span>)) (<span style="color:#a6e22e">j</span> <span style="color:#ae81ff">0</span> (+ j <span style="color:#ae81ff">1</span>))) ((= j (string-length str)))
+    (<span style="color:#66d9ef">if </span>(= i (length lst))
+        (<span style="color:#66d9ef">set! </span>i <span style="color:#ae81ff">0</span>))
+    (<span style="color:#66d9ef">set! </span>str2 
+          (<span style="color:#a6e22e">string-append</span>
            str2
-           (string (integer-&gt;char
+           (string (<span style="color:#a6e22e">integer-&gt;char</span>
                     (+ (list-ref lst i )
                        (char-&gt;integer (string-ref str j)))))))))
-</code></pre>
-
-<p>Ancak bu kod pek hoşuma gitmedi üzerinde biraz daha oynama yapmak gerekiyordu. Mesela en baştaki</p>
-
-<pre><code class="language-scheme">(define str2 &quot;&quot;)
-</code></pre>
-
-<p>pek hoş durmuyordu ve hiç bir sonuç gönmüyordu. Ekstradan srt2 nin değerini sorgulamak gerekiyordu.</p>
-
+</code></pre></div><p>Ancak bu kod pek hoşuma gitmedi üzerinde biraz daha oynama yapmak gerekiyordu. Mesela en baştaki</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scheme" data-lang="scheme">(<span style="color:#66d9ef">define </span>str2 <span style="color:#e6db74">&#34;&#34;</span>)
+</code></pre></div><p>pek hoş durmuyordu ve hiç bir sonuç gönmüyordu. Ekstradan srt2 nin değerini sorgulamak gerekiyordu.</p>
 <p>Bu sebeple kodu aşağıdaki hale getirdim.</p>
-
-<pre><code class="language-scheme"> (define (sezar str lst)
-  (let ((str (string-downcase str)) (str2 &quot;&quot;))
-  (do ((i 0 (+ i 1)) (j 0 (+ j 1))) ((= j (string-length str)))
-    (if (= i (length lst))
-        (set! i 0))
-    (set! str2 
-          (string-append
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scheme" data-lang="scheme"> (<span style="color:#66d9ef">define </span>(<span style="color:#a6e22e">sezar</span> str lst)
+  (<span style="color:#66d9ef">let </span>((<span style="color:#a6e22e">str</span> (<span style="color:#a6e22e">string-downcase</span> str)) (<span style="color:#a6e22e">str2</span> <span style="color:#e6db74">&#34;&#34;</span>))
+  (<span style="color:#66d9ef">do </span>((<span style="color:#a6e22e">i</span> <span style="color:#ae81ff">0</span> (+ i <span style="color:#ae81ff">1</span>)) (<span style="color:#a6e22e">j</span> <span style="color:#ae81ff">0</span> (+ j <span style="color:#ae81ff">1</span>))) ((= j (string-length str)))
+    (<span style="color:#66d9ef">if </span>(= i (length lst))
+        (<span style="color:#66d9ef">set! </span>i <span style="color:#ae81ff">0</span>))
+    (<span style="color:#66d9ef">set! </span>str2 
+          (<span style="color:#a6e22e">string-append</span>
            str2 
-           (string (integer-&gt;char
+           (string (<span style="color:#a6e22e">integer-&gt;char</span>
                     (+ (list-ref lst i )
                        (char-&gt;integer (string-ref str j))))))))
     (values str2)))
-</code></pre>
-
-<p>Ancak yine eksiklikler vardı.</p>
-
-<pre><code class="language-scheme">(sezar &quot;zeliha&quot; '(1 2))
-</code></pre>
-
-<p>bize &ldquo;{gmkic&rdquo; değerini döndürüyordu. &ldquo;agmkic&rdquo; gibi bir değer bizim için daha hoş olabilirdi.</p>
-
-<pre><code class="language-scheme">(define (sezar str lst)
-  (let ((str (string-downcase str)) (str2 &quot;&quot;) (tmp 0))
-  (do ((i 0 (+ i 1)) (j 0 (+ j 1))) ((= j (string-length str)))
-    (if (= i (length lst))
-        (set! i 0))
-    (set! str2 
-          (string-append
+</code></pre></div><p>Ancak yine eksiklikler vardı.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scheme" data-lang="scheme">(<span style="color:#a6e22e">sezar</span> <span style="color:#e6db74">&#34;zeliha&#34;</span> <span style="color:#f92672">&#39;</span>(<span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span>))
+</code></pre></div><p>bize &ldquo;{gmkic&rdquo; değerini döndürüyordu. &ldquo;agmkic&rdquo; gibi bir değer bizim için daha hoş olabilirdi.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scheme" data-lang="scheme">(<span style="color:#66d9ef">define </span>(<span style="color:#a6e22e">sezar</span> str lst)
+  (<span style="color:#66d9ef">let </span>((<span style="color:#a6e22e">str</span> (<span style="color:#a6e22e">string-downcase</span> str)) (<span style="color:#a6e22e">str2</span> <span style="color:#e6db74">&#34;&#34;</span>) (<span style="color:#a6e22e">tmp</span> <span style="color:#ae81ff">0</span>))
+  (<span style="color:#66d9ef">do </span>((<span style="color:#a6e22e">i</span> <span style="color:#ae81ff">0</span> (+ i <span style="color:#ae81ff">1</span>)) (<span style="color:#a6e22e">j</span> <span style="color:#ae81ff">0</span> (+ j <span style="color:#ae81ff">1</span>))) ((= j (string-length str)))
+    (<span style="color:#66d9ef">if </span>(= i (length lst))
+        (<span style="color:#66d9ef">set! </span>i <span style="color:#ae81ff">0</span>))
+    (<span style="color:#66d9ef">set! </span>str2 
+          (<span style="color:#a6e22e">string-append</span>
            str2 
-           (string (integer-&gt;char
-                    (begin
-                      (set! tmp (+ (list-ref lst i )
+           (string (<span style="color:#a6e22e">integer-&gt;char</span>
+                    (<span style="color:#a6e22e">begin</span>
+                      (<span style="color:#66d9ef">set! </span>tmp (+ (list-ref lst i )
                        (char-&gt;integer (string-ref str j))))
-                      (cond
-                        [(&gt; tmp 122) (- tmp 26)]
-                        [else tmp])))))))
+                      (<span style="color:#a6e22e">cond</span>
+                        [(&gt; tmp <span style="color:#ae81ff">122</span>) (- tmp <span style="color:#ae81ff">26</span>)]
+                        [<span style="color:#66d9ef">else </span>tmp])))))))
     (values str2)))
-</code></pre>
-
-<p>Burda eklediğim satırlar karaktere çevirilecek sayının değerinin 122den büyük olup olmadığını kontrol ediyor. Eğer z+1=123 gibi bir değer elde ederse bu değer a&rsquo;ya çevirliyor.<br />
+</code></pre></div><p>Burda eklediğim satırlar karaktere çevirilecek sayının değerinin 122den büyük olup olmadığını kontrol ediyor. Eğer z+1=123 gibi bir değer elde ederse bu değer a'ya çevirliyor.<br>
 Kodlara <a href="http://www.askin.ws/doc/sezar.scm">Burdan</a> ulaşabilirsiniz.</p>
 
         
@@ -612,7 +583,7 @@ Kodlara <a href="http://www.askin.ws/doc/sezar.scm">Burdan</a> ulaşabilirsiniz.
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.58.3</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          <a href="https://gohugo.io">Hugo v0.62.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>

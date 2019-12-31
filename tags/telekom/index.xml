@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Telekom on Aşkın Özgür</title>
@@ -20,7 +20,6 @@
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/yine-yasak-proxy-nedir-nasil-ayarlanir/</guid>
       <description>&lt;p&gt;Youtube son haberlere göre arka arkaya 3. kez kapatılacak. Şuan girebiliyorum sorun yok. Ama yakında bişiler olacak:) Geçen kapandığında DNS adresini değiştirmemiz de işe yaramamıştı. Şimdi yapacağımız şey ise proxy kullanmak olacak. Gerçi proxy kullanmak sakat bi yöntem, bütün trafiğimiz başka bir bilgisayar üzerinden geçeceği için verilerimizin dinlenme ihtimali var. Bu nedenle proxy kullanırken dikkatli olmakta fayda var.&lt;/p&gt;
-
 &lt;p&gt;Proxy olayında biz isteklerimizi bir vekil sunucuya iletiyoruz. Sunucuda bizim yerimize ilgili sitenin içeriğini alıyor ve bize sunuyor. Kabaca bu şekilde tanımlayabiliriz.&lt;/p&gt;</description>
     </item>
     

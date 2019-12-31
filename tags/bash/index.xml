@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>bash on Aşkın Özgür</title>
@@ -20,8 +20,8 @@
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/bir-dosyanin-bos-olup-olmadigini-kontrol-etme/</guid>
       <description>Shell script yazarken bir dosyanın boş olup olmadığını kontrol etmemiz gerekebilir. Bunu yapmak için birkaç yöntem yazacağım.
-satirsayisi=`wc -l 194.27.108.90 | awk &#39;{split($0,a,&amp;quot; &amp;quot;); print a[1]}&#39;` if [ $satirsayisi == 0 ]; then echo &amp;quot;dosya bos&amp;quot;; fi  if [ -z $(cat dosyaadi) ]; then echo &amp;quot;dosya bos&amp;quot;; fi  if [ -z `cat dosyaadi` ]; then echo &amp;quot;dosya bos&amp;quot;; fi  Ve en güzeli
-if [ -s dosyaadi ]; then echo &amp;quot;Dosya dolu&amp;quot;; else echo &amp;quot;Dosya bos&amp;quot;; fi  </description>
+satirsayisi=`wc -l 194.27.108.90 | awk &amp;#39;{split($0,a,&amp;#34; &amp;#34;); print a[1]}&amp;#39;` if [ $satirsayisi == 0 ]; then echo &amp;#34;dosya bos&amp;#34;; fi if [ -z $(cat dosyaadi) ]; then echo &amp;#34;dosya bos&amp;#34;; fi if [ -z `cat dosyaadi` ]; then echo &amp;#34;dosya bos&amp;#34;; fi Ve en güzeli
+if [ -s dosyaadi ]; then echo &amp;#34;Dosya dolu&amp;#34;; else echo &amp;#34;Dosya bos&amp;#34;; fi </description>
     </item>
     
     <item>
@@ -31,7 +31,7 @@ if [ -s dosyaadi ]; then echo &amp;quot;Dosya dolu&amp;quot;; else echo &amp;quo
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/solariste-ozyinelemeli-grep/</guid>
       <description>Özyinelemeli grep çok kullanışlı bir araç. Malesef solariste bulunan grep öz yinelemeli çalışmıyor. Ama bunu aşmak çok zor değil.
-$ grep &#39;ara&#39; `find . -name &#39;*&#39;`  </description>
+$ grep &amp;#39;ara&amp;#39; `find . -name &amp;#39;*&amp;#39;` </description>
     </item>
     
     <item>
@@ -41,7 +41,7 @@ $ grep &#39;ara&#39; `find . -name &#39;*&#39;`  </description>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/caps-locka-ne-gerek-var/</guid>
       <description>Hiç gerek yok.
-setxkbmap -option ctrl:nocaps  </description>
+setxkbmap -option ctrl:nocaps </description>
     </item>
     
     <item>
@@ -51,8 +51,8 @@ setxkbmap -option ctrl:nocaps  </description>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/busybox-date-ile-saat-ve-tarihi-ayarlamak/</guid>
       <description>BusyBox içinde gelen date komutunun kullanımı biraz daha farklı. Saat ayarlamada bir değişiklik yok fakat tarihi ayarlamak biraz daha farklı. Saat ayarlama:
-date -s &amp;quot;23:59:59&amp;quot;  Tarih ve saati ayarlama
-date -s AAGGSSDDYYYY date -s 123123592010  12-31-2010 23:59&amp;rsquo;a karşılık geliyor.</description>
+date -s &amp;#34;23:59:59&amp;#34; Tarih ve saati ayarlama
+date -s AAGGSSDDYYYY date -s 123123592010 12-31-2010 23:59&#39;a karşılık geliyor.</description>
     </item>
     
     <item>
@@ -62,7 +62,7 @@ date -s AAGGSSDDYYYY date -s 123123592010  12-31-2010 23:59&amp;rsquo;a karşıl
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/genius/</guid>
       <description>Scp ile sembolik linkleri takip etmeden indirme işlemi yapmak için araştırma yaptığımda, aşağıdaki kodu buldum. Böyle bir kullanım 40 yıl düşünsem aklıma gelmezdi.
-cd /destination/directory ssh user@remote.host &amp;quot;cd /original/directory; tar cf - ./&amp;quot; | tar xvf -  Kaynak</description>
+cd /destination/directory ssh user@remote.host &amp;#34;cd /original/directory; tar cf - ./&amp;#34; | tar xvf - Kaynak</description>
     </item>
     
   </channel>

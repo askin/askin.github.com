@@ -9,7 +9,7 @@
 
   <title>UDP Broadcast sunucu - istemci - Aşkın Özgür</title>
   <meta name="description" content="Sunucu:
-#include &lt;stdio.h&gt; #include &lt;string.h&gt; #include &lt;sys/types.h&gt; #include &lt;sys/socket.h&gt; #include &lt;netinet/in.h&gt; #define MY_PORT 3333 int main(int argc, char *argv[]) { int sockfd, new_fd; struct sockaddr_in my_addr; // hedef adres struct sockaddr_in their_addr; // baglanti yapan adres int sin_size, rt; // gelen verinin tutuldugu buffer char buf[32]; // islem yapmak icin gerekli dosya gosterici sockfd = socket(AF_INET, SOCK_DGRAM, 0); sin_size = sizeof(struct sockaddr_in); // adres ile ilgili ayarlar my_addr.sin_family = AF_INET; my_addr.">
+#include &lt;stdio.h&gt;#include &lt;string.h&gt;#include &lt;sys/types.h&gt;#include &lt;sys/socket.h&gt;#include &lt;netinet/in.h&gt; #define MY_PORT 3333 int main(int argc, char *argv[]) { int sockfd, new_fd; struct sockaddr_in my_addr; // hedef adres  struct sockaddr_in their_addr; // baglanti yapan adres  int sin_size, rt; // gelen verinin tutuldugu buffer  char buf[32]; // islem yapmak icin gerekli dosya gosterici  sockfd = socket(AF_INET, SOCK_DGRAM, 0); sin_size = sizeof(struct sockaddr_in); // adres ile ilgili ayarlar  my_addr.sin_family = AF_INET; my_addr.">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -58,9 +58,9 @@
     "name" : "askin"
   },
   "headline": "UDP Broadcast sunucu - istemci",
-  "description" : "Sunucu:\n#include \x26lt;stdio.h\x26gt; #include \x26lt;string.h\x26gt; #include \x26lt;sys\/types.h\x26gt; #include \x26lt;sys\/socket.h\x26gt; #include \x26lt;netinet\/in.h\x26gt; #define MY_PORT 3333 int main(int argc, char *argv[]) { int sockfd, new_fd; struct sockaddr_in my_addr; \/\/ hedef adres struct sockaddr_in their_addr; \/\/ baglanti yapan adres int sin_size, rt; \/\/ gelen verinin tutuldugu buffer char buf[32]; \/\/ islem yapmak icin gerekli dosya gosterici sockfd = socket(AF_INET, SOCK_DGRAM, 0); sin_size = sizeof(struct sockaddr_in); \/\/ adres ile ilgili ayarlar my_addr.sin_family = AF_INET; my_addr.",
+  "description" : "Sunucu:\n#include \x26lt;stdio.h\x26gt;#include \x26lt;string.h\x26gt;#include \x26lt;sys\/types.h\x26gt;#include \x26lt;sys\/socket.h\x26gt;#include \x26lt;netinet\/in.h\x26gt; #define MY_PORT 3333 int main(int argc, char *argv[]) { int sockfd, new_fd; struct sockaddr_in my_addr; \/\/ hedef adres  struct sockaddr_in their_addr; \/\/ baglanti yapan adres  int sin_size, rt; \/\/ gelen verinin tutuldugu buffer  char buf[32]; \/\/ islem yapmak icin gerekli dosya gosterici  sockfd = socket(AF_INET, SOCK_DGRAM, 0); sin_size = sizeof(struct sockaddr_in); \/\/ adres ile ilgili ayarlar  my_addr.sin_family = AF_INET; my_addr.",
   "inLanguage" : "en",
-  "wordCount":  267 ,
+  "wordCount":  258 ,
   "datePublished" : "2012-08-03T15:31:00",
   "dateModified" : "2012-08-03T15:31:00",
   "image" : "https:\/\/blog.askin.ws\/uploads\/avatar.png",
@@ -81,7 +81,7 @@
 
 <meta property="og:title" content="UDP Broadcast sunucu - istemci" />
 <meta property="og:description" content="Sunucu:
-#include &lt;stdio.h&gt; #include &lt;string.h&gt; #include &lt;sys/types.h&gt; #include &lt;sys/socket.h&gt; #include &lt;netinet/in.h&gt; #define MY_PORT 3333 int main(int argc, char *argv[]) { int sockfd, new_fd; struct sockaddr_in my_addr; // hedef adres struct sockaddr_in their_addr; // baglanti yapan adres int sin_size, rt; // gelen verinin tutuldugu buffer char buf[32]; // islem yapmak icin gerekli dosya gosterici sockfd = socket(AF_INET, SOCK_DGRAM, 0); sin_size = sizeof(struct sockaddr_in); // adres ile ilgili ayarlar my_addr.sin_family = AF_INET; my_addr.">
+#include &lt;stdio.h&gt;#include &lt;string.h&gt;#include &lt;sys/types.h&gt;#include &lt;sys/socket.h&gt;#include &lt;netinet/in.h&gt; #define MY_PORT 3333 int main(int argc, char *argv[]) { int sockfd, new_fd; struct sockaddr_in my_addr; // hedef adres  struct sockaddr_in their_addr; // baglanti yapan adres  int sin_size, rt; // gelen verinin tutuldugu buffer  char buf[32]; // islem yapmak icin gerekli dosya gosterici  sockfd = socket(AF_INET, SOCK_DGRAM, 0); sin_size = sizeof(struct sockaddr_in); // adres ile ilgili ayarlar  my_addr.sin_family = AF_INET; my_addr.">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
 <meta property="og:url" content="https://blog.askin.ws/blog/udp-broadcast-sunucu-istemci/" />
 <meta property="og:type" content="website" />
@@ -89,13 +89,13 @@
 
   <meta name="twitter:title" content="UDP Broadcast sunucu - istemci" />
   <meta name="twitter:description" content="Sunucu:
-#include &lt;stdio.h&gt; #include &lt;string.h&gt; #include &lt;sys/types.h&gt; #include &lt;sys/socket.h&gt; #include &lt;netinet/in.h&gt; #define MY_PORT 3333 int main(int argc, char …">
+#include &lt;stdio.h&gt;#include &lt;string.h&gt;#include &lt;sys/types.h&gt;#include &lt;sys/socket.h&gt;#include &lt;netinet/in.h&gt; #define MY_PORT 3333 int main(int argc, char *argv[]) { …">
   <meta name="twitter:image" content="https://blog.askin.ws/uploads/avatar.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@kelebeks" />
   <meta name="twitter:creator" content="@kelebeks" />
   <link href='https://blog.askin.ws/img/favicon.ico' rel='icon' type='image/x-icon'/>
-  <meta name="generator" content="Hugo 0.58.3" />
+  <meta name="generator" content="Hugo 0.62.0" />
   <link rel="alternate" href="https://blog.askin.ws/index.xml" type="application/rss+xml" title="Aşkın Özgür"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://blog.askin.ws/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -257,102 +257,97 @@
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
         <p>Sunucu:</p>
-
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-#include &lt;string.h&gt;
-#include &lt;sys/types.h&gt;
-#include &lt;sys/socket.h&gt;
-#include &lt;netinet/in.h&gt;
-
-#define MY_PORT 3333
-
-int main(int argc, char *argv[])
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;sys/types.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;sys/socket.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;netinet/in.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#</span><span style="color:#75715e">define MY_PORT 3333</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>argv[])
 {
 
-    int sockfd, new_fd;
-    struct sockaddr_in my_addr;    // hedef adres
-    struct sockaddr_in their_addr; // baglanti yapan adres
+    <span style="color:#66d9ef">int</span> sockfd, new_fd;
+    <span style="color:#66d9ef">struct</span> sockaddr_in my_addr;    <span style="color:#75715e">// hedef adres
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">struct</span> sockaddr_in their_addr; <span style="color:#75715e">// baglanti yapan adres
+</span><span style="color:#75715e"></span>
+    <span style="color:#66d9ef">int</span> sin_size, rt;
 
-    int sin_size, rt;
+    <span style="color:#75715e">// gelen verinin tutuldugu buffer
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">char</span> buf[<span style="color:#ae81ff">32</span>];
 
-    // gelen verinin tutuldugu buffer
-    char buf[32];
+    <span style="color:#75715e">// islem yapmak icin gerekli dosya gosterici
+</span><span style="color:#75715e"></span>    sockfd <span style="color:#f92672">=</span> socket(AF_INET, SOCK_DGRAM, <span style="color:#ae81ff">0</span>);
 
-    // islem yapmak icin gerekli dosya gosterici
-    sockfd = socket(AF_INET, SOCK_DGRAM, 0);
+    sin_size <span style="color:#f92672">=</span> <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">struct</span> sockaddr_in);
 
-    sin_size = sizeof(struct sockaddr_in);
+    <span style="color:#75715e">// adres ile ilgili ayarlar
+</span><span style="color:#75715e"></span>    my_addr.sin_family      <span style="color:#f92672">=</span> AF_INET;
+    my_addr.sin_port        <span style="color:#f92672">=</span> htons(MY_PORT); <span style="color:#75715e">// kullanilacak port
+</span><span style="color:#75715e"></span>    my_addr.sin_addr.s_addr <span style="color:#f92672">=</span> INADDR_ANY;     <span style="color:#75715e">// mevcut ip adresi
+</span><span style="color:#75715e"></span>    memset(<span style="color:#f92672">&amp;</span>(my_addr.sin_zero), <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">8</span>); <span style="color:#75715e">// geri kalani 0la
+</span><span style="color:#75715e"></span>
+    <span style="color:#75715e">// socket ile dosyayi iliskilendir
+</span><span style="color:#75715e"></span>    bind(sockfd, (<span style="color:#66d9ef">struct</span> sockaddr <span style="color:#f92672">*</span>)<span style="color:#f92672">&amp;</span>my_addr, <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">struct</span> sockaddr));
 
-    // adres ile ilgili ayarlar
-    my_addr.sin_family      = AF_INET;
-    my_addr.sin_port        = htons(MY_PORT); // kullanilacak port
-    my_addr.sin_addr.s_addr = INADDR_ANY;     // mevcut ip adresi
-    memset(&amp;(my_addr.sin_zero), 0, 8); // geri kalani 0la
-
-    // socket ile dosyayi iliskilendir
-    bind(sockfd, (struct sockaddr *)&amp;my_addr, sizeof(struct sockaddr));
-
-    while ( 1 ) {
-        rt = recvfrom (sockfd, buf, 12, 0, (struct sockaddr *)&amp;their_addr, &amp;sin_size);
-        if (rt &gt; 0) {
-            printf (&quot;recv: %s\n&quot;, buf);
-        } else if (rt &lt; 0) {
-            printf(&quot;Baglanti koptu\n&quot;);
-            break;
+    <span style="color:#66d9ef">while</span> ( <span style="color:#ae81ff">1</span> ) {
+        rt <span style="color:#f92672">=</span> recvfrom (sockfd, buf, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">0</span>, (<span style="color:#66d9ef">struct</span> sockaddr <span style="color:#f92672">*</span>)<span style="color:#f92672">&amp;</span>their_addr, <span style="color:#f92672">&amp;</span>sin_size);
+        <span style="color:#66d9ef">if</span> (rt <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+            printf (<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">recv: %s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, buf);
+        } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (rt <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) {
+            printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Baglanti koptu</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+            <span style="color:#66d9ef">break</span>;
         }
     }
 
     close(sockfd);
-    return 0;
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 }
-</code></pre>
-
-<p>İstemci:</p>
-
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-#include &lt;string.h&gt;
-#include &lt;sys/types.h&gt;
-#include &lt;sys/socket.h&gt;
-#include &lt;netinet/in.h&gt;
-
-#define DEST_IP   &quot;255.255.255.255&quot;
-#define DEST_PORT 3333
-
-int main(int argc, char *argv[])
+</code></pre></div><p>İstemci:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;sys/types.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;sys/socket.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;netinet/in.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#</span><span style="color:#75715e">define DEST_IP   &#34;255.255.255.255&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">define DEST_PORT 3333</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>argv[])
 {
 
-    int sockfd, new_fd;
-    struct sockaddr_in dest_addr; // hedef adres
+    <span style="color:#66d9ef">int</span> sockfd, new_fd;
+    <span style="color:#66d9ef">struct</span> sockaddr_in dest_addr; <span style="color:#75715e">// hedef adres
+</span><span style="color:#75715e"></span>
+    <span style="color:#66d9ef">int</span> sin_size, rt;
+    sin_size <span style="color:#f92672">=</span> <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">struct</span> sockaddr_in);
 
-    int sin_size, rt;
-    sin_size = sizeof(struct sockaddr_in);
+    <span style="color:#75715e">// islem yapmak icin gerekli dosya gosterici
+</span><span style="color:#75715e"></span>    sockfd <span style="color:#f92672">=</span> socket(AF_INET, SOCK_DGRAM, <span style="color:#ae81ff">0</span>);
 
-    // islem yapmak icin gerekli dosya gosterici
-    sockfd = socket(AF_INET, SOCK_DGRAM, 0);
+    <span style="color:#75715e">// adres ile ilgili ayarlar
+</span><span style="color:#75715e"></span>    dest_addr.sin_family      <span style="color:#f92672">=</span> AF_INET;
+    dest_addr.sin_port        <span style="color:#f92672">=</span> htons(DEST_PORT);
+    dest_addr.sin_addr.s_addr <span style="color:#f92672">=</span> inet_addr(DEST_IP);
+    memset(<span style="color:#f92672">&amp;</span>(dest_addr.sin_zero), <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">8</span>); <span style="color:#75715e">// geri kalani 0 la
+</span><span style="color:#75715e"></span>
+    <span style="color:#75715e">// Broadcast icin gerekli yetkiyi al
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> flag <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">if</span> (setsockopt (sockfd, SOL_SOCKET, SO_BROADCAST, <span style="color:#f92672">&amp;</span>flag, <span style="color:#66d9ef">sizeof</span>(flag)) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>)
+        perror(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">setsockopt</span><span style="color:#e6db74">&#34;</span>);
 
-    // adres ile ilgili ayarlar
-    dest_addr.sin_family      = AF_INET;
-    dest_addr.sin_port        = htons(DEST_PORT);
-    dest_addr.sin_addr.s_addr = inet_addr(DEST_IP);
-    memset(&amp;(dest_addr.sin_zero), 0, 8); // geri kalani 0 la
+    <span style="color:#75715e">// mesaji gonder
+</span><span style="color:#75715e"></span>    rt <span style="color:#f92672">=</span> sendto (sockfd, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">slm asl plz</span><span style="color:#e6db74">&#34;</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">0</span>, (<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> sockaddr <span style="color:#f92672">*</span>)<span style="color:#f92672">&amp;</span>dest_addr, sin_size);
+    <span style="color:#66d9ef">if</span> ( rt <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> )
+        perror(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Hata: </span><span style="color:#e6db74">&#34;</span>);
 
-    // Broadcast icin gerekli yetkiyi al
-    int flag = 1;
-    if (setsockopt (sockfd, SOL_SOCKET, SO_BROADCAST, &amp;flag, sizeof(flag)) &lt; 0)
-        perror(&quot;setsockopt&quot;);
+    <span style="color:#75715e">// socketi kapat
+</span><span style="color:#75715e"></span>    close(sockfd);
 
-    // mesaji gonder
-    rt = sendto (sockfd, &quot;slm asl plz&quot;, 12, 0, (const struct sockaddr *)&amp;dest_addr, sin_size);
-    if ( rt &lt; 0 )
-        perror(&quot;Hata: &quot;);
-
-    // socketi kapat
-    close(sockfd);
-
-    return 0;
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 }
-</code></pre>
-
+</code></pre></div>
 
         
           <div class="blog-tags">
@@ -612,7 +607,7 @@ int main(int argc, char *argv[])
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.58.3</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          <a href="https://gohugo.io">Hugo v0.62.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>

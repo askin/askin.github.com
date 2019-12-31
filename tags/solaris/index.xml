@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>solaris on Aşkın Özgür</title>
@@ -20,7 +20,7 @@
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/solariste-ozyinelemeli-grep/</guid>
       <description>Özyinelemeli grep çok kullanışlı bir araç. Malesef solariste bulunan grep öz yinelemeli çalışmıyor. Ama bunu aşmak çok zor değil.
-$ grep &#39;ara&#39; `find . -name &#39;*&#39;`  </description>
+$ grep &amp;#39;ara&amp;#39; `find . -name &amp;#39;*&amp;#39;` </description>
     </item>
     
   </channel>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>symlink on Aşkın Özgür</title>
@@ -20,7 +20,7 @@
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/genius/</guid>
       <description>Scp ile sembolik linkleri takip etmeden indirme işlemi yapmak için araştırma yaptığımda, aşağıdaki kodu buldum. Böyle bir kullanım 40 yıl düşünsem aklıma gelmezdi.
-cd /destination/directory ssh user@remote.host &amp;quot;cd /original/directory; tar cf - ./&amp;quot; | tar xvf -  Kaynak</description>
+cd /destination/directory ssh user@remote.host &amp;#34;cd /original/directory; tar cf - ./&amp;#34; | tar xvf - Kaynak</description>
     </item>
     
   </channel>

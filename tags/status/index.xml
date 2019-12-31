@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>status on Aşkın Özgür</title>
@@ -21,7 +21,7 @@
       <guid>https://blog.askin.ws/blog/pygtk-ile-sistem-cekmecesi/</guid>
       <description>Gtk ile çok kolay bir şekilde geliştirdiğiniz uygulamayı sistem çekmecesinde gösterebilirsiniz.
 Ufak bir örnek kod veriyorum. Onun üzerinden anlatacağım.
-import pygtk import gtk class ShowIcon: def __init__(self): self.icon = gtk.StatusIcon() self.icon.set_from_file(&#39;gtk.png&#39;) self.icon.set_tooltip_text(&#39;Hello Python!!!&#39;) self.icon.set_visible(True) self.icon.connect(&amp;quot;activate&amp;quot;, self.hello) gtk.main() def hello(self, widget): print &#39;Hello Python !!!&#39; if __name__ == &#39;__main__&#39;: icon = ShowIcon()  6. satırda asıl işimizi yapacak olan StatusIcon nesnesini yaratıyoruz.
+import pygtk import gtk class ShowIcon: def __init__(self): self.icon = gtk.StatusIcon() self.icon.set_from_file(&amp;#39;gtk.png&amp;#39;) self.icon.set_tooltip_text(&amp;#39;Hello Python!!!&amp;#39;) self.icon.set_visible(True) self.icon.connect(&amp;#34;activate&amp;#34;, self.hello) gtk.main() def hello(self, widget): print &amp;#39;Hello Python !!!&amp;#39; if __name__ == &amp;#39;__main__&amp;#39;: icon = ShowIcon() 6. satırda asıl işimizi yapacak olan StatusIcon nesnesini yaratıyoruz.
 7. satırda sistem çekmecesinde hangi ikonun görüntüleneceğini belirtiyoruz. set_from_file ikonu dosyadan alacağımız anlamına geliyor.</description>
     </item>
     

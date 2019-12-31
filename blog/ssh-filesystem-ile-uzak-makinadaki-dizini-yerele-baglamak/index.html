@@ -92,7 +92,7 @@
   <meta name="twitter:site" content="@kelebeks" />
   <meta name="twitter:creator" content="@kelebeks" />
   <link href='https://blog.askin.ws/img/favicon.ico' rel='icon' type='image/x-icon'/>
-  <meta name="generator" content="Hugo 0.58.3" />
+  <meta name="generator" content="Hugo 0.62.0" />
   <link rel="alternate" href="https://blog.askin.ws/index.xml" type="application/rss+xml" title="Aşkın Özgür"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://blog.askin.ws/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -257,58 +257,39 @@
 Ben daha önce bahsettiğim <a href="http://blog.yollu.com/2008/02/21/telekom-artik-kork-benden/">internet canavarı:)</a> için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu.
 Kullanacağımız programın adı sshfs yani SSH Filesystem.
 Kurulum:</p>
-
 <ul>
-<li><p>Debian &amp;&amp; Ubuntu &amp;&amp; vb.</p>
-
-<pre><code class="language-bash">aptitude install sshfs
-</code></pre></li>
-
-<li><p>Kaynak koddan derleme</p>
-
-<pre><code class="language-bash">./configure
-make
-make install # root yetkileriyle
-</code></pre></li>
-
-<li><p>Kullanımı - Uzak makinadaki bir dizini bağlamak</p>
-
-<pre><code class="language-bash">sshfs hostname:dizin bağlamanoktası (root yetkileriyle)
-</code></pre></li>
-
-<li><p>Umount - Bağı koparma</p>
-
-<pre><code class="language-bash">umount bağlamanoktası
-# ya da
-fusermount -u bağlamanoktası
-</code></pre></li>
+<li>Debian &amp;&amp; Ubuntu &amp;&amp; vb.</li>
 </ul>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aptitude install sshfs
+</code></pre></div><ul>
+<li>Kaynak koddan derleme</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./configure
+make
+make install <span style="color:#75715e"># root yetkileriyle</span>
+</code></pre></div><ul>
+<li>Kullanımı - Uzak makinadaki bir dizini bağlamak
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sshfs hostname:dizin bağlamanoktası <span style="color:#f92672">(</span>root yetkileriyle<span style="color:#f92672">)</span>
+</code></pre></div></li>
+<li>Umount - Bağı koparma
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">umount bağlamanoktası
+<span style="color:#75715e"># ya da</span>
+fusermount -u bağlamanoktası
+</code></pre></div></li>
+</ul>
 <p>Bu şekide kullanırsanız bağladığınız dizine ancak root yetkileriyle ulaşabilirsiniz. Her kullanıcının tüm haklarla(hangi kullanıcı ile ssh bağlantısı gerçekleştirdiyseniz onun haklarına sahip oluyosunuz) bağladığınız dizini kulanabilmesini istiyorsanız</p>
-
-<pre><code class="language-bash">sshfs -o allow_other hostname:dizin bağlamanoktası
-</code></pre>
-
-<p><strong>Parametreler</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sshfs -o allow_other hostname:dizin bağlamanoktası
+</code></pre></div><p><strong>Parametreler</strong>
 -o parametresini kullanarak uid ve gid değerlerini ayarlayabilirsiniz.</p>
-
-<pre><code class="language-bash">-o idmap=user
--o uid=&lt;uid&gt;
--o gid=&lt;gid&gt;
--o ro # read only - salt okunur mod
-</code></pre>
-
-<p><strong>fstab dosyasını kullanarak mount etme</strong></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">-o idmap<span style="color:#f92672">=</span>user
+-o uid<span style="color:#f92672">=</span>&lt;uid&gt;
+-o gid<span style="color:#f92672">=</span>&lt;gid&gt;
+-o ro <span style="color:#75715e"># read only - salt okunur mod</span>
+</code></pre></div><p><strong>fstab dosyasını kullanarak mount etme</strong></p>
 <pre><code>sshfs#USERNAME@REMOTE_HOST:REMOTE_PATH MOUNT_POINT fuse SSHFS_OPTIONS 0 0
-</code></pre>
-
-<p><strong>örnek</strong></p>
-
+</code></pre><p><strong>örnek</strong></p>
 <pre><code>sshfs#guest@guest.login.com:data /mnt/guest fuse uid=1003,gid=100,umask=0,allow_other 0 0
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li><strong>Proje sayfası</strong> :<a href="%20http://fuse.sourceforge.net/sshfs.html">http://fuse.sourceforge.net/sshfs.html</a></li>
 <li><strong>Wiki sayfası</strong> :<a href="http://fuse.sourceforge.net/sshfs.html">http://fuse.sourceforge.net/sshfs.html</a>. Wiki sayfasını kulanarak birçok bilgiye ulaşabilirsiniz..</li>
 </ul>
@@ -564,7 +545,7 @@ fusermount -u bağlamanoktası
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.58.3</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          <a href="https://gohugo.io">Hugo v0.62.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>

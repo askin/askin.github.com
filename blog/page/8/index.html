@@ -41,7 +41,7 @@
   <meta name="twitter:site" content="@kelebeks" />
   <meta name="twitter:creator" content="@kelebeks" />
   <link href='https://blog.askin.ws/img/favicon.ico' rel='icon' type='image/x-icon'/>
-  <meta name="generator" content="Hugo 0.58.3" />
+  <meta name="generator" content="Hugo 0.62.0" />
   <link rel="alternate" href="https://blog.askin.ws/index.xml" type="application/rss+xml" title="Aşkın Özgür"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://blog.askin.ws/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -288,7 +288,7 @@
     <div class="post-entry">
         
         Buradaki yazımdan esinlenip yazdım bunu. Azıcık java öğrendim artık uygulama yapma zamanıdır. Eminim daha güzel (hatta belki benim ki iğrenç bi koddur(:) yazılabilir. Ama şimdilik bunu yapabiliyorum.
-public class Sayisal { int[] _kupon = new int[6]; int _num; public Sayisal(){ int sira = 0; while (sira &lt; 6) { _num = (int) (1 + Math.random() * 49); if (!varmi(_kupon, _num)) _kupon[sira++] = _num; } } private boolean varmi(int[] kupon, int num) { for (int x: kupon) {if (x == num) return true;} return false; } public String toString(){ String kuponStr = &quot;&quot;; for (int i = 0; i &lt; 6; i++) kuponStr += (_kupon[i] + &quot; &quot;); return kuponStr; } public static void main(String[] args){ byte kuponSayisi; if (args.
+public class Sayisal { int[] _kupon = new int[6]; int _num; public Sayisal(){ int sira = 0; while (sira &lt; 6) { _num = (int) (1 + Math.random() * 49); if (!varmi(_kupon, _num)) _kupon[sira++] = _num; } } private boolean varmi(int[] kupon, int num) { for (int x: kupon) {if (x == num) return true;} return false; } public String toString(){ String kuponStr = &#34;&#34;; for (int i = 0; i &lt; 6; i++) kuponStr += (_kupon[i] + &#34; &#34;); return kuponStr; } public static void main(String[] args){ byte kuponSayisi; if (args.
         <a href="https://blog.askin.ws/blog/cikmaz-demeyin-sansinizi-deneyin-2/" class="post-read-more">[Read More]</a>
         
     </div>
@@ -339,7 +339,7 @@ public class Sayisal { int[] _kupon = new int[6]; int _num; public Sayisal(){ in
     </p>
     <div class="post-entry">
         
-        <p><img src="/uploads/2008/04/java-duke-guitar.png" alt="" title="java-duke-guitar" />Bugun harıl harıl güzel bir java dökümanı arıyordum. Karşıma <a href="http://www.godoro.com">http://www.godoro.com</a> çıktı. İçinde gayet güzel bilgiler bulunuyor.<a href="http://www.godoro.com/Divisions/Ehil/Mahzen/Java/TheJavaBook/txt/html/tree_tree.html">Şuraya</a> da güzel bir java kitabı koymuşlar. Giriş için gayet hoş bir kitap olmuş, yeterince açıklayıcı ve bol örnekleri de koymayı unutmamışlar. Arkadaşlara yaptıklarından dolayı teşekür ediyorum. Kitabı çevrim dışı kullanmak isterseniz <a href="/uploads/2008/04/godorothejavabook.zip">buradan</a> indirip kullanabilirsiniz.</p>
+        <p><img src="/uploads/2008/04/java-duke-guitar.png" alt="" title="java-duke-guitar">Bugun harıl harıl güzel bir java dökümanı arıyordum. Karşıma <a href="http://www.godoro.com">http://www.godoro.com</a> çıktı. İçinde gayet güzel bilgiler bulunuyor.<a href="http://www.godoro.com/Divisions/Ehil/Mahzen/Java/TheJavaBook/txt/html/tree_tree.html">Şuraya</a> da güzel bir java kitabı koymuşlar. Giriş için gayet hoş bir kitap olmuş, yeterince açıklayıcı ve bol örnekleri de koymayı unutmamışlar. Arkadaşlara yaptıklarından dolayı teşekür ediyorum. Kitabı çevrim dışı kullanmak isterseniz <a href="/uploads/2008/04/godorothejavabook.zip">buradan</a> indirip kullanabilirsiniz.</p>
 
         
     </div>
@@ -389,7 +389,6 @@ public class Sayisal { int[] _kupon = new int[6]; int _num; public Sayisal(){ in
     <div class="post-entry">
         
         <p>Youtube son haberlere göre arka arkaya 3. kez kapatılacak. Şuan girebiliyorum sorun yok. Ama yakında bişiler olacak:) Geçen kapandığında DNS adresini değiştirmemiz de işe yaramamıştı. Şimdi yapacağımız şey ise proxy kullanmak olacak. Gerçi proxy kullanmak sakat bi yöntem, bütün trafiğimiz başka bir bilgisayar üzerinden geçeceği için verilerimizin dinlenme ihtimali var. Bu nedenle proxy kullanırken dikkatli olmakta fayda var.</p>
-
 <p>Proxy olayında biz isteklerimizi bir vekil sunucuya iletiyoruz. Sunucuda bizim yerimize ilgili sitenin içeriğini alıyor ve bize sunuyor. Kabaca bu şekilde tanımlayabiliriz.</p>
         <a href="https://blog.askin.ws/blog/yine-yasak-proxy-nedir-nasil-ayarlanir/" class="post-read-more">[Read More]</a>
         
@@ -491,7 +490,7 @@ public class Sayisal { int[] _kupon = new int[6]; int _num; public Sayisal(){ in
         Bu girdi Burdaki girdiden esinlenilerek yazıldı.
 E madem pyton ile sayısal kuponu yapılıyor biz niye scheme ile yapmayalım bunu demi:)
 Probleme göre kod bana çok uzun geldi. Belki ilerde optimize edebilirim. Ama şimdilik böyle oynayalım demi:)
-(define (sayisal) (display &quot;Oynamak istediginiz kolan sayisini giriniz: \n&quot;) (let ((kolon (read))) (do ((i 1 (+ i 1))) ((&gt; i kolon)) (let loop ((lst (list (+ (random 49) 1))) (sayi (+ 1 (random 49)))) (if (= (length lst) 6) (printf &quot;~a.
+(define (sayisal) (display &#34;Oynamak istediginiz kolan sayisini giriniz: \n&#34;) (let ((kolon (read))) (do ((i 1 (+ i 1))) ((&gt; i kolon)) (let loop ((lst (list (+ (random 49) 1))) (sayi (+ 1 (random 49)))) (if (= (length lst) 6) (printf &#34;~a.
         <a href="https://blog.askin.ws/blog/cikmaz-demeyin-sansinizi-deneyin/" class="post-read-more">[Read More]</a>
         
     </div>
@@ -643,8 +642,8 @@ Probleme göre kod bana çok uzun geldi. Belki ilerde optimize edebilirim. Ama �
     </p>
     <div class="post-entry">
         
-        <p><img src="/uploads/2007/12/drscheme.gif" alt="DrScheme Logo" />DrScheme v372 çıktı. Bu versiyonunda birçok hatanın düzeltildiği ve birkaç yeni özellik eklendiği belirtiliyor. Sanırım beni ençok etkileyen özellik kod tamamlama özelliği. Siz bir kod yazarken o size ekleyebileceğiniz konutları sıralıyor. Ancak bu özellik çok kullanışlı bir halde gelmiyor. Tamamlama istediğimiz zaman [ Ctrl / ] tuş kombinasyonunu kullanmamız gerekmekte. Bende [ Ctrl Shift 7 ] kombinasyonunun kullanılması gerekiyor.<br />
-<img src="/uploads/2007/12/drscheme.png" alt="Kod tamamlama" /><br />
+        <p><img src="/uploads/2007/12/drscheme.gif" alt="DrScheme Logo">DrScheme v372 çıktı. Bu versiyonunda birçok hatanın düzeltildiği ve birkaç yeni özellik eklendiği belirtiliyor. Sanırım beni ençok etkileyen özellik kod tamamlama özelliği. Siz bir kod yazarken o size ekleyebileceğiniz konutları sıralıyor. Ancak bu özellik çok kullanışlı bir halde gelmiyor. Tamamlama istediğimiz zaman [ Ctrl / ] tuş kombinasyonunu kullanmamız gerekmekte. Bende [ Ctrl Shift 7 ] kombinasyonunun kullanılması gerekiyor.<br>
+<img src="/uploads/2007/12/drscheme.png" alt="Kod tamamlama"><br>
 Ayrıca <a href="http://download.plt-scheme.org/">burdan</a> indirebilirsiniz.</p>
 
         
@@ -695,19 +694,17 @@ Ayrıca <a href="http://download.plt-scheme.org/">burdan</a> indirebilirsiniz.</
     <div class="post-entry">
         
         <p>Alın size bir güzel kod:) Benim hoşuma gitti eminim sizin hoşunuzada gidecek.</p>
-
-<pre><code class="language-scheme">(define (goster str)
-  (let loop ((str str))
-    (if (equal? str &quot;&quot;)
-        (begin
-          (sleep 0)
-          (display &quot;&quot;))
-        (begin
-          (sleep 1/2)
-          (display (string-ref str 0))
-          (loop (substring str 1))))))
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scheme" data-lang="scheme">(<span style="color:#66d9ef">define </span>(<span style="color:#a6e22e">goster</span> str)
+  (<span style="color:#66d9ef">let </span>loop ((<span style="color:#a6e22e">str</span> str))
+    (<span style="color:#66d9ef">if </span>(equal? str <span style="color:#e6db74">&#34;&#34;</span>)
+        (<span style="color:#a6e22e">begin</span>
+          (<span style="color:#a6e22e">sleep</span> <span style="color:#ae81ff">0</span>)
+          (display <span style="color:#e6db74">&#34;&#34;</span>))
+        (<span style="color:#a6e22e">begin</span>
+          (<span style="color:#a6e22e">sleep</span> <span style="color:#ae81ff">1</span>/2)
+          (display (string-ref str <span style="color:#ae81ff">0</span>))
+          (<span style="color:#a6e22e">loop</span> (substring str <span style="color:#ae81ff">1</span>))))))
+</code></pre></div>
         
     </div>
 
@@ -843,7 +840,7 @@ Ayrıca <a href="http://download.plt-scheme.org/">burdan</a> indirebilirsiniz.</
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.58.3</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          <a href="https://gohugo.io">Hugo v0.62.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>

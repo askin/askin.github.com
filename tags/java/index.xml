@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Java on Aşkın Özgür</title>
@@ -21,7 +21,7 @@
       <guid>https://blog.askin.ws/blog/java-ile-server-socket-yapimi/</guid>
       <description>Bir proje için server sockete ihtiyaç duydum. Öncelikli dilim python olmasına rağmen, sunucu solaris olunca java ile yazmak daha cazip geldi. Öncelikli olarak test amaçlı birkaç satır kod yazdım. Akla gelen ilk örnek echo server oluyor :) aşağıda multi thread çalışan, birden fazla kullanıcıya cevap verebilecek bir echo server var:)
 Server.java
-/** * @author: Aşkın Yollu */ import java.net.*; import java.io.*; class Server { public static void main(String args[]) throws Exception { ServerSocket myService = null; Socket client = null; Worker tmpworker = null; try { // 1234 nolu portu dinle myService = new ServerSocket(1234); } catch (IOException e) { System.</description>
+/** * @author: Aşkın Yollu */ import java.net.*; import java.io.*; class Server { public static void main(String args[]) throws Exception { ServerSocket myService = null; Socket client = null; Worker tmpworker = null; try { // 1234 nolu portu dinle  myService = new ServerSocket(1234); } catch (IOException e) { System.</description>
     </item>
     
     <item>
@@ -32,7 +32,7 @@ Server.java
       <guid>https://blog.askin.ws/blog/java-ile-oracle-veritabanina-baglanmak/</guid>
       <description>Öncelikle http://www.oracle.com/technetwork/database/enterprise-edition/jdbc101040-094982.html adresinden classes12.jar dosyasını indiriyoruz.
 Bu dosyayı bir dizine atıp, içeriğini bu dizine çıkartıyoruz. Bu dizini classpath değişkeninde belirtip kodlamaya başlıyoruz.
-import java.io.*; import java.sql.*; public class OraThin { public static void main(String[] args) { try { Connection con = null; Class.forName(&amp;quot;oracle.jdbc.driver.OracleDriver&amp;quot;); con=DriverManager.getConnection( &amp;quot;jdbc:oracle:thin:@localhost:1521:dbname&amp;quot;, &amp;quot;username&amp;quot;, &amp;quot;password&amp;quot;); Statement s = con.createStatement(); ResultSet rs = s.executeQuery(&amp;quot;SELECT * FROM KISI&amp;quot;); String name; String surname; while(rs.next()) { name = rs.getString(&amp;quot;AD&amp;quot;); surname = rs.getString(&amp;quot;SOYAD&amp;quot;); System.</description>
+import java.io.*; import java.sql.*; public class OraThin { public static void main(String[] args) { try { Connection con = null; Class.forName(&amp;#34;oracle.jdbc.driver.OracleDriver&amp;#34;); con=DriverManager.getConnection( &amp;#34;jdbc:oracle:thin:@localhost:1521:dbname&amp;#34;, &amp;#34;username&amp;#34;, &amp;#34;password&amp;#34;); Statement s = con.createStatement(); ResultSet rs = s.executeQuery(&amp;#34;SELECT * FROM KISI&amp;#34;); String name; String surname; while(rs.next()) { name = rs.getString(&amp;#34;AD&amp;#34;); surname = rs.getString(&amp;#34;SOYAD&amp;#34;); System.</description>
     </item>
     
     <item>
@@ -42,7 +42,7 @@ import java.io.*; import java.sql.*; public class OraThin { public static void m
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/cikmaz-demeyin-sansinizi-deneyin-2/</guid>
       <description>Buradaki yazımdan esinlenip yazdım bunu. Azıcık java öğrendim artık uygulama yapma zamanıdır. Eminim daha güzel (hatta belki benim ki iğrenç bi koddur(:) yazılabilir. Ama şimdilik bunu yapabiliyorum.
-public class Sayisal { int[] _kupon = new int[6]; int _num; public Sayisal(){ int sira = 0; while (sira &amp;lt; 6) { _num = (int) (1 + Math.random() * 49); if (!varmi(_kupon, _num)) _kupon[sira++] = _num; } } private boolean varmi(int[] kupon, int num) { for (int x: kupon) {if (x == num) return true;} return false; } public String toString(){ String kuponStr = &amp;quot;&amp;quot;; for (int i = 0; i &amp;lt; 6; i++) kuponStr += (_kupon[i] + &amp;quot; &amp;quot;); return kuponStr; } public static void main(String[] args){ byte kuponSayisi; if (args.</description>
+public class Sayisal { int[] _kupon = new int[6]; int _num; public Sayisal(){ int sira = 0; while (sira &amp;lt; 6) { _num = (int) (1 + Math.random() * 49); if (!varmi(_kupon, _num)) _kupon[sira++] = _num; } } private boolean varmi(int[] kupon, int num) { for (int x: kupon) {if (x == num) return true;} return false; } public String toString(){ String kuponStr = &amp;#34;&amp;#34;; for (int i = 0; i &amp;lt; 6; i++) kuponStr += (_kupon[i] + &amp;#34; &amp;#34;); return kuponStr; } public static void main(String[] args){ byte kuponSayisi; if (args.</description>
     </item>
     
     <item>

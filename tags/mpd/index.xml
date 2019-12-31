@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mpd on Aşkın Özgür</title>
@@ -20,11 +20,9 @@
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/linuxta-kullandigim-programlar-guncellendi/</guid>
       <description>&lt;p&gt;Uzun zamandır canım sıkılıyor, yapacak bir iş bulamıyordum, can sıkıntısından eski yazılarımı kurcalarken kullandığım programların çoğunun değiştiğini farkettim, ve bu yazıyı güncellemeye karar verdim. Sıkıntıdan bir yarım saat çaldım:) mutlu sayılırım, umarım işinize yarar.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Metin Düzenleyici: &lt;a href=&#34;http://www.xfce.org/projects/mousepad/&#34;&gt;Mousepad&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;p&gt;&lt;strong&gt;Metin Düzenleyici: &lt;a href=&#34;http://www.xfce.org/projects/mousepad/&#34;&gt;Mousepad&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
 Uzun zaman gedit kullandım, hatta program yazarken bile gedit kullandım. Ancak yaptığım işlere bakarak, programın çok kastığını farkettim. Birde üstüne geany programının geditten hızlı açıldığı görünce başka arayışlara girdim, bu noktada mousepad beni tatmin etti. Bir xfce projesi olan mousepad gerçekten basit, sade ve hızlı.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Müzik: &lt;a href=&#34;http://mpd.wikia.com/&#34;&gt;MPD&lt;/a&gt; &lt;a href=&#34;http://sonata.berlios.de/&#34;&gt;Sonata&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;p&gt;&lt;strong&gt;Müzik: &lt;a href=&#34;http://mpd.wikia.com/&#34;&gt;MPD&lt;/a&gt; &lt;a href=&#34;http://sonata.berlios.de/&#34;&gt;Sonata&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
 Müzik dinlerken kullandığım programın elimin altında dolaşmasını pek sevmem, gerçi birçok program kendini araç çubuğunda saklayabiliyor, ancak her bilgisayarı açtığımda yeniden müzik programını açmak pek hoşuma gitmiyor. MPD daha x açılmadan bana müziğimi sunmaya başlıyor. Gerçi okulda bilgisayarı açtığımda sıkıntı çıkabiliyor:)&lt;/p&gt;</description>
     </item>
     

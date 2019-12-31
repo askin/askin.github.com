@@ -42,7 +42,7 @@
   <meta name="twitter:site" content="@kelebeks" />
   <meta name="twitter:creator" content="@kelebeks" />
   <link href='https://blog.askin.ws/img/favicon.ico' rel='icon' type='image/x-icon'/>
-  <meta name="generator" content="Hugo 0.58.3" />
+  <meta name="generator" content="Hugo 0.62.0" />
   <link rel="alternate" href="https://blog.askin.ws/index.xml" type="application/rss+xml" title="Aşkın Özgür"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://blog.askin.ws/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -237,39 +237,21 @@
     </p>
     <div class="post-entry">
         
-        <p>Herzaman unutup google&rsquo;a bakacağıma buraya bakayım daha kolay :)</p>
-
+        <p>Herzaman unutup google'a bakacağıma buraya bakayım daha kolay :)</p>
 <p>Önce mysql sunucusuna bağlanalım:</p>
-
-<pre><code class="language-bash">mysql -u root -p
-</code></pre>
-
-<p>Kullanıcı oluşturma:</p>
-
-<pre><code class="language-sql">create user kullaniciadi;
-</code></pre>
-
-<p>Veritabanı oluşturma:</p>
-
-<pre><code class="language-sql">create database veritabaniadi;
-</code></pre>
-
-<p>Kullanıcı yetkilerini verme:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mysql -u root -p
+</code></pre></div><p>Kullanıcı oluşturma:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">user</span> kullaniciadi;
+</code></pre></div><p>Veritabanı oluşturma:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">database</span> veritabaniadi;
+</code></pre></div><p>Kullanıcı yetkilerini verme:
 Tüm yetkiler:</p>
-
-<pre><code class="language-sql">grant all on veritabaniadi.* to kullaniciadi@localhost identified by 'parola';
-</code></pre>
-
-<p>Sadece okuma (select):</p>
-
-<pre><code class="language-sql">grant select on veritabaniadi.* to kullaniciadi@localhost;
-</code></pre>
-
-<p>Yetkiler hemen devreye girsin:</p>
-
-<pre><code class="language-sql">flush privileges;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">grant</span> <span style="color:#66d9ef">all</span> <span style="color:#66d9ef">on</span> veritabaniadi.<span style="color:#f92672">*</span> <span style="color:#66d9ef">to</span> kullaniciadi<span style="color:#f92672">@</span>localhost identified <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">parola</span><span style="color:#e6db74">&#39;</span>;
+</code></pre></div><p>Sadece okuma (select):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">grant</span> <span style="color:#66d9ef">select</span> <span style="color:#66d9ef">on</span> veritabaniadi.<span style="color:#f92672">*</span> <span style="color:#66d9ef">to</span> kullaniciadi<span style="color:#f92672">@</span>localhost;
+</code></pre></div><p>Yetkiler hemen devreye girsin:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">flush <span style="color:#66d9ef">privileges</span>;
+</code></pre></div>
         
     </div>
 
@@ -408,7 +390,7 @@ Tüm yetkiler:</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.58.3</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          <a href="https://gohugo.io">Hugo v0.62.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>

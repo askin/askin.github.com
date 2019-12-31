@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>find on Aşkın Özgür</title>
@@ -20,7 +20,7 @@
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/solariste-ozyinelemeli-grep/</guid>
       <description>Özyinelemeli grep çok kullanışlı bir araç. Malesef solariste bulunan grep öz yinelemeli çalışmıyor. Ama bunu aşmak çok zor değil.
-$ grep &#39;ara&#39; `find . -name &#39;*&#39;`  </description>
+$ grep &amp;#39;ara&amp;#39; `find . -name &amp;#39;*&amp;#39;` </description>
     </item>
     
     <item>
@@ -31,7 +31,7 @@ $ grep &#39;ara&#39; `find . -name &#39;*&#39;`  </description>
       <guid>https://blog.askin.ws/blog/emacs-ile-bul-degistir-find-and-replace/</guid>
       <description>M-x replace-string RET aranan_string RET yerine_konulacak_string  Bunu regexli yapmak için replace-string yerine replace-regex kullanabilirsiniz. Birde buna kısayol eklesek tadından yenmez.
 .emacs dosyamıza aşağıdaki satırı ekliyoruz.
-;; Find and Replace (global-set-key (kbd &amp;quot;C-q&amp;quot;) &#39;replace-string)  C-q kombinasyonuna bastığımıza işlem başlamış oluyor.</description>
+;; Find and Replace (global-set-key (kbd &amp;#34;C-q&amp;#34;) &amp;#39;replace-string) C-q kombinasyonuna bastığımıza işlem başlamış oluyor.</description>
     </item>
     
   </channel>

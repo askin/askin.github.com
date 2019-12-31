@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>oracle on Aşkın Özgür</title>
@@ -21,7 +21,7 @@
       <guid>https://blog.askin.ws/blog/java-ile-oracle-veritabanina-baglanmak/</guid>
       <description>Öncelikle http://www.oracle.com/technetwork/database/enterprise-edition/jdbc101040-094982.html adresinden classes12.jar dosyasını indiriyoruz.
 Bu dosyayı bir dizine atıp, içeriğini bu dizine çıkartıyoruz. Bu dizini classpath değişkeninde belirtip kodlamaya başlıyoruz.
-import java.io.*; import java.sql.*; public class OraThin { public static void main(String[] args) { try { Connection con = null; Class.forName(&amp;quot;oracle.jdbc.driver.OracleDriver&amp;quot;); con=DriverManager.getConnection( &amp;quot;jdbc:oracle:thin:@localhost:1521:dbname&amp;quot;, &amp;quot;username&amp;quot;, &amp;quot;password&amp;quot;); Statement s = con.createStatement(); ResultSet rs = s.executeQuery(&amp;quot;SELECT * FROM KISI&amp;quot;); String name; String surname; while(rs.next()) { name = rs.getString(&amp;quot;AD&amp;quot;); surname = rs.getString(&amp;quot;SOYAD&amp;quot;); System.</description>
+import java.io.*; import java.sql.*; public class OraThin { public static void main(String[] args) { try { Connection con = null; Class.forName(&amp;#34;oracle.jdbc.driver.OracleDriver&amp;#34;); con=DriverManager.getConnection( &amp;#34;jdbc:oracle:thin:@localhost:1521:dbname&amp;#34;, &amp;#34;username&amp;#34;, &amp;#34;password&amp;#34;); Statement s = con.createStatement(); ResultSet rs = s.executeQuery(&amp;#34;SELECT * FROM KISI&amp;#34;); String name; String surname; while(rs.next()) { name = rs.getString(&amp;#34;AD&amp;#34;); surname = rs.getString(&amp;#34;SOYAD&amp;#34;); System.</description>
     </item>
     
   </channel>

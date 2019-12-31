@@ -41,7 +41,7 @@
   <meta name="twitter:site" content="@kelebeks" />
   <meta name="twitter:creator" content="@kelebeks" />
   <link href='https://blog.askin.ws/img/favicon.ico' rel='icon' type='image/x-icon'/>
-  <meta name="generator" content="Hugo 0.58.3" />
+  <meta name="generator" content="Hugo 0.62.0" />
   <link rel="alternate" href="https://blog.askin.ws/index.xml" type="application/rss+xml" title="Aşkın Özgür"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://blog.askin.ws/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -242,7 +242,7 @@
     </p>
     <div class="post-entry">
         
-        <p><img src="/uploads/2009/08/spam.jpg" alt="" /><a href="http://blog.yollu.com/2011/02/27/yasasin-spam/" title="Burdaki">Buradaki</a> yazımda 8000 spam olunca tekrar yazacağım demiştim. 8000&rsquo;i geçeli çok olmuş şuan akismet tarafından engelenen toplam 15292 spam mesaj bulunmakta. Son 6 ayda 4297 spam yorum almışım :)<br />
+        <p><img src="/uploads/2009/08/spam.jpg" alt=""><a href="http://blog.yollu.com/2011/02/27/yasasin-spam/" title="Burdaki">Buradaki</a> yazımda 8000 spam olunca tekrar yazacağım demiştim. 8000'i geçeli çok olmuş şuan akismet tarafından engelenen toplam 15292 spam mesaj bulunmakta. Son 6 ayda 4297 spam yorum almışım :)<br>
 Bu arada yeni farkettim akismet bayağı detaylı istatistikler, göze hoş görünen grafikler sunuyor. İncelemenizi tavsiye ederim.</p>
 
         
@@ -291,22 +291,13 @@ Bu arada yeni farkettim akismet bayağı detaylı istatistikler, göze hoş gör
     <div class="post-entry">
         
         <p>Shell script yazarken bir dosyanın boş olup olmadığını kontrol etmemiz gerekebilir. Bunu yapmak için birkaç yöntem yazacağım.</p>
-
-<pre><code class="language-bash">satirsayisi=`wc  -l 194.27.108.90  | awk '{split($0,a,&quot; &quot;); print a[1]}'`
-if [ $satirsayisi == 0 ]; then echo &quot;dosya bos&quot;; fi
-</code></pre>
-
-<pre><code class="language-bash">if [ -z $(cat dosyaadi) ]; then echo &quot;dosya bos&quot;; fi
-</code></pre>
-
-<pre><code class="language-bash">if [ -z `cat dosyaadi` ]; then echo &quot;dosya bos&quot;; fi
-</code></pre>
-
-<p>Ve en güzeli</p>
-
-<pre><code class="language-bash">if [ -s dosyaadi ]; then echo &quot;Dosya dolu&quot;; else echo &quot;Dosya bos&quot;; fi
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">satirsayisi<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>wc  -l 194.27.108.90  | awk <span style="color:#e6db74">&#39;{split($0,a,&#34; &#34;); print a[1]}&#39;</span><span style="color:#e6db74">`</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $satirsayisi <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span> echo <span style="color:#e6db74">&#34;dosya bos&#34;</span>; <span style="color:#66d9ef">fi</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -z <span style="color:#66d9ef">$(</span>cat dosyaadi<span style="color:#66d9ef">)</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span> echo <span style="color:#e6db74">&#34;dosya bos&#34;</span>; <span style="color:#66d9ef">fi</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -z <span style="color:#e6db74">`</span>cat dosyaadi<span style="color:#e6db74">`</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span> echo <span style="color:#e6db74">&#34;dosya bos&#34;</span>; <span style="color:#66d9ef">fi</span>
+</code></pre></div><p>Ve en güzeli</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -s dosyaadi <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span> echo <span style="color:#e6db74">&#34;Dosya dolu&#34;</span>; <span style="color:#66d9ef">else</span> echo <span style="color:#e6db74">&#34;Dosya bos&#34;</span>; <span style="color:#66d9ef">fi</span>
+</code></pre></div>
         
     </div>
 
@@ -361,9 +352,9 @@ if [ $satirsayisi == 0 ]; then echo &quot;dosya bos&quot;; fi
     <div class="post-entry">
         
         Linux üzerinde kurulumdan bahsedeceğim. Öncelikle kullandığınız dağıtımın paket deposundan subversion paketini kurmalısınız. Ben debian kullandığım için
-sudo apt-get install subversion  Kurulum tamamlandıktan sonra gerekli tüm araçlara sahip olmuş oluyoruz.
+sudo apt-get install subversion Kurulum tamamlandıktan sonra gerekli tüm araçlara sahip olmuş oluyoruz.
 Bir depo oluşturalım.
-svnadmin create depom  depom adli dizinde bir depo oluşturmuş olduk. Bu depo üzerinde gerekli düzenlemeleri yapalım.
+svnadmin create depom depom adli dizinde bir depo oluşturmuş olduk. Bu depo üzerinde gerekli düzenlemeleri yapalım.
 depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu dosyayı açıp [general] başlığı altındaki ayarları düzenliyoruz. Burdaki tüm ayarlar yorum satırı haline getirişmiş, bunlardan işimize yarayanları aktif hale getirmemiz gerekiyor.
         <a href="https://blog.askin.ws/blog/subversion-sunucu-kurulumu/" class="post-read-more">[Read More]</a>
         
@@ -403,7 +394,7 @@ depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu do
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;267&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;258&nbsp;words
   
   
     
@@ -418,7 +409,7 @@ depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu do
     <div class="post-entry">
         
         Sunucu:
-#include &lt;stdio.h&gt; #include &lt;string.h&gt; #include &lt;sys/types.h&gt; #include &lt;sys/socket.h&gt; #include &lt;netinet/in.h&gt; #define MY_PORT 3333 int main(int argc, char *argv[]) { int sockfd, new_fd; struct sockaddr_in my_addr; // hedef adres struct sockaddr_in their_addr; // baglanti yapan adres int sin_size, rt; // gelen verinin tutuldugu buffer char buf[32]; // islem yapmak icin gerekli dosya gosterici sockfd = socket(AF_INET, SOCK_DGRAM, 0); sin_size = sizeof(struct sockaddr_in); // adres ile ilgili ayarlar my_addr.sin_family = AF_INET; my_addr.
+#include &lt;stdio.h&gt;#include &lt;string.h&gt;#include &lt;sys/types.h&gt;#include &lt;sys/socket.h&gt;#include &lt;netinet/in.h&gt; #define MY_PORT 3333 int main(int argc, char *argv[]) { int sockfd, new_fd; struct sockaddr_in my_addr; // hedef adres  struct sockaddr_in their_addr; // baglanti yapan adres  int sin_size, rt; // gelen verinin tutuldugu buffer  char buf[32]; // islem yapmak icin gerekli dosya gosterici  sockfd = socket(AF_INET, SOCK_DGRAM, 0); sin_size = sizeof(struct sockaddr_in); // adres ile ilgili ayarlar  my_addr.sin_family = AF_INET; my_addr.
         <a href="https://blog.askin.ws/blog/udp-broadcast-sunucu-istemci/" class="post-read-more">[Read More]</a>
         
     </div>
@@ -473,39 +464,21 @@ depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu do
     </p>
     <div class="post-entry">
         
-        <p>Herzaman unutup google&rsquo;a bakacağıma buraya bakayım daha kolay :)</p>
-
+        <p>Herzaman unutup google'a bakacağıma buraya bakayım daha kolay :)</p>
 <p>Önce mysql sunucusuna bağlanalım:</p>
-
-<pre><code class="language-bash">mysql -u root -p
-</code></pre>
-
-<p>Kullanıcı oluşturma:</p>
-
-<pre><code class="language-sql">create user kullaniciadi;
-</code></pre>
-
-<p>Veritabanı oluşturma:</p>
-
-<pre><code class="language-sql">create database veritabaniadi;
-</code></pre>
-
-<p>Kullanıcı yetkilerini verme:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mysql -u root -p
+</code></pre></div><p>Kullanıcı oluşturma:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">user</span> kullaniciadi;
+</code></pre></div><p>Veritabanı oluşturma:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">database</span> veritabaniadi;
+</code></pre></div><p>Kullanıcı yetkilerini verme:
 Tüm yetkiler:</p>
-
-<pre><code class="language-sql">grant all on veritabaniadi.* to kullaniciadi@localhost identified by 'parola';
-</code></pre>
-
-<p>Sadece okuma (select):</p>
-
-<pre><code class="language-sql">grant select on veritabaniadi.* to kullaniciadi@localhost;
-</code></pre>
-
-<p>Yetkiler hemen devreye girsin:</p>
-
-<pre><code class="language-sql">flush privileges;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">grant</span> <span style="color:#66d9ef">all</span> <span style="color:#66d9ef">on</span> veritabaniadi.<span style="color:#f92672">*</span> <span style="color:#66d9ef">to</span> kullaniciadi<span style="color:#f92672">@</span>localhost identified <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">parola</span><span style="color:#e6db74">&#39;</span>;
+</code></pre></div><p>Sadece okuma (select):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">grant</span> <span style="color:#66d9ef">select</span> <span style="color:#66d9ef">on</span> veritabaniadi.<span style="color:#f92672">*</span> <span style="color:#66d9ef">to</span> kullaniciadi<span style="color:#f92672">@</span>localhost;
+</code></pre></div><p>Yetkiler hemen devreye girsin:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">flush <span style="color:#66d9ef">privileges</span>;
+</code></pre></div>
         
     </div>
 
@@ -561,7 +534,7 @@ Tüm yetkiler:</p>
     </p>
     <div class="post-entry">
         
-        <p><a href="https://www.fsf.org/register_form?referrer=10889"><img src="https://static.fsf.org/nosvn/associate/fsf-10889.png" alt="\[FSF Associate Member\]" /></a></p>
+        <p><a href="https://www.fsf.org/register_form?referrer=10889"><img src="https://static.fsf.org/nosvn/associate/fsf-10889.png" alt="\[FSF Associate Member\]"></a></p>
 
         
     </div>
@@ -611,10 +584,8 @@ Tüm yetkiler:</p>
     <div class="post-entry">
         
         <p>Özyinelemeli grep çok kullanışlı bir araç. Malesef solariste bulunan grep öz yinelemeli çalışmıyor. Ama bunu aşmak çok zor değil.</p>
-
-<pre><code class="language-bash">$ grep 'ara' `find . -name '*'`
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ grep <span style="color:#e6db74">&#39;ara&#39;</span> <span style="color:#e6db74">`</span>find . -name <span style="color:#e6db74">&#39;*&#39;</span><span style="color:#e6db74">`</span>
+</code></pre></div>
         
     </div>
 
@@ -667,12 +638,10 @@ Tüm yetkiler:</p>
     <div class="post-entry">
         
         <p>Herhangi bir nedenle üzerinde çalıştığınız svn deposunun adresi değişirse aşağıdaki komutla gerekli değişikliği yapabilirsiniz.</p>
-
-<pre><code class="language-bash">svn switch --relocate \
-    http://svn.example.com/path/to/repository/path/within/repository \
-    http://svnnew.example.com/new/repository/path/within/repository
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">svn switch --relocate <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    http://svn.example.com/path/to/repository/path/within/repository <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    http://svnnew.example.com/new/repository/path/within/repository
+</code></pre></div>
         
     </div>
 
@@ -721,9 +690,7 @@ Tüm yetkiler:</p>
     <div class="post-entry">
         
         <p>Android telefonumla uzun zamandır yanlışlıkla ekran görüntüsü alıyordum, birçok tuş kombinasyonunu denememe rağmen nasıl yapıldığını bulamamıştım. Bugün şans eseri nasıl yapıldığını buldum.</p>
-
 <p>Önce &ldquo;Ana Sayfa&rdquo; tuşu ile &ldquo;Geri&rdquo; tuşuna birlikte basıyoruz. Ardından &ldquo;Geri&rdquo; tuşuna tekrar basınca ekran görüntüsü alınıp kaydediliyor.</p>
-
 <p>Bukadar basitmiş :)</p>
 
         
@@ -786,19 +753,14 @@ Tüm yetkiler:</p>
     <div class="post-entry">
         
         <p>Eğer elinizde yukardaki gibi bir LCD ekran varsa, aman dikkatli olunuz. Üzerinde yazan bacak numaralarına inanmayınız. Sonra bizim gibi ekranları tek tek yakarsınız.</p>
-
 <p>Normalde üzerinde</p>
-
 <blockquote>
 <p>1 2 3 4 &hellip;. 16</p>
 </blockquote>
-
 <p>şeklinde bir numaralandırma var. Ama aslında</p>
-
 <blockquote>
 <p>14 13 12 &hellip;&hellip;. 1 15 16</p>
 </blockquote>
-
 <p>şeklinde numaralandırılıyor.</p>
 
         
@@ -953,7 +915,7 @@ Tüm yetkiler:</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.58.3</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          <a href="https://gohugo.io">Hugo v0.62.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>

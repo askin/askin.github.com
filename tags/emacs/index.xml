@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>emacs on Aşkın Özgür</title>
@@ -33,7 +33,7 @@ cd ~/.elisp git clone http://git.savannah.gnu.org/cgit/identica-mode.git  Şimdi
       <guid>https://blog.askin.ws/blog/emacs-ile-bul-degistir-find-and-replace/</guid>
       <description>M-x replace-string RET aranan_string RET yerine_konulacak_string  Bunu regexli yapmak için replace-string yerine replace-regex kullanabilirsiniz. Birde buna kısayol eklesek tadından yenmez.
 .emacs dosyamıza aşağıdaki satırı ekliyoruz.
-;; Find and Replace (global-set-key (kbd &amp;quot;C-q&amp;quot;) &#39;replace-string)  C-q kombinasyonuna bastığımıza işlem başlamış oluyor.</description>
+;; Find and Replace (global-set-key (kbd &amp;#34;C-q&amp;#34;) &amp;#39;replace-string) C-q kombinasyonuna bastığımıza işlem başlamış oluyor.</description>
     </item>
     
   </channel>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ctrl on Aşkın Özgür</title>
@@ -20,7 +20,7 @@
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/caps-locka-ne-gerek-var/</guid>
       <description>Hiç gerek yok.
-setxkbmap -option ctrl:nocaps  </description>
+setxkbmap -option ctrl:nocaps </description>
     </item>
     
   </channel>

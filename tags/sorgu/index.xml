@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>sorgu on Aşkın Özgür</title>
@@ -21,11 +21,11 @@
       <guid>https://blog.askin.ws/blog/mysql-veritabani-ile-ilgili-bazi-bilgileri-ogrenmek/</guid>
       <description>MySQL kullanıyorsanız, phpMyAdmin gibi bir arayüzünüz olmadığı zaman veritabanı ile ilgili bilgi almak için aşağıdaki sorguları kullanabilirsiniz.
 Var olan veritabanlarını görmek:
-show databases;  Bir veritabanını kullanmak için seçmek:
-use veritabani_ismi;  Bir veritabanındaki tabloları listelemek:
-show tables;  show tables from veritabani_ismi;  Bir tablonun oluşturulma scriptini görme:
-show create table tablo_ismi  Bir tablonun kolonlarını görme:
-describe tablo_adi  </description>
+show databases; Bir veritabanını kullanmak için seçmek:
+use veritabani_ismi; Bir veritabanındaki tabloları listelemek:
+show tables; show tables from veritabani_ismi; Bir tablonun oluşturulma scriptini görme:
+show create table tablo_ismi Bir tablonun kolonlarını görme:
+describe tablo_adi </description>
     </item>
     
   </channel>

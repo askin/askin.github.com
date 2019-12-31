@@ -92,7 +92,7 @@
   <meta name="twitter:site" content="@kelebeks" />
   <meta name="twitter:creator" content="@kelebeks" />
   <link href='https://blog.askin.ws/img/favicon.ico' rel='icon' type='image/x-icon'/>
-  <meta name="generator" content="Hugo 0.58.3" />
+  <meta name="generator" content="Hugo 0.62.0" />
   <link rel="alternate" href="https://blog.askin.ws/index.xml" type="application/rss+xml" title="Aşkın Özgür"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://blog.askin.ws/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -253,37 +253,27 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>Yasaklı sitelere girebilmek için çok çeşitli yöntemler kullanabilirsiniz. Ben çok sıklıkla <a href="http://www.gizlen.net" title="İzlenme Gizlen">www.gizlen.net</a>&lsquo;i kullanabilirsiniz. Bu siteye giriyorsunuz ve sayfanın üstündeki kutucuğa gireceğiniz siteyi yazıyorsunuz, oda size gireceğiniz siteyi sunuyor. Eğer daha kalıcı bir çözüm istiyorsanız proxy(vekil sunucu) kullanabilirsiniz. İnternetten ufak bir arama ile onlarca proxy adresine sahip olabilirsiniz. Ancak birçok kişi tarafınfan kullanılan ve tavsiye edilen <a href="http://www.opendns.com/" title="Open DNS sitesine gitmek için tıklayın: ">Open DNS</a> işinizi çok rahatlıkla görebilir. Gerçi Open DNS bir proxy değil. O bir Name Server. Bizim www.bobrektasi.org gibi girmeye çalıştığımız sitelerin ip adreslerini çözümleyip bizi doğru makineye yönlendiriyor. Bu bu yönlenme işini Open DNS üzerinden yaptığımız için TTnet&rsquo;in bizim girdiğimiz sitelere müdahale etme şansı kalmıyor.<br />
-Adresi: <a href="http://www.opendns.com/">http://www.opendns.com/</a><br />
+        <p>Yasaklı sitelere girebilmek için çok çeşitli yöntemler kullanabilirsiniz. Ben çok sıklıkla <a href="http://www.gizlen.net" title="İzlenme Gizlen">www.gizlen.net</a>&lsquo;i kullanabilirsiniz. Bu siteye giriyorsunuz ve sayfanın üstündeki kutucuğa gireceğiniz siteyi yazıyorsunuz, oda size gireceğiniz siteyi sunuyor. Eğer daha kalıcı bir çözüm istiyorsanız proxy(vekil sunucu) kullanabilirsiniz. İnternetten ufak bir arama ile onlarca proxy adresine sahip olabilirsiniz. Ancak birçok kişi tarafınfan kullanılan ve tavsiye edilen <a href="http://www.opendns.com/" title="Open DNS sitesine gitmek için tıklayın: ">Open DNS</a> işinizi çok rahatlıkla görebilir. Gerçi Open DNS bir proxy değil. O bir Name Server. Bizim <a href="http://www.bobrektasi.org">www.bobrektasi.org</a> gibi girmeye çalıştığımız sitelerin ip adreslerini çözümleyip bizi doğru makineye yönlendiriyor. Bu bu yönlenme işini Open DNS üzerinden yaptığımız için TTnet'in bizim girdiğimiz sitelere müdahale etme şansı kalmıyor.<br>
+Adresi: <a href="http://www.opendns.com/">http://www.opendns.com/</a><br>
 <a href="https://www.opendns.com/start">https://www.opendns.com/start</a> Bu adresten ayarların nasıl yapıldığını öğrenebilirsiniz.</p>
-
-<p>Ubuntu için ayarlar:<br />
+<p>Ubuntu için ayarlar:<br>
 İlk önce Networ Admin Proramını açıyoruz:</p>
-
 <ul>
 <li>Sistem -&gt;Yönetim -&gt; Ağ yolunu takip ederekte çabilirsiniz.</li>
 <li>[Alt + F2] yapıp <em>gksu network-admin</em> yazarakta açabilirsiniz.</li>
 <li>konsoldan <code>$ sudo network-admin</code> komutunu vererekte açabilirsiniz.</li>
 </ul>
-
-<p>Burda DNS sekmesi altına<br />
+<p>Burda DNS sekmesi altına<br>
 <code>208.67.222.222 208.67.220.220</code> iplerini ekliyorsunuz.</p>
-
 <p>Ardından konsolda</p>
-
-<pre><code class="language-bash">sudo cp /etc/resolv.conf /etc/resolv.conf.auto
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo cp /etc/resolv.conf /etc/resolv.conf.auto
 sudo gedit /etc/dhcp3/dhclient.conf
-</code></pre>
-
-<p>komutlarını giriyorsunuz.<br />
-Karşınıza çıkan editöre<br />
-<code># append the following line to the document prepend domain-name-servers 208.67.222.222,208.67.220.220; # save and exit</code><br />
+</code></pre></div><p>komutlarını giriyorsunuz.<br>
+Karşınıza çıkan editöre<br>
+<code># append the following line to the document prepend domain-name-servers 208.67.222.222,208.67.220.220; # save and exit</code><br>
 satırlarını ekliyorsunuz. ve</p>
-
-<pre><code class="language-bash">$ sudo ifdown eth0 &amp;&amp; sudo ifup eth0
-</code></pre>
-
-<p>komutunu veriyorsunuz. Eğer bu komutlarda bi hata verirse, ya da dns değişmemişse bilgisayarı açıp kapatın artık özgürsünüz.Şimdi <a href="http://www.youtube.com,">www.youtube.com</a>&lsquo;a girerek deneyebilirsiniz çalışıyormu diye:)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo ifdown eth0 <span style="color:#f92672">&amp;&amp;</span> sudo ifup eth0
+</code></pre></div><p>komutunu veriyorsunuz. Eğer bu komutlarda bi hata verirse, ya da dns değişmemişse bilgisayarı açıp kapatın artık özgürsünüz.Şimdi <a href="http://www.youtube.com,">www.youtube.com</a>&lsquo;a girerek deneyebilirsiniz çalışıyormu diye:)</p>
 
 
         
@@ -532,7 +522,7 @@ satırlarını ekliyorsunuz. ve</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.58.3</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          <a href="https://gohugo.io">Hugo v0.62.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>

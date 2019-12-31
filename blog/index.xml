@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blogs on Aşkın Özgür</title>
@@ -20,8 +20,8 @@
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/du-wildcard-ile-gizli-dosyalar/</guid>
       <description>du komutunu çok sık kullanıyorum. Makinede yer sıkıntısı yaşadığım zaman kesinlikle hayat kurtarıyor. Genellikle aşağıdaki şekilde kullanıyorum.
-du -sh * | sort -h  Bu komut anlaşılır bir birimle tüm alt dizinlerin boyutlarını hesaplayıp küçükten büyüğe doğru sıralıyor. Bu komutun ve birçok linux komutunun sıkıntısı, wildcard kullanıldığında gizli dosyaları/dizinleri göstermiyor. Tabi bu kullandığınız kabukla ilgili. Ben bash kullanıyorum. Bunu aşmak için komutu aşağıdaki şekilde kullanabilirsiniz.
-du -sh .[!.]* * | sort -h  Bu komutun da biraz sıkıntılar var.</description>
+du -sh * | sort -h Bu komut anlaşılır bir birimle tüm alt dizinlerin boyutlarını hesaplayıp küçükten büyüğe doğru sıralıyor. Bu komutun ve birçok linux komutunun sıkıntısı, wildcard kullanıldığında gizli dosyaları/dizinleri göstermiyor. Tabi bu kullandığınız kabukla ilgili. Ben bash kullanıyorum. Bunu aşmak için komutu aşağıdaki şekilde kullanabilirsiniz.
+du -sh .[!.]* * | sort -h Bu komutun da biraz sıkıntılar var.</description>
     </item>
     
     <item>
@@ -39,7 +39,7 @@ du -sh .[!.]* * | sort -h  Bu komutun da biraz sıkıntılar var.</description>
       <pubDate>Mon, 06 Feb 2017 15:09:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/lets-encrypt/</guid>
-      <description>Daha önceki yazılarımda belirtiğim gibi ssl için startssl kullanıyordum. Ücretsiz sertifika verdiği için startssl uzun süre işimi gördü. Fakat son dönemde Let&amp;rsquo;s Encrypti keşfettim. Çok basit bir şekilde sertifika oluşturmamızı sağlıyor. İlk denememden sonra tüm kullandığım websitelerinde ve servislerde Let&amp;rsquo;s Encrypt kullanmaya karar verdim. Sizde seveceksiniz bundan eminim. Yaklaşık 12 sertifika oluşturdum, bunların takibini yapmak biraz sıkıntılı olacak. Bir de Let&amp;rsquo;s Encrypt sertifikaları 3 aylık oluşturuyor. Birşeylerin gözden kaçması çok mümkün.</description>
+      <description>Daha önceki yazılarımda belirtiğim gibi ssl için startssl kullanıyordum. Ücretsiz sertifika verdiği için startssl uzun süre işimi gördü. Fakat son dönemde Let&#39;s Encrypti keşfettim. Çok basit bir şekilde sertifika oluşturmamızı sağlıyor. İlk denememden sonra tüm kullandığım websitelerinde ve servislerde Let&#39;s Encrypt kullanmaya karar verdim. Sizde seveceksiniz bundan eminim. Yaklaşık 12 sertifika oluşturdum, bunların takibini yapmak biraz sıkıntılı olacak. Bir de Let&#39;s Encrypt sertifikaları 3 aylık oluşturuyor. Birşeylerin gözden kaçması çok mümkün.</description>
     </item>
     
     <item>
@@ -48,7 +48,7 @@ du -sh .[!.]* * | sort -h  Bu komutun da biraz sıkıntılar var.</description>
       <pubDate>Tue, 11 Mar 2014 18:51:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/ssl-enabled/</guid>
-      <description>Son çıkan internet yasalarından sonra her siteye bir ssl sertifikası lazım olacak gibi. Sağolsun StartSSL ücretsiz SSL sertifikası veriyor, onu kullanarak başta blogum olmak üzere kendi host ettiğim her web sistesine sertifika ekliyorum. Şuan hem http hem de https olarak çalışıyor. Bir süre sonra tüm http trafiğini ssl&amp;rsquo;e yönlendireceğim.</description>
+      <description>Son çıkan internet yasalarından sonra her siteye bir ssl sertifikası lazım olacak gibi. Sağolsun StartSSL ücretsiz SSL sertifikası veriyor, onu kullanarak başta blogum olmak üzere kendi host ettiğim her web sistesine sertifika ekliyorum. Şuan hem http hem de https olarak çalışıyor. Bir süre sonra tüm http trafiğini ssl&#39;e yönlendireceğim.</description>
     </item>
     
     <item>
@@ -59,9 +59,9 @@ du -sh .[!.]* * | sort -h  Bu komutun da biraz sıkıntılar var.</description>
       <guid>https://blog.askin.ws/blog/slurm-linux-icin-bant-genisligi-takip-araci/</guid>
       <description>Slurm temel olarak ağ trafiğini görüntülemek için kullanılan bir araçtır. Ağ kullanımını görselleştirerek kullanışlı bir çıktı üretir.
 Debian tabanlı sistemlerde aşağıdaki gibi kurulum yapabihlirsiniz.
-apt-get install slurm  Kurulumu tamamladıktan sonra komut satırından ağ trafiğinizi takip edebilirsiniz. En basit şekliyle aşağıdaki formatta komutu kullanabilirsiniz.
-slurm -i [Ağ Arayüzü]  -i parametresi hangi ağ arayüzünün kullanılacanı belirtir.
-slurm -i wlan0  slurm -i eth1  Klavye kısa yolları: Slurm etkileşim için birçok farklı tuşu destekler:</description>
+apt-get install slurm Kurulumu tamamladıktan sonra komut satırından ağ trafiğinizi takip edebilirsiniz. En basit şekliyle aşağıdaki formatta komutu kullanabilirsiniz.
+slurm -i [Ağ Arayüzü] -i parametresi hangi ağ arayüzünün kullanılacanı belirtir.
+slurm -i wlan0 slurm -i eth1 Klavye kısa yolları: Slurm etkileşim için birçok farklı tuşu destekler:</description>
     </item>
     
     <item>
@@ -70,7 +70,7 @@ slurm -i wlan0  slurm -i eth1  Klavye kısa yolları: Slurm etkileşim için bir
       <pubDate>Fri, 15 Nov 2013 17:17:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/screen-ile-irssi-kullanim-kilavuzu/</guid>
-      <description>irssi~[1]~ komut satırından çalışan ve bir çok geliştirici için popüler olan bir IRC istemcisidir. Irssi GNU Screen~[2]~ programı ile birlikte kullanılarak çıkış yapmadan bir veya birden fazla kabuk yaratabilirsiniz. Sürekli biligisayar değiltirip fakat irssi&amp;rsquo;a kaldığınız yerden devam etmek istediğinizde çok kullanılışılır.
+      <description>irssi~[[1]](#irssiwebsite &amp;ldquo;Irssi Web Sistesi&amp;rdquo; id=&amp;quot;hohoho&amp;rdquo;)~ komut satırından çalışan ve bir çok geliştirici için popüler olan bir IRC istemcisidir. Irssi GNU Screen~[2]~ programı ile birlikte kullanılarak çıkış yapmadan bir veya birden fazla kabuk yaratabilirsiniz. Sürekli biligisayar değiltirip fakat irssi&#39;a kaldığınız yerden devam etmek istediğinizde çok kullanılışılır.
 Avantajları:
  Kişiler size mesaj bırakabilir. Siz dışardayken yapılan görüşmeleri sonradan yakalayabilirsiniz (genellikle &amp;ldquo;scroolback&amp;rdquo; olarak adlandırılır).  Yönergeler:
  Bir adet linux VPS edinin ya da sık sık yeniden başlatılmayacak, ihtiyacınız olan yerden bağlanabileceğiniz *nix makina üzerinde ssh hesabı edinin.</description>
@@ -102,11 +102,11 @@ Avantajları:
       <guid>https://blog.askin.ws/blog/mysql-veritabani-ile-ilgili-bazi-bilgileri-ogrenmek/</guid>
       <description>MySQL kullanıyorsanız, phpMyAdmin gibi bir arayüzünüz olmadığı zaman veritabanı ile ilgili bilgi almak için aşağıdaki sorguları kullanabilirsiniz.
 Var olan veritabanlarını görmek:
-show databases;  Bir veritabanını kullanmak için seçmek:
-use veritabani_ismi;  Bir veritabanındaki tabloları listelemek:
-show tables;  show tables from veritabani_ismi;  Bir tablonun oluşturulma scriptini görme:
-show create table tablo_ismi  Bir tablonun kolonlarını görme:
-describe tablo_adi  </description>
+show databases; Bir veritabanını kullanmak için seçmek:
+use veritabani_ismi; Bir veritabanındaki tabloları listelemek:
+show tables; show tables from veritabani_ismi; Bir tablonun oluşturulma scriptini görme:
+show create table tablo_ismi Bir tablonun kolonlarını görme:
+describe tablo_adi </description>
     </item>
     
     <item>
@@ -116,7 +116,7 @@ describe tablo_adi  </description>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/konsoldan-rastgele-string-olusturma/</guid>
       <description>Konsoldan rastgele stringler oluşturmak için bir çok yöntem var, bunların bir çoğu random ve urandom aygıtlarını kullanıyor. Benim şimdi anlatacağım yöntemle urandom aygıtını kullanıyoruz.
-&amp;lt; /dev/urandom tr -dc A-Za-z0-9  Burada tr komutuna standart girdi olarak /dev/urandom aygıtını gösteriyoruz. urandom rastgele değerler üretir, bu üretilen değerlerin bazıları yazdırılabilir bazıları da yazdırılamayan karakterlere denk gelir. Biz tr komutu ile bu rastgele üretilen değerlerden alfanümerik olanları ayıklıyoruz. Tabi bu komut sonsuza kadar çıktı üretir, sadece istediğimiz kadarını almak için head komutunu kullanabiliriz.</description>
+&amp;lt; /dev/urandom tr -dc A-Za-z0-9 Burada tr komutuna standart girdi olarak /dev/urandom aygıtını gösteriyoruz. urandom rastgele değerler üretir, bu üretilen değerlerin bazıları yazdırılabilir bazıları da yazdırılamayan karakterlere denk gelir. Biz tr komutu ile bu rastgele üretilen değerlerden alfanümerik olanları ayıklıyoruz. Tabi bu komut sonsuza kadar çıktı üretir, sadece istediğimiz kadarını almak için head komutunu kullanabiliriz.</description>
     </item>
     
     <item>
@@ -136,7 +136,7 @@ describe tablo_adi  </description>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/python-sozluk-hizli-rehber/</guid>
       <description>Başlığında söylediği gibi, Python sözlük hızlı rehber
-# Anahtar/değer çiftleriyle sözlük tanımlama dict = { &#39;anahtar1′ : &#39;deger1′, &#39;anahtar2′ : &#39;deger2′, &#39;anahtar3′ : &#39;deger3′ } # Tüm anahtarları al sozluk.keys() # Tüm değerleri al sozluk.values() # Düzenleme sozluk[&#39;anahtar2&#39;] = &#39;deger8′ # Erişim print sozluk[&#39;anahtar1&#39;] # &#39;deger2&#39;yi yazdır print sozluk[&#39;anahtar2&#39;] # Boş sözlük tanımlama ve değer atama bosSozluk = {} bosSozluk[&#39;anahtar4&#39;] = &#39;deger4&#39; # Sözlük üzerinde döngü kurma (foreach) for anahtar in sozluk: print sozluk[anahtar] # Anahtarları sıralayıp, o sıraya göre değerleri yazdırmak anahtarlar = sozluk.</description>
+# Anahtar/değer çiftleriyle sözlük tanımlama dict = { &amp;#39;anahtar1′ : &amp;#39;deger1′, &amp;#39;anahtar2′ : &amp;#39;deger2′, &amp;#39;anahtar3′ : &amp;#39;deger3′ } # Tüm anahtarları al sozluk.keys() # Tüm değerleri al sozluk.values() # Düzenleme sozluk[&amp;#39;anahtar2&amp;#39;] = &amp;#39;deger8′ # Erişim print sozluk[&amp;#39;anahtar1&amp;#39;] # &amp;#39;deger2&amp;#39;yi yazdır print sozluk[&amp;#39;anahtar2&amp;#39;] # Boş sözlük tanımlama ve değer atama bosSozluk = {} bosSozluk[&amp;#39;anahtar4&amp;#39;] = &amp;#39;deger4&amp;#39; # Sözlük üzerinde döngü kurma (foreach) for anahtar in sozluk: print sozluk[anahtar] # Anahtarları sıralayıp, o sıraya göre değerleri yazdırmak anahtarlar = sozluk.</description>
     </item>
     
     <item>
@@ -158,7 +158,7 @@ Listeler köşeli parantezler ile açılıp kapatılır. Listedeki her bir elema
       <guid>https://blog.askin.ws/blog/off-the-record-messaging-otr/</guid>
       <description>Off the Record Messaging (OTR) anlık mesajlaşma servislerinde güvenli olarak mesajlaşmak için geliştirilmiş bir protokoldür. Birçok anlık mesajlaşma uygulaması için eklentileri geliştirilmiştir. Ben pidgin ile birlikte kullanıyorum. Özel olarak kalmasını istediğiniz sohbetlerinizi OTR kullanarak güvenli bir şekilde yapabilirsiniz. [1] adresinde OTR ile ilgili wikipedia sayfasını bulabilirsiniz. [2] adresinde OTR ana sayfası bulunmakta.
 Pidgin ve Ubuntu kullanıcıları için kurulum çok basit:
-sudo apt-get install pidgin-otr  Bir çok dağıtım deposunda OTR hazır olarak gelmektedir.</description>
+sudo apt-get install pidgin-otr Bir çok dağıtım deposunda OTR hazır olarak gelmektedir.</description>
     </item>
     
     <item>
@@ -189,11 +189,9 @@ Kendi adresim için nasıl bir ayar yaptığımı göstereceğim. Adresim askin 
       <pubDate>Sun, 24 Mar 2013 20:39:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/usb-bellek-uzerinde-raspberry-pi/</guid>
-      <description>Malesef sd kart olmadan raspberry pi&amp;rsquo;yı boot etmemiz mümkün olmuyor. Benim elimde 1GB&amp;rsquo;lık bir sd kart vardı ve 2GB dan daha ufak imaj dosyaları bulamadım. Bu nedenle usb bellek ile boot etme ihtiyacı duydum.
+      <description>Malesef sd kart olmadan raspberry pi&#39;yı boot etmemiz mümkün olmuyor. Benim elimde 1GB&#39;lık bir sd kart vardı ve 2GB dan daha ufak imaj dosyaları bulamadım. Bu nedenle usb bellek ile boot etme ihtiyacı duydum.
 Benim sistemimde usb bellek ve sd kart aşağıdaki şekilde tanındı:
-- usb: /dev/sdd
-- sd: /dev/sde
-Öncelikle indirdiğimiz imaj dosyasını usb belleğimize kopyalıyoruz
+ usb: /dev/sdd sd: /dev/sde  Öncelikle indirdiğimiz imaj dosyasını usb belleğimize kopyalıyoruz
 dd if=2013-02-09-wheezy-raspbian.img of=/dev/sdd  Elimizde bulunan sd karta 1 adet fat32 bölüm oluşturuyoruz (oluşturduğunuz bölüm hem ilk sırada hem de birincil bir bölüm olmalı).</description>
     </item>
     
@@ -226,9 +224,9 @@ cd ~/.elisp git clone http://git.savannah.gnu.org/cgit/identica-mode.git  Şimdi
       <pubDate>Tue, 26 Feb 2013 15:28:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/web2py-demo-mod/</guid>
-      <description>Bugün web2py ile uğraşırken, localhost üzerinde çalıştırmadığım için oluşan ticketları göremedim, o an için localhost&amp;rsquo;ta çalıştıramadığımdan dolayı web2py&amp;rsquo;yi demo modundan çalıştırmak zorunda kaldım. Bunu yapmak için applications/admin/models/0.py dosyasında 7. satırdaki
-DEMO_MODE = False  satırını
-DEMO_MODE = True  olarak değiştirmem yetti.</description>
+      <description>Bugün web2py ile uğraşırken, localhost üzerinde çalıştırmadığım için oluşan ticketları göremedim, o an için localhost&#39;ta çalıştıramadığımdan dolayı web2py&#39;yi demo modundan çalıştırmak zorunda kaldım. Bunu yapmak için applications/admin/models/0.py dosyasında 7. satırdaki
+DEMO_MODE = False satırını
+DEMO_MODE = True olarak değiştirmem yetti.</description>
     </item>
     
     <item>
@@ -237,7 +235,7 @@ DEMO_MODE = True  olarak değiştirmem yetti.</description>
       <pubDate>Thu, 07 Feb 2013 15:57:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/spam/</guid>
-      <description>Buradaki yazımda 8000 spam olunca tekrar yazacağım demiştim. 8000&amp;rsquo;i geçeli çok olmuş şuan akismet tarafından engelenen toplam 15292 spam mesaj bulunmakta. Son 6 ayda 4297 spam yorum almışım :)
+      <description>Buradaki yazımda 8000 spam olunca tekrar yazacağım demiştim. 8000&#39;i geçeli çok olmuş şuan akismet tarafından engelenen toplam 15292 spam mesaj bulunmakta. Son 6 ayda 4297 spam yorum almışım :)
 Bu arada yeni farkettim akismet bayağı detaylı istatistikler, göze hoş görünen grafikler sunuyor. İncelemenizi tavsiye ederim.</description>
     </item>
     
@@ -248,8 +246,8 @@ Bu arada yeni farkettim akismet bayağı detaylı istatistikler, göze hoş gör
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/bir-dosyanin-bos-olup-olmadigini-kontrol-etme/</guid>
       <description>Shell script yazarken bir dosyanın boş olup olmadığını kontrol etmemiz gerekebilir. Bunu yapmak için birkaç yöntem yazacağım.
-satirsayisi=`wc -l 194.27.108.90 | awk &#39;{split($0,a,&amp;quot; &amp;quot;); print a[1]}&#39;` if [ $satirsayisi == 0 ]; then echo &amp;quot;dosya bos&amp;quot;; fi  if [ -z $(cat dosyaadi) ]; then echo &amp;quot;dosya bos&amp;quot;; fi  if [ -z `cat dosyaadi` ]; then echo &amp;quot;dosya bos&amp;quot;; fi  Ve en güzeli
-if [ -s dosyaadi ]; then echo &amp;quot;Dosya dolu&amp;quot;; else echo &amp;quot;Dosya bos&amp;quot;; fi  </description>
+satirsayisi=`wc -l 194.27.108.90 | awk &amp;#39;{split($0,a,&amp;#34; &amp;#34;); print a[1]}&amp;#39;` if [ $satirsayisi == 0 ]; then echo &amp;#34;dosya bos&amp;#34;; fi if [ -z $(cat dosyaadi) ]; then echo &amp;#34;dosya bos&amp;#34;; fi if [ -z `cat dosyaadi` ]; then echo &amp;#34;dosya bos&amp;#34;; fi Ve en güzeli
+if [ -s dosyaadi ]; then echo &amp;#34;Dosya dolu&amp;#34;; else echo &amp;#34;Dosya bos&amp;#34;; fi </description>
     </item>
     
     <item>
@@ -259,9 +257,9 @@ if [ -s dosyaadi ]; then echo &amp;quot;Dosya dolu&amp;quot;; else echo &amp;quo
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/subversion-sunucu-kurulumu/</guid>
       <description>Linux üzerinde kurulumdan bahsedeceğim. Öncelikle kullandığınız dağıtımın paket deposundan subversion paketini kurmalısınız. Ben debian kullandığım için
-sudo apt-get install subversion  Kurulum tamamlandıktan sonra gerekli tüm araçlara sahip olmuş oluyoruz.
+sudo apt-get install subversion Kurulum tamamlandıktan sonra gerekli tüm araçlara sahip olmuş oluyoruz.
 Bir depo oluşturalım.
-svnadmin create depom  depom adli dizinde bir depo oluşturmuş olduk. Bu depo üzerinde gerekli düzenlemeleri yapalım.
+svnadmin create depom depom adli dizinde bir depo oluşturmuş olduk. Bu depo üzerinde gerekli düzenlemeleri yapalım.
 depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu dosyayı açıp [general] başlığı altındaki ayarları düzenliyoruz. Burdaki tüm ayarlar yorum satırı haline getirişmiş, bunlardan işimize yarayanları aktif hale getirmemiz gerekiyor.</description>
     </item>
     
@@ -272,7 +270,7 @@ depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu do
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/udp-broadcast-sunucu-istemci/</guid>
       <description>Sunucu:
-#include &amp;lt;stdio.h&amp;gt; #include &amp;lt;string.h&amp;gt; #include &amp;lt;sys/types.h&amp;gt; #include &amp;lt;sys/socket.h&amp;gt; #include &amp;lt;netinet/in.h&amp;gt; #define MY_PORT 3333 int main(int argc, char *argv[]) { int sockfd, new_fd; struct sockaddr_in my_addr; // hedef adres struct sockaddr_in their_addr; // baglanti yapan adres int sin_size, rt; // gelen verinin tutuldugu buffer char buf[32]; // islem yapmak icin gerekli dosya gosterici sockfd = socket(AF_INET, SOCK_DGRAM, 0); sin_size = sizeof(struct sockaddr_in); // adres ile ilgili ayarlar my_addr.sin_family = AF_INET; my_addr.</description>
+#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;string.h&amp;gt;#include &amp;lt;sys/types.h&amp;gt;#include &amp;lt;sys/socket.h&amp;gt;#include &amp;lt;netinet/in.h&amp;gt; #define MY_PORT 3333 int main(int argc, char *argv[]) { int sockfd, new_fd; struct sockaddr_in my_addr; // hedef adres  struct sockaddr_in their_addr; // baglanti yapan adres  int sin_size, rt; // gelen verinin tutuldugu buffer  char buf[32]; // islem yapmak icin gerekli dosya gosterici  sockfd = socket(AF_INET, SOCK_DGRAM, 0); sin_size = sizeof(struct sockaddr_in); // adres ile ilgili ayarlar  my_addr.sin_family = AF_INET; my_addr.</description>
     </item>
     
     <item>
@@ -281,14 +279,14 @@ depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu do
       <pubDate>Wed, 11 Jul 2012 13:54:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/mysql-kullanici-database-olusturma/</guid>
-      <description>Herzaman unutup google&amp;rsquo;a bakacağıma buraya bakayım daha kolay :)
+      <description>Herzaman unutup google&#39;a bakacağıma buraya bakayım daha kolay :)
 Önce mysql sunucusuna bağlanalım:
-mysql -u root -p  Kullanıcı oluşturma:
-create user kullaniciadi;  Veritabanı oluşturma:
-create database veritabaniadi;  Kullanıcı yetkilerini verme: Tüm yetkiler:
-grant all on veritabaniadi.* to kullaniciadi@localhost identified by &#39;parola&#39;;  Sadece okuma (select):
-grant select on veritabaniadi.* to kullaniciadi@localhost;  Yetkiler hemen devreye girsin:
-flush privileges;  </description>
+mysql -u root -p Kullanıcı oluşturma:
+create user kullaniciadi; Veritabanı oluşturma:
+create database veritabaniadi; Kullanıcı yetkilerini verme: Tüm yetkiler:
+grant all on veritabaniadi.* to kullaniciadi@localhost identified by &amp;#39;parola&amp;#39;; Sadece okuma (select):
+grant select on veritabaniadi.* to kullaniciadi@localhost; Yetkiler hemen devreye girsin:
+flush privileges; </description>
     </item>
     
     <item>
@@ -307,7 +305,7 @@ flush privileges;  </description>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/solariste-ozyinelemeli-grep/</guid>
       <description>Özyinelemeli grep çok kullanışlı bir araç. Malesef solariste bulunan grep öz yinelemeli çalışmıyor. Ama bunu aşmak çok zor değil.
-$ grep &#39;ara&#39; `find . -name &#39;*&#39;`  </description>
+$ grep &amp;#39;ara&amp;#39; `find . -name &amp;#39;*&amp;#39;` </description>
     </item>
     
     <item>
@@ -317,7 +315,7 @@ $ grep &#39;ara&#39; `find . -name &#39;*&#39;`  </description>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/var-olan-bir-svn-deposunun-adresini-degistirme/</guid>
       <description>Herhangi bir nedenle üzerinde çalıştığınız svn deposunun adresi değişirse aşağıdaki komutla gerekli değişikliği yapabilirsiniz.
-svn switch --relocate \ http://svn.example.com/path/to/repository/path/within/repository \ http://svnnew.example.com/new/repository/path/within/repository  </description>
+svn switch --relocate \  http://svn.example.com/path/to/repository/path/within/repository \  http://svnnew.example.com/new/repository/path/within/repository </description>
     </item>
     
     <item>
@@ -352,7 +350,7 @@ Normalde üzerinde
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/caps-locka-ne-gerek-var/</guid>
       <description>Hiç gerek yok.
-setxkbmap -option ctrl:nocaps  </description>
+setxkbmap -option ctrl:nocaps </description>
     </item>
     
     <item>
@@ -370,7 +368,7 @@ setxkbmap -option ctrl:nocaps  </description>
       <pubDate>Sun, 27 Feb 2011 03:08:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/linux-paralel-port-ile-2x16-lcd-ekran-kullanimi/</guid>
-      <description>Çalıştığım projede linuxta paralel port ile lcd ekran kullanmam gerekti. Neredeyse internetin altını üstüne getirdim ama işime yarar çok birşey bulamadım. Sonunda DOS için yazılmış bir kod buldum. Bu kodu biraz inceleyip, gerekli püf noktaları bulunca kodu linux&amp;rsquo;a uydurmak çok zor olmadı. Hatta neredeyse sadece kullanılan fonksiyonun adını ve parametre yerlerini değiştirdim :)
+      <description>Çalıştığım projede linuxta paralel port ile lcd ekran kullanmam gerekti. Neredeyse internetin altını üstüne getirdim ama işime yarar çok birşey bulamadım. Sonunda DOS için yazılmış bir kod buldum. Bu kodu biraz inceleyip, gerekli püf noktaları bulunca kodu linux&#39;a uydurmak çok zor olmadı. Hatta neredeyse sadece kullanılan fonksiyonun adını ve parametre yerlerini değiştirdim :)
 Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read/write seçimi için kullanılıyor.</description>
     </item>
     
@@ -382,7 +380,7 @@ Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data v
       <guid>https://blog.askin.ws/blog/java-ile-server-socket-yapimi/</guid>
       <description>Bir proje için server sockete ihtiyaç duydum. Öncelikli dilim python olmasına rağmen, sunucu solaris olunca java ile yazmak daha cazip geldi. Öncelikli olarak test amaçlı birkaç satır kod yazdım. Akla gelen ilk örnek echo server oluyor :) aşağıda multi thread çalışan, birden fazla kullanıcıya cevap verebilecek bir echo server var:)
 Server.java
-/** * @author: Aşkın Yollu */ import java.net.*; import java.io.*; class Server { public static void main(String args[]) throws Exception { ServerSocket myService = null; Socket client = null; Worker tmpworker = null; try { // 1234 nolu portu dinle myService = new ServerSocket(1234); } catch (IOException e) { System.</description>
+/** * @author: Aşkın Yollu */ import java.net.*; import java.io.*; class Server { public static void main(String args[]) throws Exception { ServerSocket myService = null; Socket client = null; Worker tmpworker = null; try { // 1234 nolu portu dinle  myService = new ServerSocket(1234); } catch (IOException e) { System.</description>
     </item>
     
     <item>
@@ -392,7 +390,7 @@ Server.java
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/sacmalayan-konsol-ekranini-temizleme/</guid>
       <description>Bir binary dosyayı cat ile görüntüleyince konsol ekranı sapıtabiliyor :) Böyle bir durumda konsolu adam etmek için
-reset  komutunu kullanabiliriz. Her seferinde komutu unutup neydi neydi diye düşünüyorum. Buraya yazıyorum ki bir daha unutursam hemen bakıp bulayım :)</description>
+reset komutunu kullanabiliriz. Her seferinde komutu unutup neydi neydi diye düşünüyorum. Buraya yazıyorum ki bir daha unutursam hemen bakıp bulayım :)</description>
     </item>
     
     <item>
@@ -403,7 +401,7 @@ reset  komutunu kullanabiliriz. Her seferinde komutu unutup neydi neydi diye dü
       <guid>https://blog.askin.ws/blog/emacs-ile-bul-degistir-find-and-replace/</guid>
       <description>M-x replace-string RET aranan_string RET yerine_konulacak_string  Bunu regexli yapmak için replace-string yerine replace-regex kullanabilirsiniz. Birde buna kısayol eklesek tadından yenmez.
 .emacs dosyamıza aşağıdaki satırı ekliyoruz.
-;; Find and Replace (global-set-key (kbd &amp;quot;C-q&amp;quot;) &#39;replace-string)  C-q kombinasyonuna bastığımıza işlem başlamış oluyor.</description>
+;; Find and Replace (global-set-key (kbd &amp;#34;C-q&amp;#34;) &amp;#39;replace-string) C-q kombinasyonuna bastığımıza işlem başlamış oluyor.</description>
     </item>
     
     <item>
@@ -413,8 +411,8 @@ reset  komutunu kullanabiliriz. Her seferinde komutu unutup neydi neydi diye dü
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/busybox-date-ile-saat-ve-tarihi-ayarlamak/</guid>
       <description>BusyBox içinde gelen date komutunun kullanımı biraz daha farklı. Saat ayarlamada bir değişiklik yok fakat tarihi ayarlamak biraz daha farklı. Saat ayarlama:
-date -s &amp;quot;23:59:59&amp;quot;  Tarih ve saati ayarlama
-date -s AAGGSSDDYYYY date -s 123123592010  12-31-2010 23:59&amp;rsquo;a karşılık geliyor.</description>
+date -s &amp;#34;23:59:59&amp;#34; Tarih ve saati ayarlama
+date -s AAGGSSDDYYYY date -s 123123592010 12-31-2010 23:59&#39;a karşılık geliyor.</description>
     </item>
     
     <item>
@@ -424,7 +422,7 @@ date -s AAGGSSDDYYYY date -s 123123592010  12-31-2010 23:59&amp;rsquo;a karşıl
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/genius/</guid>
       <description>Scp ile sembolik linkleri takip etmeden indirme işlemi yapmak için araştırma yaptığımda, aşağıdaki kodu buldum. Böyle bir kullanım 40 yıl düşünsem aklıma gelmezdi.
-cd /destination/directory ssh user@remote.host &amp;quot;cd /original/directory; tar cf - ./&amp;quot; | tar xvf -  Kaynak</description>
+cd /destination/directory ssh user@remote.host &amp;#34;cd /original/directory; tar cf - ./&amp;#34; | tar xvf - Kaynak</description>
     </item>
     
     <item>
@@ -435,7 +433,7 @@ cd /destination/directory ssh user@remote.host &amp;quot;cd /original/directory;
       <guid>https://blog.askin.ws/blog/java-ile-oracle-veritabanina-baglanmak/</guid>
       <description>Öncelikle http://www.oracle.com/technetwork/database/enterprise-edition/jdbc101040-094982.html adresinden classes12.jar dosyasını indiriyoruz.
 Bu dosyayı bir dizine atıp, içeriğini bu dizine çıkartıyoruz. Bu dizini classpath değişkeninde belirtip kodlamaya başlıyoruz.
-import java.io.*; import java.sql.*; public class OraThin { public static void main(String[] args) { try { Connection con = null; Class.forName(&amp;quot;oracle.jdbc.driver.OracleDriver&amp;quot;); con=DriverManager.getConnection( &amp;quot;jdbc:oracle:thin:@localhost:1521:dbname&amp;quot;, &amp;quot;username&amp;quot;, &amp;quot;password&amp;quot;); Statement s = con.createStatement(); ResultSet rs = s.executeQuery(&amp;quot;SELECT * FROM KISI&amp;quot;); String name; String surname; while(rs.next()) { name = rs.getString(&amp;quot;AD&amp;quot;); surname = rs.getString(&amp;quot;SOYAD&amp;quot;); System.</description>
+import java.io.*; import java.sql.*; public class OraThin { public static void main(String[] args) { try { Connection con = null; Class.forName(&amp;#34;oracle.jdbc.driver.OracleDriver&amp;#34;); con=DriverManager.getConnection( &amp;#34;jdbc:oracle:thin:@localhost:1521:dbname&amp;#34;, &amp;#34;username&amp;#34;, &amp;#34;password&amp;#34;); Statement s = con.createStatement(); ResultSet rs = s.executeQuery(&amp;#34;SELECT * FROM KISI&amp;#34;); String name; String surname; while(rs.next()) { name = rs.getString(&amp;#34;AD&amp;#34;); surname = rs.getString(&amp;#34;SOYAD&amp;#34;); System.</description>
     </item>
     
     <item>
@@ -447,8 +445,8 @@ import java.io.*; import java.sql.*; public class OraThin { public static void m
       <description>Bu yazıyı asıl yazma sebebim parametre olarak geçirilen fonksiyona geçirilecek parametreler :)
 Parametre olarak geçireceğimiz fonksiyonlar belli bir sayıda parametre alıyorsa yapacağımız iş basit,
 Mesela:
-def Merhaba(isim): print &amp;quot;Merhaba %s&amp;quot; % isim  Bunun gibi sadece tek parametre alan bir fonksiyon için aşağıdaki gibi bir fonksiyon yeterli olacaktır.
-def BuyukAbi(func, param): func(param)  BuyukAbi(Merhaba, &amp;quot;kelebek&amp;quot;) Merhaba kelebek  Bu fonksiyon parametre olarak aldığı func fonksiyonuna param parametresini geçirecektir.
+def Merhaba(isim): print &amp;#34;Merhaba %s&amp;#34; % isim Bunun gibi sadece tek parametre alan bir fonksiyon için aşağıdaki gibi bir fonksiyon yeterli olacaktır.
+def BuyukAbi(func, param): func(param) BuyukAbi(Merhaba, &amp;#34;kelebek&amp;#34;) Merhaba kelebek Bu fonksiyon parametre olarak aldığı func fonksiyonuna param parametresini geçirecektir.
 Eğer fonksiyonun aldığı parametre sayısı belirsiz ise, yani farklı sayıda parametre alan fonksiyonlarla uğraşmak gerekiyorsa yanına birkaç ekleme daha yapmamız gerekiyor.</description>
     </item>
     
@@ -460,7 +458,7 @@ Eğer fonksiyonun aldığı parametre sayısı belirsiz ise, yani farklı sayıd
       <guid>https://blog.askin.ws/blog/c-ile-nesne-yaratmak/</guid>
       <description>Evet kışkırtıcı bir başlık attım :) Aslında yapacağımız olay bir structı nesne gibi kullanmak. Buna benzer bir kodu yıllar önce görmüştüm. O günden bu güne sürekli böyle bir şeyi nasıl yaparım diye araştırdım. Anca bugün çözebildim olayı ;) Kodu aşağıda yorum satırıyla beraber veriyorum. Yorumlarda gerekli açıklamaları yaptım.
 Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşıma bu çıktı, bende boş durmasın dedim :)
-/* * Sınıfımızı yaratıyoruz */ struct _myobject { // alt alanlar int a, b; /* * Metod * Burada fonksiyon pointerı tanımlıyoruz */ int (*add)(struct _myobject*); }; // struct ön ekinden kurtuluyoruz typedef struct _myobject MyObject; /* * Asıl işi yapacak fonksiyonu tanımlıyoruz * MyObject structını parametre olarak alıyor */ int realAdd(MyObject* a) { return a-&amp;gt;a + a-&amp;gt;b; } int main ( void ) { /* * Nesnemizi oluşturuyoruz.</description>
+/* * Sınıfımızı yaratıyoruz */ struct _myobject { // alt alanlar  int a, b; /* * Metod * Burada fonksiyon pointerı tanımlıyoruz */ int (*add)(struct _myobject*); }; // struct ön ekinden kurtuluyoruz typedef struct _myobject MyObject; /* * Asıl işi yapacak fonksiyonu tanımlıyoruz * MyObject structını parametre olarak alıyor */ int realAdd(MyObject* a) { return a-&amp;gt;a + a-&amp;gt;b; } int main ( void ) { /* * Nesnemizi oluşturuyoruz.</description>
     </item>
     
     <item>
@@ -496,7 +494,7 @@ Buradaki kutuya alan adını yazın.
       <guid>https://blog.askin.ws/blog/pygtk-ile-sistem-cekmecesi/</guid>
       <description>Gtk ile çok kolay bir şekilde geliştirdiğiniz uygulamayı sistem çekmecesinde gösterebilirsiniz.
 Ufak bir örnek kod veriyorum. Onun üzerinden anlatacağım.
-import pygtk import gtk class ShowIcon: def __init__(self): self.icon = gtk.StatusIcon() self.icon.set_from_file(&#39;gtk.png&#39;) self.icon.set_tooltip_text(&#39;Hello Python!!!&#39;) self.icon.set_visible(True) self.icon.connect(&amp;quot;activate&amp;quot;, self.hello) gtk.main() def hello(self, widget): print &#39;Hello Python !!!&#39; if __name__ == &#39;__main__&#39;: icon = ShowIcon()  6. satırda asıl işimizi yapacak olan StatusIcon nesnesini yaratıyoruz.
+import pygtk import gtk class ShowIcon: def __init__(self): self.icon = gtk.StatusIcon() self.icon.set_from_file(&amp;#39;gtk.png&amp;#39;) self.icon.set_tooltip_text(&amp;#39;Hello Python!!!&amp;#39;) self.icon.set_visible(True) self.icon.connect(&amp;#34;activate&amp;#34;, self.hello) gtk.main() def hello(self, widget): print &amp;#39;Hello Python !!!&amp;#39; if __name__ == &amp;#39;__main__&amp;#39;: icon = ShowIcon() 6. satırda asıl işimizi yapacak olan StatusIcon nesnesini yaratıyoruz.
 7. satırda sistem çekmecesinde hangi ikonun görüntüleneceğini belirtiyoruz. set_from_file ikonu dosyadan alacağımız anlamına geliyor.</description>
     </item>
     
@@ -507,8 +505,8 @@ import pygtk import gtk class ShowIcon: def __init__(self): self.icon = gtk.Stat
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/pygtk-ve-thread-sorunu/</guid>
       <description>PyGtk ile ara yüzüzünü hazırladığım bir program içinde thread kullanmam gerekiyordu. Kod çalışıyordu fakat thread işlemi istediğim gibi çalışmıyordu. Arayüzde bir değişiklik olduğu zaman thread çalışıyor, onun dışında hiç bir şekilde tepki vermiyordu.
-Uzun süre hatanın kodda olabileceğini düşündüm. Ama sonunda python gtk.main() ve thread 3&amp;rsquo;lüsünü aynı sorgu içinde googleda aratınca cevabı buldum. Gtk&amp;rsquo;ya thread kullandığımı anlatmam gerekiyordu :)
-gtk.gdk.threads_init()  Bu satırı kodumun başına eklediğimde herşey istediğim gibi çalışmaya başladı :)</description>
+Uzun süre hatanın kodda olabileceğini düşündüm. Ama sonunda python gtk.main() ve thread 3&#39;lüsünü aynı sorgu içinde googleda aratınca cevabı buldum. Gtk&#39;ya thread kullandığımı anlatmam gerekiyordu :)
+gtk.gdk.threads_init() Bu satırı kodumun başına eklediğimde herşey istediğim gibi çalışmaya başladı :)</description>
     </item>
     
     <item>
@@ -530,7 +528,7 @@ gtk.gdk.threads_init()  Bu satırı kodumun başına eklediğimde herşey istedi
       <description>Pardusun ağ yöneticisi gayet şık bir arayüze sahip, fakat bize Eduroam ağına bağlanma özelliği sunmuyor.
 Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız için yeterli. Bu araçlar wpa_supplicant ve dhcpcd. Wpa_supplicant ağda kimlik denetimini sağlamak için, dhcpcd ise ağdan ip almamız için gerekli.
 Öncelikle wpa_supplicant için ayar dosyası oluşturmamız gerekiyor.
-network={ ssid=&amp;quot;eduroam&amp;quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap=TTLS phase2=&amp;quot;auth=PAP&amp;quot; anonymous_identity=&amp;quot;anonymous@ogr.deu.edu.tr&amp;quot; identity=&amp;quot;ogrencinumarasi@ogr.deu.edu.tr&amp;quot; password=&amp;quot;sifre&amp;quot; }  Bu ayarlar Dokuz Eylül Üniversitesi için.</description>
+network={ ssid=&amp;quot;eduroam&amp;quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap=TTLS phase2=&amp;quot;auth=PAP&amp;quot; anonymous_identity=&amp;quot;anonymous@ogr.deu.edu.tr&amp;quot; identity=&amp;quot;ogrencinumarasi@ogr.deu.edu.tr&amp;quot; password=&amp;quot;sifre&amp;quot; } Bu ayarlar Dokuz Eylül Üniversitesi için.</description>
     </item>
     
     <item>
@@ -595,7 +593,7 @@ Tabi gmailin üstün spam ayıklama kabiliyetini de unutmamak lazım. Arada sır
       <pubDate>Sat, 25 Jul 2009 01:09:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/pardus-2009/</guid>
-      <description>Sonunda Pardus 2009&amp;rsquo;u bilgisayarıma kurabildim. Ailemin yanına geldiğim için Pardus&amp;rsquo;u indiremiyordum. Malum kotalı internet, sıkıntı yaratıyor.
+      <description>Sonunda Pardus 2009&#39;u bilgisayarıma kurabildim. Ailemin yanına geldiğim için Pardus&#39;u indiremiyordum. Malum kotalı internet, sıkıntı yaratıyor.
 Kurulum sorunsuz tamamlandı. Kurulum arayüzü çok hoş olmuş. Çok kullanışlı ve çok kolay bir arayüzü olmuş. Bilgisayarıma en hızlı kurulabilen Pardus sürümü. Saat tutmadım ama, 20 dakka ile 30 dakka arasında bir sürede kurulduğunu tahmin ediyorum.
 Kablosuz ağ kartımı sorunsuz tanıdı ve WPA2 şifreli ağıma çok kolay bir şekilde bağlandı. Daha önce de tanıyordu, fakat ağımı göremiyordu, ben de mecburen ndiswraper ile kullanıyordum.</description>
     </item>
@@ -607,8 +605,8 @@ Kablosuz ağ kartımı sorunsuz tanıdı ve WPA2 şifreli ağıma çok kolay bir
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/mysql-data-dizinini-degistirme/</guid>
       <description>Mysql data dizini ön tanımlı /var/lib/mysql olarak belirlenmiştir. Çeşitli ihtiyaçlardan dolayı bunun yerini değiştirmemiz gerekebilir. Mesela ben ayrı bir bölümde tuttuğum /home dizini altına taşımak istiyorum. Tüm işlemleri root yetkisiyle yapıyoruz. Öncelikle mysql servisini durduralım. Ben pardus kullandığım için
-$ service mysql-server stop  Diğer dağıtımlarda farklı olabilir. Ardından ilgili dizini yeni yerine kopyalayalım.
-$ cp -a /var/lib/mysql /home  Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. /etc/mysql/my.cnf dosyasında datadir = /var/lib/mysql olan satırı datadir = /home/mysql olarak değiştirelim.</description>
+$ service mysql-server stop Diğer dağıtımlarda farklı olabilir. Ardından ilgili dizini yeni yerine kopyalayalım.
+$ cp -a /var/lib/mysql /home Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. /etc/mysql/my.cnf dosyasında datadir = /var/lib/mysql olan satırı datadir = /home/mysql olarak değiştirelim.</description>
     </item>
     
     <item>
@@ -618,7 +616,7 @@ $ cp -a /var/lib/mysql /home  Daha sonra mysql sunucusuna yeni dizinimizi haber 
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/c-ile-komut-satiri-argumanlari-ve-parametreleri/</guid>
       <description>Komut satırı programları -h yada &amp;ndash;help gibi parametreler alırlar. Bu alınan parametrelerin kolay kullanılması için getopt adında bir kütüphane yaratılmış. Bu kütüphane kullanlanılarak çok rahat böyle programlar yazılabilir. Bende bunun için küçük bir örnek yazdım.
-#include &amp;lt;stdio.h&amp;gt; #include &amp;lt;stdlib.h&amp;gt; #include &amp;lt;getopt.h&amp;gt; int print_usage ( void ); int main (int argc, char* argv[]) { int next_option; char* output; char* input; char color = 47; /** * kisa parametler burda tanimli * ardindan parametre alanlar : ile bitiyor * orn: o: bir parametre aliyor b almiyor * -o kelebek yada -b gibi */ const char* const short_options = &amp;quot;hbro:i:&amp;quot;; /** * Burdada uzun hallerini tanimliyoruz.</description>
+#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;#include &amp;lt;getopt.h&amp;gt; int print_usage ( void ); int main (int argc, char* argv[]) { int next_option; char* output; char* input; char color = 47; /** * kisa parametler burda tanimli * ardindan parametre alanlar : ile bitiyor * orn: o: bir parametre aliyor b almiyor * -o kelebek yada -b gibi */ const char* const short_options = &amp;#34;hbro:i:&amp;#34;; /** * Burdada uzun hallerini tanimliyoruz.</description>
     </item>
     
     <item>
@@ -627,7 +625,7 @@ $ cp -a /var/lib/mysql /home  Daha sonra mysql sunucusuna yeni dizinimizi haber 
       <pubDate>Sun, 07 Jun 2009 21:20:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/pidgin-titresim-eklentisi-attention-button/</guid>
-      <description>Pidginin en sevdiğim özelliklerinden bir tanesi, sohbet ettiğiniz kişi size tireşim gönderdiğinde ekrana sadece &amp;rdquo;&amp;hellip; size uyarı gönderdi&amp;rdquo; yazması. Bu özelliğer sahip olmasının birde dezavantajı var tabiki, siz de başkalarına titreşim yollayamıyorsunuz. Bugün bu eksikliği fazlasıyla hissedince ufak çaplı bir araştırma yaptım ve Attention Button eklentisiyle karşılaştım.
+      <description>Pidginin en sevdiğim özelliklerinden bir tanesi, sohbet ettiğiniz kişi size tireşim gönderdiğinde ekrana sadece &amp;quot;&amp;hellip; size uyarı gönderdi&amp;rdquo; yazması. Bu özelliğer sahip olmasının birde dezavantajı var tabiki, siz de başkalarına titreşim yollayamıyorsunuz. Bugün bu eksikliği fazlasıyla hissedince ufak çaplı bir araştırma yaptım ve Attention Button eklentisiyle karşılaştım.
 Kurulumu çok basit. Burdan en güncel sürümünü indiriyorsunuz (şimdilik 0.3), arşivden çıkartıp .so uzantılı dosyayı ev dizininiz altında .purple/plugins/ dizinine kopyalıyorsunuz. Ardından pidgine gidip eklentiler(plugins) kısmından aktif ediyorsunuz.</description>
     </item>
     
@@ -646,7 +644,7 @@ satırını ve
 /etc/modprobe.d/blacklist-compat
 dosyasına da
 blacklist ath_pci
-satırını eklemek gerekiyor. Bunları ekledikten sonra kde&amp;rsquo;de ağ programcığıyla bağlanabiliyorsunuz.
+satırını eklemek gerekiyor. Bunları ekledikten sonra kde&#39;de ağ programcığıyla bağlanabiliyorsunuz.
 Fakat XFCE kullanıyorsanız wicd kullanmanız gerekiyor. Wicd ile doğrudan kullanamıyoruz.</description>
     </item>
     
@@ -688,8 +686,8 @@ Dergi kapağında 8 Mart Dünya Emekçi Kadınla Günü yazsaydı daha güzel ve
       <pubDate>Fri, 27 Feb 2009 20:29:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/komut-satirindan-resimleri-pdf-slaytina-donusturme/</guid>
-      <description>Lanet dersimiz File System için hocamız pptx uzantılı bir dosya verince banada bunu bir şekilde pdf&amp;rsquo;e çevirmek düştü.
-Önce openoffice ile açmayı denedim, açıyordu fakat anlaşılır bir halde değildi. Bende alıp arkadaşımın bilgisayarına gittim, fakat onda da pdf&amp;rsquo;e dönüştüremiyordum. Dönüştürebildiğim formatlara bakarken .jpg&amp;rsquo;i gördüm. Nasılsa linuxta bu bi şekilde pdf&amp;rsquo;e dönüştürüm diyerek kendimden emin bi şekilde dönüşümü yapıp odama geçtim.
+      <description>Lanet dersimiz File System için hocamız pptx uzantılı bir dosya verince banada bunu bir şekilde pdf&#39;e çevirmek düştü.
+Önce openoffice ile açmayı denedim, açıyordu fakat anlaşılır bir halde değildi. Bende alıp arkadaşımın bilgisayarına gittim, fakat onda da pdf&#39;e dönüştüremiyordum. Dönüştürebildiğim formatlara bakarken .jpg&#39;i gördüm. Nasılsa linuxta bu bi şekilde pdf&#39;e dönüştürüm diyerek kendimden emin bi şekilde dönüşümü yapıp odama geçtim.
 2 buçuk dakikalık bir arama ile aradığımı buldum, ImageMagick bu işi yapabiliyormuş.</description>
     </item>
     
@@ -700,11 +698,9 @@ Dergi kapağında 8 Mart Dünya Emekçi Kadınla Günü yazsaydı daha güzel ve
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/linuxta-kullandigim-programlar-guncellendi/</guid>
       <description>&lt;p&gt;Uzun zamandır canım sıkılıyor, yapacak bir iş bulamıyordum, can sıkıntısından eski yazılarımı kurcalarken kullandığım programların çoğunun değiştiğini farkettim, ve bu yazıyı güncellemeye karar verdim. Sıkıntıdan bir yarım saat çaldım:) mutlu sayılırım, umarım işinize yarar.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Metin Düzenleyici: &lt;a href=&#34;http://www.xfce.org/projects/mousepad/&#34;&gt;Mousepad&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;p&gt;&lt;strong&gt;Metin Düzenleyici: &lt;a href=&#34;http://www.xfce.org/projects/mousepad/&#34;&gt;Mousepad&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
 Uzun zaman gedit kullandım, hatta program yazarken bile gedit kullandım. Ancak yaptığım işlere bakarak, programın çok kastığını farkettim. Birde üstüne geany programının geditten hızlı açıldığı görünce başka arayışlara girdim, bu noktada mousepad beni tatmin etti. Bir xfce projesi olan mousepad gerçekten basit, sade ve hızlı.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Müzik: &lt;a href=&#34;http://mpd.wikia.com/&#34;&gt;MPD&lt;/a&gt; &lt;a href=&#34;http://sonata.berlios.de/&#34;&gt;Sonata&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;p&gt;&lt;strong&gt;Müzik: &lt;a href=&#34;http://mpd.wikia.com/&#34;&gt;MPD&lt;/a&gt; &lt;a href=&#34;http://sonata.berlios.de/&#34;&gt;Sonata&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
 Müzik dinlerken kullandığım programın elimin altında dolaşmasını pek sevmem, gerçi birçok program kendini araç çubuğunda saklayabiliyor, ancak her bilgisayarı açtığımda yeniden müzik programını açmak pek hoşuma gitmiyor. MPD daha x açılmadan bana müziğimi sunmaya başlıyor. Gerçi okulda bilgisayarı açtığımda sıkıntı çıkabiliyor:)&lt;/p&gt;</description>
     </item>
     
@@ -714,7 +710,7 @@ Müzik dinlerken kullandığım programın elimin altında dolaşmasını pek se
       <pubDate>Thu, 11 Dec 2008 23:23:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/wordpress-27/</guid>
-      <description>Az önce wordpress&amp;rsquo;i güncelledim. 2.5&amp;rsquo;in arayüzü çok hoştu ama biraz kullanışsız gelmişti bana, şimdi çok hoş olmuş. Yazı yaz, yazı yaz diye bağırıyor sanki. Bende kırmıyor yazıyorum&amp;hellip;</description>
+      <description>Az önce wordpress&#39;i güncelledim. 2.5&#39;in arayüzü çok hoştu ama biraz kullanışsız gelmişti bana, şimdi çok hoş olmuş. Yazı yaz, yazı yaz diye bağırıyor sanki. Bende kırmıyor yazıyorum&amp;hellip;</description>
     </item>
     
     <item>
@@ -789,11 +785,10 @@ kaynak: linux focus</description>
       <pubDate>Thu, 15 May 2008 14:20:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/linuxda-kullandigim-programlar/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Metin Düzenleyici: &lt;a href=&#34;http://www.gedit.org&#34;&gt;Gedit&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+      <description>&lt;p&gt;&lt;strong&gt;Metin Düzenleyici: &lt;a href=&#34;http://www.gedit.org&#34;&gt;Gedit&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
 Linuxda düz metinlerle uğraşırken genelde gedit kullanıyorum. Hatta çoğu zaman program yazarken gedit kullanıyorum. Kodları renklendirebilmesi sayesinde ne yazdığımı sorun yaşamadan anlıyorum. Ayırıca eklentilerden Embeded terminal(tümleşik terminal)i kullanarak terminal açmaya gerek duymadan kodlarımı derleyebiliyorum.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Müzik: &lt;a href=&#34;http://www.gnome.org/projects/rhythmbox&#34;&gt;Rhythmbox&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
-Müzik dinlerken kullandığım programın elime ayağıma dolaşmasını pek sevmem, ve gerektiği zamanda hemen ulaşabilmek isterim. Rhythmbox araç çubuğuna yerleşebildiği için hem elime dolaşmıyor hemde istediğimde hemen ulaşabiliyrum. Lastfm ekletsi ile lastfm&amp;rsquo;in niğmetlerinden yararlanabiliyorum,&lt;/p&gt;</description>
+&lt;p&gt;&lt;strong&gt;Müzik: &lt;a href=&#34;http://www.gnome.org/projects/rhythmbox&#34;&gt;Rhythmbox&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
+Müzik dinlerken kullandığım programın elime ayağıma dolaşmasını pek sevmem, ve gerektiği zamanda hemen ulaşabilmek isterim. Rhythmbox araç çubuğuna yerleşebildiği için hem elime dolaşmıyor hemde istediğimde hemen ulaşabiliyrum. Lastfm ekletsi ile lastfm&#39;in niğmetlerinden yararlanabiliyorum,&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -823,7 +818,7 @@ aptitude install faad</description>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/cikmaz-demeyin-sansinizi-deneyin-2/</guid>
       <description>Buradaki yazımdan esinlenip yazdım bunu. Azıcık java öğrendim artık uygulama yapma zamanıdır. Eminim daha güzel (hatta belki benim ki iğrenç bi koddur(:) yazılabilir. Ama şimdilik bunu yapabiliyorum.
-public class Sayisal { int[] _kupon = new int[6]; int _num; public Sayisal(){ int sira = 0; while (sira &amp;lt; 6) { _num = (int) (1 + Math.random() * 49); if (!varmi(_kupon, _num)) _kupon[sira++] = _num; } } private boolean varmi(int[] kupon, int num) { for (int x: kupon) {if (x == num) return true;} return false; } public String toString(){ String kuponStr = &amp;quot;&amp;quot;; for (int i = 0; i &amp;lt; 6; i++) kuponStr += (_kupon[i] + &amp;quot; &amp;quot;); return kuponStr; } public static void main(String[] args){ byte kuponSayisi; if (args.</description>
+public class Sayisal { int[] _kupon = new int[6]; int _num; public Sayisal(){ int sira = 0; while (sira &amp;lt; 6) { _num = (int) (1 + Math.random() * 49); if (!varmi(_kupon, _num)) _kupon[sira++] = _num; } } private boolean varmi(int[] kupon, int num) { for (int x: kupon) {if (x == num) return true;} return false; } public String toString(){ String kuponStr = &amp;#34;&amp;#34;; for (int i = 0; i &amp;lt; 6; i++) kuponStr += (_kupon[i] + &amp;#34; &amp;#34;); return kuponStr; } public static void main(String[] args){ byte kuponSayisi; if (args.</description>
     </item>
     
     <item>
@@ -842,7 +837,6 @@ public class Sayisal { int[] _kupon = new int[6]; int _num; public Sayisal(){ in
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/yine-yasak-proxy-nedir-nasil-ayarlanir/</guid>
       <description>&lt;p&gt;Youtube son haberlere göre arka arkaya 3. kez kapatılacak. Şuan girebiliyorum sorun yok. Ama yakında bişiler olacak:) Geçen kapandığında DNS adresini değiştirmemiz de işe yaramamıştı. Şimdi yapacağımız şey ise proxy kullanmak olacak. Gerçi proxy kullanmak sakat bi yöntem, bütün trafiğimiz başka bir bilgisayar üzerinden geçeceği için verilerimizin dinlenme ihtimali var. Bu nedenle proxy kullanırken dikkatli olmakta fayda var.&lt;/p&gt;
-
 &lt;p&gt;Proxy olayında biz isteklerimizi bir vekil sunucuya iletiyoruz. Sunucuda bizim yerimize ilgili sitenin içeriğini alıyor ve bize sunuyor. Kabaca bu şekilde tanımlayabiliriz.&lt;/p&gt;</description>
     </item>
     
@@ -864,7 +858,7 @@ public class Sayisal { int[] _kupon = new int[6]; int _num; public Sayisal(){ in
       <description>Bu girdi Burdaki girdiden esinlenilerek yazıldı.
 E madem pyton ile sayısal kuponu yapılıyor biz niye scheme ile yapmayalım bunu demi:)
 Probleme göre kod bana çok uzun geldi. Belki ilerde optimize edebilirim. Ama şimdilik böyle oynayalım demi:)
-(define (sayisal) (display &amp;quot;Oynamak istediginiz kolan sayisini giriniz: \n&amp;quot;) (let ((kolon (read))) (do ((i 1 (+ i 1))) ((&amp;gt; i kolon)) (let loop ((lst (list (+ (random 49) 1))) (sayi (+ 1 (random 49)))) (if (= (length lst) 6) (printf &amp;quot;~a.</description>
+(define (sayisal) (display &amp;#34;Oynamak istediginiz kolan sayisini giriniz: \n&amp;#34;) (let ((kolon (read))) (do ((i 1 (+ i 1))) ((&amp;gt; i kolon)) (let loop ((lst (list (+ (random 49) 1))) (sayi (+ 1 (random 49)))) (if (= (length lst) 6) (printf &amp;#34;~a.</description>
     </item>
     
     <item>
@@ -903,7 +897,7 @@ Ayrıca burdan indirebilirsiniz.</description>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/alin-size-bir-guzel-kod/</guid>
       <description>Alın size bir güzel kod:) Benim hoşuma gitti eminim sizin hoşunuzada gidecek.
-(define (goster str) (let loop ((str str)) (if (equal? str &amp;quot;&amp;quot;) (begin (sleep 0) (display &amp;quot;&amp;quot;)) (begin (sleep 1/2) (display (string-ref str 0)) (loop (substring str 1))))))  </description>
+(define (goster str) (let loop ((str str)) (if (equal? str &amp;#34;&amp;#34;) (begin (sleep 0) (display &amp;#34;&amp;#34;)) (begin (sleep 1/2) (display (string-ref str 0)) (loop (substring str 1)))))) </description>
     </item>
     
     <item>
@@ -922,8 +916,8 @@ Adres: http://www.projecteuler.net/</description>
       <pubDate>Thu, 20 Dec 2007 09:13:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/scheme-ile-ekrana-ici-bos-kare-bastirmak/</guid>
-      <description>(define (kare x y) (do ((i 0 (+ i 1))) ((= i x)) (newline) (do ((j 0 (+ j 1))) ((= j y)) (if (or (= i 0) (= i (- x 1))) (display &amp;quot;*&amp;quot;) (if (or (= j 0) (= j (- y 1))) (display &amp;quot;*&amp;quot;) (display &amp;quot; &amp;quot;))))))  bu kod aşağıdaki gibi bir şekil oluşruracak
-********** * * * * * * * * * * * * * * * * **********  Ancak bu şekil pek hoş değil.</description>
+      <description>(define (kare x y) (do ((i 0 (+ i 1))) ((= i x)) (newline) (do ((j 0 (+ j 1))) ((= j y)) (if (or (= i 0) (= i (- x 1))) (display &amp;#34;*&amp;#34;) (if (or (= j 0) (= j (- y 1))) (display &amp;#34;*&amp;#34;) (display &amp;#34; &amp;#34;)))))) bu kod aşağıdaki gibi bir şekil oluşruracak
+********** * * * * * * * * * * * * * * * * ********** Ancak bu şekil pek hoş değil.</description>
     </item>
     
     <item>
@@ -943,7 +937,7 @@ Adres: http://www.projecteuler.net/</description>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/bubble-sort-algoritmasi-ve-scheme-cozumu/</guid>
       <description>Bubble sort algoritması kabaca: verilen dizideki elemanları ikili olarak karşılaştırıp gerekli olduğunda yerlerini değiştirmek esasına dayanır. Elimizde 11 5 8 4 6 84 7 sayılarında oluşan bir dizi olduğunu var sayalım ve bu diziyi küçükten büyüğe sıralamak isteyelim.
- önce 11 ile 5i karşılaştırırız, 11 5&amp;rsquo;ten büyük olduğu için 11 ile 5in yerini değiştiririz; 5 11 8 4 6 84 7 sonra 11 ile 8i karşılaştırırız ve 11 ile 8&amp;rsquo;in yerini değiştiririz 5 8 11 4 6 84 7 11 ile 4; 5 8 4 11 6 84 7 11 ile 6; 5 8 4 6 11 84 7 11 ile 84; 84 büyük olduğu için sıralamaya dokunmayız.</description>
+ önce 11 ile 5i karşılaştırırız, 11 5&#39;ten büyük olduğu için 11 ile 5in yerini değiştiririz; 5 11 8 4 6 84 7 sonra 11 ile 8i karşılaştırırız ve 11 ile 8&#39;in yerini değiştiririz 5 8 11 4 6 84 7 11 ile 4; 5 8 4 11 6 84 7 11 ile 6; 5 8 4 6 11 84 7 11 ile 84; 84 büyük olduğu için sıralamaya dokunmayız.</description>
     </item>
     
     <item>
@@ -953,26 +947,20 @@ Adres: http://www.projecteuler.net/</description>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/sezar-sifreleme/</guid>
       <description>&lt;p&gt;Sezar şifreleme için yazdığım ilk kod aşağıdaki gibiydi&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-scheme&#34;&gt;(define str2 &amp;quot;&amp;quot;)
-(define (sezar str lst)
-  (do ((i 0 (+ i 1)) (j 0 (+ j 1))) ((= j (string-length str)))
-    (if (= i (length lst))
-        (set! i 0))
-    (set! str2 
-          (string-append
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-scheme&#34; data-lang=&#34;scheme&#34;&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;define &lt;/span&gt;str2 &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;)
+(&lt;span style=&#34;color:#66d9ef&#34;&gt;define &lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;sezar&lt;/span&gt; str lst)
+  (&lt;span style=&#34;color:#66d9ef&#34;&gt;do &lt;/span&gt;((&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; (+ i &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)) (&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; (+ j &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;))) ((= j (string-length str)))
+    (&lt;span style=&#34;color:#66d9ef&#34;&gt;if &lt;/span&gt;(= i (length lst))
+        (&lt;span style=&#34;color:#66d9ef&#34;&gt;set! &lt;/span&gt;i &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;))
+    (&lt;span style=&#34;color:#66d9ef&#34;&gt;set! &lt;/span&gt;str2 
+          (&lt;span style=&#34;color:#a6e22e&#34;&gt;string-append&lt;/span&gt;
            str2
-           (string (integer-&amp;gt;char
+           (string (&lt;span style=&#34;color:#a6e22e&#34;&gt;integer-&amp;gt;char&lt;/span&gt;
                     (+ (list-ref lst i )
                        (char-&amp;gt;integer (string-ref str j)))))))))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Ancak bu kod pek hoşuma gitmedi üzerinde biraz daha oynama yapmak gerekiyordu. Mesela en baştaki&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-scheme&#34;&gt;(define str2 &amp;quot;&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;pek hoş durmuyordu ve hiç bir sonuç gönmüyordu. Ekstradan srt2 nin değerini sorgulamak gerekiyordu.&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ancak bu kod pek hoşuma gitmedi üzerinde biraz daha oynama yapmak gerekiyordu. Mesela en baştaki&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-scheme&#34; data-lang=&#34;scheme&#34;&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;define &lt;/span&gt;str2 &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;pek hoş durmuyordu ve hiç bir sonuç gönmüyordu. Ekstradan srt2 nin değerini sorgulamak gerekiyordu.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1011,7 +999,7 @@ jaguar - jtech ic100 webcam driver - sürücü</description>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/en-basit-recursion-ozyineleme-mantigi/</guid>
       <description>Benin algılamakta en zorluk çektiğim kavramdı. Ancak öğrenince çok çok işe yarıyor.
-(define (lst-length lst) (if (null? lst) 0 (+ 1 (lst-length (cdr lst)))))  Kodu tanımlayacak olursak (null? lst) lst değişkeninde tuttuğumuz listenin boş olup olmadığını kontrol ediyor. Boş listenin eleman sayısının 0 olduğunu biliyoruz. Listemiz genelde ilk halinde boş olmayacağı için if condition direk #f verip 2. satıra geçecek. özyinelemenin can damarı aslında burda. Biz 1 eksik elemanlı listenin eleman sayısıyla 1i topluyoruz.</description>
+(define (lst-length lst) (if (null? lst) 0 (+ 1 (lst-length (cdr lst))))) Kodu tanımlayacak olursak (null? lst) lst değişkeninde tuttuğumuz listenin boş olup olmadığını kontrol ediyor. Boş listenin eleman sayısının 0 olduğunu biliyoruz. Listemiz genelde ilk halinde boş olmayacağı için if condition direk #f verip 2. satıra geçecek. özyinelemenin can damarı aslında burda. Biz 1 eksik elemanlı listenin eleman sayısıyla 1i topluyoruz.</description>
     </item>
     
     <item>
