@@ -1,6 +1,6 @@
 [submodule "themes/beautifulhugo"]
 	path = themes/beautifulhugo
-	url = https://github.com/halogenica/beautifulhugo.git
+	url = git@github.com:askin/beautifulhugo.git
 	branch = master
 [submodule "public"]
 	path = public
