@@ -863,11 +863,6 @@
   </url>
   
   <url>
-    <loc>https://blog.askin.ws/tags/delicious/</loc>
-    <lastmod>2009-09-15T20:15:00+03:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.askin.ws/tags/extension/</loc>
     <lastmod>2009-09-15T20:15:00+03:00</lastmod>
   </url>
@@ -1223,11 +1218,6 @@
   </url>
   
   <url>
-    <loc>https://blog.askin.ws/tags/%C5%9Fans/</loc>
-    <lastmod>2008-04-17T12:27:00+03:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.askin.ws/blog/guzel-bir-java-dokumani/</loc>
     <lastmod>2008-04-15T19:44:00+03:00</lastmod>
   </url>
@@ -1268,7 +1258,7 @@
   </url>
   
   <url>
-    <loc>https://blog.askin.ws/tags/piyango/</loc>
+    <loc>https://blog.askin.ws/tags/scheme/</loc>
     <lastmod>2008-01-22T17:29:00+03:00</lastmod>
   </url>
   
@@ -1313,17 +1303,7 @@
   </url>
   
   <url>
-    <loc>https://blog.askin.ws/tags/drscheme/</loc>
-    <lastmod>2007-12-29T13:40:00+03:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.askin.ws/blog/drscheme-v372-cikti/</loc>
-    <lastmod>2007-12-29T13:40:00+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.askin.ws/tags/ide/</loc>
     <lastmod>2007-12-29T13:40:00+03:00</lastmod>
   </url>
   
@@ -1375,11 +1355,6 @@
   <url>
     <loc>https://blog.askin.ws/tags/s%C4%B1ralama/</loc>
     <lastmod>2007-12-17T15:11:00+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.askin.ws/tags/scheme/</loc>
-    <lastmod>2007-12-12T05:35:00+03:00</lastmod>
   </url>
   
   <url>

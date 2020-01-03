@@ -1,17 +1,39 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Scheme on Aşkın Özgür</title>
+    <title>scheme on Aşkın Özgür</title>
     <link>https://blog.askin.ws/tags/scheme/</link>
-    <description>Recent content in Scheme on Aşkın Özgür</description>
+    <description>Recent content in scheme on Aşkın Özgür</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>tr-TR</language>
     <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
     <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
-    <lastBuildDate>Wed, 12 Dec 2007 05:35:00 +0300</lastBuildDate>
+    <lastBuildDate>Tue, 22 Jan 2008 17:29:00 +0300</lastBuildDate>
     
 	<atom:link href="https://blog.askin.ws/tags/scheme/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Çıkmaz Demeyin Şansınızı Deneyin</title>
+      <link>https://blog.askin.ws/blog/cikmaz-demeyin-sansinizi-deneyin/</link>
+      <pubDate>Tue, 22 Jan 2008 17:29:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/cikmaz-demeyin-sansinizi-deneyin/</guid>
+      <description>Bu girdi Burdaki girdiden esinlenilerek yazıldı.
+E madem pyton ile sayısal kuponu yapılıyor biz niye scheme ile yapmayalım bunu demi:)
+Probleme göre kod bana çok uzun geldi. Belki ilerde optimize edebilirim. Ama şimdilik böyle oynayalım demi:)
+(define (sayisal) (display &amp;#34;Oynamak istediginiz kolan sayisini giriniz: \n&amp;#34;) (let ((kolon (read))) (do ((i 1 (+ i 1))) ((&amp;gt; i kolon)) (let loop ((lst (list (+ (random 49) 1))) (sayi (+ 1 (random 49)))) (if (= (length lst) 6) (printf &amp;#34;~a.</description>
+    </item>
+    
+    <item>
+      <title>DrScheme v372 Çıktı</title>
+      <link>https://blog.askin.ws/blog/drscheme-v372-cikti/</link>
+      <pubDate>Sat, 29 Dec 2007 13:40:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/drscheme-v372-cikti/</guid>
+      <description>DrScheme v372 çıktı. Bu versiyonunda birçok hatanın düzeltildiği ve birkaç yeni özellik eklendiği belirtiliyor. Sanırım beni ençok etkileyen özellik kod tamamlama özelliği. Siz bir kod yazarken o size ekleyebileceğiniz konutları sıralıyor. Ancak bu özellik çok kullanışlı bir halde gelmiyor. Tamamlama istediğimiz zaman [ Ctrl / ] tuş kombinasyonunu kullanmamız gerekmekte. Bende [ Ctrl Shift 7 ] kombinasyonunun kullanılması gerekiyor.
+Ayrıca burdan indirebilirsiniz.</description>
+    </item>
     
     <item>
       <title>Sezar şifreleme</title>
