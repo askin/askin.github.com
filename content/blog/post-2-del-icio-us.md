@@ -3,7 +3,7 @@ Title: post 2 del.icio.us
 Date: 2009-09-15T20:15:00+03:00
 Author: askin
 Category: Günlük
-Tags: ["addon", "browser", "del.icio.us", "delicious", "extension", "Firefox", "İnternet"]
+Tags: ["addon", "browser", "del.icio.us", "extension", "Firefox", "İnternet"]
 Slug: post-2-del-icio-us
 Status: published
 ---

@@ -3,7 +3,7 @@ Title: Çıkmaz Demeyin Şansınızı Deneyin
 Date: 2008-01-22T17:29:00+03:00
 Author: askin
 Category: Programlama
-Tags: ["Piyango"]
+Tags: ["scheme"]
 Slug: cikmaz-demeyin-sansinizi-deneyin
 Status: published
 ---
