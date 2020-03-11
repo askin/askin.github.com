@@ -21,7 +21,7 @@
       <guid>https://blog.askin.ws/blog/busybox-date-ile-saat-ve-tarihi-ayarlamak/</guid>
       <description>BusyBox içinde gelen date komutunun kullanımı biraz daha farklı. Saat ayarlamada bir değişiklik yok fakat tarihi ayarlamak biraz daha farklı. Saat ayarlama:
 date -s &amp;#34;23:59:59&amp;#34; Tarih ve saati ayarlama
-date -s AAGGSSDDYYYY date -s 123123592010 12-31-2010 23:59&#39;a karşılık geliyor.</description>
+date -s AAGGSSDDYYYY date -s 123123592010 12-31-2010 23:59&amp;rsquo;a karşılık geliyor.</description>
     </item>
     
   </channel>

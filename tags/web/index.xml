@@ -19,7 +19,7 @@
       <pubDate>Tue, 26 Feb 2013 15:28:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/web2py-demo-mod/</guid>
-      <description>Bugün web2py ile uğraşırken, localhost üzerinde çalıştırmadığım için oluşan ticketları göremedim, o an için localhost&#39;ta çalıştıramadığımdan dolayı web2py&#39;yi demo modundan çalıştırmak zorunda kaldım. Bunu yapmak için applications/admin/models/0.py dosyasında 7. satırdaki
+      <description>Bugün web2py ile uğraşırken, localhost üzerinde çalıştırmadığım için oluşan ticketları göremedim, o an için localhost&amp;rsquo;ta çalıştıramadığımdan dolayı web2py&amp;rsquo;yi demo modundan çalıştırmak zorunda kaldım. Bunu yapmak için applications/admin/models/0.py dosyasında 7. satırdaki
 DEMO_MODE = False satırını
 DEMO_MODE = True olarak değiştirmem yetti.</description>
     </item>

@@ -8,7 +8,7 @@
     <language>tr-TR</language>
     <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
     <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
-    <lastBuildDate>Fri, 04 Oct 2019 12:04:25 +0300</lastBuildDate>
+    <lastBuildDate>Fri, 29 Jul 2011 17:30:10 +0300</lastBuildDate>
     
 	<atom:link href="https://blog.askin.ws/index.xml" rel="self" type="application/rss+xml" />
     
@@ -39,7 +39,7 @@ du -sh .[!.]* * | sort -h Bu komutun da biraz sıkıntılar var.</description>
       <pubDate>Mon, 06 Feb 2017 15:09:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/lets-encrypt/</guid>
-      <description>Daha önceki yazılarımda belirtiğim gibi ssl için startssl kullanıyordum. Ücretsiz sertifika verdiği için startssl uzun süre işimi gördü. Fakat son dönemde Let&#39;s Encrypti keşfettim. Çok basit bir şekilde sertifika oluşturmamızı sağlıyor. İlk denememden sonra tüm kullandığım websitelerinde ve servislerde Let&#39;s Encrypt kullanmaya karar verdim. Sizde seveceksiniz bundan eminim. Yaklaşık 12 sertifika oluşturdum, bunların takibini yapmak biraz sıkıntılı olacak. Bir de Let&#39;s Encrypt sertifikaları 3 aylık oluşturuyor. Birşeylerin gözden kaçması çok mümkün.</description>
+      <description>Daha önceki yazılarımda belirtiğim gibi ssl için startssl kullanıyordum. Ücretsiz sertifika verdiği için startssl uzun süre işimi gördü. Fakat son dönemde Let&amp;rsquo;s Encrypti keşfettim. Çok basit bir şekilde sertifika oluşturmamızı sağlıyor. İlk denememden sonra tüm kullandığım websitelerinde ve servislerde Let&amp;rsquo;s Encrypt kullanmaya karar verdim. Sizde seveceksiniz bundan eminim. Yaklaşık 12 sertifika oluşturdum, bunların takibini yapmak biraz sıkıntılı olacak. Bir de Let&amp;rsquo;s Encrypt sertifikaları 3 aylık oluşturuyor. Birşeylerin gözden kaçması çok mümkün.</description>
     </item>
     
     <item>
@@ -48,7 +48,7 @@ du -sh .[!.]* * | sort -h Bu komutun da biraz sıkıntılar var.</description>
       <pubDate>Tue, 11 Mar 2014 18:51:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/ssl-enabled/</guid>
-      <description>Son çıkan internet yasalarından sonra her siteye bir ssl sertifikası lazım olacak gibi. Sağolsun StartSSL ücretsiz SSL sertifikası veriyor, onu kullanarak başta blogum olmak üzere kendi host ettiğim her web sistesine sertifika ekliyorum. Şuan hem http hem de https olarak çalışıyor. Bir süre sonra tüm http trafiğini ssl&#39;e yönlendireceğim.</description>
+      <description>Son çıkan internet yasalarından sonra her siteye bir ssl sertifikası lazım olacak gibi. Sağolsun StartSSL ücretsiz SSL sertifikası veriyor, onu kullanarak başta blogum olmak üzere kendi host ettiğim her web sistesine sertifika ekliyorum. Şuan hem http hem de https olarak çalışıyor. Bir süre sonra tüm http trafiğini ssl&amp;rsquo;e yönlendireceğim.</description>
     </item>
     
     <item>
@@ -70,7 +70,7 @@ slurm -i wlan0 slurm -i eth1 Klavye kısa yolları: Slurm etkileşim için birç
       <pubDate>Fri, 15 Nov 2013 17:17:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/screen-ile-irssi-kullanim-kilavuzu/</guid>
-      <description>irssi~[[1]](#irssiwebsite &amp;ldquo;Irssi Web Sistesi&amp;rdquo; id=&amp;quot;hohoho&amp;rdquo;)~ komut satırından çalışan ve bir çok geliştirici için popüler olan bir IRC istemcisidir. Irssi GNU Screen~[2]~ programı ile birlikte kullanılarak çıkış yapmadan bir veya birden fazla kabuk yaratabilirsiniz. Sürekli biligisayar değiltirip fakat irssi&#39;a kaldığınız yerden devam etmek istediğinizde çok kullanılışılır.
+      <description>irssi~[[1]](#irssiwebsite &amp;ldquo;Irssi Web Sistesi&amp;rdquo; id=&amp;quot;hohoho&amp;rdquo;)~ komut satırından çalışan ve bir çok geliştirici için popüler olan bir IRC istemcisidir. Irssi GNU Screen~[2]~ programı ile birlikte kullanılarak çıkış yapmadan bir veya birden fazla kabuk yaratabilirsiniz. Sürekli biligisayar değiltirip fakat irssi&amp;rsquo;a kaldığınız yerden devam etmek istediğinizde çok kullanılışılır.
 Avantajları:
  Kişiler size mesaj bırakabilir. Siz dışardayken yapılan görüşmeleri sonradan yakalayabilirsiniz (genellikle &amp;ldquo;scroolback&amp;rdquo; olarak adlandırılır).  Yönergeler:
  Bir adet linux VPS edinin ya da sık sık yeniden başlatılmayacak, ihtiyacınız olan yerden bağlanabileceğiniz *nix makina üzerinde ssh hesabı edinin.</description>
@@ -189,7 +189,7 @@ Kendi adresim için nasıl bir ayar yaptığımı göstereceğim. Adresim askin 
       <pubDate>Sun, 24 Mar 2013 20:39:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/usb-bellek-uzerinde-raspberry-pi/</guid>
-      <description>Malesef sd kart olmadan raspberry pi&#39;yı boot etmemiz mümkün olmuyor. Benim elimde 1GB&#39;lık bir sd kart vardı ve 2GB dan daha ufak imaj dosyaları bulamadım. Bu nedenle usb bellek ile boot etme ihtiyacı duydum.
+      <description>Malesef sd kart olmadan raspberry pi&amp;rsquo;yı boot etmemiz mümkün olmuyor. Benim elimde 1GB&amp;rsquo;lık bir sd kart vardı ve 2GB dan daha ufak imaj dosyaları bulamadım. Bu nedenle usb bellek ile boot etme ihtiyacı duydum.
 Benim sistemimde usb bellek ve sd kart aşağıdaki şekilde tanındı:
  usb: /dev/sdd sd: /dev/sde  Öncelikle indirdiğimiz imaj dosyasını usb belleğimize kopyalıyoruz
 dd if=2013-02-09-wheezy-raspbian.img of=/dev/sdd  Elimizde bulunan sd karta 1 adet fat32 bölüm oluşturuyoruz (oluşturduğunuz bölüm hem ilk sırada hem de birincil bir bölüm olmalı).</description>
@@ -224,7 +224,7 @@ cd ~/.elisp git clone http://git.savannah.gnu.org/cgit/identica-mode.git  Şimdi
       <pubDate>Tue, 26 Feb 2013 15:28:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/web2py-demo-mod/</guid>
-      <description>Bugün web2py ile uğraşırken, localhost üzerinde çalıştırmadığım için oluşan ticketları göremedim, o an için localhost&#39;ta çalıştıramadığımdan dolayı web2py&#39;yi demo modundan çalıştırmak zorunda kaldım. Bunu yapmak için applications/admin/models/0.py dosyasında 7. satırdaki
+      <description>Bugün web2py ile uğraşırken, localhost üzerinde çalıştırmadığım için oluşan ticketları göremedim, o an için localhost&amp;rsquo;ta çalıştıramadığımdan dolayı web2py&amp;rsquo;yi demo modundan çalıştırmak zorunda kaldım. Bunu yapmak için applications/admin/models/0.py dosyasında 7. satırdaki
 DEMO_MODE = False satırını
 DEMO_MODE = True olarak değiştirmem yetti.</description>
     </item>
@@ -235,7 +235,7 @@ DEMO_MODE = True olarak değiştirmem yetti.</description>
       <pubDate>Thu, 07 Feb 2013 15:57:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/spam/</guid>
-      <description>Buradaki yazımda 8000 spam olunca tekrar yazacağım demiştim. 8000&#39;i geçeli çok olmuş şuan akismet tarafından engelenen toplam 15292 spam mesaj bulunmakta. Son 6 ayda 4297 spam yorum almışım :)
+      <description>Buradaki yazımda 8000 spam olunca tekrar yazacağım demiştim. 8000&amp;rsquo;i geçeli çok olmuş şuan akismet tarafından engelenen toplam 15292 spam mesaj bulunmakta. Son 6 ayda 4297 spam yorum almışım :)
 Bu arada yeni farkettim akismet bayağı detaylı istatistikler, göze hoş görünen grafikler sunuyor. İncelemenizi tavsiye ederim.</description>
     </item>
     
@@ -270,7 +270,7 @@ depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu do
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/udp-broadcast-sunucu-istemci/</guid>
       <description>Sunucu:
-#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;string.h&amp;gt;#include &amp;lt;sys/types.h&amp;gt;#include &amp;lt;sys/socket.h&amp;gt;#include &amp;lt;netinet/in.h&amp;gt; #define MY_PORT 3333 int main(int argc, char *argv[]) { int sockfd, new_fd; struct sockaddr_in my_addr; // hedef adres  struct sockaddr_in their_addr; // baglanti yapan adres  int sin_size, rt; // gelen verinin tutuldugu buffer  char buf[32]; // islem yapmak icin gerekli dosya gosterici  sockfd = socket(AF_INET, SOCK_DGRAM, 0); sin_size = sizeof(struct sockaddr_in); // adres ile ilgili ayarlar  my_addr.sin_family = AF_INET; my_addr.</description>
+#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;string.h&amp;gt;#include &amp;lt;sys/types.h&amp;gt;#include &amp;lt;sys/socket.h&amp;gt;#include &amp;lt;netinet/in.h&amp;gt; #define MY_PORT 3333  int main(int argc, char *argv[]) { int sockfd, new_fd; struct sockaddr_in my_addr; // hedef adres  struct sockaddr_in their_addr; // baglanti yapan adres  int sin_size, rt; // gelen verinin tutuldugu buffer  char buf[32]; // islem yapmak icin gerekli dosya gosterici  sockfd = socket(AF_INET, SOCK_DGRAM, 0); sin_size = sizeof(struct sockaddr_in); // adres ile ilgili ayarlar  my_addr.sin_family = AF_INET; my_addr.</description>
     </item>
     
     <item>
@@ -279,7 +279,7 @@ depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu do
       <pubDate>Wed, 11 Jul 2012 13:54:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/mysql-kullanici-database-olusturma/</guid>
-      <description>Herzaman unutup google&#39;a bakacağıma buraya bakayım daha kolay :)
+      <description>Herzaman unutup google&amp;rsquo;a bakacağıma buraya bakayım daha kolay :)
 Önce mysql sunucusuna bağlanalım:
 mysql -u root -p Kullanıcı oluşturma:
 create user kullaniciadi; Veritabanı oluşturma:
@@ -378,7 +378,7 @@ setxkbmap -option ctrl:nocaps </description>
       <pubDate>Sun, 27 Feb 2011 03:08:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/linux-paralel-port-ile-2x16-lcd-ekran-kullanimi/</guid>
-      <description>Çalıştığım projede linuxta paralel port ile lcd ekran kullanmam gerekti. Neredeyse internetin altını üstüne getirdim ama işime yarar çok birşey bulamadım. Sonunda DOS için yazılmış bir kod buldum. Bu kodu biraz inceleyip, gerekli püf noktaları bulunca kodu linux&#39;a uydurmak çok zor olmadı. Hatta neredeyse sadece kullanılan fonksiyonun adını ve parametre yerlerini değiştirdim :)
+      <description>Çalıştığım projede linuxta paralel port ile lcd ekran kullanmam gerekti. Neredeyse internetin altını üstüne getirdim ama işime yarar çok birşey bulamadım. Sonunda DOS için yazılmış bir kod buldum. Bu kodu biraz inceleyip, gerekli püf noktaları bulunca kodu linux&amp;rsquo;a uydurmak çok zor olmadı. Hatta neredeyse sadece kullanılan fonksiyonun adını ve parametre yerlerini değiştirdim :)
 Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read/write seçimi için kullanılıyor.</description>
     </item>
     
@@ -422,7 +422,7 @@ reset komutunu kullanabiliriz. Her seferinde komutu unutup neydi neydi diye dü�
       <guid>https://blog.askin.ws/blog/busybox-date-ile-saat-ve-tarihi-ayarlamak/</guid>
       <description>BusyBox içinde gelen date komutunun kullanımı biraz daha farklı. Saat ayarlamada bir değişiklik yok fakat tarihi ayarlamak biraz daha farklı. Saat ayarlama:
 date -s &amp;#34;23:59:59&amp;#34; Tarih ve saati ayarlama
-date -s AAGGSSDDYYYY date -s 123123592010 12-31-2010 23:59&#39;a karşılık geliyor.</description>
+date -s AAGGSSDDYYYY date -s 123123592010 12-31-2010 23:59&amp;rsquo;a karşılık geliyor.</description>
     </item>
     
     <item>
@@ -515,7 +515,7 @@ import pygtk import gtk class ShowIcon: def __init__(self): self.icon = gtk.Stat
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/pygtk-ve-thread-sorunu/</guid>
       <description>PyGtk ile ara yüzüzünü hazırladığım bir program içinde thread kullanmam gerekiyordu. Kod çalışıyordu fakat thread işlemi istediğim gibi çalışmıyordu. Arayüzde bir değişiklik olduğu zaman thread çalışıyor, onun dışında hiç bir şekilde tepki vermiyordu.
-Uzun süre hatanın kodda olabileceğini düşündüm. Ama sonunda python gtk.main() ve thread 3&#39;lüsünü aynı sorgu içinde googleda aratınca cevabı buldum. Gtk&#39;ya thread kullandığımı anlatmam gerekiyordu :)
+Uzun süre hatanın kodda olabileceğini düşündüm. Ama sonunda python gtk.main() ve thread 3&amp;rsquo;lüsünü aynı sorgu içinde googleda aratınca cevabı buldum. Gtk&amp;rsquo;ya thread kullandığımı anlatmam gerekiyordu :)
 gtk.gdk.threads_init() Bu satırı kodumun başına eklediğimde herşey istediğim gibi çalışmaya başladı :)</description>
     </item>
     
@@ -603,7 +603,7 @@ Tabi gmailin üstün spam ayıklama kabiliyetini de unutmamak lazım. Arada sır
       <pubDate>Sat, 25 Jul 2009 01:09:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/pardus-2009/</guid>
-      <description>Sonunda Pardus 2009&#39;u bilgisayarıma kurabildim. Ailemin yanına geldiğim için Pardus&#39;u indiremiyordum. Malum kotalı internet, sıkıntı yaratıyor.
+      <description>Sonunda Pardus 2009&amp;rsquo;u bilgisayarıma kurabildim. Ailemin yanına geldiğim için Pardus&amp;rsquo;u indiremiyordum. Malum kotalı internet, sıkıntı yaratıyor.
 Kurulum sorunsuz tamamlandı. Kurulum arayüzü çok hoş olmuş. Çok kullanışlı ve çok kolay bir arayüzü olmuş. Bilgisayarıma en hızlı kurulabilen Pardus sürümü. Saat tutmadım ama, 20 dakka ile 30 dakka arasında bir sürede kurulduğunu tahmin ediyorum.
 Kablosuz ağ kartımı sorunsuz tanıdı ve WPA2 şifreli ağıma çok kolay bir şekilde bağlandı. Daha önce de tanıyordu, fakat ağımı göremiyordu, ben de mecburen ndiswraper ile kullanıyordum.</description>
     </item>
@@ -654,7 +654,7 @@ satırını ve
 /etc/modprobe.d/blacklist-compat
 dosyasına da
 blacklist ath_pci
-satırını eklemek gerekiyor. Bunları ekledikten sonra kde&#39;de ağ programcığıyla bağlanabiliyorsunuz.
+satırını eklemek gerekiyor. Bunları ekledikten sonra kde&amp;rsquo;de ağ programcığıyla bağlanabiliyorsunuz.
 Fakat XFCE kullanıyorsanız wicd kullanmanız gerekiyor. Wicd ile doğrudan kullanamıyoruz.</description>
     </item>
     
@@ -696,8 +696,8 @@ Dergi kapağında 8 Mart Dünya Emekçi Kadınla Günü yazsaydı daha güzel ve
       <pubDate>Fri, 27 Feb 2009 20:29:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/komut-satirindan-resimleri-pdf-slaytina-donusturme/</guid>
-      <description>Lanet dersimiz File System için hocamız pptx uzantılı bir dosya verince banada bunu bir şekilde pdf&#39;e çevirmek düştü.
-Önce openoffice ile açmayı denedim, açıyordu fakat anlaşılır bir halde değildi. Bende alıp arkadaşımın bilgisayarına gittim, fakat onda da pdf&#39;e dönüştüremiyordum. Dönüştürebildiğim formatlara bakarken .jpg&#39;i gördüm. Nasılsa linuxta bu bi şekilde pdf&#39;e dönüştürüm diyerek kendimden emin bi şekilde dönüşümü yapıp odama geçtim.
+      <description>Lanet dersimiz File System için hocamız pptx uzantılı bir dosya verince banada bunu bir şekilde pdf&amp;rsquo;e çevirmek düştü.
+Önce openoffice ile açmayı denedim, açıyordu fakat anlaşılır bir halde değildi. Bende alıp arkadaşımın bilgisayarına gittim, fakat onda da pdf&amp;rsquo;e dönüştüremiyordum. Dönüştürebildiğim formatlara bakarken .jpg&amp;rsquo;i gördüm. Nasılsa linuxta bu bi şekilde pdf&amp;rsquo;e dönüştürüm diyerek kendimden emin bi şekilde dönüşümü yapıp odama geçtim.
 2 buçuk dakikalık bir arama ile aradığımı buldum, ImageMagick bu işi yapabiliyormuş.</description>
     </item>
     
@@ -720,7 +720,7 @@ Müzik dinlerken kullandığım programın elimin altında dolaşmasını pek se
       <pubDate>Thu, 11 Dec 2008 23:23:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/wordpress-27/</guid>
-      <description>Az önce wordpress&#39;i güncelledim. 2.5&#39;in arayüzü çok hoştu ama biraz kullanışsız gelmişti bana, şimdi çok hoş olmuş. Yazı yaz, yazı yaz diye bağırıyor sanki. Bende kırmıyor yazıyorum&amp;hellip;</description>
+      <description>Az önce wordpress&amp;rsquo;i güncelledim. 2.5&amp;rsquo;in arayüzü çok hoştu ama biraz kullanışsız gelmişti bana, şimdi çok hoş olmuş. Yazı yaz, yazı yaz diye bağırıyor sanki. Bende kırmıyor yazıyorum&amp;hellip;</description>
     </item>
     
     <item>
@@ -798,7 +798,7 @@ kaynak: linux focus</description>
       <description>&lt;p&gt;&lt;strong&gt;Metin Düzenleyici: &lt;a href=&#34;http://www.gedit.org&#34;&gt;Gedit&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
 Linuxda düz metinlerle uğraşırken genelde gedit kullanıyorum. Hatta çoğu zaman program yazarken gedit kullanıyorum. Kodları renklendirebilmesi sayesinde ne yazdığımı sorun yaşamadan anlıyorum. Ayırıca eklentilerden Embeded terminal(tümleşik terminal)i kullanarak terminal açmaya gerek duymadan kodlarımı derleyebiliyorum.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Müzik: &lt;a href=&#34;http://www.gnome.org/projects/rhythmbox&#34;&gt;Rhythmbox&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
-Müzik dinlerken kullandığım programın elime ayağıma dolaşmasını pek sevmem, ve gerektiği zamanda hemen ulaşabilmek isterim. Rhythmbox araç çubuğuna yerleşebildiği için hem elime dolaşmıyor hemde istediğimde hemen ulaşabiliyrum. Lastfm ekletsi ile lastfm&#39;in niğmetlerinden yararlanabiliyorum,&lt;/p&gt;</description>
+Müzik dinlerken kullandığım programın elime ayağıma dolaşmasını pek sevmem, ve gerektiği zamanda hemen ulaşabilmek isterim. Rhythmbox araç çubuğuna yerleşebildiği için hem elime dolaşmıyor hemde istediğimde hemen ulaşabiliyrum. Lastfm ekletsi ile lastfm&amp;rsquo;in niğmetlerinden yararlanabiliyorum,&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -947,7 +947,7 @@ Adres: http://www.projecteuler.net/</description>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/bubble-sort-algoritmasi-ve-scheme-cozumu/</guid>
       <description>Bubble sort algoritması kabaca: verilen dizideki elemanları ikili olarak karşılaştırıp gerekli olduğunda yerlerini değiştirmek esasına dayanır. Elimizde 11 5 8 4 6 84 7 sayılarında oluşan bir dizi olduğunu var sayalım ve bu diziyi küçükten büyüğe sıralamak isteyelim.
- önce 11 ile 5i karşılaştırırız, 11 5&#39;ten büyük olduğu için 11 ile 5in yerini değiştiririz; 5 11 8 4 6 84 7 sonra 11 ile 8i karşılaştırırız ve 11 ile 8&#39;in yerini değiştiririz 5 8 11 4 6 84 7 11 ile 4; 5 8 4 11 6 84 7 11 ile 6; 5 8 4 6 11 84 7 11 ile 84; 84 büyük olduğu için sıralamaya dokunmayız.</description>
+ önce 11 ile 5i karşılaştırırız, 11 5&amp;rsquo;ten büyük olduğu için 11 ile 5in yerini değiştiririz; 5 11 8 4 6 84 7 sonra 11 ile 8i karşılaştırırız ve 11 ile 8&amp;rsquo;in yerini değiştiririz 5 8 11 4 6 84 7 11 ile 4; 5 8 4 11 6 84 7 11 ile 6; 5 8 4 6 11 84 7 11 ile 84; 84 büyük olduğu için sıralamaya dokunmayız.</description>
     </item>
     
     <item>
@@ -1029,7 +1029,7 @@ How to Design Programs // Dr scheme projesiyle birlikte yürüyen bir kitap bu a
       <pubDate>Wed, 02 May 2007 10:46:10 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/about/</guid>
-      <description>Merhaba, ben Aşkın Özgür. Hermes İletisim&#39;de yazılım geliştirici olarak çalışıyorum. Birçok yerde soyadımı Yollu olarak görebilirsiniz, onu 2018 senesinde değiştirdim. Dokuz Eylül Üniversitesi Bilgisayar Mühendisliği bölümünden mezun oldum.
+      <description>Merhaba, ben Aşkın Özgür. Hermes İletisim&amp;rsquo;de yazılım geliştirici olarak çalışıyorum. Birçok yerde soyadımı Yollu olarak görebilirsiniz, onu 2018 senesinde değiştirdim. Dokuz Eylül Üniversitesi Bilgisayar Mühendisliği bölümünden mezun oldum.
 Bana e-posta ile ulaşmak için askin@askin.ws e-posta adresini kullanabilirsiniz. Özgeçmişimi görmek isterseniz buradan ulaşabilirsiniz.</description>
     </item>
     
