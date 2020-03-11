@@ -1,7 +1,7 @@
 ---
 Title: Pardus Ağ Yöneticisi İle Eduroam Ağına Bağlanmak
 Date: 2009-12-07T09:45:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Linux
 Tags: ["eduroam", "network-manager", "pardus", "pisi", "python", "wireless-tools"]
 Slug: pardus-ag-yoneticisi-ile-eduroam-agina-baglanmak

@@ -1,7 +1,7 @@
 ---
 Title: Hediyemiz Emeğimiz
 Date: 2013-09-29T18:47:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Günlük
 Tags: ["Doğumgünü", "Hediye", "Kaf Sin Kaf", "Karşıyaka"]
 Slug: hediyemiz-emegimiz

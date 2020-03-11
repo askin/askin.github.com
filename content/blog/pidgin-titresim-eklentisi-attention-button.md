@@ -1,7 +1,7 @@
 ---
 Title: Pidgin Titreşim Eklentisi - Attention Button
 Date: 2009-06-07T21:20:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Linux
 Tags: ["attention button", "gnome", "im", "Linux", "pidgin"]
 Slug: pidgin-titresim-eklentisi-attention-button

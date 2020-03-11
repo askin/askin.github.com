@@ -1,7 +1,7 @@
 ---
 Title: Pardus - Atheros AR242x - WPA2
 Date: 2009-06-02T21:48:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Linux
 Tags: ["ar242x", "atheros", "Linux", "pardus", "wicd"]
 Slug: pardus-atheros-ar242x-wpa2

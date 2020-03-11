@@ -1,7 +1,7 @@
 ---
 Title: SSH Filesystem ile uzak makinadaki dizini yerele bağlamak
 Date: 2008-05-07T10:36:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Linux
 Tags: ["linux", "mount", "ssh"]
 Slug: ssh-filesystem-ile-uzak-makinadaki-dizini-yerele-baglamak

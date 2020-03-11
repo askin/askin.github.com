@@ -1,7 +1,7 @@
 ---
 Title: UDP Broadcast sunucu - istemci
 Date: 2012-08-03T15:31:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Programlama
 Tags: ["c/c++", "Linux", "network", "programming", "socket"]
 Slug: udp-broadcast-sunucu-istemci

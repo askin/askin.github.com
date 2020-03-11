@@ -1,7 +1,7 @@
 ---
 Title: En basit recursion - özyineleme mantığı
 Date: 2007-10-26T16:09:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Programlama
 Tags: []
 Slug: en-basit-recursion-ozyineleme-mantigi

@@ -1,7 +1,7 @@
 ---
 Title: Çıkmaz demeyin şansınızı deneyin - 2
 Date: 2008-04-17T12:27:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Programlama
 Tags: ["Java", "Programlama"]
 Slug: cikmaz-demeyin-sansinizi-deneyin-2

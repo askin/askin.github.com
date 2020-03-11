@@ -1,7 +1,7 @@
 ---
 Title: Emacs ile identi.ca kullanımı
 Date: 2013-03-04T11:55:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Günlük
 Tags: ["emacs"]
 Slug: emacs-ile-identi-ca-kullanimi

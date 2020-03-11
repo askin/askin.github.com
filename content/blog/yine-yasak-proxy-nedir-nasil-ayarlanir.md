@@ -1,7 +1,7 @@
 ---
 Title: Yine Yasak - Proxy nedir? Nasıl ayarlanır.
 Date: 2008-01-25T17:43:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Günlük
 Tags: ["Proxy", "Telekom"]
 Slug: yine-yasak-proxy-nedir-nasil-ayarlanir

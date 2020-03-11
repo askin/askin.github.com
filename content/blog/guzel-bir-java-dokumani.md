@@ -1,7 +1,7 @@
 ---
 Title: Güzel bir java dökümanı
 Date: 2008-04-15T19:44:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Programlama
 Tags: ["Java", "kitap"]
 Slug: guzel-bir-java-dokumani

@@ -1,7 +1,7 @@
 ---
 Title: MySQL Yedek Alma
 Date: 2013-03-11T16:42:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Linux
 Tags: ["backup", "mysql", "mysqldum"]
 Slug: mysql-yedek-alma

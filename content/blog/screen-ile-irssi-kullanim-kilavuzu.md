@@ -1,7 +1,7 @@
 ---
 Title: Screen ile Irssi Kullanım Kılavuzu
 Date: 2013-11-15T17:17:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Linux
 Tags: ["irc", "irssi", "Linux", "screen"]
 Slug: screen-ile-irssi-kullanim-kilavuzu

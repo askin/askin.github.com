@@ -1,7 +1,7 @@
 ---
 Title: Linux - Bir dizin yada dosyanın hangi uygulama tarafından kullanıldığını öğrenme
 Date: 2008-05-24T13:30:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Linux
 Tags: ["Kabuk", "Linux"]
 Slug: linux-bir-dizin-yada-dosyanin-hangi-uygulama-tarafindan-kullanildigini-ogrenme

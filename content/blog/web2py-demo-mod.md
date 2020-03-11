@@ -1,7 +1,7 @@
 ---
 Title: web2py demo mode
 Date: 2013-02-26T15:28:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Programlama
 Tags: ["python", "web"]
 Slug: web2py-demo-mod

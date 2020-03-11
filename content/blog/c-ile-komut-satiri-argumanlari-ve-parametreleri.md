@@ -1,7 +1,7 @@
 ---
 Title: C ile Komut Satırı Argumanları ve Parametreleri
 Date: 2009-07-10T18:01:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Programlama
 Tags: ["c/c++"]
 Slug: c-ile-komut-satiri-argumanlari-ve-parametreleri

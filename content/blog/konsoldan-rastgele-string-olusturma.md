@@ -1,7 +1,7 @@
 ---
 Title: Konsoldan Rastgele String Oluşturma
 Date: 2013-08-13T12:34:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Linux
 Tags: ["random", "rastgele", "Shell"]
 Slug: konsoldan-rastgele-string-olusturma

@@ -1,7 +1,7 @@
 ---
 Title: Firefox'ta ferahlık
 Date: 2008-08-20T08:36:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Günlük
 Tags: []
 Slug: firefoxta-ferahlik

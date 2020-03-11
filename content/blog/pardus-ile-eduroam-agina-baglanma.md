@@ -1,7 +1,7 @@
 ---
 Title: Pardus ile Eduroam ağına bağlanma
 Date: 2009-12-05T02:02:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Linux
 Tags: ["dhcpcd", "eduroam", "Linux", "network", "network-manager", "pardus", "pem", "wpa"]
 Slug: pardus-ile-eduroam-agina-baglanma

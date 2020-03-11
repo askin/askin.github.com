@@ -1,7 +1,7 @@
 ---
 Title: Tanrı Kent
 Date: 2007-12-20T07:23:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Günlük
 Tags: ["Sinema"]
 Slug: tanri-kent

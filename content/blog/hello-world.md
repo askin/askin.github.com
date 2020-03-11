@@ -1,7 +1,7 @@
 ---
 Title: Merhaba!
 Date: 2007-05-02T10:46:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Günlük
 Tags: []
 Slug: hello-world

@@ -1,7 +1,7 @@
 ---
 Title: Yasaklı sitelere girme - Open DNS
 Date: 2008-01-18T18:52:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Günlük
 Tags: ["OpenDNS", "Proxy", "Telekom"]
 Slug: yasakli-sitelere-gitme-open-dns

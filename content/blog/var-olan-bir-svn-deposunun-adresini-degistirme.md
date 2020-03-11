@@ -1,7 +1,7 @@
 ---
 Title: Var olan bir SVN deposunun adresini değiştirme
 Date: 2012-04-09T10:48:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Programlama
 Tags: ["Programlama", "programming"]
 Slug: var-olan-bir-svn-deposunun-adresini-degistirme

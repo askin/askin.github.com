@@ -1,7 +1,7 @@
 ---
 Title: TrekStor maxi g.u 500GB harici hard disk
 Date: 2009-09-16T20:32:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Gezegen
 Tags: ["hard disk", "harici disk", "hdd", "TrekStor"]
 Slug: trekstor-maxi-g-u-500gb-harici-hard-disk

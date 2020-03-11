@@ -1,7 +1,7 @@
 ---
 Title: Yaşasın Spam
 Date: 2011-02-27T03:12:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Günlük
 Tags: []
 Slug: yasasin-spam

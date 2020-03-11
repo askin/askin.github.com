@@ -1,7 +1,7 @@
 ---
 Title: Saçmalayan konsol ekranını temizleme
 Date: 2010-12-08T11:51:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Linux
 Tags: ["binary", "cat", "konsol", "Linux"]
 Slug: sacmalayan-konsol-ekranini-temizleme

@@ -1,7 +1,7 @@
 ---
 Title: Blogger'a Kendi Alan Adınızı Yönlendirme
 Date: 2010-04-08T02:28:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Günlük
 Tags: ["Blog", "blogger", "cname", "dns"]
 Slug: bloggera-kendi-alan-adinizi-yonlendirme

@@ -1,7 +1,7 @@
 ---
 Title: Android Galaxy Ace ile ekran görüntüsü alma
 Date: 2012-04-08T18:07:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Linux
 Tags: ["ace", "android", "ekran görüntüsü", "galaxy", "Linux", "phone", "samsung", "screenshot"]
 Slug: android-galaxy-ace-ile-ekran-goruntusu-alma

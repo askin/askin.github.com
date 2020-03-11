@@ -1,7 +1,7 @@
 ---
 Title: Bir dönem daha bitti
 Date: 2008-01-25T09:18:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Günlük
 Tags: ["Dönem", "Okul"]
 Slug: bir-donem-daha-bitti

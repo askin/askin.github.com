@@ -1,7 +1,7 @@
 ---
 Title: Wordpress 2.7
 Date: 2008-12-11T23:23:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Günlük
 Tags: []
 Slug: wordpress-27

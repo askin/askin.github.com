@@ -1,7 +1,7 @@
 ---
 Title: Let's Encrypt
 Date: 2017-02-06T15:09:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: İnternet
 Tags: ["Certificate", "EEF", "Let's Encrypt", "Security"]
 Slug: lets-encrypt

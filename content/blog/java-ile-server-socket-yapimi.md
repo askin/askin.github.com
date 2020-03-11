@@ -1,7 +1,7 @@
 ---
 Title: Java ile server socket yapımı
 Date: 2010-12-11T04:25:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Programlama
 Tags: ["Java", "server", "socket", "telnet"]
 Slug: java-ile-server-socket-yapimi

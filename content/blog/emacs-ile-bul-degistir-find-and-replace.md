@@ -1,7 +1,7 @@
 ---
 Title: Emacs ile bul değiştir / find and replace
 Date: 2010-12-06T18:04:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Linux
 Tags: ["emacs", "find", "Linux"]
 Slug: emacs-ile-bul-degistir-find-and-replace

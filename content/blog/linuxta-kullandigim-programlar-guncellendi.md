@@ -1,7 +1,7 @@
 ---
 Title: Linuxta kullandığım programlar - Güncellendi
 Date: 2009-02-15T02:56:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Linux
 Tags: ["Firefox", "gnome", "gpass", "gtodo", "liferea", "Linux", "mpd", "Program"]
 Slug: linuxta-kullandigim-programlar-guncellendi

@@ -1,7 +1,7 @@
 ---
 Title: Linux'ta disk doluluk oranının yanlış hesaplanması
 Date: 2013-07-22T15:13:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Linux
 Tags: ["df", "disk", "du", "free space"]
 Slug: linuxta-disk-doluluk-oraninin-yanlis-hesaplanmasi

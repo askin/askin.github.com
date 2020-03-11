@@ -1,7 +1,7 @@
 ---
 Title: Solariste Özyinelemeli grep
 Date: 2012-06-06T16:43:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Linux
 Tags: ["bash", "find", "grep", "solaris"]
 Slug: solariste-ozyinelemeli-grep

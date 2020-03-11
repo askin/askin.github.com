@@ -1,7 +1,7 @@
 ---
 Title: Pardus 2009
 Date: 2009-07-25T01:09:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Linux
 Tags: ["2009", "distro", "gnome", "kde", "kde4", "Linux", "pardus"]
 Slug: pardus-2009

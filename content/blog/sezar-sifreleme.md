@@ -1,7 +1,7 @@
 ---
 Title: Sezar şifreleme
 Date: 2007-12-12T05:35:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Programlama
 Tags: ["Algoritma", "Scheme", "Sezar"]
 Slug: sezar-sifreleme

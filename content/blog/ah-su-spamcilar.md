@@ -1,7 +1,7 @@
 ---
 Title: Ah şu spamcılar
 Date: 2009-09-01T20:25:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Günlük
 Tags: ["akismet", "İnternet", "Spam"]
 Slug: ah-su-spamcilar

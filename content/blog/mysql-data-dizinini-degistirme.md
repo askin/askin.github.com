@@ -1,7 +1,7 @@
 ---
 Title: Mysql Data Dizinini Değiştirme
 Date: 2009-07-14T02:11:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Linux
 Tags: ["data", "Linux", "mysql", "pardus"]
 Slug: mysql-data-dizinini-degistirme

@@ -1,7 +1,7 @@
 ---
 Title: DrScheme v372 Çıktı
 Date: 2007-12-29T13:40:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Programlama
 Tags: ["scheme"]
 Slug: drscheme-v372-cikti

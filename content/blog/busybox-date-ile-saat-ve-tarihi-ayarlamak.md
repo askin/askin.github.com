@@ -1,7 +1,7 @@
 ---
 Title: BusyBox - date ile saat ve tarihi ayarlamak
 Date: 2010-12-01T13:42:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Linux
 Tags: ["bash", "busybox", "date", "Linux", "saat"]
 Slug: busybox-date-ile-saat-ve-tarihi-ayarlamak

@@ -1,7 +1,7 @@
 ---
 Title: MySQL veritabanı ile ilgili bazı bilgileri öğrenmek
 Date: 2013-09-06T12:59:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Programlama
 Tags: ["database", "mysql", "query", "sorgu"]
 Slug: mysql-veritabani-ile-ilgili-bazi-bilgileri-ogrenmek

@@ -1,7 +1,7 @@
 ---
 Title: Off the Record Messaging (OTR)
 Date: 2013-07-13T14:35:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: İnternet
 Tags: ["crypto", "im", "otr"]
 Slug: off-the-record-messaging-otr

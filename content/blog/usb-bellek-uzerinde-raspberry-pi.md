@@ -1,7 +1,7 @@
 ---
 Title: Usb bellek üzerinde Raspberry PI 
 Date: 2013-03-24T20:39:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Linux
 Tags: ["boot", "Linux", "raspberry pi", "raspbian", "sd"]
 Slug: usb-bellek-uzerinde-raspberry-pi

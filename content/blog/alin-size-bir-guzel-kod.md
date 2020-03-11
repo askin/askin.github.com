@@ -1,7 +1,7 @@
 ---
 Title: Alın size bir güzel kod:)
 Date: 2007-12-28T16:29:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Programlama
 Tags: []
 Slug: alin-size-bir-guzel-kod

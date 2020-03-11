@@ -1,7 +1,7 @@
 ---
 Title: Pardus-Linux.Org e-dergi bana süpriz yaptı...
 Date: 2009-03-11T01:36:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Linux
 Tags: ["Ben", "Blog", "e-dergi", "Linux", "pardus"]
 Slug: pardus-linuxorg-e-dergi-bana-supriz-yapti

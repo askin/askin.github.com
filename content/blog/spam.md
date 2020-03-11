@@ -1,7 +1,7 @@
 ---
 Title: Spam
 Date: 2013-02-07T15:57:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Günlük
 Tags: ["akismet"]
 Slug: spam

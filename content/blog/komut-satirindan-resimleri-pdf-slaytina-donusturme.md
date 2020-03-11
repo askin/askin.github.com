@@ -1,7 +1,7 @@
 ---
 Title: Komut satırından resimleri pdf slaytına dönüştürme
 Date: 2009-02-27T20:29:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Linux
 Tags: ["convert", "image", "imagemagick", "jpg", "Linux", "pdf", "pptx"]
 Slug: komut-satirindan-resimleri-pdf-slaytina-donusturme

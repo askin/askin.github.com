@@ -1,7 +1,7 @@
 ---
 Title: Slurm - Linux için bant genişliği takip aracı
 Date: 2013-12-19T12:15:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: ["Linux"]
 Tags: ["ağ", "monitoring", "network"]
 Slug: slurm-linux-icin-bant-genisligi-takip-araci

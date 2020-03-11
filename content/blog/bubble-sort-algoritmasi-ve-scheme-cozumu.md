@@ -1,7 +1,7 @@
 ---
 Title: Bubble sort  algoritması ve scheme çözümü
 Date: 2007-12-17T15:11:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Programlama
 Tags: ["Algoritma", "Bubble", "Sıralama"]
 Slug: bubble-sort-algoritmasi-ve-scheme-cozumu

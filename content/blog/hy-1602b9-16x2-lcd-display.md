@@ -1,7 +1,7 @@
 ---
 Title: HY-1602B9 16x2 LCD Display
 Date: 2011-08-04T16:40:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Günlük
 Tags: ["16x2", "elektronik"]
 Slug: hy-1602b9-16x2-lcd-display

@@ -1,7 +1,7 @@
 ---
 Title: Bir son dakka görevi daha başarıyla tamamlandı
 Date: 2007-12-11T18:02:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Günlük
 Tags: ["Ödev"]
 Slug: bir-son-dakka-gorevi-daha-basariyla-tamamlandi

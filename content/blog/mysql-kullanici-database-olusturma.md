@@ -1,7 +1,7 @@
 ---
 Title: Mysql Kullanıcı - Database Oluşturma
 Date: 2012-07-11T13:54:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Linux
 Tags: ["create", "database", "grant", "Linux", "mysql", "sql"]
 Slug: mysql-kullanici-database-olusturma

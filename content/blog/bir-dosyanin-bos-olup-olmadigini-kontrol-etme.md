@@ -1,7 +1,7 @@
 ---
 Title: Bir dosyanın boş olup olmadığını kontrol etme
 Date: 2012-11-07T13:44:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Linux
 Tags: ["bash", "bos dosya", "empty", "Linux", "script"]
 Slug: bir-dosyanin-bos-olup-olmadigini-kontrol-etme

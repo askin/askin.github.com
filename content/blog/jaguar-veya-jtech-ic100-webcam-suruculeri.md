@@ -1,7 +1,7 @@
 ---
 Title: jaguar veya jtech ic100 webcam sürücüleri
 Date: 2007-10-28T15:32:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Günlük
 Tags: ["Driver", "Jaguar", "jtech ic 100"]
 Slug: jaguar-veya-jtech-ic100-webcam-suruculeri

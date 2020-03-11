@@ -1,7 +1,7 @@
 ---
 Title: Gentoo Karasuları
 Date: 2008-09-05T17:54:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Linux
 Tags: ["gentoo"]
 Slug: gentoo-karasulari

@@ -1,7 +1,7 @@
 ---
 Title: Same oyunu
 Date: 2007-11-21T17:10:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Programlama
 Tags: ["Ödev", "Oyun", "Same"]
 Slug: same-oyunu

@@ -1,7 +1,7 @@
 ---
 Title: PyGtk ile Sistem Çekmecesi
 Date: 2010-04-07T21:53:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Programlama
 Tags: ["gtk", "icon", "pygtk", "python", "status"]
 Slug: pygtk-ile-sistem-cekmecesi

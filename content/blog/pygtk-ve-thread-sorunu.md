@@ -1,7 +1,7 @@
 ---
 Title: PyGtk ve Thread Sorunu
 Date: 2010-04-06T23:03:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Programlama
 Tags: ["gdk", "gtk", "Programlama", "pygtk", "python"]
 Slug: pygtk-ve-thread-sorunu

@@ -1,7 +1,7 @@
 ---
 Title: Yazık bu windowsçulara - Win32/IRCBot.AAL 
 Date: 2008-01-22T10:10:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Findows
 Tags: ["Antivirüs", "Facebook", "Msn", "Virüs"]
 Slug: yazik-bu-windowsculara-win32ircbotaal

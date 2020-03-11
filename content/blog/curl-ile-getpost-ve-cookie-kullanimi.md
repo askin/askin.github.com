@@ -1,7 +1,7 @@
 ---
 Title: cURL ile GET/POST ve cookie kullanımı
 Date: 2013-07-10T17:18:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Günlük, Linux
 Tags: ["cookie", "cURL", "get", "post"]
 Slug: curl-ile-getpost-ve-cookie-kullanimi

@@ -1,7 +1,7 @@
 ---
 Title: Bir GNU/Linux kurulumunu başka bir harddiske/bölüme taşımak
 Date: 2009-04-06T22:22:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Linux
 Tags: ["Linux", "move", "partition", "Shell"]
 Slug: bir-gnulinux-kurulumunu-baska-bir-harddiskebolume-tasimak

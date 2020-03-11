@@ -1,7 +1,7 @@
 ---
 Title: Linuxda kullandığım programlar
 Date: 2008-05-15T14:20:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Linux
 Tags: ["Linux"]
 Slug: linuxda-kullandigim-programlar

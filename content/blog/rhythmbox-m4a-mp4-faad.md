@@ -1,7 +1,7 @@
 ---
 Title: Rhythmbox m4a - mp4 faad
 Date: 2008-05-13T14:07:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Linux
 Tags: ["Codec", "faad", "Linux", "m4a", "mp4"]
 Slug: rhythmbox-m4a-mp4-faad

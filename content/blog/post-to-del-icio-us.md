@@ -1,7 +1,7 @@
 ---
 Title: Post to del.icio.us
 Date: 2009-08-29T23:48:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Günlük
 Tags: ["bookmark", "del.icio.us", "extension", "Firefox", "İnternet"]
 Slug: post-to-del-icio-us

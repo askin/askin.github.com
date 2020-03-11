@@ -1,7 +1,7 @@
 ---
 title: Linuxda du kullanırken gizli dosyaları dahil etmek
 date: 2019-10-04T12:04:25+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: ["Linux"]
 Tags: ["linux"]
 Slug: du-wildcard-ile-gizli-dosyalar

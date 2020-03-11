@@ -1,7 +1,7 @@
 ---
 Title: Project Euler - Problem sitesi:)
 Date: 2007-12-27T10:32:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: İnternet, Programlama
 Tags: ["Algoritma", "Problem"]
 Slug: project-euler-problem-sitesi

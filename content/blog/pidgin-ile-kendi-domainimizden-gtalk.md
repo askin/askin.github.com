@@ -1,7 +1,7 @@
 ---
 Title: Pidgin ile kendi domain'imizden gtalk
 Date: 2013-04-03T16:53:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Linux
 Tags: ["domain", "gtalk"]
 Slug: pidgin-ile-kendi-domainimizden-gtalk

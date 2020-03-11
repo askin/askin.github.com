@@ -1,7 +1,7 @@
 ---
 Title: Python, Fonksiyona Parametre Olarak Fonksiyon Geçirmek
 Date: 2010-05-01T03:51:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Programlama
 Tags: ["fonksiyon", "parametre", "Programlama"]
 Slug: python-fonksiyona-parametre-olarak-fonksiyon-gecirmek

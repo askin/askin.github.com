@@ -1,7 +1,7 @@
 ---
 Title: Listeler ile ilgili garip bir döküman
 Date: 2013-07-13T15:50:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Programlama
 Tags: ["list"]
 Slug: listeler-ile-ilgili-garip-bir-dokuman

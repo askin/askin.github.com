@@ -1,7 +1,7 @@
 ---
 Title: Genius! 
 Date: 2010-11-24T14:11:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Linux
 Tags: ["bash", "Linux", "ssh", "symlink"]
 Slug: genius

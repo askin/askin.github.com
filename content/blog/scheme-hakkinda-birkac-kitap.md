@@ -1,7 +1,7 @@
 ---
 Title: Scheme hakkında birkaç kitap
 Date: 2007-10-18T06:37:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Programlama
 Tags: ["book", "e-book"]
 Slug: scheme-hakkinda-birkac-kitap

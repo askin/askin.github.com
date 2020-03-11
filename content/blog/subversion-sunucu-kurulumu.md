@@ -1,7 +1,7 @@
 ---
 Title: Subversion sunucu kurulumu
 Date: 2012-08-23T18:16:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Linux
 Tags: ["Linux", "server", "subversion", "sunucu"]
 Slug: subversion-sunucu-kurulumu

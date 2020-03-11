@@ -1,7 +1,7 @@
 ---
 Title: İlk .deb paketim
 Date: 2008-08-01T22:10:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Linux
 Tags: [".deb", "debian", "Linux", "packages"]
 Slug: ilk-deb-paketim

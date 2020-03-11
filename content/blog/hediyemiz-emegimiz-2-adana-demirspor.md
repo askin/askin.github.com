@@ -1,7 +1,7 @@
 ---
 Title: Hediyemiz Emeğimiz 2 - Adana Demirspor
 Date: 2013-10-19T18:16:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Günlük
 Tags: ["adana demirspor"]
 Slug: hediyemiz-emegimiz-2-adana-demirspor

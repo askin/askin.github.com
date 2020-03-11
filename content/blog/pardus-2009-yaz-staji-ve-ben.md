@@ -1,7 +1,7 @@
 ---
 Title: Pardus 2009 yaz stajı ve ben:)
 Date: 2009-05-09T01:23:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Günlük
 Tags: ["Linux", "pardus", "staj"]
 Slug: pardus-2009-yaz-staji-ve-ben

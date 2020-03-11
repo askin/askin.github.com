@@ -1,7 +1,7 @@
 ---
 Title: Python Sözlük Hızlı Rehber
 Date: 2013-07-20T15:32:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Programlama
 Tags: ["dictionary", "python"]
 Slug: python-sozluk-hizli-rehber

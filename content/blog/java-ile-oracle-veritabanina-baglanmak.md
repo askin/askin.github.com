@@ -1,7 +1,7 @@
 ---
 Title: Java ile Oracle Veritabanına bağlanmak.
 Date: 2010-11-08T20:29:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Programlama
 Tags: ["database", "Java", "oracle"]
 Slug: java-ile-oracle-veritabanina-baglanmak

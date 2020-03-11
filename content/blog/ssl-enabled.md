@@ -1,7 +1,7 @@
 ---
 Title: SSL Enabled
 Date: 2014-03-11T18:51:00+03:00
-Author: askin
+Author: Aşkın Özgür
 Category: Günlük
 Tags: []
 Slug: ssl-enabled
