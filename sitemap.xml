@@ -3,8 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.askin.ws/</loc>
+    <lastmod>2020-08-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.askin.ws/blog/</loc>
-    <lastmod>2019-10-04T12:04:25+03:00</lastmod>
+    <lastmod>2020-08-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.askin.ws/tags/emacs/</loc>
+    <lastmod>2020-08-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.askin.ws/blog/emacs-fill-column-indicator/</loc>
+    <lastmod>2020-08-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.askin.ws/tags/</loc>
+    <lastmod>2020-08-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -14,11 +34,6 @@
   
   <url>
     <loc>https://blog.askin.ws/blog/du-wildcard-ile-gizli-dosyalar/</loc>
-    <lastmod>2019-10-04T12:04:25+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.askin.ws/tags/</loc>
     <lastmod>2019-10-04T12:04:25+03:00</lastmod>
   </url>
   
@@ -130,11 +145,6 @@
   <url>
     <loc>https://blog.askin.ws/tags/kar%C5%9F%C4%B1yaka/</loc>
     <lastmod>2013-09-29T18:47:00+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.askin.ws/tags/data/</loc>
-    <lastmod>2013-09-06T12:59:00+03:00</lastmod>
   </url>
   
   <url>
@@ -333,11 +343,6 @@
   </url>
   
   <url>
-    <loc>https://blog.askin.ws/tags/emacs/</loc>
-    <lastmod>2013-03-04T11:55:00+03:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.askin.ws/blog/emacs-ile-identi-ca-kullanimi/</loc>
     <lastmod>2013-03-04T11:55:00+03:00</lastmod>
   </url>
@@ -405,11 +410,6 @@
   <url>
     <loc>https://blog.askin.ws/tags/sunucu/</loc>
     <lastmod>2012-08-23T18:16:00+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.askin.ws/tags/program/</loc>
-    <lastmod>2012-08-03T15:31:00+03:00</lastmod>
   </url>
   
   <url>
@@ -545,11 +545,6 @@
   <url>
     <loc>https://blog.askin.ws/blog/hy-1602b9-16x2-lcd-display/</loc>
     <lastmod>2011-08-04T16:40:00+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.askin.ws/</loc>
-    <lastmod>2011-07-29T17:30:10+03:00</lastmod>
   </url>
   
   <url>
@@ -898,11 +893,6 @@
   </url>
   
   <url>
-    <loc>https://blog.askin.ws/tags/book/</loc>
-    <lastmod>2009-08-29T23:48:00+03:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.askin.ws/tags/bookmark/</loc>
     <lastmod>2009-08-29T23:48:00+03:00</lastmod>
   </url>
@@ -955,6 +945,11 @@
   <url>
     <loc>https://blog.askin.ws/blog/pardus-2009/</loc>
     <lastmod>2009-07-25T01:09:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.askin.ws/tags/data/</loc>
+    <lastmod>2009-07-14T02:11:00+03:00</lastmod>
   </url>
   
   <url>
@@ -1099,6 +1094,11 @@
   
   <url>
     <loc>https://blog.askin.ws/tags/mpd/</loc>
+    <lastmod>2009-02-15T02:56:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.askin.ws/tags/program/</loc>
     <lastmod>2009-02-15T02:56:00+03:00</lastmod>
   </url>
   
@@ -1415,6 +1415,11 @@
   <url>
     <loc>https://blog.askin.ws/blog/en-basit-recursion-ozyineleme-mantigi/</loc>
     <lastmod>2007-10-26T16:09:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.askin.ws/tags/book/</loc>
+    <lastmod>2007-10-18T06:37:00+03:00</lastmod>
   </url>
   
   <url>
