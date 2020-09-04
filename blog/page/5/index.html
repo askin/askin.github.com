@@ -205,6 +205,59 @@
         <div class="posts-list">
           
             <article class="post-preview">
+    <a href="https://blog.askin.ws/blog/java-ile-oracle-veritabanina-baglanmak/">
+        <h2 class="post-title">Java ile Oracle Veritabanına bağlanmak.</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on November 8, 2010
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;88&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Aşkın Özgür
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        Öncelikle http://www.oracle.com/technetwork/database/enterprise-edition/jdbc101040-094982.html adresinden classes12.jar dosyasını indiriyoruz.
+Bu dosyayı bir dizine atıp, içeriğini bu dizine çıkartıyoruz. Bu dizini classpath değişkeninde belirtip kodlamaya başlıyoruz.
+import java.io.*; import java.sql.*; public class OraThin { public static void main(String[] args) { try { Connection con = null; Class.forName(&#34;oracle.jdbc.driver.OracleDriver&#34;); con=DriverManager.getConnection( &#34;jdbc:oracle:thin:@localhost:1521:dbname&#34;, &#34;username&#34;, &#34;password&#34;); Statement s = con.createStatement(); ResultSet rs = s.executeQuery(&#34;SELECT * FROM KISI&#34;); String name; String surname; while(rs.next()) { name = rs.getString(&#34;AD&#34;); surname = rs.getString(&#34;SOYAD&#34;); System.
+        <a href="https://blog.askin.ws/blog/java-ile-oracle-veritabanina-baglanmak/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://blog.askin.ws/tags/database/">database</a>&nbsp;
+        
+        <a href="https://blog.askin.ws/tags/java/">Java</a>&nbsp;
+        
+        <a href="https://blog.askin.ws/tags/oracle/">oracle</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="https://blog.askin.ws/blog/python-fonksiyona-parametre-olarak-fonksiyon-gecirmek/">
         <h2 class="post-title">Python, Fonksiyona Parametre Olarak Fonksiyon Geçirmek</h2>
         
@@ -712,67 +765,6 @@ Disk biraz büyük gibi. Gerçi daha büyüklerini de gördüm, ama biraz daha u
         <a href="https://blog.askin.ws/tags/hdd/">hdd</a>&nbsp;
         
         <a href="https://blog.askin.ws/tags/trekstor/">TrekStor</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://blog.askin.ws/blog/post-2-del-icio-us/">
-        <h2 class="post-title">post 2 del.icio.us</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on September 15, 2009
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;71&nbsp;words
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Aşkın Özgür
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        Daha önce post to del.icio.us eklentisinden bahsetmiştim.
-Hazır eklentiye el atmışken birkaç özellik ekledim.
- Gizli gönderim Var olan linkin üzerine yazılma seçeneği Türkçe desteği  Ön tanımlı atanan kısayolu linuxta gizli gezinme kısayolu ile çakıştığı için değiştirdim. Fakat windowsta yer imleri kısayolu ile çakışmaya başladı bu sefer.
-Bir sonraki ekleyeceğim özellik bu kısa yolun kullanıcı tarafından değiştirilebilmesini sağlamak olacak.
-Eklentinin proje sayfası burası. Proje sayfasından eklentinin ekran görüntülerine bakabilirsiniz.
-        <a href="https://blog.askin.ws/blog/post-2-del-icio-us/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://blog.askin.ws/tags/addon/">addon</a>&nbsp;
-        
-        <a href="https://blog.askin.ws/tags/browser/">browser</a>&nbsp;
-        
-        <a href="https://blog.askin.ws/tags/del.icio.us/">del.icio.us</a>&nbsp;
-        
-        <a href="https://blog.askin.ws/tags/extension/">extension</a>&nbsp;
-        
-        <a href="https://blog.askin.ws/tags/firefox/">Firefox</a>&nbsp;
-        
-        <a href="https://blog.askin.ws/tags/internet/">İnternet</a>&nbsp;
         
     </div>
     

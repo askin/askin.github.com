@@ -211,6 +211,66 @@
           
           
             <article class="post-preview">
+    <a href="https://blog.askin.ws/blog/cron-timezone-problemi/">
+        <h2 class="post-title">Cron Timezone Problemi</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on September 4, 2020
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;71&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Aşkın Özgür
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        <p>Zamanlanmış görevler için cron&rsquo;u sık sık kullanıyorum. Bugüne kadar
+beni yarı yolda bıraktığı hiç olmadı. Birkaç gün önce iş arkadaşım
+gece 12de çalışması gereken bir işin, gece 3te çalıştığını
+bildirdi. Önce böyle birşey olmaz dedim ama loglara bakınca doğru
+olduğunu anladım.</p>
+<p>Biraz araştırınca şunu öğrendim, timezona değiştiğinde eğer cron
+servisi yeniden başlatılmazsa eski timezone&rsquo;u kullanmaya devam
+ediyor.</p>
+<p>Kullandığız sistem göre aşağıdaki gibi bir komutla cron servisini
+yeniden başlatabilirsiniz.</p>
+<pre><code>service cron restart
+</code></pre>
+
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://blog.askin.ws/tags/crontab/">crontab</a>&nbsp;
+        
+        <a href="https://blog.askin.ws/tags/timezone/">timezone</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="https://blog.askin.ws/blog/emacs-fill-column-indicator/">
         <h2 class="post-title">Emacs Fill Column Indicator</h2>
         
@@ -658,70 +718,6 @@ Avantajları:
         <a href="https://blog.askin.ws/tags/kaf-sin-kaf/">Kaf Sin Kaf</a>&nbsp;
         
         <a href="https://blog.askin.ws/tags/kar%C5%9F%C4%B1yaka/">Karşıyaka</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://blog.askin.ws/blog/mysql-veritabani-ile-ilgili-bazi-bilgileri-ogrenmek/">
-        <h2 class="post-title">MySQL veritabanı ile ilgili bazı bilgileri öğrenmek</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on September 6, 2013
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;55&nbsp;words
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Aşkın Özgür
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        <p>MySQL kullanıyorsanız, phpMyAdmin gibi bir arayüzünüz olmadığı zaman veritabanı ile ilgili bilgi almak için aşağıdaki sorguları kullanabilirsiniz.</p>
-<p>Var olan veritabanlarını görmek:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">show</span> databases;
-</code></pre></div><p>Bir veritabanını kullanmak için seçmek:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">use veritabani_ismi;
-</code></pre></div><p>Bir veritabanındaki tabloları listelemek:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">show</span> tables;
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">show</span> tables <span style="color:#66d9ef">from</span> veritabani_ismi;
-</code></pre></div><p>Bir tablonun oluşturulma scriptini görme:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">show</span> <span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> tablo_ismi
-</code></pre></div><p>Bir tablonun kolonlarını görme:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">describe</span> tablo_adi
-</code></pre></div>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://blog.askin.ws/tags/database/">database</a>&nbsp;
-        
-        <a href="https://blog.askin.ws/tags/mysql/">mysql</a>&nbsp;
-        
-        <a href="https://blog.askin.ws/tags/query/">query</a>&nbsp;
-        
-        <a href="https://blog.askin.ws/tags/sorgu/">sorgu</a>&nbsp;
         
     </div>
     

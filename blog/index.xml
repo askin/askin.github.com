@@ -8,10 +8,22 @@
     <language>tr-TR</language>
     <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
     <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
-    <lastBuildDate>Tue, 25 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 04 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.askin.ws/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cron Timezone Problemi</title>
+      <link>https://blog.askin.ws/blog/cron-timezone-problemi/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/cron-timezone-problemi/</guid>
+      <description>Zamanlanmış görevler için cron&amp;rsquo;u sık sık kullanıyorum. Bugüne kadar beni yarı yolda bıraktığı hiç olmadı. Birkaç gün önce iş arkadaşım gece 12de çalışması gereken bir işin, gece 3te çalıştığını bildirdi. Önce böyle birşey olmaz dedim ama loglara bakınca doğru olduğunu anladım.
+Biraz araştırınca şunu öğrendim, timezona değiştiğinde eğer cron servisi yeniden başlatılmazsa eski timezone&amp;rsquo;u kullanmaya devam ediyor.
+Kullandığız sistem göre aşağıdaki gibi bir komutla cron servisini yeniden başlatabilirsiniz.
+service cron restart  </description>
+    </item>
     
     <item>
       <title>Emacs Fill Column Indicator</title>
