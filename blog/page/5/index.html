@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<html lang="tr" itemscope itemtype="http://schema.org/WebPage">
   <head>
     
 
@@ -57,7 +57,7 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Toggle navigation</span>
+        <span class="sr-only"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -216,13 +216,13 @@
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on November 8, 2010
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;88&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;88&nbsp;
   
   
     
@@ -239,7 +239,7 @@
         Öncelikle http://www.oracle.com/technetwork/database/enterprise-edition/jdbc101040-094982.html adresinden classes12.jar dosyasını indiriyoruz.
 Bu dosyayı bir dizine atıp, içeriğini bu dizine çıkartıyoruz. Bu dizini classpath değişkeninde belirtip kodlamaya başlıyoruz.
 import java.io.*; import java.sql.*; public class OraThin { public static void main(String[] args) { try { Connection con = null; Class.forName(&#34;oracle.jdbc.driver.OracleDriver&#34;); con=DriverManager.getConnection( &#34;jdbc:oracle:thin:@localhost:1521:dbname&#34;, &#34;username&#34;, &#34;password&#34;); Statement s = con.createStatement(); ResultSet rs = s.executeQuery(&#34;SELECT * FROM KISI&#34;); String name; String surname; while(rs.next()) { name = rs.getString(&#34;AD&#34;); surname = rs.getString(&#34;SOYAD&#34;); System.
-        <a href="https://blog.askin.ws/blog/java-ile-oracle-veritabanina-baglanmak/" class="post-read-more">[Read More]</a>
+        <a href="https://blog.askin.ws/blog/java-ile-oracle-veritabanina-baglanmak/" class="post-read-more">[]</a>
         
     </div>
 
@@ -269,13 +269,13 @@ import java.io.*; import java.sql.*; public class OraThin { public static void m
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on May 1, 2010
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;127&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;127&nbsp;
   
   
     
@@ -295,7 +295,7 @@ Mesela:
 def Merhaba(isim): print &#34;Merhaba %s&#34; % isim Bunun gibi sadece tek parametre alan bir fonksiyon için aşağıdaki gibi bir fonksiyon yeterli olacaktır.
 def BuyukAbi(func, param): func(param) BuyukAbi(Merhaba, &#34;kelebek&#34;) Merhaba kelebek Bu fonksiyon parametre olarak aldığı func fonksiyonuna param parametresini geçirecektir.
 Eğer fonksiyonun aldığı parametre sayısı belirsiz ise, yani farklı sayıda parametre alan fonksiyonlarla uğraşmak gerekiyorsa yanına birkaç ekleme daha yapmamız gerekiyor.
-        <a href="https://blog.askin.ws/blog/python-fonksiyona-parametre-olarak-fonksiyon-gecirmek/" class="post-read-more">[Read More]</a>
+        <a href="https://blog.askin.ws/blog/python-fonksiyona-parametre-olarak-fonksiyon-gecirmek/" class="post-read-more">[]</a>
         
     </div>
 
@@ -325,13 +325,13 @@ Eğer fonksiyonun aldığı parametre sayısı belirsiz ise, yani farklı sayıd
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on April 27, 2010
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;177&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;177&nbsp;
   
   
     
@@ -348,7 +348,7 @@ Eğer fonksiyonun aldığı parametre sayısı belirsiz ise, yani farklı sayıd
         Evet kışkırtıcı bir başlık attım :) Aslında yapacağımız olay bir structı nesne gibi kullanmak. Buna benzer bir kodu yıllar önce görmüştüm. O günden bu güne sürekli böyle bir şeyi nasıl yaparım diye araştırdım. Anca bugün çözebildim olayı ;) Kodu aşağıda yorum satırıyla beraber veriyorum. Yorumlarda gerekli açıklamaları yaptım.
 Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşıma bu çıktı, bende boş durmasın dedim :)
 /* * Sınıfımızı yaratıyoruz */ struct _myobject { // alt alanlar  int a, b; /* * Metod * Burada fonksiyon pointerı tanımlıyoruz */ int (*add)(struct _myobject*); }; // struct ön ekinden kurtuluyoruz typedef struct _myobject MyObject; /* * Asıl işi yapacak fonksiyonu tanımlıyoruz * MyObject structını parametre olarak alıyor */ int realAdd(MyObject* a) { return a-&gt;a + a-&gt;b; } int main ( void ) { /* * Nesnemizi oluşturuyoruz.
-        <a href="https://blog.askin.ws/blog/c-ile-nesne-yaratmak/" class="post-read-more">[Read More]</a>
+        <a href="https://blog.askin.ws/blog/c-ile-nesne-yaratmak/" class="post-read-more">[]</a>
         
     </div>
 
@@ -378,13 +378,13 @@ Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşı
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on April 8, 2010
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;160&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;160&nbsp;
   
   
     
@@ -400,7 +400,7 @@ Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşı
         
         Gece gece uyku tutmadı var olan bir programı kurcalamaya başladım. Amacım programın sitem çekmecesinden çalışabilir hale getirmekti.
 Her şeyi yaptım fakat bir türlü pencereyi gizleyemiyordum :) Doküman gtk_window_get_mnemonics_visible () fonksiyonunu kullanmamı söylüyordu, fakat kullandığım gtk sürümünde bu fonksiyon tanımlı değildi(2.18.7). Eski sürüm için olan dokümanı incelediğimde bu işi yapan bir fonksiyon yoktu. Sistemde kurulu gtk ve python ile bu işi yapabiliyordum. Normal olarak c ile de yapabilmem lazımdı:) Biraz inceledikten sonra, önce pencereyi gizleyen, ardından boyutunu eski haline getirip sonra tekrar gösteren bir fonksiyon olduğunu fark ettim.
-        <a href="https://blog.askin.ws/blog/gtk-2-18-9-pencere-gizleme-sorunu/" class="post-read-more">[Read More]</a>
+        <a href="https://blog.askin.ws/blog/gtk-2-18-9-pencere-gizleme-sorunu/" class="post-read-more">[]</a>
         
     </div>
 
@@ -430,13 +430,13 @@ Her şeyi yaptım fakat bir türlü pencereyi gizleyemiyordum :) Doküman gtk_wi
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on April 8, 2010
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;139&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;139&nbsp;
   
   
     
@@ -457,7 +457,7 @@ Blooger hesabımıza giriş yapıyoruz.
 Özelleştir -&gt; Ayarlar -&gt; Yayıncılık -&gt; Özel Alan-&gt; Gelişmiş Ayarlara Geçiş Yapın
 Buradaki kutuya alan adını yazın.
 &ldquo;Eksik dosya barındırma sistemini mi kullanıyorsunuz?&rdquo; kısmını olduğu gibi bırakıp, kelime doğrulamayı yapıp ayarları kaydediyoruz.
-        <a href="https://blog.askin.ws/blog/bloggera-kendi-alan-adinizi-yonlendirme/" class="post-read-more">[Read More]</a>
+        <a href="https://blog.askin.ws/blog/bloggera-kendi-alan-adinizi-yonlendirme/" class="post-read-more">[]</a>
         
     </div>
 
@@ -489,13 +489,13 @@ Buradaki kutuya alan adını yazın.
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on April 7, 2010
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;154&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;154&nbsp;
   
   
     
@@ -513,7 +513,7 @@ Buradaki kutuya alan adını yazın.
 Ufak bir örnek kod veriyorum. Onun üzerinden anlatacağım.
 import pygtk import gtk class ShowIcon: def __init__(self): self.icon = gtk.StatusIcon() self.icon.set_from_file(&#39;gtk.png&#39;) self.icon.set_tooltip_text(&#39;Hello Python!!!&#39;) self.icon.set_visible(True) self.icon.connect(&#34;activate&#34;, self.hello) gtk.main() def hello(self, widget): print &#39;Hello Python !!!&#39; if __name__ == &#39;__main__&#39;: icon = ShowIcon() 6. satırda asıl işimizi yapacak olan StatusIcon nesnesini yaratıyoruz.
 7. satırda sistem çekmecesinde hangi ikonun görüntüleneceğini belirtiyoruz. set_from_file ikonu dosyadan alacağımız anlamına geliyor.
-        <a href="https://blog.askin.ws/blog/pygtk-ile-sistem-cekmecesi/" class="post-read-more">[Read More]</a>
+        <a href="https://blog.askin.ws/blog/pygtk-ile-sistem-cekmecesi/" class="post-read-more">[]</a>
         
     </div>
 
@@ -547,13 +547,13 @@ import pygtk import gtk class ShowIcon: def __init__(self): self.icon = gtk.Stat
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on April 6, 2010
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;79&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;79&nbsp;
   
   
     
@@ -570,7 +570,7 @@ import pygtk import gtk class ShowIcon: def __init__(self): self.icon = gtk.Stat
         PyGtk ile ara yüzüzünü hazırladığım bir program içinde thread kullanmam gerekiyordu. Kod çalışıyordu fakat thread işlemi istediğim gibi çalışmıyordu. Arayüzde bir değişiklik olduğu zaman thread çalışıyor, onun dışında hiç bir şekilde tepki vermiyordu.
 Uzun süre hatanın kodda olabileceğini düşündüm. Ama sonunda python gtk.main() ve thread 3&rsquo;lüsünü aynı sorgu içinde googleda aratınca cevabı buldum. Gtk&rsquo;ya thread kullandığımı anlatmam gerekiyordu :)
 gtk.gdk.threads_init() Bu satırı kodumun başına eklediğimde herşey istediğim gibi çalışmaya başladı :)
-        <a href="https://blog.askin.ws/blog/pygtk-ve-thread-sorunu/" class="post-read-more">[Read More]</a>
+        <a href="https://blog.askin.ws/blog/pygtk-ve-thread-sorunu/" class="post-read-more">[]</a>
         
     </div>
 
@@ -604,13 +604,13 @@ gtk.gdk.threads_init() Bu satırı kodumun başına eklediğimde herşey istedi�
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on December 7, 2009
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;236&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;236&nbsp;
   
   
     
@@ -626,7 +626,7 @@ gtk.gdk.threads_init() Bu satırı kodumun başına eklediğimde herşey istedi�
         
         Bikaç gündür Pardus ve Eduroam ile uğraşıyordum. Eduroama bağlanmak için pratik yollar buldum fakat hiç birisi Ağ Yöneticisi kullanarak bağlanmanın zevkini vermiyordu.
 2 gün boyunca Ağ Yöneticisinin neresini değiştirmem gerektiğini arayıp durdum. Sonunda wireless-tools adlı paketin aradığım paket olduğunu keşfettim :) wireless tools paketi wpa_supplicant kullanarak wpa şifreleme kullanan ağlara bağlanmaya yarıyor. Sağolsun Pardus geliştiricileri wpa_supplicant paketi için dbus kullanan bir python betiği yazmışlar. Bu betik içinde tanımlanan methodlarla wpa_supplicantı yönetebiliyoruz.
-        <a href="https://blog.askin.ws/blog/pardus-ag-yoneticisi-ile-eduroam-agina-baglanmak/" class="post-read-more">[Read More]</a>
+        <a href="https://blog.askin.ws/blog/pardus-ag-yoneticisi-ile-eduroam-agina-baglanmak/" class="post-read-more">[]</a>
         
     </div>
 
@@ -662,13 +662,13 @@ gtk.gdk.threads_init() Bu satırı kodumun başına eklediğimde herşey istedi�
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on December 5, 2009
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;226&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;226&nbsp;
   
   
     
@@ -686,7 +686,7 @@ gtk.gdk.threads_init() Bu satırı kodumun başına eklediğimde herşey istedi�
 Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız için yeterli. Bu araçlar wpa_supplicant ve dhcpcd. Wpa_supplicant ağda kimlik denetimini sağlamak için, dhcpcd ise ağdan ip almamız için gerekli.
 Öncelikle wpa_supplicant için ayar dosyası oluşturmamız gerekiyor.
 network={ ssid=&quot;eduroam&quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap=TTLS phase2=&quot;auth=PAP&quot; anonymous_identity=&quot;anonymous@ogr.deu.edu.tr&quot; identity=&quot;ogrencinumarasi@ogr.deu.edu.tr&quot; password=&quot;sifre&quot; } Bu ayarlar Dokuz Eylül Üniversitesi için.
-        <a href="https://blog.askin.ws/blog/pardus-ile-eduroam-agina-baglanma/" class="post-read-more">[Read More]</a>
+        <a href="https://blog.askin.ws/blog/pardus-ile-eduroam-agina-baglanma/" class="post-read-more">[]</a>
         
     </div>
 
@@ -726,13 +726,13 @@ network={ ssid=&quot;eduroam&quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on September 16, 2009
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;137&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;137&nbsp;
   
   
     
@@ -751,7 +751,7 @@ Malum servisler arıza ne olursa olsun hemen format atma merakındalar.
 Tekrar bulamayacağım 20GB kadar, film müzik derken 100GB kadar verim vardı. Diski alınca benim hard diski arkadaşın bilgisayarına takıp hepsini aldım.
 Birazda harici diskten bahsedeyim.
 Disk biraz büyük gibi. Gerçi daha büyüklerini de gördüm, ama biraz daha ufak olabilirdi. Gayet hafif, Yanında taşımamız gereken bir adaptörü olmasa tadından yenmez.
-        <a href="https://blog.askin.ws/blog/trekstor-maxi-g-u-500gb-harici-hard-disk/" class="post-read-more">[Read More]</a>
+        <a href="https://blog.askin.ws/blog/trekstor-maxi-g-u-500gb-harici-hard-disk/" class="post-read-more">[]</a>
         
     </div>
 
@@ -776,12 +776,12 @@ Disk biraz büyük gibi. Gerçi daha büyüklerini de gördüm, ama biraz daha u
           <ul class="pager main-pager">
             
               <li class="previous">
-                <a href="https://blog.askin.ws/blog/page/4/">&larr; Newer Posts</a>
+                <a href="https://blog.askin.ws/blog/page/4/">&larr; </a>
               </li>
             
             
               <li class="next">
-                <a href="https://blog.askin.ws/blog/page/6/">Older Posts &rarr;</a>
+                <a href="https://blog.askin.ws/blog/page/6/"> &rarr;</a>
               </li>
             
           </ul>
@@ -899,7 +899,7 @@ Disk biraz büyük gibi. Gerçi daha büyüklerini de gördüm, ama biraz daha u
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.74.3</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
           
         </p>
       </div>

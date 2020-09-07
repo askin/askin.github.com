@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<html lang="tr" itemscope itemtype="http://schema.org/WebPage">
   <head>
     
 
@@ -60,7 +60,7 @@ import java.io.*; import java.sql.*; public class OraThin { public static void m
   },
   "headline": "Java ile Oracle Veritabanına bağlanmak.",
   "description" : "Öncelikle http:\/\/www.oracle.com\/technetwork\/database\/enterprise-edition\/jdbc101040-094982.html adresinden classes12.jar dosyasını indiriyoruz.\nBu dosyayı bir dizine atıp, içeriğini bu dizine çıkartıyoruz. Bu dizini classpath değişkeninde belirtip kodlamaya başlıyoruz.\nimport java.io.*; import java.sql.*; public class OraThin { public static void main(String[] args) { try { Connection con = null; Class.forName(\u0026#34;oracle.jdbc.driver.OracleDriver\u0026#34;); con=DriverManager.getConnection( \u0026#34;jdbc:oracle:thin:@localhost:1521:dbname\u0026#34;, \u0026#34;username\u0026#34;, \u0026#34;password\u0026#34;); Statement s = con.createStatement(); ResultSet rs = s.executeQuery(\u0026#34;SELECT * FROM KISI\u0026#34;); String name; String surname; while(rs.next()) { name = rs.getString(\u0026#34;AD\u0026#34;); surname = rs.getString(\u0026#34;SOYAD\u0026#34;); System.",
-  "inLanguage" : "en",
+  "inLanguage" : "tr",
   "wordCount":  88 ,
   "datePublished" : "2010-11-08T20:29:00",
   "dateModified" : "2010-11-08T20:29:00",
@@ -113,7 +113,7 @@ Bu dosyayı bir dizine atıp, içeriğini bu dizine …">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Toggle navigation</span>
+        <span class="sr-only"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -367,7 +367,7 @@ Bu dosyayı bir dizine atıp, içeriğini bu dizine …">
           
 
           
-                  <h4 class="see-also">See also</h4>
+                  <h4 class="see-also"></h4>
                   <ul>
                 
                 
@@ -391,12 +391,12 @@ Bu dosyayı bir dizine atıp, içeriğini bu dizine …">
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://blog.askin.ws/blog/python-fonksiyona-parametre-olarak-fonksiyon-gecirmek/" data-toggle="tooltip" data-placement="top" title="Python, Fonksiyona Parametre Olarak Fonksiyon Geçirmek">&larr; Previous Post</a>
+              <a href="https://blog.askin.ws/blog/python-fonksiyona-parametre-olarak-fonksiyon-gecirmek/" data-toggle="tooltip" data-placement="top" title="Python, Fonksiyona Parametre Olarak Fonksiyon Geçirmek">&larr; </a>
             </li>
           
           
             <li class="next">
-              <a href="https://blog.askin.ws/blog/genius/" data-toggle="tooltip" data-placement="top" title="Genius!">Next Post &rarr;</a>
+              <a href="https://blog.askin.ws/blog/genius/" data-toggle="tooltip" data-placement="top" title="Genius!"> &rarr;</a>
             </li>
           
         </ul>
@@ -546,7 +546,7 @@ Bu dosyayı bir dizine atıp, içeriğini bu dizine …">
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.74.3</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
           
         </p>
       </div>

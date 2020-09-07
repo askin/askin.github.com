@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<html lang="tr" itemscope itemtype="http://schema.org/WebPage">
   <head>
     
 
@@ -57,7 +57,7 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Toggle navigation</span>
+        <span class="sr-only"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -216,13 +216,13 @@
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on April 8, 2012
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;43&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;43&nbsp;
   
   
     
@@ -279,13 +279,13 @@
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on August 4, 2011
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;46&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;46&nbsp;
   
   
     
@@ -337,13 +337,13 @@
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on March 27, 2011
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;6&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;6&nbsp;
   
   
     
@@ -391,13 +391,13 @@
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on February 27, 2011
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;24&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;24&nbsp;
   
   
     
@@ -432,13 +432,13 @@
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on February 27, 2011
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;354&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;354&nbsp;
   
   
     
@@ -454,7 +454,7 @@
         
         Çalıştığım projede linuxta paralel port ile lcd ekran kullanmam gerekti. Neredeyse internetin altını üstüne getirdim ama işime yarar çok birşey bulamadım. Sonunda DOS için yazılmış bir kod buldum. Bu kodu biraz inceleyip, gerekli püf noktaları bulunca kodu linux&rsquo;a uydurmak çok zor olmadı. Hatta neredeyse sadece kullanılan fonksiyonun adını ve parametre yerlerini değiştirdim :)
 Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read/write seçimi için kullanılıyor.
-        <a href="https://blog.askin.ws/blog/linux-paralel-port-ile-2x16-lcd-ekran-kullanimi/" class="post-read-more">[Read More]</a>
+        <a href="https://blog.askin.ws/blog/linux-paralel-port-ile-2x16-lcd-ekran-kullanimi/" class="post-read-more">[]</a>
         
     </div>
 
@@ -486,13 +486,13 @@ Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data v
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on December 11, 2010
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;249&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;249&nbsp;
   
   
     
@@ -509,7 +509,7 @@ Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data v
         Bir proje için server sockete ihtiyaç duydum. Öncelikli dilim python olmasına rağmen, sunucu solaris olunca java ile yazmak daha cazip geldi. Öncelikli olarak test amaçlı birkaç satır kod yazdım. Akla gelen ilk örnek echo server oluyor :) aşağıda multi thread çalışan, birden fazla kullanıcıya cevap verebilecek bir echo server var:)
 Server.java
 /** * @author: Aşkın Yollu */ import java.net.*; import java.io.*; class Server { public static void main(String args[]) throws Exception { ServerSocket myService = null; Socket client = null; Worker tmpworker = null; try { // 1234 nolu portu dinle  myService = new ServerSocket(1234); } catch (IOException e) { System.
-        <a href="https://blog.askin.ws/blog/java-ile-server-socket-yapimi/" class="post-read-more">[Read More]</a>
+        <a href="https://blog.askin.ws/blog/java-ile-server-socket-yapimi/" class="post-read-more">[]</a>
         
     </div>
 
@@ -541,13 +541,13 @@ Server.java
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on December 8, 2010
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;38&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;38&nbsp;
   
   
     
@@ -596,13 +596,13 @@ Server.java
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on December 6, 2010
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;39&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;39&nbsp;
   
   
     
@@ -655,13 +655,13 @@ Birde buna kısayol eklesek tadından yenmez.</p>
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on December 1, 2010
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;39&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;39&nbsp;
   
   
     
@@ -715,13 +715,13 @@ date -s <span style="color:#ae81ff">123123592010</span>
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on November 24, 2010
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;38&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;38&nbsp;
   
   
     
@@ -764,12 +764,12 @@ ssh user@remote.host <span style="color:#e6db74">&#34;cd /original/directory; ta
           <ul class="pager main-pager">
             
               <li class="previous">
-                <a href="https://blog.askin.ws/blog/page/3/">&larr; Newer Posts</a>
+                <a href="https://blog.askin.ws/blog/page/3/">&larr; </a>
               </li>
             
             
               <li class="next">
-                <a href="https://blog.askin.ws/blog/page/5/">Older Posts &rarr;</a>
+                <a href="https://blog.askin.ws/blog/page/5/"> &rarr;</a>
               </li>
             
           </ul>
@@ -887,7 +887,7 @@ ssh user@remote.host <span style="color:#e6db74">&#34;cd /original/directory; ta
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.74.3</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
           
         </p>
       </div>
