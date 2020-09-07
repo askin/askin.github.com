@@ -5,6 +5,8 @@ title = "Aşkın Özgür"
 theme = "beautifulhugo"
 disqusShortname = "askin-ozgurun-web-gunlugu"
 
+defaultContentLanguage = "tr"
+
 [menu]
   [[menu.main]]
     identifier = "home"
