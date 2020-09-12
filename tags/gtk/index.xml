@@ -20,7 +20,7 @@
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/gtk-2-18-9-pencere-gizleme-sorunu/</guid>
       <description>Gece gece uyku tutmadı var olan bir programı kurcalamaya başladım. Amacım programın sitem çekmecesinden çalışabilir hale getirmekti.
-Her şeyi yaptım fakat bir türlü pencereyi gizleyemiyordum :) Doküman gtk_window_get_mnemonics_visible () fonksiyonunu kullanmamı söylüyordu, fakat kullandığım gtk sürümünde bu fonksiyon tanımlı değildi(2.18.7). Eski sürüm için olan dokümanı incelediğimde bu işi yapan bir fonksiyon yoktu. Sistemde kurulu gtk ve python ile bu işi yapabiliyordum. Normal olarak c ile de yapabilmem lazımdı:) Biraz inceledikten sonra, önce pencereyi gizleyen, ardından boyutunu eski haline getirip sonra tekrar gösteren bir fonksiyon olduğunu fark ettim.</description>
+Her şeyi yaptım fakat bir türlü pencereyi gizleyemiyordum :) Doküman gtk_window_get_mnemonics_visible () fonksiyonunu kullanmamı söylüyordu, fakat kullandığım gtk sürümünde bu fonksiyon tanımlı değildi(2.18.7). Eski sürüm için olan dokümanı incelediğimde bu işi yapan bir fonksiyon yoktu. Sistemde kurulu gtk ve python ile bu işi yapabiliyordum. Normal olarak c ile de yapabilmem lazımdı:) Biraz inceledikten sonra, önce pencereyi gizleyen, ardından boyutunu eski haline getirip sonra tekrar gösteren bir fonksiyon olduğunu fark ettim. Benim istediğim işi yapıyor fakat yanında birde fazlalığı vardı.(gtk_window_reshow_with_initial_size) İnternette biraz daha araştırıp umudumu kaybedince mecburen kaynak koda baktım.</description>
     </item>
     
     <item>
@@ -32,7 +32,9 @@ Her şeyi yaptım fakat bir türlü pencereyi gizleyemiyordum :) Doküman gtk_wi
       <description>Gtk ile çok kolay bir şekilde geliştirdiğiniz uygulamayı sistem çekmecesinde gösterebilirsiniz.
 Ufak bir örnek kod veriyorum. Onun üzerinden anlatacağım.
 import pygtk import gtk class ShowIcon: def __init__(self): self.icon = gtk.StatusIcon() self.icon.set_from_file(&amp;#39;gtk.png&amp;#39;) self.icon.set_tooltip_text(&amp;#39;Hello Python!!!&amp;#39;) self.icon.set_visible(True) self.icon.connect(&amp;#34;activate&amp;#34;, self.hello) gtk.main() def hello(self, widget): print &amp;#39;Hello Python !!!&amp;#39; if __name__ == &amp;#39;__main__&amp;#39;: icon = ShowIcon() 6. satırda asıl işimizi yapacak olan StatusIcon nesnesini yaratıyoruz.
-7. satırda sistem çekmecesinde hangi ikonun görüntüleneceğini belirtiyoruz. set_from_file ikonu dosyadan alacağımız anlamına geliyor.</description>
+7. satırda sistem çekmecesinde hangi ikonun görüntüleneceğini belirtiyoruz. set_from_file ikonu dosyadan alacağımız anlamına geliyor. Eğer gtk&amp;rsquo;nın sunduğu standart ikonları kullanmak istiyorsanız set_from_stock kullanmalısınız.
+icon.set_from_stock(gtk.STOCK_ABOUT) 8. satırda ikonun üzerine geldiğimizde görünmesini istediğimiz yazıyı belirliyoruz.
+9. satırda ikonun başlangıçtaki görünürlüğünü belirliyoruz. Bu satırı yazmasak da görünür başlıyor.</description>
     </item>
     
     <item>
@@ -43,7 +45,8 @@ import pygtk import gtk class ShowIcon: def __init__(self): self.icon = gtk.Stat
       <guid>https://blog.askin.ws/blog/pygtk-ve-thread-sorunu/</guid>
       <description>PyGtk ile ara yüzüzünü hazırladığım bir program içinde thread kullanmam gerekiyordu. Kod çalışıyordu fakat thread işlemi istediğim gibi çalışmıyordu. Arayüzde bir değişiklik olduğu zaman thread çalışıyor, onun dışında hiç bir şekilde tepki vermiyordu.
 Uzun süre hatanın kodda olabileceğini düşündüm. Ama sonunda python gtk.main() ve thread 3&amp;rsquo;lüsünü aynı sorgu içinde googleda aratınca cevabı buldum. Gtk&amp;rsquo;ya thread kullandığımı anlatmam gerekiyordu :)
-gtk.gdk.threads_init() Bu satırı kodumun başına eklediğimde herşey istediğim gibi çalışmaya başladı :)</description>
+gtk.gdk.threads_init() Bu satırı kodumun başına eklediğimde herşey istediğim gibi çalışmaya başladı :)
+Sizde böyle bir sorunla karşılaşırsanız aklınızda bulunsun :)</description>
     </item>
     
   </channel>

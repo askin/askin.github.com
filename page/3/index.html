@@ -298,11 +298,20 @@
     </p>
     <div class="post-entry">
         
-        Identi.ca hesabini emacs ile takip etmek çok basit ve eğlenceli. identica-mode kullanarak identi.ca hesabini takip edebiliyoruz. identica-mode elpa ya da marmalade deposunda bulunmuyor. Bunun için eski yöntemle kurmak gerek.
-Öncelikle gerekli dosyaları gerekli yerlere indiriyoruz(git deposundan alacağım).
-cd ~/.elisp git clone http://git.savannah.gnu.org/cgit/identica-mode.git  Şimdi .emacs dosyamıza gerekli satırları ekleyelim.
-(setq load-path (cons &quot;~/.elisp/identica-mode&quot; load-path)) (require 'identica-mode) (setq identica-username &quot;userName&quot;)  Parolasız giriş yapabilmek için ~/.authinfo adinda bir dosya olusturup içini aşağıdaki gibi dolduralım.
-        <a href="https://blog.askin.ws/blog/emacs-ile-identi-ca-kullanimi/" class="post-read-more">[]</a>
+        <p>Identi.ca hesabini emacs ile takip etmek çok basit ve eğlenceli. identica-mode kullanarak identi.ca hesabini takip edebiliyoruz. identica-mode elpa ya da marmalade deposunda bulunmuyor. Bunun için eski yöntemle kurmak gerek.</p>
+<p>Öncelikle gerekli dosyaları gerekli yerlere indiriyoruz(git deposundan alacağım).</p>
+<pre><code>cd ~/.elisp
+git clone http://git.savannah.gnu.org/cgit/identica-mode.git
+</code></pre>
+<p>Şimdi .emacs dosyamıza gerekli satırları ekleyelim.</p>
+<pre><code>(setq load-path (cons &quot;~/.elisp/identica-mode&quot; load-path))
+(require 'identica-mode)
+(setq identica-username &quot;userName&quot;)
+</code></pre>
+<p>Parolasız giriş yapabilmek için <em>~/.authinfo</em> adinda bir dosya olusturup içini aşağıdaki gibi dolduralım.</p>
+<pre><code>machine identi.ca login kullaniciAdi password parola
+</code></pre>
+
         
     </div>
 
@@ -515,6 +524,7 @@ sudo apt-get install subversion Kurulum tamamlandıktan sonra gerekli tüm araç
 Bir depo oluşturalım.
 svnadmin create depom depom adli dizinde bir depo oluşturmuş olduk. Bu depo üzerinde gerekli düzenlemeleri yapalım.
 depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu dosyayı açıp [general] başlığı altındaki ayarları düzenliyoruz. Burdaki tüm ayarlar yorum satırı haline getirişmiş, bunlardan işimize yarayanları aktif hale getirmemiz gerekiyor.
+# anon-access = read  Tanımladığımız kullanıcılar dışında kalan kişilerin yetkilerini düzenlemek için kullanıyoruz. Eğer yorum satırı halinde bırakırsak tanımsız kullanıcılar depo üzerinde okuma hakkına sahip oluyorlar.
         <a href="https://blog.askin.ws/blog/subversion-sunucu-kurulumu/" class="post-read-more">[]</a>
         
     </div>
@@ -568,7 +578,7 @@ depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu do
     <div class="post-entry">
         
         Sunucu:
-#include &lt;stdio.h&gt;#include &lt;string.h&gt;#include &lt;sys/types.h&gt;#include &lt;sys/socket.h&gt;#include &lt;netinet/in.h&gt; #define MY_PORT 3333  int main(int argc, char *argv[]) { int sockfd, new_fd; struct sockaddr_in my_addr; // hedef adres  struct sockaddr_in their_addr; // baglanti yapan adres  int sin_size, rt; // gelen verinin tutuldugu buffer  char buf[32]; // islem yapmak icin gerekli dosya gosterici  sockfd = socket(AF_INET, SOCK_DGRAM, 0); sin_size = sizeof(struct sockaddr_in); // adres ile ilgili ayarlar  my_addr.sin_family = AF_INET; my_addr.
+#include &lt;stdio.h&gt;#include &lt;string.h&gt;#include &lt;sys/types.h&gt;#include &lt;sys/socket.h&gt;#include &lt;netinet/in.h&gt; #define MY_PORT 3333  int main(int argc, char *argv[]) { int sockfd, new_fd; struct sockaddr_in my_addr; // hedef adres  struct sockaddr_in their_addr; // baglanti yapan adres  int sin_size, rt; // gelen verinin tutuldugu buffer  char buf[32]; // islem yapmak icin gerekli dosya gosterici  sockfd = socket(AF_INET, SOCK_DGRAM, 0); sin_size = sizeof(struct sockaddr_in); // adres ile ilgili ayarlar  my_addr.sin_family = AF_INET; my_addr.sin_port = htons(MY_PORT); // kullanilacak port  my_addr.sin_addr.s_addr = INADDR_ANY; // mevcut ip adresi  memset(&amp;(my_addr.sin_zero), 0, 8); // geri kalani 0la  // socket ile dosyayi iliskilendir  bind(sockfd, (struct sockaddr *)&amp;my_addr, sizeof(struct sockaddr)); while ( 1 ) { rt = recvfrom (sockfd, buf, 12, 0, (struct sockaddr *)&amp;their_addr, &amp;sin_size); if (rt &gt; 0) { printf (&#34;recv: %s\n&#34;, buf); } else if (rt &lt; 0) { printf(&#34;Baglanti koptu\n&#34;); break; } } close(sockfd); return 0; } İstemci:
         <a href="https://blog.askin.ws/blog/udp-broadcast-sunucu-istemci/" class="post-read-more">[]</a>
         
     </div>

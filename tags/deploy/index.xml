@@ -19,8 +19,12 @@
       <pubDate>Sat, 12 Sep 2020 00:00:00 +0000</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/apache-tomcat-parallel-deploy/</guid>
-      <description>Apache Tomcat kullanıyorsanız aynı uygulamanın birden fazla sürümünü aynı anda aynı path üzerinde çalıştırabilirsiniz. Bu deploy yaparken kesintisiz hizmet sağlamak için çok yardımcı oluyor. Buna Parallel Deployment deniyor. Paralel deploy sırasında eğer uygulamanın bir önceki versiyonunda oturum açılmışsa istekler oraya gitmeye devam ediyor, yeni oturumlar yeni sürüme gitmeye başlıyor.
-Paralel deploy yapabilmek için oluşturulan war dosyasının bir versiyona sahip olması gerekmekte. Bunu yapabilmek için dosya ismini paket-ismi##VERSION.war şeklinde yapmak gerekiyor. Eğer Maven kullanıyorsanız pom.</description>
+      <description>&lt;p&gt;Apache Tomcat kullanıyorsanız aynı uygulamanın birden fazla sürümünü
+aynı anda aynı path üzerinde çalıştırabilirsiniz. Bu deploy yaparken
+kesintisiz hizmet sağlamak için çok yardımcı oluyor. Buna &lt;strong&gt;Parallel
+Deployment&lt;/strong&gt; deniyor. Paralel deploy sırasında eğer uygulamanın bir
+önceki versiyonunda oturum açılmışsa istekler oraya gitmeye devam
+ediyor, yeni oturumlar yeni sürüme gitmeye başlıyor.&lt;/p&gt;</description>
     </item>
     
   </channel>

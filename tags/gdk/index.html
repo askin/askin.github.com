@@ -236,10 +236,12 @@
     </p>
     <div class="post-entry">
         
-        PyGtk ile ara yüzüzünü hazırladığım bir program içinde thread kullanmam gerekiyordu. Kod çalışıyordu fakat thread işlemi istediğim gibi çalışmıyordu. Arayüzde bir değişiklik olduğu zaman thread çalışıyor, onun dışında hiç bir şekilde tepki vermiyordu.
-Uzun süre hatanın kodda olabileceğini düşündüm. Ama sonunda python gtk.main() ve thread 3&rsquo;lüsünü aynı sorgu içinde googleda aratınca cevabı buldum. Gtk&rsquo;ya thread kullandığımı anlatmam gerekiyordu :)
-gtk.gdk.threads_init() Bu satırı kodumun başına eklediğimde herşey istediğim gibi çalışmaya başladı :)
-        <a href="https://blog.askin.ws/blog/pygtk-ve-thread-sorunu/" class="post-read-more">[]</a>
+        <p><img src="/uploads/2010/04/gtk.png" alt="Gtk" title="Gtk">PyGtk ile ara yüzüzünü hazırladığım bir program içinde thread kullanmam gerekiyordu. Kod çalışıyordu fakat thread işlemi istediğim gibi çalışmıyordu. Arayüzde bir değişiklik olduğu zaman thread çalışıyor, onun dışında hiç bir şekilde tepki vermiyordu.</p>
+<p>Uzun süre hatanın kodda olabileceğini düşündüm. Ama sonunda python gtk.main() ve thread 3&rsquo;lüsünü aynı sorgu içinde googleda aratınca cevabı buldum. Gtk&rsquo;ya thread kullandığımı anlatmam gerekiyordu :)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">gtk<span style="color:#f92672">.</span>gdk<span style="color:#f92672">.</span>threads_init()
+</code></pre></div><p>Bu satırı kodumun başına eklediğimde herşey istediğim gibi çalışmaya başladı :)</p>
+<p>Sizde böyle bir sorunla karşılaşırsanız aklınızda bulunsun :)</p>
+
         
     </div>
 

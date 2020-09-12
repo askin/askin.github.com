@@ -21,7 +21,7 @@
       <guid>https://blog.askin.ws/blog/du-wildcard-ile-gizli-dosyalar/</guid>
       <description>du komutunu çok sık kullanıyorum. Makinede yer sıkıntısı yaşadığım zaman kesinlikle hayat kurtarıyor. Genellikle aşağıdaki şekilde kullanıyorum.
 du -sh * | sort -h Bu komut anlaşılır bir birimle tüm alt dizinlerin boyutlarını hesaplayıp küçükten büyüğe doğru sıralıyor. Bu komutun ve birçok linux komutunun sıkıntısı, wildcard kullanıldığında gizli dosyaları/dizinleri göstermiyor. Tabi bu kullandığınız kabukla ilgili. Ben bash kullanıyorum. Bunu aşmak için komutu aşağıdaki şekilde kullanabilirsiniz.
-du -sh .[!.]* * | sort -h Bu komutun da biraz sıkıntılar var.</description>
+du -sh .[!.]* * | sort -h Bu komutun da biraz sıkıntılar var. Mesela dosya ismi iki nokta ile başlıyorsa listelemeyecek malesef. Fakat bu şekilde işimi görüyor.</description>
     </item>
     
     <item>
@@ -30,10 +30,11 @@ du -sh .[!.]* * | sort -h Bu komutun da biraz sıkıntılar var.</description>
       <pubDate>Fri, 15 Nov 2013 17:17:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/screen-ile-irssi-kullanim-kilavuzu/</guid>
-      <description>irssi~[[1]](#irssiwebsite &amp;ldquo;Irssi Web Sistesi&amp;rdquo; id=&amp;quot;hohoho&amp;rdquo;)~ komut satırından çalışan ve bir çok geliştirici için popüler olan bir IRC istemcisidir. Irssi GNU Screen~[2]~ programı ile birlikte kullanılarak çıkış yapmadan bir veya birden fazla kabuk yaratabilirsiniz. Sürekli biligisayar değiltirip fakat irssi&amp;rsquo;a kaldığınız yerden devam etmek istediğinizde çok kullanılışılır.
+      <description>irssi komut satırından çalışan ve bir çok geliştirici için popüler olan bir IRC istemcisidir. Irssi GNU Screen programı ile birlikte kullanılarak çıkış yapmadan bir veya birden fazla kabuk yaratabilirsiniz. Sürekli biligisayar değiltirip fakat irssi&amp;rsquo;a kaldığınız yerden devam etmek istediğinizde çok kullanılışılır.
 Avantajları:
  Kişiler size mesaj bırakabilir. Siz dışardayken yapılan görüşmeleri sonradan yakalayabilirsiniz (genellikle &amp;ldquo;scroolback&amp;rdquo; olarak adlandırılır).  Yönergeler:
- Bir adet linux VPS edinin ya da sık sık yeniden başlatılmayacak, ihtiyacınız olan yerden bağlanabileceğiniz *nix makina üzerinde ssh hesabı edinin.</description>
+  Bir adet linux VPS edinin ya da sık sık yeniden başlatılmayacak, ihtiyacınız olan yerden bağlanabileceğiniz *nix makina üzerinde ssh hesabı edinin.
+  Bu hesaba bağlanmak için ssh kullanın. Windowsta PuTTY gibi bir istemci kullanın. Eğer Linux yada Unix temelli bir işletim sistemi kullanıyorsanız zaten ssh kuruludur.</description>
     </item>
     
     <item>
@@ -45,7 +46,8 @@ Avantajları:
       <description>Malesef sd kart olmadan raspberry pi&amp;rsquo;yı boot etmemiz mümkün olmuyor. Benim elimde 1GB&amp;rsquo;lık bir sd kart vardı ve 2GB dan daha ufak imaj dosyaları bulamadım. Bu nedenle usb bellek ile boot etme ihtiyacı duydum.
 Benim sistemimde usb bellek ve sd kart aşağıdaki şekilde tanındı:
  usb: /dev/sdd sd: /dev/sde  Öncelikle indirdiğimiz imaj dosyasını usb belleğimize kopyalıyoruz
-dd if=2013-02-09-wheezy-raspbian.img of=/dev/sdd  Elimizde bulunan sd karta 1 adet fat32 bölüm oluşturuyoruz (oluşturduğunuz bölüm hem ilk sırada hem de birincil bir bölüm olmalı).</description>
+dd if=2013-02-09-wheezy-raspbian.img of=/dev/sdd  Elimizde bulunan sd karta 1 adet fat32 bölüm oluşturuyoruz (oluşturduğunuz bölüm hem ilk sırada hem de birincil bir bölüm olmalı). Bunu ister Gparted gibi bir araçla yapın isterseniz fdisk kullanın. Bölümleme işlemlerini yaptıktan sonra aşağıdaki komutları uygulayın.
+mkdir /tmp/mnt_sd /tmp/mnt_usb mount /dev/sdd1 /tmp/mnt_usb mount /dev/sde1 /tmp/mnt_sd cp /tmp/mnt_usb/* /tmp/mnt_sd  Bu işlemleri yaptıktan sonra /tmp/mnt_sd/cmdline.</description>
     </item>
     
     <item>
@@ -69,7 +71,8 @@ if [ -s dosyaadi ]; then echo &amp;#34;Dosya dolu&amp;#34;; else echo &amp;#34;D
 sudo apt-get install subversion Kurulum tamamlandıktan sonra gerekli tüm araçlara sahip olmuş oluyoruz.
 Bir depo oluşturalım.
 svnadmin create depom depom adli dizinde bir depo oluşturmuş olduk. Bu depo üzerinde gerekli düzenlemeleri yapalım.
-depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu dosyayı açıp [general] başlığı altındaki ayarları düzenliyoruz. Burdaki tüm ayarlar yorum satırı haline getirişmiş, bunlardan işimize yarayanları aktif hale getirmemiz gerekiyor.</description>
+depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu dosyayı açıp [general] başlığı altındaki ayarları düzenliyoruz. Burdaki tüm ayarlar yorum satırı haline getirişmiş, bunlardan işimize yarayanları aktif hale getirmemiz gerekiyor.
+# anon-access = read  Tanımladığımız kullanıcılar dışında kalan kişilerin yetkilerini düzenlemek için kullanıyoruz. Eğer yorum satırı halinde bırakırsak tanımsız kullanıcılar depo üzerinde okuma hakkına sahip oluyorlar.</description>
     </item>
     
     <item>
@@ -79,7 +82,7 @@ depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu do
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/udp-broadcast-sunucu-istemci/</guid>
       <description>Sunucu:
-#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;string.h&amp;gt;#include &amp;lt;sys/types.h&amp;gt;#include &amp;lt;sys/socket.h&amp;gt;#include &amp;lt;netinet/in.h&amp;gt; #define MY_PORT 3333  int main(int argc, char *argv[]) { int sockfd, new_fd; struct sockaddr_in my_addr; // hedef adres  struct sockaddr_in their_addr; // baglanti yapan adres  int sin_size, rt; // gelen verinin tutuldugu buffer  char buf[32]; // islem yapmak icin gerekli dosya gosterici  sockfd = socket(AF_INET, SOCK_DGRAM, 0); sin_size = sizeof(struct sockaddr_in); // adres ile ilgili ayarlar  my_addr.sin_family = AF_INET; my_addr.</description>
+#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;string.h&amp;gt;#include &amp;lt;sys/types.h&amp;gt;#include &amp;lt;sys/socket.h&amp;gt;#include &amp;lt;netinet/in.h&amp;gt; #define MY_PORT 3333  int main(int argc, char *argv[]) { int sockfd, new_fd; struct sockaddr_in my_addr; // hedef adres  struct sockaddr_in their_addr; // baglanti yapan adres  int sin_size, rt; // gelen verinin tutuldugu buffer  char buf[32]; // islem yapmak icin gerekli dosya gosterici  sockfd = socket(AF_INET, SOCK_DGRAM, 0); sin_size = sizeof(struct sockaddr_in); // adres ile ilgili ayarlar  my_addr.sin_family = AF_INET; my_addr.sin_port = htons(MY_PORT); // kullanilacak port  my_addr.sin_addr.s_addr = INADDR_ANY; // mevcut ip adresi  memset(&amp;amp;(my_addr.sin_zero), 0, 8); // geri kalani 0la  // socket ile dosyayi iliskilendir  bind(sockfd, (struct sockaddr *)&amp;amp;my_addr, sizeof(struct sockaddr)); while ( 1 ) { rt = recvfrom (sockfd, buf, 12, 0, (struct sockaddr *)&amp;amp;their_addr, &amp;amp;sin_size); if (rt &amp;gt; 0) { printf (&amp;#34;recv: %s\n&amp;#34;, buf); } else if (rt &amp;lt; 0) { printf(&amp;#34;Baglanti koptu\n&amp;#34;); break; } } close(sockfd); return 0; } İstemci:</description>
     </item>
     
     <item>
@@ -116,7 +119,7 @@ Bukadar basitmiş :)</description>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/linux-paralel-port-ile-2x16-lcd-ekran-kullanimi/</guid>
       <description>Çalıştığım projede linuxta paralel port ile lcd ekran kullanmam gerekti. Neredeyse internetin altını üstüne getirdim ama işime yarar çok birşey bulamadım. Sonunda DOS için yazılmış bir kod buldum. Bu kodu biraz inceleyip, gerekli püf noktaları bulunca kodu linux&amp;rsquo;a uydurmak çok zor olmadı. Hatta neredeyse sadece kullanılan fonksiyonun adını ve parametre yerlerini değiştirdim :)
-Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read/write seçimi için kullanılıyor.</description>
+Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read/write seçimi için kullanılıyor. Geri kalan 3 bacak güç bağlantısı ve kontrast için kullanılıyor. Burdaki şemaya göre bağlantıları yapabilirsiniz. Ayrıca örnek aldığım kodda aynı sayfada bulunmakta.</description>
     </item>
     
     <item>
@@ -170,7 +173,10 @@ cd /destination/directory ssh user@remote.host &amp;#34;cd /original/directory; 
       <description>Pardusun ağ yöneticisi gayet şık bir arayüze sahip, fakat bize Eduroam ağına bağlanma özelliği sunmuyor.
 Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız için yeterli. Bu araçlar wpa_supplicant ve dhcpcd. Wpa_supplicant ağda kimlik denetimini sağlamak için, dhcpcd ise ağdan ip almamız için gerekli.
 Öncelikle wpa_supplicant için ayar dosyası oluşturmamız gerekiyor.
-network={ ssid=&amp;quot;eduroam&amp;quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap=TTLS phase2=&amp;quot;auth=PAP&amp;quot; anonymous_identity=&amp;quot;anonymous@ogr.deu.edu.tr&amp;quot; identity=&amp;quot;ogrencinumarasi@ogr.deu.edu.tr&amp;quot; password=&amp;quot;sifre&amp;quot; } Bu ayarlar Dokuz Eylül Üniversitesi için.</description>
+network={ ssid=&amp;quot;eduroam&amp;quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap=TTLS phase2=&amp;quot;auth=PAP&amp;quot; anonymous_identity=&amp;quot;anonymous@ogr.deu.edu.tr&amp;quot; identity=&amp;quot;ogrencinumarasi@ogr.deu.edu.tr&amp;quot; password=&amp;quot;sifre&amp;quot; } Bu ayarlar Dokuz Eylül Üniversitesi için. Kendi okulunuza göre düzenlemeniz gerekiyor. Sadece ogr.deu.edu.tr adresi yerine kendi okulunuzun adresini yazmalısınız.
+Bu dosyayı /etc/wpa_supplicant.con adıyla kaydediyoruz.
+Sıra geldi wpa_supplicantı çalıştırmaya.
+wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf -D parametresi hangi sürücüyü kullanacağımızı belirtiyor.</description>
     </item>
     
     <item>
@@ -181,7 +187,7 @@ network={ ssid=&amp;quot;eduroam&amp;quot; key_mgmt=WPA-EAP pairwise=TKIP group=
       <guid>https://blog.askin.ws/blog/pardus-2009/</guid>
       <description>Sonunda Pardus 2009&amp;rsquo;u bilgisayarıma kurabildim. Ailemin yanına geldiğim için Pardus&amp;rsquo;u indiremiyordum. Malum kotalı internet, sıkıntı yaratıyor.
 Kurulum sorunsuz tamamlandı. Kurulum arayüzü çok hoş olmuş. Çok kullanışlı ve çok kolay bir arayüzü olmuş. Bilgisayarıma en hızlı kurulabilen Pardus sürümü. Saat tutmadım ama, 20 dakka ile 30 dakka arasında bir sürede kurulduğunu tahmin ediyorum.
-Kablosuz ağ kartımı sorunsuz tanıdı ve WPA2 şifreli ağıma çok kolay bir şekilde bağlandı. Daha önce de tanıyordu, fakat ağımı göremiyordu, ben de mecburen ndiswraper ile kullanıyordum.</description>
+Kablosuz ağ kartımı sorunsuz tanıdı ve WPA2 şifreli ağıma çok kolay bir şekilde bağlandı. Daha önce de tanıyordu, fakat ağımı göremiyordu, ben de mecburen ndiswraper ile kullanıyordum. Hiç bir ek program kurmama ve kapalı kodlu windows sürücülerine ihtiyaç duymamak beni gayet mutlu etti. Ve ilk defa wi-fi ledinin yanıp söndüğü gördüm:)</description>
     </item>
     
     <item>
@@ -192,7 +198,8 @@ Kablosuz ağ kartımı sorunsuz tanıdı ve WPA2 şifreli ağıma çok kolay bir
       <guid>https://blog.askin.ws/blog/mysql-data-dizinini-degistirme/</guid>
       <description>Mysql data dizini ön tanımlı /var/lib/mysql olarak belirlenmiştir. Çeşitli ihtiyaçlardan dolayı bunun yerini değiştirmemiz gerekebilir. Mesela ben ayrı bir bölümde tuttuğum /home dizini altına taşımak istiyorum. Tüm işlemleri root yetkisiyle yapıyoruz. Öncelikle mysql servisini durduralım. Ben pardus kullandığım için
 $ service mysql-server stop Diğer dağıtımlarda farklı olabilir. Ardından ilgili dizini yeni yerine kopyalayalım.
-$ cp -a /var/lib/mysql /home Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. /etc/mysql/my.cnf dosyasında datadir = /var/lib/mysql olan satırı datadir = /home/mysql olarak değiştirelim.</description>
+$ cp -a /var/lib/mysql /home Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. /etc/mysql/my.cnf dosyasında datadir = /var/lib/mysql olan satırı datadir = /home/mysql olarak değiştirelim. Şimdi servisi yeniden başlatabiliriz.
+$ service mysql-server start Eğer düzgün bir şekilde çalışıyorsa /var/lib/mysql dizinini silebiliriz. Ama ismini değiştirip birkaç gün her ihtimale karşı saklamak çok mantıklı.</description>
     </item>
     
     <item>
@@ -202,7 +209,9 @@ $ cp -a /var/lib/mysql /home Daha sonra mysql sunucusuna yeni dizinimizi haber v
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/pidgin-titresim-eklentisi-attention-button/</guid>
       <description>Pidginin en sevdiğim özelliklerinden bir tanesi, sohbet ettiğiniz kişi size tireşim gönderdiğinde ekrana sadece &amp;rdquo;&amp;hellip; size uyarı gönderdi&amp;rdquo; yazması. Bu özelliğer sahip olmasının birde dezavantajı var tabiki, siz de başkalarına titreşim yollayamıyorsunuz. Bugün bu eksikliği fazlasıyla hissedince ufak çaplı bir araştırma yaptım ve Attention Button eklentisiyle karşılaştım.
-Kurulumu çok basit. Burdan en güncel sürümünü indiriyorsunuz (şimdilik 0.3), arşivden çıkartıp .so uzantılı dosyayı ev dizininiz altında .purple/plugins/ dizinine kopyalıyorsunuz. Ardından pidgine gidip eklentiler(plugins) kısmından aktif ediyorsunuz.</description>
+Kurulumu çok basit. Burdan en güncel sürümünü indiriyorsunuz (şimdilik 0.3), arşivden çıkartıp .so uzantılı dosyayı ev dizininiz altında .purple/plugins/ dizinine kopyalıyorsunuz. Ardından pidgine gidip eklentiler(plugins) kısmından aktif ediyorsunuz.
+Konsoldan halletmek isterseniz:
+$ wget http://pidgin-attentionbutton.googlecode.com/files/attentionbutton-0.3.tar.gz $ tar -xvzf attentionbutton-0.3.tar.gz $ mkdir $HOME/.purple/plugins $ mv attentionbutton.so $HOME/.purple/plugins/ $ rm attentionbutton-0.3.tar.gz attentionbutton.c Bu eklentinin birkaç güzel özelliğide var.</description>
     </item>
     
     <item>
@@ -221,7 +230,9 @@ satırını ve
 dosyasına da
 blacklist ath_pci
 satırını eklemek gerekiyor. Bunları ekledikten sonra kde&amp;rsquo;de ağ programcığıyla bağlanabiliyorsunuz.
-Fakat XFCE kullanıyorsanız wicd kullanmanız gerekiyor. Wicd ile doğrudan kullanamıyoruz.</description>
+Fakat XFCE kullanıyorsanız wicd kullanmanız gerekiyor. Wicd ile doğrudan kullanamıyoruz. Öncelikle birkaç ufak düzenleme yapmak gerekiyor.
+Wicd -&amp;gt; Tercihler yolunu takip ettikten sonra WPA Suplicant Sürücüsü: kısmına wext, Kablosuz arabirim kısmına da wlan0 yazmak gerekiyor.
+Bu ayarlarla kolaylıkla kullanabilirsiniz, kolay gelsin.</description>
     </item>
     
     <item>
@@ -242,7 +253,8 @@ http://www.ozgurlukicin.com/haber/pardus09-yaz-staji-sonuclari/</description>
       <guid>https://blog.askin.ws/blog/bir-gnulinux-kurulumunu-baska-bir-harddiskebolume-tasimak/</guid>
       <description>Öncelikle bir çalışan cd ile sistem açılır, benim tercihim gparted live cd. Sizin elinizin altında ne varsa kabuldur. İlla çalışan cd olmasına gerek yok, herhangi bir linux cdside olabilir. Bize mount, cp ve nano komutları lazım. Bunları sağlayan herhangi bir cd kullanılabilir.
 Taşınacak kurulumun hangi disk bölümünde olduğu bilinmeli. Ben 2. bölümdeki kurulumu 1. bölüme taşıyacağım. Yani /dev/hdc3 den /dev/hdc1 e taşıma yapacağım(sizdeki disk isimleri muhtemelen farklıdır).
-Cd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte.</description>
+Cd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte. Ctrl + Alt + F1 tuş kombinasyonu muhtemelen iş görecektir. Ben live cd kullandığım için grafik ekranla karşılaştım, burdan bi terminal açarak işimi göreceğim.
+Yapacağımız işlemler için root olmamız gerekiyor.</description>
     </item>
     
     <item>
@@ -253,7 +265,9 @@ Cd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte.</description>
       <guid>https://blog.askin.ws/blog/pardus-linuxorg-e-dergi-bana-supriz-yapti/</guid>
       <description>Dergi son sayısında ki (Sayı 6) site tanıtımında benim bloguma yer verdi, kendilerine buradan çok teşekür ediyorum. Bu jestleri bana blog yazmada ve Özgür Yazılım çabalarımda güç verecek.
 Derginin bu sayısını gerçekten beğendim, hele hele tamamen özgür yazılım araçlarıyla oluşturulması, arkasında hiçbir mali destek olmadan sadece topluluk katkısıyla ve güzel bir motivasyon ile düzenli olarak çıkması derginin gönlümde olan yerini iyice pekiştirdi.
-Dergi kapağında 8 Mart Dünya Emekçi Kadınla Günü yazsaydı daha güzel ve anlamlı olurdu:) ama hatırlamak ve önem vermek çok daha önemli.</description>
+Dergi kapağında 8 Mart Dünya Emekçi Kadınla Günü yazsaydı daha güzel ve anlamlı olurdu:) ama hatırlamak ve önem vermek çok daha önemli. Birde bu sayıda RMS ile olan röportajın devamını bekliyordum:)
+Dergide emeği geçen herkese teşekür ediyorum&amp;hellip;
+ C ile Programlama II GNU/Linux Haberleri GNU/Linux AntiVirüs Yazılımları Torrent ve KTorrent Pardus’ta Python 3.</description>
     </item>
     
     <item>
@@ -264,7 +278,13 @@ Dergi kapağında 8 Mart Dünya Emekçi Kadınla Günü yazsaydı daha güzel ve
       <guid>https://blog.askin.ws/blog/komut-satirindan-resimleri-pdf-slaytina-donusturme/</guid>
       <description>Lanet dersimiz File System için hocamız pptx uzantılı bir dosya verince banada bunu bir şekilde pdf&amp;rsquo;e çevirmek düştü.
 Önce openoffice ile açmayı denedim, açıyordu fakat anlaşılır bir halde değildi. Bende alıp arkadaşımın bilgisayarına gittim, fakat onda da pdf&amp;rsquo;e dönüştüremiyordum. Dönüştürebildiğim formatlara bakarken .jpg&amp;rsquo;i gördüm. Nasılsa linuxta bu bi şekilde pdf&amp;rsquo;e dönüştürüm diyerek kendimden emin bi şekilde dönüşümü yapıp odama geçtim.
-2 buçuk dakikalık bir arama ile aradığımı buldum, ImageMagick bu işi yapabiliyormuş.</description>
+2 buçuk dakikalık bir arama ile aradığımı buldum, ImageMagick bu işi yapabiliyormuş.
+convert *.jpg slayt.pdf komutu iş görüyor.
+Tam tersini yapmak isterseniz
+convert slayt.pdf resim.jpg
+Artıntılı bilgi için:
+man convert :)
+Bu sıralar inek moduna geçtiğim için ders maceralarım hakkında bol bol girdi yazacağım gibi:)</description>
     </item>
     
     <item>
@@ -288,7 +308,8 @@ Müzik dinlerken kullandığım programın elimin altında dolaşmasını pek se
       <guid>https://blog.askin.ws/blog/ilk-deb-paketim/</guid>
       <description>Sonunda ilk .deb paketimi yapmayı başardım:) aslında okadar zor bi iş değilmiş, biraz kaynak koddan derleme pratiği yapıp, üzerine birkaç döküman okuyunca çabubak oluyor.
 Bu şanslı pakatimiz PCmanfm oldu. Normalde depoda bulunuyor ama ben experimental sürümünü kullanıyorum. Uzun zamandır derleyerek kullanıyordum. Ama aklıma birden esti hadi şunun .deb paketini yapayım dedim ve yaptım.
-Bu sürümde ssh, samba yada ftp üzerinden bir makinaya bağlanıp oranın dizinlerini kullanabiliyoruz. Bir kere ayarını yaptığında artık kenarda hazır bekleyip senin bağlan demeni bekliyor.</description>
+Bu sürümde ssh, samba yada ftp üzerinden bir makinaya bağlanıp oranın dizinlerini kullanabiliyoruz. Bir kere ayarını yaptığında artık kenarda hazır bekleyip senin bağlan demeni bekliyor. Gayet hoş ve kullanışlı tavsiye ederim.
+ Proje sayfası: http://pcmanfm.sourceforge.net/ İndirmek için: http://sourceforge.net/project/showfiles.php?group_id=156956 El yapımı .deb paketim: /packages/deb/pcmanfm_0.4.4.2-1_i386.deb  Buda ekran görüntüsü, büyütmek için üzerine tıklayın:</description>
     </item>
     
     <item>
@@ -337,7 +358,8 @@ aptitude install faad</description>
       <pubDate>Wed, 07 May 2008 10:36:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/ssh-filesystem-ile-uzak-makinadaki-dizini-yerele-baglamak/</guid>
-      <description>Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz. Ben daha önce bahsettiğim internet canavarı:) için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu. Kullanacağımız programın adı sshfs yani SSH Filesystem.</description>
+      <description>Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz. Ben daha önce bahsettiğim internet canavarı:) için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu. Kullanacağımız programın adı sshfs yani SSH Filesystem. Kurulum:
+ Debian &amp;amp;&amp;amp; Ubuntu &amp;amp;&amp;amp; vb.  aptitude install sshfs  Kaynak koddan derleme  ./configure make make install # root yetkileriyle  Kullanımı - Uzak makinadaki bir dizini bağlamak sshfs hostname:dizin bağlamanoktası (root yetkileriyle)  Umount - Bağı koparma umount bağlamanoktası # ya da fusermount -u bağlamanoktası   Bu şekide kullanırsanız bağladığınız dizine ancak root yetkileriyle ulaşabilirsiniz.</description>
     </item>
     
   </channel>

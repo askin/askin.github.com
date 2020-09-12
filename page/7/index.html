@@ -296,7 +296,8 @@
         
         Öncelikle bir çalışan cd ile sistem açılır, benim tercihim gparted live cd. Sizin elinizin altında ne varsa kabuldur. İlla çalışan cd olmasına gerek yok, herhangi bir linux cdside olabilir. Bize mount, cp ve nano komutları lazım. Bunları sağlayan herhangi bir cd kullanılabilir.
 Taşınacak kurulumun hangi disk bölümünde olduğu bilinmeli. Ben 2. bölümdeki kurulumu 1. bölüme taşıyacağım. Yani /dev/hdc3 den /dev/hdc1 e taşıma yapacağım(sizdeki disk isimleri muhtemelen farklıdır).
-Cd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte.
+Cd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte. Ctrl + Alt + F1 tuş kombinasyonu muhtemelen iş görecektir. Ben live cd kullandığım için grafik ekranla karşılaştım, burdan bi terminal açarak işimi göreceğim.
+Yapacağımız işlemler için root olmamız gerekiyor.
         <a href="https://blog.askin.ws/blog/bir-gnulinux-kurulumunu-baska-bir-harddiskebolume-tasimak/" class="post-read-more">[]</a>
         
     </div>
@@ -351,7 +352,9 @@ Cd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte.
         
         Dergi son sayısında ki (Sayı 6) site tanıtımında benim bloguma yer verdi, kendilerine buradan çok teşekür ediyorum. Bu jestleri bana blog yazmada ve Özgür Yazılım çabalarımda güç verecek.
 Derginin bu sayısını gerçekten beğendim, hele hele tamamen özgür yazılım araçlarıyla oluşturulması, arkasında hiçbir mali destek olmadan sadece topluluk katkısıyla ve güzel bir motivasyon ile düzenli olarak çıkması derginin gönlümde olan yerini iyice pekiştirdi.
-Dergi kapağında 8 Mart Dünya Emekçi Kadınla Günü yazsaydı daha güzel ve anlamlı olurdu:) ama hatırlamak ve önem vermek çok daha önemli.
+Dergi kapağında 8 Mart Dünya Emekçi Kadınla Günü yazsaydı daha güzel ve anlamlı olurdu:) ama hatırlamak ve önem vermek çok daha önemli. Birde bu sayıda RMS ile olan röportajın devamını bekliyordum:)
+Dergide emeği geçen herkese teşekür ediyorum&hellip;
+ C ile Programlama II GNU/Linux Haberleri GNU/Linux AntiVirüs Yazılımları Torrent ve KTorrent Pardus’ta Python 3.
         <a href="https://blog.askin.ws/blog/pardus-linuxorg-e-dergi-bana-supriz-yapti/" class="post-read-more">[]</a>
         
     </div>
@@ -406,10 +409,16 @@ Dergi kapağında 8 Mart Dünya Emekçi Kadınla Günü yazsaydı daha güzel ve
     </p>
     <div class="post-entry">
         
-        Lanet dersimiz File System için hocamız pptx uzantılı bir dosya verince banada bunu bir şekilde pdf&rsquo;e çevirmek düştü.
-Önce openoffice ile açmayı denedim, açıyordu fakat anlaşılır bir halde değildi. Bende alıp arkadaşımın bilgisayarına gittim, fakat onda da pdf&rsquo;e dönüştüremiyordum. Dönüştürebildiğim formatlara bakarken .jpg&rsquo;i gördüm. Nasılsa linuxta bu bi şekilde pdf&rsquo;e dönüştürüm diyerek kendimden emin bi şekilde dönüşümü yapıp odama geçtim.
-2 buçuk dakikalık bir arama ile aradığımı buldum, ImageMagick bu işi yapabiliyormuş.
-        <a href="https://blog.askin.ws/blog/komut-satirindan-resimleri-pdf-slaytina-donusturme/" class="post-read-more">[]</a>
+        <p><img src="/uploads/2009/02/imagemagick.png" alt="ImageMagick" title="ImageMagick">Lanet dersimiz File System için hocamız pptx uzantılı bir dosya verince banada bunu bir şekilde pdf&rsquo;e çevirmek düştü.<br>
+Önce openoffice ile açmayı denedim, açıyordu fakat anlaşılır bir halde değildi. Bende alıp arkadaşımın bilgisayarına gittim, fakat onda da pdf&rsquo;e dönüştüremiyordum. Dönüştürebildiğim formatlara bakarken .jpg&rsquo;i gördüm. Nasılsa linuxta bu bi şekilde pdf&rsquo;e dönüştürüm diyerek kendimden emin bi şekilde dönüşümü yapıp odama geçtim.<br>
+2 buçuk dakikalık bir arama ile aradığımı buldum, <a href="http://www.imagemagick.org/">ImageMagick</a> bu işi yapabiliyormuş.<br>
+<code>convert *.jpg slayt.pdf</code> komutu iş görüyor.<br>
+Tam tersini yapmak isterseniz<br>
+<code>convert slayt.pdf resim.jpg</code><br>
+Artıntılı bilgi için:<br>
+<code>man convert</code> :)</p>
+<p>Bu sıralar inek moduna geçtiğim için ders maceralarım hakkında bol bol girdi yazacağım gibi:)</p>
+
         
     </div>
 
@@ -625,9 +634,13 @@ Temel sorunlarım:</p>
     </p>
     <div class="post-entry">
         
-        Firefoxta araç çubuklarının çok yer kaplamasına sinir oluyorum, bu nedenle elimden geldiğince ekranı genişletmeye çalışıyorum.
-Yaklaşık 1 yıldır bookmark toolbar olmadan kullanıyorum, site adreslerini aklımda tutabildiğim için elimin altında bookmarklara ihtiyaç duymuyorum, gerektiğinde zaten birkaç tıkla yer imlerine ulaşabiliyorum. Bugünde adres çubuğunu, ileri - geri - yenile - durdur düğmeleriyle google arama kutusunu yukarı çıkartıp navigation toolbarı sildim, Tiny Menu adlı eklentiyi kurup menuleri tek bir başlık altında topladım, artık 4 çubukta yaptığım işi 2 çubukta yapıyorum, hatta tek sayfa açıksa ortalıkta sadece 1 çubuk oluyor :)
-        <a href="https://blog.askin.ws/blog/firefoxta-ferahlik/" class="post-read-more">[]</a>
+        <p>Firefoxta araç çubuklarının çok yer kaplamasına sinir oluyorum, bu nedenle elimden geldiğince ekranı genişletmeye çalışıyorum.<br>
+Yaklaşık 1 yıldır bookmark toolbar olmadan kullanıyorum, site adreslerini aklımda tutabildiğim için elimin altında bookmarklara ihtiyaç duymuyorum, gerektiğinde zaten birkaç tıkla yer imlerine ulaşabiliyorum. Bugünde adres çubuğunu, ileri - geri - yenile - durdur düğmeleriyle google arama kutusunu yukarı çıkartıp navigation toolbarı sildim, <a href="https://addons.mozilla.org/en-US/firefox/addon/1455">Tiny Menu</a> adlı eklentiyi kurup menuleri tek bir başlık altında topladım, artık 4 çubukta yaptığım işi 2 çubukta yapıyorum, hatta tek sayfa açıksa ortalıkta sadece 1 çubuk oluyor :)</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><a href="/uploads/2008/08/firefox-toolbar-2.png"><img src="/uploads/2008/08/firefox-toolbar-2.resized.png" alt="Firefox toolbar"></a></p>
+<p><a href="/uploads/2008/08/firefox-toolbar.png"><img src="/uploads/2008/08/firefox-toolbar.resized.png" alt="Firefox toolbar"></a></p>
+
         
     </div>
 
@@ -669,7 +682,8 @@ Yaklaşık 1 yıldır bookmark toolbar olmadan kullanıyorum, site adreslerini a
         
         Sonunda ilk .deb paketimi yapmayı başardım:) aslında okadar zor bi iş değilmiş, biraz kaynak koddan derleme pratiği yapıp, üzerine birkaç döküman okuyunca çabubak oluyor.
 Bu şanslı pakatimiz PCmanfm oldu. Normalde depoda bulunuyor ama ben experimental sürümünü kullanıyorum. Uzun zamandır derleyerek kullanıyordum. Ama aklıma birden esti hadi şunun .deb paketini yapayım dedim ve yaptım.
-Bu sürümde ssh, samba yada ftp üzerinden bir makinaya bağlanıp oranın dizinlerini kullanabiliyoruz. Bir kere ayarını yaptığında artık kenarda hazır bekleyip senin bağlan demeni bekliyor.
+Bu sürümde ssh, samba yada ftp üzerinden bir makinaya bağlanıp oranın dizinlerini kullanabiliyoruz. Bir kere ayarını yaptığında artık kenarda hazır bekleyip senin bağlan demeni bekliyor. Gayet hoş ve kullanışlı tavsiye ederim.
+ Proje sayfası: http://pcmanfm.sourceforge.net/ İndirmek için: http://sourceforge.net/project/showfiles.php?group_id=156956 El yapımı .deb paketim: /packages/deb/pcmanfm_0.4.4.2-1_i386.deb  Buda ekran görüntüsü, büyütmek için üzerine tıklayın:
         <a href="https://blog.askin.ws/blog/ilk-deb-paketim/" class="post-read-more">[]</a>
         
     </div>
@@ -730,7 +744,7 @@ sudo apt-get install moc
 sudo pisi it moc
 Şimdi konsoldan
 mocp
-komutunu verelim. Gerçekten renkli şık bi tasarımı var. Grafik ekranı hiç aratmıyor:). Eğer renkleri beğenmezseniz [Shift] + [T] kombinasyonu ile farklı renkler seçebilirsiniz.
+komutunu verelim. Gerçekten renkli şık bi tasarımı var. Grafik ekranı hiç aratmıyor:). Eğer renkleri beğenmezseniz [Shift] + [T] kombinasyonu ile farklı renkler seçebilirsiniz. Bunun bi kötü yanı var moc temayı bir sonraki açılışında hatırlamayacak. Hatırlaması için ~/.moc/config dosyasını oluşturup içeriğini düzenlemeniz gerekiyor. Ben düzenlemedim tam olarak nasıl yapılıyor bilmiyorum.
         <a href="https://blog.askin.ws/blog/moc-kullanarak-konsoldan-muzik-dinleme-ve-lastfm/" class="post-read-more">[]</a>
         
     </div>

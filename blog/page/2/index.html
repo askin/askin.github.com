@@ -356,6 +356,8 @@
         
         Konsoldan rastgele stringler oluşturmak için bir çok yöntem var, bunların bir çoğu random ve urandom aygıtlarını kullanıyor. Benim şimdi anlatacağım yöntemle urandom aygıtını kullanıyoruz.
 &lt; /dev/urandom tr -dc A-Za-z0-9 Burada tr komutuna standart girdi olarak /dev/urandom aygıtını gösteriyoruz. urandom rastgele değerler üretir, bu üretilen değerlerin bazıları yazdırılabilir bazıları da yazdırılamayan karakterlere denk gelir. Biz tr komutu ile bu rastgele üretilen değerlerden alfanümerik olanları ayıklıyoruz. Tabi bu komut sonsuza kadar çıktı üretir, sadece istediğimiz kadarını almak için head komutunu kullanabiliriz.
+&lt; /dev/urandom tr -dc A-Za-z0-9 | head -c32 Bu komutla çıktının ilk 32 karakterini alıyoruz.
+tr kullanarak yapacaklarımızın limiti hayal gücümüz kadar.
         <a href="https://blog.askin.ws/blog/konsoldan-rastgele-string-olusturma/" class="post-read-more">[]</a>
         
     </div>
@@ -408,6 +410,10 @@
         
         Bir sunucuda garip bir problemle karşılaştım, diskte yer kalmadığını söylüyordu fakat ne yaparsam yapayım diski dolduran dosyaları bulamıyordum. Biraz araştırınca sorunu ve çözümünü buldum. Senaryo şöyle idi:
  Dosya bir program tarafından okumak için açılır. Başka bir program bu dosyayı siler.  Bu senaryo gerçekleştiğinde, her ne kadar dosya silinmiş olsa da, hala diskte yer tutmaya devam edecektir. &ldquo;du&rdquo; komutuyla baktığınızda yer tutmayacaktır, ancak df ile kontrol ettiğimizde disk dolu olarak görünecektir.
+Basit bir demo yapacağım:
+Öncelikle 1GB boyutunda bir dosya oluşturacağım.
+mkdir /tmp/tmp_directory/ cd /tmp/tmp_directory/ dd if=/dev/zero of=1gb_file.dat bs=1M count=1024 Oluşturulan bu dosyayı python ile açacağım.
+python Python 2.7.4 (default, Jul 5 2013, 08:21:57) [GCC 4.
         <a href="https://blog.askin.ws/blog/linuxta-disk-doluluk-oraninin-yanlis-hesaplanmasi/" class="post-read-more">[]</a>
         
     </div>
@@ -461,7 +467,7 @@
     <div class="post-entry">
         
         Başlığında söylediği gibi, Python sözlük hızlı rehber
-# Anahtar/değer çiftleriyle sözlük tanımlama dict = { &#39;anahtar1′ : &#39;deger1′, &#39;anahtar2′ : &#39;deger2′, &#39;anahtar3′ : &#39;deger3′ } # Tüm anahtarları al sozluk.keys() # Tüm değerleri al sozluk.values() # Düzenleme sozluk[&#39;anahtar2&#39;] = &#39;deger8′ # Erişim print sozluk[&#39;anahtar1&#39;] # &#39;deger2&#39;yi yazdır print sozluk[&#39;anahtar2&#39;] # Boş sözlük tanımlama ve değer atama bosSozluk = {} bosSozluk[&#39;anahtar4&#39;] = &#39;deger4&#39; # Sözlük üzerinde döngü kurma (foreach) for anahtar in sozluk: print sozluk[anahtar] # Anahtarları sıralayıp, o sıraya göre değerleri yazdırmak anahtarlar = sozluk.
+# Anahtar/değer çiftleriyle sözlük tanımlama dict = { &#39;anahtar1′ : &#39;deger1′, &#39;anahtar2′ : &#39;deger2′, &#39;anahtar3′ : &#39;deger3′ } # Tüm anahtarları al sozluk.keys() # Tüm değerleri al sozluk.values() # Düzenleme sozluk[&#39;anahtar2&#39;] = &#39;deger8′ # Erişim print sozluk[&#39;anahtar1&#39;] # &#39;deger2&#39;yi yazdır print sozluk[&#39;anahtar2&#39;] # Boş sözlük tanımlama ve değer atama bosSozluk = {} bosSozluk[&#39;anahtar4&#39;] = &#39;deger4&#39; # Sözlük üzerinde döngü kurma (foreach) for anahtar in sozluk: print sozluk[anahtar] # Anahtarları sıralayıp, o sıraya göre değerleri yazdırmak anahtarlar = sozluk.keys() anahtarlar.sort() for anahtar in anahtarlar: print sozluk[anahtar] # Değerlere göre döngü kurmak (sıralı değil) for deger in sozluk.
         <a href="https://blog.askin.ws/blog/python-sozluk-hizli-rehber/" class="post-read-more">[]</a>
         
     </div>
@@ -512,7 +518,9 @@
         
         Bu yazı oluşturulurken http://www.pythonforbeginners.com/python-lists-cheat-sheet/ adresindeki yazı referans alınmıştır. Bir çok yeri doğrudan çeviri olmakla beraber bir kısmını kendim baştan yazdım. Yazım - Mantık hataları vs. bulursanız yorum yazmaktan çekinmeyin.
  Liste Nedir?  Bir veya birden fazla elemanı tutmak için kullanılan en basit veri yapısıdır. Liste elemanlar topluluğudur (string, integer ve hatta diğer listeler). Listedeki her bir elemana index değeri atanır.
-Listeler köşeli parantezler ile açılıp kapatılır. Listedeki her bir eleman virgül ile ayrılır.
+Listeler köşeli parantezler ile açılıp kapatılır. Listedeki her bir eleman virgül ile ayrılır. Stringlerin aksine listeler mutable - değişkendir, bunun manası listeler değiştirilebilir.
+ Liste Yaratma  Listeler köşeli parantez ile açılıp kapatılan, virgülle ayrılmış elamanlarla yaratılır.
+Listeler bir takım değerler tutar (aynı stringlerin karakter serileri barındırması gibi).
         <a href="https://blog.askin.ws/blog/listeler-ile-ilgili-garip-bir-dokuman/" class="post-read-more">[]</a>
         
     </div>
@@ -559,10 +567,15 @@ Listeler köşeli parantezler ile açılıp kapatılır. Listedeki her bir elema
     </p>
     <div class="post-entry">
         
-        Off the Record Messaging (OTR) anlık mesajlaşma servislerinde güvenli olarak mesajlaşmak için geliştirilmiş bir protokoldür. Birçok anlık mesajlaşma uygulaması için eklentileri geliştirilmiştir. Ben pidgin ile birlikte kullanıyorum. Özel olarak kalmasını istediğiniz sohbetlerinizi OTR kullanarak güvenli bir şekilde yapabilirsiniz. [1] adresinde OTR ile ilgili wikipedia sayfasını bulabilirsiniz. [2] adresinde OTR ana sayfası bulunmakta.
-Pidgin ve Ubuntu kullanıcıları için kurulum çok basit:
-sudo apt-get install pidgin-otr Bir çok dağıtım deposunda OTR hazır olarak gelmektedir.
-        <a href="https://blog.askin.ws/blog/off-the-record-messaging-otr/" class="post-read-more">[]</a>
+        <p>Off the Record Messaging (OTR) anlık mesajlaşma servislerinde güvenli olarak mesajlaşmak için geliştirilmiş bir protokoldür. Birçok anlık mesajlaşma uygulaması için eklentileri geliştirilmiştir. Ben pidgin ile birlikte kullanıyorum. Özel olarak kalmasını istediğiniz sohbetlerinizi OTR kullanarak güvenli bir şekilde yapabilirsiniz. [1] adresinde OTR ile ilgili wikipedia sayfasını bulabilirsiniz. [2] adresinde OTR ana sayfası bulunmakta.</p>
+<p>Pidgin ve Ubuntu kullanıcıları için kurulum çok basit:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get install pidgin-otr
+</code></pre></div><p>Bir çok dağıtım deposunda OTR hazır olarak gelmektedir. Windows kullanıcıları da pidgin için kurulum dosyasını OTR&rsquo;ın web sayfasından indirebilir.</p>
+<p>Aşağıda kullanım ile ilgili videoyu izleyebilirsiniz.</p>
+<!-- raw HTML omitted -->
+<p>[1] <a href="http://en.wikipedia.org/wiki/Off-the-Record_Messaging">http://en.wikipedia.org/wiki/Off-the-Record_Messaging</a><br>
+[2] <a href="http://www.cypherpunks.ca/otr/index.php">http://www.cypherpunks.ca/otr/index.php</a></p>
+
         
     </div>
 
@@ -616,6 +629,8 @@ sudo apt-get install pidgin-otr Bir çok dağıtım deposunda OTR hazır olarak 
 curl --data &quot;param1=value1&amp;param2=value2&quot; http://example.com/index.php  Web sayfasının döndürdüğü sonu doğrudan ekrana basılacaktır, bunu bir dosyaya aktarmak için
 curl --data &quot;param1=value1&amp;param2=value2&quot; http://example.com/index.php &gt; result.html  bir değişkene aktarmak için
 result=$(curl --data &quot;param1=value1&amp;param2=value2&quot; http://example.com/index.php)  kullanabiliriz. Erişmek istediğimiz web sayfası kullanıcı girişi istiyorsa cookie kullanrak bunu yapabiliriz.
+curl --data &quot;username=askin&amp;password=pasw0rd&quot; http://example.com/login.php -c cookie.cook  Bu komutla giriş yapıp, oluşturulan cookie&rsquo;yi cookie.cook dosyasına kaydettik.
+Tabi burda username ve password parametreleri değişiklik gösterebilir, gönderilen form verisini inceleyerek, gerekli parametreleri bulup uygun formatta göndermek gerekir.
         <a href="https://blog.askin.ws/blog/curl-ile-getpost-ve-cookie-kullanimi/" class="post-read-more">[]</a>
         
     </div>
@@ -723,7 +738,8 @@ result=$(curl --data &quot;param1=value1&amp;param2=value2&quot; http://example.
         Malesef sd kart olmadan raspberry pi&rsquo;yı boot etmemiz mümkün olmuyor. Benim elimde 1GB&rsquo;lık bir sd kart vardı ve 2GB dan daha ufak imaj dosyaları bulamadım. Bu nedenle usb bellek ile boot etme ihtiyacı duydum.
 Benim sistemimde usb bellek ve sd kart aşağıdaki şekilde tanındı:
  usb: /dev/sdd sd: /dev/sde  Öncelikle indirdiğimiz imaj dosyasını usb belleğimize kopyalıyoruz
-dd if=2013-02-09-wheezy-raspbian.img of=/dev/sdd  Elimizde bulunan sd karta 1 adet fat32 bölüm oluşturuyoruz (oluşturduğunuz bölüm hem ilk sırada hem de birincil bir bölüm olmalı).
+dd if=2013-02-09-wheezy-raspbian.img of=/dev/sdd  Elimizde bulunan sd karta 1 adet fat32 bölüm oluşturuyoruz (oluşturduğunuz bölüm hem ilk sırada hem de birincil bir bölüm olmalı). Bunu ister Gparted gibi bir araçla yapın isterseniz fdisk kullanın. Bölümleme işlemlerini yaptıktan sonra aşağıdaki komutları uygulayın.
+mkdir /tmp/mnt_sd /tmp/mnt_usb mount /dev/sdd1 /tmp/mnt_usb mount /dev/sde1 /tmp/mnt_sd cp /tmp/mnt_usb/* /tmp/mnt_sd  Bu işlemleri yaptıktan sonra /tmp/mnt_sd/cmdline.
         <a href="https://blog.askin.ws/blog/usb-bellek-uzerinde-raspberry-pi/" class="post-read-more">[]</a>
         
     </div>

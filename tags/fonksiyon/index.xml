@@ -24,7 +24,8 @@ Parametre olarak geçireceğimiz fonksiyonlar belli bir sayıda parametre alıyo
 Mesela:
 def Merhaba(isim): print &amp;#34;Merhaba %s&amp;#34; % isim Bunun gibi sadece tek parametre alan bir fonksiyon için aşağıdaki gibi bir fonksiyon yeterli olacaktır.
 def BuyukAbi(func, param): func(param) BuyukAbi(Merhaba, &amp;#34;kelebek&amp;#34;) Merhaba kelebek Bu fonksiyon parametre olarak aldığı func fonksiyonuna param parametresini geçirecektir.
-Eğer fonksiyonun aldığı parametre sayısı belirsiz ise, yani farklı sayıda parametre alan fonksiyonlarla uğraşmak gerekiyorsa yanına birkaç ekleme daha yapmamız gerekiyor.</description>
+Eğer fonksiyonun aldığı parametre sayısı belirsiz ise, yani farklı sayıda parametre alan fonksiyonlarla uğraşmak gerekiyorsa yanına birkaç ekleme daha yapmamız gerekiyor.
+def BuyukBuyukAbi(func, param): func(*param) param parametresi bir liste olmak durumunda. Geçirilen fonksiyon kaç parametre alıyorsa listenin uzunluğu okadar olmalı.</description>
     </item>
     
   </channel>

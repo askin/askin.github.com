@@ -25,7 +25,10 @@ Blooger hesabımıza giriş yapıyoruz.
 Şu adımları takip ediyoruz.
 Özelleştir -&amp;gt; Ayarlar -&amp;gt; Yayıncılık -&amp;gt; Özel Alan-&amp;gt; Gelişmiş Ayarlara Geçiş Yapın
 Buradaki kutuya alan adını yazın.
-&amp;ldquo;Eksik dosya barındırma sistemini mi kullanıyorsunuz?&amp;rdquo; kısmını olduğu gibi bırakıp, kelime doğrulamayı yapıp ayarları kaydediyoruz.</description>
+&amp;ldquo;Eksik dosya barındırma sistemini mi kullanıyorsunuz?&amp;rdquo; kısmını olduğu gibi bırakıp, kelime doğrulamayı yapıp ayarları kaydediyoruz.
+Bu adımları geçtikten sonra google tarafında yapılacak ayarları tamamlamış oluyoruz.
+Alan adınızın bloggera yönlenmesi için CNAME kaydı oluşturmanız gerekiyor. Bunu alan adını aldığınız yerden yapacaksınız.
+CNAME kaydına değer olarak ghs.</description>
     </item>
     
   </channel>

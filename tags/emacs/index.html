@@ -293,11 +293,20 @@ kullanıyordum. Emacs 27.0.90 ile birlikte bu özellik yerleşik gelmeye başlad
     </p>
     <div class="post-entry">
         
-        Identi.ca hesabini emacs ile takip etmek çok basit ve eğlenceli. identica-mode kullanarak identi.ca hesabini takip edebiliyoruz. identica-mode elpa ya da marmalade deposunda bulunmuyor. Bunun için eski yöntemle kurmak gerek.
-Öncelikle gerekli dosyaları gerekli yerlere indiriyoruz(git deposundan alacağım).
-cd ~/.elisp git clone http://git.savannah.gnu.org/cgit/identica-mode.git  Şimdi .emacs dosyamıza gerekli satırları ekleyelim.
-(setq load-path (cons &quot;~/.elisp/identica-mode&quot; load-path)) (require 'identica-mode) (setq identica-username &quot;userName&quot;)  Parolasız giriş yapabilmek için ~/.authinfo adinda bir dosya olusturup içini aşağıdaki gibi dolduralım.
-        <a href="https://blog.askin.ws/blog/emacs-ile-identi-ca-kullanimi/" class="post-read-more">[]</a>
+        <p>Identi.ca hesabini emacs ile takip etmek çok basit ve eğlenceli. identica-mode kullanarak identi.ca hesabini takip edebiliyoruz. identica-mode elpa ya da marmalade deposunda bulunmuyor. Bunun için eski yöntemle kurmak gerek.</p>
+<p>Öncelikle gerekli dosyaları gerekli yerlere indiriyoruz(git deposundan alacağım).</p>
+<pre><code>cd ~/.elisp
+git clone http://git.savannah.gnu.org/cgit/identica-mode.git
+</code></pre>
+<p>Şimdi .emacs dosyamıza gerekli satırları ekleyelim.</p>
+<pre><code>(setq load-path (cons &quot;~/.elisp/identica-mode&quot; load-path))
+(require 'identica-mode)
+(setq identica-username &quot;userName&quot;)
+</code></pre>
+<p>Parolasız giriş yapabilmek için <em>~/.authinfo</em> adinda bir dosya olusturup içini aşağıdaki gibi dolduralım.</p>
+<pre><code>machine identi.ca login kullaniciAdi password parola
+</code></pre>
+
         
     </div>
 

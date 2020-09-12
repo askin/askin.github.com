@@ -23,7 +23,8 @@
 Debian tabanlı sistemlerde aşağıdaki gibi kurulum yapabihlirsiniz.
 apt-get install slurm Kurulumu tamamladıktan sonra komut satırından ağ trafiğinizi takip edebilirsiniz. En basit şekliyle aşağıdaki formatta komutu kullanabilirsiniz.
 slurm -i [Ağ Arayüzü] -i parametresi hangi ağ arayüzünün kullanılacanı belirtir.
-slurm -i wlan0 slurm -i eth1 Klavye kısa yolları: Slurm etkileşim için birçok farklı tuşu destekler:</description>
+slurm -i wlan0 slurm -i eth1 Klavye kısa yolları: Slurm etkileşim için birçok farklı tuşu destekler:
+ s split moduna geçiş yapar c klasik moda geçiş yapar l büyük grafik moduna geçer L TX/RX ledini aktif eder m kasik, büyük ve split modları arasında geçiş yapar z sayaçları 0&amp;rsquo;lar r ekranı yeniden çizer q çıkış yapar  Aynı zamanda bu kısayol tuşlarını parametre olarak da verebilirsiniz.</description>
     </item>
     
   </channel>

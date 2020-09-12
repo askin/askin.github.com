@@ -20,7 +20,7 @@
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/python-sozluk-hizli-rehber/</guid>
       <description>Başlığında söylediği gibi, Python sözlük hızlı rehber
-# Anahtar/değer çiftleriyle sözlük tanımlama dict = { &amp;#39;anahtar1′ : &amp;#39;deger1′, &amp;#39;anahtar2′ : &amp;#39;deger2′, &amp;#39;anahtar3′ : &amp;#39;deger3′ } # Tüm anahtarları al sozluk.keys() # Tüm değerleri al sozluk.values() # Düzenleme sozluk[&amp;#39;anahtar2&amp;#39;] = &amp;#39;deger8′ # Erişim print sozluk[&amp;#39;anahtar1&amp;#39;] # &amp;#39;deger2&amp;#39;yi yazdır print sozluk[&amp;#39;anahtar2&amp;#39;] # Boş sözlük tanımlama ve değer atama bosSozluk = {} bosSozluk[&amp;#39;anahtar4&amp;#39;] = &amp;#39;deger4&amp;#39; # Sözlük üzerinde döngü kurma (foreach) for anahtar in sozluk: print sozluk[anahtar] # Anahtarları sıralayıp, o sıraya göre değerleri yazdırmak anahtarlar = sozluk.</description>
+# Anahtar/değer çiftleriyle sözlük tanımlama dict = { &amp;#39;anahtar1′ : &amp;#39;deger1′, &amp;#39;anahtar2′ : &amp;#39;deger2′, &amp;#39;anahtar3′ : &amp;#39;deger3′ } # Tüm anahtarları al sozluk.keys() # Tüm değerleri al sozluk.values() # Düzenleme sozluk[&amp;#39;anahtar2&amp;#39;] = &amp;#39;deger8′ # Erişim print sozluk[&amp;#39;anahtar1&amp;#39;] # &amp;#39;deger2&amp;#39;yi yazdır print sozluk[&amp;#39;anahtar2&amp;#39;] # Boş sözlük tanımlama ve değer atama bosSozluk = {} bosSozluk[&amp;#39;anahtar4&amp;#39;] = &amp;#39;deger4&amp;#39; # Sözlük üzerinde döngü kurma (foreach) for anahtar in sozluk: print sozluk[anahtar] # Anahtarları sıralayıp, o sıraya göre değerleri yazdırmak anahtarlar = sozluk.keys() anahtarlar.sort() for anahtar in anahtarlar: print sozluk[anahtar] # Değerlere göre döngü kurmak (sıralı değil) for deger in sozluk.</description>
     </item>
     
     <item>
@@ -43,7 +43,9 @@ DEMO_MODE = True olarak değiştirmem yetti.</description>
       <description>Gtk ile çok kolay bir şekilde geliştirdiğiniz uygulamayı sistem çekmecesinde gösterebilirsiniz.
 Ufak bir örnek kod veriyorum. Onun üzerinden anlatacağım.
 import pygtk import gtk class ShowIcon: def __init__(self): self.icon = gtk.StatusIcon() self.icon.set_from_file(&amp;#39;gtk.png&amp;#39;) self.icon.set_tooltip_text(&amp;#39;Hello Python!!!&amp;#39;) self.icon.set_visible(True) self.icon.connect(&amp;#34;activate&amp;#34;, self.hello) gtk.main() def hello(self, widget): print &amp;#39;Hello Python !!!&amp;#39; if __name__ == &amp;#39;__main__&amp;#39;: icon = ShowIcon() 6. satırda asıl işimizi yapacak olan StatusIcon nesnesini yaratıyoruz.
-7. satırda sistem çekmecesinde hangi ikonun görüntüleneceğini belirtiyoruz. set_from_file ikonu dosyadan alacağımız anlamına geliyor.</description>
+7. satırda sistem çekmecesinde hangi ikonun görüntüleneceğini belirtiyoruz. set_from_file ikonu dosyadan alacağımız anlamına geliyor. Eğer gtk&amp;rsquo;nın sunduğu standart ikonları kullanmak istiyorsanız set_from_stock kullanmalısınız.
+icon.set_from_stock(gtk.STOCK_ABOUT) 8. satırda ikonun üzerine geldiğimizde görünmesini istediğimiz yazıyı belirliyoruz.
+9. satırda ikonun başlangıçtaki görünürlüğünü belirliyoruz. Bu satırı yazmasak da görünür başlıyor.</description>
     </item>
     
     <item>
@@ -54,7 +56,8 @@ import pygtk import gtk class ShowIcon: def __init__(self): self.icon = gtk.Stat
       <guid>https://blog.askin.ws/blog/pygtk-ve-thread-sorunu/</guid>
       <description>PyGtk ile ara yüzüzünü hazırladığım bir program içinde thread kullanmam gerekiyordu. Kod çalışıyordu fakat thread işlemi istediğim gibi çalışmıyordu. Arayüzde bir değişiklik olduğu zaman thread çalışıyor, onun dışında hiç bir şekilde tepki vermiyordu.
 Uzun süre hatanın kodda olabileceğini düşündüm. Ama sonunda python gtk.main() ve thread 3&amp;rsquo;lüsünü aynı sorgu içinde googleda aratınca cevabı buldum. Gtk&amp;rsquo;ya thread kullandığımı anlatmam gerekiyordu :)
-gtk.gdk.threads_init() Bu satırı kodumun başına eklediğimde herşey istediğim gibi çalışmaya başladı :)</description>
+gtk.gdk.threads_init() Bu satırı kodumun başına eklediğimde herşey istediğim gibi çalışmaya başladı :)
+Sizde böyle bir sorunla karşılaşırsanız aklınızda bulunsun :)</description>
     </item>
     
     <item>
@@ -64,7 +67,9 @@ gtk.gdk.threads_init() Bu satırı kodumun başına eklediğimde herşey istedi�
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/pardus-ag-yoneticisi-ile-eduroam-agina-baglanmak/</guid>
       <description>Bikaç gündür Pardus ve Eduroam ile uğraşıyordum. Eduroama bağlanmak için pratik yollar buldum fakat hiç birisi Ağ Yöneticisi kullanarak bağlanmanın zevkini vermiyordu.
-2 gün boyunca Ağ Yöneticisinin neresini değiştirmem gerektiğini arayıp durdum. Sonunda wireless-tools adlı paketin aradığım paket olduğunu keşfettim :) wireless tools paketi wpa_supplicant kullanarak wpa şifreleme kullanan ağlara bağlanmaya yarıyor. Sağolsun Pardus geliştiricileri wpa_supplicant paketi için dbus kullanan bir python betiği yazmışlar. Bu betik içinde tanımlanan methodlarla wpa_supplicantı yönetebiliyoruz.</description>
+2 gün boyunca Ağ Yöneticisinin neresini değiştirmem gerektiğini arayıp durdum. Sonunda wireless-tools adlı paketin aradığım paket olduğunu keşfettim :) wireless tools paketi wpa_supplicant kullanarak wpa şifreleme kullanan ağlara bağlanmaya yarıyor. Sağolsun Pardus geliştiricileri wpa_supplicant paketi için dbus kullanan bir python betiği yazmışlar. Bu betik içinde tanımlanan methodlarla wpa_supplicantı yönetebiliyoruz. Bu betiğe eduroam ağına bağlanmak için gerekli parametreleri alan bir method ekledim.
+Daha sonra wireless-tools paketi içindeki comar betiğine bu methodu kullanmasını sağlayacak birkaç değişiklik yaptım.
+Sırf bu işi denemek için bugün okulum olmadığı halde sabahın 8&amp;rsquo;inde okula gelip deneme yaptım.</description>
     </item>
     
   </channel>

@@ -13,7 +13,8 @@ Parametre olarak geçireceğimiz fonksiyonlar belli bir sayıda parametre alıyo
 Mesela:
 def Merhaba(isim): print &#34;Merhaba %s&#34; % isim Bunun gibi sadece tek parametre alan bir fonksiyon için aşağıdaki gibi bir fonksiyon yeterli olacaktır.
 def BuyukAbi(func, param): func(param) BuyukAbi(Merhaba, &#34;kelebek&#34;) Merhaba kelebek Bu fonksiyon parametre olarak aldığı func fonksiyonuna param parametresini geçirecektir.
-Eğer fonksiyonun aldığı parametre sayısı belirsiz ise, yani farklı sayıda parametre alan fonksiyonlarla uğraşmak gerekiyorsa yanına birkaç ekleme daha yapmamız gerekiyor.">
+Eğer fonksiyonun aldığı parametre sayısı belirsiz ise, yani farklı sayıda parametre alan fonksiyonlarla uğraşmak gerekiyorsa yanına birkaç ekleme daha yapmamız gerekiyor.
+def BuyukBuyukAbi(func, param): func(*param) param parametresi bir liste olmak durumunda. Geçirilen fonksiyon kaç parametre alıyorsa listenin uzunluğu okadar olmalı.">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -62,7 +63,7 @@ Eğer fonksiyonun aldığı parametre sayısı belirsiz ise, yani farklı sayıd
     "name" : "Aşkın Özgür"
   },
   "headline": "Python, Fonksiyona Parametre Olarak Fonksiyon Geçirmek",
-  "description" : "Bu yazıyı asıl yazma sebebim parametre olarak geçirilen fonksiyona geçirilecek parametreler :)\nParametre olarak geçireceğimiz fonksiyonlar belli bir sayıda parametre alıyorsa yapacağımız iş basit,\nMesela:\ndef Merhaba(isim): print \u0026#34;Merhaba %s\u0026#34; % isim Bunun gibi sadece tek parametre alan bir fonksiyon için aşağıdaki gibi bir fonksiyon yeterli olacaktır.\ndef BuyukAbi(func, param): func(param) BuyukAbi(Merhaba, \u0026#34;kelebek\u0026#34;) Merhaba kelebek Bu fonksiyon parametre olarak aldığı func fonksiyonuna param parametresini geçirecektir.\nEğer fonksiyonun aldığı parametre sayısı belirsiz ise, yani farklı sayıda parametre alan fonksiyonlarla uğraşmak gerekiyorsa yanına birkaç ekleme daha yapmamız gerekiyor.",
+  "description" : "Bu yazıyı asıl yazma sebebim parametre olarak geçirilen fonksiyona geçirilecek parametreler :)\nParametre olarak geçireceğimiz fonksiyonlar belli bir sayıda parametre alıyorsa yapacağımız iş basit,\nMesela:\ndef Merhaba(isim): print \u0026#34;Merhaba %s\u0026#34; % isim Bunun gibi sadece tek parametre alan bir fonksiyon için aşağıdaki gibi bir fonksiyon yeterli olacaktır.\ndef BuyukAbi(func, param): func(param) BuyukAbi(Merhaba, \u0026#34;kelebek\u0026#34;) Merhaba kelebek Bu fonksiyon parametre olarak aldığı func fonksiyonuna param parametresini geçirecektir.\nEğer fonksiyonun aldığı parametre sayısı belirsiz ise, yani farklı sayıda parametre alan fonksiyonlarla uğraşmak gerekiyorsa yanına birkaç ekleme daha yapmamız gerekiyor.\ndef BuyukBuyukAbi(func, param): func(*param) param parametresi bir liste olmak durumunda. Geçirilen fonksiyon kaç parametre alıyorsa listenin uzunluğu okadar olmalı.",
   "inLanguage" : "tr",
   "wordCount":  127 ,
   "datePublished" : "2010-05-01T03:51:00",
@@ -89,7 +90,8 @@ Parametre olarak geçireceğimiz fonksiyonlar belli bir sayıda parametre alıyo
 Mesela:
 def Merhaba(isim): print &#34;Merhaba %s&#34; % isim Bunun gibi sadece tek parametre alan bir fonksiyon için aşağıdaki gibi bir fonksiyon yeterli olacaktır.
 def BuyukAbi(func, param): func(param) BuyukAbi(Merhaba, &#34;kelebek&#34;) Merhaba kelebek Bu fonksiyon parametre olarak aldığı func fonksiyonuna param parametresini geçirecektir.
-Eğer fonksiyonun aldığı parametre sayısı belirsiz ise, yani farklı sayıda parametre alan fonksiyonlarla uğraşmak gerekiyorsa yanına birkaç ekleme daha yapmamız gerekiyor.">
+Eğer fonksiyonun aldığı parametre sayısı belirsiz ise, yani farklı sayıda parametre alan fonksiyonlarla uğraşmak gerekiyorsa yanına birkaç ekleme daha yapmamız gerekiyor.
+def BuyukBuyukAbi(func, param): func(*param) param parametresi bir liste olmak durumunda. Geçirilen fonksiyon kaç parametre alıyorsa listenin uzunluğu okadar olmalı.">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
 <meta property="og:url" content="https://blog.askin.ws/blog/python-fonksiyona-parametre-olarak-fonksiyon-gecirmek/" />
 <meta property="og:type" content="website" />

@@ -9,7 +9,7 @@
 
   <title>Linux, Paralel Port ile 2x16 LCD Ekran Kullanımı - Aşkın Özgür</title>
   <meta name="description" content="Çalıştığım projede linuxta paralel port ile lcd ekran kullanmam gerekti. Neredeyse internetin altını üstüne getirdim ama işime yarar çok birşey bulamadım. Sonunda DOS için yazılmış bir kod buldum. Bu kodu biraz inceleyip, gerekli püf noktaları bulunca kodu linux&rsquo;a uydurmak çok zor olmadı. Hatta neredeyse sadece kullanılan fonksiyonun adını ve parametre yerlerini değiştirdim :)
-Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read/write seçimi için kullanılıyor.">
+Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read/write seçimi için kullanılıyor. Geri kalan 3 bacak güç bağlantısı ve kontrast için kullanılıyor. Burdaki şemaya göre bağlantıları yapabilirsiniz. Ayrıca örnek aldığım kodda aynı sayfada bulunmakta.">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -58,7 +58,7 @@ Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data v
     "name" : "Aşkın Özgür"
   },
   "headline": "Linux, Paralel Port ile 2x16 LCD Ekran Kullanımı",
-  "description" : "Çalıştığım projede linuxta paralel port ile lcd ekran kullanmam gerekti. Neredeyse internetin altını üstüne getirdim ama işime yarar çok birşey bulamadım. Sonunda DOS için yazılmış bir kod buldum. Bu kodu biraz inceleyip, gerekli püf noktaları bulunca kodu linux\u0026rsquo;a uydurmak çok zor olmadı. Hatta neredeyse sadece kullanılan fonksiyonun adını ve parametre yerlerini değiştirdim :)\nAslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read\/write seçimi için kullanılıyor.",
+  "description" : "Çalıştığım projede linuxta paralel port ile lcd ekran kullanmam gerekti. Neredeyse internetin altını üstüne getirdim ama işime yarar çok birşey bulamadım. Sonunda DOS için yazılmış bir kod buldum. Bu kodu biraz inceleyip, gerekli püf noktaları bulunca kodu linux\u0026rsquo;a uydurmak çok zor olmadı. Hatta neredeyse sadece kullanılan fonksiyonun adını ve parametre yerlerini değiştirdim :)\nAslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read\/write seçimi için kullanılıyor. Geri kalan 3 bacak güç bağlantısı ve kontrast için kullanılıyor. Burdaki şemaya göre bağlantıları yapabilirsiniz. Ayrıca örnek aldığım kodda aynı sayfada bulunmakta.",
   "inLanguage" : "tr",
   "wordCount":  354 ,
   "datePublished" : "2011-02-27T03:08:00",
@@ -81,7 +81,7 @@ Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data v
 
 <meta property="og:title" content="Linux, Paralel Port ile 2x16 LCD Ekran Kullanımı" />
 <meta property="og:description" content="Çalıştığım projede linuxta paralel port ile lcd ekran kullanmam gerekti. Neredeyse internetin altını üstüne getirdim ama işime yarar çok birşey bulamadım. Sonunda DOS için yazılmış bir kod buldum. Bu kodu biraz inceleyip, gerekli püf noktaları bulunca kodu linux&rsquo;a uydurmak çok zor olmadı. Hatta neredeyse sadece kullanılan fonksiyonun adını ve parametre yerlerini değiştirdim :)
-Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read/write seçimi için kullanılıyor.">
+Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read/write seçimi için kullanılıyor. Geri kalan 3 bacak güç bağlantısı ve kontrast için kullanılıyor. Burdaki şemaya göre bağlantıları yapabilirsiniz. Ayrıca örnek aldığım kodda aynı sayfada bulunmakta.">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
 <meta property="og:url" content="https://blog.askin.ws/blog/linux-paralel-port-ile-2x16-lcd-ekran-kullanimi/" />
 <meta property="og:type" content="website" />

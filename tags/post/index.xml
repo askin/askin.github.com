@@ -22,7 +22,9 @@
       <description>cURL kullanarak komut satırından istediğimiz bir web sayfasına get/post istekleri yapabiliriz. &amp;ndash;data parametresi ile post edilecek verileri gönderebiliryoruz. Url sonuna ekleyeceğimiz parametreler de get olarak gönderilecektir.
 curl --data &amp;quot;param1=value1&amp;amp;param2=value2&amp;quot; http://example.com/index.php  Web sayfasının döndürdüğü sonu doğrudan ekrana basılacaktır, bunu bir dosyaya aktarmak için
 curl --data &amp;quot;param1=value1&amp;amp;param2=value2&amp;quot; http://example.com/index.php &amp;gt; result.html  bir değişkene aktarmak için
-result=$(curl --data &amp;quot;param1=value1&amp;amp;param2=value2&amp;quot; http://example.com/index.php)  kullanabiliriz. Erişmek istediğimiz web sayfası kullanıcı girişi istiyorsa cookie kullanrak bunu yapabiliriz.</description>
+result=$(curl --data &amp;quot;param1=value1&amp;amp;param2=value2&amp;quot; http://example.com/index.php)  kullanabiliriz. Erişmek istediğimiz web sayfası kullanıcı girişi istiyorsa cookie kullanrak bunu yapabiliriz.
+curl --data &amp;quot;username=askin&amp;amp;password=pasw0rd&amp;quot; http://example.com/login.php -c cookie.cook  Bu komutla giriş yapıp, oluşturulan cookie&amp;rsquo;yi cookie.cook dosyasına kaydettik.
+Tabi burda username ve password parametreleri değişiklik gösterebilir, gönderilen form verisini inceleyerek, gerekli parametreleri bulup uygun formatta göndermek gerekir.</description>
     </item>
     
     <item>

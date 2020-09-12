@@ -29,7 +29,7 @@
       <pubDate>Fri, 18 Jan 2008 18:52:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/yasakli-sitelere-gitme-open-dns/</guid>
-      <description>Yasaklı sitelere girebilmek için çok çeşitli yöntemler kullanabilirsiniz. Ben çok sıklıkla www.gizlen.net&amp;lsquo;i kullanabilirsiniz. Bu siteye giriyorsunuz ve sayfanın üstündeki kutucuğa gireceğiniz siteyi yazıyorsunuz, oda size gireceğiniz siteyi sunuyor. Eğer daha kalıcı bir çözüm istiyorsanız proxy(vekil sunucu) kullanabilirsiniz. İnternetten ufak bir arama ile onlarca proxy adresine sahip olabilirsiniz. Ancak birçok kişi tarafınfan kullanılan ve tavsiye edilen Open DNS işinizi çok rahatlıkla görebilir. Gerçi Open DNS bir proxy değil. O bir Name Server.</description>
+      <description>Yasaklı sitelere girebilmek için çok çeşitli yöntemler kullanabilirsiniz. Ben çok sıklıkla www.gizlen.net&amp;lsquo;i kullanabilirsiniz. Bu siteye giriyorsunuz ve sayfanın üstündeki kutucuğa gireceğiniz siteyi yazıyorsunuz, oda size gireceğiniz siteyi sunuyor. Eğer daha kalıcı bir çözüm istiyorsanız proxy(vekil sunucu) kullanabilirsiniz. İnternetten ufak bir arama ile onlarca proxy adresine sahip olabilirsiniz. Ancak birçok kişi tarafınfan kullanılan ve tavsiye edilen Open DNS işinizi çok rahatlıkla görebilir. Gerçi Open DNS bir proxy değil. O bir Name Server. Bizim www.bobrektasi.org gibi girmeye çalıştığımız sitelerin ip adreslerini çözümleyip bizi doğru makineye yönlendiriyor. Bu bu yönlenme işini Open DNS üzerinden yaptığımız için TTnet&amp;rsquo;in bizim girdiğimiz sitelere müdahale etme şansı kalmıyor.</description>
     </item>
     
   </channel>

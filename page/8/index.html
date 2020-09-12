@@ -406,7 +406,8 @@ Eğer debian temelli bir dağıtım kullanıyorsanız aşağıdaki komut işiniz
     </p>
     <div class="post-entry">
         
-        Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz. Ben daha önce bahsettiğim internet canavarı:) için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu. Kullanacağımız programın adı sshfs yani SSH Filesystem.
+        Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz. Ben daha önce bahsettiğim internet canavarı:) için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu. Kullanacağımız programın adı sshfs yani SSH Filesystem. Kurulum:
+ Debian &amp;&amp; Ubuntu &amp;&amp; vb.  aptitude install sshfs  Kaynak koddan derleme  ./configure make make install # root yetkileriyle  Kullanımı - Uzak makinadaki bir dizini bağlamak sshfs hostname:dizin bağlamanoktası (root yetkileriyle)  Umount - Bağı koparma umount bağlamanoktası # ya da fusermount -u bağlamanoktası   Bu şekide kullanırsanız bağladığınız dizine ancak root yetkileriyle ulaşabilirsiniz.
         <a href="https://blog.askin.ws/blog/ssh-filesystem-ile-uzak-makinadaki-dizini-yerele-baglamak/" class="post-read-more">[]</a>
         
     </div>
@@ -658,7 +659,7 @@ public class Sayisal { int[] _kupon = new int[6]; int _num; public Sayisal(){ in
         Bu girdi Burdaki girdiden esinlenilerek yazıldı.
 E madem pyton ile sayısal kuponu yapılıyor biz niye scheme ile yapmayalım bunu demi:)
 Probleme göre kod bana çok uzun geldi. Belki ilerde optimize edebilirim. Ama şimdilik böyle oynayalım demi:)
-(define (sayisal) (display &#34;Oynamak istediginiz kolan sayisini giriniz: \n&#34;) (let ((kolon (read))) (do ((i 1 (+ i 1))) ((&gt; i kolon)) (let loop ((lst (list (+ (random 49) 1))) (sayi (+ 1 (random 49)))) (if (= (length lst) 6) (printf &#34;~a.
+(define (sayisal) (display &#34;Oynamak istediginiz kolan sayisini giriniz: \n&#34;) (let ((kolon (read))) (do ((i 1 (+ i 1))) ((&gt; i kolon)) (let loop ((lst (list (+ (random 49) 1))) (sayi (+ 1 (random 49)))) (if (= (length lst) 6) (printf &#34;~a. kolon: ~a\n&#34; i (sort lst &lt; )) (if (member sayi lst) (loop lst (+ (random 49) 1)) (loop (append lst (list sayi)) (+ (random 49) 1)))))))) (sayisal);burası kodun çalıştırılması için.
         <a href="https://blog.askin.ws/blog/cikmaz-demeyin-sansinizi-deneyin/" class="post-read-more">[]</a>
         
     </div>
@@ -706,7 +707,7 @@ Probleme göre kod bana çok uzun geldi. Belki ilerde optimize edebilirim. Ama �
     <div class="post-entry">
         
         Bu günlerde bi msn virüsü yayılmaya başladı. Msn üzerinden kişilere bu senin resmin mi?, oh sen çıplak gibisinden mesajlar ve bir adet link (http://members.lycos.co.uk/facebookphotos/?msn_adresiniz gibisinden) yolluyor. eğer bu linke tıklarsanız size resim dosyası görünümünde bir virüs yolluyor. Sizde buna tıklayınca olan oluyor:) Artık sizin kişi listenizdeki kişilere bu mesajlar gidiyor ve onlara da olan oluyor. Geçen gün bu virüsü bir bilgisayardan temizledim. Belki işinize yarar diye yazıyorum buraya.
- Bu linkteki dosyayı indirin.
+ Bu linkteki dosyayı indirin. Sıkıştırılmış dosyadan çıkartın. omg-fix10-en.reg dosyasına çift tıklayıp yada sağ tıklayıp birleştir deyin. Ardından bilgisayarı yeniden başlatın. omg-delete10-en.bat dosyasını çalıştırın. Garanti olsun diye bilgisayarı yeniden başlatın. Şimdi msni kaldırıp bide sağlam bi programla (bu virüs için Nod32 tavsiye ediliyor) virüs taraması yapın.
         <a href="https://blog.askin.ws/blog/yazik-bu-windowsculara-win32ircbotaal/" class="post-read-more">[]</a>
         
     </div>

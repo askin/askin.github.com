@@ -9,7 +9,9 @@
 
   <title>Pardus Ağ Yöneticisi İle Eduroam Ağına Bağlanmak - Aşkın Özgür</title>
   <meta name="description" content="Bikaç gündür Pardus ve Eduroam ile uğraşıyordum. Eduroama bağlanmak için pratik yollar buldum fakat hiç birisi Ağ Yöneticisi kullanarak bağlanmanın zevkini vermiyordu.
-2 gün boyunca Ağ Yöneticisinin neresini değiştirmem gerektiğini arayıp durdum. Sonunda wireless-tools adlı paketin aradığım paket olduğunu keşfettim :) wireless tools paketi wpa_supplicant kullanarak wpa şifreleme kullanan ağlara bağlanmaya yarıyor. Sağolsun Pardus geliştiricileri wpa_supplicant paketi için dbus kullanan bir python betiği yazmışlar. Bu betik içinde tanımlanan methodlarla wpa_supplicantı yönetebiliyoruz.">
+2 gün boyunca Ağ Yöneticisinin neresini değiştirmem gerektiğini arayıp durdum. Sonunda wireless-tools adlı paketin aradığım paket olduğunu keşfettim :) wireless tools paketi wpa_supplicant kullanarak wpa şifreleme kullanan ağlara bağlanmaya yarıyor. Sağolsun Pardus geliştiricileri wpa_supplicant paketi için dbus kullanan bir python betiği yazmışlar. Bu betik içinde tanımlanan methodlarla wpa_supplicantı yönetebiliyoruz. Bu betiğe eduroam ağına bağlanmak için gerekli parametreleri alan bir method ekledim.
+Daha sonra wireless-tools paketi içindeki comar betiğine bu methodu kullanmasını sağlayacak birkaç değişiklik yaptım.
+Sırf bu işi denemek için bugün okulum olmadığı halde sabahın 8&rsquo;inde okula gelip deneme yaptım.">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -58,7 +60,7 @@
     "name" : "Aşkın Özgür"
   },
   "headline": "Pardus Ağ Yöneticisi İle Eduroam Ağına Bağlanmak",
-  "description" : "Bikaç gündür Pardus ve Eduroam ile uğraşıyordum. Eduroama bağlanmak için pratik yollar buldum fakat hiç birisi Ağ Yöneticisi kullanarak bağlanmanın zevkini vermiyordu.\n2 gün boyunca Ağ Yöneticisinin neresini değiştirmem gerektiğini arayıp durdum. Sonunda wireless-tools adlı paketin aradığım paket olduğunu keşfettim :) wireless tools paketi wpa_supplicant kullanarak wpa şifreleme kullanan ağlara bağlanmaya yarıyor. Sağolsun Pardus geliştiricileri wpa_supplicant paketi için dbus kullanan bir python betiği yazmışlar. Bu betik içinde tanımlanan methodlarla wpa_supplicantı yönetebiliyoruz.",
+  "description" : "Bikaç gündür Pardus ve Eduroam ile uğraşıyordum. Eduroama bağlanmak için pratik yollar buldum fakat hiç birisi Ağ Yöneticisi kullanarak bağlanmanın zevkini vermiyordu.\n2 gün boyunca Ağ Yöneticisinin neresini değiştirmem gerektiğini arayıp durdum. Sonunda wireless-tools adlı paketin aradığım paket olduğunu keşfettim :) wireless tools paketi wpa_supplicant kullanarak wpa şifreleme kullanan ağlara bağlanmaya yarıyor. Sağolsun Pardus geliştiricileri wpa_supplicant paketi için dbus kullanan bir python betiği yazmışlar. Bu betik içinde tanımlanan methodlarla wpa_supplicantı yönetebiliyoruz. Bu betiğe eduroam ağına bağlanmak için gerekli parametreleri alan bir method ekledim.\nDaha sonra wireless-tools paketi içindeki comar betiğine bu methodu kullanmasını sağlayacak birkaç değişiklik yaptım.\nSırf bu işi denemek için bugün okulum olmadığı halde sabahın 8\u0026rsquo;inde okula gelip deneme yaptım.",
   "inLanguage" : "tr",
   "wordCount":  236 ,
   "datePublished" : "2009-12-07T09:45:00",
@@ -81,7 +83,9 @@
 
 <meta property="og:title" content="Pardus Ağ Yöneticisi İle Eduroam Ağına Bağlanmak" />
 <meta property="og:description" content="Bikaç gündür Pardus ve Eduroam ile uğraşıyordum. Eduroama bağlanmak için pratik yollar buldum fakat hiç birisi Ağ Yöneticisi kullanarak bağlanmanın zevkini vermiyordu.
-2 gün boyunca Ağ Yöneticisinin neresini değiştirmem gerektiğini arayıp durdum. Sonunda wireless-tools adlı paketin aradığım paket olduğunu keşfettim :) wireless tools paketi wpa_supplicant kullanarak wpa şifreleme kullanan ağlara bağlanmaya yarıyor. Sağolsun Pardus geliştiricileri wpa_supplicant paketi için dbus kullanan bir python betiği yazmışlar. Bu betik içinde tanımlanan methodlarla wpa_supplicantı yönetebiliyoruz.">
+2 gün boyunca Ağ Yöneticisinin neresini değiştirmem gerektiğini arayıp durdum. Sonunda wireless-tools adlı paketin aradığım paket olduğunu keşfettim :) wireless tools paketi wpa_supplicant kullanarak wpa şifreleme kullanan ağlara bağlanmaya yarıyor. Sağolsun Pardus geliştiricileri wpa_supplicant paketi için dbus kullanan bir python betiği yazmışlar. Bu betik içinde tanımlanan methodlarla wpa_supplicantı yönetebiliyoruz. Bu betiğe eduroam ağına bağlanmak için gerekli parametreleri alan bir method ekledim.
+Daha sonra wireless-tools paketi içindeki comar betiğine bu methodu kullanmasını sağlayacak birkaç değişiklik yaptım.
+Sırf bu işi denemek için bugün okulum olmadığı halde sabahın 8&rsquo;inde okula gelip deneme yaptım.">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
 <meta property="og:url" content="https://blog.askin.ws/blog/pardus-ag-yoneticisi-ile-eduroam-agina-baglanmak/" />
 <meta property="og:type" content="website" />

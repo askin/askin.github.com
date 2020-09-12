@@ -9,7 +9,9 @@
 
   <title>Konsoldan Rastgele String Oluşturma - Aşkın Özgür</title>
   <meta name="description" content="Konsoldan rastgele stringler oluşturmak için bir çok yöntem var, bunların bir çoğu random ve urandom aygıtlarını kullanıyor. Benim şimdi anlatacağım yöntemle urandom aygıtını kullanıyoruz.
-&lt; /dev/urandom tr -dc A-Za-z0-9 Burada tr komutuna standart girdi olarak /dev/urandom aygıtını gösteriyoruz. urandom rastgele değerler üretir, bu üretilen değerlerin bazıları yazdırılabilir bazıları da yazdırılamayan karakterlere denk gelir. Biz tr komutu ile bu rastgele üretilen değerlerden alfanümerik olanları ayıklıyoruz. Tabi bu komut sonsuza kadar çıktı üretir, sadece istediğimiz kadarını almak için head komutunu kullanabiliriz.">
+&lt; /dev/urandom tr -dc A-Za-z0-9 Burada tr komutuna standart girdi olarak /dev/urandom aygıtını gösteriyoruz. urandom rastgele değerler üretir, bu üretilen değerlerin bazıları yazdırılabilir bazıları da yazdırılamayan karakterlere denk gelir. Biz tr komutu ile bu rastgele üretilen değerlerden alfanümerik olanları ayıklıyoruz. Tabi bu komut sonsuza kadar çıktı üretir, sadece istediğimiz kadarını almak için head komutunu kullanabiliriz.
+&lt; /dev/urandom tr -dc A-Za-z0-9 | head -c32 Bu komutla çıktının ilk 32 karakterini alıyoruz.
+tr kullanarak yapacaklarımızın limiti hayal gücümüz kadar.">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -58,7 +60,7 @@
     "name" : "Aşkın Özgür"
   },
   "headline": "Konsoldan Rastgele String Oluşturma",
-  "description" : "Konsoldan rastgele stringler oluşturmak için bir çok yöntem var, bunların bir çoğu random ve urandom aygıtlarını kullanıyor. Benim şimdi anlatacağım yöntemle urandom aygıtını kullanıyoruz.\n\u0026lt; \/dev\/urandom tr -dc A-Za-z0-9 Burada tr komutuna standart girdi olarak \/dev\/urandom aygıtını gösteriyoruz. urandom rastgele değerler üretir, bu üretilen değerlerin bazıları yazdırılabilir bazıları da yazdırılamayan karakterlere denk gelir. Biz tr komutu ile bu rastgele üretilen değerlerden alfanümerik olanları ayıklıyoruz. Tabi bu komut sonsuza kadar çıktı üretir, sadece istediğimiz kadarını almak için head komutunu kullanabiliriz.",
+  "description" : "Konsoldan rastgele stringler oluşturmak için bir çok yöntem var, bunların bir çoğu random ve urandom aygıtlarını kullanıyor. Benim şimdi anlatacağım yöntemle urandom aygıtını kullanıyoruz.\n\u0026lt; \/dev\/urandom tr -dc A-Za-z0-9 Burada tr komutuna standart girdi olarak \/dev\/urandom aygıtını gösteriyoruz. urandom rastgele değerler üretir, bu üretilen değerlerin bazıları yazdırılabilir bazıları da yazdırılamayan karakterlere denk gelir. Biz tr komutu ile bu rastgele üretilen değerlerden alfanümerik olanları ayıklıyoruz. Tabi bu komut sonsuza kadar çıktı üretir, sadece istediğimiz kadarını almak için head komutunu kullanabiliriz.\n\u0026lt; \/dev\/urandom tr -dc A-Za-z0-9 | head -c32 Bu komutla çıktının ilk 32 karakterini alıyoruz.\ntr kullanarak yapacaklarımızın limiti hayal gücümüz kadar.",
   "inLanguage" : "tr",
   "wordCount":  144 ,
   "datePublished" : "2013-08-13T12:34:00",
@@ -81,7 +83,9 @@
 
 <meta property="og:title" content="Konsoldan Rastgele String Oluşturma" />
 <meta property="og:description" content="Konsoldan rastgele stringler oluşturmak için bir çok yöntem var, bunların bir çoğu random ve urandom aygıtlarını kullanıyor. Benim şimdi anlatacağım yöntemle urandom aygıtını kullanıyoruz.
-&lt; /dev/urandom tr -dc A-Za-z0-9 Burada tr komutuna standart girdi olarak /dev/urandom aygıtını gösteriyoruz. urandom rastgele değerler üretir, bu üretilen değerlerin bazıları yazdırılabilir bazıları da yazdırılamayan karakterlere denk gelir. Biz tr komutu ile bu rastgele üretilen değerlerden alfanümerik olanları ayıklıyoruz. Tabi bu komut sonsuza kadar çıktı üretir, sadece istediğimiz kadarını almak için head komutunu kullanabiliriz.">
+&lt; /dev/urandom tr -dc A-Za-z0-9 Burada tr komutuna standart girdi olarak /dev/urandom aygıtını gösteriyoruz. urandom rastgele değerler üretir, bu üretilen değerlerin bazıları yazdırılabilir bazıları da yazdırılamayan karakterlere denk gelir. Biz tr komutu ile bu rastgele üretilen değerlerden alfanümerik olanları ayıklıyoruz. Tabi bu komut sonsuza kadar çıktı üretir, sadece istediğimiz kadarını almak için head komutunu kullanabiliriz.
+&lt; /dev/urandom tr -dc A-Za-z0-9 | head -c32 Bu komutla çıktının ilk 32 karakterini alıyoruz.
+tr kullanarak yapacaklarımızın limiti hayal gücümüz kadar.">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
 <meta property="og:url" content="https://blog.askin.ws/blog/konsoldan-rastgele-string-olusturma/" />
 <meta property="og:type" content="website" />

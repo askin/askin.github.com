@@ -30,7 +30,7 @@ $ grep &amp;#39;ara&amp;#39; `find . -name &amp;#39;*&amp;#39;` </description>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/gtk-2-18-9-pencere-gizleme-sorunu/</guid>
       <description>Gece gece uyku tutmadı var olan bir programı kurcalamaya başladım. Amacım programın sitem çekmecesinden çalışabilir hale getirmekti.
-Her şeyi yaptım fakat bir türlü pencereyi gizleyemiyordum :) Doküman gtk_window_get_mnemonics_visible () fonksiyonunu kullanmamı söylüyordu, fakat kullandığım gtk sürümünde bu fonksiyon tanımlı değildi(2.18.7). Eski sürüm için olan dokümanı incelediğimde bu işi yapan bir fonksiyon yoktu. Sistemde kurulu gtk ve python ile bu işi yapabiliyordum. Normal olarak c ile de yapabilmem lazımdı:) Biraz inceledikten sonra, önce pencereyi gizleyen, ardından boyutunu eski haline getirip sonra tekrar gösteren bir fonksiyon olduğunu fark ettim.</description>
+Her şeyi yaptım fakat bir türlü pencereyi gizleyemiyordum :) Doküman gtk_window_get_mnemonics_visible () fonksiyonunu kullanmamı söylüyordu, fakat kullandığım gtk sürümünde bu fonksiyon tanımlı değildi(2.18.7). Eski sürüm için olan dokümanı incelediğimde bu işi yapan bir fonksiyon yoktu. Sistemde kurulu gtk ve python ile bu işi yapabiliyordum. Normal olarak c ile de yapabilmem lazımdı:) Biraz inceledikten sonra, önce pencereyi gizleyen, ardından boyutunu eski haline getirip sonra tekrar gösteren bir fonksiyon olduğunu fark ettim. Benim istediğim işi yapıyor fakat yanında birde fazlalığı vardı.(gtk_window_reshow_with_initial_size) İnternette biraz daha araştırıp umudumu kaybedince mecburen kaynak koda baktım.</description>
     </item>
     
   </channel>

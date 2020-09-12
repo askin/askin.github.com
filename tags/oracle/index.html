@@ -236,10 +236,39 @@
     </p>
     <div class="post-entry">
         
-        Öncelikle http://www.oracle.com/technetwork/database/enterprise-edition/jdbc101040-094982.html adresinden classes12.jar dosyasını indiriyoruz.
-Bu dosyayı bir dizine atıp, içeriğini bu dizine çıkartıyoruz. Bu dizini classpath değişkeninde belirtip kodlamaya başlıyoruz.
-import java.io.*; import java.sql.*; public class OraThin { public static void main(String[] args) { try { Connection con = null; Class.forName(&#34;oracle.jdbc.driver.OracleDriver&#34;); con=DriverManager.getConnection( &#34;jdbc:oracle:thin:@localhost:1521:dbname&#34;, &#34;username&#34;, &#34;password&#34;); Statement s = con.createStatement(); ResultSet rs = s.executeQuery(&#34;SELECT * FROM KISI&#34;); String name; String surname; while(rs.next()) { name = rs.getString(&#34;AD&#34;); surname = rs.getString(&#34;SOYAD&#34;); System.
-        <a href="https://blog.askin.ws/blog/java-ile-oracle-veritabanina-baglanmak/" class="post-read-more">[]</a>
+        <p>Öncelikle <a href="http://www.oracle.com/technetwork/database/enterprise-edition/jdbc101040-094982.html">http://www.oracle.com/technetwork/database/enterprise-edition/jdbc101040-094982.html</a> adresinden classes12.jar dosyasını indiriyoruz.</p>
+<p>Bu dosyayı bir dizine atıp, içeriğini bu dizine çıkartıyoruz. Bu dizini classpath değişkeninde belirtip kodlamaya başlıyoruz.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.io.*<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.sql.*<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">OraThin</span> <span style="color:#f92672">{</span>                                                                                                                                                                
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>                                                                                                                                          
+        <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>                                                                                                                                                                         
+            Connection con <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+            Class<span style="color:#f92672">.</span><span style="color:#a6e22e">forName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;oracle.jdbc.driver.OracleDriver&#34;</span><span style="color:#f92672">);</span>              
+            con<span style="color:#f92672">=</span>DriverManager<span style="color:#f92672">.</span><span style="color:#a6e22e">getConnection</span><span style="color:#f92672">(</span>
+                <span style="color:#e6db74">&#34;jdbc:oracle:thin:@localhost:1521:dbname&#34;</span><span style="color:#f92672">,</span>
+                <span style="color:#e6db74">&#34;username&#34;</span><span style="color:#f92672">,</span>
+                <span style="color:#e6db74">&#34;password&#34;</span><span style="color:#f92672">);</span>
+            Statement s <span style="color:#f92672">=</span> con<span style="color:#f92672">.</span><span style="color:#a6e22e">createStatement</span><span style="color:#f92672">();</span>
+            ResultSet rs <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">executeQuery</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;SELECT * FROM KISI&#34;</span><span style="color:#f92672">);</span>
+
+            String name<span style="color:#f92672">;</span>
+            String surname<span style="color:#f92672">;</span>
+
+            <span style="color:#66d9ef">while</span><span style="color:#f92672">(</span>rs<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+                name    <span style="color:#f92672">=</span> rs<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;AD&#34;</span><span style="color:#f92672">);</span>
+                surname <span style="color:#f92672">=</span> rs<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;SOYAD&#34;</span><span style="color:#f92672">);</span>
+
+                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Name: &#34;</span> <span style="color:#f92672">+</span> name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, Surmame: &#34;</span> <span style="color:#f92672">+</span> surname<span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span>
+
+            s<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+            con<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>Exception e<span style="color:#f92672">){</span>e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span> 
+</code></pre></div>
         
     </div>
 

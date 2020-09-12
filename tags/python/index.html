@@ -237,7 +237,7 @@
     <div class="post-entry">
         
         Başlığında söylediği gibi, Python sözlük hızlı rehber
-# Anahtar/değer çiftleriyle sözlük tanımlama dict = { &#39;anahtar1′ : &#39;deger1′, &#39;anahtar2′ : &#39;deger2′, &#39;anahtar3′ : &#39;deger3′ } # Tüm anahtarları al sozluk.keys() # Tüm değerleri al sozluk.values() # Düzenleme sozluk[&#39;anahtar2&#39;] = &#39;deger8′ # Erişim print sozluk[&#39;anahtar1&#39;] # &#39;deger2&#39;yi yazdır print sozluk[&#39;anahtar2&#39;] # Boş sözlük tanımlama ve değer atama bosSozluk = {} bosSozluk[&#39;anahtar4&#39;] = &#39;deger4&#39; # Sözlük üzerinde döngü kurma (foreach) for anahtar in sozluk: print sozluk[anahtar] # Anahtarları sıralayıp, o sıraya göre değerleri yazdırmak anahtarlar = sozluk.
+# Anahtar/değer çiftleriyle sözlük tanımlama dict = { &#39;anahtar1′ : &#39;deger1′, &#39;anahtar2′ : &#39;deger2′, &#39;anahtar3′ : &#39;deger3′ } # Tüm anahtarları al sozluk.keys() # Tüm değerleri al sozluk.values() # Düzenleme sozluk[&#39;anahtar2&#39;] = &#39;deger8′ # Erişim print sozluk[&#39;anahtar1&#39;] # &#39;deger2&#39;yi yazdır print sozluk[&#39;anahtar2&#39;] # Boş sözlük tanımlama ve değer atama bosSozluk = {} bosSozluk[&#39;anahtar4&#39;] = &#39;deger4&#39; # Sözlük üzerinde döngü kurma (foreach) for anahtar in sozluk: print sozluk[anahtar] # Anahtarları sıralayıp, o sıraya göre değerleri yazdırmak anahtarlar = sozluk.keys() anahtarlar.sort() for anahtar in anahtarlar: print sozluk[anahtar] # Değerlere göre döngü kurmak (sıralı değil) for deger in sozluk.
         <a href="https://blog.askin.ws/blog/python-sozluk-hizli-rehber/" class="post-read-more">[]</a>
         
     </div>
@@ -342,7 +342,9 @@
         Gtk ile çok kolay bir şekilde geliştirdiğiniz uygulamayı sistem çekmecesinde gösterebilirsiniz.
 Ufak bir örnek kod veriyorum. Onun üzerinden anlatacağım.
 import pygtk import gtk class ShowIcon: def __init__(self): self.icon = gtk.StatusIcon() self.icon.set_from_file(&#39;gtk.png&#39;) self.icon.set_tooltip_text(&#39;Hello Python!!!&#39;) self.icon.set_visible(True) self.icon.connect(&#34;activate&#34;, self.hello) gtk.main() def hello(self, widget): print &#39;Hello Python !!!&#39; if __name__ == &#39;__main__&#39;: icon = ShowIcon() 6. satırda asıl işimizi yapacak olan StatusIcon nesnesini yaratıyoruz.
-7. satırda sistem çekmecesinde hangi ikonun görüntüleneceğini belirtiyoruz. set_from_file ikonu dosyadan alacağımız anlamına geliyor.
+7. satırda sistem çekmecesinde hangi ikonun görüntüleneceğini belirtiyoruz. set_from_file ikonu dosyadan alacağımız anlamına geliyor. Eğer gtk&rsquo;nın sunduğu standart ikonları kullanmak istiyorsanız set_from_stock kullanmalısınız.
+icon.set_from_stock(gtk.STOCK_ABOUT) 8. satırda ikonun üzerine geldiğimizde görünmesini istediğimiz yazıyı belirliyoruz.
+9. satırda ikonun başlangıçtaki görünürlüğünü belirliyoruz. Bu satırı yazmasak da görünür başlıyor.
         <a href="https://blog.askin.ws/blog/pygtk-ile-sistem-cekmecesi/" class="post-read-more">[]</a>
         
     </div>
@@ -397,10 +399,12 @@ import pygtk import gtk class ShowIcon: def __init__(self): self.icon = gtk.Stat
     </p>
     <div class="post-entry">
         
-        PyGtk ile ara yüzüzünü hazırladığım bir program içinde thread kullanmam gerekiyordu. Kod çalışıyordu fakat thread işlemi istediğim gibi çalışmıyordu. Arayüzde bir değişiklik olduğu zaman thread çalışıyor, onun dışında hiç bir şekilde tepki vermiyordu.
-Uzun süre hatanın kodda olabileceğini düşündüm. Ama sonunda python gtk.main() ve thread 3&rsquo;lüsünü aynı sorgu içinde googleda aratınca cevabı buldum. Gtk&rsquo;ya thread kullandığımı anlatmam gerekiyordu :)
-gtk.gdk.threads_init() Bu satırı kodumun başına eklediğimde herşey istediğim gibi çalışmaya başladı :)
-        <a href="https://blog.askin.ws/blog/pygtk-ve-thread-sorunu/" class="post-read-more">[]</a>
+        <p><img src="/uploads/2010/04/gtk.png" alt="Gtk" title="Gtk">PyGtk ile ara yüzüzünü hazırladığım bir program içinde thread kullanmam gerekiyordu. Kod çalışıyordu fakat thread işlemi istediğim gibi çalışmıyordu. Arayüzde bir değişiklik olduğu zaman thread çalışıyor, onun dışında hiç bir şekilde tepki vermiyordu.</p>
+<p>Uzun süre hatanın kodda olabileceğini düşündüm. Ama sonunda python gtk.main() ve thread 3&rsquo;lüsünü aynı sorgu içinde googleda aratınca cevabı buldum. Gtk&rsquo;ya thread kullandığımı anlatmam gerekiyordu :)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">gtk<span style="color:#f92672">.</span>gdk<span style="color:#f92672">.</span>threads_init()
+</code></pre></div><p>Bu satırı kodumun başına eklediğimde herşey istediğim gibi çalışmaya başladı :)</p>
+<p>Sizde böyle bir sorunla karşılaşırsanız aklınızda bulunsun :)</p>
+
         
     </div>
 
@@ -455,7 +459,9 @@ gtk.gdk.threads_init() Bu satırı kodumun başına eklediğimde herşey istedi�
     <div class="post-entry">
         
         Bikaç gündür Pardus ve Eduroam ile uğraşıyordum. Eduroama bağlanmak için pratik yollar buldum fakat hiç birisi Ağ Yöneticisi kullanarak bağlanmanın zevkini vermiyordu.
-2 gün boyunca Ağ Yöneticisinin neresini değiştirmem gerektiğini arayıp durdum. Sonunda wireless-tools adlı paketin aradığım paket olduğunu keşfettim :) wireless tools paketi wpa_supplicant kullanarak wpa şifreleme kullanan ağlara bağlanmaya yarıyor. Sağolsun Pardus geliştiricileri wpa_supplicant paketi için dbus kullanan bir python betiği yazmışlar. Bu betik içinde tanımlanan methodlarla wpa_supplicantı yönetebiliyoruz.
+2 gün boyunca Ağ Yöneticisinin neresini değiştirmem gerektiğini arayıp durdum. Sonunda wireless-tools adlı paketin aradığım paket olduğunu keşfettim :) wireless tools paketi wpa_supplicant kullanarak wpa şifreleme kullanan ağlara bağlanmaya yarıyor. Sağolsun Pardus geliştiricileri wpa_supplicant paketi için dbus kullanan bir python betiği yazmışlar. Bu betik içinde tanımlanan methodlarla wpa_supplicantı yönetebiliyoruz. Bu betiğe eduroam ağına bağlanmak için gerekli parametreleri alan bir method ekledim.
+Daha sonra wireless-tools paketi içindeki comar betiğine bu methodu kullanmasını sağlayacak birkaç değişiklik yaptım.
+Sırf bu işi denemek için bugün okulum olmadığı halde sabahın 8&rsquo;inde okula gelip deneme yaptım.
         <a href="https://blog.askin.ws/blog/pardus-ag-yoneticisi-ile-eduroam-agina-baglanmak/" class="post-read-more">[]</a>
         
     </div>

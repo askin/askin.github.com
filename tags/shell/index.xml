@@ -20,7 +20,9 @@
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/konsoldan-rastgele-string-olusturma/</guid>
       <description>Konsoldan rastgele stringler oluşturmak için bir çok yöntem var, bunların bir çoğu random ve urandom aygıtlarını kullanıyor. Benim şimdi anlatacağım yöntemle urandom aygıtını kullanıyoruz.
-&amp;lt; /dev/urandom tr -dc A-Za-z0-9 Burada tr komutuna standart girdi olarak /dev/urandom aygıtını gösteriyoruz. urandom rastgele değerler üretir, bu üretilen değerlerin bazıları yazdırılabilir bazıları da yazdırılamayan karakterlere denk gelir. Biz tr komutu ile bu rastgele üretilen değerlerden alfanümerik olanları ayıklıyoruz. Tabi bu komut sonsuza kadar çıktı üretir, sadece istediğimiz kadarını almak için head komutunu kullanabiliriz.</description>
+&amp;lt; /dev/urandom tr -dc A-Za-z0-9 Burada tr komutuna standart girdi olarak /dev/urandom aygıtını gösteriyoruz. urandom rastgele değerler üretir, bu üretilen değerlerin bazıları yazdırılabilir bazıları da yazdırılamayan karakterlere denk gelir. Biz tr komutu ile bu rastgele üretilen değerlerden alfanümerik olanları ayıklıyoruz. Tabi bu komut sonsuza kadar çıktı üretir, sadece istediğimiz kadarını almak için head komutunu kullanabiliriz.
+&amp;lt; /dev/urandom tr -dc A-Za-z0-9 | head -c32 Bu komutla çıktının ilk 32 karakterini alıyoruz.
+tr kullanarak yapacaklarımızın limiti hayal gücümüz kadar.</description>
     </item>
     
     <item>
@@ -31,7 +33,8 @@
       <guid>https://blog.askin.ws/blog/bir-gnulinux-kurulumunu-baska-bir-harddiskebolume-tasimak/</guid>
       <description>Öncelikle bir çalışan cd ile sistem açılır, benim tercihim gparted live cd. Sizin elinizin altında ne varsa kabuldur. İlla çalışan cd olmasına gerek yok, herhangi bir linux cdside olabilir. Bize mount, cp ve nano komutları lazım. Bunları sağlayan herhangi bir cd kullanılabilir.
 Taşınacak kurulumun hangi disk bölümünde olduğu bilinmeli. Ben 2. bölümdeki kurulumu 1. bölüme taşıyacağım. Yani /dev/hdc3 den /dev/hdc1 e taşıma yapacağım(sizdeki disk isimleri muhtemelen farklıdır).
-Cd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte.</description>
+Cd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte. Ctrl + Alt + F1 tuş kombinasyonu muhtemelen iş görecektir. Ben live cd kullandığım için grafik ekranla karşılaştım, burdan bi terminal açarak işimi göreceğim.
+Yapacağımız işlemler için root olmamız gerekiyor.</description>
     </item>
     
   </channel>

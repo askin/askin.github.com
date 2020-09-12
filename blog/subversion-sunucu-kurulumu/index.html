@@ -12,7 +12,8 @@
 sudo apt-get install subversion Kurulum tamamlandıktan sonra gerekli tüm araçlara sahip olmuş oluyoruz.
 Bir depo oluşturalım.
 svnadmin create depom depom adli dizinde bir depo oluşturmuş olduk. Bu depo üzerinde gerekli düzenlemeleri yapalım.
-depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu dosyayı açıp [general] başlığı altındaki ayarları düzenliyoruz. Burdaki tüm ayarlar yorum satırı haline getirişmiş, bunlardan işimize yarayanları aktif hale getirmemiz gerekiyor.">
+depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu dosyayı açıp [general] başlığı altındaki ayarları düzenliyoruz. Burdaki tüm ayarlar yorum satırı haline getirişmiş, bunlardan işimize yarayanları aktif hale getirmemiz gerekiyor.
+# anon-access = read  Tanımladığımız kullanıcılar dışında kalan kişilerin yetkilerini düzenlemek için kullanıyoruz. Eğer yorum satırı halinde bırakırsak tanımsız kullanıcılar depo üzerinde okuma hakkına sahip oluyorlar.">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -61,7 +62,7 @@ depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu do
     "name" : "Aşkın Özgür"
   },
   "headline": "Subversion sunucu kurulumu",
-  "description" : "Linux üzerinde kurulumdan bahsedeceğim. Öncelikle kullandığınız dağıtımın paket deposundan subversion paketini kurmalısınız. Ben debian kullandığım için\nsudo apt-get install subversion Kurulum tamamlandıktan sonra gerekli tüm araçlara sahip olmuş oluyoruz.\nBir depo oluşturalım.\nsvnadmin create depom depom adli dizinde bir depo oluşturmuş olduk. Bu depo üzerinde gerekli düzenlemeleri yapalım.\ndepom\/conf\/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu dosyayı açıp [general] başlığı altındaki ayarları düzenliyoruz. Burdaki tüm ayarlar yorum satırı haline getirişmiş, bunlardan işimize yarayanları aktif hale getirmemiz gerekiyor.",
+  "description" : "Linux üzerinde kurulumdan bahsedeceğim. Öncelikle kullandığınız dağıtımın paket deposundan subversion paketini kurmalısınız. Ben debian kullandığım için\nsudo apt-get install subversion Kurulum tamamlandıktan sonra gerekli tüm araçlara sahip olmuş oluyoruz.\nBir depo oluşturalım.\nsvnadmin create depom depom adli dizinde bir depo oluşturmuş olduk. Bu depo üzerinde gerekli düzenlemeleri yapalım.\ndepom\/conf\/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu dosyayı açıp [general] başlığı altındaki ayarları düzenliyoruz. Burdaki tüm ayarlar yorum satırı haline getirişmiş, bunlardan işimize yarayanları aktif hale getirmemiz gerekiyor.\n# anon-access = read  Tanımladığımız kullanıcılar dışında kalan kişilerin yetkilerini düzenlemek için kullanıyoruz. Eğer yorum satırı halinde bırakırsak tanımsız kullanıcılar depo üzerinde okuma hakkına sahip oluyorlar.",
   "inLanguage" : "tr",
   "wordCount":  253 ,
   "datePublished" : "2012-08-23T18:16:00",
@@ -87,7 +88,8 @@ depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu do
 sudo apt-get install subversion Kurulum tamamlandıktan sonra gerekli tüm araçlara sahip olmuş oluyoruz.
 Bir depo oluşturalım.
 svnadmin create depom depom adli dizinde bir depo oluşturmuş olduk. Bu depo üzerinde gerekli düzenlemeleri yapalım.
-depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu dosyayı açıp [general] başlığı altındaki ayarları düzenliyoruz. Burdaki tüm ayarlar yorum satırı haline getirişmiş, bunlardan işimize yarayanları aktif hale getirmemiz gerekiyor.">
+depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu dosyayı açıp [general] başlığı altındaki ayarları düzenliyoruz. Burdaki tüm ayarlar yorum satırı haline getirişmiş, bunlardan işimize yarayanları aktif hale getirmemiz gerekiyor.
+# anon-access = read  Tanımladığımız kullanıcılar dışında kalan kişilerin yetkilerini düzenlemek için kullanıyoruz. Eğer yorum satırı halinde bırakırsak tanımsız kullanıcılar depo üzerinde okuma hakkına sahip oluyorlar.">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
 <meta property="og:url" content="https://blog.askin.ws/blog/subversion-sunucu-kurulumu/" />
 <meta property="og:type" content="website" />

@@ -236,10 +236,16 @@
     </p>
     <div class="post-entry">
         
-        du komutunu çok sık kullanıyorum. Makinede yer sıkıntısı yaşadığım zaman kesinlikle hayat kurtarıyor. Genellikle aşağıdaki şekilde kullanıyorum.
-du -sh * | sort -h Bu komut anlaşılır bir birimle tüm alt dizinlerin boyutlarını hesaplayıp küçükten büyüğe doğru sıralıyor. Bu komutun ve birçok linux komutunun sıkıntısı, wildcard kullanıldığında gizli dosyaları/dizinleri göstermiyor. Tabi bu kullandığınız kabukla ilgili. Ben bash kullanıyorum. Bunu aşmak için komutu aşağıdaki şekilde kullanabilirsiniz.
-du -sh .[!.]* * | sort -h Bu komutun da biraz sıkıntılar var.
-        <a href="https://blog.askin.ws/blog/du-wildcard-ile-gizli-dosyalar/" class="post-read-more">[]</a>
+        <p><code>du</code> komutunu çok sık kullanıyorum. Makinede yer sıkıntısı yaşadığım zaman kesinlikle hayat kurtarıyor. Genellikle
+aşağıdaki şekilde kullanıyorum.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">du -sh * | sort -h
+</code></pre></div><p>Bu komut anlaşılır bir birimle tüm alt dizinlerin boyutlarını hesaplayıp küçükten büyüğe doğru sıralıyor. Bu komutun ve
+<strong>birçok linux komutunun</strong> sıkıntısı, wildcard kullanıldığında gizli dosyaları/dizinleri göstermiyor. Tabi bu
+kullandığınız kabukla ilgili. Ben bash kullanıyorum. Bunu aşmak için komutu aşağıdaki şekilde kullanabilirsiniz.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">du -sh .<span style="color:#f92672">[</span>!.<span style="color:#f92672">]</span>* * | sort -h
+</code></pre></div><p>Bu komutun da biraz sıkıntılar var. Mesela dosya ismi iki nokta ile başlıyorsa listelemeyecek malesef. Fakat bu şekilde
+işimi görüyor.</p>
+
         
     </div>
 
@@ -271,7 +277,7 @@ du -sh .[!.]* * | sort -h Bu komutun da biraz sıkıntılar var.
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;621&nbsp;
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;617&nbsp;
   
   
     
@@ -285,10 +291,11 @@ du -sh .[!.]* * | sort -h Bu komutun da biraz sıkıntılar var.
     </p>
     <div class="post-entry">
         
-        irssi~[[1]](#irssiwebsite &ldquo;Irssi Web Sistesi&rdquo; id=&quot;hohoho&rdquo;)~ komut satırından çalışan ve bir çok geliştirici için popüler olan bir IRC istemcisidir. Irssi GNU Screen~[2]~ programı ile birlikte kullanılarak çıkış yapmadan bir veya birden fazla kabuk yaratabilirsiniz. Sürekli biligisayar değiltirip fakat irssi&rsquo;a kaldığınız yerden devam etmek istediğinizde çok kullanılışılır.
+        irssi komut satırından çalışan ve bir çok geliştirici için popüler olan bir IRC istemcisidir. Irssi GNU Screen programı ile birlikte kullanılarak çıkış yapmadan bir veya birden fazla kabuk yaratabilirsiniz. Sürekli biligisayar değiltirip fakat irssi&rsquo;a kaldığınız yerden devam etmek istediğinizde çok kullanılışılır.
 Avantajları:
  Kişiler size mesaj bırakabilir. Siz dışardayken yapılan görüşmeleri sonradan yakalayabilirsiniz (genellikle &ldquo;scroolback&rdquo; olarak adlandırılır).  Yönergeler:
- Bir adet linux VPS edinin ya da sık sık yeniden başlatılmayacak, ihtiyacınız olan yerden bağlanabileceğiniz *nix makina üzerinde ssh hesabı edinin.
+  Bir adet linux VPS edinin ya da sık sık yeniden başlatılmayacak, ihtiyacınız olan yerden bağlanabileceğiniz *nix makina üzerinde ssh hesabı edinin.
+  Bu hesaba bağlanmak için ssh kullanın. Windowsta PuTTY gibi bir istemci kullanın. Eğer Linux yada Unix temelli bir işletim sistemi kullanıyorsanız zaten ssh kuruludur.
         <a href="https://blog.askin.ws/blog/screen-ile-irssi-kullanim-kilavuzu/" class="post-read-more">[]</a>
         
     </div>
@@ -344,7 +351,8 @@ Avantajları:
         Malesef sd kart olmadan raspberry pi&rsquo;yı boot etmemiz mümkün olmuyor. Benim elimde 1GB&rsquo;lık bir sd kart vardı ve 2GB dan daha ufak imaj dosyaları bulamadım. Bu nedenle usb bellek ile boot etme ihtiyacı duydum.
 Benim sistemimde usb bellek ve sd kart aşağıdaki şekilde tanındı:
  usb: /dev/sdd sd: /dev/sde  Öncelikle indirdiğimiz imaj dosyasını usb belleğimize kopyalıyoruz
-dd if=2013-02-09-wheezy-raspbian.img of=/dev/sdd  Elimizde bulunan sd karta 1 adet fat32 bölüm oluşturuyoruz (oluşturduğunuz bölüm hem ilk sırada hem de birincil bir bölüm olmalı).
+dd if=2013-02-09-wheezy-raspbian.img of=/dev/sdd  Elimizde bulunan sd karta 1 adet fat32 bölüm oluşturuyoruz (oluşturduğunuz bölüm hem ilk sırada hem de birincil bir bölüm olmalı). Bunu ister Gparted gibi bir araçla yapın isterseniz fdisk kullanın. Bölümleme işlemlerini yaptıktan sonra aşağıdaki komutları uygulayın.
+mkdir /tmp/mnt_sd /tmp/mnt_usb mount /dev/sdd1 /tmp/mnt_usb mount /dev/sde1 /tmp/mnt_sd cp /tmp/mnt_usb/* /tmp/mnt_sd  Bu işlemleri yaptıktan sonra /tmp/mnt_sd/cmdline.
         <a href="https://blog.askin.ws/blog/usb-bellek-uzerinde-raspberry-pi/" class="post-read-more">[]</a>
         
     </div>
@@ -465,6 +473,7 @@ sudo apt-get install subversion Kurulum tamamlandıktan sonra gerekli tüm araç
 Bir depo oluşturalım.
 svnadmin create depom depom adli dizinde bir depo oluşturmuş olduk. Bu depo üzerinde gerekli düzenlemeleri yapalım.
 depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu dosyayı açıp [general] başlığı altındaki ayarları düzenliyoruz. Burdaki tüm ayarlar yorum satırı haline getirişmiş, bunlardan işimize yarayanları aktif hale getirmemiz gerekiyor.
+# anon-access = read  Tanımladığımız kullanıcılar dışında kalan kişilerin yetkilerini düzenlemek için kullanıyoruz. Eğer yorum satırı halinde bırakırsak tanımsız kullanıcılar depo üzerinde okuma hakkına sahip oluyorlar.
         <a href="https://blog.askin.ws/blog/subversion-sunucu-kurulumu/" class="post-read-more">[]</a>
         
     </div>
@@ -518,7 +527,7 @@ depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu do
     <div class="post-entry">
         
         Sunucu:
-#include &lt;stdio.h&gt;#include &lt;string.h&gt;#include &lt;sys/types.h&gt;#include &lt;sys/socket.h&gt;#include &lt;netinet/in.h&gt; #define MY_PORT 3333  int main(int argc, char *argv[]) { int sockfd, new_fd; struct sockaddr_in my_addr; // hedef adres  struct sockaddr_in their_addr; // baglanti yapan adres  int sin_size, rt; // gelen verinin tutuldugu buffer  char buf[32]; // islem yapmak icin gerekli dosya gosterici  sockfd = socket(AF_INET, SOCK_DGRAM, 0); sin_size = sizeof(struct sockaddr_in); // adres ile ilgili ayarlar  my_addr.sin_family = AF_INET; my_addr.
+#include &lt;stdio.h&gt;#include &lt;string.h&gt;#include &lt;sys/types.h&gt;#include &lt;sys/socket.h&gt;#include &lt;netinet/in.h&gt; #define MY_PORT 3333  int main(int argc, char *argv[]) { int sockfd, new_fd; struct sockaddr_in my_addr; // hedef adres  struct sockaddr_in their_addr; // baglanti yapan adres  int sin_size, rt; // gelen verinin tutuldugu buffer  char buf[32]; // islem yapmak icin gerekli dosya gosterici  sockfd = socket(AF_INET, SOCK_DGRAM, 0); sin_size = sizeof(struct sockaddr_in); // adres ile ilgili ayarlar  my_addr.sin_family = AF_INET; my_addr.sin_port = htons(MY_PORT); // kullanilacak port  my_addr.sin_addr.s_addr = INADDR_ANY; // mevcut ip adresi  memset(&amp;(my_addr.sin_zero), 0, 8); // geri kalani 0la  // socket ile dosyayi iliskilendir  bind(sockfd, (struct sockaddr *)&amp;my_addr, sizeof(struct sockaddr)); while ( 1 ) { rt = recvfrom (sockfd, buf, 12, 0, (struct sockaddr *)&amp;their_addr, &amp;sin_size); if (rt &gt; 0) { printf (&#34;recv: %s\n&#34;, buf); } else if (rt &lt; 0) { printf(&#34;Baglanti koptu\n&#34;); break; } } close(sockfd); return 0; } İstemci:
         <a href="https://blog.askin.ws/blog/udp-broadcast-sunucu-istemci/" class="post-read-more">[]</a>
         
     </div>
@@ -707,7 +716,7 @@ Tüm yetkiler:</p>
     <div class="post-entry">
         
         Çalıştığım projede linuxta paralel port ile lcd ekran kullanmam gerekti. Neredeyse internetin altını üstüne getirdim ama işime yarar çok birşey bulamadım. Sonunda DOS için yazılmış bir kod buldum. Bu kodu biraz inceleyip, gerekli püf noktaları bulunca kodu linux&rsquo;a uydurmak çok zor olmadı. Hatta neredeyse sadece kullanılan fonksiyonun adını ve parametre yerlerini değiştirdim :)
-Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read/write seçimi için kullanılıyor.
+Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read/write seçimi için kullanılıyor. Geri kalan 3 bacak güç bağlantısı ve kontrast için kullanılıyor. Burdaki şemaya göre bağlantıları yapabilirsiniz. Ayrıca örnek aldığım kodda aynı sayfada bulunmakta.
         <a href="https://blog.askin.ws/blog/linux-paralel-port-ile-2x16-lcd-ekran-kullanimi/" class="post-read-more">[]</a>
         
     </div>

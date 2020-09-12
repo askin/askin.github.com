@@ -242,8 +242,12 @@
     </p>
     <div class="post-entry">
         
-        Apache Tomcat kullanıyorsanız aynı uygulamanın birden fazla sürümünü aynı anda aynı path üzerinde çalıştırabilirsiniz. Bu deploy yaparken kesintisiz hizmet sağlamak için çok yardımcı oluyor. Buna Parallel Deployment deniyor. Paralel deploy sırasında eğer uygulamanın bir önceki versiyonunda oturum açılmışsa istekler oraya gitmeye devam ediyor, yeni oturumlar yeni sürüme gitmeye başlıyor.
-Paralel deploy yapabilmek için oluşturulan war dosyasının bir versiyona sahip olması gerekmekte. Bunu yapabilmek için dosya ismini paket-ismi##VERSION.war şeklinde yapmak gerekiyor. Eğer Maven kullanıyorsanız pom.
+        <p>Apache Tomcat kullanıyorsanız aynı uygulamanın birden fazla sürümünü
+aynı anda aynı path üzerinde çalıştırabilirsiniz. Bu deploy yaparken
+kesintisiz hizmet sağlamak için çok yardımcı oluyor. Buna <strong>Parallel
+Deployment</strong> deniyor. Paralel deploy sırasında eğer uygulamanın bir
+önceki versiyonunda oturum açılmışsa istekler oraya gitmeye devam
+ediyor, yeni oturumlar yeni sürüme gitmeye başlıyor.</p>
         <a href="https://blog.askin.ws/blog/apache-tomcat-parallel-deploy/" class="post-read-more">[]</a>
         
     </div>
@@ -411,10 +415,16 @@ kullanıyordum. Emacs 27.0.90 ile birlikte bu özellik yerleşik gelmeye başlad
     </p>
     <div class="post-entry">
         
-        du komutunu çok sık kullanıyorum. Makinede yer sıkıntısı yaşadığım zaman kesinlikle hayat kurtarıyor. Genellikle aşağıdaki şekilde kullanıyorum.
-du -sh * | sort -h Bu komut anlaşılır bir birimle tüm alt dizinlerin boyutlarını hesaplayıp küçükten büyüğe doğru sıralıyor. Bu komutun ve birçok linux komutunun sıkıntısı, wildcard kullanıldığında gizli dosyaları/dizinleri göstermiyor. Tabi bu kullandığınız kabukla ilgili. Ben bash kullanıyorum. Bunu aşmak için komutu aşağıdaki şekilde kullanabilirsiniz.
-du -sh .[!.]* * | sort -h Bu komutun da biraz sıkıntılar var.
-        <a href="https://blog.askin.ws/blog/du-wildcard-ile-gizli-dosyalar/" class="post-read-more">[]</a>
+        <p><code>du</code> komutunu çok sık kullanıyorum. Makinede yer sıkıntısı yaşadığım zaman kesinlikle hayat kurtarıyor. Genellikle
+aşağıdaki şekilde kullanıyorum.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">du -sh * | sort -h
+</code></pre></div><p>Bu komut anlaşılır bir birimle tüm alt dizinlerin boyutlarını hesaplayıp küçükten büyüğe doğru sıralıyor. Bu komutun ve
+<strong>birçok linux komutunun</strong> sıkıntısı, wildcard kullanıldığında gizli dosyaları/dizinleri göstermiyor. Tabi bu
+kullandığınız kabukla ilgili. Ben bash kullanıyorum. Bunu aşmak için komutu aşağıdaki şekilde kullanabilirsiniz.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">du -sh .<span style="color:#f92672">[</span>!.<span style="color:#f92672">]</span>* * | sort -h
+</code></pre></div><p>Bu komutun da biraz sıkıntılar var. Mesela dosya ismi iki nokta ile başlıyorsa listelemeyecek malesef. Fakat bu şekilde
+işimi görüyor.</p>
+
         
     </div>
 
@@ -501,8 +511,11 @@ du -sh .[!.]* * | sort -h Bu komutun da biraz sıkıntılar var.
     </p>
     <div class="post-entry">
         
-        Daha önceki yazılarımda belirtiğim gibi ssl için startssl kullanıyordum. Ücretsiz sertifika verdiği için startssl uzun süre işimi gördü. Fakat son dönemde Let&rsquo;s Encrypti keşfettim. Çok basit bir şekilde sertifika oluşturmamızı sağlıyor. İlk denememden sonra tüm kullandığım websitelerinde ve servislerde Let&rsquo;s Encrypt kullanmaya karar verdim. Sizde seveceksiniz bundan eminim. Yaklaşık 12 sertifika oluşturdum, bunların takibini yapmak biraz sıkıntılı olacak. Bir de Let&rsquo;s Encrypt sertifikaları 3 aylık oluşturuyor. Birşeylerin gözden kaçması çok mümkün.
-        <a href="https://blog.askin.ws/blog/lets-encrypt/" class="post-read-more">[]</a>
+        <p><img src="/uploads/2017/02/le-logo-twitter-150x150.png" alt="Let&rsquo;s Encrypt Logo">
+Daha önceki yazılarımda belirtiğim gibi ssl için startssl kullanıyordum. Ücretsiz sertifika verdiği için startssl uzun süre işimi gördü. Fakat son dönemde <a href="https://letsencrypt.org/">Let&rsquo;s Encrypt</a>i keşfettim. Çok basit bir şekilde sertifika oluşturmamızı sağlıyor. İlk denememden sonra tüm kullandığım websitelerinde ve servislerde <a href="https://letsencrypt.org/">Let&rsquo;s Encrypt</a> kullanmaya karar verdim. Sizde seveceksiniz bundan eminim. Yaklaşık 12 sertifika oluşturdum, bunların takibini yapmak biraz sıkıntılı olacak. Bir de Let&rsquo;s Encrypt sertifikaları 3 aylık oluşturuyor. Birşeylerin gözden kaçması çok mümkün. Bu sebeple bunu toplu olarak kontrol eden bir script yazdım. Bu scripte <a href="https://github.com/askin/misc/tree/master/scripts/check-ssl">GitHub</a> hesabımdan ulaşabilirsiniz.</p>
+<p>Aşağıdaki resimde destekleyen kurumlardan bazıları yeralmakta.</p>
+<p><img src="/uploads/2017/02/letsencrypt-sponsor.png" alt="Let&rsquo;s Encrypt Major Sponsor"></p>
+
         
     </div>
 
@@ -600,6 +613,7 @@ Debian tabanlı sistemlerde aşağıdaki gibi kurulum yapabihlirsiniz.
 apt-get install slurm Kurulumu tamamladıktan sonra komut satırından ağ trafiğinizi takip edebilirsiniz. En basit şekliyle aşağıdaki formatta komutu kullanabilirsiniz.
 slurm -i [Ağ Arayüzü] -i parametresi hangi ağ arayüzünün kullanılacanı belirtir.
 slurm -i wlan0 slurm -i eth1 Klavye kısa yolları: Slurm etkileşim için birçok farklı tuşu destekler:
+ s split moduna geçiş yapar c klasik moda geçiş yapar l büyük grafik moduna geçer L TX/RX ledini aktif eder m kasik, büyük ve split modları arasında geçiş yapar z sayaçları 0&rsquo;lar r ekranı yeniden çizer q çıkış yapar  Aynı zamanda bu kısayol tuşlarını parametre olarak da verebilirsiniz.
         <a href="https://blog.askin.ws/blog/slurm-linux-icin-bant-genisligi-takip-araci/" class="post-read-more">[]</a>
         
     </div>
@@ -636,7 +650,7 @@ slurm -i wlan0 slurm -i eth1 Klavye kısa yolları: Slurm etkileşim için birç
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;621&nbsp;
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;617&nbsp;
   
   
     
@@ -650,10 +664,11 @@ slurm -i wlan0 slurm -i eth1 Klavye kısa yolları: Slurm etkileşim için birç
     </p>
     <div class="post-entry">
         
-        irssi~[[1]](#irssiwebsite &ldquo;Irssi Web Sistesi&rdquo; id=&quot;hohoho&rdquo;)~ komut satırından çalışan ve bir çok geliştirici için popüler olan bir IRC istemcisidir. Irssi GNU Screen~[2]~ programı ile birlikte kullanılarak çıkış yapmadan bir veya birden fazla kabuk yaratabilirsiniz. Sürekli biligisayar değiltirip fakat irssi&rsquo;a kaldığınız yerden devam etmek istediğinizde çok kullanılışılır.
+        irssi komut satırından çalışan ve bir çok geliştirici için popüler olan bir IRC istemcisidir. Irssi GNU Screen programı ile birlikte kullanılarak çıkış yapmadan bir veya birden fazla kabuk yaratabilirsiniz. Sürekli biligisayar değiltirip fakat irssi&rsquo;a kaldığınız yerden devam etmek istediğinizde çok kullanılışılır.
 Avantajları:
  Kişiler size mesaj bırakabilir. Siz dışardayken yapılan görüşmeleri sonradan yakalayabilirsiniz (genellikle &ldquo;scroolback&rdquo; olarak adlandırılır).  Yönergeler:
- Bir adet linux VPS edinin ya da sık sık yeniden başlatılmayacak, ihtiyacınız olan yerden bağlanabileceğiniz *nix makina üzerinde ssh hesabı edinin.
+  Bir adet linux VPS edinin ya da sık sık yeniden başlatılmayacak, ihtiyacınız olan yerden bağlanabileceğiniz *nix makina üzerinde ssh hesabı edinin.
+  Bu hesaba bağlanmak için ssh kullanın. Windowsta PuTTY gibi bir istemci kullanın. Eğer Linux yada Unix temelli bir işletim sistemi kullanıyorsanız zaten ssh kuruludur.
         <a href="https://blog.askin.ws/blog/screen-ile-irssi-kullanim-kilavuzu/" class="post-read-more">[]</a>
         
     </div>

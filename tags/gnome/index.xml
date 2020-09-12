@@ -21,7 +21,7 @@
       <guid>https://blog.askin.ws/blog/pardus-2009/</guid>
       <description>Sonunda Pardus 2009&amp;rsquo;u bilgisayarıma kurabildim. Ailemin yanına geldiğim için Pardus&amp;rsquo;u indiremiyordum. Malum kotalı internet, sıkıntı yaratıyor.
 Kurulum sorunsuz tamamlandı. Kurulum arayüzü çok hoş olmuş. Çok kullanışlı ve çok kolay bir arayüzü olmuş. Bilgisayarıma en hızlı kurulabilen Pardus sürümü. Saat tutmadım ama, 20 dakka ile 30 dakka arasında bir sürede kurulduğunu tahmin ediyorum.
-Kablosuz ağ kartımı sorunsuz tanıdı ve WPA2 şifreli ağıma çok kolay bir şekilde bağlandı. Daha önce de tanıyordu, fakat ağımı göremiyordu, ben de mecburen ndiswraper ile kullanıyordum.</description>
+Kablosuz ağ kartımı sorunsuz tanıdı ve WPA2 şifreli ağıma çok kolay bir şekilde bağlandı. Daha önce de tanıyordu, fakat ağımı göremiyordu, ben de mecburen ndiswraper ile kullanıyordum. Hiç bir ek program kurmama ve kapalı kodlu windows sürücülerine ihtiyaç duymamak beni gayet mutlu etti. Ve ilk defa wi-fi ledinin yanıp söndüğü gördüm:)</description>
     </item>
     
     <item>
@@ -31,7 +31,9 @@ Kablosuz ağ kartımı sorunsuz tanıdı ve WPA2 şifreli ağıma çok kolay bir
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/pidgin-titresim-eklentisi-attention-button/</guid>
       <description>Pidginin en sevdiğim özelliklerinden bir tanesi, sohbet ettiğiniz kişi size tireşim gönderdiğinde ekrana sadece &amp;rdquo;&amp;hellip; size uyarı gönderdi&amp;rdquo; yazması. Bu özelliğer sahip olmasının birde dezavantajı var tabiki, siz de başkalarına titreşim yollayamıyorsunuz. Bugün bu eksikliği fazlasıyla hissedince ufak çaplı bir araştırma yaptım ve Attention Button eklentisiyle karşılaştım.
-Kurulumu çok basit. Burdan en güncel sürümünü indiriyorsunuz (şimdilik 0.3), arşivden çıkartıp .so uzantılı dosyayı ev dizininiz altında .purple/plugins/ dizinine kopyalıyorsunuz. Ardından pidgine gidip eklentiler(plugins) kısmından aktif ediyorsunuz.</description>
+Kurulumu çok basit. Burdan en güncel sürümünü indiriyorsunuz (şimdilik 0.3), arşivden çıkartıp .so uzantılı dosyayı ev dizininiz altında .purple/plugins/ dizinine kopyalıyorsunuz. Ardından pidgine gidip eklentiler(plugins) kısmından aktif ediyorsunuz.
+Konsoldan halletmek isterseniz:
+$ wget http://pidgin-attentionbutton.googlecode.com/files/attentionbutton-0.3.tar.gz $ tar -xvzf attentionbutton-0.3.tar.gz $ mkdir $HOME/.purple/plugins $ mv attentionbutton.so $HOME/.purple/plugins/ $ rm attentionbutton-0.3.tar.gz attentionbutton.c Bu eklentinin birkaç güzel özelliğide var.</description>
     </item>
     
     <item>

@@ -8,8 +8,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <title>Apache Tomcat Paralel Deploy - Aşkın Özgür</title>
-  <meta name="description" content="Apache Tomcat kullanıyorsanız aynı uygulamanın birden fazla sürümünü aynı anda aynı path üzerinde çalıştırabilirsiniz. Bu deploy yaparken kesintisiz hizmet sağlamak için çok yardımcı oluyor. Buna Parallel Deployment deniyor. Paralel deploy sırasında eğer uygulamanın bir önceki versiyonunda oturum açılmışsa istekler oraya gitmeye devam ediyor, yeni oturumlar yeni sürüme gitmeye başlıyor.
-Paralel deploy yapabilmek için oluşturulan war dosyasının bir versiyona sahip olması gerekmekte. Bunu yapabilmek için dosya ismini paket-ismi##VERSION.war şeklinde yapmak gerekiyor. Eğer Maven kullanıyorsanız pom.">
+  <meta name="description" content="Apache Tomcat kullanıyorsanız aynı uygulamanın birden fazla sürümünü
+aynı anda aynı path üzerinde çalıştırabilirsiniz. Bu deploy yaparken
+kesintisiz hizmet sağlamak için çok yardımcı oluyor. Buna Parallel
+Deployment deniyor. Paralel deploy sırasında eğer uygulamanın bir
+önceki versiyonunda oturum açılmışsa istekler oraya gitmeye devam
+ediyor, yeni oturumlar yeni sürüme gitmeye başlıyor.">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -58,7 +62,7 @@ Paralel deploy yapabilmek için oluşturulan war dosyasının bir versiyona sahi
     "name" : "Aşkın Özgür"
   },
   "headline": "Apache Tomcat Paralel Deploy",
-  "description" : "Apache Tomcat kullanıyorsanız aynı uygulamanın birden fazla sürümünü aynı anda aynı path üzerinde çalıştırabilirsiniz. Bu deploy yaparken kesintisiz hizmet sağlamak için çok yardımcı oluyor. Buna Parallel Deployment deniyor. Paralel deploy sırasında eğer uygulamanın bir önceki versiyonunda oturum açılmışsa istekler oraya gitmeye devam ediyor, yeni oturumlar yeni sürüme gitmeye başlıyor.\nParalel deploy yapabilmek için oluşturulan war dosyasının bir versiyona sahip olması gerekmekte. Bunu yapabilmek için dosya ismini paket-ismi##VERSION.war şeklinde yapmak gerekiyor. Eğer Maven kullanıyorsanız pom.",
+  "description" : "Apache Tomcat kullanıyorsanız aynı uygulamanın birden fazla sürümünü aynı anda aynı path üzerinde çalıştırabilirsiniz. Bu deploy yaparken kesintisiz hizmet sağlamak için çok yardımcı oluyor. Buna Parallel Deployment deniyor. Paralel deploy sırasında eğer uygulamanın bir önceki versiyonunda oturum açılmışsa istekler oraya gitmeye devam ediyor, yeni oturumlar yeni sürüme gitmeye başlıyor.\n",
   "inLanguage" : "tr",
   "wordCount":  193 ,
   "datePublished" : "2020-09-12T00:00:00",
@@ -80,15 +84,21 @@ Paralel deploy yapabilmek için oluşturulan war dosyasının bir versiyona sahi
 </script>
 
 <meta property="og:title" content="Apache Tomcat Paralel Deploy" />
-<meta property="og:description" content="Apache Tomcat kullanıyorsanız aynı uygulamanın birden fazla sürümünü aynı anda aynı path üzerinde çalıştırabilirsiniz. Bu deploy yaparken kesintisiz hizmet sağlamak için çok yardımcı oluyor. Buna Parallel Deployment deniyor. Paralel deploy sırasında eğer uygulamanın bir önceki versiyonunda oturum açılmışsa istekler oraya gitmeye devam ediyor, yeni oturumlar yeni sürüme gitmeye başlıyor.
-Paralel deploy yapabilmek için oluşturulan war dosyasının bir versiyona sahip olması gerekmekte. Bunu yapabilmek için dosya ismini paket-ismi##VERSION.war şeklinde yapmak gerekiyor. Eğer Maven kullanıyorsanız pom.">
+<meta property="og:description" content="Apache Tomcat kullanıyorsanız aynı uygulamanın birden fazla sürümünü
+aynı anda aynı path üzerinde çalıştırabilirsiniz. Bu deploy yaparken
+kesintisiz hizmet sağlamak için çok yardımcı oluyor. Buna Parallel
+Deployment deniyor. Paralel deploy sırasında eğer uygulamanın bir
+önceki versiyonunda oturum açılmışsa istekler oraya gitmeye devam
+ediyor, yeni oturumlar yeni sürüme gitmeye başlıyor.">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
 <meta property="og:url" content="https://blog.askin.ws/blog/apache-tomcat-parallel-deploy/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Aşkın Özgür" />
 
   <meta name="twitter:title" content="Apache Tomcat Paralel Deploy" />
-  <meta name="twitter:description" content="Apache Tomcat kullanıyorsanız aynı uygulamanın birden fazla sürümünü aynı anda aynı path üzerinde çalıştırabilirsiniz. Bu deploy yaparken kesintisiz hizmet sağlamak için çok yardımcı oluyor. Buna …">
+  <meta name="twitter:description" content="Apache Tomcat kullanıyorsanız aynı uygulamanın birden fazla sürümünü
+aynı anda aynı path üzerinde çalıştırabilirsiniz. Bu deploy yaparken
+kesintisiz hizmet sağlamak için çok yardımcı oluyor. Buna …">
   <meta name="twitter:image" content="https://blog.askin.ws/uploads/avatar.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@kelebeks" />
@@ -264,7 +274,8 @@ ediyor, yeni oturumlar yeni sürüme gitmeye başlıyor.</p>
 <p>Paralel deploy yapabilmek için oluşturulan <code>war</code> dosyasının bir
 versiyona sahip olması gerekmekte. Bunu yapabilmek için dosya ismini
 <code>paket-ismi##VERSION.war</code> şeklinde yapmak gerekiyor. Eğer <strong>Maven</strong>
-kullanıyorsanız <code>pom.xml</code> dosyasında aşağıdaki gibi basitçe yapabilirsiniz.</p>
+kullanıyorsanız <code>pom.xml</code> dosyasında aşağıdaki gibi basitçe
+yapabilirsiniz.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;build&gt;</span>
     <span style="color:#f92672">&lt;finalName&gt;</span>${project.artifactId}##{$project.version}<span style="color:#f92672">&lt;/finalName&gt;</span>
 <span style="color:#f92672">&lt;/build&gt;</span>
@@ -316,7 +327,6 @@ attığınız son dosyayı silmek yeterli olacaktır.</p>
 <ul>
 <li><a href="https://tomcat.apache.org/tomcat-8.5-doc/config/context.html#Parallel_deployment" title="https://tomcat.apache.org/tomcat-8.5-doc/config/context.html#Parallel_deployment">https://tomcat.apache.org/tomcat-8.5-doc/config/context.html#Parallel_deployment</a></li>
 </ul>
-
 
         
           <div class="blog-tags">

@@ -37,7 +37,7 @@ sudo apt-get install moc
 sudo pisi it moc
 Şimdi konsoldan
 mocp
-komutunu verelim. Gerçekten renkli şık bi tasarımı var. Grafik ekranı hiç aratmıyor:). Eğer renkleri beğenmezseniz [Shift] + [T] kombinasyonu ile farklı renkler seçebilirsiniz.</description>
+komutunu verelim. Gerçekten renkli şık bi tasarımı var. Grafik ekranı hiç aratmıyor:). Eğer renkleri beğenmezseniz [Shift] + [T] kombinasyonu ile farklı renkler seçebilirsiniz. Bunun bi kötü yanı var moc temayı bir sonraki açılışında hatırlamayacak. Hatırlaması için ~/.moc/config dosyasını oluşturup içeriğini düzenlemeniz gerekiyor. Ben düzenlemedim tam olarak nasıl yapılıyor bilmiyorum.</description>
     </item>
     
   </channel>

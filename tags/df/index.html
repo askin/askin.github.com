@@ -238,6 +238,10 @@
         
         Bir sunucuda garip bir problemle karşılaştım, diskte yer kalmadığını söylüyordu fakat ne yaparsam yapayım diski dolduran dosyaları bulamıyordum. Biraz araştırınca sorunu ve çözümünü buldum. Senaryo şöyle idi:
  Dosya bir program tarafından okumak için açılır. Başka bir program bu dosyayı siler.  Bu senaryo gerçekleştiğinde, her ne kadar dosya silinmiş olsa da, hala diskte yer tutmaya devam edecektir. &ldquo;du&rdquo; komutuyla baktığınızda yer tutmayacaktır, ancak df ile kontrol ettiğimizde disk dolu olarak görünecektir.
+Basit bir demo yapacağım:
+Öncelikle 1GB boyutunda bir dosya oluşturacağım.
+mkdir /tmp/tmp_directory/ cd /tmp/tmp_directory/ dd if=/dev/zero of=1gb_file.dat bs=1M count=1024 Oluşturulan bu dosyayı python ile açacağım.
+python Python 2.7.4 (default, Jul 5 2013, 08:21:57) [GCC 4.
         <a href="https://blog.askin.ws/blog/linuxta-disk-doluluk-oraninin-yanlis-hesaplanmasi/" class="post-read-more">[]</a>
         
     </div>

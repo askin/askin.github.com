@@ -292,7 +292,8 @@ ssh user@remote.host <span style="color:#e6db74">&#34;cd /original/directory; ta
     </p>
     <div class="post-entry">
         
-        Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz. Ben daha önce bahsettiğim internet canavarı:) için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu. Kullanacağımız programın adı sshfs yani SSH Filesystem.
+        Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz. Ben daha önce bahsettiğim internet canavarı:) için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu. Kullanacağımız programın adı sshfs yani SSH Filesystem. Kurulum:
+ Debian &amp;&amp; Ubuntu &amp;&amp; vb.  aptitude install sshfs  Kaynak koddan derleme  ./configure make make install # root yetkileriyle  Kullanımı - Uzak makinadaki bir dizini bağlamak sshfs hostname:dizin bağlamanoktası (root yetkileriyle)  Umount - Bağı koparma umount bağlamanoktası # ya da fusermount -u bağlamanoktası   Bu şekide kullanırsanız bağladığınız dizine ancak root yetkileriyle ulaşabilirsiniz.
         <a href="https://blog.askin.ws/blog/ssh-filesystem-ile-uzak-makinadaki-dizini-yerele-baglamak/" class="post-read-more">[]</a>
         
     </div>

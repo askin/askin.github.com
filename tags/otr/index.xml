@@ -21,7 +21,10 @@
       <guid>https://blog.askin.ws/blog/off-the-record-messaging-otr/</guid>
       <description>Off the Record Messaging (OTR) anlık mesajlaşma servislerinde güvenli olarak mesajlaşmak için geliştirilmiş bir protokoldür. Birçok anlık mesajlaşma uygulaması için eklentileri geliştirilmiştir. Ben pidgin ile birlikte kullanıyorum. Özel olarak kalmasını istediğiniz sohbetlerinizi OTR kullanarak güvenli bir şekilde yapabilirsiniz. [1] adresinde OTR ile ilgili wikipedia sayfasını bulabilirsiniz. [2] adresinde OTR ana sayfası bulunmakta.
 Pidgin ve Ubuntu kullanıcıları için kurulum çok basit:
-sudo apt-get install pidgin-otr Bir çok dağıtım deposunda OTR hazır olarak gelmektedir.</description>
+sudo apt-get install pidgin-otr Bir çok dağıtım deposunda OTR hazır olarak gelmektedir. Windows kullanıcıları da pidgin için kurulum dosyasını OTR&amp;rsquo;ın web sayfasından indirebilir.
+Aşağıda kullanım ile ilgili videoyu izleyebilirsiniz.
+[1] http://en.wikipedia.org/wiki/Off-the-Record_Messaging
+[2] http://www.cypherpunks.ca/otr/index.php</description>
     </item>
     
   </channel>

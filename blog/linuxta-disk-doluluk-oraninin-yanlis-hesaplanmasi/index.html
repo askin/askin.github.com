@@ -9,7 +9,11 @@
 
   <title>Linux&#39;ta disk doluluk oranının yanlış hesaplanması - Aşkın Özgür</title>
   <meta name="description" content="Bir sunucuda garip bir problemle karşılaştım, diskte yer kalmadığını söylüyordu fakat ne yaparsam yapayım diski dolduran dosyaları bulamıyordum. Biraz araştırınca sorunu ve çözümünü buldum. Senaryo şöyle idi:
- Dosya bir program tarafından okumak için açılır. Başka bir program bu dosyayı siler.  Bu senaryo gerçekleştiğinde, her ne kadar dosya silinmiş olsa da, hala diskte yer tutmaya devam edecektir. &ldquo;du&rdquo; komutuyla baktığınızda yer tutmayacaktır, ancak df ile kontrol ettiğimizde disk dolu olarak görünecektir.">
+ Dosya bir program tarafından okumak için açılır. Başka bir program bu dosyayı siler.  Bu senaryo gerçekleştiğinde, her ne kadar dosya silinmiş olsa da, hala diskte yer tutmaya devam edecektir. &ldquo;du&rdquo; komutuyla baktığınızda yer tutmayacaktır, ancak df ile kontrol ettiğimizde disk dolu olarak görünecektir.
+Basit bir demo yapacağım:
+Öncelikle 1GB boyutunda bir dosya oluşturacağım.
+mkdir /tmp/tmp_directory/ cd /tmp/tmp_directory/ dd if=/dev/zero of=1gb_file.dat bs=1M count=1024 Oluşturulan bu dosyayı python ile açacağım.
+python Python 2.7.4 (default, Jul 5 2013, 08:21:57) [GCC 4.">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -58,7 +62,7 @@
     "name" : "Aşkın Özgür"
   },
   "headline": "Linux\u0027ta disk doluluk oranının yanlış hesaplanması",
-  "description" : "Bir sunucuda garip bir problemle karşılaştım, diskte yer kalmadığını söylüyordu fakat ne yaparsam yapayım diski dolduran dosyaları bulamıyordum. Biraz araştırınca sorunu ve çözümünü buldum. Senaryo şöyle idi:\n Dosya bir program tarafından okumak için açılır. Başka bir program bu dosyayı siler.  Bu senaryo gerçekleştiğinde, her ne kadar dosya silinmiş olsa da, hala diskte yer tutmaya devam edecektir. \u0026ldquo;du\u0026rdquo; komutuyla baktığınızda yer tutmayacaktır, ancak df ile kontrol ettiğimizde disk dolu olarak görünecektir.",
+  "description" : "Bir sunucuda garip bir problemle karşılaştım, diskte yer kalmadığını söylüyordu fakat ne yaparsam yapayım diski dolduran dosyaları bulamıyordum. Biraz araştırınca sorunu ve çözümünü buldum. Senaryo şöyle idi:\n Dosya bir program tarafından okumak için açılır. Başka bir program bu dosyayı siler.  Bu senaryo gerçekleştiğinde, her ne kadar dosya silinmiş olsa da, hala diskte yer tutmaya devam edecektir. \u0026ldquo;du\u0026rdquo; komutuyla baktığınızda yer tutmayacaktır, ancak df ile kontrol ettiğimizde disk dolu olarak görünecektir.\nBasit bir demo yapacağım:\nÖncelikle 1GB boyutunda bir dosya oluşturacağım.\nmkdir \/tmp\/tmp_directory\/ cd \/tmp\/tmp_directory\/ dd if=\/dev\/zero of=1gb_file.dat bs=1M count=1024 Oluşturulan bu dosyayı python ile açacağım.\npython Python 2.7.4 (default, Jul 5 2013, 08:21:57) [GCC 4.",
   "inLanguage" : "tr",
   "wordCount":  379 ,
   "datePublished" : "2013-07-22T15:13:00",
@@ -81,7 +85,11 @@
 
 <meta property="og:title" content="Linux&#39;ta disk doluluk oranının yanlış hesaplanması" />
 <meta property="og:description" content="Bir sunucuda garip bir problemle karşılaştım, diskte yer kalmadığını söylüyordu fakat ne yaparsam yapayım diski dolduran dosyaları bulamıyordum. Biraz araştırınca sorunu ve çözümünü buldum. Senaryo şöyle idi:
- Dosya bir program tarafından okumak için açılır. Başka bir program bu dosyayı siler.  Bu senaryo gerçekleştiğinde, her ne kadar dosya silinmiş olsa da, hala diskte yer tutmaya devam edecektir. &ldquo;du&rdquo; komutuyla baktığınızda yer tutmayacaktır, ancak df ile kontrol ettiğimizde disk dolu olarak görünecektir.">
+ Dosya bir program tarafından okumak için açılır. Başka bir program bu dosyayı siler.  Bu senaryo gerçekleştiğinde, her ne kadar dosya silinmiş olsa da, hala diskte yer tutmaya devam edecektir. &ldquo;du&rdquo; komutuyla baktığınızda yer tutmayacaktır, ancak df ile kontrol ettiğimizde disk dolu olarak görünecektir.
+Basit bir demo yapacağım:
+Öncelikle 1GB boyutunda bir dosya oluşturacağım.
+mkdir /tmp/tmp_directory/ cd /tmp/tmp_directory/ dd if=/dev/zero of=1gb_file.dat bs=1M count=1024 Oluşturulan bu dosyayı python ile açacağım.
+python Python 2.7.4 (default, Jul 5 2013, 08:21:57) [GCC 4.">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
 <meta property="og:url" content="https://blog.askin.ws/blog/linuxta-disk-doluluk-oraninin-yanlis-hesaplanmasi/" />
 <meta property="og:type" content="website" />

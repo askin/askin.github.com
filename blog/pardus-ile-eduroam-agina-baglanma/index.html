@@ -11,7 +11,10 @@
   <meta name="description" content="Pardusun ağ yöneticisi gayet şık bir arayüze sahip, fakat bize Eduroam ağına bağlanma özelliği sunmuyor.
 Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız için yeterli. Bu araçlar wpa_supplicant ve dhcpcd. Wpa_supplicant ağda kimlik denetimini sağlamak için, dhcpcd ise ağdan ip almamız için gerekli.
 Öncelikle wpa_supplicant için ayar dosyası oluşturmamız gerekiyor.
-network={ ssid=&quot;eduroam&quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap=TTLS phase2=&quot;auth=PAP&quot; anonymous_identity=&quot;anonymous@ogr.deu.edu.tr&quot; identity=&quot;ogrencinumarasi@ogr.deu.edu.tr&quot; password=&quot;sifre&quot; } Bu ayarlar Dokuz Eylül Üniversitesi için.">
+network={ ssid=&quot;eduroam&quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap=TTLS phase2=&quot;auth=PAP&quot; anonymous_identity=&quot;anonymous@ogr.deu.edu.tr&quot; identity=&quot;ogrencinumarasi@ogr.deu.edu.tr&quot; password=&quot;sifre&quot; } Bu ayarlar Dokuz Eylül Üniversitesi için. Kendi okulunuza göre düzenlemeniz gerekiyor. Sadece ogr.deu.edu.tr adresi yerine kendi okulunuzun adresini yazmalısınız.
+Bu dosyayı /etc/wpa_supplicant.con adıyla kaydediyoruz.
+Sıra geldi wpa_supplicantı çalıştırmaya.
+wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf -D parametresi hangi sürücüyü kullanacağımızı belirtiyor.">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -60,7 +63,7 @@ network={ ssid=&quot;eduroam&quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap
     "name" : "Aşkın Özgür"
   },
   "headline": "Pardus ile Eduroam ağına bağlanma",
-  "description" : "Pardusun ağ yöneticisi gayet şık bir arayüze sahip, fakat bize Eduroam ağına bağlanma özelliği sunmuyor.\nAncak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız için yeterli. Bu araçlar wpa_supplicant ve dhcpcd. Wpa_supplicant ağda kimlik denetimini sağlamak için, dhcpcd ise ağdan ip almamız için gerekli.\nÖncelikle wpa_supplicant için ayar dosyası oluşturmamız gerekiyor.\nnetwork={ ssid=\u0026quot;eduroam\u0026quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap=TTLS phase2=\u0026quot;auth=PAP\u0026quot; anonymous_identity=\u0026quot;anonymous@ogr.deu.edu.tr\u0026quot; identity=\u0026quot;ogrencinumarasi@ogr.deu.edu.tr\u0026quot; password=\u0026quot;sifre\u0026quot; } Bu ayarlar Dokuz Eylül Üniversitesi için.",
+  "description" : "Pardusun ağ yöneticisi gayet şık bir arayüze sahip, fakat bize Eduroam ağına bağlanma özelliği sunmuyor.\nAncak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız için yeterli. Bu araçlar wpa_supplicant ve dhcpcd. Wpa_supplicant ağda kimlik denetimini sağlamak için, dhcpcd ise ağdan ip almamız için gerekli.\nÖncelikle wpa_supplicant için ayar dosyası oluşturmamız gerekiyor.\nnetwork={ ssid=\u0026quot;eduroam\u0026quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap=TTLS phase2=\u0026quot;auth=PAP\u0026quot; anonymous_identity=\u0026quot;anonymous@ogr.deu.edu.tr\u0026quot; identity=\u0026quot;ogrencinumarasi@ogr.deu.edu.tr\u0026quot; password=\u0026quot;sifre\u0026quot; } Bu ayarlar Dokuz Eylül Üniversitesi için. Kendi okulunuza göre düzenlemeniz gerekiyor. Sadece ogr.deu.edu.tr adresi yerine kendi okulunuzun adresini yazmalısınız.\nBu dosyayı \/etc\/wpa_supplicant.con adıyla kaydediyoruz.\nSıra geldi wpa_supplicantı çalıştırmaya.\nwpa_supplicant -Dwext -iwlan0 -c\/etc\/wpa_supplicant.conf -D parametresi hangi sürücüyü kullanacağımızı belirtiyor.",
   "inLanguage" : "tr",
   "wordCount":  226 ,
   "datePublished" : "2009-12-05T02:02:00",
@@ -85,7 +88,10 @@ network={ ssid=&quot;eduroam&quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap
 <meta property="og:description" content="Pardusun ağ yöneticisi gayet şık bir arayüze sahip, fakat bize Eduroam ağına bağlanma özelliği sunmuyor.
 Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız için yeterli. Bu araçlar wpa_supplicant ve dhcpcd. Wpa_supplicant ağda kimlik denetimini sağlamak için, dhcpcd ise ağdan ip almamız için gerekli.
 Öncelikle wpa_supplicant için ayar dosyası oluşturmamız gerekiyor.
-network={ ssid=&quot;eduroam&quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap=TTLS phase2=&quot;auth=PAP&quot; anonymous_identity=&quot;anonymous@ogr.deu.edu.tr&quot; identity=&quot;ogrencinumarasi@ogr.deu.edu.tr&quot; password=&quot;sifre&quot; } Bu ayarlar Dokuz Eylül Üniversitesi için.">
+network={ ssid=&quot;eduroam&quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap=TTLS phase2=&quot;auth=PAP&quot; anonymous_identity=&quot;anonymous@ogr.deu.edu.tr&quot; identity=&quot;ogrencinumarasi@ogr.deu.edu.tr&quot; password=&quot;sifre&quot; } Bu ayarlar Dokuz Eylül Üniversitesi için. Kendi okulunuza göre düzenlemeniz gerekiyor. Sadece ogr.deu.edu.tr adresi yerine kendi okulunuzun adresini yazmalısınız.
+Bu dosyayı /etc/wpa_supplicant.con adıyla kaydediyoruz.
+Sıra geldi wpa_supplicantı çalıştırmaya.
+wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf -D parametresi hangi sürücüyü kullanacağımızı belirtiyor.">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
 <meta property="og:url" content="https://blog.askin.ws/blog/pardus-ile-eduroam-agina-baglanma/" />
 <meta property="og:type" content="website" />

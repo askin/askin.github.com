@@ -238,7 +238,9 @@
         
         Dergi son sayısında ki (Sayı 6) site tanıtımında benim bloguma yer verdi, kendilerine buradan çok teşekür ediyorum. Bu jestleri bana blog yazmada ve Özgür Yazılım çabalarımda güç verecek.
 Derginin bu sayısını gerçekten beğendim, hele hele tamamen özgür yazılım araçlarıyla oluşturulması, arkasında hiçbir mali destek olmadan sadece topluluk katkısıyla ve güzel bir motivasyon ile düzenli olarak çıkması derginin gönlümde olan yerini iyice pekiştirdi.
-Dergi kapağında 8 Mart Dünya Emekçi Kadınla Günü yazsaydı daha güzel ve anlamlı olurdu:) ama hatırlamak ve önem vermek çok daha önemli.
+Dergi kapağında 8 Mart Dünya Emekçi Kadınla Günü yazsaydı daha güzel ve anlamlı olurdu:) ama hatırlamak ve önem vermek çok daha önemli. Birde bu sayıda RMS ile olan röportajın devamını bekliyordum:)
+Dergide emeği geçen herkese teşekür ediyorum&hellip;
+ C ile Programlama II GNU/Linux Haberleri GNU/Linux AntiVirüs Yazılımları Torrent ve KTorrent Pardus’ta Python 3.
         <a href="https://blog.askin.ws/blog/pardus-linuxorg-e-dergi-bana-supriz-yapti/" class="post-read-more">[]</a>
         
     </div>
@@ -293,10 +295,16 @@ Dergi kapağında 8 Mart Dünya Emekçi Kadınla Günü yazsaydı daha güzel ve
     </p>
     <div class="post-entry">
         
-        Lanet dersimiz File System için hocamız pptx uzantılı bir dosya verince banada bunu bir şekilde pdf&rsquo;e çevirmek düştü.
-Önce openoffice ile açmayı denedim, açıyordu fakat anlaşılır bir halde değildi. Bende alıp arkadaşımın bilgisayarına gittim, fakat onda da pdf&rsquo;e dönüştüremiyordum. Dönüştürebildiğim formatlara bakarken .jpg&rsquo;i gördüm. Nasılsa linuxta bu bi şekilde pdf&rsquo;e dönüştürüm diyerek kendimden emin bi şekilde dönüşümü yapıp odama geçtim.
-2 buçuk dakikalık bir arama ile aradığımı buldum, ImageMagick bu işi yapabiliyormuş.
-        <a href="https://blog.askin.ws/blog/komut-satirindan-resimleri-pdf-slaytina-donusturme/" class="post-read-more">[]</a>
+        <p><img src="/uploads/2009/02/imagemagick.png" alt="ImageMagick" title="ImageMagick">Lanet dersimiz File System için hocamız pptx uzantılı bir dosya verince banada bunu bir şekilde pdf&rsquo;e çevirmek düştü.<br>
+Önce openoffice ile açmayı denedim, açıyordu fakat anlaşılır bir halde değildi. Bende alıp arkadaşımın bilgisayarına gittim, fakat onda da pdf&rsquo;e dönüştüremiyordum. Dönüştürebildiğim formatlara bakarken .jpg&rsquo;i gördüm. Nasılsa linuxta bu bi şekilde pdf&rsquo;e dönüştürüm diyerek kendimden emin bi şekilde dönüşümü yapıp odama geçtim.<br>
+2 buçuk dakikalık bir arama ile aradığımı buldum, <a href="http://www.imagemagick.org/">ImageMagick</a> bu işi yapabiliyormuş.<br>
+<code>convert *.jpg slayt.pdf</code> komutu iş görüyor.<br>
+Tam tersini yapmak isterseniz<br>
+<code>convert slayt.pdf resim.jpg</code><br>
+Artıntılı bilgi için:<br>
+<code>man convert</code> :)</p>
+<p>Bu sıralar inek moduna geçtiğim için ders maceralarım hakkında bol bol girdi yazacağım gibi:)</p>
+
         
     </div>
 
@@ -421,7 +429,8 @@ Müzik dinlerken kullandığım programın elimin altında dolaşmasını pek se
         
         Sonunda ilk .deb paketimi yapmayı başardım:) aslında okadar zor bi iş değilmiş, biraz kaynak koddan derleme pratiği yapıp, üzerine birkaç döküman okuyunca çabubak oluyor.
 Bu şanslı pakatimiz PCmanfm oldu. Normalde depoda bulunuyor ama ben experimental sürümünü kullanıyorum. Uzun zamandır derleyerek kullanıyordum. Ama aklıma birden esti hadi şunun .deb paketini yapayım dedim ve yaptım.
-Bu sürümde ssh, samba yada ftp üzerinden bir makinaya bağlanıp oranın dizinlerini kullanabiliyoruz. Bir kere ayarını yaptığında artık kenarda hazır bekleyip senin bağlan demeni bekliyor.
+Bu sürümde ssh, samba yada ftp üzerinden bir makinaya bağlanıp oranın dizinlerini kullanabiliyoruz. Bir kere ayarını yaptığında artık kenarda hazır bekleyip senin bağlan demeni bekliyor. Gayet hoş ve kullanışlı tavsiye ederim.
+ Proje sayfası: http://pcmanfm.sourceforge.net/ İndirmek için: http://sourceforge.net/project/showfiles.php?group_id=156956 El yapımı .deb paketim: /packages/deb/pcmanfm_0.4.4.2-1_i386.deb  Buda ekran görüntüsü, büyütmek için üzerine tıklayın:
         <a href="https://blog.askin.ws/blog/ilk-deb-paketim/" class="post-read-more">[]</a>
         
     </div>
@@ -638,7 +647,8 @@ Eğer debian temelli bir dağıtım kullanıyorsanız aşağıdaki komut işiniz
     </p>
     <div class="post-entry">
         
-        Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz. Ben daha önce bahsettiğim internet canavarı:) için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu. Kullanacağımız programın adı sshfs yani SSH Filesystem.
+        Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz. Ben daha önce bahsettiğim internet canavarı:) için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu. Kullanacağımız programın adı sshfs yani SSH Filesystem. Kurulum:
+ Debian &amp;&amp; Ubuntu &amp;&amp; vb.  aptitude install sshfs  Kaynak koddan derleme  ./configure make make install # root yetkileriyle  Kullanımı - Uzak makinadaki bir dizini bağlamak sshfs hostname:dizin bağlamanoktası (root yetkileriyle)  Umount - Bağı koparma umount bağlamanoktası # ya da fusermount -u bağlamanoktası   Bu şekide kullanırsanız bağladığınız dizine ancak root yetkileriyle ulaşabilirsiniz.
         <a href="https://blog.askin.ws/blog/ssh-filesystem-ile-uzak-makinadaki-dizini-yerele-baglamak/" class="post-read-more">[]</a>
         
     </div>

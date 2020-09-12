@@ -21,7 +21,10 @@
       <guid>https://blog.askin.ws/blog/off-the-record-messaging-otr/</guid>
       <description>Off the Record Messaging (OTR) anlık mesajlaşma servislerinde güvenli olarak mesajlaşmak için geliştirilmiş bir protokoldür. Birçok anlık mesajlaşma uygulaması için eklentileri geliştirilmiştir. Ben pidgin ile birlikte kullanıyorum. Özel olarak kalmasını istediğiniz sohbetlerinizi OTR kullanarak güvenli bir şekilde yapabilirsiniz. [1] adresinde OTR ile ilgili wikipedia sayfasını bulabilirsiniz. [2] adresinde OTR ana sayfası bulunmakta.
 Pidgin ve Ubuntu kullanıcıları için kurulum çok basit:
-sudo apt-get install pidgin-otr Bir çok dağıtım deposunda OTR hazır olarak gelmektedir.</description>
+sudo apt-get install pidgin-otr Bir çok dağıtım deposunda OTR hazır olarak gelmektedir. Windows kullanıcıları da pidgin için kurulum dosyasını OTR&amp;rsquo;ın web sayfasından indirebilir.
+Aşağıda kullanım ile ilgili videoyu izleyebilirsiniz.
+[1] http://en.wikipedia.org/wiki/Off-the-Record_Messaging
+[2] http://www.cypherpunks.ca/otr/index.php</description>
     </item>
     
     <item>
@@ -31,7 +34,9 @@ sudo apt-get install pidgin-otr Bir çok dağıtım deposunda OTR hazır olarak 
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/pidgin-titresim-eklentisi-attention-button/</guid>
       <description>Pidginin en sevdiğim özelliklerinden bir tanesi, sohbet ettiğiniz kişi size tireşim gönderdiğinde ekrana sadece &amp;rdquo;&amp;hellip; size uyarı gönderdi&amp;rdquo; yazması. Bu özelliğer sahip olmasının birde dezavantajı var tabiki, siz de başkalarına titreşim yollayamıyorsunuz. Bugün bu eksikliği fazlasıyla hissedince ufak çaplı bir araştırma yaptım ve Attention Button eklentisiyle karşılaştım.
-Kurulumu çok basit. Burdan en güncel sürümünü indiriyorsunuz (şimdilik 0.3), arşivden çıkartıp .so uzantılı dosyayı ev dizininiz altında .purple/plugins/ dizinine kopyalıyorsunuz. Ardından pidgine gidip eklentiler(plugins) kısmından aktif ediyorsunuz.</description>
+Kurulumu çok basit. Burdan en güncel sürümünü indiriyorsunuz (şimdilik 0.3), arşivden çıkartıp .so uzantılı dosyayı ev dizininiz altında .purple/plugins/ dizinine kopyalıyorsunuz. Ardından pidgine gidip eklentiler(plugins) kısmından aktif ediyorsunuz.
+Konsoldan halletmek isterseniz:
+$ wget http://pidgin-attentionbutton.googlecode.com/files/attentionbutton-0.3.tar.gz $ tar -xvzf attentionbutton-0.3.tar.gz $ mkdir $HOME/.purple/plugins $ mv attentionbutton.so $HOME/.purple/plugins/ $ rm attentionbutton-0.3.tar.gz attentionbutton.c Bu eklentinin birkaç güzel özelliğide var.</description>
     </item>
     
   </channel>

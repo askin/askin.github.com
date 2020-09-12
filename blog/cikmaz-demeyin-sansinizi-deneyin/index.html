@@ -11,7 +11,7 @@
   <meta name="description" content="Bu girdi Burdaki girdiden esinlenilerek yazıldı.
 E madem pyton ile sayısal kuponu yapılıyor biz niye scheme ile yapmayalım bunu demi:)
 Probleme göre kod bana çok uzun geldi. Belki ilerde optimize edebilirim. Ama şimdilik böyle oynayalım demi:)
-(define (sayisal) (display &#34;Oynamak istediginiz kolan sayisini giriniz: \n&#34;) (let ((kolon (read))) (do ((i 1 (&#43; i 1))) ((&gt; i kolon)) (let loop ((lst (list (&#43; (random 49) 1))) (sayi (&#43; 1 (random 49)))) (if (= (length lst) 6) (printf &#34;~a.">
+(define (sayisal) (display &#34;Oynamak istediginiz kolan sayisini giriniz: \n&#34;) (let ((kolon (read))) (do ((i 1 (&#43; i 1))) ((&gt; i kolon)) (let loop ((lst (list (&#43; (random 49) 1))) (sayi (&#43; 1 (random 49)))) (if (= (length lst) 6) (printf &#34;~a. kolon: ~a\n&#34; i (sort lst &lt; )) (if (member sayi lst) (loop lst (&#43; (random 49) 1)) (loop (append lst (list sayi)) (&#43; (random 49) 1)))))))) (sayisal);burası kodun çalıştırılması için.">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -60,7 +60,7 @@ Probleme göre kod bana çok uzun geldi. Belki ilerde optimize edebilirim. Ama �
     "name" : "Aşkın Özgür"
   },
   "headline": "Çıkmaz Demeyin Şansınızı Deneyin",
-  "description" : "Bu girdi Burdaki girdiden esinlenilerek yazıldı.\nE madem pyton ile sayısal kuponu yapılıyor biz niye scheme ile yapmayalım bunu demi:)\nProbleme göre kod bana çok uzun geldi. Belki ilerde optimize edebilirim. Ama şimdilik böyle oynayalım demi:)\n(define (sayisal) (display \u0026#34;Oynamak istediginiz kolan sayisini giriniz: \\n\u0026#34;) (let ((kolon (read))) (do ((i 1 (\u002b i 1))) ((\u0026gt; i kolon)) (let loop ((lst (list (\u002b (random 49) 1))) (sayi (\u002b 1 (random 49)))) (if (= (length lst) 6) (printf \u0026#34;~a.",
+  "description" : "Bu girdi Burdaki girdiden esinlenilerek yazıldı.\nE madem pyton ile sayısal kuponu yapılıyor biz niye scheme ile yapmayalım bunu demi:)\nProbleme göre kod bana çok uzun geldi. Belki ilerde optimize edebilirim. Ama şimdilik böyle oynayalım demi:)\n(define (sayisal) (display \u0026#34;Oynamak istediginiz kolan sayisini giriniz: \\n\u0026#34;) (let ((kolon (read))) (do ((i 1 (\u002b i 1))) ((\u0026gt; i kolon)) (let loop ((lst (list (\u002b (random 49) 1))) (sayi (\u002b 1 (random 49)))) (if (= (length lst) 6) (printf \u0026#34;~a. kolon: ~a\\n\u0026#34; i (sort lst \u0026lt; )) (if (member sayi lst) (loop lst (\u002b (random 49) 1)) (loop (append lst (list sayi)) (\u002b (random 49) 1)))))))) (sayisal);burası kodun çalıştırılması için.",
   "inLanguage" : "tr",
   "wordCount":  121 ,
   "datePublished" : "2008-01-22T17:29:00",
@@ -85,7 +85,7 @@ Probleme göre kod bana çok uzun geldi. Belki ilerde optimize edebilirim. Ama �
 <meta property="og:description" content="Bu girdi Burdaki girdiden esinlenilerek yazıldı.
 E madem pyton ile sayısal kuponu yapılıyor biz niye scheme ile yapmayalım bunu demi:)
 Probleme göre kod bana çok uzun geldi. Belki ilerde optimize edebilirim. Ama şimdilik böyle oynayalım demi:)
-(define (sayisal) (display &#34;Oynamak istediginiz kolan sayisini giriniz: \n&#34;) (let ((kolon (read))) (do ((i 1 (&#43; i 1))) ((&gt; i kolon)) (let loop ((lst (list (&#43; (random 49) 1))) (sayi (&#43; 1 (random 49)))) (if (= (length lst) 6) (printf &#34;~a.">
+(define (sayisal) (display &#34;Oynamak istediginiz kolan sayisini giriniz: \n&#34;) (let ((kolon (read))) (do ((i 1 (&#43; i 1))) ((&gt; i kolon)) (let loop ((lst (list (&#43; (random 49) 1))) (sayi (&#43; 1 (random 49)))) (if (= (length lst) 6) (printf &#34;~a. kolon: ~a\n&#34; i (sort lst &lt; )) (if (member sayi lst) (loop lst (&#43; (random 49) 1)) (loop (append lst (list sayi)) (&#43; (random 49) 1)))))))) (sayisal);burası kodun çalıştırılması için.">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
 <meta property="og:url" content="https://blog.askin.ws/blog/cikmaz-demeyin-sansinizi-deneyin/" />
 <meta property="og:type" content="website" />

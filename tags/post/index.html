@@ -240,6 +240,8 @@
 curl --data &quot;param1=value1&amp;param2=value2&quot; http://example.com/index.php  Web sayfasının döndürdüğü sonu doğrudan ekrana basılacaktır, bunu bir dosyaya aktarmak için
 curl --data &quot;param1=value1&amp;param2=value2&quot; http://example.com/index.php &gt; result.html  bir değişkene aktarmak için
 result=$(curl --data &quot;param1=value1&amp;param2=value2&quot; http://example.com/index.php)  kullanabiliriz. Erişmek istediğimiz web sayfası kullanıcı girişi istiyorsa cookie kullanrak bunu yapabiliriz.
+curl --data &quot;username=askin&amp;password=pasw0rd&quot; http://example.com/login.php -c cookie.cook  Bu komutla giriş yapıp, oluşturulan cookie&rsquo;yi cookie.cook dosyasına kaydettik.
+Tabi burda username ve password parametreleri değişiklik gösterebilir, gönderilen form verisini inceleyerek, gerekli parametreleri bulup uygun formatta göndermek gerekir.
         <a href="https://blog.askin.ws/blog/curl-ile-getpost-ve-cookie-kullanimi/" class="post-read-more">[]</a>
         
     </div>

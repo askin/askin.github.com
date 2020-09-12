@@ -414,7 +414,10 @@ ssh user@remote.host <span style="color:#e6db74">&#34;cd /original/directory; ta
         Pardusun ağ yöneticisi gayet şık bir arayüze sahip, fakat bize Eduroam ağına bağlanma özelliği sunmuyor.
 Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız için yeterli. Bu araçlar wpa_supplicant ve dhcpcd. Wpa_supplicant ağda kimlik denetimini sağlamak için, dhcpcd ise ağdan ip almamız için gerekli.
 Öncelikle wpa_supplicant için ayar dosyası oluşturmamız gerekiyor.
-network={ ssid=&quot;eduroam&quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap=TTLS phase2=&quot;auth=PAP&quot; anonymous_identity=&quot;anonymous@ogr.deu.edu.tr&quot; identity=&quot;ogrencinumarasi@ogr.deu.edu.tr&quot; password=&quot;sifre&quot; } Bu ayarlar Dokuz Eylül Üniversitesi için.
+network={ ssid=&quot;eduroam&quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap=TTLS phase2=&quot;auth=PAP&quot; anonymous_identity=&quot;anonymous@ogr.deu.edu.tr&quot; identity=&quot;ogrencinumarasi@ogr.deu.edu.tr&quot; password=&quot;sifre&quot; } Bu ayarlar Dokuz Eylül Üniversitesi için. Kendi okulunuza göre düzenlemeniz gerekiyor. Sadece ogr.deu.edu.tr adresi yerine kendi okulunuzun adresini yazmalısınız.
+Bu dosyayı /etc/wpa_supplicant.con adıyla kaydediyoruz.
+Sıra geldi wpa_supplicantı çalıştırmaya.
+wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf -D parametresi hangi sürücüyü kullanacağımızı belirtiyor.
         <a href="https://blog.askin.ws/blog/pardus-ile-eduroam-agina-baglanma/" class="post-read-more">[]</a>
         
     </div>
@@ -477,7 +480,7 @@ network={ ssid=&quot;eduroam&quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap
         
         Sonunda Pardus 2009&rsquo;u bilgisayarıma kurabildim. Ailemin yanına geldiğim için Pardus&rsquo;u indiremiyordum. Malum kotalı internet, sıkıntı yaratıyor.
 Kurulum sorunsuz tamamlandı. Kurulum arayüzü çok hoş olmuş. Çok kullanışlı ve çok kolay bir arayüzü olmuş. Bilgisayarıma en hızlı kurulabilen Pardus sürümü. Saat tutmadım ama, 20 dakka ile 30 dakka arasında bir sürede kurulduğunu tahmin ediyorum.
-Kablosuz ağ kartımı sorunsuz tanıdı ve WPA2 şifreli ağıma çok kolay bir şekilde bağlandı. Daha önce de tanıyordu, fakat ağımı göremiyordu, ben de mecburen ndiswraper ile kullanıyordum.
+Kablosuz ağ kartımı sorunsuz tanıdı ve WPA2 şifreli ağıma çok kolay bir şekilde bağlandı. Daha önce de tanıyordu, fakat ağımı göremiyordu, ben de mecburen ndiswraper ile kullanıyordum. Hiç bir ek program kurmama ve kapalı kodlu windows sürücülerine ihtiyaç duymamak beni gayet mutlu etti. Ve ilk defa wi-fi ledinin yanıp söndüğü gördüm:)
         <a href="https://blog.askin.ws/blog/pardus-2009/" class="post-read-more">[]</a>
         
     </div>
@@ -538,7 +541,8 @@ Kablosuz ağ kartımı sorunsuz tanıdı ve WPA2 şifreli ağıma çok kolay bir
         
         Mysql data dizini ön tanımlı /var/lib/mysql olarak belirlenmiştir. Çeşitli ihtiyaçlardan dolayı bunun yerini değiştirmemiz gerekebilir. Mesela ben ayrı bir bölümde tuttuğum /home dizini altına taşımak istiyorum. Tüm işlemleri root yetkisiyle yapıyoruz. Öncelikle mysql servisini durduralım. Ben pardus kullandığım için
 $ service mysql-server stop Diğer dağıtımlarda farklı olabilir. Ardından ilgili dizini yeni yerine kopyalayalım.
-$ cp -a /var/lib/mysql /home Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. /etc/mysql/my.cnf dosyasında datadir = /var/lib/mysql olan satırı datadir = /home/mysql olarak değiştirelim.
+$ cp -a /var/lib/mysql /home Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. /etc/mysql/my.cnf dosyasında datadir = /var/lib/mysql olan satırı datadir = /home/mysql olarak değiştirelim. Şimdi servisi yeniden başlatabiliriz.
+$ service mysql-server start Eğer düzgün bir şekilde çalışıyorsa /var/lib/mysql dizinini silebiliriz. Ama ismini değiştirip birkaç gün her ihtimale karşı saklamak çok mantıklı.
         <a href="https://blog.askin.ws/blog/mysql-data-dizinini-degistirme/" class="post-read-more">[]</a>
         
     </div>
@@ -593,6 +597,8 @@ $ cp -a /var/lib/mysql /home Daha sonra mysql sunucusuna yeni dizinimizi haber v
         
         Pidginin en sevdiğim özelliklerinden bir tanesi, sohbet ettiğiniz kişi size tireşim gönderdiğinde ekrana sadece &rdquo;&hellip; size uyarı gönderdi&rdquo; yazması. Bu özelliğer sahip olmasının birde dezavantajı var tabiki, siz de başkalarına titreşim yollayamıyorsunuz. Bugün bu eksikliği fazlasıyla hissedince ufak çaplı bir araştırma yaptım ve Attention Button eklentisiyle karşılaştım.
 Kurulumu çok basit. Burdan en güncel sürümünü indiriyorsunuz (şimdilik 0.3), arşivden çıkartıp .so uzantılı dosyayı ev dizininiz altında .purple/plugins/ dizinine kopyalıyorsunuz. Ardından pidgine gidip eklentiler(plugins) kısmından aktif ediyorsunuz.
+Konsoldan halletmek isterseniz:
+$ wget http://pidgin-attentionbutton.googlecode.com/files/attentionbutton-0.3.tar.gz $ tar -xvzf attentionbutton-0.3.tar.gz $ mkdir $HOME/.purple/plugins $ mv attentionbutton.so $HOME/.purple/plugins/ $ rm attentionbutton-0.3.tar.gz attentionbutton.c Bu eklentinin birkaç güzel özelliğide var.
         <a href="https://blog.askin.ws/blog/pidgin-titresim-eklentisi-attention-button/" class="post-read-more">[]</a>
         
     </div>
@@ -657,7 +663,9 @@ satırını ve
 dosyasına da
 blacklist ath_pci
 satırını eklemek gerekiyor. Bunları ekledikten sonra kde&rsquo;de ağ programcığıyla bağlanabiliyorsunuz.
-Fakat XFCE kullanıyorsanız wicd kullanmanız gerekiyor. Wicd ile doğrudan kullanamıyoruz.
+Fakat XFCE kullanıyorsanız wicd kullanmanız gerekiyor. Wicd ile doğrudan kullanamıyoruz. Öncelikle birkaç ufak düzenleme yapmak gerekiyor.
+Wicd -&gt; Tercihler yolunu takip ettikten sonra WPA Suplicant Sürücüsü: kısmına wext, Kablosuz arabirim kısmına da wlan0 yazmak gerekiyor.
+Bu ayarlarla kolaylıkla kullanabilirsiniz, kolay gelsin.
         <a href="https://blog.askin.ws/blog/pardus-atheros-ar242x-wpa2/" class="post-read-more">[]</a>
         
     </div>
@@ -766,7 +774,8 @@ Fakat XFCE kullanıyorsanız wicd kullanmanız gerekiyor. Wicd ile doğrudan kul
         
         Öncelikle bir çalışan cd ile sistem açılır, benim tercihim gparted live cd. Sizin elinizin altında ne varsa kabuldur. İlla çalışan cd olmasına gerek yok, herhangi bir linux cdside olabilir. Bize mount, cp ve nano komutları lazım. Bunları sağlayan herhangi bir cd kullanılabilir.
 Taşınacak kurulumun hangi disk bölümünde olduğu bilinmeli. Ben 2. bölümdeki kurulumu 1. bölüme taşıyacağım. Yani /dev/hdc3 den /dev/hdc1 e taşıma yapacağım(sizdeki disk isimleri muhtemelen farklıdır).
-Cd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte.
+Cd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte. Ctrl + Alt + F1 tuş kombinasyonu muhtemelen iş görecektir. Ben live cd kullandığım için grafik ekranla karşılaştım, burdan bi terminal açarak işimi göreceğim.
+Yapacağımız işlemler için root olmamız gerekiyor.
         <a href="https://blog.askin.ws/blog/bir-gnulinux-kurulumunu-baska-bir-harddiskebolume-tasimak/" class="post-read-more">[]</a>
         
     </div>

@@ -237,7 +237,7 @@
     <div class="post-entry">
         
         Sunucu:
-#include &lt;stdio.h&gt;#include &lt;string.h&gt;#include &lt;sys/types.h&gt;#include &lt;sys/socket.h&gt;#include &lt;netinet/in.h&gt; #define MY_PORT 3333  int main(int argc, char *argv[]) { int sockfd, new_fd; struct sockaddr_in my_addr; // hedef adres  struct sockaddr_in their_addr; // baglanti yapan adres  int sin_size, rt; // gelen verinin tutuldugu buffer  char buf[32]; // islem yapmak icin gerekli dosya gosterici  sockfd = socket(AF_INET, SOCK_DGRAM, 0); sin_size = sizeof(struct sockaddr_in); // adres ile ilgili ayarlar  my_addr.sin_family = AF_INET; my_addr.
+#include &lt;stdio.h&gt;#include &lt;string.h&gt;#include &lt;sys/types.h&gt;#include &lt;sys/socket.h&gt;#include &lt;netinet/in.h&gt; #define MY_PORT 3333  int main(int argc, char *argv[]) { int sockfd, new_fd; struct sockaddr_in my_addr; // hedef adres  struct sockaddr_in their_addr; // baglanti yapan adres  int sin_size, rt; // gelen verinin tutuldugu buffer  char buf[32]; // islem yapmak icin gerekli dosya gosterici  sockfd = socket(AF_INET, SOCK_DGRAM, 0); sin_size = sizeof(struct sockaddr_in); // adres ile ilgili ayarlar  my_addr.sin_family = AF_INET; my_addr.sin_port = htons(MY_PORT); // kullanilacak port  my_addr.sin_addr.s_addr = INADDR_ANY; // mevcut ip adresi  memset(&amp;(my_addr.sin_zero), 0, 8); // geri kalani 0la  // socket ile dosyayi iliskilendir  bind(sockfd, (struct sockaddr *)&amp;my_addr, sizeof(struct sockaddr)); while ( 1 ) { rt = recvfrom (sockfd, buf, 12, 0, (struct sockaddr *)&amp;their_addr, &amp;sin_size); if (rt &gt; 0) { printf (&#34;recv: %s\n&#34;, buf); } else if (rt &lt; 0) { printf(&#34;Baglanti koptu\n&#34;); break; } } close(sockfd); return 0; } İstemci:
         <a href="https://blog.askin.ws/blog/udp-broadcast-sunucu-istemci/" class="post-read-more">[]</a>
         
     </div>
@@ -293,7 +293,7 @@
     <div class="post-entry">
         
         Çalıştığım projede linuxta paralel port ile lcd ekran kullanmam gerekti. Neredeyse internetin altını üstüne getirdim ama işime yarar çok birşey bulamadım. Sonunda DOS için yazılmış bir kod buldum. Bu kodu biraz inceleyip, gerekli püf noktaları bulunca kodu linux&rsquo;a uydurmak çok zor olmadı. Hatta neredeyse sadece kullanılan fonksiyonun adını ve parametre yerlerini değiştirdim :)
-Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read/write seçimi için kullanılıyor.
+Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read/write seçimi için kullanılıyor. Geri kalan 3 bacak güç bağlantısı ve kontrast için kullanılıyor. Burdaki şemaya göre bağlantıları yapabilirsiniz. Ayrıca örnek aldığım kodda aynı sayfada bulunmakta.
         <a href="https://blog.askin.ws/blog/linux-paralel-port-ile-2x16-lcd-ekran-kullanimi/" class="post-read-more">[]</a>
         
     </div>
@@ -400,7 +400,7 @@ Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşı
     <div class="post-entry">
         
         Gece gece uyku tutmadı var olan bir programı kurcalamaya başladım. Amacım programın sitem çekmecesinden çalışabilir hale getirmekti.
-Her şeyi yaptım fakat bir türlü pencereyi gizleyemiyordum :) Doküman gtk_window_get_mnemonics_visible () fonksiyonunu kullanmamı söylüyordu, fakat kullandığım gtk sürümünde bu fonksiyon tanımlı değildi(2.18.7). Eski sürüm için olan dokümanı incelediğimde bu işi yapan bir fonksiyon yoktu. Sistemde kurulu gtk ve python ile bu işi yapabiliyordum. Normal olarak c ile de yapabilmem lazımdı:) Biraz inceledikten sonra, önce pencereyi gizleyen, ardından boyutunu eski haline getirip sonra tekrar gösteren bir fonksiyon olduğunu fark ettim.
+Her şeyi yaptım fakat bir türlü pencereyi gizleyemiyordum :) Doküman gtk_window_get_mnemonics_visible () fonksiyonunu kullanmamı söylüyordu, fakat kullandığım gtk sürümünde bu fonksiyon tanımlı değildi(2.18.7). Eski sürüm için olan dokümanı incelediğimde bu işi yapan bir fonksiyon yoktu. Sistemde kurulu gtk ve python ile bu işi yapabiliyordum. Normal olarak c ile de yapabilmem lazımdı:) Biraz inceledikten sonra, önce pencereyi gizleyen, ardından boyutunu eski haline getirip sonra tekrar gösteren bir fonksiyon olduğunu fark ettim. Benim istediğim işi yapıyor fakat yanında birde fazlalığı vardı.(gtk_window_reshow_with_initial_size) İnternette biraz daha araştırıp umudumu kaybedince mecburen kaynak koda baktım.
         <a href="https://blog.askin.ws/blog/gtk-2-18-9-pencere-gizleme-sorunu/" class="post-read-more">[]</a>
         
     </div>

@@ -292,10 +292,39 @@ ssh user@remote.host <span style="color:#e6db74">&#34;cd /original/directory; ta
     </p>
     <div class="post-entry">
         
-        Öncelikle http://www.oracle.com/technetwork/database/enterprise-edition/jdbc101040-094982.html adresinden classes12.jar dosyasını indiriyoruz.
-Bu dosyayı bir dizine atıp, içeriğini bu dizine çıkartıyoruz. Bu dizini classpath değişkeninde belirtip kodlamaya başlıyoruz.
-import java.io.*; import java.sql.*; public class OraThin { public static void main(String[] args) { try { Connection con = null; Class.forName(&#34;oracle.jdbc.driver.OracleDriver&#34;); con=DriverManager.getConnection( &#34;jdbc:oracle:thin:@localhost:1521:dbname&#34;, &#34;username&#34;, &#34;password&#34;); Statement s = con.createStatement(); ResultSet rs = s.executeQuery(&#34;SELECT * FROM KISI&#34;); String name; String surname; while(rs.next()) { name = rs.getString(&#34;AD&#34;); surname = rs.getString(&#34;SOYAD&#34;); System.
-        <a href="https://blog.askin.ws/blog/java-ile-oracle-veritabanina-baglanmak/" class="post-read-more">[]</a>
+        <p>Öncelikle <a href="http://www.oracle.com/technetwork/database/enterprise-edition/jdbc101040-094982.html">http://www.oracle.com/technetwork/database/enterprise-edition/jdbc101040-094982.html</a> adresinden classes12.jar dosyasını indiriyoruz.</p>
+<p>Bu dosyayı bir dizine atıp, içeriğini bu dizine çıkartıyoruz. Bu dizini classpath değişkeninde belirtip kodlamaya başlıyoruz.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.io.*<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.sql.*<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">OraThin</span> <span style="color:#f92672">{</span>                                                                                                                                                                
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>                                                                                                                                          
+        <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>                                                                                                                                                                         
+            Connection con <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+            Class<span style="color:#f92672">.</span><span style="color:#a6e22e">forName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;oracle.jdbc.driver.OracleDriver&#34;</span><span style="color:#f92672">);</span>              
+            con<span style="color:#f92672">=</span>DriverManager<span style="color:#f92672">.</span><span style="color:#a6e22e">getConnection</span><span style="color:#f92672">(</span>
+                <span style="color:#e6db74">&#34;jdbc:oracle:thin:@localhost:1521:dbname&#34;</span><span style="color:#f92672">,</span>
+                <span style="color:#e6db74">&#34;username&#34;</span><span style="color:#f92672">,</span>
+                <span style="color:#e6db74">&#34;password&#34;</span><span style="color:#f92672">);</span>
+            Statement s <span style="color:#f92672">=</span> con<span style="color:#f92672">.</span><span style="color:#a6e22e">createStatement</span><span style="color:#f92672">();</span>
+            ResultSet rs <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">executeQuery</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;SELECT * FROM KISI&#34;</span><span style="color:#f92672">);</span>
+
+            String name<span style="color:#f92672">;</span>
+            String surname<span style="color:#f92672">;</span>
+
+            <span style="color:#66d9ef">while</span><span style="color:#f92672">(</span>rs<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+                name    <span style="color:#f92672">=</span> rs<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;AD&#34;</span><span style="color:#f92672">);</span>
+                surname <span style="color:#f92672">=</span> rs<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;SOYAD&#34;</span><span style="color:#f92672">);</span>
+
+                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Name: &#34;</span> <span style="color:#f92672">+</span> name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, Surmame: &#34;</span> <span style="color:#f92672">+</span> surname<span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span>
+
+            s<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+            con<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>Exception e<span style="color:#f92672">){</span>e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span> 
+</code></pre></div>
         
     </div>
 
@@ -351,6 +380,7 @@ Mesela:
 def Merhaba(isim): print &#34;Merhaba %s&#34; % isim Bunun gibi sadece tek parametre alan bir fonksiyon için aşağıdaki gibi bir fonksiyon yeterli olacaktır.
 def BuyukAbi(func, param): func(param) BuyukAbi(Merhaba, &#34;kelebek&#34;) Merhaba kelebek Bu fonksiyon parametre olarak aldığı func fonksiyonuna param parametresini geçirecektir.
 Eğer fonksiyonun aldığı parametre sayısı belirsiz ise, yani farklı sayıda parametre alan fonksiyonlarla uğraşmak gerekiyorsa yanına birkaç ekleme daha yapmamız gerekiyor.
+def BuyukBuyukAbi(func, param): func(*param) param parametresi bir liste olmak durumunda. Geçirilen fonksiyon kaç parametre alıyorsa listenin uzunluğu okadar olmalı.
         <a href="https://blog.askin.ws/blog/python-fonksiyona-parametre-olarak-fonksiyon-gecirmek/" class="post-read-more">[]</a>
         
     </div>
@@ -455,7 +485,7 @@ Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşı
     <div class="post-entry">
         
         Gece gece uyku tutmadı var olan bir programı kurcalamaya başladım. Amacım programın sitem çekmecesinden çalışabilir hale getirmekti.
-Her şeyi yaptım fakat bir türlü pencereyi gizleyemiyordum :) Doküman gtk_window_get_mnemonics_visible () fonksiyonunu kullanmamı söylüyordu, fakat kullandığım gtk sürümünde bu fonksiyon tanımlı değildi(2.18.7). Eski sürüm için olan dokümanı incelediğimde bu işi yapan bir fonksiyon yoktu. Sistemde kurulu gtk ve python ile bu işi yapabiliyordum. Normal olarak c ile de yapabilmem lazımdı:) Biraz inceledikten sonra, önce pencereyi gizleyen, ardından boyutunu eski haline getirip sonra tekrar gösteren bir fonksiyon olduğunu fark ettim.
+Her şeyi yaptım fakat bir türlü pencereyi gizleyemiyordum :) Doküman gtk_window_get_mnemonics_visible () fonksiyonunu kullanmamı söylüyordu, fakat kullandığım gtk sürümünde bu fonksiyon tanımlı değildi(2.18.7). Eski sürüm için olan dokümanı incelediğimde bu işi yapan bir fonksiyon yoktu. Sistemde kurulu gtk ve python ile bu işi yapabiliyordum. Normal olarak c ile de yapabilmem lazımdı:) Biraz inceledikten sonra, önce pencereyi gizleyen, ardından boyutunu eski haline getirip sonra tekrar gösteren bir fonksiyon olduğunu fark ettim. Benim istediğim işi yapıyor fakat yanında birde fazlalığı vardı.(gtk_window_reshow_with_initial_size) İnternette biraz daha araştırıp umudumu kaybedince mecburen kaynak koda baktım.
         <a href="https://blog.askin.ws/blog/gtk-2-18-9-pencere-gizleme-sorunu/" class="post-read-more">[]</a>
         
     </div>
@@ -513,6 +543,9 @@ Blooger hesabımıza giriş yapıyoruz.
 Özelleştir -&gt; Ayarlar -&gt; Yayıncılık -&gt; Özel Alan-&gt; Gelişmiş Ayarlara Geçiş Yapın
 Buradaki kutuya alan adını yazın.
 &ldquo;Eksik dosya barındırma sistemini mi kullanıyorsunuz?&rdquo; kısmını olduğu gibi bırakıp, kelime doğrulamayı yapıp ayarları kaydediyoruz.
+Bu adımları geçtikten sonra google tarafında yapılacak ayarları tamamlamış oluyoruz.
+Alan adınızın bloggera yönlenmesi için CNAME kaydı oluşturmanız gerekiyor. Bunu alan adını aldığınız yerden yapacaksınız.
+CNAME kaydına değer olarak ghs.
         <a href="https://blog.askin.ws/blog/bloggera-kendi-alan-adinizi-yonlendirme/" class="post-read-more">[]</a>
         
     </div>
@@ -568,7 +601,9 @@ Buradaki kutuya alan adını yazın.
         Gtk ile çok kolay bir şekilde geliştirdiğiniz uygulamayı sistem çekmecesinde gösterebilirsiniz.
 Ufak bir örnek kod veriyorum. Onun üzerinden anlatacağım.
 import pygtk import gtk class ShowIcon: def __init__(self): self.icon = gtk.StatusIcon() self.icon.set_from_file(&#39;gtk.png&#39;) self.icon.set_tooltip_text(&#39;Hello Python!!!&#39;) self.icon.set_visible(True) self.icon.connect(&#34;activate&#34;, self.hello) gtk.main() def hello(self, widget): print &#39;Hello Python !!!&#39; if __name__ == &#39;__main__&#39;: icon = ShowIcon() 6. satırda asıl işimizi yapacak olan StatusIcon nesnesini yaratıyoruz.
-7. satırda sistem çekmecesinde hangi ikonun görüntüleneceğini belirtiyoruz. set_from_file ikonu dosyadan alacağımız anlamına geliyor.
+7. satırda sistem çekmecesinde hangi ikonun görüntüleneceğini belirtiyoruz. set_from_file ikonu dosyadan alacağımız anlamına geliyor. Eğer gtk&rsquo;nın sunduğu standart ikonları kullanmak istiyorsanız set_from_stock kullanmalısınız.
+icon.set_from_stock(gtk.STOCK_ABOUT) 8. satırda ikonun üzerine geldiğimizde görünmesini istediğimiz yazıyı belirliyoruz.
+9. satırda ikonun başlangıçtaki görünürlüğünü belirliyoruz. Bu satırı yazmasak da görünür başlıyor.
         <a href="https://blog.askin.ws/blog/pygtk-ile-sistem-cekmecesi/" class="post-read-more">[]</a>
         
     </div>
@@ -623,10 +658,12 @@ import pygtk import gtk class ShowIcon: def __init__(self): self.icon = gtk.Stat
     </p>
     <div class="post-entry">
         
-        PyGtk ile ara yüzüzünü hazırladığım bir program içinde thread kullanmam gerekiyordu. Kod çalışıyordu fakat thread işlemi istediğim gibi çalışmıyordu. Arayüzde bir değişiklik olduğu zaman thread çalışıyor, onun dışında hiç bir şekilde tepki vermiyordu.
-Uzun süre hatanın kodda olabileceğini düşündüm. Ama sonunda python gtk.main() ve thread 3&rsquo;lüsünü aynı sorgu içinde googleda aratınca cevabı buldum. Gtk&rsquo;ya thread kullandığımı anlatmam gerekiyordu :)
-gtk.gdk.threads_init() Bu satırı kodumun başına eklediğimde herşey istediğim gibi çalışmaya başladı :)
-        <a href="https://blog.askin.ws/blog/pygtk-ve-thread-sorunu/" class="post-read-more">[]</a>
+        <p><img src="/uploads/2010/04/gtk.png" alt="Gtk" title="Gtk">PyGtk ile ara yüzüzünü hazırladığım bir program içinde thread kullanmam gerekiyordu. Kod çalışıyordu fakat thread işlemi istediğim gibi çalışmıyordu. Arayüzde bir değişiklik olduğu zaman thread çalışıyor, onun dışında hiç bir şekilde tepki vermiyordu.</p>
+<p>Uzun süre hatanın kodda olabileceğini düşündüm. Ama sonunda python gtk.main() ve thread 3&rsquo;lüsünü aynı sorgu içinde googleda aratınca cevabı buldum. Gtk&rsquo;ya thread kullandığımı anlatmam gerekiyordu :)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">gtk<span style="color:#f92672">.</span>gdk<span style="color:#f92672">.</span>threads_init()
+</code></pre></div><p>Bu satırı kodumun başına eklediğimde herşey istediğim gibi çalışmaya başladı :)</p>
+<p>Sizde böyle bir sorunla karşılaşırsanız aklınızda bulunsun :)</p>
+
         
     </div>
 
@@ -681,7 +718,9 @@ gtk.gdk.threads_init() Bu satırı kodumun başına eklediğimde herşey istedi�
     <div class="post-entry">
         
         Bikaç gündür Pardus ve Eduroam ile uğraşıyordum. Eduroama bağlanmak için pratik yollar buldum fakat hiç birisi Ağ Yöneticisi kullanarak bağlanmanın zevkini vermiyordu.
-2 gün boyunca Ağ Yöneticisinin neresini değiştirmem gerektiğini arayıp durdum. Sonunda wireless-tools adlı paketin aradığım paket olduğunu keşfettim :) wireless tools paketi wpa_supplicant kullanarak wpa şifreleme kullanan ağlara bağlanmaya yarıyor. Sağolsun Pardus geliştiricileri wpa_supplicant paketi için dbus kullanan bir python betiği yazmışlar. Bu betik içinde tanımlanan methodlarla wpa_supplicantı yönetebiliyoruz.
+2 gün boyunca Ağ Yöneticisinin neresini değiştirmem gerektiğini arayıp durdum. Sonunda wireless-tools adlı paketin aradığım paket olduğunu keşfettim :) wireless tools paketi wpa_supplicant kullanarak wpa şifreleme kullanan ağlara bağlanmaya yarıyor. Sağolsun Pardus geliştiricileri wpa_supplicant paketi için dbus kullanan bir python betiği yazmışlar. Bu betik içinde tanımlanan methodlarla wpa_supplicantı yönetebiliyoruz. Bu betiğe eduroam ağına bağlanmak için gerekli parametreleri alan bir method ekledim.
+Daha sonra wireless-tools paketi içindeki comar betiğine bu methodu kullanmasını sağlayacak birkaç değişiklik yaptım.
+Sırf bu işi denemek için bugün okulum olmadığı halde sabahın 8&rsquo;inde okula gelip deneme yaptım.
         <a href="https://blog.askin.ws/blog/pardus-ag-yoneticisi-ile-eduroam-agina-baglanmak/" class="post-read-more">[]</a>
         
     </div>
@@ -741,7 +780,10 @@ gtk.gdk.threads_init() Bu satırı kodumun başına eklediğimde herşey istedi�
         Pardusun ağ yöneticisi gayet şık bir arayüze sahip, fakat bize Eduroam ağına bağlanma özelliği sunmuyor.
 Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız için yeterli. Bu araçlar wpa_supplicant ve dhcpcd. Wpa_supplicant ağda kimlik denetimini sağlamak için, dhcpcd ise ağdan ip almamız için gerekli.
 Öncelikle wpa_supplicant için ayar dosyası oluşturmamız gerekiyor.
-network={ ssid=&quot;eduroam&quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap=TTLS phase2=&quot;auth=PAP&quot; anonymous_identity=&quot;anonymous@ogr.deu.edu.tr&quot; identity=&quot;ogrencinumarasi@ogr.deu.edu.tr&quot; password=&quot;sifre&quot; } Bu ayarlar Dokuz Eylül Üniversitesi için.
+network={ ssid=&quot;eduroam&quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap=TTLS phase2=&quot;auth=PAP&quot; anonymous_identity=&quot;anonymous@ogr.deu.edu.tr&quot; identity=&quot;ogrencinumarasi@ogr.deu.edu.tr&quot; password=&quot;sifre&quot; } Bu ayarlar Dokuz Eylül Üniversitesi için. Kendi okulunuza göre düzenlemeniz gerekiyor. Sadece ogr.deu.edu.tr adresi yerine kendi okulunuzun adresini yazmalısınız.
+Bu dosyayı /etc/wpa_supplicant.con adıyla kaydediyoruz.
+Sıra geldi wpa_supplicantı çalıştırmaya.
+wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf -D parametresi hangi sürücüyü kullanacağımızı belirtiyor.
         <a href="https://blog.askin.ws/blog/pardus-ile-eduroam-agina-baglanma/" class="post-read-more">[]</a>
         
     </div>
