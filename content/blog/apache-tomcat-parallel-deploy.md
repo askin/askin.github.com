@@ -14,10 +14,13 @@ Deployment** deniyor. Paralel deploy sırasında eğer uygulamanın bir
 önceki versiyonunda oturum açılmışsa istekler oraya gitmeye devam
 ediyor, yeni oturumlar yeni sürüme gitmeye başlıyor.
 
+<!--more-->
+
 Paralel deploy yapabilmek için oluşturulan `war` dosyasının bir
 versiyona sahip olması gerekmekte. Bunu yapabilmek için dosya ismini
 `paket-ismi##VERSION.war` şeklinde yapmak gerekiyor. Eğer **Maven**
-kullanıyorsanız `pom.xml` dosyasında aşağıdaki gibi basitçe yapabilirsiniz.
+kullanıyorsanız `pom.xml` dosyasında aşağıdaki gibi basitçe
+yapabilirsiniz.
 
 ```xml
 <build>
