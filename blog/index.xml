@@ -8,10 +8,20 @@
     <language>tr-TR</language>
     <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
     <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
-    <lastBuildDate>Fri, 04 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 12 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.askin.ws/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Apache Tomcat Paralel Deploy</title>
+      <link>https://blog.askin.ws/blog/apache-tomcat-parallel-deploy/</link>
+      <pubDate>Sat, 12 Sep 2020 00:00:00 +0000</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/apache-tomcat-parallel-deploy/</guid>
+      <description>Apache Tomcat kullanıyorsanız aynı uygulamanın birden fazla sürümünü aynı anda aynı path üzerinde çalıştırabilirsiniz. Bu deploy yaparken kesintisiz hizmet sağlamak için çok yardımcı oluyor. Buna Parallel Deployment deniyor. Paralel deploy sırasında eğer uygulamanın bir önceki versiyonunda oturum açılmışsa istekler oraya gitmeye devam ediyor, yeni oturumlar yeni sürüme gitmeye başlıyor.
+Paralel deploy yapabilmek için oluşturulan war dosyasının bir versiyona sahip olması gerekmekte. Bunu yapabilmek için dosya ismini paket-ismi##VERSION.war şeklinde yapmak gerekiyor. Eğer Maven kullanıyorsanız pom.</description>
+    </item>
     
     <item>
       <title>Cron Timezone Problemi</title>

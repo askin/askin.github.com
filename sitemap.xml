@@ -3,13 +3,38 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.askin.ws/blog/apache-tomcat-parallel-deploy/</loc>
+    <lastmod>2020-09-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.askin.ws/</loc>
-    <lastmod>2020-09-04T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.askin.ws/blog/</loc>
-    <lastmod>2020-09-04T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.askin.ws/tags/deploy/</loc>
+    <lastmod>2020-09-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.askin.ws/tags/maven/</loc>
+    <lastmod>2020-09-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.askin.ws/tags/</loc>
+    <lastmod>2020-09-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.askin.ws/tags/tomcat/</loc>
+    <lastmod>2020-09-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -19,11 +44,6 @@
   
   <url>
     <loc>https://blog.askin.ws/tags/crontab/</loc>
-    <lastmod>2020-09-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.askin.ws/tags/</loc>
     <lastmod>2020-09-04T00:00:00+00:00</lastmod>
   </url>
   
