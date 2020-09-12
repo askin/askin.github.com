@@ -7,6 +7,8 @@ disqusShortname = "askin-ozgurun-web-gunlugu"
 
 defaultContentLanguage = "tr"
 
+summaryLength = 100
+
 [menu]
   [[menu.main]]
     identifier = "home"
