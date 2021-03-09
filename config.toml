@@ -12,7 +12,7 @@ summaryLength = 100
 [menu]
   [[menu.main]]
     identifier = "home"
-    name = "Home"
+    name = "Anasayfa"
     url = "/"
     weight = 10
 
@@ -37,8 +37,9 @@ summaryLength = 100
   subtitle = "Aşkın Özgür'ün Web Günlüğü"
   mainSections = ["blog"]
   logo = "uploads/avatar.png" # Expecting square dimensions
-  favicon = "img/favicon.ico"
-  dateFormat = "January 2, 2006"
+  favicon = "uploads/avatar.png"
+  # dateFormat = "January 2, 2006"
+  dateFormat = "2006/01/02"
   commit = false
   rss = true
   comments = true
@@ -55,7 +56,7 @@ summaryLength = 100
 
 [Author]
   name = "Aşkın Özgür"
-  website = "https://blog.askin.ws"
+  website = "https://askin.ws"
   email = "askin@askin.ws"
   facebook = "askinyollu"
   github = "askin"
