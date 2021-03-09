@@ -8,11 +8,7 @@
     <language>tr-TR</language>
     <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
     <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
-    <lastBuildDate>Tue, 02 Jun 2009 21:48:00 +0300</lastBuildDate>
-    
-	<atom:link href="https://blog.askin.ws/tags/atheros/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 02 Jun 2009 21:48:00 +0300</lastBuildDate><atom:link href="https://blog.askin.ws/tags/atheros/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pardus - Atheros AR242x - WPA2</title>
       <link>https://blog.askin.ws/blog/pardus-atheros-ar242x-wpa2/</link>

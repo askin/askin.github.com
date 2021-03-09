@@ -8,11 +8,7 @@
     <language>tr-TR</language>
     <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
     <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
-    <lastBuildDate>Fri, 15 Nov 2013 17:17:00 +0300</lastBuildDate>
-    
-	<atom:link href="https://blog.askin.ws/tags/irssi/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 15 Nov 2013 17:17:00 +0300</lastBuildDate><atom:link href="https://blog.askin.ws/tags/irssi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Screen ile Irssi Kullanım Kılavuzu</title>
       <link>https://blog.askin.ws/blog/screen-ile-irssi-kullanim-kilavuzu/</link>

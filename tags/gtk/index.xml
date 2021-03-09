@@ -8,11 +8,7 @@
     <language>tr-TR</language>
     <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
     <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
-    <lastBuildDate>Thu, 08 Apr 2010 06:19:00 +0300</lastBuildDate>
-    
-	<atom:link href="https://blog.askin.ws/tags/gtk/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 08 Apr 2010 06:19:00 +0300</lastBuildDate><atom:link href="https://blog.askin.ws/tags/gtk/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gtk &lt;= 2.18.9 Pencere Gizleme Sorunu</title>
       <link>https://blog.askin.ws/blog/gtk-2-18-9-pencere-gizleme-sorunu/</link>

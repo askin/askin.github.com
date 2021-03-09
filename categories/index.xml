@@ -7,10 +7,6 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>tr-TR</language>
     <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
-    <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
-    
-	<atom:link href="https://blog.askin.ws/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster><atom:link href="https://blog.askin.ws/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

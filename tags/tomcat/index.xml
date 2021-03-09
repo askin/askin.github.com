@@ -8,11 +8,7 @@
     <language>tr-TR</language>
     <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
     <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
-    <lastBuildDate>Sat, 12 Sep 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.askin.ws/tags/tomcat/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 12 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.askin.ws/tags/tomcat/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Apache Tomcat Paralel Deploy</title>
       <link>https://blog.askin.ws/blog/apache-tomcat-parallel-deploy/</link>

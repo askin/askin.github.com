@@ -8,11 +8,7 @@
     <language>tr-TR</language>
     <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
     <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
-    <lastBuildDate>Tue, 13 Aug 2013 12:34:00 +0300</lastBuildDate>
-    
-	<atom:link href="https://blog.askin.ws/tags/shell/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 13 Aug 2013 12:34:00 +0300</lastBuildDate><atom:link href="https://blog.askin.ws/tags/shell/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Konsoldan Rastgele String Oluşturma</title>
       <link>https://blog.askin.ws/blog/konsoldan-rastgele-string-olusturma/</link>

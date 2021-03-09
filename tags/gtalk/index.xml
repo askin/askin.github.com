@@ -8,11 +8,7 @@
     <language>tr-TR</language>
     <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
     <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
-    <lastBuildDate>Wed, 03 Apr 2013 16:53:00 +0300</lastBuildDate>
-    
-	<atom:link href="https://blog.askin.ws/tags/gtalk/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 03 Apr 2013 16:53:00 +0300</lastBuildDate><atom:link href="https://blog.askin.ws/tags/gtalk/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pidgin ile kendi domain&#39;imizden gtalk</title>
       <link>https://blog.askin.ws/blog/pidgin-ile-kendi-domainimizden-gtalk/</link>
