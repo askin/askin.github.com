@@ -2,7 +2,8 @@
 Title: Let's Encrypt ile Wildcard SSL Sertifika Oluşturma
 Date: 2021-03-10T22:00:00+03:00
 Author: Aşkın Özgür
-Category: Günlük
+Category: Linux
+Tags: ["Certificate", "EEF", "Let's Encrypt", "Security"]
 Slug: lets-encrypt-ile-wildcard-ssl-sertifika-olusturma
 draft: false
 ---
