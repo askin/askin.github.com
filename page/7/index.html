@@ -211,6 +211,73 @@
           
           
             <article class="post-preview">
+    <a href="https://blog.askin.ws/blog/pardus-atheros-ar242x-wpa2/">
+        <h2 class="post-title">Pardus - Atheros AR242x - WPA2</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;2009/06/02 tarihinde paylaşıldı
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;dakika
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;104&nbsp;kelime
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Aşkın Özgür
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        Pardus 2008 kurulumla beraber Atheros AR242x kablosuz ağ kartını tanıyor, fakat nedense başka ağları görmesine rağmen evimde WPA2 ile kurulu kablosuz ağımı göremiyordu. Bende diğer dağıtımlarda kullandığım ndiswrapper ile sorunumu çözmeyi denedim.
+Öncelikle ndiswrapperı kurduktan sonra windows için yazılmış driverları seçmemiz gerekiyor. Ardından
+/etc/modules.autoload.d/kernel-2.6
+dosyasına
+ndiswrapper
+satırını ve
+/etc/modprobe.d/blacklist-compat
+dosyasına da
+blacklist ath_pci
+satırını eklemek gerekiyor. Bunları ekledikten sonra kde&rsquo;de ağ programcığıyla bağlanabiliyorsunuz.
+Fakat XFCE kullanıyorsanız wicd kullanmanız gerekiyor. Wicd ile doğrudan kullanamıyoruz. Öncelikle birkaç ufak düzenleme yapmak gerekiyor.
+Wicd -&gt; Tercihler yolunu takip ettikten sonra WPA Suplicant Sürücüsü: kısmına wext, Kablosuz arabirim kısmına da wlan0 yazmak gerekiyor.
+Bu ayarlarla kolaylıkla kullanabilirsiniz, kolay gelsin.
+        <a href="https://blog.askin.ws/blog/pardus-atheros-ar242x-wpa2/" class="post-read-more">[Daha fazla oku]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://blog.askin.ws/tags/ar242x/">ar242x</a>&nbsp;
+        
+        <a href="https://blog.askin.ws/tags/atheros/">atheros</a>&nbsp;
+        
+        <a href="https://blog.askin.ws/tags/linux/">Linux</a>&nbsp;
+        
+        <a href="https://blog.askin.ws/tags/pardus/">pardus</a>&nbsp;
+        
+        <a href="https://blog.askin.ws/tags/wicd/">wicd</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="https://blog.askin.ws/blog/pardus-2009-yaz-staji-ve-ben/">
         <h2 class="post-title">Pardus 2009 yaz stajı ve ben:)</h2>
         
@@ -704,67 +771,6 @@ Bu sürümde ssh, samba yada ftp üzerinden bir makinaya bağlanıp oranın dizi
 
 </article>
           
-            <article class="post-preview">
-    <a href="https://blog.askin.ws/blog/moc-kullanarak-konsoldan-muzik-dinleme-ve-lastfm/">
-        <h2 class="post-title">Moc kullanarak konsoldan müzik dinleme ve lastfm</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;2008/06/12 tarihinde paylaşıldı
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;dakika
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;365&nbsp;kelime
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Aşkın Özgür
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        Moc player konsolda çalışan bir müzik çalıcı. Açılımı Music on Console. Mocun en çok sevdiğim özelliği x ortamı yeniden başlasa, kapansa, göçse bile hiç sorun çıkarmadan çalmaya devam ediyor. Yani depremde, selde ve yangında 7*24 hizmet:)
-Kurulum
-* debian - ubuntu - vs.
-sudo apt-get install moc
-* pardus
-sudo pisi it moc
-Şimdi konsoldan
-mocp
-komutunu verelim. Gerçekten renkli şık bi tasarımı var. Grafik ekranı hiç aratmıyor:). Eğer renkleri beğenmezseniz [Shift] + [T] kombinasyonu ile farklı renkler seçebilirsiniz. Bunun bi kötü yanı var moc temayı bir sonraki açılışında hatırlamayacak. Hatırlaması için ~/.moc/config dosyasını oluşturup içeriğini düzenlemeniz gerekiyor. Ben düzenlemedim tam olarak nasıl yapılıyor bilmiyorum.
-        <a href="https://blog.askin.ws/blog/moc-kullanarak-konsoldan-muzik-dinleme-ve-lastfm/" class="post-read-more">[Daha fazla oku]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://blog.askin.ws/tags/konsol/">konsol</a>&nbsp;
-        
-        <a href="https://blog.askin.ws/tags/lastfm/">lastfm</a>&nbsp;
-        
-        <a href="https://blog.askin.ws/tags/lastfmsubmitd/">lastfmsubmitd</a>&nbsp;
-        
-        <a href="https://blog.askin.ws/tags/moc/">moc</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
         </div>
 
         
@@ -892,7 +898,7 @@ komutunu verelim. Gerçekten renkli şık bi tasarımı var. Grafik ekranı hiç
 
           &nbsp;&bull;&nbsp;&copy;
           
-            2020
+            2021
           
 
           

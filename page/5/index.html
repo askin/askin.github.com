@@ -211,6 +211,66 @@
           
           
             <article class="post-preview">
+    <a href="https://blog.askin.ws/blog/busybox-date-ile-saat-ve-tarihi-ayarlamak/">
+        <h2 class="post-title">BusyBox - date ile saat ve tarihi ayarlamak</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;2010/12/01 tarihinde paylaşıldı
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;dakika
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;39&nbsp;kelime
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Aşkın Özgür
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        <p>BusyBox içinde gelen date komutunun kullanımı biraz daha farklı. Saat ayarlamada bir değişiklik yok fakat tarihi ayarlamak biraz daha farklı. Saat ayarlama:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">date -s <span style="color:#e6db74">&#34;23:59:59&#34;</span>
+</code></pre></div><p>Tarih ve saati ayarlama</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">date -s AAGGSSDDYYYY
+date -s <span style="color:#ae81ff">123123592010</span>
+</code></pre></div><p>12-31-2010 23:59&rsquo;a karşılık geliyor.</p>
+
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://blog.askin.ws/tags/bash/">bash</a>&nbsp;
+        
+        <a href="https://blog.askin.ws/tags/busybox/">busybox</a>&nbsp;
+        
+        <a href="https://blog.askin.ws/tags/date/">date</a>&nbsp;
+        
+        <a href="https://blog.askin.ws/tags/linux/">Linux</a>&nbsp;
+        
+        <a href="https://blog.askin.ws/tags/saat/">saat</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="https://blog.askin.ws/blog/genius/">
         <h2 class="post-title">Genius!</h2>
         
@@ -751,73 +811,6 @@ Sırf bu işi denemek için bugün okulum olmadığı halde sabahın 8&rsquo;ind
 
 </article>
           
-            <article class="post-preview">
-    <a href="https://blog.askin.ws/blog/pardus-ile-eduroam-agina-baglanma/">
-        <h2 class="post-title">Pardus ile Eduroam ağına bağlanma</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;2009/12/05 tarihinde paylaşıldı
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;dakika
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;226&nbsp;kelime
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Aşkın Özgür
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        Pardusun ağ yöneticisi gayet şık bir arayüze sahip, fakat bize Eduroam ağına bağlanma özelliği sunmuyor.
-Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız için yeterli. Bu araçlar wpa_supplicant ve dhcpcd. Wpa_supplicant ağda kimlik denetimini sağlamak için, dhcpcd ise ağdan ip almamız için gerekli.
-Öncelikle wpa_supplicant için ayar dosyası oluşturmamız gerekiyor.
-network={ ssid=&quot;eduroam&quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap=TTLS phase2=&quot;auth=PAP&quot; anonymous_identity=&quot;anonymous@ogr.deu.edu.tr&quot; identity=&quot;ogrencinumarasi@ogr.deu.edu.tr&quot; password=&quot;sifre&quot; } Bu ayarlar Dokuz Eylül Üniversitesi için. Kendi okulunuza göre düzenlemeniz gerekiyor. Sadece ogr.deu.edu.tr adresi yerine kendi okulunuzun adresini yazmalısınız.
-Bu dosyayı /etc/wpa_supplicant.con adıyla kaydediyoruz.
-Sıra geldi wpa_supplicantı çalıştırmaya.
-wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf -D parametresi hangi sürücüyü kullanacağımızı belirtiyor.
-        <a href="https://blog.askin.ws/blog/pardus-ile-eduroam-agina-baglanma/" class="post-read-more">[Daha fazla oku]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://blog.askin.ws/tags/dhcpcd/">dhcpcd</a>&nbsp;
-        
-        <a href="https://blog.askin.ws/tags/eduroam/">eduroam</a>&nbsp;
-        
-        <a href="https://blog.askin.ws/tags/linux/">Linux</a>&nbsp;
-        
-        <a href="https://blog.askin.ws/tags/network/">network</a>&nbsp;
-        
-        <a href="https://blog.askin.ws/tags/network-manager/">network-manager</a>&nbsp;
-        
-        <a href="https://blog.askin.ws/tags/pardus/">pardus</a>&nbsp;
-        
-        <a href="https://blog.askin.ws/tags/pem/">pem</a>&nbsp;
-        
-        <a href="https://blog.askin.ws/tags/wpa/">wpa</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
         </div>
 
         
@@ -945,7 +938,7 @@ wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf -D parametresi hangi s�
 
           &nbsp;&bull;&nbsp;&copy;
           
-            2020
+            2021
           
 
           

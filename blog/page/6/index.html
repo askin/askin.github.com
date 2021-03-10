@@ -205,6 +205,73 @@
         <div class="posts-list">
           
             <article class="post-preview">
+    <a href="https://blog.askin.ws/blog/pardus-ile-eduroam-agina-baglanma/">
+        <h2 class="post-title">Pardus ile Eduroam ağına bağlanma</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;2009/12/05 tarihinde paylaşıldı
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;dakika
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;226&nbsp;kelime
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Aşkın Özgür
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        Pardusun ağ yöneticisi gayet şık bir arayüze sahip, fakat bize Eduroam ağına bağlanma özelliği sunmuyor.
+Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız için yeterli. Bu araçlar wpa_supplicant ve dhcpcd. Wpa_supplicant ağda kimlik denetimini sağlamak için, dhcpcd ise ağdan ip almamız için gerekli.
+Öncelikle wpa_supplicant için ayar dosyası oluşturmamız gerekiyor.
+network={ ssid=&quot;eduroam&quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap=TTLS phase2=&quot;auth=PAP&quot; anonymous_identity=&quot;anonymous@ogr.deu.edu.tr&quot; identity=&quot;ogrencinumarasi@ogr.deu.edu.tr&quot; password=&quot;sifre&quot; } Bu ayarlar Dokuz Eylül Üniversitesi için. Kendi okulunuza göre düzenlemeniz gerekiyor. Sadece ogr.deu.edu.tr adresi yerine kendi okulunuzun adresini yazmalısınız.
+Bu dosyayı /etc/wpa_supplicant.con adıyla kaydediyoruz.
+Sıra geldi wpa_supplicantı çalıştırmaya.
+wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf -D parametresi hangi sürücüyü kullanacağımızı belirtiyor.
+        <a href="https://blog.askin.ws/blog/pardus-ile-eduroam-agina-baglanma/" class="post-read-more">[Daha fazla oku]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://blog.askin.ws/tags/dhcpcd/">dhcpcd</a>&nbsp;
+        
+        <a href="https://blog.askin.ws/tags/eduroam/">eduroam</a>&nbsp;
+        
+        <a href="https://blog.askin.ws/tags/linux/">Linux</a>&nbsp;
+        
+        <a href="https://blog.askin.ws/tags/network/">network</a>&nbsp;
+        
+        <a href="https://blog.askin.ws/tags/network-manager/">network-manager</a>&nbsp;
+        
+        <a href="https://blog.askin.ws/tags/pardus/">pardus</a>&nbsp;
+        
+        <a href="https://blog.askin.ws/tags/pem/">pem</a>&nbsp;
+        
+        <a href="https://blog.askin.ws/tags/wpa/">wpa</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="https://blog.askin.ws/blog/trekstor-maxi-g-u-500gb-harici-hard-disk/">
         <h2 class="post-title">TrekStor maxi g.u 500GB harici hard disk</h2>
         
@@ -716,73 +783,6 @@ $ wget http://pidgin-attentionbutton.googlecode.com/files/attentionbutton-0.3.ta
 
 </article>
           
-            <article class="post-preview">
-    <a href="https://blog.askin.ws/blog/pardus-atheros-ar242x-wpa2/">
-        <h2 class="post-title">Pardus - Atheros AR242x - WPA2</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;2009/06/02 tarihinde paylaşıldı
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;dakika
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;104&nbsp;kelime
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Aşkın Özgür
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        Pardus 2008 kurulumla beraber Atheros AR242x kablosuz ağ kartını tanıyor, fakat nedense başka ağları görmesine rağmen evimde WPA2 ile kurulu kablosuz ağımı göremiyordu. Bende diğer dağıtımlarda kullandığım ndiswrapper ile sorunumu çözmeyi denedim.
-Öncelikle ndiswrapperı kurduktan sonra windows için yazılmış driverları seçmemiz gerekiyor. Ardından
-/etc/modules.autoload.d/kernel-2.6
-dosyasına
-ndiswrapper
-satırını ve
-/etc/modprobe.d/blacklist-compat
-dosyasına da
-blacklist ath_pci
-satırını eklemek gerekiyor. Bunları ekledikten sonra kde&rsquo;de ağ programcığıyla bağlanabiliyorsunuz.
-Fakat XFCE kullanıyorsanız wicd kullanmanız gerekiyor. Wicd ile doğrudan kullanamıyoruz. Öncelikle birkaç ufak düzenleme yapmak gerekiyor.
-Wicd -&gt; Tercihler yolunu takip ettikten sonra WPA Suplicant Sürücüsü: kısmına wext, Kablosuz arabirim kısmına da wlan0 yazmak gerekiyor.
-Bu ayarlarla kolaylıkla kullanabilirsiniz, kolay gelsin.
-        <a href="https://blog.askin.ws/blog/pardus-atheros-ar242x-wpa2/" class="post-read-more">[Daha fazla oku]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://blog.askin.ws/tags/ar242x/">ar242x</a>&nbsp;
-        
-        <a href="https://blog.askin.ws/tags/atheros/">atheros</a>&nbsp;
-        
-        <a href="https://blog.askin.ws/tags/linux/">Linux</a>&nbsp;
-        
-        <a href="https://blog.askin.ws/tags/pardus/">pardus</a>&nbsp;
-        
-        <a href="https://blog.askin.ws/tags/wicd/">wicd</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
         </div>
         
           <ul class="pager main-pager">
@@ -901,7 +901,7 @@ Bu ayarlarla kolaylıkla kullanabilirsiniz, kolay gelsin.
 
           &nbsp;&bull;&nbsp;&copy;
           
-            2020
+            2021
           
 
           

@@ -7,7 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>e-dergi - Aşkın Özgür</title>
+  <title>Let&#39;s Encrypt ile Wildcard SSL Sertifika Oluşturma - Aşkın Özgür</title>
+  <meta name="description" content="Let&rsquo;s Encrypt kullanarak wildcard sertifika oluşturabiliyoruz. Normal şartlarda sertifika oluştururken http://domain.com/.well-known altında bir dosya oluşturularak o alan adının sahibi doğrulanıyor. Fakat wildcard sertifika icin işler değişiyor. Bazı dns kayıtları girmemiz gerekiyor. Bunu kendimiz yapabileceğimiz gibi bu işi otomatize eden scriptler de kullanabiliyoruz.">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -28,14 +29,64 @@
   
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/blog.askin.ws",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/blog.askin.ws\/blog\/lets-encrypt-ile-wildcard-ssl-sertifika-olusturma\/",
+          "name": "Let\u0027s encrypt ile wildcard s s l sertifika oluşturma"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Aşkın Özgür"
+  },
+  "headline": "Let\u0027s Encrypt ile Wildcard SSL Sertifika Oluşturma",
+  "description" : "Let\u0026rsquo;s Encrypt kullanarak wildcard sertifika oluşturabiliyoruz. Normal şartlarda sertifika oluştururken http:\/\/domain.com\/.well-known altında bir dosya oluşturularak o alan adının sahibi doğrulanıyor. Fakat wildcard sertifika icin işler değişiyor. Bazı dns kayıtları girmemiz gerekiyor. Bunu kendimiz yapabileceğimiz gibi bu işi otomatize eden scriptler de kullanabiliyoruz.\n",
+  "inLanguage" : "tr",
+  "wordCount":  202 ,
+  "datePublished" : "2021-03-10T22:00:00",
+  "dateModified" : "2021-03-10T22:00:00",
+  "image" : "https:\/\/blog.askin.ws\/uploads\/avatar.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "https:\/\/blog.askin.ws\/blog\/lets-encrypt-ile-wildcard-ssl-sertifika-olusturma\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/blog.askin.ws",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/blog.askin.ws\/uploads\/avatar.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
 
-<meta property="og:title" content="e-dergi" />
+<meta property="og:title" content="Let&#39;s Encrypt ile Wildcard SSL Sertifika Oluşturma" />
+<meta property="og:description" content="Let&rsquo;s Encrypt kullanarak wildcard sertifika oluşturabiliyoruz. Normal şartlarda sertifika oluştururken http://domain.com/.well-known altında bir dosya oluşturularak o alan adının sahibi doğrulanıyor. Fakat wildcard sertifika icin işler değişiyor. Bazı dns kayıtları girmemiz gerekiyor. Bunu kendimiz yapabileceğimiz gibi bu işi otomatize eden scriptler de kullanabiliyoruz.">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
-<meta property="og:url" content="https://blog.askin.ws/tags/e-dergi/" />
+<meta property="og:url" content="https://blog.askin.ws/blog/lets-encrypt-ile-wildcard-ssl-sertifika-olusturma/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Aşkın Özgür" />
 
-  <meta name="twitter:title" content="e-dergi" />
+  <meta name="twitter:title" content="Let&#39;s Encrypt ile Wildcard SSL Sertifika Oluşturma" />
+  <meta name="twitter:description" content="Let&rsquo;s Encrypt kullanarak wildcard sertifika oluşturabiliyoruz. Normal şartlarda sertifika oluştururken http://domain.com/.well-known altında bir dosya oluşturularak o alan adının sahibi …">
   <meta name="twitter:image" content="https://blog.askin.ws/uploads/avatar.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@kelebeks" />
@@ -180,9 +231,9 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="tags-heading">
+            <div class="blog-heading">
               
-                <h1>e-dergi</h1>
+                <h1>Let&#39;s Encrypt ile Wildcard SSL Sertifika Oluşturma</h1>
               
               
                 <hr class="small">
@@ -198,76 +249,137 @@
 
 
     
-  <div class="container" role="main">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Let&rsquo;s Encrypt kullanarak <strong>wildcard</strong> sertifika oluşturabiliyoruz. Normal şartlarda sertifika oluştururken <code>http://domain.com/.well-known</code> altında bir dosya oluşturularak o alan adının sahibi doğrulanıyor. Fakat wildcard sertifika icin işler değişiyor. Bazı <strong>dns</strong> kayıtları girmemiz gerekiyor. Bunu kendimiz yapabileceğimiz gibi bu işi otomatize eden scriptler de kullanabiliyoruz.</p>
+<p>Ben dns kayıtlarını kendim gireceğim şekilde sertifikayı oluşturacağım.</p>
+<p>Sertifikayı oluşturmak için <code>certbot</code> kullanıyorum. Aşağıdaki gibi bir komut kullanarak sertifikayı oluşturabiliriz.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">certbot-auto certonly <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --manual <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --preferred-challenges<span style="color:#f92672">=</span>dns <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --agree-tos <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -d *.domain.com -d domain.com
+</code></pre></div><p><code>domain.com</code>: kullanacağımız domain için<br>
+<code>*.domain.com</code>: 1. seviye wildcard sertifika için</p>
+<p>Ben ilk denememde parametre olarak sadece <code>*.domain.com</code> vermemin yeterli olacağını düşünmüştüm, fakat bu durumda <code>domain.com</code> sertifika içine eklenmiyor. Bu nedenle <code>sub.domain.com</code> için sertifika geçerli olurken <code>domain.com</code> için hala sertifikamız olmuyor. Aynı şekilde sertifika <code>sub.sub.domain.com</code> için de geçerli olsun istiyorsak <code>*.sub.domain.com</code>u da eklememiz gerekmekte.</p>
+<p>Sertifika oluşturmak için komutu çalıştırdımızda kaç adet domain girmişsek bizden okadar <code>TXT</code> kaydı girmemiz istenecek. Zaten interaktif olarak <code>certbot</code> bizi yönlendirecektir.</p>
+<pre><code class="language-dns" data-lang="dns">_acme-challenge.domain.com. IN TXT some-hash
+_acme-challenge.sub.domain.com. IN TXT some-hash
+</code></pre><p>Bu yöntemin kötü yani her 3 ayda bir benzer işlemleri tekrar tekrar yapmamız gerekmesi. Eğer dns kayıtlarınızı bir API yada script ile değiştirebiliyorsanız bunu otomatize edebilirsiniz. Mesela <a href="https://www.digitalocean.com/community/tutorials/how-to-acquire-a-let-s-encrypt-certificate-using-dns-validation-with-acme-dns-certbot-on-ubuntu-18-04">bu yazıda</a> bunu nasıl yapabileceğiniz anlatılıyor. Siz de benzer birşey kullanabilirsiniz. Benim böyle bir ihtiyacım kalmadığı için kullanmadım.</p>
+
         
-        <div class="posts-list">
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=https%3a%2f%2fblog.askin.ws%2fblog%2flets-encrypt-ile-wildcard-ssl-sertifika-olusturma%2f&amp;text=Let%27s%20Encrypt%20ile%20Wildcard%20SSL%20Sertifika%20Olu%c5%9fturma&amp;via=kelebeks" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.askin.ws%2fblog%2flets-encrypt-ile-wildcard-ssl-sertifika-olusturma%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2fblog.askin.ws%2fblog%2flets-encrypt-ile-wildcard-ssl-sertifika-olusturma%2f&amp;title=Let%27s%20Encrypt%20ile%20Wildcard%20SSL%20Sertifika%20Olu%c5%9fturma" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fblog.askin.ws%2fblog%2flets-encrypt-ile-wildcard-ssl-sertifika-olusturma%2f&amp;title=Let%27s%20Encrypt%20ile%20Wildcard%20SSL%20Sertifika%20Olu%c5%9fturma" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fblog.askin.ws%2fblog%2flets-encrypt-ile-wildcard-ssl-sertifika-olusturma%2f&amp;title=Let%27s%20Encrypt%20ile%20Wildcard%20SSL%20Sertifika%20Olu%c5%9fturma" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fblog.askin.ws%2fblog%2flets-encrypt-ile-wildcard-ssl-sertifika-olusturma%2f&amp;description=Let%27s%20Encrypt%20ile%20Wildcard%20SSL%20Sertifika%20Olu%c5%9fturma" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
           
-            <article class="post-preview">
-    <a href="https://blog.askin.ws/blog/pardus-linuxorg-e-dergi-bana-supriz-yapti/">
-        <h2 class="post-title">Pardus-Linux.Org e-dergi bana süpriz yaptı...</h2>
-        
-        
-        
-    </a>
 
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;2009/03/11 tarihinde paylaşıldı
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;dakika
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;145&nbsp;kelime
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Aşkın Özgür
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        Dergi son sayısında ki (Sayı 6) site tanıtımında benim bloguma yer verdi, kendilerine buradan çok teşekür ediyorum. Bu jestleri bana blog yazmada ve Özgür Yazılım çabalarımda güç verecek.
-Derginin bu sayısını gerçekten beğendim, hele hele tamamen özgür yazılım araçlarıyla oluşturulması, arkasında hiçbir mali destek olmadan sadece topluluk katkısıyla ve güzel bir motivasyon ile düzenli olarak çıkması derginin gönlümde olan yerini iyice pekiştirdi.
-Dergi kapağında 8 Mart Dünya Emekçi Kadınla Günü yazsaydı daha güzel ve anlamlı olurdu:) ama hatırlamak ve önem vermek çok daha önemli. Birde bu sayıda RMS ile olan röportajın devamını bekliyordum:)
-Dergide emeği geçen herkese teşekür ediyorum&hellip;
- C ile Programlama II GNU/Linux Haberleri GNU/Linux AntiVirüs Yazılımları Torrent ve KTorrent Pardus’ta Python 3.
-        <a href="https://blog.askin.ws/blog/pardus-linuxorg-e-dergi-bana-supriz-yapti/" class="post-read-more">[Daha fazla oku]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://blog.askin.ws/tags/ben/">Ben</a>&nbsp;
-        
-        <a href="https://blog.askin.ws/tags/blog/">Blog</a>&nbsp;
-        
-        <a href="https://blog.askin.ws/tags/e-dergi/">e-dergi</a>&nbsp;
-        
-        <a href="https://blog.askin.ws/tags/linux/">Linux</a>&nbsp;
-        
-        <a href="https://blog.askin.ws/tags/pardus/">pardus</a>&nbsp;
-        
-    </div>
-    
-
-</article>
           
-        </div>
         
-      </div>
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://blog.askin.ws/blog/apache-tomcat-parallel-deploy/" data-toggle="tooltip" data-placement="top" title="Apache Tomcat Paralel Deploy">&larr; Önceki gönderi</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+          
+          <div class="disqus-comments">
+            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "askin-ozgurun-web-gunlugu" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+          
+        
+        
+      
+
     </div>
   </div>
+</div>
 
       
 <footer>
@@ -350,7 +462,7 @@ Dergide emeği geçen herkese teşekür ediyorum&hellip;
               </li>
           
           <li>
-            <a href="/tags/e-dergi/index.xml" title="RSS">
+            <a href="" title="RSS">
               <span class="fa-stack fa-lg">
                 <i class="fas fa-circle fa-stack-2x"></i>
                 <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
