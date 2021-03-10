@@ -8,7 +8,43 @@
     <language>tr-TR</language>
     <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
     <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
-    <lastBuildDate>Sat, 12 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.askin.ws/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Mar 2021 22:00:00 +0300</lastBuildDate><atom:link href="https://blog.askin.ws/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Certificate</title>
+      <link>https://blog.askin.ws/tags/certificate/</link>
+      <pubDate>Wed, 10 Mar 2021 22:00:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/tags/certificate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>EEF</title>
+      <link>https://blog.askin.ws/tags/eef/</link>
+      <pubDate>Wed, 10 Mar 2021 22:00:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/tags/eef/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Let&#39;s Encrypt</title>
+      <link>https://blog.askin.ws/tags/lets-encrypt/</link>
+      <pubDate>Wed, 10 Mar 2021 22:00:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/tags/lets-encrypt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>https://blog.askin.ws/tags/security/</link>
+      <pubDate>Wed, 10 Mar 2021 22:00:00 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/tags/security/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>deploy</title>
       <link>https://blog.askin.ws/tags/deploy/</link>
@@ -69,42 +105,6 @@
       <pubDate>Fri, 04 Oct 2019 12:04:25 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Certificate</title>
-      <link>https://blog.askin.ws/tags/certificate/</link>
-      <pubDate>Mon, 06 Feb 2017 15:09:00 +0300</pubDate>
-      <author>askin@askin.ws (Aşkın Özgür)</author>
-      <guid>https://blog.askin.ws/tags/certificate/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>EEF</title>
-      <link>https://blog.askin.ws/tags/eef/</link>
-      <pubDate>Mon, 06 Feb 2017 15:09:00 +0300</pubDate>
-      <author>askin@askin.ws (Aşkın Özgür)</author>
-      <guid>https://blog.askin.ws/tags/eef/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Let&#39;s Encrypt</title>
-      <link>https://blog.askin.ws/tags/lets-encrypt/</link>
-      <pubDate>Mon, 06 Feb 2017 15:09:00 +0300</pubDate>
-      <author>askin@askin.ws (Aşkın Özgür)</author>
-      <guid>https://blog.askin.ws/tags/lets-encrypt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Security</title>
-      <link>https://blog.askin.ws/tags/security/</link>
-      <pubDate>Mon, 06 Feb 2017 15:09:00 +0300</pubDate>
-      <author>askin@askin.ws (Aşkın Özgür)</author>
-      <guid>https://blog.askin.ws/tags/security/</guid>
       <description></description>
     </item>
     

@@ -13,7 +13,32 @@
   </url>
   
   <url>
+    <loc>https://blog.askin.ws/tags/certificate/</loc>
+    <lastmod>2021-03-10T22:00:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.askin.ws/tags/eef/</loc>
+    <lastmod>2021-03-10T22:00:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.askin.ws/tags/lets-encrypt/</loc>
+    <lastmod>2021-03-10T22:00:00+03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.askin.ws/blog/lets-encrypt-ile-wildcard-ssl-sertifika-olusturma/</loc>
+    <lastmod>2021-03-10T22:00:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.askin.ws/tags/security/</loc>
+    <lastmod>2021-03-10T22:00:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.askin.ws/tags/</loc>
     <lastmod>2021-03-10T22:00:00+03:00</lastmod>
   </url>
   
@@ -29,11 +54,6 @@
   
   <url>
     <loc>https://blog.askin.ws/tags/maven/</loc>
-    <lastmod>2020-09-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.askin.ws/tags/</loc>
     <lastmod>2020-09-12T00:00:00+00:00</lastmod>
   </url>
   
@@ -83,27 +103,7 @@
   </url>
   
   <url>
-    <loc>https://blog.askin.ws/tags/certificate/</loc>
-    <lastmod>2017-02-06T15:09:00+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.askin.ws/tags/eef/</loc>
-    <lastmod>2017-02-06T15:09:00+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.askin.ws/tags/lets-encrypt/</loc>
-    <lastmod>2017-02-06T15:09:00+03:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.askin.ws/blog/lets-encrypt/</loc>
-    <lastmod>2017-02-06T15:09:00+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.askin.ws/tags/security/</loc>
     <lastmod>2017-02-06T15:09:00+03:00</lastmod>
   </url>
   
