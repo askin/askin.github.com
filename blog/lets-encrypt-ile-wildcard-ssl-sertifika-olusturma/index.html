@@ -45,7 +45,7 @@
         "position": 3,
         "item": {
           "@id": "https:\/\/blog.askin.ws\/blog\/lets-encrypt-ile-wildcard-ssl-sertifika-olusturma\/",
-          "name": "Let\u0027s encrypt ile wildcard s s l sertifika oluşturma"
+          "name": "Let\u0027S encrypt ile wildcard ssl sertifika oluşturma"
         }
     }]
 }
@@ -92,7 +92,7 @@
   <meta name="twitter:site" content="@kelebeks" />
   <meta name="twitter:creator" content="@kelebeks" />
   <link href='https://blog.askin.ws/uploads/avatar.png' rel='icon' type='image/x-icon'/>
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
   <link rel="alternate" href="https://blog.askin.ws/index.xml" type="application/rss+xml" title="Aşkın Özgür"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://blog.askin.ws/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -108,7 +108,7 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Gezinmeyi aktifleştirin</span>
+        <span class="sr-only"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -128,12 +128,6 @@
           
             <li>
               <a title="Hakkımda" href="/about/">Hakkımda</a>
-            </li>
-          
-        
-          
-            <li>
-              <a title="İbretlik Tavsiyeler" href="/ibretlik-tavsiyeler/">İbretlik Tavsiyeler</a>
             </li>
           
         
@@ -256,7 +250,7 @@
         <p>Let&rsquo;s Encrypt kullanarak <strong>wildcard</strong> sertifika oluşturabiliyoruz. Normal şartlarda sertifika oluştururken <code>http://domain.com/.well-known</code> altında bir dosya oluşturularak o alan adının sahibi doğrulanıyor. Fakat wildcard sertifika icin işler değişiyor. Bazı <strong>dns</strong> kayıtları girmemiz gerekiyor. Bunu kendimiz yapabileceğimiz gibi bu işi otomatize eden scriptler de kullanabiliyoruz.</p>
 <p>Ben dns kayıtlarını kendim gireceğim şekilde sertifikayı oluşturacağım.</p>
 <p>Sertifikayı oluşturmak için <code>certbot</code> kullanıyorum. Aşağıdaki gibi bir komut kullanarak sertifikayı oluşturabiliriz.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">certbot-auto certonly <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">certbot-auto certonly <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --manual <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --preferred-challenges<span style="color:#f92672">=</span>dns <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --agree-tos <span style="color:#ae81ff">\
@@ -265,7 +259,7 @@
 <code>*.domain.com</code>: 1. seviye wildcard sertifika için</p>
 <p>Ben ilk denememde parametre olarak sadece <code>*.domain.com</code> vermemin yeterli olacağını düşünmüştüm, fakat bu durumda <code>domain.com</code> sertifika içine eklenmiyor. Bu nedenle <code>sub.domain.com</code> için sertifika geçerli olurken <code>domain.com</code> için hala sertifikamız olmuyor. Aynı şekilde sertifika <code>sub.sub.domain.com</code> için de geçerli olsun istiyorsak <code>*.sub.domain.com</code>u da eklememiz gerekmekte.</p>
 <p>Sertifika oluşturmak için komutu çalıştırdımızda kaç adet domain girmişsek bizden okadar <code>TXT</code> kaydı girmemiz istenecek. Zaten interaktif olarak <code>certbot</code> bizi yönlendirecektir.</p>
-<pre><code class="language-dns" data-lang="dns">_acme-challenge.domain.com. IN TXT some-hash
+<pre tabindex="0"><code class="language-dns" data-lang="dns">_acme-challenge.domain.com. IN TXT some-hash
 _acme-challenge.sub.domain.com. IN TXT some-hash
 </code></pre><p>Bu yöntemin kötü yani her 3 ayda bir benzer işlemleri tekrar tekrar yapmamız gerekmesi. Eğer dns kayıtlarınızı bir API yada script ile değiştirebiliyorsanız bunu otomatize edebilirsiniz. Mesela <a href="https://www.digitalocean.com/community/tutorials/how-to-acquire-a-let-s-encrypt-certificate-using-dns-validation-with-acme-dns-certbot-on-ubuntu-18-04">bu yazıda</a> bunu nasıl yapabileceğiniz anlatılıyor. Siz de benzer birşey kullanabilirsiniz. Benim böyle bir ihtiyacım kalmadığı için kullanmadım.</p>
 
@@ -346,7 +340,7 @@ _acme-challenge.sub.domain.com. IN TXT some-hash
           
 
           
-                  <h4 class="see-also">Ayrıca bakınız</h4>
+                  <h4 class="see-also"></h4>
                   <ul>
                 
                 
@@ -362,7 +356,7 @@ _acme-challenge.sub.domain.com. IN TXT some-hash
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://blog.askin.ws/blog/apache-tomcat-parallel-deploy/" data-toggle="tooltip" data-placement="top" title="Apache Tomcat Paralel Deploy">&larr; Önceki gönderi</a>
+              <a href="https://blog.askin.ws/blog/apache-tomcat-parallel-deploy/" data-toggle="tooltip" data-placement="top" title="Apache Tomcat Paralel Deploy">&larr; </a>
             </li>
           
           
@@ -513,7 +507,7 @@ _acme-challenge.sub.domain.com. IN TXT some-hash
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.80.0</a> altyapısı &nbsp;&bull;&nbsp; <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> temasından uyarlanan <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> teması kullanılmaktadır.
+          
           
         </p>
       </div>

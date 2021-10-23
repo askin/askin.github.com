@@ -1,1493 +1,894 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://blog.askin.ws/</loc>
     <lastmod>2021-03-10T22:00:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/</loc>
     <lastmod>2021-03-10T22:00:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/certificate/</loc>
     <lastmod>2021-03-10T22:00:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/eef/</loc>
     <lastmod>2021-03-10T22:00:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/lets-encrypt/</loc>
     <lastmod>2021-03-10T22:00:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/lets-encrypt-ile-wildcard-ssl-sertifika-olusturma/</loc>
     <lastmod>2021-03-10T22:00:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/security/</loc>
     <lastmod>2021-03-10T22:00:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/</loc>
     <lastmod>2021-03-10T22:00:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/apache-tomcat-parallel-deploy/</loc>
     <lastmod>2020-09-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/deploy/</loc>
     <lastmod>2020-09-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/maven/</loc>
     <lastmod>2020-09-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/tomcat/</loc>
     <lastmod>2020-09-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/cron-timezone-problemi/</loc>
     <lastmod>2020-09-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/crontab/</loc>
     <lastmod>2020-09-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/timezone/</loc>
     <lastmod>2020-09-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/emacs/</loc>
     <lastmod>2020-08-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/emacs-fill-column-indicator/</loc>
     <lastmod>2020-08-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/linux/</loc>
     <lastmod>2019-10-04T12:04:25+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/du-wildcard-ile-gizli-dosyalar/</loc>
     <lastmod>2019-10-04T12:04:25+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/soyadim-degisti/</loc>
     <lastmod>2018-06-07T10:40:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/lets-encrypt/</loc>
     <lastmod>2017-02-06T15:09:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/ssl-enabled/</loc>
     <lastmod>2014-03-11T18:51:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/a%C4%9F/</loc>
     <lastmod>2013-12-19T12:15:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/monitoring/</loc>
     <lastmod>2013-12-19T12:15:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/network/</loc>
     <lastmod>2013-12-19T12:15:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/slurm-linux-icin-bant-genisligi-takip-araci/</loc>
     <lastmod>2013-12-19T12:15:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/irc/</loc>
     <lastmod>2013-11-15T17:17:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/irssi/</loc>
     <lastmod>2013-11-15T17:17:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/screen/</loc>
     <lastmod>2013-11-15T17:17:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/screen-ile-irssi-kullanim-kilavuzu/</loc>
     <lastmod>2013-11-15T17:17:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/adana-demirspor/</loc>
     <lastmod>2013-10-19T18:16:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/hediyemiz-emegimiz-2-adana-demirspor/</loc>
     <lastmod>2013-10-19T18:16:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/do%C4%9Fumg%C3%BCn%C3%BC/</loc>
     <lastmod>2013-09-29T18:47:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/hediye/</loc>
     <lastmod>2013-09-29T18:47:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/hediyemiz-emegimiz/</loc>
     <lastmod>2013-09-29T18:47:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/kaf-sin-kaf/</loc>
     <lastmod>2013-09-29T18:47:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/kar%C5%9F%C4%B1yaka/</loc>
     <lastmod>2013-09-29T18:47:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/database/</loc>
     <lastmod>2013-09-06T12:59:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/mysql/</loc>
     <lastmod>2013-09-06T12:59:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/mysql-veritabani-ile-ilgili-bazi-bilgileri-ogrenmek/</loc>
     <lastmod>2013-09-06T12:59:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/query/</loc>
     <lastmod>2013-09-06T12:59:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/sorgu/</loc>
     <lastmod>2013-09-06T12:59:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/konsoldan-rastgele-string-olusturma/</loc>
     <lastmod>2013-08-13T12:34:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/random/</loc>
     <lastmod>2013-08-13T12:34:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/rastgele/</loc>
     <lastmod>2013-08-13T12:34:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/shell/</loc>
     <lastmod>2013-08-13T12:34:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/df/</loc>
     <lastmod>2013-07-22T15:13:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/disk/</loc>
     <lastmod>2013-07-22T15:13:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/du/</loc>
     <lastmod>2013-07-22T15:13:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/free-space/</loc>
     <lastmod>2013-07-22T15:13:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/linuxta-disk-doluluk-oraninin-yanlis-hesaplanmasi/</loc>
     <lastmod>2013-07-22T15:13:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/dictionary/</loc>
     <lastmod>2013-07-20T15:32:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/python/</loc>
     <lastmod>2013-07-20T15:32:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/python-sozluk-hizli-rehber/</loc>
     <lastmod>2013-07-20T15:32:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/list/</loc>
     <lastmod>2013-07-13T15:50:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/listeler-ile-ilgili-garip-bir-dokuman/</loc>
     <lastmod>2013-07-13T15:50:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/crypto/</loc>
     <lastmod>2013-07-13T14:35:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/im/</loc>
     <lastmod>2013-07-13T14:35:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/off-the-record-messaging-otr/</loc>
     <lastmod>2013-07-13T14:35:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/otr/</loc>
     <lastmod>2013-07-13T14:35:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/cookie/</loc>
     <lastmod>2013-07-10T17:18:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/curl/</loc>
     <lastmod>2013-07-10T17:18:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/curl-ile-getpost-ve-cookie-kullanimi/</loc>
     <lastmod>2013-07-10T17:18:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/get/</loc>
     <lastmod>2013-07-10T17:18:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/post/</loc>
     <lastmod>2013-07-10T17:18:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/domain/</loc>
     <lastmod>2013-04-03T16:53:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/gtalk/</loc>
     <lastmod>2013-04-03T16:53:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/pidgin-ile-kendi-domainimizden-gtalk/</loc>
     <lastmod>2013-04-03T16:53:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/boot/</loc>
     <lastmod>2013-03-24T20:39:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/raspberry-pi/</loc>
     <lastmod>2013-03-24T20:39:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/raspbian/</loc>
     <lastmod>2013-03-24T20:39:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/sd/</loc>
     <lastmod>2013-03-24T20:39:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/usb-bellek-uzerinde-raspberry-pi/</loc>
     <lastmod>2013-03-24T20:39:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/backup/</loc>
     <lastmod>2013-03-11T16:42:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/mysql-yedek-alma/</loc>
     <lastmod>2013-03-11T16:42:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/mysqldum/</loc>
     <lastmod>2013-03-11T16:42:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/emacs-ile-identi-ca-kullanimi/</loc>
     <lastmod>2013-03-04T11:55:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/web/</loc>
     <lastmod>2013-02-26T15:28:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/web2py-demo-mod/</loc>
     <lastmod>2013-02-26T15:28:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/akismet/</loc>
     <lastmod>2013-02-07T15:57:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/spam/</loc>
     <lastmod>2013-02-07T15:57:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/bash/</loc>
     <lastmod>2012-11-07T13:44:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/bir-dosyanin-bos-olup-olmadigini-kontrol-etme/</loc>
     <lastmod>2012-11-07T13:44:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/bos-dosya/</loc>
     <lastmod>2012-11-07T13:44:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/empty/</loc>
     <lastmod>2012-11-07T13:44:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/script/</loc>
     <lastmod>2012-11-07T13:44:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/server/</loc>
     <lastmod>2012-08-23T18:16:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/subversion/</loc>
     <lastmod>2012-08-23T18:16:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/subversion-sunucu-kurulumu/</loc>
     <lastmod>2012-08-23T18:16:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/sunucu/</loc>
     <lastmod>2012-08-23T18:16:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/programming/</loc>
     <lastmod>2012-08-03T15:31:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/socket/</loc>
     <lastmod>2012-08-03T15:31:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/udp-broadcast-sunucu-istemci/</loc>
     <lastmod>2012-08-03T15:31:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/create/</loc>
     <lastmod>2012-07-11T13:54:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/grant/</loc>
     <lastmod>2012-07-11T13:54:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/mysql-kullanici-database-olusturma/</loc>
     <lastmod>2012-07-11T13:54:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/sql/</loc>
     <lastmod>2012-07-11T13:54:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/free-software/</loc>
     <lastmod>2012-06-22T12:21:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/fsf-10889/</loc>
     <lastmod>2012-06-22T12:21:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/fsf/</loc>
     <lastmod>2012-06-22T12:21:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/find/</loc>
     <lastmod>2012-06-06T16:43:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/grep/</loc>
     <lastmod>2012-06-06T16:43:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/solaris/</loc>
     <lastmod>2012-06-06T16:43:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/solariste-ozyinelemeli-grep/</loc>
     <lastmod>2012-06-06T16:43:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/programlama/</loc>
     <lastmod>2012-04-09T10:48:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/var-olan-bir-svn-deposunun-adresini-degistirme/</loc>
     <lastmod>2012-04-09T10:48:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/ace/</loc>
     <lastmod>2012-04-08T18:07:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/android/</loc>
     <lastmod>2012-04-08T18:07:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/android-galaxy-ace-ile-ekran-goruntusu-alma/</loc>
     <lastmod>2012-04-08T18:07:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/ekran-g%C3%B6r%C3%BCnt%C3%BCs%C3%BC/</loc>
     <lastmod>2012-04-08T18:07:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/galaxy/</loc>
     <lastmod>2012-04-08T18:07:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/phone/</loc>
     <lastmod>2012-04-08T18:07:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/samsung/</loc>
     <lastmod>2012-04-08T18:07:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/screenshot/</loc>
     <lastmod>2012-04-08T18:07:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/16x2/</loc>
     <lastmod>2011-08-04T16:40:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/elektronik/</loc>
     <lastmod>2011-08-04T16:40:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/hy-1602b9-16x2-lcd-display/</loc>
     <lastmod>2011-08-04T16:40:00+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.askin.ws/ibretlik-tavsiyeler/</loc>
-    <lastmod>2011-07-29T17:30:10+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/caps-lock/</loc>
     <lastmod>2011-03-27T21:37:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/caps-locka-ne-gerek-var/</loc>
     <lastmod>2011-03-27T21:37:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/ctrl/</loc>
     <lastmod>2011-03-27T21:37:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/setxkbmap/</loc>
     <lastmod>2011-03-27T21:37:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/yasasin-spam/</loc>
     <lastmod>2011-02-27T03:12:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/lcd/</loc>
     <lastmod>2011-02-27T03:08:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/linux-paralel-port-ile-2x16-lcd-ekran-kullanimi/</loc>
     <lastmod>2011-02-27T03:08:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/parallel-port/</loc>
     <lastmod>2011-02-27T03:08:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/java/</loc>
     <lastmod>2010-12-11T04:25:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/java-ile-server-socket-yapimi/</loc>
     <lastmod>2010-12-11T04:25:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/telnet/</loc>
     <lastmod>2010-12-11T04:25:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/binary/</loc>
     <lastmod>2010-12-08T11:51:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/cat/</loc>
     <lastmod>2010-12-08T11:51:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/konsol/</loc>
     <lastmod>2010-12-08T11:51:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/sacmalayan-konsol-ekranini-temizleme/</loc>
     <lastmod>2010-12-08T11:51:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/emacs-ile-bul-degistir-find-and-replace/</loc>
     <lastmod>2010-12-06T18:04:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/busybox/</loc>
     <lastmod>2010-12-01T13:42:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/busybox-date-ile-saat-ve-tarihi-ayarlamak/</loc>
     <lastmod>2010-12-01T13:42:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/date/</loc>
     <lastmod>2010-12-01T13:42:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/saat/</loc>
     <lastmod>2010-12-01T13:42:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/genius/</loc>
     <lastmod>2010-11-24T14:11:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/ssh/</loc>
     <lastmod>2010-11-24T14:11:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/symlink/</loc>
     <lastmod>2010-11-24T14:11:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/java-ile-oracle-veritabanina-baglanmak/</loc>
     <lastmod>2010-11-08T20:29:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/oracle/</loc>
     <lastmod>2010-11-08T20:29:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/fonksiyon/</loc>
     <lastmod>2010-05-01T03:51:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/parametre/</loc>
     <lastmod>2010-05-01T03:51:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/python-fonksiyona-parametre-olarak-fonksiyon-gecirmek/</loc>
     <lastmod>2010-05-01T03:51:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/c-ile-nesne-yaratmak/</loc>
     <lastmod>2010-04-27T04:08:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/nesne/</loc>
     <lastmod>2010-04-27T04:08:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/oop/</loc>
     <lastmod>2010-04-27T04:08:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/gtk/</loc>
     <lastmod>2010-04-08T06:19:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/gtk-2-18-9-pencere-gizleme-sorunu/</loc>
     <lastmod>2010-04-08T06:19:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/blog/</loc>
     <lastmod>2010-04-08T02:28:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/blogger/</loc>
     <lastmod>2010-04-08T02:28:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/bloggera-kendi-alan-adinizi-yonlendirme/</loc>
     <lastmod>2010-04-08T02:28:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/cname/</loc>
     <lastmod>2010-04-08T02:28:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/dns/</loc>
     <lastmod>2010-04-08T02:28:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/icon/</loc>
     <lastmod>2010-04-07T21:53:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/pygtk/</loc>
     <lastmod>2010-04-07T21:53:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/pygtk-ile-sistem-cekmecesi/</loc>
     <lastmod>2010-04-07T21:53:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/status/</loc>
     <lastmod>2010-04-07T21:53:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/gdk/</loc>
     <lastmod>2010-04-06T23:03:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/pygtk-ve-thread-sorunu/</loc>
     <lastmod>2010-04-06T23:03:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/eduroam/</loc>
     <lastmod>2009-12-07T09:45:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/network-manager/</loc>
     <lastmod>2009-12-07T09:45:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/pardus/</loc>
     <lastmod>2009-12-07T09:45:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/pardus-ag-yoneticisi-ile-eduroam-agina-baglanmak/</loc>
     <lastmod>2009-12-07T09:45:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/pisi/</loc>
     <lastmod>2009-12-07T09:45:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/wireless-tools/</loc>
     <lastmod>2009-12-07T09:45:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/dhcpcd/</loc>
     <lastmod>2009-12-05T02:02:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/pardus-ile-eduroam-agina-baglanma/</loc>
     <lastmod>2009-12-05T02:02:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/pem/</loc>
     <lastmod>2009-12-05T02:02:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/wpa/</loc>
     <lastmod>2009-12-05T02:02:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/hard-disk/</loc>
     <lastmod>2009-09-16T20:32:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/harici-disk/</loc>
     <lastmod>2009-09-16T20:32:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/hdd/</loc>
     <lastmod>2009-09-16T20:32:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/trekstor/</loc>
     <lastmod>2009-09-16T20:32:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/trekstor-maxi-g-u-500gb-harici-hard-disk/</loc>
     <lastmod>2009-09-16T20:32:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/addon/</loc>
     <lastmod>2009-09-15T20:15:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/browser/</loc>
     <lastmod>2009-09-15T20:15:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/del.icio.us/</loc>
     <lastmod>2009-09-15T20:15:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/extension/</loc>
     <lastmod>2009-09-15T20:15:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/firefox/</loc>
     <lastmod>2009-09-15T20:15:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/post-2-del-icio-us/</loc>
     <lastmod>2009-09-15T20:15:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/internet/</loc>
     <lastmod>2009-09-15T20:15:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/ah-su-spamcilar/</loc>
     <lastmod>2009-09-01T20:25:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/spam/</loc>
     <lastmod>2009-09-01T20:25:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/bookmark/</loc>
     <lastmod>2009-08-29T23:48:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/post-to-del-icio-us/</loc>
     <lastmod>2009-08-29T23:48:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/2000i-devirdik-yasasin-spam/</loc>
     <lastmod>2009-08-03T22:17:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/comment/</loc>
     <lastmod>2009-08-03T22:17:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/gmail/</loc>
     <lastmod>2009-08-03T22:17:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/2009/</loc>
     <lastmod>2009-07-25T01:09:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/distro/</loc>
     <lastmod>2009-07-25T01:09:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/gnome/</loc>
     <lastmod>2009-07-25T01:09:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/kde/</loc>
     <lastmod>2009-07-25T01:09:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/kde4/</loc>
     <lastmod>2009-07-25T01:09:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/pardus-2009/</loc>
     <lastmod>2009-07-25T01:09:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/data/</loc>
     <lastmod>2009-07-14T02:11:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/mysql-data-dizinini-degistirme/</loc>
     <lastmod>2009-07-14T02:11:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/c-ile-komut-satiri-argumanlari-ve-parametreleri/</loc>
     <lastmod>2009-07-10T18:01:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/attention-button/</loc>
     <lastmod>2009-06-07T21:20:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/pidgin/</loc>
     <lastmod>2009-06-07T21:20:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/pidgin-titresim-eklentisi-attention-button/</loc>
     <lastmod>2009-06-07T21:20:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/ar242x/</loc>
     <lastmod>2009-06-02T21:48:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/atheros/</loc>
     <lastmod>2009-06-02T21:48:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/pardus-atheros-ar242x-wpa2/</loc>
     <lastmod>2009-06-02T21:48:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/wicd/</loc>
     <lastmod>2009-06-02T21:48:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/pardus-2009-yaz-staji-ve-ben/</loc>
     <lastmod>2009-05-09T01:23:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/staj/</loc>
     <lastmod>2009-05-09T01:23:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/bir-gnulinux-kurulumunu-baska-bir-harddiskebolume-tasimak/</loc>
     <lastmod>2009-04-06T22:22:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/move/</loc>
     <lastmod>2009-04-06T22:22:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/partition/</loc>
     <lastmod>2009-04-06T22:22:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/ben/</loc>
     <lastmod>2009-03-11T01:36:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/e-dergi/</loc>
     <lastmod>2009-03-11T01:36:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/pardus-linuxorg-e-dergi-bana-supriz-yapti/</loc>
     <lastmod>2009-03-11T01:36:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/convert/</loc>
     <lastmod>2009-02-27T20:29:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/image/</loc>
     <lastmod>2009-02-27T20:29:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/imagemagick/</loc>
     <lastmod>2009-02-27T20:29:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/jpg/</loc>
     <lastmod>2009-02-27T20:29:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/komut-satirindan-resimleri-pdf-slaytina-donusturme/</loc>
     <lastmod>2009-02-27T20:29:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/pdf/</loc>
     <lastmod>2009-02-27T20:29:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/pptx/</loc>
     <lastmod>2009-02-27T20:29:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/gpass/</loc>
     <lastmod>2009-02-15T02:56:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/gtodo/</loc>
     <lastmod>2009-02-15T02:56:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/liferea/</loc>
     <lastmod>2009-02-15T02:56:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/linuxta-kullandigim-programlar-guncellendi/</loc>
     <lastmod>2009-02-15T02:56:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/mpd/</loc>
     <lastmod>2009-02-15T02:56:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/program/</loc>
     <lastmod>2009-02-15T02:56:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/wordpress-27/</loc>
     <lastmod>2008-12-11T23:23:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/gentoo/</loc>
     <lastmod>2008-09-05T17:54:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/gentoo-karasulari/</loc>
     <lastmod>2008-09-05T17:54:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/firefoxta-ferahlik/</loc>
     <lastmod>2008-08-20T08:36:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/.deb/</loc>
     <lastmod>2008-08-01T22:10:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/debian/</loc>
     <lastmod>2008-08-01T22:10:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/packages/</loc>
     <lastmod>2008-08-01T22:10:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/ilk-deb-paketim/</loc>
     <lastmod>2008-08-01T22:10:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/lastfm/</loc>
     <lastmod>2008-06-12T16:25:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/lastfmsubmitd/</loc>
     <lastmod>2008-06-12T16:25:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/moc/</loc>
     <lastmod>2008-06-12T16:25:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/moc-kullanarak-konsoldan-muzik-dinleme-ve-lastfm/</loc>
     <lastmod>2008-06-12T16:25:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/kabuk/</loc>
     <lastmod>2008-05-24T13:30:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/linux-bir-dizin-yada-dosyanin-hangi-uygulama-tarafindan-kullanildigini-ogrenme/</loc>
     <lastmod>2008-05-24T13:30:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/linuxda-kullandigim-programlar/</loc>
     <lastmod>2008-05-15T14:20:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/codec/</loc>
     <lastmod>2008-05-13T14:07:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/faad/</loc>
     <lastmod>2008-05-13T14:07:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/m4a/</loc>
     <lastmod>2008-05-13T14:07:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/mp4/</loc>
     <lastmod>2008-05-13T14:07:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/rhythmbox-m4a-mp4-faad/</loc>
     <lastmod>2008-05-13T14:07:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/mount/</loc>
     <lastmod>2008-05-07T10:36:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/ssh-filesystem-ile-uzak-makinadaki-dizini-yerele-baglamak/</loc>
     <lastmod>2008-05-07T10:36:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/cikmaz-demeyin-sansinizi-deneyin-2/</loc>
     <lastmod>2008-04-17T12:27:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/guzel-bir-java-dokumani/</loc>
     <lastmod>2008-04-15T19:44:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/kitap/</loc>
     <lastmod>2008-04-15T19:44:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/proxy/</loc>
     <lastmod>2008-01-25T17:43:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/telekom/</loc>
     <lastmod>2008-01-25T17:43:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/yine-yasak-proxy-nedir-nasil-ayarlanir/</loc>
     <lastmod>2008-01-25T17:43:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/bir-donem-daha-bitti/</loc>
     <lastmod>2008-01-25T09:18:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/d%C3%B6nem/</loc>
     <lastmod>2008-01-25T09:18:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/okul/</loc>
     <lastmod>2008-01-25T09:18:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/scheme/</loc>
     <lastmod>2008-01-22T17:29:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/cikmaz-demeyin-sansinizi-deneyin/</loc>
     <lastmod>2008-01-22T17:29:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/antivir%C3%BCs/</loc>
     <lastmod>2008-01-22T10:10:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/facebook/</loc>
     <lastmod>2008-01-22T10:10:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/msn/</loc>
     <lastmod>2008-01-22T10:10:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/vir%C3%BCs/</loc>
     <lastmod>2008-01-22T10:10:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/yazik-bu-windowsculara-win32ircbotaal/</loc>
     <lastmod>2008-01-22T10:10:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/opendns/</loc>
     <lastmod>2008-01-18T18:52:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/yasakli-sitelere-gitme-open-dns/</loc>
     <lastmod>2008-01-18T18:52:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/drscheme-v372-cikti/</loc>
     <lastmod>2007-12-29T13:40:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/alin-size-bir-guzel-kod/</loc>
     <lastmod>2007-12-28T16:29:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/algoritma/</loc>
     <lastmod>2007-12-27T10:32:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/problem/</loc>
     <lastmod>2007-12-27T10:32:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/project-euler-problem-sitesi/</loc>
     <lastmod>2007-12-27T10:32:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/scheme-ile-ekrana-ici-bos-kare-bastirmak/</loc>
     <lastmod>2007-12-20T09:13:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/sinema/</loc>
     <lastmod>2007-12-20T07:23:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/tanri-kent/</loc>
     <lastmod>2007-12-20T07:23:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/bubble/</loc>
     <lastmod>2007-12-17T15:11:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/bubble-sort-algoritmasi-ve-scheme-cozumu/</loc>
     <lastmod>2007-12-17T15:11:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/s%C4%B1ralama/</loc>
     <lastmod>2007-12-17T15:11:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/sezar/</loc>
     <lastmod>2007-12-12T05:35:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/sezar-sifreleme/</loc>
     <lastmod>2007-12-12T05:35:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/bir-son-dakka-gorevi-daha-basariyla-tamamlandi/</loc>
     <lastmod>2007-12-11T18:02:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/%C3%B6dev/</loc>
     <lastmod>2007-12-11T18:02:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/oyun/</loc>
     <lastmod>2007-11-21T17:10:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/same/</loc>
     <lastmod>2007-11-21T17:10:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/same-oyunu/</loc>
     <lastmod>2007-11-21T17:10:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/driver/</loc>
     <lastmod>2007-10-28T15:32:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/jaguar/</loc>
     <lastmod>2007-10-28T15:32:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/jaguar-veya-jtech-ic100-webcam-suruculeri/</loc>
     <lastmod>2007-10-28T15:32:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/jtech-ic-100/</loc>
     <lastmod>2007-10-28T15:32:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/en-basit-recursion-ozyineleme-mantigi/</loc>
     <lastmod>2007-10-26T16:09:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/book/</loc>
     <lastmod>2007-10-18T06:37:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/e-book/</loc>
     <lastmod>2007-10-18T06:37:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/scheme-hakkinda-birkac-kitap/</loc>
     <lastmod>2007-10-18T06:37:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/about/</loc>
     <lastmod>2007-05-02T10:46:10+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/blog/hello-world/</loc>
     <lastmod>2007-05-02T10:46:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/tags/c/c&#43;&#43;/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.askin.ws/categories/</loc>
   </url>
-  
 </urlset>

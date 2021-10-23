@@ -38,7 +38,7 @@ Ayrıca burdan indirebilirsiniz.</description>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/sezar-sifreleme/</guid>
       <description>&lt;p&gt;Sezar şifreleme için yazdığım ilk kod aşağıdaki gibiydi&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-scheme&#34; data-lang=&#34;scheme&#34;&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;define &lt;/span&gt;str2 &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;)
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-scheme&#34; data-lang=&#34;scheme&#34;&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;define &lt;/span&gt;str2 &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;)
 (&lt;span style=&#34;color:#66d9ef&#34;&gt;define &lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;sezar&lt;/span&gt; str lst)
   (&lt;span style=&#34;color:#66d9ef&#34;&gt;do &lt;/span&gt;((&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; (+ i &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)) (&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; (+ j &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;))) ((= j (string-length str)))
     (&lt;span style=&#34;color:#66d9ef&#34;&gt;if &lt;/span&gt;(= i (length lst))
@@ -50,7 +50,7 @@ Ayrıca burdan indirebilirsiniz.</description>
                     (+ (list-ref lst i )
                        (char-&amp;gt;integer (string-ref str j)))))))))
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ancak bu kod pek hoşuma gitmedi üzerinde biraz daha oynama yapmak gerekiyordu. Mesela en baştaki&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-scheme&#34; data-lang=&#34;scheme&#34;&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;define &lt;/span&gt;str2 &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;)
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-scheme&#34; data-lang=&#34;scheme&#34;&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;define &lt;/span&gt;str2 &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;pek hoş durmuyordu ve hiç bir sonuç gönmüyordu. Ekstradan srt2 nin değerini sorgulamak gerekiyordu.&lt;/p&gt;</description>
     </item>
     

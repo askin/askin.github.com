@@ -105,7 +105,7 @@ Parametre olarak geçireceğimiz fonksiyonlar belli bir sayıda parametre alıyo
   <meta name="twitter:site" content="@kelebeks" />
   <meta name="twitter:creator" content="@kelebeks" />
   <link href='https://blog.askin.ws/uploads/avatar.png' rel='icon' type='image/x-icon'/>
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
   <link rel="alternate" href="https://blog.askin.ws/index.xml" type="application/rss+xml" title="Aşkın Özgür"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://blog.askin.ws/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -121,7 +121,7 @@ Parametre olarak geçireceğimiz fonksiyonlar belli bir sayıda parametre alıyo
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Gezinmeyi aktifleştirin</span>
+        <span class="sr-only"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -141,12 +141,6 @@ Parametre olarak geçireceğimiz fonksiyonlar belli bir sayıda parametre alıyo
           
             <li>
               <a title="Hakkımda" href="/about/">Hakkımda</a>
-            </li>
-          
-        
-          
-            <li>
-              <a title="İbretlik Tavsiyeler" href="/ibretlik-tavsiyeler/">İbretlik Tavsiyeler</a>
             </li>
           
         
@@ -269,23 +263,23 @@ Parametre olarak geçireceğimiz fonksiyonlar belli bir sayıda parametre alıyo
         <p>Bu yazıyı asıl yazma sebebim parametre olarak geçirilen fonksiyona geçirilecek parametreler :)<br>
 Parametre olarak geçireceğimiz fonksiyonlar belli bir sayıda parametre alıyorsa yapacağımız iş basit,</p>
 <p>Mesela:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Merhaba</span>(isim):
-    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;Merhaba </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> isim
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Merhaba</span>(isim):
+    print <span style="color:#e6db74">&#34;Merhaba </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> isim
 </code></pre></div><p>Bunun gibi sadece tek parametre alan bir fonksiyon için aşağıdaki gibi bir fonksiyon yeterli olacaktır.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">BuyukAbi</span>(func, param):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">BuyukAbi</span>(func, param):
     func(param)
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">BuyukAbi(Merhaba, <span style="color:#e6db74">&#34;kelebek&#34;</span>)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">BuyukAbi(Merhaba, <span style="color:#e6db74">&#34;kelebek&#34;</span>)
 Merhaba kelebek
 </code></pre></div><p>Bu fonksiyon parametre olarak aldığı func fonksiyonuna param parametresini geçirecektir.<br>
 Eğer fonksiyonun aldığı parametre sayısı belirsiz ise, yani farklı sayıda parametre alan fonksiyonlarla uğraşmak gerekiyorsa yanına birkaç ekleme daha yapmamız gerekiyor.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">BuyukBuyukAbi</span>(func, param):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">BuyukBuyukAbi</span>(func, param):
     func(<span style="color:#f92672">*</span>param)
 </code></pre></div><p>param parametresi bir liste olmak durumunda. Geçirilen fonksiyon kaç parametre alıyorsa listenin uzunluğu okadar olmalı.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">BuyukBuyukAbi(Merhaba, [<span style="color:#e6db74">&#34;kelebek&#34;</span>])
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">BuyukBuyukAbi(Merhaba, [<span style="color:#e6db74">&#34;kelebek&#34;</span>])
 Merhaba kelebek
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">HepinizeMerhaba</span>(isim1, isim2):
-    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;Merhaba </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">, merhaba </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> (isim1, isim2)
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">BuyukBuyukAbi(HerpinizeMerhaba, [<span style="color:#e6db74">&#34;kelebek&#34;</span>, <span style="color:#e6db74">&#34;Aşkın&#34;</span>])
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">HepinizeMerhaba</span>(isim1, isim2):
+    print <span style="color:#e6db74">&#34;Merhaba </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">, merhaba </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> (isim1, isim2)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">BuyukBuyukAbi(HerpinizeMerhaba, [<span style="color:#e6db74">&#34;kelebek&#34;</span>, <span style="color:#e6db74">&#34;Aşkın&#34;</span>])
 Merhaba kelebek, merhaba Aşkın
 </code></pre></div>
 
@@ -364,7 +358,7 @@ Merhaba kelebek, merhaba Aşkın
           
 
           
-                  <h4 class="see-also">Ayrıca bakınız</h4>
+                  <h4 class="see-also"></h4>
                   <ul>
                 
                 
@@ -384,12 +378,12 @@ Merhaba kelebek, merhaba Aşkın
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://blog.askin.ws/blog/c-ile-nesne-yaratmak/" data-toggle="tooltip" data-placement="top" title="C ile Nesne Yaratmak">&larr; Önceki gönderi</a>
+              <a href="https://blog.askin.ws/blog/c-ile-nesne-yaratmak/" data-toggle="tooltip" data-placement="top" title="C ile Nesne Yaratmak">&larr; </a>
             </li>
           
           
             <li class="next">
-              <a href="https://blog.askin.ws/blog/java-ile-oracle-veritabanina-baglanmak/" data-toggle="tooltip" data-placement="top" title="Java ile Oracle Veritabanına bağlanmak.">Sonraki gönderi &rarr;</a>
+              <a href="https://blog.askin.ws/blog/java-ile-oracle-veritabanina-baglanmak/" data-toggle="tooltip" data-placement="top" title="Java ile Oracle Veritabanına bağlanmak."> &rarr;</a>
             </li>
           
         </ul>
@@ -539,7 +533,7 @@ Merhaba kelebek, merhaba Aşkın
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.80.0</a> altyapısı &nbsp;&bull;&nbsp; <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> temasından uyarlanan <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> teması kullanılmaktadır.
+          
           
         </p>
       </div>

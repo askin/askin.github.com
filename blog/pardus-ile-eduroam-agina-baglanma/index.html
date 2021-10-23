@@ -105,7 +105,7 @@ Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız iç
   <meta name="twitter:site" content="@kelebeks" />
   <meta name="twitter:creator" content="@kelebeks" />
   <link href='https://blog.askin.ws/uploads/avatar.png' rel='icon' type='image/x-icon'/>
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
   <link rel="alternate" href="https://blog.askin.ws/index.xml" type="application/rss+xml" title="Aşkın Özgür"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://blog.askin.ws/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -121,7 +121,7 @@ Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız iç
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Gezinmeyi aktifleştirin</span>
+        <span class="sr-only"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -141,12 +141,6 @@ Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız iç
           
             <li>
               <a title="Hakkımda" href="/about/">Hakkımda</a>
-            </li>
-          
-        
-          
-            <li>
-              <a title="İbretlik Tavsiyeler" href="/ibretlik-tavsiyeler/">İbretlik Tavsiyeler</a>
             </li>
           
         
@@ -269,7 +263,7 @@ Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız iç
         <p><img src="/uploads/2009/12/eduroam_logo_trans.gif" alt="Eduroam" title="Eduroam"><a href="http://www.pardus.org.tr/">Pardus</a>un ağ yöneticisi gayet şık bir arayüze sahip, fakat bize <a href="http://www.eduroam.org/">Eduroam</a> ağına bağlanma özelliği sunmuyor.<br>
 Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız için yeterli. Bu araçlar <a href="http://hostap.epitest.fi/wpa_supplicant/">wpa_supplicant</a> ve <a href="http://roy.marples.name/projects/dhcpcd">dhcpcd</a>. Wpa_supplicant ağda kimlik denetimini sağlamak için, dhcpcd ise ağdan ip almamız için gerekli.</p>
 <p>Öncelikle wpa_supplicant için ayar dosyası oluşturmamız gerekiyor.</p>
-<pre><code class="language-conf" data-lang="conf">network={
+<pre tabindex="0"><code class="language-conf" data-lang="conf">network={
         ssid=&quot;eduroam&quot;
         key_mgmt=WPA-EAP
         pairwise=TKIP
@@ -283,15 +277,15 @@ Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız iç
 </code></pre><p>Bu ayarlar Dokuz Eylül Üniversitesi için. Kendi okulunuza göre düzenlemeniz gerekiyor. Sadece ogr.deu.edu.tr adresi yerine kendi okulunuzun adresini yazmalısınız.</p>
 <p>Bu dosyayı /etc/wpa_supplicant.con adıyla kaydediyoruz.</p>
 <p>Sıra geldi wpa_supplicantı çalıştırmaya.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf
 </code></pre></div><p>-D parametresi hangi sürücüyü kullanacağımızı belirtiyor. Wpa_supplicantın man dosyalarına bakarak kendinize uygun bir sürücü seçebilirsiniz.<br>
 -i hangi arayüzü kullanacağınızı belirtiyor. Genellikle wlan0 dır. iwconfig komutunun çıktısı size kablosuz ağ kartlarını gösterecektir.<br>
 -c ile ayar dosyamızın yerini belirtiyoruz.</p>
 <p>Eğer bu komut başarılı olursa artık ip alabiliriz.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dhcpcd wlan0
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dhcpcd wlan0
 </code></pre></div><p>Eğer bu komutta başarılı olduysa artık internete bağlanabilirsiniz hayırlı olsun :)</p>
 <p>Bu işlemi kolaylaştırmak için pem adında bi script yazdım.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git://github.com/askin/pem.git
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git://github.com/askin/pem.git
 </code></pre></div><p>Bu komutla pem&rsquo;e ulaşabilirsiniz.<br>
 Bu aracı daha fazla geliştirecektim fakat ağ yöneticisiyle bu işleri nasıl yapabileceğimi öğrendim. Bugün oturup biraz network-managerın kodlarıyla uğraştım. Sanırım pazartesi günü bu işi ağ yöneticisiyle kolayca yapılabilecek bir hale getirebilirim. Şimdilik en güzel yöntem bu gibi :)</p>
 <p>Ayrıca sevgili dostum <a href="http://blog.metebilgin.com/">Mete</a> bu işin wicd kullanarak nasıl yapıldığını daha önce yazmış <a href="http://blog.metebilgin.com/2009/10/pardus-2009-da-eduroam-kafay-yemeden.html">buradan</a> o yazıya ulaşabilirsiniz.</p>
@@ -382,7 +376,7 @@ Bu aracı daha fazla geliştirecektim fakat ağ yöneticisiyle bu işleri nasıl
           
 
           
-                  <h4 class="see-also">Ayrıca bakınız</h4>
+                  <h4 class="see-also"></h4>
                   <ul>
                 
                 
@@ -406,12 +400,12 @@ Bu aracı daha fazla geliştirecektim fakat ağ yöneticisiyle bu işleri nasıl
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://blog.askin.ws/blog/trekstor-maxi-g-u-500gb-harici-hard-disk/" data-toggle="tooltip" data-placement="top" title="TrekStor maxi g.u 500GB harici hard disk">&larr; Önceki gönderi</a>
+              <a href="https://blog.askin.ws/blog/trekstor-maxi-g-u-500gb-harici-hard-disk/" data-toggle="tooltip" data-placement="top" title="TrekStor maxi g.u 500GB harici hard disk">&larr; </a>
             </li>
           
           
             <li class="next">
-              <a href="https://blog.askin.ws/blog/pardus-ag-yoneticisi-ile-eduroam-agina-baglanmak/" data-toggle="tooltip" data-placement="top" title="Pardus Ağ Yöneticisi İle Eduroam Ağına Bağlanmak">Sonraki gönderi &rarr;</a>
+              <a href="https://blog.askin.ws/blog/pardus-ag-yoneticisi-ile-eduroam-agina-baglanmak/" data-toggle="tooltip" data-placement="top" title="Pardus Ağ Yöneticisi İle Eduroam Ağına Bağlanmak"> &rarr;</a>
             </li>
           
         </ul>
@@ -561,7 +555,7 @@ Bu aracı daha fazla geliştirecektim fakat ağ yöneticisiyle bu işleri nasıl
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.80.0</a> altyapısı &nbsp;&bull;&nbsp; <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> temasından uyarlanan <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> teması kullanılmaktadır.
+          
           
         </p>
       </div>

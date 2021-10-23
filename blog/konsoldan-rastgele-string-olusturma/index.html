@@ -99,7 +99,7 @@ tr kullanarak yapacaklarımızın limiti hayal gücümüz kadar.">
   <meta name="twitter:site" content="@kelebeks" />
   <meta name="twitter:creator" content="@kelebeks" />
   <link href='https://blog.askin.ws/uploads/avatar.png' rel='icon' type='image/x-icon'/>
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
   <link rel="alternate" href="https://blog.askin.ws/index.xml" type="application/rss+xml" title="Aşkın Özgür"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://blog.askin.ws/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -115,7 +115,7 @@ tr kullanarak yapacaklarımızın limiti hayal gücümüz kadar.">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Gezinmeyi aktifleştirin</span>
+        <span class="sr-only"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -135,12 +135,6 @@ tr kullanarak yapacaklarımızın limiti hayal gücümüz kadar.">
           
             <li>
               <a title="Hakkımda" href="/about/">Hakkımda</a>
-            </li>
-          
-        
-          
-            <li>
-              <a title="İbretlik Tavsiyeler" href="/ibretlik-tavsiyeler/">İbretlik Tavsiyeler</a>
             </li>
           
         
@@ -261,12 +255,12 @@ tr kullanarak yapacaklarımızın limiti hayal gücümüz kadar.">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
         <p>Konsoldan rastgele stringler oluşturmak için bir çok yöntem var, bunların bir çoğu random ve urandom aygıtlarını kullanıyor. Benim şimdi anlatacağım yöntemle urandom aygıtını kullanıyoruz.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&lt; /dev/urandom tr -dc A-Za-z0-9
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&lt; /dev/urandom tr -dc A-Za-z0-9
 </code></pre></div><p>Burada tr komutuna standart girdi olarak /dev/urandom aygıtını gösteriyoruz. urandom rastgele değerler üretir, bu üretilen değerlerin bazıları yazdırılabilir bazıları da yazdırılamayan karakterlere denk gelir. Biz tr komutu ile bu rastgele üretilen değerlerden alfanümerik olanları ayıklıyoruz. Tabi bu komut sonsuza kadar çıktı üretir, sadece istediğimiz kadarını almak için head komutunu kullanabiliriz.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&lt; /dev/urandom tr -dc A-Za-z0-9 | head -c32
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&lt; /dev/urandom tr -dc A-Za-z0-9 | head -c32
 </code></pre></div><p>Bu komutla çıktının ilk 32 karakterini alıyoruz.</p>
 <p>tr kullanarak yapacaklarımızın limiti hayal gücümüz kadar. Mesela sadece sol elimizi kullanarak girebileceğiniz bir parola üretmek istiyoruz. Aşağıdaki komut bunu üretecektir :)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&lt; /dev/urandom tr -dc <span style="color:#e6db74">&#39;12345!@#$%qwertQWERTasdfgASDFGzxcvbZXCVB&#39;</span> | head -c8
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&lt; /dev/urandom tr -dc <span style="color:#e6db74">&#39;12345!@#$%qwertQWERTasdfgASDFGzxcvbZXCVB&#39;</span> | head -c8
 </code></pre></div><p>[1] adresinde konsoldan rastgele string üretmek için 10 farklı yol gösterilmiş. Ufuk genişletmek için faydalı bir yazı bence.</p>
 <p>[1] <a href="http://www.howtogeek.com/howto/30184/10-ways-to-generate-a-random-password-from-the-command-line/">http://www.howtogeek.com/howto/30184/10-ways-to-generate-a-random-password-from-the-command-line/</a></p>
 
@@ -346,7 +340,7 @@ tr kullanarak yapacaklarımızın limiti hayal gücümüz kadar.">
           
 
           
-                  <h4 class="see-also">Ayrıca bakınız</h4>
+                  <h4 class="see-also"></h4>
                   <ul>
                 
                 
@@ -362,12 +356,12 @@ tr kullanarak yapacaklarımızın limiti hayal gücümüz kadar.">
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://blog.askin.ws/blog/linuxta-disk-doluluk-oraninin-yanlis-hesaplanmasi/" data-toggle="tooltip" data-placement="top" title="Linux&#39;ta disk doluluk oranının yanlış hesaplanması">&larr; Önceki gönderi</a>
+              <a href="https://blog.askin.ws/blog/linuxta-disk-doluluk-oraninin-yanlis-hesaplanmasi/" data-toggle="tooltip" data-placement="top" title="Linux&#39;ta disk doluluk oranının yanlış hesaplanması">&larr; </a>
             </li>
           
           
             <li class="next">
-              <a href="https://blog.askin.ws/blog/mysql-veritabani-ile-ilgili-bazi-bilgileri-ogrenmek/" data-toggle="tooltip" data-placement="top" title="MySQL veritabanı ile ilgili bazı bilgileri öğrenmek">Sonraki gönderi &rarr;</a>
+              <a href="https://blog.askin.ws/blog/mysql-veritabani-ile-ilgili-bazi-bilgileri-ogrenmek/" data-toggle="tooltip" data-placement="top" title="MySQL veritabanı ile ilgili bazı bilgileri öğrenmek"> &rarr;</a>
             </li>
           
         </ul>
@@ -517,7 +511,7 @@ tr kullanarak yapacaklarımızın limiti hayal gücümüz kadar.">
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.80.0</a> altyapısı &nbsp;&bull;&nbsp; <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> temasından uyarlanan <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> teması kullanılmaktadır.
+          
           
         </p>
       </div>

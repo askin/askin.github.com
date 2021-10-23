@@ -41,7 +41,7 @@
   <meta name="twitter:site" content="@kelebeks" />
   <meta name="twitter:creator" content="@kelebeks" />
   <link href='https://blog.askin.ws/uploads/avatar.png' rel='icon' type='image/x-icon'/>
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
   <link rel="alternate" href="https://blog.askin.ws/index.xml" type="application/rss+xml" title="Aşkın Özgür"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://blog.askin.ws/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -57,7 +57,7 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Gezinmeyi aktifleştirin</span>
+        <span class="sr-only"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -77,12 +77,6 @@
           
             <li>
               <a title="Hakkımda" href="/about/">Hakkımda</a>
-            </li>
-          
-        
-          
-            <li>
-              <a title="İbretlik Tavsiyeler" href="/ibretlik-tavsiyeler/">İbretlik Tavsiyeler</a>
             </li>
           
         
@@ -216,13 +210,13 @@
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;2010/12/01 tarihinde paylaşıldı
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;dakika
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;39&nbsp;kelime
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;39&nbsp;
   
   
     
@@ -237,9 +231,9 @@
     <div class="post-entry">
         
         <p>BusyBox içinde gelen date komutunun kullanımı biraz daha farklı. Saat ayarlamada bir değişiklik yok fakat tarihi ayarlamak biraz daha farklı. Saat ayarlama:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">date -s <span style="color:#e6db74">&#34;23:59:59&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">date -s <span style="color:#e6db74">&#34;23:59:59&#34;</span>
 </code></pre></div><p>Tarih ve saati ayarlama</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">date -s AAGGSSDDYYYY
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">date -s AAGGSSDDYYYY
 date -s <span style="color:#ae81ff">123123592010</span>
 </code></pre></div><p>12-31-2010 23:59&rsquo;a karşılık geliyor.</p>
 
@@ -276,13 +270,13 @@ date -s <span style="color:#ae81ff">123123592010</span>
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;2010/11/24 tarihinde paylaşıldı
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;dakika
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;38&nbsp;kelime
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;38&nbsp;
   
   
     
@@ -297,7 +291,7 @@ date -s <span style="color:#ae81ff">123123592010</span>
     <div class="post-entry">
         
         <p>Scp ile sembolik linkleri takip etmeden indirme işlemi yapmak için araştırma yaptığımda, aşağıdaki kodu buldum. Böyle bir kullanım 40 yıl düşünsem aklıma gelmezdi.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /destination/directory
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /destination/directory
 ssh user@remote.host <span style="color:#e6db74">&#34;cd /original/directory; tar cf - ./&#34;</span> | tar xvf -
 </code></pre></div><p><a href="http://www.linuxquestions.org/questions/linux-general-1/recursive-scp-w-o-following-links-658857/">Kaynak</a></p>
 
@@ -332,13 +326,13 @@ ssh user@remote.host <span style="color:#e6db74">&#34;cd /original/directory; ta
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;2010/11/08 tarihinde paylaşıldı
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;dakika
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;88&nbsp;kelime
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;88&nbsp;
   
   
     
@@ -354,7 +348,7 @@ ssh user@remote.host <span style="color:#e6db74">&#34;cd /original/directory; ta
         
         <p>Öncelikle <a href="http://www.oracle.com/technetwork/database/enterprise-edition/jdbc101040-094982.html">http://www.oracle.com/technetwork/database/enterprise-edition/jdbc101040-094982.html</a> adresinden classes12.jar dosyasını indiriyoruz.</p>
 <p>Bu dosyayı bir dizine atıp, içeriğini bu dizine çıkartıyoruz. Bu dizini classpath değişkeninde belirtip kodlamaya başlıyoruz.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.io.*<span style="color:#f92672">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.io.*<span style="color:#f92672">;</span>
 <span style="color:#f92672">import</span> java.sql.*<span style="color:#f92672">;</span>
 
 <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">OraThin</span> <span style="color:#f92672">{</span>                                                                                                                                                                
@@ -414,13 +408,13 @@ ssh user@remote.host <span style="color:#e6db74">&#34;cd /original/directory; ta
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;2010/05/01 tarihinde paylaşıldı
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;dakika
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;127&nbsp;kelime
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;127&nbsp;
   
   
     
@@ -441,7 +435,7 @@ def Merhaba(isim): print &#34;Merhaba %s&#34; % isim Bunun gibi sadece tek param
 def BuyukAbi(func, param): func(param) BuyukAbi(Merhaba, &#34;kelebek&#34;) Merhaba kelebek Bu fonksiyon parametre olarak aldığı func fonksiyonuna param parametresini geçirecektir.
 Eğer fonksiyonun aldığı parametre sayısı belirsiz ise, yani farklı sayıda parametre alan fonksiyonlarla uğraşmak gerekiyorsa yanına birkaç ekleme daha yapmamız gerekiyor.
 def BuyukBuyukAbi(func, param): func(*param) param parametresi bir liste olmak durumunda. Geçirilen fonksiyon kaç parametre alıyorsa listenin uzunluğu okadar olmalı.
-        <a href="https://blog.askin.ws/blog/python-fonksiyona-parametre-olarak-fonksiyon-gecirmek/" class="post-read-more">[Daha fazla oku]</a>
+        <a href="https://blog.askin.ws/blog/python-fonksiyona-parametre-olarak-fonksiyon-gecirmek/" class="post-read-more">[]</a>
         
     </div>
 
@@ -471,13 +465,13 @@ def BuyukBuyukAbi(func, param): func(*param) param parametresi bir liste olmak d
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;2010/04/27 tarihinde paylaşıldı
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;dakika
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;177&nbsp;kelime
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;177&nbsp;
   
   
     
@@ -494,7 +488,7 @@ def BuyukBuyukAbi(func, param): func(*param) param parametresi bir liste olmak d
         Evet kışkırtıcı bir başlık attım :) Aslında yapacağımız olay bir structı nesne gibi kullanmak. Buna benzer bir kodu yıllar önce görmüştüm. O günden bu güne sürekli böyle bir şeyi nasıl yaparım diye araştırdım. Anca bugün çözebildim olayı ;) Kodu aşağıda yorum satırıyla beraber veriyorum. Yorumlarda gerekli açıklamaları yaptım.
 Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşıma bu çıktı, bende boş durmasın dedim :)
 /* * Sınıfımızı yaratıyoruz */ struct _myobject { // alt alanlar  int a, b; /* * Metod * Burada fonksiyon pointerı tanımlıyoruz */ int (*add)(struct _myobject*); }; // struct ön ekinden kurtuluyoruz typedef struct _myobject MyObject; /* * Asıl işi yapacak fonksiyonu tanımlıyoruz * MyObject structını parametre olarak alıyor */ int realAdd(MyObject* a) { return a-&gt;a + a-&gt;b; } int main ( void ) { /* * Nesnemizi oluşturuyoruz.
-        <a href="https://blog.askin.ws/blog/c-ile-nesne-yaratmak/" class="post-read-more">[Daha fazla oku]</a>
+        <a href="https://blog.askin.ws/blog/c-ile-nesne-yaratmak/" class="post-read-more">[]</a>
         
     </div>
 
@@ -524,13 +518,13 @@ Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşı
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;2010/04/08 tarihinde paylaşıldı
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;dakika
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;160&nbsp;kelime
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;160&nbsp;
   
   
     
@@ -546,7 +540,7 @@ Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşı
         
         Gece gece uyku tutmadı var olan bir programı kurcalamaya başladım. Amacım programın sitem çekmecesinden çalışabilir hale getirmekti.
 Her şeyi yaptım fakat bir türlü pencereyi gizleyemiyordum :) Doküman gtk_window_get_mnemonics_visible () fonksiyonunu kullanmamı söylüyordu, fakat kullandığım gtk sürümünde bu fonksiyon tanımlı değildi(2.18.7). Eski sürüm için olan dokümanı incelediğimde bu işi yapan bir fonksiyon yoktu. Sistemde kurulu gtk ve python ile bu işi yapabiliyordum. Normal olarak c ile de yapabilmem lazımdı:) Biraz inceledikten sonra, önce pencereyi gizleyen, ardından boyutunu eski haline getirip sonra tekrar gösteren bir fonksiyon olduğunu fark ettim. Benim istediğim işi yapıyor fakat yanında birde fazlalığı vardı.(gtk_window_reshow_with_initial_size) İnternette biraz daha araştırıp umudumu kaybedince mecburen kaynak koda baktım.
-        <a href="https://blog.askin.ws/blog/gtk-2-18-9-pencere-gizleme-sorunu/" class="post-read-more">[Daha fazla oku]</a>
+        <a href="https://blog.askin.ws/blog/gtk-2-18-9-pencere-gizleme-sorunu/" class="post-read-more">[]</a>
         
     </div>
 
@@ -576,13 +570,13 @@ Her şeyi yaptım fakat bir türlü pencereyi gizleyemiyordum :) Doküman gtk_wi
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;2010/04/08 tarihinde paylaşıldı
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;dakika
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;139&nbsp;kelime
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;139&nbsp;
   
   
     
@@ -606,7 +600,7 @@ Buradaki kutuya alan adını yazın.
 Bu adımları geçtikten sonra google tarafında yapılacak ayarları tamamlamış oluyoruz.
 Alan adınızın bloggera yönlenmesi için CNAME kaydı oluşturmanız gerekiyor. Bunu alan adını aldığınız yerden yapacaksınız.
 CNAME kaydına değer olarak ghs.
-        <a href="https://blog.askin.ws/blog/bloggera-kendi-alan-adinizi-yonlendirme/" class="post-read-more">[Daha fazla oku]</a>
+        <a href="https://blog.askin.ws/blog/bloggera-kendi-alan-adinizi-yonlendirme/" class="post-read-more">[]</a>
         
     </div>
 
@@ -638,13 +632,13 @@ CNAME kaydına değer olarak ghs.
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;2010/04/07 tarihinde paylaşıldı
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;dakika
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;154&nbsp;kelime
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;154&nbsp;
   
   
     
@@ -664,7 +658,7 @@ import pygtk import gtk class ShowIcon: def __init__(self): self.icon = gtk.Stat
 7. satırda sistem çekmecesinde hangi ikonun görüntüleneceğini belirtiyoruz. set_from_file ikonu dosyadan alacağımız anlamına geliyor. Eğer gtk&rsquo;nın sunduğu standart ikonları kullanmak istiyorsanız set_from_stock kullanmalısınız.
 icon.set_from_stock(gtk.STOCK_ABOUT) 8. satırda ikonun üzerine geldiğimizde görünmesini istediğimiz yazıyı belirliyoruz.
 9. satırda ikonun başlangıçtaki görünürlüğünü belirliyoruz. Bu satırı yazmasak da görünür başlıyor.
-        <a href="https://blog.askin.ws/blog/pygtk-ile-sistem-cekmecesi/" class="post-read-more">[Daha fazla oku]</a>
+        <a href="https://blog.askin.ws/blog/pygtk-ile-sistem-cekmecesi/" class="post-read-more">[]</a>
         
     </div>
 
@@ -698,13 +692,13 @@ icon.set_from_stock(gtk.STOCK_ABOUT) 8. satırda ikonun üzerine geldiğimizde g
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;2010/04/06 tarihinde paylaşıldı
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;dakika
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;79&nbsp;kelime
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;79&nbsp;
   
   
     
@@ -720,7 +714,7 @@ icon.set_from_stock(gtk.STOCK_ABOUT) 8. satırda ikonun üzerine geldiğimizde g
         
         <p><img src="/uploads/2010/04/gtk.png" alt="Gtk" title="Gtk">PyGtk ile ara yüzüzünü hazırladığım bir program içinde thread kullanmam gerekiyordu. Kod çalışıyordu fakat thread işlemi istediğim gibi çalışmıyordu. Arayüzde bir değişiklik olduğu zaman thread çalışıyor, onun dışında hiç bir şekilde tepki vermiyordu.</p>
 <p>Uzun süre hatanın kodda olabileceğini düşündüm. Ama sonunda python gtk.main() ve thread 3&rsquo;lüsünü aynı sorgu içinde googleda aratınca cevabı buldum. Gtk&rsquo;ya thread kullandığımı anlatmam gerekiyordu :)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">gtk<span style="color:#f92672">.</span>gdk<span style="color:#f92672">.</span>threads_init()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">gtk<span style="color:#f92672">.</span>gdk<span style="color:#f92672">.</span>threads_init()
 </code></pre></div><p>Bu satırı kodumun başına eklediğimde herşey istediğim gibi çalışmaya başladı :)</p>
 <p>Sizde böyle bir sorunla karşılaşırsanız aklınızda bulunsun :)</p>
 
@@ -757,13 +751,13 @@ icon.set_from_stock(gtk.STOCK_ABOUT) 8. satırda ikonun üzerine geldiğimizde g
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;2009/12/07 tarihinde paylaşıldı
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;dakika
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;236&nbsp;kelime
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;236&nbsp;
   
   
     
@@ -781,7 +775,7 @@ icon.set_from_stock(gtk.STOCK_ABOUT) 8. satırda ikonun üzerine geldiğimizde g
 2 gün boyunca Ağ Yöneticisinin neresini değiştirmem gerektiğini arayıp durdum. Sonunda wireless-tools adlı paketin aradığım paket olduğunu keşfettim :) wireless tools paketi wpa_supplicant kullanarak wpa şifreleme kullanan ağlara bağlanmaya yarıyor. Sağolsun Pardus geliştiricileri wpa_supplicant paketi için dbus kullanan bir python betiği yazmışlar. Bu betik içinde tanımlanan methodlarla wpa_supplicantı yönetebiliyoruz. Bu betiğe eduroam ağına bağlanmak için gerekli parametreleri alan bir method ekledim.
 Daha sonra wireless-tools paketi içindeki comar betiğine bu methodu kullanmasını sağlayacak birkaç değişiklik yaptım.
 Sırf bu işi denemek için bugün okulum olmadığı halde sabahın 8&rsquo;inde okula gelip deneme yaptım.
-        <a href="https://blog.askin.ws/blog/pardus-ag-yoneticisi-ile-eduroam-agina-baglanmak/" class="post-read-more">[Daha fazla oku]</a>
+        <a href="https://blog.askin.ws/blog/pardus-ag-yoneticisi-ile-eduroam-agina-baglanmak/" class="post-read-more">[]</a>
         
     </div>
 
@@ -810,12 +804,12 @@ Sırf bu işi denemek için bugün okulum olmadığı halde sabahın 8&rsquo;ind
           <ul class="pager main-pager">
             
               <li class="previous">
-                <a href="https://blog.askin.ws/blog/page/4/">&larr; Son gönderiler</a>
+                <a href="https://blog.askin.ws/blog/page/4/">&larr; </a>
               </li>
             
             
               <li class="next">
-                <a href="https://blog.askin.ws/blog/page/6/">Önceki gönderiler &rarr;</a>
+                <a href="https://blog.askin.ws/blog/page/6/"> &rarr;</a>
               </li>
             
           </ul>
@@ -933,7 +927,7 @@ Sırf bu işi denemek için bugün okulum olmadığı halde sabahın 8&rsquo;ind
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.80.0</a> altyapısı &nbsp;&bull;&nbsp; <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> temasından uyarlanan <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> teması kullanılmaktadır.
+          
           
         </p>
       </div>

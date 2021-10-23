@@ -104,7 +104,7 @@ kesintisiz hizmet sağlamak için çok yardımcı oluyor. Buna …">
   <meta name="twitter:site" content="@kelebeks" />
   <meta name="twitter:creator" content="@kelebeks" />
   <link href='https://blog.askin.ws/uploads/avatar.png' rel='icon' type='image/x-icon'/>
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
   <link rel="alternate" href="https://blog.askin.ws/index.xml" type="application/rss+xml" title="Aşkın Özgür"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://blog.askin.ws/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -120,7 +120,7 @@ kesintisiz hizmet sağlamak için çok yardımcı oluyor. Buna …">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Gezinmeyi aktifleştirin</span>
+        <span class="sr-only"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -140,12 +140,6 @@ kesintisiz hizmet sağlamak için çok yardımcı oluyor. Buna …">
           
             <li>
               <a title="Hakkımda" href="/about/">Hakkımda</a>
-            </li>
-          
-        
-          
-            <li>
-              <a title="İbretlik Tavsiyeler" href="/ibretlik-tavsiyeler/">İbretlik Tavsiyeler</a>
             </li>
           
         
@@ -276,18 +270,18 @@ versiyona sahip olması gerekmekte. Bunu yapabilmek için dosya ismini
 <code>paket-ismi##VERSION.war</code> şeklinde yapmak gerekiyor. Eğer <strong>Maven</strong>
 kullanıyorsanız <code>pom.xml</code> dosyasında aşağıdaki gibi basitçe
 yapabilirsiniz.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;build&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;build&gt;</span>
     <span style="color:#f92672">&lt;finalName&gt;</span>${project.artifactId}##{$project.version}<span style="color:#f92672">&lt;/finalName&gt;</span>
 <span style="color:#f92672">&lt;/build&gt;</span>
 </code></pre></div><p>Eğer version numarasından ziyada derleme zamanını kullanmak isterseniz
 aşağıdaki gibi yapabilirsiniz.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;build&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;build&gt;</span>
     <span style="color:#f92672">&lt;finalName&gt;</span>${project.artifactId}##${maven.build.timestamp}<span style="color:#f92672">&lt;/finalName&gt;</span>
 <span style="color:#f92672">&lt;/build&gt;</span>
 </code></pre></div><p>Böyle bir durumda <code>paket-ismi##2020-09-12T12:17:40Z.war</code> gibi bir
 dosya ismi oluşacaktır, bu bana çirkin görünüyor. Daha düzgün bir tarih
 formatı için aşağıdaki gibi bir kullanım iş görecektir.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;properties&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;properties&gt;</span>
     <span style="color:#f92672">&lt;maven.build.timestamp.format&gt;</span>yyMMdd_HHmm<span style="color:#f92672">&lt;/maven.build.timestamp.format&gt;</span>
     <span style="color:#f92672">&lt;buildNumber&gt;</span>${maven.build.timestamp}<span style="color:#f92672">&lt;/buildNumber&gt;</span>
 <span style="color:#f92672">&lt;/properties&gt;</span>
@@ -297,7 +291,7 @@ formatı için aşağıdaki gibi bir kullanım iş görecektir.</p>
 <span style="color:#f92672">&lt;/build&gt;</span>
 </code></pre></div><p>Fakat bu kullanımda <em>TIMEZONE</em> <em>muhtemelen</em> <strong>UTC</strong> olacaktır. Bunun
 önüne geçmek için aşağıdaki gibi bir kullanım işinizi çözecektir.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;build&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;build&gt;</span>
     <span style="color:#f92672">&lt;finalName&gt;</span>${project.artifactId}##${build.time}<span style="color:#f92672">&lt;/finalName&gt;</span>
     <span style="color:#f92672">&lt;plugins&gt;</span>
         <span style="color:#f92672">&lt;plugin&gt;</span>
@@ -408,12 +402,12 @@ attığınız son dosyayı silmek yeterli olacaktır.</p>
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://blog.askin.ws/blog/cron-timezone-problemi/" data-toggle="tooltip" data-placement="top" title="Cron Timezone Problemi">&larr; Önceki gönderi</a>
+              <a href="https://blog.askin.ws/blog/cron-timezone-problemi/" data-toggle="tooltip" data-placement="top" title="Cron Timezone Problemi">&larr; </a>
             </li>
           
           
             <li class="next">
-              <a href="https://blog.askin.ws/blog/lets-encrypt-ile-wildcard-ssl-sertifika-olusturma/" data-toggle="tooltip" data-placement="top" title="Let&#39;s Encrypt ile Wildcard SSL Sertifika Oluşturma">Sonraki gönderi &rarr;</a>
+              <a href="https://blog.askin.ws/blog/lets-encrypt-ile-wildcard-ssl-sertifika-olusturma/" data-toggle="tooltip" data-placement="top" title="Let&#39;s Encrypt ile Wildcard SSL Sertifika Oluşturma"> &rarr;</a>
             </li>
           
         </ul>
@@ -563,7 +557,7 @@ attığınız son dosyayı silmek yeterli olacaktır.</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.80.0</a> altyapısı &nbsp;&bull;&nbsp; <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> temasından uyarlanan <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> teması kullanılmaktadır.
+          
           
         </p>
       </div>

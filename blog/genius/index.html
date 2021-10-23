@@ -95,7 +95,7 @@ cd /destination/directory ssh …">
   <meta name="twitter:site" content="@kelebeks" />
   <meta name="twitter:creator" content="@kelebeks" />
   <link href='https://blog.askin.ws/uploads/avatar.png' rel='icon' type='image/x-icon'/>
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
   <link rel="alternate" href="https://blog.askin.ws/index.xml" type="application/rss+xml" title="Aşkın Özgür"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://blog.askin.ws/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -111,7 +111,7 @@ cd /destination/directory ssh …">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Gezinmeyi aktifleştirin</span>
+        <span class="sr-only"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -131,12 +131,6 @@ cd /destination/directory ssh …">
           
             <li>
               <a title="Hakkımda" href="/about/">Hakkımda</a>
-            </li>
-          
-        
-          
-            <li>
-              <a title="İbretlik Tavsiyeler" href="/ibretlik-tavsiyeler/">İbretlik Tavsiyeler</a>
             </li>
           
         
@@ -257,7 +251,7 @@ cd /destination/directory ssh …">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
         <p>Scp ile sembolik linkleri takip etmeden indirme işlemi yapmak için araştırma yaptığımda, aşağıdaki kodu buldum. Böyle bir kullanım 40 yıl düşünsem aklıma gelmezdi.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /destination/directory
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /destination/directory
 ssh user@remote.host <span style="color:#e6db74">&#34;cd /original/directory; tar cf - ./&#34;</span> | tar xvf -
 </code></pre></div><p><a href="http://www.linuxquestions.org/questions/linux-general-1/recursive-scp-w-o-following-links-658857/">Kaynak</a></p>
 
@@ -339,7 +333,7 @@ ssh user@remote.host <span style="color:#e6db74">&#34;cd /original/directory; ta
           
 
           
-                  <h4 class="see-also">Ayrıca bakınız</h4>
+                  <h4 class="see-also"></h4>
                   <ul>
                 
                 
@@ -363,12 +357,12 @@ ssh user@remote.host <span style="color:#e6db74">&#34;cd /original/directory; ta
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://blog.askin.ws/blog/java-ile-oracle-veritabanina-baglanmak/" data-toggle="tooltip" data-placement="top" title="Java ile Oracle Veritabanına bağlanmak.">&larr; Önceki gönderi</a>
+              <a href="https://blog.askin.ws/blog/java-ile-oracle-veritabanina-baglanmak/" data-toggle="tooltip" data-placement="top" title="Java ile Oracle Veritabanına bağlanmak.">&larr; </a>
             </li>
           
           
             <li class="next">
-              <a href="https://blog.askin.ws/blog/busybox-date-ile-saat-ve-tarihi-ayarlamak/" data-toggle="tooltip" data-placement="top" title="BusyBox - date ile saat ve tarihi ayarlamak">Sonraki gönderi &rarr;</a>
+              <a href="https://blog.askin.ws/blog/busybox-date-ile-saat-ve-tarihi-ayarlamak/" data-toggle="tooltip" data-placement="top" title="BusyBox - date ile saat ve tarihi ayarlamak"> &rarr;</a>
             </li>
           
         </ul>
@@ -518,7 +512,7 @@ ssh user@remote.host <span style="color:#e6db74">&#34;cd /original/directory; ta
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.80.0</a> altyapısı &nbsp;&bull;&nbsp; <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> temasından uyarlanan <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> teması kullanılmaktadır.
+          
           
         </p>
       </div>
