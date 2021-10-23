@@ -22,11 +22,6 @@ summaryLength = 100
     weight = 11
 
   [[menu.main]]
-    name = "İbretlik Tavsiyeler"
-    url = "ibretlik-tavsiyeler/"
-    weight = 12
-
-  [[menu.main]]
     name = "Tags"
     url = "tags"
     weight = 21
