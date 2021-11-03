@@ -22,6 +22,7 @@ pre code.hljs {
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: unset;
   overflow: hidden;
+  padding: 0 0 0 3px;
 }
 
 .highlight td:last-child pre, .highlight pre {
