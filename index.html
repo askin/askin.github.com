@@ -57,7 +57,7 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only"></span>
+        <span class="sr-only">Gezinmeyi aktifleştirin</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -205,6 +205,85 @@
           
           
             <article class="post-preview">
+    <a href="https://blog.askin.ws/blog/maven-ile-versiyon-numarasi-guncelleme/">
+        <h2 class="post-title">Maven İle Versiyon Numarası Güncelleme</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;2021/11/03 tarihinde paylaşıldı
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;dakika
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;111&nbsp;kelime
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Aşkın Özgür
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        <p>Bir <code>maven</code> projeniz varsa ve versiyon numarasını güncellemek istiyorsanız, <code>pom.xml</code>i bir editör ile açıp versiyon numarasını güncelleyebileceğiniz gibi, maven kullanarak da bunu yapabilirsiniz.</p>
+<p>Aşağıdaki gibi bir <code>pom.xml</code> dosyaminizin olduğunu düşünelim.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+
+<span style="color:#f92672">&lt;project</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+  <span style="color:#a6e22e">xsi:schemaLocation=</span><span style="color:#e6db74">&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;modelVersion&gt;</span>4.0.0<span style="color:#f92672">&lt;/modelVersion&gt;</span>
+
+  <span style="color:#f92672">&lt;groupId&gt;</span>com.mycompany.app<span style="color:#f92672">&lt;/groupId&gt;</span>
+  <span style="color:#f92672">&lt;artifactId&gt;</span>my-app<span style="color:#f92672">&lt;/artifactId&gt;</span>
+  <span style="color:#f92672">&lt;version&gt;</span>1.0.0<span style="color:#f92672">&lt;/version&gt;</span>
+
+  <span style="color:#f92672">&lt;name&gt;</span>my-app<span style="color:#f92672">&lt;/name&gt;</span>
+<span style="color:#f92672">&lt;/project&gt;</span>
+</code></pre></div><p>Aşağıdaki komut ile <code>1.0.0</code> olan versiyon numarasını <code>1.0.5</code> olarak güncelledik.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mvn versions:set -DnewVersion<span style="color:#f92672">=</span>1.0.5 versions:commit
+</code></pre></div><p>Eğer otomatik olarak versiyon numarasını yükseltmek istersek aşağıdaki komut işimizi görecek.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mvn build-helper:parse-version versions:set <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -DnewVersion<span style="color:#f92672">=</span><span style="color:#ae81ff">\$</span><span style="color:#f92672">{</span>parsedVersion.majorVersion<span style="color:#f92672">}</span>.<span style="color:#ae81ff">\$</span><span style="color:#f92672">{</span>parsedVersion.minorVersion<span style="color:#f92672">}</span>.<span style="color:#ae81ff">\$</span><span style="color:#f92672">{</span>parsedVersion.nextIncrementalVersion<span style="color:#f92672">}</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    versions:commit
+</code></pre></div><p>Artık versiyon numaramız <code>1.0.6</code></p>
+<p>Minör versiyon yükseltmek isterseniz</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mvn build-helper:parse-version <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    versions:set <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -DnewVersion<span style="color:#f92672">=</span><span style="color:#ae81ff">\$</span><span style="color:#f92672">{</span>parsedVersion.majorVersion<span style="color:#f92672">}</span>.<span style="color:#ae81ff">\$</span><span style="color:#f92672">{</span>parsedVersion.nextMinorVersion<span style="color:#f92672">}</span>.<span style="color:#ae81ff">\$</span><span style="color:#f92672">{</span>parsedVersion.buildNumber<span style="color:#f92672">}</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    versions:commit
+</code></pre></div><p>Major versiyon yükseltmek isterseniz</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mvn build-helper:parse-version versions:set <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -DnewVersion<span style="color:#f92672">=</span><span style="color:#ae81ff">\$</span><span style="color:#f92672">{</span>parsedVersion.nextMajorVersion<span style="color:#f92672">}</span>.0.0 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    versions:commit
+</code></pre></div><p>Daha detaylı bilgi için aşağıdaki linki kullanabilirsiniz.</p>
+<p><a href="https://www.mojohaus.org/build-helper-maven-plugin/parse-version-mojo.html" title="Build Helper Maven Plugin">https://www.mojohaus.org/build-helper-maven-plugin/parse-version-mojo.html</a></p>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://blog.askin.ws/tags/maven/">Maven</a>&nbsp;
+        
+        <a href="https://blog.askin.ws/tags/programlama/">Programlama</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="https://blog.askin.ws/blog/lets-encrypt-ile-wildcard-ssl-sertifika-olusturma/">
         <h2 class="post-title">Let&#39;s Encrypt ile Wildcard SSL Sertifika Oluşturma</h2>
         
@@ -216,13 +295,13 @@
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;
+  <i class="fas fa-calendar"></i>&nbsp;2021/03/10 tarihinde paylaşıldı
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;dakika
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;202&nbsp;
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;202&nbsp;kelime
   
   
     
@@ -237,7 +316,7 @@
     <div class="post-entry">
         
         <p>Let&rsquo;s Encrypt kullanarak <strong>wildcard</strong> sertifika oluşturabiliyoruz. Normal şartlarda sertifika oluştururken <code>http://domain.com/.well-known</code> altında bir dosya oluşturularak o alan adının sahibi doğrulanıyor. Fakat wildcard sertifika icin işler değişiyor. Bazı <strong>dns</strong> kayıtları girmemiz gerekiyor. Bunu kendimiz yapabileceğimiz gibi bu işi otomatize eden scriptler de kullanabiliyoruz.</p>
-        <a href="https://blog.askin.ws/blog/lets-encrypt-ile-wildcard-ssl-sertifika-olusturma/" class="post-read-more">[]</a>
+        <a href="https://blog.askin.ws/blog/lets-encrypt-ile-wildcard-ssl-sertifika-olusturma/" class="post-read-more">[Daha fazla oku]</a>
         
     </div>
 
@@ -269,13 +348,13 @@
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;
+  <i class="fas fa-calendar"></i>&nbsp;2020/09/12 tarihinde paylaşıldı
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;dakika
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;193&nbsp;
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;193&nbsp;kelime
   
   
     
@@ -295,7 +374,7 @@ kesintisiz hizmet sağlamak için çok yardımcı oluyor. Buna <strong>Parallel
 Deployment</strong> deniyor. Paralel deploy sırasında eğer uygulamanın bir
 önceki versiyonunda oturum açılmışsa istekler oraya gitmeye devam
 ediyor, yeni oturumlar yeni sürüme gitmeye başlıyor.</p>
-        <a href="https://blog.askin.ws/blog/apache-tomcat-parallel-deploy/" class="post-read-more">[]</a>
+        <a href="https://blog.askin.ws/blog/apache-tomcat-parallel-deploy/" class="post-read-more">[Daha fazla oku]</a>
         
     </div>
 
@@ -325,13 +404,13 @@ ediyor, yeni oturumlar yeni sürüme gitmeye başlıyor.</p>
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;
+  <i class="fas fa-calendar"></i>&nbsp;2020/09/04 tarihinde paylaşıldı
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;dakika
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;71&nbsp;
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;71&nbsp;kelime
   
   
     
@@ -385,13 +464,13 @@ yeniden başlatabilirsiniz.</p>
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;
+  <i class="fas fa-calendar"></i>&nbsp;2020/08/25 tarihinde paylaşıldı
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;dakika
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;53&nbsp;
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;53&nbsp;kelime
   
   
     
@@ -442,13 +521,13 @@ kullanıyordum. Emacs 27.0.90 ile birlikte bu özellik yerleşik gelmeye başlad
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;
+  <i class="fas fa-calendar"></i>&nbsp;2019/10/04 tarihinde paylaşıldı
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;dakika
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;91&nbsp;
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;91&nbsp;kelime
   
   
     
@@ -497,13 +576,13 @@ işimi görüyor.</p>
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;
+  <i class="fas fa-calendar"></i>&nbsp;2018/06/07 tarihinde paylaşıldı
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;dakika
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;23&nbsp;
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;23&nbsp;kelime
   
   
     
@@ -538,13 +617,13 @@ işimi görüyor.</p>
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;
+  <i class="fas fa-calendar"></i>&nbsp;2017/02/06 tarihinde paylaşıldı
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;dakika
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;92&nbsp;
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;92&nbsp;kelime
   
   
     
@@ -594,13 +673,13 @@ Daha önceki yazılarımda belirtiğim gibi ssl için startssl kullanıyordum. �
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;
+  <i class="fas fa-calendar"></i>&nbsp;2014/03/11 tarihinde paylaşıldı
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;dakika
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;49&nbsp;
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;49&nbsp;kelime
   
   
     
@@ -635,13 +714,13 @@ Daha önceki yazılarımda belirtiğim gibi ssl için startssl kullanıyordum. �
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;
+  <i class="fas fa-calendar"></i>&nbsp;2013/12/19 tarihinde paylaşıldı
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;dakika
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;124&nbsp;
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;124&nbsp;kelime
   
   
     
@@ -661,7 +740,7 @@ apt-get install slurm Kurulumu tamamladıktan sonra komut satırından ağ trafi
 slurm -i [Ağ Arayüzü] -i parametresi hangi ağ arayüzünün kullanılacanı belirtir.
 slurm -i wlan0 slurm -i eth1 Klavye kısa yolları: Slurm etkileşim için birçok farklı tuşu destekler:
  s split moduna geçiş yapar c klasik moda geçiş yapar l büyük grafik moduna geçer L TX/RX ledini aktif eder m kasik, büyük ve split modları arasında geçiş yapar z sayaçları 0&rsquo;lar r ekranı yeniden çizer q çıkış yapar  Aynı zamanda bu kısayol tuşlarını parametre olarak da verebilirsiniz.
-        <a href="https://blog.askin.ws/blog/slurm-linux-icin-bant-genisligi-takip-araci/" class="post-read-more">[]</a>
+        <a href="https://blog.askin.ws/blog/slurm-linux-icin-bant-genisligi-takip-araci/" class="post-read-more">[Daha fazla oku]</a>
         
     </div>
 
@@ -679,63 +758,6 @@ slurm -i wlan0 slurm -i eth1 Klavye kısa yolları: Slurm etkileşim için birç
 
 </article>
           
-            <article class="post-preview">
-    <a href="https://blog.askin.ws/blog/screen-ile-irssi-kullanim-kilavuzu/">
-        <h2 class="post-title">Screen ile Irssi Kullanım Kılavuzu</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;617&nbsp;
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Aşkın Özgür
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        irssi komut satırından çalışan ve bir çok geliştirici için popüler olan bir IRC istemcisidir. Irssi GNU Screen programı ile birlikte kullanılarak çıkış yapmadan bir veya birden fazla kabuk yaratabilirsiniz. Sürekli biligisayar değiltirip fakat irssi&rsquo;a kaldığınız yerden devam etmek istediğinizde çok kullanılışılır.
-Avantajları:
- Kişiler size mesaj bırakabilir. Siz dışardayken yapılan görüşmeleri sonradan yakalayabilirsiniz (genellikle &ldquo;scroolback&rdquo; olarak adlandırılır).  Yönergeler:
-  Bir adet linux VPS edinin ya da sık sık yeniden başlatılmayacak, ihtiyacınız olan yerden bağlanabileceğiniz *nix makina üzerinde ssh hesabı edinin.
-  Bu hesaba bağlanmak için ssh kullanın. Windowsta PuTTY gibi bir istemci kullanın. Eğer Linux yada Unix temelli bir işletim sistemi kullanıyorsanız zaten ssh kuruludur.
-        <a href="https://blog.askin.ws/blog/screen-ile-irssi-kullanim-kilavuzu/" class="post-read-more">[]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://blog.askin.ws/tags/irc/">irc</a>&nbsp;
-        
-        <a href="https://blog.askin.ws/tags/irssi/">irssi</a>&nbsp;
-        
-        <a href="https://blog.askin.ws/tags/linux/">Linux</a>&nbsp;
-        
-        <a href="https://blog.askin.ws/tags/screen/">screen</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
         </div>
 
         
@@ -743,7 +765,7 @@ Avantajları:
             
             
               <li class="next">
-                <a href="https://blog.askin.ws/page/2/"> &rarr;</a>
+                <a href="https://blog.askin.ws/page/2/">Önceki gönderiler &rarr;</a>
               </li>
             
           </ul>
@@ -869,7 +891,7 @@ Avantajları:
         </p>
         
         <p class="credits theme-by text-muted">
-          
+          <a href="https://gohugo.io">Hugo v0.88.1</a> altyapısı &nbsp;&bull;&nbsp; <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> temasından uyarlanan <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> teması kullanılmaktadır.
           
         </p>
       </div>

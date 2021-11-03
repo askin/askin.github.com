@@ -3,10 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.askin.ws/</loc>
-    <lastmod>2021-03-10T22:00:00+03:00</lastmod>
+    <lastmod>2021-11-03T19:04:25+03:00</lastmod>
   </url><url>
     <loc>https://blog.askin.ws/blog/</loc>
-    <lastmod>2021-03-10T22:00:00+03:00</lastmod>
+    <lastmod>2021-11-03T19:04:25+03:00</lastmod>
+  </url><url>
+    <loc>https://blog.askin.ws/tags/maven/</loc>
+    <lastmod>2021-11-03T19:04:25+03:00</lastmod>
+  </url><url>
+    <loc>https://blog.askin.ws/blog/maven-ile-versiyon-numarasi-guncelleme/</loc>
+    <lastmod>2021-11-03T19:04:25+03:00</lastmod>
+  </url><url>
+    <loc>https://blog.askin.ws/tags/programlama/</loc>
+    <lastmod>2021-11-03T19:04:25+03:00</lastmod>
+  </url><url>
+    <loc>https://blog.askin.ws/tags/</loc>
+    <lastmod>2021-11-03T19:04:25+03:00</lastmod>
   </url><url>
     <loc>https://blog.askin.ws/tags/certificate/</loc>
     <lastmod>2021-03-10T22:00:00+03:00</lastmod>
@@ -23,16 +35,10 @@
     <loc>https://blog.askin.ws/tags/security/</loc>
     <lastmod>2021-03-10T22:00:00+03:00</lastmod>
   </url><url>
-    <loc>https://blog.askin.ws/tags/</loc>
-    <lastmod>2021-03-10T22:00:00+03:00</lastmod>
-  </url><url>
     <loc>https://blog.askin.ws/blog/apache-tomcat-parallel-deploy/</loc>
     <lastmod>2020-09-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.askin.ws/tags/deploy/</loc>
-    <lastmod>2020-09-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.askin.ws/tags/maven/</loc>
     <lastmod>2020-09-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.askin.ws/tags/tomcat/</loc>
@@ -313,9 +319,6 @@
   </url><url>
     <loc>https://blog.askin.ws/blog/solariste-ozyinelemeli-grep/</loc>
     <lastmod>2012-06-06T16:43:00+03:00</lastmod>
-  </url><url>
-    <loc>https://blog.askin.ws/tags/programlama/</loc>
-    <lastmod>2012-04-09T10:48:00+03:00</lastmod>
   </url><url>
     <loc>https://blog.askin.ws/blog/var-olan-bir-svn-deposunun-adresini-degistirme/</loc>
     <lastmod>2012-04-09T10:48:00+03:00</lastmod>

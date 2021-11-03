@@ -57,7 +57,7 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only"></span>
+        <span class="sr-only">Gezinmeyi aktifleştirin</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -199,6 +199,85 @@
         <div class="posts-list">
           
             <article class="post-preview">
+    <a href="https://blog.askin.ws/blog/maven-ile-versiyon-numarasi-guncelleme/">
+        <h2 class="post-title">Maven İle Versiyon Numarası Güncelleme</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;2021/11/03 tarihinde paylaşıldı
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;dakika
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;111&nbsp;kelime
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Aşkın Özgür
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        <p>Bir <code>maven</code> projeniz varsa ve versiyon numarasını güncellemek istiyorsanız, <code>pom.xml</code>i bir editör ile açıp versiyon numarasını güncelleyebileceğiniz gibi, maven kullanarak da bunu yapabilirsiniz.</p>
+<p>Aşağıdaki gibi bir <code>pom.xml</code> dosyaminizin olduğunu düşünelim.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+
+<span style="color:#f92672">&lt;project</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+  <span style="color:#a6e22e">xsi:schemaLocation=</span><span style="color:#e6db74">&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;modelVersion&gt;</span>4.0.0<span style="color:#f92672">&lt;/modelVersion&gt;</span>
+
+  <span style="color:#f92672">&lt;groupId&gt;</span>com.mycompany.app<span style="color:#f92672">&lt;/groupId&gt;</span>
+  <span style="color:#f92672">&lt;artifactId&gt;</span>my-app<span style="color:#f92672">&lt;/artifactId&gt;</span>
+  <span style="color:#f92672">&lt;version&gt;</span>1.0.0<span style="color:#f92672">&lt;/version&gt;</span>
+
+  <span style="color:#f92672">&lt;name&gt;</span>my-app<span style="color:#f92672">&lt;/name&gt;</span>
+<span style="color:#f92672">&lt;/project&gt;</span>
+</code></pre></div><p>Aşağıdaki komut ile <code>1.0.0</code> olan versiyon numarasını <code>1.0.5</code> olarak güncelledik.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mvn versions:set -DnewVersion<span style="color:#f92672">=</span>1.0.5 versions:commit
+</code></pre></div><p>Eğer otomatik olarak versiyon numarasını yükseltmek istersek aşağıdaki komut işimizi görecek.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mvn build-helper:parse-version versions:set <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -DnewVersion<span style="color:#f92672">=</span><span style="color:#ae81ff">\$</span><span style="color:#f92672">{</span>parsedVersion.majorVersion<span style="color:#f92672">}</span>.<span style="color:#ae81ff">\$</span><span style="color:#f92672">{</span>parsedVersion.minorVersion<span style="color:#f92672">}</span>.<span style="color:#ae81ff">\$</span><span style="color:#f92672">{</span>parsedVersion.nextIncrementalVersion<span style="color:#f92672">}</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    versions:commit
+</code></pre></div><p>Artık versiyon numaramız <code>1.0.6</code></p>
+<p>Minör versiyon yükseltmek isterseniz</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mvn build-helper:parse-version <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    versions:set <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -DnewVersion<span style="color:#f92672">=</span><span style="color:#ae81ff">\$</span><span style="color:#f92672">{</span>parsedVersion.majorVersion<span style="color:#f92672">}</span>.<span style="color:#ae81ff">\$</span><span style="color:#f92672">{</span>parsedVersion.nextMinorVersion<span style="color:#f92672">}</span>.<span style="color:#ae81ff">\$</span><span style="color:#f92672">{</span>parsedVersion.buildNumber<span style="color:#f92672">}</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    versions:commit
+</code></pre></div><p>Major versiyon yükseltmek isterseniz</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mvn build-helper:parse-version versions:set <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -DnewVersion<span style="color:#f92672">=</span><span style="color:#ae81ff">\$</span><span style="color:#f92672">{</span>parsedVersion.nextMajorVersion<span style="color:#f92672">}</span>.0.0 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    versions:commit
+</code></pre></div><p>Daha detaylı bilgi için aşağıdaki linki kullanabilirsiniz.</p>
+<p><a href="https://www.mojohaus.org/build-helper-maven-plugin/parse-version-mojo.html" title="Build Helper Maven Plugin">https://www.mojohaus.org/build-helper-maven-plugin/parse-version-mojo.html</a></p>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://blog.askin.ws/tags/maven/">Maven</a>&nbsp;
+        
+        <a href="https://blog.askin.ws/tags/programlama/">Programlama</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="https://blog.askin.ws/blog/apache-tomcat-parallel-deploy/">
         <h2 class="post-title">Apache Tomcat Paralel Deploy</h2>
         
@@ -210,13 +289,13 @@
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;
+  <i class="fas fa-calendar"></i>&nbsp;2020/09/12 tarihinde paylaşıldı
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;dakika
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;193&nbsp;
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;193&nbsp;kelime
   
   
     
@@ -236,7 +315,7 @@ kesintisiz hizmet sağlamak için çok yardımcı oluyor. Buna <strong>Parallel
 Deployment</strong> deniyor. Paralel deploy sırasında eğer uygulamanın bir
 önceki versiyonunda oturum açılmışsa istekler oraya gitmeye devam
 ediyor, yeni oturumlar yeni sürüme gitmeye başlıyor.</p>
-        <a href="https://blog.askin.ws/blog/apache-tomcat-parallel-deploy/" class="post-read-more">[]</a>
+        <a href="https://blog.askin.ws/blog/apache-tomcat-parallel-deploy/" class="post-read-more">[Daha fazla oku]</a>
         
     </div>
 
@@ -369,7 +448,7 @@ ediyor, yeni oturumlar yeni sürüme gitmeye başlıyor.</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          
+          <a href="https://gohugo.io">Hugo v0.88.1</a> altyapısı &nbsp;&bull;&nbsp; <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> temasından uyarlanan <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> teması kullanılmaktadır.
           
         </p>
       </div>

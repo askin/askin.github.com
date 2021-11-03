@@ -7,16 +7,39 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Moc kullanarak konsoldan müzik dinleme ve lastfm - Aşkın Özgür</title>
-  <meta name="description" content="Moc player konsolda çalışan bir müzik çalıcı. Açılımı Music on Console. Mocun en çok sevdiğim özelliği x ortamı yeniden başlasa, kapansa, göçse bile hiç sorun çıkarmadan çalmaya devam ediyor. Yani depremde, selde ve yangında 7*24 hizmet:)
-Kurulum
-* debian - ubuntu - vs.
-sudo apt-get install moc
-* pardus
-sudo pisi it moc
-Şimdi konsoldan
-mocp
-komutunu verelim. Gerçekten renkli şık bi tasarımı var. Grafik ekranı hiç aratmıyor:). Eğer renkleri beğenmezseniz [Shift] &#43; [T] kombinasyonu ile farklı renkler seçebilirsiniz. Bunun bi kötü yanı var moc temayı bir sonraki açılışında hatırlamayacak. Hatırlaması için ~/.moc/config dosyasını oluşturup içeriğini düzenlemeniz gerekiyor. Ben düzenlemedim tam olarak nasıl yapılıyor bilmiyorum.">
+  <title>Maven İle Versiyon Numarası Güncelleme - Aşkın Özgür</title>
+  <meta name="description" content="Bir maven projeniz varsa ve versiyon numarasını güncellemek istiyorsanız, pom.xmli bir editör ile açıp versiyon numarasını güncelleyebileceğiniz gibi, maven kullanarak da bunu yapabilirsiniz.
+Aşağıdaki gibi bir pom.xml dosyaminizin olduğunu düşünelim.
+&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+
+&lt;project xmlns=&#34;http://maven.apache.org/POM/4.0.0&#34; xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34;
+  xsi:schemaLocation=&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+  &lt;groupId&gt;com.mycompany.app&lt;/groupId&gt;
+  &lt;artifactId&gt;my-app&lt;/artifactId&gt;
+  &lt;version&gt;1.0.0&lt;/version&gt;
+
+  &lt;name&gt;my-app&lt;/name&gt;
+&lt;/project&gt;
+Aşağıdaki komut ile 1.0.0 olan versiyon numarasını 1.0.5 olarak güncelledik.
+mvn versions:set -DnewVersion=1.0.5 versions:commit
+Eğer otomatik olarak versiyon numarasını yükseltmek istersek aşağıdaki komut işimizi görecek.
+mvn build-helper:parse-version versions:set \
+    -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion} \
+    versions:commit
+Artık versiyon numaramız 1.0.6
+Minör versiyon yükseltmek isterseniz
+mvn build-helper:parse-version \
+    versions:set \
+    -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.nextMinorVersion}.\${parsedVersion.buildNumber} \
+    versions:commit
+Major versiyon yükseltmek isterseniz
+mvn build-helper:parse-version versions:set \
+    -DnewVersion=\${parsedVersion.nextMajorVersion}.0.0 \
+    versions:commit
+Daha detaylı bilgi için aşağıdaki linki kullanabilirsiniz.
+https://www.mojohaus.org/build-helper-maven-plugin/parse-version-mojo.html">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -52,8 +75,8 @@ komutunu verelim. Gerçekten renkli şık bi tasarımı var. Grafik ekranı hiç
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "https:\/\/blog.askin.ws\/blog\/moc-kullanarak-konsoldan-muzik-dinleme-ve-lastfm\/",
-          "name": "Moc kullanarak konsoldan müzik dinleme ve lastfm"
+          "@id": "https:\/\/blog.askin.ws\/blog\/maven-ile-versiyon-numarasi-guncelleme\/",
+          "name": "Maven ile versiyon numarası güncelleme"
         }
     }]
 }
@@ -64,15 +87,15 @@ komutunu verelim. Gerçekten renkli şık bi tasarımı var. Grafik ekranı hiç
   "author": {
     "name" : "Aşkın Özgür"
   },
-  "headline": "Moc kullanarak konsoldan müzik dinleme ve lastfm",
-  "description" : "Moc player konsolda çalışan bir müzik çalıcı. Açılımı Music on Console. Mocun en çok sevdiğim özelliği x ortamı yeniden başlasa, kapansa, göçse bile hiç sorun çıkarmadan çalmaya devam ediyor. Yani depremde, selde ve yangında 7*24 hizmet:)\nKurulum\n* debian - ubuntu - vs.\nsudo apt-get install moc\n* pardus\nsudo pisi it moc\nŞimdi konsoldan\nmocp\nkomutunu verelim. Gerçekten renkli şık bi tasarımı var. Grafik ekranı hiç aratmıyor:). Eğer renkleri beğenmezseniz [Shift] \u002b [T] kombinasyonu ile farklı renkler seçebilirsiniz. Bunun bi kötü yanı var moc temayı bir sonraki açılışında hatırlamayacak. Hatırlaması için ~\/.moc\/config dosyasını oluşturup içeriğini düzenlemeniz gerekiyor. Ben düzenlemedim tam olarak nasıl yapılıyor bilmiyorum.",
+  "headline": "Maven İle Versiyon Numarası Güncelleme",
+  "description" : "Bir maven projeniz varsa ve versiyon numarasını güncellemek istiyorsanız, pom.xmli bir editör ile açıp versiyon numarasını güncelleyebileceğiniz gibi, maven kullanarak da bunu yapabilirsiniz.\nAşağıdaki gibi bir pom.xml dosyaminizin olduğunu düşünelim.\n\u0026lt;?xml version=\u0026#34;1.0\u0026#34; encoding=\u0026#34;UTF-8\u0026#34;?\u0026gt; \u0026lt;project xmlns=\u0026#34;http:\/\/maven.apache.org\/POM\/4.0.0\u0026#34; xmlns:xsi=\u0026#34;http:\/\/www.w3.org\/2001\/XMLSchema-instance\u0026#34; xsi:schemaLocation=\u0026#34;http:\/\/maven.apache.org\/POM\/4.0.0 http:\/\/maven.apache.org\/xsd\/maven-4.0.0.xsd\u0026#34;\u0026gt; \u0026lt;modelVersion\u0026gt;4.0.0\u0026lt;\/modelVersion\u0026gt; \u0026lt;groupId\u0026gt;com.mycompany.app\u0026lt;\/groupId\u0026gt; \u0026lt;artifactId\u0026gt;my-app\u0026lt;\/artifactId\u0026gt; \u0026lt;version\u0026gt;1.0.0\u0026lt;\/version\u0026gt; \u0026lt;name\u0026gt;my-app\u0026lt;\/name\u0026gt; \u0026lt;\/project\u0026gt; Aşağıdaki komut ile 1.0.0 olan versiyon numarasını 1.0.5 olarak güncelledik.\nmvn versions:set -DnewVersion=1.0.5 versions:commit Eğer otomatik olarak versiyon numarasını yükseltmek istersek aşağıdaki komut işimizi görecek.\nmvn build-helper:parse-version versions:set \\  -DnewVersion=\\${parsedVersion.majorVersion}.\\${parsedVersion.minorVersion}.\\${parsedVersion.nextIncrementalVersion} \\  versions:commit Artık versiyon numaramız 1.0.6\nMinör versiyon yükseltmek isterseniz\nmvn build-helper:parse-version \\  versions:set \\  -DnewVersion=\\${parsedVersion.majorVersion}.\\${parsedVersion.nextMinorVersion}.\\${parsedVersion.buildNumber} \\  versions:commit Major versiyon yükseltmek isterseniz\nmvn build-helper:parse-version versions:set \\  -DnewVersion=\\${parsedVersion.nextMajorVersion}.0.0 \\  versions:commit Daha detaylı bilgi için aşağıdaki linki kullanabilirsiniz.\nhttps:\/\/www.mojohaus.org\/build-helper-maven-plugin\/parse-version-mojo.html\n",
   "inLanguage" : "tr",
-  "wordCount":  365 ,
-  "datePublished" : "2008-06-12T16:25:00",
-  "dateModified" : "2008-06-12T16:25:00",
+  "wordCount":  111 ,
+  "datePublished" : "2021-11-03T19:04:25",
+  "dateModified" : "2021-11-03T19:04:25",
   "image" : "https:\/\/blog.askin.ws\/uploads\/avatar.png",
-  "keywords" : [ "konsol, lastfm, lastfmsubmitd, moc" ],
-  "mainEntityOfPage" : "https:\/\/blog.askin.ws\/blog\/moc-kullanarak-konsoldan-muzik-dinleme-ve-lastfm\/",
+  "keywords" : [ "Maven, Programlama" ],
+  "mainEntityOfPage" : "https:\/\/blog.askin.ws\/blog\/maven-ile-versiyon-numarasi-guncelleme\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "https:\/\/blog.askin.ws",
@@ -86,23 +109,46 @@ komutunu verelim. Gerçekten renkli şık bi tasarımı var. Grafik ekranı hiç
 }
 </script>
 
-<meta property="og:title" content="Moc kullanarak konsoldan müzik dinleme ve lastfm" />
-<meta property="og:description" content="Moc player konsolda çalışan bir müzik çalıcı. Açılımı Music on Console. Mocun en çok sevdiğim özelliği x ortamı yeniden başlasa, kapansa, göçse bile hiç sorun çıkarmadan çalmaya devam ediyor. Yani depremde, selde ve yangında 7*24 hizmet:)
-Kurulum
-* debian - ubuntu - vs.
-sudo apt-get install moc
-* pardus
-sudo pisi it moc
-Şimdi konsoldan
-mocp
-komutunu verelim. Gerçekten renkli şık bi tasarımı var. Grafik ekranı hiç aratmıyor:). Eğer renkleri beğenmezseniz [Shift] &#43; [T] kombinasyonu ile farklı renkler seçebilirsiniz. Bunun bi kötü yanı var moc temayı bir sonraki açılışında hatırlamayacak. Hatırlaması için ~/.moc/config dosyasını oluşturup içeriğini düzenlemeniz gerekiyor. Ben düzenlemedim tam olarak nasıl yapılıyor bilmiyorum.">
+<meta property="og:title" content="Maven İle Versiyon Numarası Güncelleme" />
+<meta property="og:description" content="Bir maven projeniz varsa ve versiyon numarasını güncellemek istiyorsanız, pom.xmli bir editör ile açıp versiyon numarasını güncelleyebileceğiniz gibi, maven kullanarak da bunu yapabilirsiniz.
+Aşağıdaki gibi bir pom.xml dosyaminizin olduğunu düşünelim.
+&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+
+&lt;project xmlns=&#34;http://maven.apache.org/POM/4.0.0&#34; xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34;
+  xsi:schemaLocation=&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+  &lt;groupId&gt;com.mycompany.app&lt;/groupId&gt;
+  &lt;artifactId&gt;my-app&lt;/artifactId&gt;
+  &lt;version&gt;1.0.0&lt;/version&gt;
+
+  &lt;name&gt;my-app&lt;/name&gt;
+&lt;/project&gt;
+Aşağıdaki komut ile 1.0.0 olan versiyon numarasını 1.0.5 olarak güncelledik.
+mvn versions:set -DnewVersion=1.0.5 versions:commit
+Eğer otomatik olarak versiyon numarasını yükseltmek istersek aşağıdaki komut işimizi görecek.
+mvn build-helper:parse-version versions:set \
+    -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion} \
+    versions:commit
+Artık versiyon numaramız 1.0.6
+Minör versiyon yükseltmek isterseniz
+mvn build-helper:parse-version \
+    versions:set \
+    -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.nextMinorVersion}.\${parsedVersion.buildNumber} \
+    versions:commit
+Major versiyon yükseltmek isterseniz
+mvn build-helper:parse-version versions:set \
+    -DnewVersion=\${parsedVersion.nextMajorVersion}.0.0 \
+    versions:commit
+Daha detaylı bilgi için aşağıdaki linki kullanabilirsiniz.
+https://www.mojohaus.org/build-helper-maven-plugin/parse-version-mojo.html">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
-<meta property="og:url" content="https://blog.askin.ws/blog/moc-kullanarak-konsoldan-muzik-dinleme-ve-lastfm/" />
+<meta property="og:url" content="https://blog.askin.ws/blog/maven-ile-versiyon-numarasi-guncelleme/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Aşkın Özgür" />
 
-  <meta name="twitter:title" content="Moc kullanarak konsoldan müzik dinleme ve lastfm" />
-  <meta name="twitter:description" content="Moc player konsolda çalışan bir müzik çalıcı. Açılımı Music on Console. Mocun en çok sevdiğim özelliği x ortamı yeniden başlasa, kapansa, göçse bile hiç sorun çıkarmadan çalmaya devam ediyor. Yani …">
+  <meta name="twitter:title" content="Maven İle Versiyon Numarası Güncelleme" />
+  <meta name="twitter:description" content="Bir maven projeniz varsa ve versiyon numarasını güncellemek istiyorsanız, pom.xmli bir editör ile açıp versiyon numarasını güncelleyebileceğiniz gibi, maven kullanarak da bunu yapabilirsiniz. …">
   <meta name="twitter:image" content="https://blog.askin.ws/uploads/avatar.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@kelebeks" />
@@ -243,7 +289,7 @@ komutunu verelim. Gerçekten renkli şık bi tasarımı var. Grafik ekranı hiç
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="blog-heading">
               
-                <h1>Moc kullanarak konsoldan müzik dinleme ve lastfm</h1>
+                <h1>Maven İle Versiyon Numarası Güncelleme</h1>
               
               
                 <hr class="small">
@@ -263,61 +309,45 @@ komutunu verelim. Gerçekten renkli şık bi tasarımı var. Grafik ekranı hiç
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p><a href="http://moc.daper.net/">Moc</a> player konsolda çalışan bir müzik çalıcı. Açılımı Music on Console. Mocun en çok sevdiğim özelliği x ortamı yeniden başlasa, kapansa, göçse bile hiç sorun çıkarmadan çalmaya devam ediyor. Yani depremde, selde ve yangında 7*24 hizmet:)<br>
-<strong>Kurulum</strong><br>
-* debian - ubuntu - vs.<br>
-<code>sudo apt-get install moc</code></p>
-<p>* pardus<br>
-<code>sudo pisi it moc</code></p>
-<p>Şimdi konsoldan<br>
-<code>mocp</code><br>
-komutunu verelim. Gerçekten renkli şık bi tasarımı var. Grafik ekranı hiç aratmıyor:). Eğer renkleri beğenmezseniz <strong>[Shift] + [T]</strong> kombinasyonu ile farklı renkler seçebilirsiniz. Bunun bi kötü yanı var moc temayı bir sonraki açılışında hatırlamayacak. Hatırlaması için <em>~/.moc/config</em> dosyasını oluşturup içeriğini düzenlemeniz gerekiyor. Ben düzenlemedim tam olarak nasıl yapılıyor bilmiyorum. Bunun için <a href="http://dreamore.wordpress.com/2007/07/01/konsol-fantazyasi-3/">burayı</a> biraz zorlasanız fena olmaz.</p>
-<!-- raw HTML omitted -->
-<p>Tamamdır olay çözüldü. <a href="/uploads/2008/06/config.example">Burdan</a> benim config dosyamı indirebilirsiniz. Yapmanız gereken bu dosyayı <em>~/.moc/</em> dizinine <em>config</em> adı ile kaydetmek.<br>
-Aşağıda config dosyasına bi satır daha eklemeniz gerekiyor. bu örnek dosyada o satır eklenmiş durumda. Eğer Bu örnek dosyadı kullanırsanız o adımı atlayabilirsiniz.</p>
-<!-- raw HTML omitted -->
-<p>Şimdi gelelim moc ile dinlediğimiz parçaların last.fm&rsquo;e gönderilmesine.<br>
-Bunun için lastfmsubmitd adında bir program kullanacağız. Bu program deamon olarak çalışarak göndermesini istediğimiz bilgileri last.fm&rsquo;e yollamayı kendine amaç edinmiş bir servis.</p>
-<p><strong>Kurulum:</strong>:<br>
-* debian - ubuntu - vs.<br>
-<code>sudo apt-get install lastfmsubmitd</code></p>
-<p>* pardus (varlığından emin değilim)<br>
-<code>sudo pisi it lastfmsubmitd</code></p>
-<p>kurulum sırasında sizden lastfmde kullandığınız kullanıcı adı ve şifresi isteniyor. Eğer bu sırada yanlış girdiyseniz <em>/etc/lastfmsubmitd.conf</em> dosyasını düzenleyebilirsiniz. Kurulum sırasında <em>lastfm</em> adında bir kullanıcı ve grup yaratılacak. Güvenlik açısından bu dosyanın sahibinin <em>lastfm</em> olduğunu ve iznininde 0600 olduğuna emin olun. Yoksa herhangi birisi<br>
-<code>cat /etc/lastfmsubmitd.conf </code><br>
-komutu ile lastfm kullanıcı adınızı ve şifrenizi elegeçirebilir.</p>
-<p><code>sudo addgroup kullanici_adi lastfm</code><br>
-komutu ile kullanıcı adınızı <em>lastfm</em> grubuna ekleyin.</p>
-<!-- raw HTML omitted -->
-<p>ubuntuda kullanıcı adının gruba eklenmesi için sistemi yeniden başlatmam gerekiyor. sanırım benim eksik yaptığım birşeyler var:( bu nedenle eğer last.fm e şarkıları yollayamıyorsanız sistemi yeniden başlatmayı deneyin(ama şimdi değil daha yapacaklarımız var).</p>
-<!-- raw HTML omitted -->
-<p>Bir metin düzenleyici ile <em>~/.moc/config</em> dosyasını açın ve içine</p>
-<p><code>OnSongChange = &quot;/usr/lib/lastfmsubmitd/lastfmsubmit --artist %a --title %t --length %d --album %b&quot;</code></p>
-<p>satırını ekleyin.</p>
-<p><strong>Lastfmsubmitd servisini başlatın.</strong><br>
-* debian - ubuntu - vs.<br>
-<code>sudo /etc/init.d/lastfmsubmitd start</code></p>
-<p>* pardus<br>
-<code>service lastfmsubmitd start</code></p>
-<p>Eğer sorunlarınız olursa yazıyı baştan birdaha okuyun. Hala sorunlarınız devam ediyorsa aşağıdaki kaynaklara bir göz atın, ve hala sorunları çözemediyseniz yorum yazın:)</p>
-<p><strong>Kaynaklar</strong>:</p>
-<ul>
-<li><a href="http://dreamore.wordpress.com/2007/07/01/konsol-fantazyasi-3/">Dreamore</a></li>
-<li><a href="http://devnulll.blogspot.com/2007/08/how-to-submit-songs-to-lastfm-whilst_03.html">/home/plb</a></li>
-<li><a href="http://wiki.linux-sevenler.org/index.php/Mpd">Lapis Wiki</a></li>
-</ul>
+        <p>Bir <code>maven</code> projeniz varsa ve versiyon numarasını güncellemek istiyorsanız, <code>pom.xml</code>i bir editör ile açıp versiyon numarasını güncelleyebileceğiniz gibi, maven kullanarak da bunu yapabilirsiniz.</p>
+<p>Aşağıdaki gibi bir <code>pom.xml</code> dosyaminizin olduğunu düşünelim.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 
+<span style="color:#f92672">&lt;project</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+  <span style="color:#a6e22e">xsi:schemaLocation=</span><span style="color:#e6db74">&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;modelVersion&gt;</span>4.0.0<span style="color:#f92672">&lt;/modelVersion&gt;</span>
+
+  <span style="color:#f92672">&lt;groupId&gt;</span>com.mycompany.app<span style="color:#f92672">&lt;/groupId&gt;</span>
+  <span style="color:#f92672">&lt;artifactId&gt;</span>my-app<span style="color:#f92672">&lt;/artifactId&gt;</span>
+  <span style="color:#f92672">&lt;version&gt;</span>1.0.0<span style="color:#f92672">&lt;/version&gt;</span>
+
+  <span style="color:#f92672">&lt;name&gt;</span>my-app<span style="color:#f92672">&lt;/name&gt;</span>
+<span style="color:#f92672">&lt;/project&gt;</span>
+</code></pre></div><p>Aşağıdaki komut ile <code>1.0.0</code> olan versiyon numarasını <code>1.0.5</code> olarak güncelledik.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mvn versions:set -DnewVersion<span style="color:#f92672">=</span>1.0.5 versions:commit
+</code></pre></div><p>Eğer otomatik olarak versiyon numarasını yükseltmek istersek aşağıdaki komut işimizi görecek.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mvn build-helper:parse-version versions:set <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -DnewVersion<span style="color:#f92672">=</span><span style="color:#ae81ff">\$</span><span style="color:#f92672">{</span>parsedVersion.majorVersion<span style="color:#f92672">}</span>.<span style="color:#ae81ff">\$</span><span style="color:#f92672">{</span>parsedVersion.minorVersion<span style="color:#f92672">}</span>.<span style="color:#ae81ff">\$</span><span style="color:#f92672">{</span>parsedVersion.nextIncrementalVersion<span style="color:#f92672">}</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    versions:commit
+</code></pre></div><p>Artık versiyon numaramız <code>1.0.6</code></p>
+<p>Minör versiyon yükseltmek isterseniz</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mvn build-helper:parse-version <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    versions:set <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -DnewVersion<span style="color:#f92672">=</span><span style="color:#ae81ff">\$</span><span style="color:#f92672">{</span>parsedVersion.majorVersion<span style="color:#f92672">}</span>.<span style="color:#ae81ff">\$</span><span style="color:#f92672">{</span>parsedVersion.nextMinorVersion<span style="color:#f92672">}</span>.<span style="color:#ae81ff">\$</span><span style="color:#f92672">{</span>parsedVersion.buildNumber<span style="color:#f92672">}</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    versions:commit
+</code></pre></div><p>Major versiyon yükseltmek isterseniz</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mvn build-helper:parse-version versions:set <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -DnewVersion<span style="color:#f92672">=</span><span style="color:#ae81ff">\$</span><span style="color:#f92672">{</span>parsedVersion.nextMajorVersion<span style="color:#f92672">}</span>.0.0 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    versions:commit
+</code></pre></div><p>Daha detaylı bilgi için aşağıdaki linki kullanabilirsiniz.</p>
+<p><a href="https://www.mojohaus.org/build-helper-maven-plugin/parse-version-mojo.html" title="Build Helper Maven Plugin">https://www.mojohaus.org/build-helper-maven-plugin/parse-version-mojo.html</a></p>
 
         
           <div class="blog-tags">
             
-              <a href="https://blog.askin.ws/tags/konsol/">konsol</a>&nbsp;
+              <a href="https://blog.askin.ws/tags/maven/">Maven</a>&nbsp;
             
-              <a href="https://blog.askin.ws/tags/lastfm/">lastfm</a>&nbsp;
-            
-              <a href="https://blog.askin.ws/tags/lastfmsubmitd/">lastfmsubmitd</a>&nbsp;
-            
-              <a href="https://blog.askin.ws/tags/moc/">moc</a>&nbsp;
+              <a href="https://blog.askin.ws/tags/programlama/">Programlama</a>&nbsp;
             
           </div>
         
@@ -332,42 +362,42 @@ komutu ile kullanıcı adınızı <em>lastfm</em> grubuna ekleyin.</p>
     <ul class="share">
       
       <li>
-        <a href="//twitter.com/share?url=https%3a%2f%2fblog.askin.ws%2fblog%2fmoc-kullanarak-konsoldan-muzik-dinleme-ve-lastfm%2f&amp;text=Moc%20kullanarak%20konsoldan%20m%c3%bczik%20dinleme%20ve%20lastfm&amp;via=kelebeks" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2fblog.askin.ws%2fblog%2fmaven-ile-versiyon-numarasi-guncelleme%2f&amp;text=Maven%20%c4%b0le%20Versiyon%20Numaras%c4%b1%20G%c3%bcncelleme&amp;via=kelebeks" target="_blank" title="Share on Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.askin.ws%2fblog%2fmoc-kullanarak-konsoldan-muzik-dinleme-ve-lastfm%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.askin.ws%2fblog%2fmaven-ile-versiyon-numarasi-guncelleme%2f" target="_blank" title="Share on Facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//reddit.com/submit?url=https%3a%2f%2fblog.askin.ws%2fblog%2fmoc-kullanarak-konsoldan-muzik-dinleme-ve-lastfm%2f&amp;title=Moc%20kullanarak%20konsoldan%20m%c3%bczik%20dinleme%20ve%20lastfm" target="_blank" title="Share on Reddit">
+        <a href="//reddit.com/submit?url=https%3a%2f%2fblog.askin.ws%2fblog%2fmaven-ile-versiyon-numarasi-guncelleme%2f&amp;title=Maven%20%c4%b0le%20Versiyon%20Numaras%c4%b1%20G%c3%bcncelleme" target="_blank" title="Share on Reddit">
           <i class="fab fa-reddit"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fblog.askin.ws%2fblog%2fmoc-kullanarak-konsoldan-muzik-dinleme-ve-lastfm%2f&amp;title=Moc%20kullanarak%20konsoldan%20m%c3%bczik%20dinleme%20ve%20lastfm" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fblog.askin.ws%2fblog%2fmaven-ile-versiyon-numarasi-guncelleme%2f&amp;title=Maven%20%c4%b0le%20Versiyon%20Numaras%c4%b1%20G%c3%bcncelleme" target="_blank" title="Share on LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fblog.askin.ws%2fblog%2fmoc-kullanarak-konsoldan-muzik-dinleme-ve-lastfm%2f&amp;title=Moc%20kullanarak%20konsoldan%20m%c3%bczik%20dinleme%20ve%20lastfm" target="_blank" title="Share on StumbleUpon">
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fblog.askin.ws%2fblog%2fmaven-ile-versiyon-numarasi-guncelleme%2f&amp;title=Maven%20%c4%b0le%20Versiyon%20Numaras%c4%b1%20G%c3%bcncelleme" target="_blank" title="Share on StumbleUpon">
           <i class="fab fa-stumbleupon"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fblog.askin.ws%2fblog%2fmoc-kullanarak-konsoldan-muzik-dinleme-ve-lastfm%2f&amp;description=Moc%20kullanarak%20konsoldan%20m%c3%bczik%20dinleme%20ve%20lastfm" target="_blank" title="Share on Pinterest">
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fblog.askin.ws%2fblog%2fmaven-ile-versiyon-numarasi-guncelleme%2f&amp;description=Maven%20%c4%b0le%20Versiyon%20Numaras%c4%b1%20G%c3%bcncelleme" target="_blank" title="Share on Pinterest">
           <i class="fab fa-pinterest"></i>
         </a>
       </li>
@@ -389,7 +419,13 @@ komutu ile kullanıcı adınızı <em>lastfm</em> grubuna ekleyin.</p>
                   <ul>
                 
                 
-                    <li><a href="/blog/sacmalayan-konsol-ekranini-temizleme/">Saçmalayan konsol ekranını temizleme</a></li>
+                    <li><a href="/blog/var-olan-bir-svn-deposunun-adresini-degistirme/">Var olan bir SVN deposunun adresini değiştirme</a></li>
+                
+                    <li><a href="/blog/python-fonksiyona-parametre-olarak-fonksiyon-gecirmek/">Python, Fonksiyona Parametre Olarak Fonksiyon Geçirmek</a></li>
+                
+                    <li><a href="/blog/pygtk-ve-thread-sorunu/">PyGtk ve Thread Sorunu</a></li>
+                
+                    <li><a href="/blog/cikmaz-demeyin-sansinizi-deneyin-2/">Çıkmaz demeyin şansınızı deneyin - 2</a></li>
                 
               </ul>
 
@@ -401,13 +437,9 @@ komutu ile kullanıcı adınızı <em>lastfm</em> grubuna ekleyin.</p>
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://blog.askin.ws/blog/linux-bir-dizin-yada-dosyanin-hangi-uygulama-tarafindan-kullanildigini-ogrenme/" data-toggle="tooltip" data-placement="top" title="Linux - Bir dizin yada dosyanın hangi uygulama tarafından kullanıldığını öğrenme">&larr; Önceki gönderi</a>
+              <a href="https://blog.askin.ws/blog/lets-encrypt-ile-wildcard-ssl-sertifika-olusturma/" data-toggle="tooltip" data-placement="top" title="Let&#39;s Encrypt ile Wildcard SSL Sertifika Oluşturma">&larr; Önceki gönderi</a>
             </li>
           
-          
-            <li class="next">
-              <a href="https://blog.askin.ws/blog/ilk-deb-paketim/" data-toggle="tooltip" data-placement="top" title="İlk .deb paketim">Sonraki gönderi &rarr;</a>
-            </li>
           
         </ul>
       

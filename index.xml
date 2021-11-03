@@ -8,7 +8,47 @@
     <language>tr-TR</language>
     <managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor>
     <webMaster>askin@askin.ws (Aşkın Özgür)</webMaster>
-    <lastBuildDate>Wed, 10 Mar 2021 22:00:00 +0300</lastBuildDate><atom:link href="https://blog.askin.ws/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 03 Nov 2021 19:04:25 +0300</lastBuildDate><atom:link href="https://blog.askin.ws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Maven İle Versiyon Numarası Güncelleme</title>
+      <link>https://blog.askin.ws/blog/maven-ile-versiyon-numarasi-guncelleme/</link>
+      <pubDate>Wed, 03 Nov 2021 19:04:25 +0300</pubDate>
+      <author>askin@askin.ws (Aşkın Özgür)</author>
+      <guid>https://blog.askin.ws/blog/maven-ile-versiyon-numarasi-guncelleme/</guid>
+      <description>&lt;p&gt;Bir &lt;code&gt;maven&lt;/code&gt; projeniz varsa ve versiyon numarasını güncellemek istiyorsanız, &lt;code&gt;pom.xml&lt;/code&gt;i bir editör ile açıp versiyon numarasını güncelleyebileceğiniz gibi, maven kullanarak da bunu yapabilirsiniz.&lt;/p&gt;
+&lt;p&gt;Aşağıdaki gibi bir &lt;code&gt;pom.xml&lt;/code&gt; dosyaminizin olduğunu düşünelim.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;&lt;/span&gt;
+
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;project&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;xmlns=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://maven.apache.org/POM/4.0.0&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;xmlns:xsi=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34;&lt;/span&gt;
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;xsi:schemaLocation=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;modelVersion&amp;gt;&lt;/span&gt;4.0.0&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/modelVersion&amp;gt;&lt;/span&gt;
+
+  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;com.mycompany.app&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;my-app&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.0.0&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+
+  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;name&amp;gt;&lt;/span&gt;my-app&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/name&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/project&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Aşağıdaki komut ile &lt;code&gt;1.0.0&lt;/code&gt; olan versiyon numarasını &lt;code&gt;1.0.5&lt;/code&gt; olarak güncelledik.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;mvn versions:set -DnewVersion&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;1.0.5 versions:commit
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Eğer otomatik olarak versiyon numarasını yükseltmek istersek aşağıdaki komut işimizi görecek.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;mvn build-helper:parse-version versions:set &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;    -DnewVersion&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\$&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;parsedVersion.majorVersion&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;.&lt;span style=&#34;color:#ae81ff&#34;&gt;\$&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;parsedVersion.minorVersion&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;.&lt;span style=&#34;color:#ae81ff&#34;&gt;\$&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;parsedVersion.nextIncrementalVersion&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;    versions:commit
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Artık versiyon numaramız &lt;code&gt;1.0.6&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Minör versiyon yükseltmek isterseniz&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;mvn build-helper:parse-version &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;    versions:set &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;    -DnewVersion&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\$&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;parsedVersion.majorVersion&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;.&lt;span style=&#34;color:#ae81ff&#34;&gt;\$&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;parsedVersion.nextMinorVersion&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;.&lt;span style=&#34;color:#ae81ff&#34;&gt;\$&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;parsedVersion.buildNumber&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;    versions:commit
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Major versiyon yükseltmek isterseniz&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;mvn build-helper:parse-version versions:set &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;    -DnewVersion&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\$&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;parsedVersion.nextMajorVersion&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;.0.0 &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;    versions:commit
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Daha detaylı bilgi için aşağıdaki linki kullanabilirsiniz.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.mojohaus.org/build-helper-maven-plugin/parse-version-mojo.html&#34; title=&#34;Build Helper Maven Plugin&#34;&gt;https://www.mojohaus.org/build-helper-maven-plugin/parse-version-mojo.html&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Let&#39;s Encrypt ile Wildcard SSL Sertifika Oluşturma</title>
       <link>https://blog.askin.ws/blog/lets-encrypt-ile-wildcard-ssl-sertifika-olusturma/</link>
