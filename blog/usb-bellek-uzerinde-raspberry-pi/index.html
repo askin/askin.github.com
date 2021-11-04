@@ -10,9 +10,22 @@
   <title>Usb bellek üzerinde Raspberry PI - Aşkın Özgür</title>
   <meta name="description" content="Malesef sd kart olmadan raspberry pi&rsquo;yı boot etmemiz mümkün olmuyor. Benim elimde 1GB&rsquo;lık bir sd kart vardı ve 2GB dan daha ufak imaj dosyaları bulamadım. Bu nedenle usb bellek ile boot etme ihtiyacı duydum.
 Benim sistemimde usb bellek ve sd kart aşağıdaki şekilde tanındı:
- usb: /dev/sdd sd: /dev/sde  Öncelikle indirdiğimiz imaj dosyasını usb belleğimize kopyalıyoruz
-dd if=2013-02-09-wheezy-raspbian.img of=/dev/sdd  Elimizde bulunan sd karta 1 adet fat32 bölüm oluşturuyoruz (oluşturduğunuz bölüm hem ilk sırada hem de birincil bir bölüm olmalı). Bunu ister Gparted gibi bir araçla yapın isterseniz fdisk kullanın. Bölümleme işlemlerini yaptıktan sonra aşağıdaki komutları uygulayın.
-mkdir /tmp/mnt_sd /tmp/mnt_usb mount /dev/sdd1 /tmp/mnt_usb mount /dev/sde1 /tmp/mnt_sd cp /tmp/mnt_usb/* /tmp/mnt_sd  Bu işlemleri yaptıktan sonra /tmp/mnt_sd/cmdline.">
+
+usb: /dev/sdd
+sd: /dev/sde
+
+Öncelikle indirdiğimiz imaj dosyasını usb belleğimize kopyalıyoruz
+dd if=2013-02-09-wheezy-raspbian.img of=/dev/sdd
+
+Elimizde bulunan sd karta 1 adet fat32 bölüm oluşturuyoruz (oluşturduğunuz bölüm hem ilk sırada hem de birincil bir bölüm olmalı). Bunu ister Gparted gibi bir araçla yapın isterseniz fdisk kullanın. Bölümleme işlemlerini yaptıktan sonra aşağıdaki komutları uygulayın.
+mkdir /tmp/mnt_sd /tmp/mnt_usb
+mount /dev/sdd1 /tmp/mnt_usb
+mount /dev/sde1 /tmp/mnt_sd
+
+cp /tmp/mnt_usb/* /tmp/mnt_sd
+
+Bu işlemleri yaptıktan sonra /tmp/mnt_sd/cmdline.txt dosyasını düzenlememiz gerekmekte. Bu dosyada root=/dev/mmcblk0p2 olan kısmı root=/dev/sda2 olarak değiştirin.
+Kaynak">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -61,7 +74,7 @@ mkdir /tmp/mnt_sd /tmp/mnt_usb mount /dev/sdd1 /tmp/mnt_usb mount /dev/sde1 /tmp
     "name" : "Aşkın Özgür"
   },
   "headline": "Usb bellek üzerinde Raspberry PI",
-  "description" : "Malesef sd kart olmadan raspberry pi\u0026rsquo;yı boot etmemiz mümkün olmuyor. Benim elimde 1GB\u0026rsquo;lık bir sd kart vardı ve 2GB dan daha ufak imaj dosyaları bulamadım. Bu nedenle usb bellek ile boot etme ihtiyacı duydum.\nBenim sistemimde usb bellek ve sd kart aşağıdaki şekilde tanındı:\n usb: \/dev\/sdd sd: \/dev\/sde  Öncelikle indirdiğimiz imaj dosyasını usb belleğimize kopyalıyoruz\ndd if=2013-02-09-wheezy-raspbian.img of=\/dev\/sdd  Elimizde bulunan sd karta 1 adet fat32 bölüm oluşturuyoruz (oluşturduğunuz bölüm hem ilk sırada hem de birincil bir bölüm olmalı). Bunu ister Gparted gibi bir araçla yapın isterseniz fdisk kullanın. Bölümleme işlemlerini yaptıktan sonra aşağıdaki komutları uygulayın.\nmkdir \/tmp\/mnt_sd \/tmp\/mnt_usb mount \/dev\/sdd1 \/tmp\/mnt_usb mount \/dev\/sde1 \/tmp\/mnt_sd cp \/tmp\/mnt_usb\/* \/tmp\/mnt_sd  Bu işlemleri yaptıktan sonra \/tmp\/mnt_sd\/cmdline.",
+  "description" : "Malesef sd kart olmadan raspberry pi\u0026rsquo;yı boot etmemiz mümkün olmuyor. Benim elimde 1GB\u0026rsquo;lık bir sd kart vardı ve 2GB dan daha ufak imaj dosyaları bulamadım. Bu nedenle usb bellek ile boot etme ihtiyacı duydum.\nBenim sistemimde usb bellek ve sd kart aşağıdaki şekilde tanındı:\n usb: \/dev\/sdd sd: \/dev\/sde  Öncelikle indirdiğimiz imaj dosyasını usb belleğimize kopyalıyoruz\ndd if=2013-02-09-wheezy-raspbian.img of=\/dev\/sdd  Elimizde bulunan sd karta 1 adet fat32 bölüm oluşturuyoruz (oluşturduğunuz bölüm hem ilk sırada hem de birincil bir bölüm olmalı). Bunu ister Gparted gibi bir araçla yapın isterseniz fdisk kullanın. Bölümleme işlemlerini yaptıktan sonra aşağıdaki komutları uygulayın.\nmkdir \/tmp\/mnt_sd \/tmp\/mnt_usb mount \/dev\/sdd1 \/tmp\/mnt_usb mount \/dev\/sde1 \/tmp\/mnt_sd cp \/tmp\/mnt_usb\/* \/tmp\/mnt_sd  Bu işlemleri yaptıktan sonra \/tmp\/mnt_sd\/cmdline.txt dosyasını düzenlememiz gerekmekte. Bu dosyada root=\/dev\/mmcblk0p2 olan kısmı root=\/dev\/sda2 olarak değiştirin.\nKaynak\n",
   "inLanguage" : "tr",
   "wordCount":  124 ,
   "datePublished" : "2013-03-24T20:39:00",
@@ -85,9 +98,22 @@ mkdir /tmp/mnt_sd /tmp/mnt_usb mount /dev/sdd1 /tmp/mnt_usb mount /dev/sde1 /tmp
 <meta property="og:title" content="Usb bellek üzerinde Raspberry PI" />
 <meta property="og:description" content="Malesef sd kart olmadan raspberry pi&rsquo;yı boot etmemiz mümkün olmuyor. Benim elimde 1GB&rsquo;lık bir sd kart vardı ve 2GB dan daha ufak imaj dosyaları bulamadım. Bu nedenle usb bellek ile boot etme ihtiyacı duydum.
 Benim sistemimde usb bellek ve sd kart aşağıdaki şekilde tanındı:
- usb: /dev/sdd sd: /dev/sde  Öncelikle indirdiğimiz imaj dosyasını usb belleğimize kopyalıyoruz
-dd if=2013-02-09-wheezy-raspbian.img of=/dev/sdd  Elimizde bulunan sd karta 1 adet fat32 bölüm oluşturuyoruz (oluşturduğunuz bölüm hem ilk sırada hem de birincil bir bölüm olmalı). Bunu ister Gparted gibi bir araçla yapın isterseniz fdisk kullanın. Bölümleme işlemlerini yaptıktan sonra aşağıdaki komutları uygulayın.
-mkdir /tmp/mnt_sd /tmp/mnt_usb mount /dev/sdd1 /tmp/mnt_usb mount /dev/sde1 /tmp/mnt_sd cp /tmp/mnt_usb/* /tmp/mnt_sd  Bu işlemleri yaptıktan sonra /tmp/mnt_sd/cmdline.">
+
+usb: /dev/sdd
+sd: /dev/sde
+
+Öncelikle indirdiğimiz imaj dosyasını usb belleğimize kopyalıyoruz
+dd if=2013-02-09-wheezy-raspbian.img of=/dev/sdd
+
+Elimizde bulunan sd karta 1 adet fat32 bölüm oluşturuyoruz (oluşturduğunuz bölüm hem ilk sırada hem de birincil bir bölüm olmalı). Bunu ister Gparted gibi bir araçla yapın isterseniz fdisk kullanın. Bölümleme işlemlerini yaptıktan sonra aşağıdaki komutları uygulayın.
+mkdir /tmp/mnt_sd /tmp/mnt_usb
+mount /dev/sdd1 /tmp/mnt_usb
+mount /dev/sde1 /tmp/mnt_sd
+
+cp /tmp/mnt_usb/* /tmp/mnt_sd
+
+Bu işlemleri yaptıktan sonra /tmp/mnt_sd/cmdline.txt dosyasını düzenlememiz gerekmekte. Bu dosyada root=/dev/mmcblk0p2 olan kısmı root=/dev/sda2 olarak değiştirin.
+Kaynak">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
 <meta property="og:url" content="https://blog.askin.ws/blog/usb-bellek-uzerinde-raspberry-pi/" />
 <meta property="og:type" content="website" />
@@ -273,7 +299,6 @@ cp /tmp/mnt_usb/* /tmp/mnt_sd
 </code></pre>
 <p>Bu işlemleri yaptıktan sonra /tmp/mnt_sd/cmdline.txt dosyasını düzenlememiz gerekmekte. Bu dosyada <em>root=/dev/mmcblk0p2</em> olan kısmı <em>root=/dev/sda2</em> olarak değiştirin.</p>
 <p><a href="http://www.networkinghowtos.com/howto/raspbian-on-raspberry-pi-using-sd-card-usb-memory-stick/">Kaynak</a></p>
-
 
         
           <div class="blog-tags">

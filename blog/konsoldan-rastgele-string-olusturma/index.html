@@ -9,9 +9,14 @@
 
   <title>Konsoldan Rastgele String Oluşturma - Aşkın Özgür</title>
   <meta name="description" content="Konsoldan rastgele stringler oluşturmak için bir çok yöntem var, bunların bir çoğu random ve urandom aygıtlarını kullanıyor. Benim şimdi anlatacağım yöntemle urandom aygıtını kullanıyoruz.
-&lt; /dev/urandom tr -dc A-Za-z0-9 Burada tr komutuna standart girdi olarak /dev/urandom aygıtını gösteriyoruz. urandom rastgele değerler üretir, bu üretilen değerlerin bazıları yazdırılabilir bazıları da yazdırılamayan karakterlere denk gelir. Biz tr komutu ile bu rastgele üretilen değerlerden alfanümerik olanları ayıklıyoruz. Tabi bu komut sonsuza kadar çıktı üretir, sadece istediğimiz kadarını almak için head komutunu kullanabiliriz.
-&lt; /dev/urandom tr -dc A-Za-z0-9 | head -c32 Bu komutla çıktının ilk 32 karakterini alıyoruz.
-tr kullanarak yapacaklarımızın limiti hayal gücümüz kadar.">
+&lt; /dev/urandom tr -dc A-Za-z0-9
+Burada tr komutuna standart girdi olarak /dev/urandom aygıtını gösteriyoruz. urandom rastgele değerler üretir, bu üretilen değerlerin bazıları yazdırılabilir bazıları da yazdırılamayan karakterlere denk gelir. Biz tr komutu ile bu rastgele üretilen değerlerden alfanümerik olanları ayıklıyoruz. Tabi bu komut sonsuza kadar çıktı üretir, sadece istediğimiz kadarını almak için head komutunu kullanabiliriz.
+&lt; /dev/urandom tr -dc A-Za-z0-9 | head -c32
+Bu komutla çıktının ilk 32 karakterini alıyoruz.
+tr kullanarak yapacaklarımızın limiti hayal gücümüz kadar. Mesela sadece sol elimizi kullanarak girebileceğiniz bir parola üretmek istiyoruz. Aşağıdaki komut bunu üretecektir :)
+&lt; /dev/urandom tr -dc &#39;12345!@#$%qwertQWERTasdfgASDFGzxcvbZXCVB&#39; | head -c8
+[1] adresinde konsoldan rastgele string üretmek için 10 farklı yol gösterilmiş. Ufuk genişletmek için faydalı bir yazı bence.
+[1] http://www.howtogeek.com/howto/30184/10-ways-to-generate-a-random-password-from-the-command-line/">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -60,7 +65,7 @@ tr kullanarak yapacaklarımızın limiti hayal gücümüz kadar.">
     "name" : "Aşkın Özgür"
   },
   "headline": "Konsoldan Rastgele String Oluşturma",
-  "description" : "Konsoldan rastgele stringler oluşturmak için bir çok yöntem var, bunların bir çoğu random ve urandom aygıtlarını kullanıyor. Benim şimdi anlatacağım yöntemle urandom aygıtını kullanıyoruz.\n\u0026lt; \/dev\/urandom tr -dc A-Za-z0-9 Burada tr komutuna standart girdi olarak \/dev\/urandom aygıtını gösteriyoruz. urandom rastgele değerler üretir, bu üretilen değerlerin bazıları yazdırılabilir bazıları da yazdırılamayan karakterlere denk gelir. Biz tr komutu ile bu rastgele üretilen değerlerden alfanümerik olanları ayıklıyoruz. Tabi bu komut sonsuza kadar çıktı üretir, sadece istediğimiz kadarını almak için head komutunu kullanabiliriz.\n\u0026lt; \/dev\/urandom tr -dc A-Za-z0-9 | head -c32 Bu komutla çıktının ilk 32 karakterini alıyoruz.\ntr kullanarak yapacaklarımızın limiti hayal gücümüz kadar.",
+  "description" : "Konsoldan rastgele stringler oluşturmak için bir çok yöntem var, bunların bir çoğu random ve urandom aygıtlarını kullanıyor. Benim şimdi anlatacağım yöntemle urandom aygıtını kullanıyoruz.\n\u0026lt; \/dev\/urandom tr -dc A-Za-z0-9 Burada tr komutuna standart girdi olarak \/dev\/urandom aygıtını gösteriyoruz. urandom rastgele değerler üretir, bu üretilen değerlerin bazıları yazdırılabilir bazıları da yazdırılamayan karakterlere denk gelir. Biz tr komutu ile bu rastgele üretilen değerlerden alfanümerik olanları ayıklıyoruz. Tabi bu komut sonsuza kadar çıktı üretir, sadece istediğimiz kadarını almak için head komutunu kullanabiliriz.\n\u0026lt; \/dev\/urandom tr -dc A-Za-z0-9 | head -c32 Bu komutla çıktının ilk 32 karakterini alıyoruz.\ntr kullanarak yapacaklarımızın limiti hayal gücümüz kadar. Mesela sadece sol elimizi kullanarak girebileceğiniz bir parola üretmek istiyoruz. Aşağıdaki komut bunu üretecektir :)\n\u0026lt; \/dev\/urandom tr -dc \u0026#39;12345!@#$%qwertQWERTasdfgASDFGzxcvbZXCVB\u0026#39; | head -c8 [1] adresinde konsoldan rastgele string üretmek için 10 farklı yol gösterilmiş. Ufuk genişletmek için faydalı bir yazı bence.\n[1] http:\/\/www.howtogeek.com\/howto\/30184\/10-ways-to-generate-a-random-password-from-the-command-line\/\n",
   "inLanguage" : "tr",
   "wordCount":  144 ,
   "datePublished" : "2013-08-13T12:34:00",
@@ -83,9 +88,14 @@ tr kullanarak yapacaklarımızın limiti hayal gücümüz kadar.">
 
 <meta property="og:title" content="Konsoldan Rastgele String Oluşturma" />
 <meta property="og:description" content="Konsoldan rastgele stringler oluşturmak için bir çok yöntem var, bunların bir çoğu random ve urandom aygıtlarını kullanıyor. Benim şimdi anlatacağım yöntemle urandom aygıtını kullanıyoruz.
-&lt; /dev/urandom tr -dc A-Za-z0-9 Burada tr komutuna standart girdi olarak /dev/urandom aygıtını gösteriyoruz. urandom rastgele değerler üretir, bu üretilen değerlerin bazıları yazdırılabilir bazıları da yazdırılamayan karakterlere denk gelir. Biz tr komutu ile bu rastgele üretilen değerlerden alfanümerik olanları ayıklıyoruz. Tabi bu komut sonsuza kadar çıktı üretir, sadece istediğimiz kadarını almak için head komutunu kullanabiliriz.
-&lt; /dev/urandom tr -dc A-Za-z0-9 | head -c32 Bu komutla çıktının ilk 32 karakterini alıyoruz.
-tr kullanarak yapacaklarımızın limiti hayal gücümüz kadar.">
+&lt; /dev/urandom tr -dc A-Za-z0-9
+Burada tr komutuna standart girdi olarak /dev/urandom aygıtını gösteriyoruz. urandom rastgele değerler üretir, bu üretilen değerlerin bazıları yazdırılabilir bazıları da yazdırılamayan karakterlere denk gelir. Biz tr komutu ile bu rastgele üretilen değerlerden alfanümerik olanları ayıklıyoruz. Tabi bu komut sonsuza kadar çıktı üretir, sadece istediğimiz kadarını almak için head komutunu kullanabiliriz.
+&lt; /dev/urandom tr -dc A-Za-z0-9 | head -c32
+Bu komutla çıktının ilk 32 karakterini alıyoruz.
+tr kullanarak yapacaklarımızın limiti hayal gücümüz kadar. Mesela sadece sol elimizi kullanarak girebileceğiniz bir parola üretmek istiyoruz. Aşağıdaki komut bunu üretecektir :)
+&lt; /dev/urandom tr -dc &#39;12345!@#$%qwertQWERTasdfgASDFGzxcvbZXCVB&#39; | head -c8
+[1] adresinde konsoldan rastgele string üretmek için 10 farklı yol gösterilmiş. Ufuk genişletmek için faydalı bir yazı bence.
+[1] http://www.howtogeek.com/howto/30184/10-ways-to-generate-a-random-password-from-the-command-line/">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
 <meta property="og:url" content="https://blog.askin.ws/blog/konsoldan-rastgele-string-olusturma/" />
 <meta property="og:type" content="website" />
@@ -263,7 +273,6 @@ tr kullanarak yapacaklarımızın limiti hayal gücümüz kadar.">
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&lt; /dev/urandom tr -dc <span style="color:#e6db74">&#39;12345!@#$%qwertQWERTasdfgASDFGzxcvbZXCVB&#39;</span> | head -c8
 </code></pre></div><p>[1] adresinde konsoldan rastgele string üretmek için 10 farklı yol gösterilmiş. Ufuk genişletmek için faydalı bir yazı bence.</p>
 <p>[1] <a href="http://www.howtogeek.com/howto/30184/10-ways-to-generate-a-random-password-from-the-command-line/">http://www.howtogeek.com/howto/30184/10-ways-to-generate-a-random-password-from-the-command-line/</a></p>
-
 
         
           <div class="blog-tags">

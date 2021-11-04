@@ -10,10 +10,31 @@
   <title>PyGtk ile Sistem Çekmecesi - Aşkın Özgür</title>
   <meta name="description" content="Gtk ile çok kolay bir şekilde geliştirdiğiniz uygulamayı sistem çekmecesinde gösterebilirsiniz.
 Ufak bir örnek kod veriyorum. Onun üzerinden anlatacağım.
-import pygtk import gtk class ShowIcon: def __init__(self): self.icon = gtk.StatusIcon() self.icon.set_from_file(&#39;gtk.png&#39;) self.icon.set_tooltip_text(&#39;Hello Python!!!&#39;) self.icon.set_visible(True) self.icon.connect(&#34;activate&#34;, self.hello) gtk.main() def hello(self, widget): print &#39;Hello Python !!!&#39; if __name__ == &#39;__main__&#39;: icon = ShowIcon() 6. satırda asıl işimizi yapacak olan StatusIcon nesnesini yaratıyoruz.
+import pygtk
+import gtk
+
+class ShowIcon:
+    def __init__(self):
+    self.icon = gtk.StatusIcon()
+        self.icon.set_from_file(&#39;gtk.png&#39;)
+        self.icon.set_tooltip_text(&#39;Hello Python!!!&#39;)
+        self.icon.set_visible(True)
+        self.icon.connect(&#34;activate&#34;, self.hello)
+        gtk.main()
+
+    def hello(self, widget):
+        print &#39;Hello Python !!!&#39;
+
+if __name__ == &#39;__main__&#39;:
+    icon = ShowIcon()
+6. satırda asıl işimizi yapacak olan StatusIcon nesnesini yaratıyoruz.
 7. satırda sistem çekmecesinde hangi ikonun görüntüleneceğini belirtiyoruz. set_from_file ikonu dosyadan alacağımız anlamına geliyor. Eğer gtk&rsquo;nın sunduğu standart ikonları kullanmak istiyorsanız set_from_stock kullanmalısınız.
-icon.set_from_stock(gtk.STOCK_ABOUT) 8. satırda ikonun üzerine geldiğimizde görünmesini istediğimiz yazıyı belirliyoruz.
-9. satırda ikonun başlangıçtaki görünürlüğünü belirliyoruz. Bu satırı yazmasak da görünür başlıyor.">
+icon.set_from_stock(gtk.STOCK_ABOUT)
+8. satırda ikonun üzerine geldiğimizde görünmesini istediğimiz yazıyı belirliyoruz.
+9. satırda ikonun başlangıçtaki görünürlüğünü belirliyoruz. Bu satırı yazmasak da görünür başlıyor.
+10. satırda ikonun &ldquo;activate&rdquo; sinyali aldığında çağırmasını istediğimiz metodu belirliyoruz. Kısacası üzerine tıklandığında ne iş yapacağını belirtiyoruz. &ldquo;activate&rdquo; yerine &ldquo;popup_menu&rdquo; yazarsak ikona sağ tıkladığımızda çağrılacak metodu belirliyoruz.
+11. gkt.main() haydi yapalım şu işi manasında :)
+Ayrıntılı dökümanı PyGtk Belgelerinde bulabilirisiniz. Yukarıda verdiğim kodu ve benim kullandığım ikonu buradan indirebilirsiniz.">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -62,7 +83,7 @@ icon.set_from_stock(gtk.STOCK_ABOUT) 8. satırda ikonun üzerine geldiğimizde g
     "name" : "Aşkın Özgür"
   },
   "headline": "PyGtk ile Sistem Çekmecesi",
-  "description" : "Gtk ile çok kolay bir şekilde geliştirdiğiniz uygulamayı sistem çekmecesinde gösterebilirsiniz.\nUfak bir örnek kod veriyorum. Onun üzerinden anlatacağım.\nimport pygtk import gtk class ShowIcon: def __init__(self): self.icon = gtk.StatusIcon() self.icon.set_from_file(\u0026#39;gtk.png\u0026#39;) self.icon.set_tooltip_text(\u0026#39;Hello Python!!!\u0026#39;) self.icon.set_visible(True) self.icon.connect(\u0026#34;activate\u0026#34;, self.hello) gtk.main() def hello(self, widget): print \u0026#39;Hello Python !!!\u0026#39; if __name__ == \u0026#39;__main__\u0026#39;: icon = ShowIcon() 6. satırda asıl işimizi yapacak olan StatusIcon nesnesini yaratıyoruz.\n7. satırda sistem çekmecesinde hangi ikonun görüntüleneceğini belirtiyoruz. set_from_file ikonu dosyadan alacağımız anlamına geliyor. Eğer gtk\u0026rsquo;nın sunduğu standart ikonları kullanmak istiyorsanız set_from_stock kullanmalısınız.\nicon.set_from_stock(gtk.STOCK_ABOUT) 8. satırda ikonun üzerine geldiğimizde görünmesini istediğimiz yazıyı belirliyoruz.\n9. satırda ikonun başlangıçtaki görünürlüğünü belirliyoruz. Bu satırı yazmasak da görünür başlıyor.",
+  "description" : "Gtk ile çok kolay bir şekilde geliştirdiğiniz uygulamayı sistem çekmecesinde gösterebilirsiniz.\nUfak bir örnek kod veriyorum. Onun üzerinden anlatacağım.\nimport pygtk import gtk class ShowIcon: def __init__(self): self.icon = gtk.StatusIcon() self.icon.set_from_file(\u0026#39;gtk.png\u0026#39;) self.icon.set_tooltip_text(\u0026#39;Hello Python!!!\u0026#39;) self.icon.set_visible(True) self.icon.connect(\u0026#34;activate\u0026#34;, self.hello) gtk.main() def hello(self, widget): print \u0026#39;Hello Python !!!\u0026#39; if __name__ == \u0026#39;__main__\u0026#39;: icon = ShowIcon() 6. satırda asıl işimizi yapacak olan StatusIcon nesnesini yaratıyoruz.\n7. satırda sistem çekmecesinde hangi ikonun görüntüleneceğini belirtiyoruz. set_from_file ikonu dosyadan alacağımız anlamına geliyor. Eğer gtk\u0026rsquo;nın sunduğu standart ikonları kullanmak istiyorsanız set_from_stock kullanmalısınız.\nicon.set_from_stock(gtk.STOCK_ABOUT) 8. satırda ikonun üzerine geldiğimizde görünmesini istediğimiz yazıyı belirliyoruz.\n9. satırda ikonun başlangıçtaki görünürlüğünü belirliyoruz. Bu satırı yazmasak da görünür başlıyor.\n10. satırda ikonun \u0026ldquo;activate\u0026rdquo; sinyali aldığında çağırmasını istediğimiz metodu belirliyoruz. Kısacası üzerine tıklandığında ne iş yapacağını belirtiyoruz. \u0026ldquo;activate\u0026rdquo; yerine \u0026ldquo;popup_menu\u0026rdquo; yazarsak ikona sağ tıkladığımızda çağrılacak metodu belirliyoruz.\n11. gkt.main() haydi yapalım şu işi manasında :)\nAyrıntılı dökümanı PyGtk Belgelerinde bulabilirisiniz. Yukarıda verdiğim kodu ve benim kullandığım ikonu buradan indirebilirsiniz.\n",
   "inLanguage" : "tr",
   "wordCount":  154 ,
   "datePublished" : "2010-04-07T21:53:00",
@@ -86,10 +107,31 @@ icon.set_from_stock(gtk.STOCK_ABOUT) 8. satırda ikonun üzerine geldiğimizde g
 <meta property="og:title" content="PyGtk ile Sistem Çekmecesi" />
 <meta property="og:description" content="Gtk ile çok kolay bir şekilde geliştirdiğiniz uygulamayı sistem çekmecesinde gösterebilirsiniz.
 Ufak bir örnek kod veriyorum. Onun üzerinden anlatacağım.
-import pygtk import gtk class ShowIcon: def __init__(self): self.icon = gtk.StatusIcon() self.icon.set_from_file(&#39;gtk.png&#39;) self.icon.set_tooltip_text(&#39;Hello Python!!!&#39;) self.icon.set_visible(True) self.icon.connect(&#34;activate&#34;, self.hello) gtk.main() def hello(self, widget): print &#39;Hello Python !!!&#39; if __name__ == &#39;__main__&#39;: icon = ShowIcon() 6. satırda asıl işimizi yapacak olan StatusIcon nesnesini yaratıyoruz.
+import pygtk
+import gtk
+
+class ShowIcon:
+    def __init__(self):
+    self.icon = gtk.StatusIcon()
+        self.icon.set_from_file(&#39;gtk.png&#39;)
+        self.icon.set_tooltip_text(&#39;Hello Python!!!&#39;)
+        self.icon.set_visible(True)
+        self.icon.connect(&#34;activate&#34;, self.hello)
+        gtk.main()
+
+    def hello(self, widget):
+        print &#39;Hello Python !!!&#39;
+
+if __name__ == &#39;__main__&#39;:
+    icon = ShowIcon()
+6. satırda asıl işimizi yapacak olan StatusIcon nesnesini yaratıyoruz.
 7. satırda sistem çekmecesinde hangi ikonun görüntüleneceğini belirtiyoruz. set_from_file ikonu dosyadan alacağımız anlamına geliyor. Eğer gtk&rsquo;nın sunduğu standart ikonları kullanmak istiyorsanız set_from_stock kullanmalısınız.
-icon.set_from_stock(gtk.STOCK_ABOUT) 8. satırda ikonun üzerine geldiğimizde görünmesini istediğimiz yazıyı belirliyoruz.
-9. satırda ikonun başlangıçtaki görünürlüğünü belirliyoruz. Bu satırı yazmasak da görünür başlıyor.">
+icon.set_from_stock(gtk.STOCK_ABOUT)
+8. satırda ikonun üzerine geldiğimizde görünmesini istediğimiz yazıyı belirliyoruz.
+9. satırda ikonun başlangıçtaki görünürlüğünü belirliyoruz. Bu satırı yazmasak da görünür başlıyor.
+10. satırda ikonun &ldquo;activate&rdquo; sinyali aldığında çağırmasını istediğimiz metodu belirliyoruz. Kısacası üzerine tıklandığında ne iş yapacağını belirtiyoruz. &ldquo;activate&rdquo; yerine &ldquo;popup_menu&rdquo; yazarsak ikona sağ tıkladığımızda çağrılacak metodu belirliyoruz.
+11. gkt.main() haydi yapalım şu işi manasında :)
+Ayrıntılı dökümanı PyGtk Belgelerinde bulabilirisiniz. Yukarıda verdiğim kodu ve benim kullandığım ikonu buradan indirebilirsiniz.">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
 <meta property="og:url" content="https://blog.askin.ws/blog/pygtk-ile-sistem-cekmecesi/" />
 <meta property="og:type" content="website" />
@@ -98,7 +140,10 @@ icon.set_from_stock(gtk.STOCK_ABOUT) 8. satırda ikonun üzerine geldiğimizde g
   <meta name="twitter:title" content="PyGtk ile Sistem Çekmecesi" />
   <meta name="twitter:description" content="Gtk ile çok kolay bir şekilde geliştirdiğiniz uygulamayı sistem çekmecesinde gösterebilirsiniz.
 Ufak bir örnek kod veriyorum. Onun üzerinden anlatacağım.
-import pygtk import gtk class ShowIcon: def …">
+import pygtk
+import gtk
+
+class ShowIcon: …">
   <meta name="twitter:image" content="https://blog.askin.ws/uploads/avatar.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@kelebeks" />
@@ -286,7 +331,6 @@ import pygtk import gtk class ShowIcon: def …">
 10. satırda ikonun <em>&ldquo;activate&rdquo;</em> sinyali aldığında çağırmasını istediğimiz metodu belirliyoruz. Kısacası üzerine tıklandığında ne iş yapacağını belirtiyoruz. <em>&ldquo;activate&rdquo;</em> yerine <em>&ldquo;popup_menu&rdquo;</em> yazarsak ikona sağ tıkladığımızda çağrılacak metodu belirliyoruz.<br>
 11. gkt.main() haydi yapalım şu işi manasında :)</p>
 <p>Ayrıntılı dökümanı <a href="http://www.pygtk.org/docs/pygtk/class-gtkstatusicon.html">PyGtk Belgelerinde</a> bulabilirisiniz. Yukarıda verdiğim kodu ve benim kullandığım ikonu <a href="/uploads/2010/04/python-system-tray.zip">buradan</a> indirebilirsiniz.</p>
-
 
         
           <div class="blog-tags">

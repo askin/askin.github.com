@@ -15,12 +15,33 @@
       <pubDate>Wed, 07 Apr 2010 21:53:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/pygtk-ile-sistem-cekmecesi/</guid>
-      <description>Gtk ile çok kolay bir şekilde geliştirdiğiniz uygulamayı sistem çekmecesinde gösterebilirsiniz.
-Ufak bir örnek kod veriyorum. Onun üzerinden anlatacağım.
-import pygtk import gtk class ShowIcon: def __init__(self): self.icon = gtk.StatusIcon() self.icon.set_from_file(&amp;#39;gtk.png&amp;#39;) self.icon.set_tooltip_text(&amp;#39;Hello Python!!!&amp;#39;) self.icon.set_visible(True) self.icon.connect(&amp;#34;activate&amp;#34;, self.hello) gtk.main() def hello(self, widget): print &amp;#39;Hello Python !!!&amp;#39; if __name__ == &amp;#39;__main__&amp;#39;: icon = ShowIcon() 6. satırda asıl işimizi yapacak olan StatusIcon nesnesini yaratıyoruz.
-7. satırda sistem çekmecesinde hangi ikonun görüntüleneceğini belirtiyoruz. set_from_file ikonu dosyadan alacağımız anlamına geliyor. Eğer gtk&amp;rsquo;nın sunduğu standart ikonları kullanmak istiyorsanız set_from_stock kullanmalısınız.
-icon.set_from_stock(gtk.STOCK_ABOUT) 8. satırda ikonun üzerine geldiğimizde görünmesini istediğimiz yazıyı belirliyoruz.
-9. satırda ikonun başlangıçtaki görünürlüğünü belirliyoruz. Bu satırı yazmasak da görünür başlıyor.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://blog.askin.ws/uploads/2010/04/gtk.png&#34; alt=&#34;Gtk&#34; title=&#34;Gtk&#34;&gt;Gtk ile çok kolay bir şekilde geliştirdiğiniz uygulamayı sistem çekmecesinde gösterebilirsiniz.&lt;/p&gt;
+&lt;p&gt;Ufak bir örnek kod veriyorum. Onun üzerinden anlatacağım.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; pygtk
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; gtk
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ShowIcon&lt;/span&gt;:
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; __init__(self):
+    self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;icon &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; gtk&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;StatusIcon()
+        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;icon&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set_from_file(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;gtk.png&amp;#39;&lt;/span&gt;)
+        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;icon&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set_tooltip_text(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Hello Python!!!&amp;#39;&lt;/span&gt;)
+        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;icon&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set_visible(&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;)
+        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;icon&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;connect(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;activate&amp;#34;&lt;/span&gt;, self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;hello)
+        gtk&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;main()
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;hello&lt;/span&gt;(self, widget):
+        print &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Hello Python !!!&amp;#39;&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; __name__ &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;:
+    icon &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; ShowIcon()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;6. satırda asıl işimizi yapacak olan &lt;em&gt;StatusIcon&lt;/em&gt; nesnesini yaratıyoruz.&lt;br&gt;
+7. satırda sistem çekmecesinde hangi ikonun görüntüleneceğini belirtiyoruz. &lt;em&gt;set_from_file&lt;/em&gt; ikonu dosyadan alacağımız anlamına geliyor. Eğer gtk&amp;rsquo;nın sunduğu standart ikonları kullanmak istiyorsanız set_from_stock kullanmalısınız.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;icon&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set_from_stock(gtk&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;STOCK_ABOUT)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;8. satırda ikonun üzerine geldiğimizde görünmesini istediğimiz yazıyı belirliyoruz.&lt;br&gt;
+9. satırda ikonun başlangıçtaki görünürlüğünü belirliyoruz. Bu satırı yazmasak da görünür başlıyor.&lt;br&gt;
+10. satırda ikonun &lt;em&gt;&amp;ldquo;activate&amp;rdquo;&lt;/em&gt; sinyali aldığında çağırmasını istediğimiz metodu belirliyoruz. Kısacası üzerine tıklandığında ne iş yapacağını belirtiyoruz. &lt;em&gt;&amp;ldquo;activate&amp;rdquo;&lt;/em&gt; yerine &lt;em&gt;&amp;ldquo;popup_menu&amp;rdquo;&lt;/em&gt; yazarsak ikona sağ tıkladığımızda çağrılacak metodu belirliyoruz.&lt;br&gt;
+11. gkt.main() haydi yapalım şu işi manasında :)&lt;/p&gt;
+&lt;p&gt;Ayrıntılı dökümanı &lt;a href=&#34;http://www.pygtk.org/docs/pygtk/class-gtkstatusicon.html&#34;&gt;PyGtk Belgelerinde&lt;/a&gt; bulabilirisiniz. Yukarıda verdiğim kodu ve benim kullandığım ikonu &lt;a href=&#34;https://blog.askin.ws/uploads/2010/04/python-system-tray.zip&#34;&gt;buradan&lt;/a&gt; indirebilirsiniz.&lt;/p&gt;</description>
     </item>
     
   </channel>

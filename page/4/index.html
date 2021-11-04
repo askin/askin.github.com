@@ -607,9 +607,62 @@
     </p>
     <div class="post-entry">
         
-        Çalıştığım projede linuxta paralel port ile lcd ekran kullanmam gerekti. Neredeyse internetin altını üstüne getirdim ama işime yarar çok birşey bulamadım. Sonunda DOS için yazılmış bir kod buldum. Bu kodu biraz inceleyip, gerekli püf noktaları bulunca kodu linux&rsquo;a uydurmak çok zor olmadı. Hatta neredeyse sadece kullanılan fonksiyonun adını ve parametre yerlerini değiştirdim :)
-Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read/write seçimi için kullanılıyor. Geri kalan 3 bacak güç bağlantısı ve kontrast için kullanılıyor. Burdaki şemaya göre bağlantıları yapabilirsiniz. Ayrıca örnek aldığım kodda aynı sayfada bulunmakta.
-        <a href="https://blog.askin.ws/blog/linux-paralel-port-ile-2x16-lcd-ekran-kullanimi/" class="post-read-more">[Daha fazla oku]</a>
+        <p>Çalıştığım projede linuxta paralel port ile lcd ekran kullanmam gerekti. Neredeyse internetin altını üstüne getirdim ama işime yarar çok birşey bulamadım. Sonunda DOS için yazılmış bir kod buldum. Bu kodu biraz inceleyip, gerekli püf noktaları bulunca kodu linux&rsquo;a uydurmak çok zor olmadı. Hatta neredeyse sadece kullanılan fonksiyonun adını ve parametre yerlerini değiştirdim :)</p>
+<p>Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read/write seçimi için kullanılıyor. Geri kalan 3 bacak güç bağlantısı ve kontrast için kullanılıyor. <a href="http://www.beyondlogic.org/parlcd/parlcd.htm">Burdaki</a> şemaya göre bağlantıları yapabilirsiniz. Ayrıca örnek aldığım kodda aynı sayfada bulunmakta.</p>
+<p>Yorum satırları pek çok şeyi açıklıyor. Ama birkaç noktaya değinmekte fayda var. Data bacaklarına gerekli inputları verdikten sonra, enable bacağını 1&rsquo;den 0&rsquo;a düşürerek lcd&rsquo;nin data bacaklarında sinyali alıp işleme sokmasını sağlıyoruz. init array&rsquo;i içinde lcd&rsquo;nin temizlenmesi ve çalışmaya uygun hale gelmesi için gerekli komutlar tutuluyor. 0x378 paralel portun adresi.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;unistd.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;asm/io.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define PORTADDRESS 0x378  </span><span style="color:#75715e">/* Enter Your Port Address Here */</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define DATA PORTADDRESS+0
+</span><span style="color:#75715e">#define STATUS PORTADDRESS+1
+</span><span style="color:#75715e">#define CONTROL PORTADDRESS+2
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+{
+    <span style="color:#66d9ef">if</span> (ioperm(DATA , <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>)) {perror(<span style="color:#e6db74">&#34;ioperm&#34;</span>); exit(<span style="color:#ae81ff">1</span>);}
+    <span style="color:#66d9ef">char</span> string[] <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;Testing 1,2,3                           &#34;</span>
+                     <span style="color:#e6db74">&#34;It&#39; Works !                             &#34;</span>};
+
+    <span style="color:#66d9ef">char</span> init[<span style="color:#ae81ff">10</span>];
+    <span style="color:#66d9ef">int</span> count;
+    <span style="color:#66d9ef">int</span> len;
+    init[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x0F</span>; <span style="color:#75715e">/* Init Display */</span>
+    init[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x01</span>; <span style="color:#75715e">/* Clear Display */</span>
+    init[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x38</span>; <span style="color:#75715e">/* Dual Line / 8 Bits */</span>
+
+    outb(inb(CONTROL) <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0xDF</span>, CONTROL); <span style="color:#75715e">/* Reset Control Port - Make sure Forward Direction */</span>
+    outb(inb(CONTROL) <span style="color:#f92672">|</span> <span style="color:#ae81ff">0x08</span>, CONTROL); <span style="color:#75715e">/* Set Select Printer (Register Select) */</span>
+
+    <span style="color:#66d9ef">for</span> (count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; count <span style="color:#f92672">&lt;</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; count<span style="color:#f92672">++</span>)
+    {
+        outb(init[count], DATA);
+        outb(inb(CONTROL) <span style="color:#f92672">|</span> <span style="color:#ae81ff">0x01</span>, CONTROL); <span style="color:#75715e">/* Set Strobe (Enable)*/</span>
+        usleep(<span style="color:#ae81ff">20</span>);                                 <span style="color:#75715e">/* Larger Delay for INIT */</span>
+        outb(inb(CONTROL) <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0xFE</span>, CONTROL); <span style="color:#75715e">/* Reset Strobe (Enable)*/</span>
+        usleep(<span style="color:#ae81ff">20</span>);                                 <span style="color:#75715e">/* Larger Delay for INIT */</span>
+    }
+
+    outb(inb(CONTROL) <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0xF7</span>, CONTROL);  <span style="color:#75715e">/* Reset Select Printer (Register Select) */</span>
+
+    len <span style="color:#f92672">=</span> strlen(string);
+
+    <span style="color:#66d9ef">for</span> (count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; count <span style="color:#f92672">&lt;</span> len; count<span style="color:#f92672">++</span>)
+    {
+        outb(string[count], DATA);
+        outb(inb(CONTROL) <span style="color:#f92672">|</span> <span style="color:#ae81ff">0x01</span>, CONTROL); <span style="color:#75715e">/* Set Strobe */</span>
+        usleep(<span style="color:#ae81ff">2</span>);
+        outb(inb(CONTROL) <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0xFE</span>, CONTROL); <span style="color:#75715e">/* Reset Strobe */</span>
+        usleep(<span style="color:#ae81ff">2</span>);
+    }
+
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><p>Linke birşey olması durumunda <a href="/uploads/2011/02/parlcd.gif">bu adresten gerekli şemayı indirebilirsiniz.</a></p>
         
     </div>
 
@@ -661,9 +714,7 @@ Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data v
     </p>
     <div class="post-entry">
         
-        Bir proje için server sockete ihtiyaç duydum. Öncelikli dilim python olmasına rağmen, sunucu solaris olunca java ile yazmak daha cazip geldi. Öncelikli olarak test amaçlı birkaç satır kod yazdım. Akla gelen ilk örnek echo server oluyor :) aşağıda multi thread çalışan, birden fazla kullanıcıya cevap verebilecek bir echo server var:)
-Server.java
-/** * @author: Aşkın Yollu */ import java.net.*; import java.io.*; class Server { public static void main(String args[]) throws Exception { ServerSocket myService = null; Socket client = null; Worker tmpworker = null; try { // 1234 nolu portu dinle  myService = new ServerSocket(1234); } catch (IOException e) { System.
+        <p>Bir proje için server sockete ihtiyaç duydum. Öncelikli dilim python olmasına rağmen, sunucu solaris olunca java ile yazmak daha cazip geldi. Öncelikli olarak test amaçlı birkaç satır kod yazdım. Akla gelen ilk örnek echo server oluyor :) aşağıda multi thread çalışan, birden fazla kullanıcıya cevap verebilecek bir echo server var:)</p>
         <a href="https://blog.askin.ws/blog/java-ile-server-socket-yapimi/" class="post-read-more">[Daha fazla oku]</a>
         
     </div>

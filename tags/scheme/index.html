@@ -230,11 +230,25 @@
     </p>
     <div class="post-entry">
         
-        Bu girdi Burdaki girdiden esinlenilerek yazıldı.
-E madem pyton ile sayısal kuponu yapılıyor biz niye scheme ile yapmayalım bunu demi:)
-Probleme göre kod bana çok uzun geldi. Belki ilerde optimize edebilirim. Ama şimdilik böyle oynayalım demi:)
-(define (sayisal) (display &#34;Oynamak istediginiz kolan sayisini giriniz: \n&#34;) (let ((kolon (read))) (do ((i 1 (+ i 1))) ((&gt; i kolon)) (let loop ((lst (list (+ (random 49) 1))) (sayi (+ 1 (random 49)))) (if (= (length lst) 6) (printf &#34;~a. kolon: ~a\n&#34; i (sort lst &lt; )) (if (member sayi lst) (loop lst (+ (random 49) 1)) (loop (append lst (list sayi)) (+ (random 49) 1)))))))) (sayisal);burası kodun çalıştırılması için.
-        <a href="https://blog.askin.ws/blog/cikmaz-demeyin-sansinizi-deneyin/" class="post-read-more">[Daha fazla oku]</a>
+        <p>Bu girdi <a href="http://tutkudalmaz.org/gunluk/?p=21">Burdaki</a> girdiden esinlenilerek yazıldı.</p>
+<p>E madem pyton ile sayısal kuponu yapılıyor biz niye scheme ile yapmayalım bunu demi:)<br>
+Probleme göre kod bana çok uzun geldi. Belki ilerde optimize edebilirim. Ama şimdilik böyle oynayalım demi:)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scheme" data-lang="scheme">(<span style="color:#66d9ef">define </span>(<span style="color:#a6e22e">sayisal</span>)
+  (display <span style="color:#e6db74">&#34;Oynamak istediginiz kolan sayisini giriniz: \n&#34;</span>)
+  (<span style="color:#66d9ef">let </span>((<span style="color:#a6e22e">kolon</span> (<span style="color:#a6e22e">read</span>)))
+    (<span style="color:#66d9ef">do </span>((<span style="color:#a6e22e">i</span> <span style="color:#ae81ff">1</span> (+ i <span style="color:#ae81ff">1</span>))) ((&gt; i kolon))
+      (<span style="color:#66d9ef">let </span>loop ((<span style="color:#a6e22e">lst</span> (list (+ (<span style="color:#a6e22e">random</span> <span style="color:#ae81ff">49</span>) <span style="color:#ae81ff">1</span>))) 
+                   (<span style="color:#a6e22e">sayi</span> (+ <span style="color:#ae81ff">1</span> (<span style="color:#a6e22e">random</span> <span style="color:#ae81ff">49</span>))))
+        (<span style="color:#66d9ef">if </span>(= (length lst) <span style="color:#ae81ff">6</span>)
+            (<span style="color:#a6e22e">printf</span> <span style="color:#e6db74">&#34;~a. kolon: ~a\n&#34;</span> i (<span style="color:#a6e22e">sort</span> lst &lt; ))
+            (<span style="color:#66d9ef">if </span>(member sayi lst)
+                (<span style="color:#a6e22e">loop</span> lst (+ (<span style="color:#a6e22e">random</span> <span style="color:#ae81ff">49</span>) <span style="color:#ae81ff">1</span>))
+                (<span style="color:#a6e22e">loop</span> (append lst (list sayi)) 
+                       (+ (<span style="color:#a6e22e">random</span> <span style="color:#ae81ff">49</span>) <span style="color:#ae81ff">1</span>))))))))
+(<span style="color:#a6e22e">sayisal</span>)<span style="color:#75715e">;burası kodun çalıştırılması için. </span>
+<span style="color:#75715e">;aslında define kısmı çıkartılarak buna gerek kalmamayabilir</span>
+<span style="color:#75715e">;ama  ilerde belki başka birşey içinde kullanırım:)</span>
+</code></pre></div>
         
     </div>
 

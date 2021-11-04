@@ -280,9 +280,33 @@ Adres: <a href="http://www.projecteuler.net/">http://www.projecteuler.net/</a></
     </p>
     <div class="post-entry">
         
-        Bubble sort algoritması kabaca: verilen dizideki elemanları ikili olarak karşılaştırıp gerekli olduğunda yerlerini değiştirmek esasına dayanır. Elimizde 11 5 8 4 6 84 7 sayılarında oluşan bir dizi olduğunu var sayalım ve bu diziyi küçükten büyüğe sıralamak isteyelim.
- önce 11 ile 5i karşılaştırırız, 11 5&rsquo;ten büyük olduğu için 11 ile 5in yerini değiştiririz; 5 11 8 4 6 84 7 sonra 11 ile 8i karşılaştırırız ve 11 ile 8&rsquo;in yerini değiştiririz 5 8 11 4 6 84 7 11 ile 4; 5 8 4 11 6 84 7 11 ile 6; 5 8 4 6 11 84 7 11 ile 84; 84 büyük olduğu için sıralamaya dokunmayız.
-        <a href="https://blog.askin.ws/blog/bubble-sort-algoritmasi-ve-scheme-cozumu/" class="post-read-more">[Daha fazla oku]</a>
+        <p>Bubble sort algoritması kabaca: verilen dizideki elemanları ikili olarak karşılaştırıp gerekli olduğunda yerlerini değiştirmek esasına dayanır. Elimizde 11 5 8 4 6 84 7 sayılarında oluşan bir dizi olduğunu var sayalım ve bu diziyi küçükten büyüğe sıralamak isteyelim.</p>
+<ol>
+<li>önce 11 ile 5i karşılaştırırız, 11 5&rsquo;ten büyük olduğu için 11 ile 5in yerini değiştiririz; 5 11 8 4 6 84 7</li>
+<li>sonra 11 ile 8i karşılaştırırız ve 11 ile 8&rsquo;in yerini değiştiririz 5 8 11 4 6 84 7</li>
+<li>11 ile 4; 5 8 4 11 6 84 7</li>
+<li>11 ile 6; 5 8 4 6 11 84 7</li>
+<li>11 ile 84; 84 büyük olduğu için sıralamaya dokunmayız. 5 8 4 6 11 84 7</li>
+<li>şimdi 84 ile 7&rsquo;yi karşılaştırırız; 5 8 4 6 11 7 84</li>
+</ol>
+<p>Son durumda 7 elemanlı bir dizi için 6 kontrol yaptık ve en büyük elemanı sona attık. Şimdiki karşılaştırmalarımızda artık son elamanı yok sayabiliriz. Yani problemimiz artık 6 elemanlı bir diziyi sıralamak oldu. Aynı işlemleri 6 eleman varsayarak yaptığımızda sırasıyla problem 5, 4, 3, 2 ve 1 elemanlı dizileri sıralamaya dönüşecek. 1 elemanlı dizi herzaman sıralı olduğu için hiç bi derdimiz sıkıntımızda kalmayacak:) Bu şekilde işlemleride 6 defa yaptık.<br>
+Şimdi sıra geldi koda</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scheme" data-lang="scheme">(<span style="color:#66d9ef">define </span>vector-bubble-sort 
+  (<span style="color:#66d9ef">lambda </span>(<span style="color:#a6e22e">vec</span> op)
+    (<span style="color:#66d9ef">let </span>((<span style="color:#a6e22e">tmp</span> <span style="color:#ae81ff">0</span>) (<span style="color:#a6e22e">stop-do</span> <span style="color:#66d9ef">#f</span>))
+      (<span style="color:#66d9ef">do </span>((<span style="color:#a6e22e">i</span> <span style="color:#ae81ff">0</span> (+ i <span style="color:#ae81ff">1</span>))) ((<span style="color:#66d9ef">or </span>(= i (vector-length vec)) stop-do))
+        (<span style="color:#66d9ef">set! </span>stop-do <span style="color:#66d9ef">#t</span>)
+        (<span style="color:#66d9ef">do </span>((<span style="color:#a6e22e">j</span> <span style="color:#ae81ff">0</span> (+ j <span style="color:#ae81ff">1</span>))) ((= j (- (vector-length vec) i <span style="color:#ae81ff">1</span>)))
+          (<span style="color:#66d9ef">if </span>(not (<span style="color:#a6e22e">op</span> (vector-ref vec j) (vector-ref vec (+ j <span style="color:#ae81ff">1</span>))))
+              (<span style="color:#66d9ef">begin </span>
+                (<span style="color:#66d9ef">set! </span>tmp (vector-ref vec j))
+                (vector-set! vec j (vector-ref vec (+ j <span style="color:#ae81ff">1</span>)))
+                (vector-set! vec (+ j <span style="color:#ae81ff">1</span>) tmp)
+                (<span style="color:#66d9ef">set! </span>stop-do <span style="color:#66d9ef">#f</span>))))))
+    vec))
+</code></pre></div><p>DrScheme de etkileşim penceresine</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scheme" data-lang="scheme">(<span style="color:#a6e22e">vector-bubble-sort</span> <span style="color:#f92672">#</span>(<span style="color:#ae81ff">5</span> <span style="color:#ae81ff">11</span> <span style="color:#ae81ff">8</span> <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">6</span> <span style="color:#ae81ff">84</span> <span style="color:#ae81ff">7</span>) &lt; )
+</code></pre></div><p>şeklide giriş yapmamız gerekiyor. &ldquo;&lt; &quot; işareti yerine &ldquo;&gt;&rdquo; işaretide koyabiliriz. Bu sayede birde büyükten küçüğe sıralamak için aynı kodları yazmamıza gerek kalmayacak.</p>
         
     </div>
 

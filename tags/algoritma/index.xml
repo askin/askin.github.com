@@ -25,8 +25,33 @@ Adres: http://www.projecteuler.net/</description>
       <pubDate>Mon, 17 Dec 2007 15:11:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/bubble-sort-algoritmasi-ve-scheme-cozumu/</guid>
-      <description>Bubble sort algoritması kabaca: verilen dizideki elemanları ikili olarak karşılaştırıp gerekli olduğunda yerlerini değiştirmek esasına dayanır. Elimizde 11 5 8 4 6 84 7 sayılarında oluşan bir dizi olduğunu var sayalım ve bu diziyi küçükten büyüğe sıralamak isteyelim.
- önce 11 ile 5i karşılaştırırız, 11 5&amp;rsquo;ten büyük olduğu için 11 ile 5in yerini değiştiririz; 5 11 8 4 6 84 7 sonra 11 ile 8i karşılaştırırız ve 11 ile 8&amp;rsquo;in yerini değiştiririz 5 8 11 4 6 84 7 11 ile 4; 5 8 4 11 6 84 7 11 ile 6; 5 8 4 6 11 84 7 11 ile 84; 84 büyük olduğu için sıralamaya dokunmayız.</description>
+      <description>&lt;p&gt;Bubble sort algoritması kabaca: verilen dizideki elemanları ikili olarak karşılaştırıp gerekli olduğunda yerlerini değiştirmek esasına dayanır. Elimizde 11 5 8 4 6 84 7 sayılarında oluşan bir dizi olduğunu var sayalım ve bu diziyi küçükten büyüğe sıralamak isteyelim.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;önce 11 ile 5i karşılaştırırız, 11 5&amp;rsquo;ten büyük olduğu için 11 ile 5in yerini değiştiririz; 5 11 8 4 6 84 7&lt;/li&gt;
+&lt;li&gt;sonra 11 ile 8i karşılaştırırız ve 11 ile 8&amp;rsquo;in yerini değiştiririz 5 8 11 4 6 84 7&lt;/li&gt;
+&lt;li&gt;11 ile 4; 5 8 4 11 6 84 7&lt;/li&gt;
+&lt;li&gt;11 ile 6; 5 8 4 6 11 84 7&lt;/li&gt;
+&lt;li&gt;11 ile 84; 84 büyük olduğu için sıralamaya dokunmayız. 5 8 4 6 11 84 7&lt;/li&gt;
+&lt;li&gt;şimdi 84 ile 7&amp;rsquo;yi karşılaştırırız; 5 8 4 6 11 7 84&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Son durumda 7 elemanlı bir dizi için 6 kontrol yaptık ve en büyük elemanı sona attık. Şimdiki karşılaştırmalarımızda artık son elamanı yok sayabiliriz. Yani problemimiz artık 6 elemanlı bir diziyi sıralamak oldu. Aynı işlemleri 6 eleman varsayarak yaptığımızda sırasıyla problem 5, 4, 3, 2 ve 1 elemanlı dizileri sıralamaya dönüşecek. 1 elemanlı dizi herzaman sıralı olduğu için hiç bi derdimiz sıkıntımızda kalmayacak:) Bu şekilde işlemleride 6 defa yaptık.&lt;br&gt;
+Şimdi sıra geldi koda&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-scheme&#34; data-lang=&#34;scheme&#34;&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;define &lt;/span&gt;vector-bubble-sort 
+  (&lt;span style=&#34;color:#66d9ef&#34;&gt;lambda &lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;vec&lt;/span&gt; op)
+    (&lt;span style=&#34;color:#66d9ef&#34;&gt;let &lt;/span&gt;((&lt;span style=&#34;color:#a6e22e&#34;&gt;tmp&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;) (&lt;span style=&#34;color:#a6e22e&#34;&gt;stop-do&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;#f&lt;/span&gt;))
+      (&lt;span style=&#34;color:#66d9ef&#34;&gt;do &lt;/span&gt;((&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; (+ i &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;))) ((&lt;span style=&#34;color:#66d9ef&#34;&gt;or &lt;/span&gt;(= i (vector-length vec)) stop-do))
+        (&lt;span style=&#34;color:#66d9ef&#34;&gt;set! &lt;/span&gt;stop-do &lt;span style=&#34;color:#66d9ef&#34;&gt;#t&lt;/span&gt;)
+        (&lt;span style=&#34;color:#66d9ef&#34;&gt;do &lt;/span&gt;((&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; (+ j &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;))) ((= j (- (vector-length vec) i &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)))
+          (&lt;span style=&#34;color:#66d9ef&#34;&gt;if &lt;/span&gt;(not (&lt;span style=&#34;color:#a6e22e&#34;&gt;op&lt;/span&gt; (vector-ref vec j) (vector-ref vec (+ j &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;))))
+              (&lt;span style=&#34;color:#66d9ef&#34;&gt;begin &lt;/span&gt;
+                (&lt;span style=&#34;color:#66d9ef&#34;&gt;set! &lt;/span&gt;tmp (vector-ref vec j))
+                (vector-set! vec j (vector-ref vec (+ j &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)))
+                (vector-set! vec (+ j &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;) tmp)
+                (&lt;span style=&#34;color:#66d9ef&#34;&gt;set! &lt;/span&gt;stop-do &lt;span style=&#34;color:#66d9ef&#34;&gt;#f&lt;/span&gt;))))))
+    vec))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;DrScheme de etkileşim penceresine&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-scheme&#34; data-lang=&#34;scheme&#34;&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;vector-bubble-sort&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;#&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;11&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;84&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) &amp;lt; )
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;şeklide giriş yapmamız gerekiyor. &amp;ldquo;&amp;lt; &amp;quot; işareti yerine &amp;ldquo;&amp;gt;&amp;rdquo; işaretide koyabiliriz. Bu sayede birde büyükten küçüğe sıralamak için aynı kodları yazmamıza gerek kalmayacak.&lt;/p&gt;</description>
     </item>
     
     <item>

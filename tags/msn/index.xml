@@ -15,8 +15,14 @@
       <pubDate>Tue, 22 Jan 2008 10:10:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/yazik-bu-windowsculara-win32ircbotaal/</guid>
-      <description>Bu günlerde bi msn virüsü yayılmaya başladı. Msn üzerinden kişilere bu senin resmin mi?, oh sen çıplak gibisinden mesajlar ve bir adet link (http://members.lycos.co.uk/facebookphotos/?msn_adresiniz gibisinden) yolluyor. eğer bu linke tıklarsanız size resim dosyası görünümünde bir virüs yolluyor. Sizde buna tıklayınca olan oluyor:) Artık sizin kişi listenizdeki kişilere bu mesajlar gidiyor ve onlara da olan oluyor. Geçen gün bu virüsü bir bilgisayardan temizledim. Belki işinize yarar diye yazıyorum buraya.
- Bu linkteki dosyayı indirin. Sıkıştırılmış dosyadan çıkartın. omg-fix10-en.reg dosyasına çift tıklayıp yada sağ tıklayıp birleştir deyin. Ardından bilgisayarı yeniden başlatın. omg-delete10-en.bat dosyasını çalıştırın. Garanti olsun diye bilgisayarı yeniden başlatın. Şimdi msni kaldırıp bide sağlam bi programla (bu virüs için Nod32 tavsiye ediliyor) virüs taraması yapın.</description>
+      <description>&lt;p&gt;Bu günlerde bi msn virüsü yayılmaya başladı. Msn üzerinden kişilere bu senin resmin mi?, oh sen çıplak gibisinden mesajlar ve bir adet link (&lt;a href=&#34;http://members.lycos.co.uk/facebookphotos/?msn&#34;&gt;http://members.lycos.co.uk/facebookphotos/?msn&lt;/a&gt;_adresiniz gibisinden) yolluyor. eğer bu linke tıklarsanız size resim dosyası görünümünde bir virüs yolluyor. Sizde buna tıklayınca olan oluyor:) Artık sizin kişi listenizdeki kişilere bu mesajlar gidiyor ve onlara da olan oluyor. Geçen gün bu virüsü bir bilgisayardan temizledim. Belki işinize yarar diye yazıyorum buraya.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.askin.ws/uploads/2008/01/temizle.zip&#34; title=&#34;Yazık bu windowsçulara - Win32/IRCBot.AAL&#34;&gt;Bu linkteki&lt;/a&gt; dosyayı indirin. Sıkıştırılmış dosyadan çıkartın.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;omg-fix10-en.reg&lt;/strong&gt; dosyasına çift tıklayıp yada sağ tıklayıp birleştir deyin. Ardından bilgisayarı yeniden başlatın.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;omg-delete10-en.bat&lt;/strong&gt; dosyasını çalıştırın. Garanti olsun diye bilgisayarı yeniden başlatın.&lt;/li&gt;
+&lt;li&gt;Şimdi msni kaldırıp bide sağlam bi programla (bu virüs için Nod32 tavsiye ediliyor) virüs taraması yapın.&lt;/li&gt;
+&lt;li&gt;Geçmiş olsun&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
     
   </channel>

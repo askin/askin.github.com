@@ -9,7 +9,97 @@
 
   <title>UDP Broadcast sunucu - istemci - Aşkın Özgür</title>
   <meta name="description" content="Sunucu:
-#include &lt;stdio.h&gt;#include &lt;string.h&gt;#include &lt;sys/types.h&gt;#include &lt;sys/socket.h&gt;#include &lt;netinet/in.h&gt; #define MY_PORT 3333  int main(int argc, char *argv[]) { int sockfd, new_fd; struct sockaddr_in my_addr; // hedef adres  struct sockaddr_in their_addr; // baglanti yapan adres  int sin_size, rt; // gelen verinin tutuldugu buffer  char buf[32]; // islem yapmak icin gerekli dosya gosterici  sockfd = socket(AF_INET, SOCK_DGRAM, 0); sin_size = sizeof(struct sockaddr_in); // adres ile ilgili ayarlar  my_addr.sin_family = AF_INET; my_addr.sin_port = htons(MY_PORT); // kullanilacak port  my_addr.sin_addr.s_addr = INADDR_ANY; // mevcut ip adresi  memset(&amp;(my_addr.sin_zero), 0, 8); // geri kalani 0la  // socket ile dosyayi iliskilendir  bind(sockfd, (struct sockaddr *)&amp;my_addr, sizeof(struct sockaddr)); while ( 1 ) { rt = recvfrom (sockfd, buf, 12, 0, (struct sockaddr *)&amp;their_addr, &amp;sin_size); if (rt &gt; 0) { printf (&#34;recv: %s\n&#34;, buf); } else if (rt &lt; 0) { printf(&#34;Baglanti koptu\n&#34;); break; } } close(sockfd); return 0; } İstemci:">
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;sys/socket.h&gt;
+#include &lt;netinet/in.h&gt;
+
+#define MY_PORT 3333
+
+int main(int argc, char *argv[])
+{
+
+    int sockfd, new_fd;
+    struct sockaddr_in my_addr;    // hedef adres
+    struct sockaddr_in their_addr; // baglanti yapan adres
+
+    int sin_size, rt;
+
+    // gelen verinin tutuldugu buffer
+    char buf[32];
+
+    // islem yapmak icin gerekli dosya gosterici
+    sockfd = socket(AF_INET, SOCK_DGRAM, 0);
+
+    sin_size = sizeof(struct sockaddr_in);
+
+    // adres ile ilgili ayarlar
+    my_addr.sin_family      = AF_INET;
+    my_addr.sin_port        = htons(MY_PORT); // kullanilacak port
+    my_addr.sin_addr.s_addr = INADDR_ANY;     // mevcut ip adresi
+    memset(&amp;(my_addr.sin_zero), 0, 8); // geri kalani 0la
+
+    // socket ile dosyayi iliskilendir
+    bind(sockfd, (struct sockaddr *)&amp;my_addr, sizeof(struct sockaddr));
+
+    while ( 1 ) {
+        rt = recvfrom (sockfd, buf, 12, 0, (struct sockaddr *)&amp;their_addr, &amp;sin_size);
+        if (rt &gt; 0) {
+            printf (&#34;recv: %s\n&#34;, buf);
+        } else if (rt &lt; 0) {
+            printf(&#34;Baglanti koptu\n&#34;);
+            break;
+        }
+    }
+
+    close(sockfd);
+    return 0;
+}
+İstemci:
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;sys/socket.h&gt;
+#include &lt;netinet/in.h&gt;
+
+#define DEST_IP   &#34;255.255.255.255&#34;
+#define DEST_PORT 3333
+
+int main(int argc, char *argv[])
+{
+
+    int sockfd, new_fd;
+    struct sockaddr_in dest_addr; // hedef adres
+
+    int sin_size, rt;
+    sin_size = sizeof(struct sockaddr_in);
+
+    // islem yapmak icin gerekli dosya gosterici
+    sockfd = socket(AF_INET, SOCK_DGRAM, 0);
+
+    // adres ile ilgili ayarlar
+    dest_addr.sin_family      = AF_INET;
+    dest_addr.sin_port        = htons(DEST_PORT);
+    dest_addr.sin_addr.s_addr = inet_addr(DEST_IP);
+    memset(&amp;(dest_addr.sin_zero), 0, 8); // geri kalani 0 la
+
+    // Broadcast icin gerekli yetkiyi al
+    int flag = 1;
+    if (setsockopt (sockfd, SOL_SOCKET, SO_BROADCAST, &amp;flag, sizeof(flag)) &lt; 0)
+        perror(&#34;setsockopt&#34;);
+
+    // mesaji gonder
+    rt = sendto (sockfd, &#34;slm asl plz&#34;, 12, 0, (const struct sockaddr *)&amp;dest_addr, sin_size);
+    if ( rt &lt; 0 )
+        perror(&#34;Hata: &#34;);
+
+    // socketi kapat
+    close(sockfd);
+
+    return 0;
+}
+">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -58,7 +148,7 @@
     "name" : "Aşkın Özgür"
   },
   "headline": "UDP Broadcast sunucu - istemci",
-  "description" : "Sunucu:\n#include \u0026lt;stdio.h\u0026gt;#include \u0026lt;string.h\u0026gt;#include \u0026lt;sys\/types.h\u0026gt;#include \u0026lt;sys\/socket.h\u0026gt;#include \u0026lt;netinet\/in.h\u0026gt; #define MY_PORT 3333  int main(int argc, char *argv[]) { int sockfd, new_fd; struct sockaddr_in my_addr; \/\/ hedef adres  struct sockaddr_in their_addr; \/\/ baglanti yapan adres  int sin_size, rt; \/\/ gelen verinin tutuldugu buffer  char buf[32]; \/\/ islem yapmak icin gerekli dosya gosterici  sockfd = socket(AF_INET, SOCK_DGRAM, 0); sin_size = sizeof(struct sockaddr_in); \/\/ adres ile ilgili ayarlar  my_addr.sin_family = AF_INET; my_addr.sin_port = htons(MY_PORT); \/\/ kullanilacak port  my_addr.sin_addr.s_addr = INADDR_ANY; \/\/ mevcut ip adresi  memset(\u0026amp;(my_addr.sin_zero), 0, 8); \/\/ geri kalani 0la  \/\/ socket ile dosyayi iliskilendir  bind(sockfd, (struct sockaddr *)\u0026amp;my_addr, sizeof(struct sockaddr)); while ( 1 ) { rt = recvfrom (sockfd, buf, 12, 0, (struct sockaddr *)\u0026amp;their_addr, \u0026amp;sin_size); if (rt \u0026gt; 0) { printf (\u0026#34;recv: %s\\n\u0026#34;, buf); } else if (rt \u0026lt; 0) { printf(\u0026#34;Baglanti koptu\\n\u0026#34;); break; } } close(sockfd); return 0; } İstemci:",
+  "description" : "Sunucu:\n#include \u0026lt;stdio.h\u0026gt;#include \u0026lt;string.h\u0026gt;#include \u0026lt;sys\/types.h\u0026gt;#include \u0026lt;sys\/socket.h\u0026gt;#include \u0026lt;netinet\/in.h\u0026gt; #define MY_PORT 3333  int main(int argc, char *argv[]) { int sockfd, new_fd; struct sockaddr_in my_addr; \/\/ hedef adres  struct sockaddr_in their_addr; \/\/ baglanti yapan adres  int sin_size, rt; \/\/ gelen verinin tutuldugu buffer  char buf[32]; \/\/ islem yapmak icin gerekli dosya gosterici  sockfd = socket(AF_INET, SOCK_DGRAM, 0); sin_size = sizeof(struct sockaddr_in); \/\/ adres ile ilgili ayarlar  my_addr.sin_family = AF_INET; my_addr.sin_port = htons(MY_PORT); \/\/ kullanilacak port  my_addr.sin_addr.s_addr = INADDR_ANY; \/\/ mevcut ip adresi  memset(\u0026amp;(my_addr.sin_zero), 0, 8); \/\/ geri kalani 0la  \/\/ socket ile dosyayi iliskilendir  bind(sockfd, (struct sockaddr *)\u0026amp;my_addr, sizeof(struct sockaddr)); while ( 1 ) { rt = recvfrom (sockfd, buf, 12, 0, (struct sockaddr *)\u0026amp;their_addr, \u0026amp;sin_size); if (rt \u0026gt; 0) { printf (\u0026#34;recv: %s\\n\u0026#34;, buf); } else if (rt \u0026lt; 0) { printf(\u0026#34;Baglanti koptu\\n\u0026#34;); break; } } close(sockfd); return 0; } İstemci:\n#include \u0026lt;stdio.h\u0026gt;#include \u0026lt;string.h\u0026gt;#include \u0026lt;sys\/types.h\u0026gt;#include \u0026lt;sys\/socket.h\u0026gt;#include \u0026lt;netinet\/in.h\u0026gt; #define DEST_IP \u0026#34;255.255.255.255\u0026#34; #define DEST_PORT 3333  int main(int argc, char *argv[]) { int sockfd, new_fd; struct sockaddr_in dest_addr; \/\/ hedef adres  int sin_size, rt; sin_size = sizeof(struct sockaddr_in); \/\/ islem yapmak icin gerekli dosya gosterici  sockfd = socket(AF_INET, SOCK_DGRAM, 0); \/\/ adres ile ilgili ayarlar  dest_addr.sin_family = AF_INET; dest_addr.sin_port = htons(DEST_PORT); dest_addr.sin_addr.s_addr = inet_addr(DEST_IP); memset(\u0026amp;(dest_addr.sin_zero), 0, 8); \/\/ geri kalani 0 la  \/\/ Broadcast icin gerekli yetkiyi al  int flag = 1; if (setsockopt (sockfd, SOL_SOCKET, SO_BROADCAST, \u0026amp;flag, sizeof(flag)) \u0026lt; 0) perror(\u0026#34;setsockopt\u0026#34;); \/\/ mesaji gonder  rt = sendto (sockfd, \u0026#34;slm asl plz\u0026#34;, 12, 0, (const struct sockaddr *)\u0026amp;dest_addr, sin_size); if ( rt \u0026lt; 0 ) perror(\u0026#34;Hata: \u0026#34;); \/\/ socketi kapat  close(sockfd); return 0; } ",
   "inLanguage" : "tr",
   "wordCount":  259 ,
   "datePublished" : "2012-08-03T15:31:00",
@@ -81,7 +171,97 @@
 
 <meta property="og:title" content="UDP Broadcast sunucu - istemci" />
 <meta property="og:description" content="Sunucu:
-#include &lt;stdio.h&gt;#include &lt;string.h&gt;#include &lt;sys/types.h&gt;#include &lt;sys/socket.h&gt;#include &lt;netinet/in.h&gt; #define MY_PORT 3333  int main(int argc, char *argv[]) { int sockfd, new_fd; struct sockaddr_in my_addr; // hedef adres  struct sockaddr_in their_addr; // baglanti yapan adres  int sin_size, rt; // gelen verinin tutuldugu buffer  char buf[32]; // islem yapmak icin gerekli dosya gosterici  sockfd = socket(AF_INET, SOCK_DGRAM, 0); sin_size = sizeof(struct sockaddr_in); // adres ile ilgili ayarlar  my_addr.sin_family = AF_INET; my_addr.sin_port = htons(MY_PORT); // kullanilacak port  my_addr.sin_addr.s_addr = INADDR_ANY; // mevcut ip adresi  memset(&amp;(my_addr.sin_zero), 0, 8); // geri kalani 0la  // socket ile dosyayi iliskilendir  bind(sockfd, (struct sockaddr *)&amp;my_addr, sizeof(struct sockaddr)); while ( 1 ) { rt = recvfrom (sockfd, buf, 12, 0, (struct sockaddr *)&amp;their_addr, &amp;sin_size); if (rt &gt; 0) { printf (&#34;recv: %s\n&#34;, buf); } else if (rt &lt; 0) { printf(&#34;Baglanti koptu\n&#34;); break; } } close(sockfd); return 0; } İstemci:">
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;sys/socket.h&gt;
+#include &lt;netinet/in.h&gt;
+
+#define MY_PORT 3333
+
+int main(int argc, char *argv[])
+{
+
+    int sockfd, new_fd;
+    struct sockaddr_in my_addr;    // hedef adres
+    struct sockaddr_in their_addr; // baglanti yapan adres
+
+    int sin_size, rt;
+
+    // gelen verinin tutuldugu buffer
+    char buf[32];
+
+    // islem yapmak icin gerekli dosya gosterici
+    sockfd = socket(AF_INET, SOCK_DGRAM, 0);
+
+    sin_size = sizeof(struct sockaddr_in);
+
+    // adres ile ilgili ayarlar
+    my_addr.sin_family      = AF_INET;
+    my_addr.sin_port        = htons(MY_PORT); // kullanilacak port
+    my_addr.sin_addr.s_addr = INADDR_ANY;     // mevcut ip adresi
+    memset(&amp;(my_addr.sin_zero), 0, 8); // geri kalani 0la
+
+    // socket ile dosyayi iliskilendir
+    bind(sockfd, (struct sockaddr *)&amp;my_addr, sizeof(struct sockaddr));
+
+    while ( 1 ) {
+        rt = recvfrom (sockfd, buf, 12, 0, (struct sockaddr *)&amp;their_addr, &amp;sin_size);
+        if (rt &gt; 0) {
+            printf (&#34;recv: %s\n&#34;, buf);
+        } else if (rt &lt; 0) {
+            printf(&#34;Baglanti koptu\n&#34;);
+            break;
+        }
+    }
+
+    close(sockfd);
+    return 0;
+}
+İstemci:
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;sys/socket.h&gt;
+#include &lt;netinet/in.h&gt;
+
+#define DEST_IP   &#34;255.255.255.255&#34;
+#define DEST_PORT 3333
+
+int main(int argc, char *argv[])
+{
+
+    int sockfd, new_fd;
+    struct sockaddr_in dest_addr; // hedef adres
+
+    int sin_size, rt;
+    sin_size = sizeof(struct sockaddr_in);
+
+    // islem yapmak icin gerekli dosya gosterici
+    sockfd = socket(AF_INET, SOCK_DGRAM, 0);
+
+    // adres ile ilgili ayarlar
+    dest_addr.sin_family      = AF_INET;
+    dest_addr.sin_port        = htons(DEST_PORT);
+    dest_addr.sin_addr.s_addr = inet_addr(DEST_IP);
+    memset(&amp;(dest_addr.sin_zero), 0, 8); // geri kalani 0 la
+
+    // Broadcast icin gerekli yetkiyi al
+    int flag = 1;
+    if (setsockopt (sockfd, SOL_SOCKET, SO_BROADCAST, &amp;flag, sizeof(flag)) &lt; 0)
+        perror(&#34;setsockopt&#34;);
+
+    // mesaji gonder
+    rt = sendto (sockfd, &#34;slm asl plz&#34;, 12, 0, (const struct sockaddr *)&amp;dest_addr, sin_size);
+    if ( rt &lt; 0 )
+        perror(&#34;Hata: &#34;);
+
+    // socketi kapat
+    close(sockfd);
+
+    return 0;
+}
+">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
 <meta property="og:url" content="https://blog.askin.ws/blog/udp-broadcast-sunucu-istemci/" />
 <meta property="og:type" content="website" />
@@ -89,7 +269,15 @@
 
   <meta name="twitter:title" content="UDP Broadcast sunucu - istemci" />
   <meta name="twitter:description" content="Sunucu:
-#include &lt;stdio.h&gt;#include &lt;string.h&gt;#include &lt;sys/types.h&gt;#include &lt;sys/socket.h&gt;#include &lt;netinet/in.h&gt; #define MY_PORT 3333  int main(int argc, char *argv[]) { …">
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;sys/socket.h&gt;
+#include &lt;netinet/in.h&gt;
+
+#define MY_PORT 3333
+
+int main(int argc, char * …">
   <meta name="twitter:image" content="https://blog.askin.ws/uploads/avatar.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@kelebeks" />

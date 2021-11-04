@@ -230,11 +230,21 @@
     </p>
     <div class="post-entry">
         
-        Bikaç gündür Pardus ve Eduroam ile uğraşıyordum. Eduroama bağlanmak için pratik yollar buldum fakat hiç birisi Ağ Yöneticisi kullanarak bağlanmanın zevkini vermiyordu.
-2 gün boyunca Ağ Yöneticisinin neresini değiştirmem gerektiğini arayıp durdum. Sonunda wireless-tools adlı paketin aradığım paket olduğunu keşfettim :) wireless tools paketi wpa_supplicant kullanarak wpa şifreleme kullanan ağlara bağlanmaya yarıyor. Sağolsun Pardus geliştiricileri wpa_supplicant paketi için dbus kullanan bir python betiği yazmışlar. Bu betik içinde tanımlanan methodlarla wpa_supplicantı yönetebiliyoruz. Bu betiğe eduroam ağına bağlanmak için gerekli parametreleri alan bir method ekledim.
-Daha sonra wireless-tools paketi içindeki comar betiğine bu methodu kullanmasını sağlayacak birkaç değişiklik yaptım.
-Sırf bu işi denemek için bugün okulum olmadığı halde sabahın 8&rsquo;inde okula gelip deneme yaptım.
-        <a href="https://blog.askin.ws/blog/pardus-ag-yoneticisi-ile-eduroam-agina-baglanmak/" class="post-read-more">[Daha fazla oku]</a>
+        <p><img src="/uploads/2009/05/pardus.png" alt="Pardus" title="Pardus">Bikaç gündür <a href="http://www.pardus.org.tr">Pardus</a> ve <a href="http://www.eduroam.org/">Eduroam</a> ile uğraşıyordum. Eduroama bağlanmak için pratik yollar buldum fakat hiç birisi Ağ Yöneticisi kullanarak bağlanmanın zevkini vermiyordu.</p>
+<p>2 gün boyunca Ağ Yöneticisinin neresini değiştirmem gerektiğini arayıp durdum. Sonunda wireless-tools adlı paketin aradığım paket olduğunu keşfettim :) wireless tools paketi wpa_supplicant kullanarak wpa şifreleme kullanan ağlara bağlanmaya yarıyor. Sağolsun Pardus geliştiricileri wpa_supplicant paketi için dbus kullanan bir python betiği yazmışlar. Bu betik içinde tanımlanan methodlarla wpa_supplicantı yönetebiliyoruz. Bu betiğe eduroam ağına bağlanmak için gerekli parametreleri alan bir method ekledim.<br>
+Daha sonra wireless-tools paketi içindeki comar betiğine bu methodu kullanmasını sağlayacak birkaç değişiklik yaptım.</p>
+<p>Sırf bu işi denemek için bugün okulum olmadığı halde sabahın 8&rsquo;inde okula gelip deneme yaptım. Ayarlarını evde yaptığım için bilgisayarı açar açmaz internete bağlandı :) Hayatımda ilk kez yazdığım bir kod direk çalıştı :P</p>
+<p>Düzenlediğim bu 2 pakete aşağıdaki adreslerden ulaşabilirsiniz.<br>
+<a href="http://github.com/askin/kelebekpisi/tree/master/wpa_supplicant/">http://github.com/askin/kelebekpisi/tree/master/wpa_supplicant/</a><br>
+<a href="http://github.com/askin/kelebekpisi/tree/master/wireless-tools/">http://github.com/askin/kelebekpisi/tree/master/wireless-tools/</a></p>
+<p>Paketleri kendiniz derlemek için root yetkileriyle</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pisi bi http://github.com/askin/kelebekpisi/raw/master/wpa_supplicant/pspec.xml
+pisi bi http://github.com/askin/kelebekpisi/raw/master/wireless-tools/pspec.xml
+</code></pre></div><p>komutlarını vermelisiniz, ardından oluşan pisi paketlerini kurabilirsiniz.</p>
+<p>Ya da hazır ikili pisi paketlerini <a href="http://askin.ws/pisi/eduroam/">http://askin.ws/pisi/eduroam/</a> adresinden bulabilirsiniz.</p>
+<p>Paketleri kurduktan sonra ayarları yaparken Güvenlik Türü seçeneğini &ldquo;WPA &amp; WPA2 Enterprise&rdquo; olarak seçmelisiniz.</p>
+<p>Son olarak wireless-tools paketi Pardus&rsquo;un temel paketlerinden birisidir, wpa_supplicant paketi de wpa ağlarına bağlanmak için gerekli temel bir pakettir. Bunları Pardus deposu dışında bir yerden kurmak sisteminize zarar verebilir. Sorumluluk kullanıcıya aittir :)</p>
+<p>Benim sistemime hiç bir şey olmadı, %99.99 olasılıkla sizin siteminize de zarar gelmez fakat ben yinede hiç bir sorumluluk almıyorum :)</p>
         
     </div>
 
@@ -290,14 +300,35 @@ Sırf bu işi denemek için bugün okulum olmadığı halde sabahın 8&rsquo;ind
     </p>
     <div class="post-entry">
         
-        Pardusun ağ yöneticisi gayet şık bir arayüze sahip, fakat bize Eduroam ağına bağlanma özelliği sunmuyor.
-Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız için yeterli. Bu araçlar wpa_supplicant ve dhcpcd. Wpa_supplicant ağda kimlik denetimini sağlamak için, dhcpcd ise ağdan ip almamız için gerekli.
-Öncelikle wpa_supplicant için ayar dosyası oluşturmamız gerekiyor.
-network={ ssid=&quot;eduroam&quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap=TTLS phase2=&quot;auth=PAP&quot; anonymous_identity=&quot;anonymous@ogr.deu.edu.tr&quot; identity=&quot;ogrencinumarasi@ogr.deu.edu.tr&quot; password=&quot;sifre&quot; } Bu ayarlar Dokuz Eylül Üniversitesi için. Kendi okulunuza göre düzenlemeniz gerekiyor. Sadece ogr.deu.edu.tr adresi yerine kendi okulunuzun adresini yazmalısınız.
-Bu dosyayı /etc/wpa_supplicant.con adıyla kaydediyoruz.
-Sıra geldi wpa_supplicantı çalıştırmaya.
-wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf -D parametresi hangi sürücüyü kullanacağımızı belirtiyor.
-        <a href="https://blog.askin.ws/blog/pardus-ile-eduroam-agina-baglanma/" class="post-read-more">[Daha fazla oku]</a>
+        <p><img src="/uploads/2009/12/eduroam_logo_trans.gif" alt="Eduroam" title="Eduroam"><a href="http://www.pardus.org.tr/">Pardus</a>un ağ yöneticisi gayet şık bir arayüze sahip, fakat bize <a href="http://www.eduroam.org/">Eduroam</a> ağına bağlanma özelliği sunmuyor.<br>
+Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız için yeterli. Bu araçlar <a href="http://hostap.epitest.fi/wpa_supplicant/">wpa_supplicant</a> ve <a href="http://roy.marples.name/projects/dhcpcd">dhcpcd</a>. Wpa_supplicant ağda kimlik denetimini sağlamak için, dhcpcd ise ağdan ip almamız için gerekli.</p>
+<p>Öncelikle wpa_supplicant için ayar dosyası oluşturmamız gerekiyor.</p>
+<pre tabindex="0"><code class="language-conf" data-lang="conf">network={
+        ssid=&quot;eduroam&quot;
+        key_mgmt=WPA-EAP
+        pairwise=TKIP
+        group=TKIP
+        eap=TTLS
+        phase2=&quot;auth=PAP&quot;
+        anonymous_identity=&quot;anonymous@ogr.deu.edu.tr&quot;
+        identity=&quot;ogrencinumarasi@ogr.deu.edu.tr&quot;
+        password=&quot;sifre&quot;
+}
+</code></pre><p>Bu ayarlar Dokuz Eylül Üniversitesi için. Kendi okulunuza göre düzenlemeniz gerekiyor. Sadece ogr.deu.edu.tr adresi yerine kendi okulunuzun adresini yazmalısınız.</p>
+<p>Bu dosyayı /etc/wpa_supplicant.con adıyla kaydediyoruz.</p>
+<p>Sıra geldi wpa_supplicantı çalıştırmaya.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf
+</code></pre></div><p>-D parametresi hangi sürücüyü kullanacağımızı belirtiyor. Wpa_supplicantın man dosyalarına bakarak kendinize uygun bir sürücü seçebilirsiniz.<br>
+-i hangi arayüzü kullanacağınızı belirtiyor. Genellikle wlan0 dır. iwconfig komutunun çıktısı size kablosuz ağ kartlarını gösterecektir.<br>
+-c ile ayar dosyamızın yerini belirtiyoruz.</p>
+<p>Eğer bu komut başarılı olursa artık ip alabiliriz.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dhcpcd wlan0
+</code></pre></div><p>Eğer bu komutta başarılı olduysa artık internete bağlanabilirsiniz hayırlı olsun :)</p>
+<p>Bu işlemi kolaylaştırmak için pem adında bi script yazdım.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git://github.com/askin/pem.git
+</code></pre></div><p>Bu komutla pem&rsquo;e ulaşabilirsiniz.<br>
+Bu aracı daha fazla geliştirecektim fakat ağ yöneticisiyle bu işleri nasıl yapabileceğimi öğrendim. Bugün oturup biraz network-managerın kodlarıyla uğraştım. Sanırım pazartesi günü bu işi ağ yöneticisiyle kolayca yapılabilecek bir hale getirebilirim. Şimdilik en güzel yöntem bu gibi :)</p>
+<p>Ayrıca sevgili dostum <a href="http://blog.metebilgin.com/">Mete</a> bu işin wicd kullanarak nasıl yapıldığını daha önce yazmış <a href="http://blog.metebilgin.com/2009/10/pardus-2009-da-eduroam-kafay-yemeden.html">buradan</a> o yazıya ulaşabilirsiniz.</p>
         
     </div>
 
@@ -357,13 +388,15 @@ wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf -D parametresi hangi s�
     </p>
     <div class="post-entry">
         
-        Geçen hafta bilgisayarım bozulunca, verilerimi kurtarmak için bir harici disk almak zorunda kaldım.
-Malum servisler arıza ne olursa olsun hemen format atma merakındalar.
-Tekrar bulamayacağım 20GB kadar, film müzik derken 100GB kadar verim vardı. Diski alınca benim hard diski arkadaşın bilgisayarına takıp hepsini aldım.
-Birazda harici diskten bahsedeyim.
-Disk biraz büyük gibi. Gerçi daha büyüklerini de gördüm, ama biraz daha ufak olabilirdi. Gayet hafif, Yanında taşımamız gereken bir adaptörü olmasa tadından yenmez. Hızı gayet tatmin edici. Saniyede 30MB&rsquo;ı görebildim. Gecikme süresi rahatsız edici boyutta değil. Üzerine Pardus kurdum normal disk üzerinde gibi hızlı açılıp kapanıyor.
-Kutu üzerinde 500GB yazmasına rağmen 466GB.
-        <a href="https://blog.askin.ws/blog/trekstor-maxi-g-u-500gb-harici-hard-disk/" class="post-read-more">[Daha fazla oku]</a>
+        <p><img src="/uploads/2009/09/TrekStor.png" alt="TrekStor" title="TrekStor">Geçen hafta bilgisayarım bozulunca, verilerimi kurtarmak için bir harici disk almak zorunda kaldım.<br>
+Malum servisler arıza ne olursa olsun hemen format atma merakındalar.<br>
+Tekrar bulamayacağım 20GB kadar, film müzik derken 100GB kadar verim vardı. Diski alınca benim hard diski arkadaşın bilgisayarına takıp hepsini aldım.</p>
+<p>Birazda harici diskten bahsedeyim.<br>
+Disk biraz büyük gibi. Gerçi daha büyüklerini de gördüm, ama biraz daha ufak olabilirdi. Gayet hafif, Yanında taşımamız gereken bir adaptörü olmasa tadından yenmez. Hızı gayet tatmin edici. Saniyede 30MB&rsquo;ı görebildim. Gecikme süresi rahatsız edici boyutta değil. Üzerine <a href="http://www.pardus.org.tr/">Pardus</a> kurdum normal disk üzerinde gibi hızlı açılıp kapanıyor.<br>
+Kutu üzerinde 500GB yazmasına rağmen 466GB. Disk üreticilerine göre 1GB, 1073741824 yerine 1000000000 Byte. Bu nedenle arada 34GB oynuyor. Kutu üzerinde de zaten bunu belirtmişler.</p>
+<p>Piyasayı çok araştırmama rağmen fiyatı bana çok makul geldi. Teknosadan 100TLye aldım. Herkese tavsiye ederim.<br>
+Buda resmi.<br>
+<img src="/uploads/2009/09/trekstor_maxi_gu.jpg" alt="TrekStor maxi g.u" title="TrekStor maxi g.u"></p>
         
     </div>
 
@@ -646,10 +679,12 @@ Tabi <a href="http://gmail.com">gmail</a>in üstün spam ayıklama kabiliyetini 
     </p>
     <div class="post-entry">
         
-        Sonunda Pardus 2009&rsquo;u bilgisayarıma kurabildim. Ailemin yanına geldiğim için Pardus&rsquo;u indiremiyordum. Malum kotalı internet, sıkıntı yaratıyor.
-Kurulum sorunsuz tamamlandı. Kurulum arayüzü çok hoş olmuş. Çok kullanışlı ve çok kolay bir arayüzü olmuş. Bilgisayarıma en hızlı kurulabilen Pardus sürümü. Saat tutmadım ama, 20 dakka ile 30 dakka arasında bir sürede kurulduğunu tahmin ediyorum.
-Kablosuz ağ kartımı sorunsuz tanıdı ve WPA2 şifreli ağıma çok kolay bir şekilde bağlandı. Daha önce de tanıyordu, fakat ağımı göremiyordu, ben de mecburen ndiswraper ile kullanıyordum. Hiç bir ek program kurmama ve kapalı kodlu windows sürücülerine ihtiyaç duymamak beni gayet mutlu etti. Ve ilk defa wi-fi ledinin yanıp söndüğü gördüm:)
-        <a href="https://blog.askin.ws/blog/pardus-2009/" class="post-read-more">[Daha fazla oku]</a>
+        <p><img src="/uploads/2009/05/pardus.png" alt="Pardus" title="Pardus">Sonunda Pardus 2009&rsquo;u bilgisayarıma kurabildim. Ailemin yanına geldiğim için Pardus&rsquo;u indiremiyordum. Malum kotalı internet, sıkıntı yaratıyor.<br>
+Kurulum sorunsuz tamamlandı. Kurulum arayüzü çok hoş olmuş. Çok kullanışlı ve çok kolay bir arayüzü olmuş. Bilgisayarıma en hızlı kurulabilen Pardus sürümü. Saat tutmadım ama, 20 dakka ile 30 dakka arasında bir sürede kurulduğunu tahmin ediyorum.<br>
+Kablosuz ağ kartımı sorunsuz tanıdı ve WPA2 şifreli ağıma çok kolay bir şekilde bağlandı. Daha önce de tanıyordu, fakat ağımı göremiyordu, ben de mecburen ndiswraper ile kullanıyordum. Hiç bir ek program kurmama ve kapalı kodlu windows sürücülerine ihtiyaç duymamak beni gayet mutlu etti. Ve ilk defa wi-fi ledinin yanıp söndüğü gördüm:)<br>
+KDE4 gerçekten çok güzel, çok hoş duruyor fakat bana göre değil. Arada açıp gönül eğlendirebilirim ama gnome herzamanki gibi 1 numaralı tercihim. Bu nedenle biraz KDE4 turu yaptıktan sonra hemen gnome&rsquo;u kurdum. Bu nedenle <a href="http://code.google.com/p/pardus-gnome-project/">Burak Çalışkan</a>&lsquo;a teşekür ediyorum.<br>
+İhtiyaç duyduğum bazı programlar depoda bulunmuyordu. Bu nedenle devel deposundan bazı paketleri derleyip kurdum. Bi kaç program paketlenemedi, onlarda kısa sürede hazır olur diye umuyorum.<br>
+Her şeye rağmen güzel bi dağıtım olmuş. Emeği geçen herkese teşekür ediyorum.</p>
         
     </div>
 
@@ -707,11 +742,18 @@ Kablosuz ağ kartımı sorunsuz tanıdı ve WPA2 şifreli ağıma çok kolay bir
     </p>
     <div class="post-entry">
         
-        Mysql data dizini ön tanımlı /var/lib/mysql olarak belirlenmiştir. Çeşitli ihtiyaçlardan dolayı bunun yerini değiştirmemiz gerekebilir. Mesela ben ayrı bir bölümde tuttuğum /home dizini altına taşımak istiyorum. Tüm işlemleri root yetkisiyle yapıyoruz. Öncelikle mysql servisini durduralım. Ben pardus kullandığım için
-$ service mysql-server stop Diğer dağıtımlarda farklı olabilir. Ardından ilgili dizini yeni yerine kopyalayalım.
-$ cp -a /var/lib/mysql /home Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. /etc/mysql/my.cnf dosyasında datadir = /var/lib/mysql olan satırı datadir = /home/mysql olarak değiştirelim. Şimdi servisi yeniden başlatabiliriz.
-$ service mysql-server start Eğer düzgün bir şekilde çalışıyorsa /var/lib/mysql dizinini silebiliriz. Ama ismini değiştirip birkaç gün her ihtimale karşı saklamak çok mantıklı.
-        <a href="https://blog.askin.ws/blog/mysql-data-dizinini-degistirme/" class="post-read-more">[Daha fazla oku]</a>
+        <p><img src="/uploads/2009/07/mysql.png" alt="Mysql" title="Mysql">Mysql data dizini ön tanımlı <strong>/var/lib/mysql</strong> olarak belirlenmiştir. Çeşitli ihtiyaçlardan dolayı bunun yerini değiştirmemiz gerekebilir. Mesela ben ayrı bir bölümde tuttuğum <strong>/home</strong> dizini altına taşımak istiyorum. Tüm işlemleri <em>root</em> yetkisiyle yapıyoruz. Öncelikle mysql servisini durduralım.
+Ben pardus kullandığım için</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ service mysql-server stop
+</code></pre></div><p>Diğer dağıtımlarda farklı olabilir.
+Ardından ilgili dizini yeni yerine kopyalayalım.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cp -a /var/lib/mysql /home
+</code></pre></div><p>Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. <strong>/etc/mysql/my.cnf</strong> dosyasında
+<code>datadir = /var/lib/mysql</code> olan satırı
+<code>datadir = /home/mysql</code> olarak değiştirelim.
+Şimdi servisi yeniden başlatabiliriz.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ service mysql-server start
+</code></pre></div><p>Eğer düzgün bir şekilde çalışıyorsa <strong>/var/lib/mysql</strong> dizinini silebiliriz. Ama ismini değiştirip birkaç gün her ihtimale karşı saklamak çok mantıklı.</p>
         
     </div>
 
@@ -763,9 +805,96 @@ $ service mysql-server start Eğer düzgün bir şekilde çalışıyorsa /var/li
     </p>
     <div class="post-entry">
         
-        Komut satırı programları -h yada &ndash;help gibi parametreler alırlar. Bu alınan parametrelerin kolay kullanılması için getopt adında bir kütüphane yaratılmış. Bu kütüphane kullanlanılarak çok rahat böyle programlar yazılabilir. Bende bunun için küçük bir örnek yazdım.
-#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;getopt.h&gt; int print_usage ( void ); int main (int argc, char* argv[]) { int next_option; char* output; char* input; char color = 47; /** * kisa parametler burda tanimli * ardindan parametre alanlar : ile bitiyor * orn: o: bir parametre aliyor b almiyor * -o kelebek yada -b gibi */ const char* const short_options = &#34;hbro:i:&#34;; /** * Burdada uzun hallerini tanimliyoruz.
-        <a href="https://blog.askin.ws/blog/c-ile-komut-satiri-argumanlari-ve-parametreleri/" class="post-read-more">[Daha fazla oku]</a>
+        <p><img src="/uploads/2009/07/gnome-terminal.png" alt="Terminal" title="Terminal">Komut satırı programları -h yada &ndash;help gibi parametreler alırlar. Bu alınan parametrelerin kolay kullanılması için <em>getopt</em> adında bir kütüphane yaratılmış. Bu kütüphane kullanlanılarak çok rahat böyle programlar yazılabilir.
+Bende bunun için küçük bir örnek yazdım.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;getopt.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">print_usage</span> ( <span style="color:#66d9ef">void</span> );
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span> (<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> argv[])
+{
+  <span style="color:#66d9ef">int</span> next_option;
+  <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> output;
+  <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> input;
+  <span style="color:#66d9ef">char</span> color <span style="color:#f92672">=</span> <span style="color:#ae81ff">47</span>;
+
+  <span style="color:#75715e">/**
+</span><span style="color:#75715e">   * kisa parametler burda tanimli
+</span><span style="color:#75715e">   *  ardindan parametre alanlar : ile bitiyor
+</span><span style="color:#75715e">   *  orn: o: bir parametre aliyor b almiyor
+</span><span style="color:#75715e">   *  -o kelebek yada -b gibi
+</span><span style="color:#75715e">   */</span>
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> <span style="color:#66d9ef">const</span> short_options <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hbro:i:&#34;</span>;
+
+  <span style="color:#75715e">/**
+</span><span style="color:#75715e">   * Burdada uzun hallerini tanimliyoruz.
+</span><span style="color:#75715e">   *  beraberinde kisa karsiliklarida var.
+</span><span style="color:#75715e">   */</span>
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> option long_options[] <span style="color:#f92672">=</span> {
+    {<span style="color:#e6db74">&#34;help&#34;</span>,   no_argument, <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#39;h&#39;</span>},
+    {<span style="color:#e6db74">&#34;blue&#34;</span>,   no_argument, <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#39;b&#39;</span>},
+    {<span style="color:#e6db74">&#34;red&#34;</span>,    no_argument, <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#39;r&#39;</span>},
+    {<span style="color:#e6db74">&#34;input&#34;</span>,  required_argument, <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#39;i&#39;</span>},
+    {<span style="color:#e6db74">&#34;output&#34;</span>, required_argument, <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#39;o&#39;</span>}
+  };
+
+  <span style="color:#75715e">/**
+</span><span style="color:#75715e">   * Burda sirayla verilen argumalari aliyoruz
+</span><span style="color:#75715e">   */</span>
+  <span style="color:#66d9ef">do</span> {
+    next_option <span style="color:#f92672">=</span> getopt_long(argc,
+			      argv,
+			      short_options,
+			      long_options,
+			      NULL);
+    <span style="color:#66d9ef">switch</span>(next_option) {
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;h&#39;</span><span style="color:#f92672">:</span> <span style="color:#75715e">// -h or --help
+</span><span style="color:#75715e"></span>      print_usage();
+      <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+      <span style="color:#66d9ef">break</span>;
+
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;o&#39;</span><span style="color:#f92672">:</span> <span style="color:#75715e">// -o or --or
+</span><span style="color:#75715e"></span>      output <span style="color:#f92672">=</span> optarg;
+      <span style="color:#66d9ef">break</span>;
+
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;i&#39;</span><span style="color:#f92672">:</span> <span style="color:#75715e">// -i or --i
+</span><span style="color:#75715e"></span>      input <span style="color:#f92672">=</span> optarg;
+      <span style="color:#66d9ef">break</span>;
+
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;b&#39;</span><span style="color:#f92672">:</span> <span style="color:#75715e">// -b or --blue
+</span><span style="color:#75715e"></span>      color <span style="color:#f92672">=</span> <span style="color:#ae81ff">44</span>;
+      <span style="color:#66d9ef">break</span>;
+
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;r&#39;</span><span style="color:#f92672">:</span> <span style="color:#75715e">// -r or --red
+</span><span style="color:#75715e"></span>      color <span style="color:#f92672">=</span> <span style="color:#ae81ff">41</span>;
+      <span style="color:#66d9ef">break</span>;
+
+    <span style="color:#66d9ef">case</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>
+      <span style="color:#66d9ef">break</span>;
+
+    <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+      abort();
+    }
+  } <span style="color:#66d9ef">while</span> (next_option <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+
+  printf(<span style="color:#e6db74">&#34;%c[%d;%dmInput : %s%c[%dm</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, <span style="color:#ae81ff">27</span>, <span style="color:#ae81ff">1</span>, color, input, <span style="color:#ae81ff">27</span>, <span style="color:#ae81ff">0</span>);
+  printf(<span style="color:#e6db74">&#34;%c[%d;%dmOutput: %s%c[%dm</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, <span style="color:#ae81ff">27</span>, <span style="color:#ae81ff">1</span>, color, output, <span style="color:#ae81ff">27</span>, <span style="color:#ae81ff">0</span>);
+
+
+  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">print_usage</span> ( <span style="color:#66d9ef">void</span> ) {
+  printf(<span style="color:#e6db74">&#34;   --help   or -h for help</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>
+	 <span style="color:#e6db74">&#34;   --output or -o for output</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>
+	 <span style="color:#e6db74">&#34;   --input  or -i for input</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>
+	 <span style="color:#e6db74">&#34;   --blue   or -b for blue output</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>
+	 <span style="color:#e6db74">&#34;   --red    or -r for red output</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><p><a href="/uploads/2009/07/clexmp.c">Örnek</a></p>
         
     </div>
 

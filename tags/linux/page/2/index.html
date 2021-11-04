@@ -405,14 +405,35 @@ ssh user@remote.host <span style="color:#e6db74">&#34;cd /original/directory; ta
     </p>
     <div class="post-entry">
         
-        Pardusun ağ yöneticisi gayet şık bir arayüze sahip, fakat bize Eduroam ağına bağlanma özelliği sunmuyor.
-Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız için yeterli. Bu araçlar wpa_supplicant ve dhcpcd. Wpa_supplicant ağda kimlik denetimini sağlamak için, dhcpcd ise ağdan ip almamız için gerekli.
-Öncelikle wpa_supplicant için ayar dosyası oluşturmamız gerekiyor.
-network={ ssid=&quot;eduroam&quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap=TTLS phase2=&quot;auth=PAP&quot; anonymous_identity=&quot;anonymous@ogr.deu.edu.tr&quot; identity=&quot;ogrencinumarasi@ogr.deu.edu.tr&quot; password=&quot;sifre&quot; } Bu ayarlar Dokuz Eylül Üniversitesi için. Kendi okulunuza göre düzenlemeniz gerekiyor. Sadece ogr.deu.edu.tr adresi yerine kendi okulunuzun adresini yazmalısınız.
-Bu dosyayı /etc/wpa_supplicant.con adıyla kaydediyoruz.
-Sıra geldi wpa_supplicantı çalıştırmaya.
-wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf -D parametresi hangi sürücüyü kullanacağımızı belirtiyor.
-        <a href="https://blog.askin.ws/blog/pardus-ile-eduroam-agina-baglanma/" class="post-read-more">[Daha fazla oku]</a>
+        <p><img src="/uploads/2009/12/eduroam_logo_trans.gif" alt="Eduroam" title="Eduroam"><a href="http://www.pardus.org.tr/">Pardus</a>un ağ yöneticisi gayet şık bir arayüze sahip, fakat bize <a href="http://www.eduroam.org/">Eduroam</a> ağına bağlanma özelliği sunmuyor.<br>
+Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız için yeterli. Bu araçlar <a href="http://hostap.epitest.fi/wpa_supplicant/">wpa_supplicant</a> ve <a href="http://roy.marples.name/projects/dhcpcd">dhcpcd</a>. Wpa_supplicant ağda kimlik denetimini sağlamak için, dhcpcd ise ağdan ip almamız için gerekli.</p>
+<p>Öncelikle wpa_supplicant için ayar dosyası oluşturmamız gerekiyor.</p>
+<pre tabindex="0"><code class="language-conf" data-lang="conf">network={
+        ssid=&quot;eduroam&quot;
+        key_mgmt=WPA-EAP
+        pairwise=TKIP
+        group=TKIP
+        eap=TTLS
+        phase2=&quot;auth=PAP&quot;
+        anonymous_identity=&quot;anonymous@ogr.deu.edu.tr&quot;
+        identity=&quot;ogrencinumarasi@ogr.deu.edu.tr&quot;
+        password=&quot;sifre&quot;
+}
+</code></pre><p>Bu ayarlar Dokuz Eylül Üniversitesi için. Kendi okulunuza göre düzenlemeniz gerekiyor. Sadece ogr.deu.edu.tr adresi yerine kendi okulunuzun adresini yazmalısınız.</p>
+<p>Bu dosyayı /etc/wpa_supplicant.con adıyla kaydediyoruz.</p>
+<p>Sıra geldi wpa_supplicantı çalıştırmaya.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf
+</code></pre></div><p>-D parametresi hangi sürücüyü kullanacağımızı belirtiyor. Wpa_supplicantın man dosyalarına bakarak kendinize uygun bir sürücü seçebilirsiniz.<br>
+-i hangi arayüzü kullanacağınızı belirtiyor. Genellikle wlan0 dır. iwconfig komutunun çıktısı size kablosuz ağ kartlarını gösterecektir.<br>
+-c ile ayar dosyamızın yerini belirtiyoruz.</p>
+<p>Eğer bu komut başarılı olursa artık ip alabiliriz.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dhcpcd wlan0
+</code></pre></div><p>Eğer bu komutta başarılı olduysa artık internete bağlanabilirsiniz hayırlı olsun :)</p>
+<p>Bu işlemi kolaylaştırmak için pem adında bi script yazdım.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git://github.com/askin/pem.git
+</code></pre></div><p>Bu komutla pem&rsquo;e ulaşabilirsiniz.<br>
+Bu aracı daha fazla geliştirecektim fakat ağ yöneticisiyle bu işleri nasıl yapabileceğimi öğrendim. Bugün oturup biraz network-managerın kodlarıyla uğraştım. Sanırım pazartesi günü bu işi ağ yöneticisiyle kolayca yapılabilecek bir hale getirebilirim. Şimdilik en güzel yöntem bu gibi :)</p>
+<p>Ayrıca sevgili dostum <a href="http://blog.metebilgin.com/">Mete</a> bu işin wicd kullanarak nasıl yapıldığını daha önce yazmış <a href="http://blog.metebilgin.com/2009/10/pardus-2009-da-eduroam-kafay-yemeden.html">buradan</a> o yazıya ulaşabilirsiniz.</p>
         
     </div>
 
@@ -472,10 +493,12 @@ wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf -D parametresi hangi s�
     </p>
     <div class="post-entry">
         
-        Sonunda Pardus 2009&rsquo;u bilgisayarıma kurabildim. Ailemin yanına geldiğim için Pardus&rsquo;u indiremiyordum. Malum kotalı internet, sıkıntı yaratıyor.
-Kurulum sorunsuz tamamlandı. Kurulum arayüzü çok hoş olmuş. Çok kullanışlı ve çok kolay bir arayüzü olmuş. Bilgisayarıma en hızlı kurulabilen Pardus sürümü. Saat tutmadım ama, 20 dakka ile 30 dakka arasında bir sürede kurulduğunu tahmin ediyorum.
-Kablosuz ağ kartımı sorunsuz tanıdı ve WPA2 şifreli ağıma çok kolay bir şekilde bağlandı. Daha önce de tanıyordu, fakat ağımı göremiyordu, ben de mecburen ndiswraper ile kullanıyordum. Hiç bir ek program kurmama ve kapalı kodlu windows sürücülerine ihtiyaç duymamak beni gayet mutlu etti. Ve ilk defa wi-fi ledinin yanıp söndüğü gördüm:)
-        <a href="https://blog.askin.ws/blog/pardus-2009/" class="post-read-more">[Daha fazla oku]</a>
+        <p><img src="/uploads/2009/05/pardus.png" alt="Pardus" title="Pardus">Sonunda Pardus 2009&rsquo;u bilgisayarıma kurabildim. Ailemin yanına geldiğim için Pardus&rsquo;u indiremiyordum. Malum kotalı internet, sıkıntı yaratıyor.<br>
+Kurulum sorunsuz tamamlandı. Kurulum arayüzü çok hoş olmuş. Çok kullanışlı ve çok kolay bir arayüzü olmuş. Bilgisayarıma en hızlı kurulabilen Pardus sürümü. Saat tutmadım ama, 20 dakka ile 30 dakka arasında bir sürede kurulduğunu tahmin ediyorum.<br>
+Kablosuz ağ kartımı sorunsuz tanıdı ve WPA2 şifreli ağıma çok kolay bir şekilde bağlandı. Daha önce de tanıyordu, fakat ağımı göremiyordu, ben de mecburen ndiswraper ile kullanıyordum. Hiç bir ek program kurmama ve kapalı kodlu windows sürücülerine ihtiyaç duymamak beni gayet mutlu etti. Ve ilk defa wi-fi ledinin yanıp söndüğü gördüm:)<br>
+KDE4 gerçekten çok güzel, çok hoş duruyor fakat bana göre değil. Arada açıp gönül eğlendirebilirim ama gnome herzamanki gibi 1 numaralı tercihim. Bu nedenle biraz KDE4 turu yaptıktan sonra hemen gnome&rsquo;u kurdum. Bu nedenle <a href="http://code.google.com/p/pardus-gnome-project/">Burak Çalışkan</a>&lsquo;a teşekür ediyorum.<br>
+İhtiyaç duyduğum bazı programlar depoda bulunmuyordu. Bu nedenle devel deposundan bazı paketleri derleyip kurdum. Bi kaç program paketlenemedi, onlarda kısa sürede hazır olur diye umuyorum.<br>
+Her şeye rağmen güzel bi dağıtım olmuş. Emeği geçen herkese teşekür ediyorum.</p>
         
     </div>
 
@@ -533,11 +556,18 @@ Kablosuz ağ kartımı sorunsuz tanıdı ve WPA2 şifreli ağıma çok kolay bir
     </p>
     <div class="post-entry">
         
-        Mysql data dizini ön tanımlı /var/lib/mysql olarak belirlenmiştir. Çeşitli ihtiyaçlardan dolayı bunun yerini değiştirmemiz gerekebilir. Mesela ben ayrı bir bölümde tuttuğum /home dizini altına taşımak istiyorum. Tüm işlemleri root yetkisiyle yapıyoruz. Öncelikle mysql servisini durduralım. Ben pardus kullandığım için
-$ service mysql-server stop Diğer dağıtımlarda farklı olabilir. Ardından ilgili dizini yeni yerine kopyalayalım.
-$ cp -a /var/lib/mysql /home Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. /etc/mysql/my.cnf dosyasında datadir = /var/lib/mysql olan satırı datadir = /home/mysql olarak değiştirelim. Şimdi servisi yeniden başlatabiliriz.
-$ service mysql-server start Eğer düzgün bir şekilde çalışıyorsa /var/lib/mysql dizinini silebiliriz. Ama ismini değiştirip birkaç gün her ihtimale karşı saklamak çok mantıklı.
-        <a href="https://blog.askin.ws/blog/mysql-data-dizinini-degistirme/" class="post-read-more">[Daha fazla oku]</a>
+        <p><img src="/uploads/2009/07/mysql.png" alt="Mysql" title="Mysql">Mysql data dizini ön tanımlı <strong>/var/lib/mysql</strong> olarak belirlenmiştir. Çeşitli ihtiyaçlardan dolayı bunun yerini değiştirmemiz gerekebilir. Mesela ben ayrı bir bölümde tuttuğum <strong>/home</strong> dizini altına taşımak istiyorum. Tüm işlemleri <em>root</em> yetkisiyle yapıyoruz. Öncelikle mysql servisini durduralım.
+Ben pardus kullandığım için</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ service mysql-server stop
+</code></pre></div><p>Diğer dağıtımlarda farklı olabilir.
+Ardından ilgili dizini yeni yerine kopyalayalım.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cp -a /var/lib/mysql /home
+</code></pre></div><p>Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. <strong>/etc/mysql/my.cnf</strong> dosyasında
+<code>datadir = /var/lib/mysql</code> olan satırı
+<code>datadir = /home/mysql</code> olarak değiştirelim.
+Şimdi servisi yeniden başlatabiliriz.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ service mysql-server start
+</code></pre></div><p>Eğer düzgün bir şekilde çalışıyorsa <strong>/var/lib/mysql</strong> dizinini silebiliriz. Ama ismini değiştirip birkaç gün her ihtimale karşı saklamak çok mantıklı.</p>
         
     </div>
 
@@ -589,11 +619,15 @@ $ service mysql-server start Eğer düzgün bir şekilde çalışıyorsa /var/li
     </p>
     <div class="post-entry">
         
-        Pidginin en sevdiğim özelliklerinden bir tanesi, sohbet ettiğiniz kişi size tireşim gönderdiğinde ekrana sadece &quot;&hellip; size uyarı gönderdi&quot; yazması. Bu özelliğer sahip olmasının birde dezavantajı var tabiki, siz de başkalarına titreşim yollayamıyorsunuz. Bugün bu eksikliği fazlasıyla hissedince ufak çaplı bir araştırma yaptım ve Attention Button eklentisiyle karşılaştım.
-Kurulumu çok basit. Burdan en güncel sürümünü indiriyorsunuz (şimdilik 0.3), arşivden çıkartıp .so uzantılı dosyayı ev dizininiz altında .purple/plugins/ dizinine kopyalıyorsunuz. Ardından pidgine gidip eklentiler(plugins) kısmından aktif ediyorsunuz.
-Konsoldan halletmek isterseniz:
-$ wget http://pidgin-attentionbutton.googlecode.com/files/attentionbutton-0.3.tar.gz $ tar -xvzf attentionbutton-0.3.tar.gz $ mkdir $HOME/.purple/plugins $ mv attentionbutton.so $HOME/.purple/plugins/ $ rm attentionbutton-0.3.tar.gz attentionbutton.c Bu eklentinin birkaç güzel özelliğide var.
-        <a href="https://blog.askin.ws/blog/pidgin-titresim-eklentisi-attention-button/" class="post-read-more">[Daha fazla oku]</a>
+        <p><img src="/uploads/2009/06/pidgin.png" alt="Pidgin" title="Pidgin">Pidginin en sevdiğim özelliklerinden bir tanesi, sohbet ettiğiniz kişi size tireşim gönderdiğinde ekrana sadece <strong>&quot;&hellip; size uyarı gönderdi&quot;</strong> yazması. Bu özelliğer sahip olmasının birde dezavantajı var tabiki, siz de başkalarına titreşim yollayamıyorsunuz. Bugün bu eksikliği fazlasıyla hissedince ufak çaplı bir araştırma yaptım ve <a href="http://code.google.com/p/pidgin-attentionbutton/">Attention Button</a> eklentisiyle karşılaştım.<br>
+Kurulumu çok basit. <a href="http://code.google.com/p/pidgin-attentionbutton/downloads/list">Burdan</a> en güncel sürümünü indiriyorsunuz (şimdilik <a href="http://pidgin-attentionbutton.googlecode.com/files/attentionbutton-0.3.tar.gz">0.3</a>), arşivden çıkartıp <em>.so</em> uzantılı dosyayı ev dizininiz altında <em>.purple/plugins/</em> dizinine kopyalıyorsunuz. Ardından pidgine gidip eklentiler(plugins) kısmından aktif ediyorsunuz.<br>
+Konsoldan halletmek isterseniz:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ wget http://pidgin-attentionbutton.googlecode.com/files/attentionbutton-0.3.tar.gz
+$ tar -xvzf attentionbutton-0.3.tar.gz
+$ mkdir $HOME/.purple/plugins
+$ mv attentionbutton.so $HOME/.purple/plugins/
+$ rm attentionbutton-0.3.tar.gz attentionbutton.c 
+</code></pre></div><p>Bu eklentinin birkaç güzel özelliğide var. Mesela karşı tarafa sınırsız sayıda titreşim yollayabilirsiniz. Ve karşı taraf çevrim dışı bile görünse titretebilirsiniz. Tabi aşırı kullanım sağlığa zararlı :)</p>
         
     </div>
 
@@ -647,20 +681,19 @@ $ wget http://pidgin-attentionbutton.googlecode.com/files/attentionbutton-0.3.ta
     </p>
     <div class="post-entry">
         
-        Pardus 2008 kurulumla beraber Atheros AR242x kablosuz ağ kartını tanıyor, fakat nedense başka ağları görmesine rağmen evimde WPA2 ile kurulu kablosuz ağımı göremiyordu. Bende diğer dağıtımlarda kullandığım ndiswrapper ile sorunumu çözmeyi denedim.
-Öncelikle ndiswrapperı kurduktan sonra windows için yazılmış driverları seçmemiz gerekiyor. Ardından
-/etc/modules.autoload.d/kernel-2.6
-dosyasına
-ndiswrapper
-satırını ve
-/etc/modprobe.d/blacklist-compat
-dosyasına da
-blacklist ath_pci
-satırını eklemek gerekiyor. Bunları ekledikten sonra kde&rsquo;de ağ programcığıyla bağlanabiliyorsunuz.
-Fakat XFCE kullanıyorsanız wicd kullanmanız gerekiyor. Wicd ile doğrudan kullanamıyoruz. Öncelikle birkaç ufak düzenleme yapmak gerekiyor.
-Wicd -&gt; Tercihler yolunu takip ettikten sonra WPA Suplicant Sürücüsü: kısmına wext, Kablosuz arabirim kısmına da wlan0 yazmak gerekiyor.
-Bu ayarlarla kolaylıkla kullanabilirsiniz, kolay gelsin.
-        <a href="https://blog.askin.ws/blog/pardus-atheros-ar242x-wpa2/" class="post-read-more">[Daha fazla oku]</a>
+        <p><img src="/uploads/2009/06/wifi.jpeg" alt="Wi-Fi" title="Wi-Fi">Pardus 2008 kurulumla beraber Atheros AR242x kablosuz ağ kartını tanıyor, fakat nedense başka ağları görmesine rağmen evimde WPA2 ile kurulu kablosuz ağımı göremiyordu. Bende diğer dağıtımlarda kullandığım ndiswrapper ile sorunumu çözmeyi denedim.<br>
+Öncelikle ndiswrapperı kurduktan sonra windows için yazılmış driverları seçmemiz gerekiyor. Ardından<br>
+<code>/etc/modules.autoload.d/kernel-2.6</code><br>
+dosyasına<br>
+<code>ndiswrapper</code><br>
+satırını ve<br>
+<code>/etc/modprobe.d/blacklist-compat</code><br>
+dosyasına da<br>
+<code>blacklist ath_pci</code><br>
+satırını eklemek gerekiyor. Bunları ekledikten sonra kde&rsquo;de ağ programcığıyla bağlanabiliyorsunuz.<br>
+Fakat XFCE kullanıyorsanız wicd kullanmanız gerekiyor. Wicd ile doğrudan kullanamıyoruz. Öncelikle birkaç ufak düzenleme yapmak gerekiyor.<br>
+Wicd -&gt; Tercihler yolunu takip ettikten sonra WPA Suplicant Sürücüsü: kısmına <em>wext</em>, Kablosuz arabirim kısmına da <em>wlan0</em> yazmak gerekiyor.<br>
+Bu ayarlarla kolaylıkla kullanabilirsiniz, kolay gelsin.</p>
         
     </div>
 
@@ -766,11 +799,24 @@ Bu ayarlarla kolaylıkla kullanabilirsiniz, kolay gelsin.
     </p>
     <div class="post-entry">
         
-        Öncelikle bir çalışan cd ile sistem açılır, benim tercihim gparted live cd. Sizin elinizin altında ne varsa kabuldur. İlla çalışan cd olmasına gerek yok, herhangi bir linux cdside olabilir. Bize mount, cp ve nano komutları lazım. Bunları sağlayan herhangi bir cd kullanılabilir.
-Taşınacak kurulumun hangi disk bölümünde olduğu bilinmeli. Ben 2. bölümdeki kurulumu 1. bölüme taşıyacağım. Yani /dev/hdc3 den /dev/hdc1 e taşıma yapacağım(sizdeki disk isimleri muhtemelen farklıdır).
-Cd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte. Ctrl + Alt + F1 tuş kombinasyonu muhtemelen iş görecektir. Ben live cd kullandığım için grafik ekranla karşılaştım, burdan bi terminal açarak işimi göreceğim.
-Yapacağımız işlemler için root olmamız gerekiyor.
-        <a href="https://blog.askin.ws/blog/bir-gnulinux-kurulumunu-baska-bir-harddiskebolume-tasimak/" class="post-read-more">[Daha fazla oku]</a>
+        <p><img src="/uploads/2009/04/linux-tux.jpg" alt="GNU/Linux" title="GNU/Linux"> Öncelikle bir çalışan cd ile sistem açılır, benim tercihim gparted live cd. Sizin elinizin altında ne varsa kabuldur. İlla çalışan cd olmasına gerek yok, herhangi bir linux cdside olabilir. Bize mount, cp ve nano komutları lazım. Bunları sağlayan herhangi bir cd kullanılabilir.</p>
+<p>Taşınacak kurulumun hangi disk bölümünde olduğu bilinmeli. Ben 2. bölümdeki kurulumu 1. bölüme taşıyacağım. Yani /dev/hdc3 den /dev/hdc1 e taşıma yapacağım(sizdeki disk isimleri muhtemelen farklıdır).</p>
+<p>Cd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte. Ctrl + Alt + F1 tuş kombinasyonu muhtemelen iş görecektir. Ben live cd kullandığım için grafik ekranla karşılaştım, burdan bi terminal açarak işimi göreceğim.</p>
+<p>Yapacağımız işlemler için root olmamız gerekiyor. Bu işlemi yapacak cesaretiniz varsa, nasıl root olunur bilginizde vardır diye düşünüyorum :)</p>
+<p>Önce diskleri mount ediyoruz</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir /target /source
+mount /dev/hdc1 /target
+mount /dev/hdc3 -o ro /source
+</code></pre></div><p>Mount işleminden sonra kopyalamaya başlayabiliriz.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cp -a /source/* /target
+</code></pre></div><p>Bu işlem kopyalanacak verinin boyutuna göre uzunca sürebilir.
+Kopyalama tamamlandıktan sonra yeni diskteki /etc/fstab dosyasını ve eski diskteki /boot/grub/menu.lst dosyalarını değiştirmemiz gerekiyor. fstab dosyasında &ldquo;/&rdquo; dizininin bağlanacağı yeni bölümü gösteriyoruz. menu.lst dosyasında ise yeni bölümün boot edilebilmesi için gerekli ayarları yapıyoruz.</p>
+<p>Eğer eski bölümü silecek veya orayı başka amaç için kullanacaksanız mbr kaydını yenilemeniz gerekmektedir, yani grubu tekrar yeni disk için kurmalısınız.</p>
+<pre><code>grub
+ &gt; root (hd0, 0)
+ &gt; setup (hd0)
+</code></pre>
+<p>Bende bu şekilde kuruldu, sizde bölüm numaralarına göre değişecektir kurulum.</p>
         
     </div>
 

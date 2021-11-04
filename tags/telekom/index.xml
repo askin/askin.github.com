@@ -25,7 +25,27 @@
       <pubDate>Fri, 18 Jan 2008 18:52:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/yasakli-sitelere-gitme-open-dns/</guid>
-      <description>Yasaklı sitelere girebilmek için çok çeşitli yöntemler kullanabilirsiniz. Ben çok sıklıkla www.gizlen.net&amp;lsquo;i kullanabilirsiniz. Bu siteye giriyorsunuz ve sayfanın üstündeki kutucuğa gireceğiniz siteyi yazıyorsunuz, oda size gireceğiniz siteyi sunuyor. Eğer daha kalıcı bir çözüm istiyorsanız proxy(vekil sunucu) kullanabilirsiniz. İnternetten ufak bir arama ile onlarca proxy adresine sahip olabilirsiniz. Ancak birçok kişi tarafınfan kullanılan ve tavsiye edilen Open DNS işinizi çok rahatlıkla görebilir. Gerçi Open DNS bir proxy değil. O bir Name Server. Bizim www.bobrektasi.org gibi girmeye çalıştığımız sitelerin ip adreslerini çözümleyip bizi doğru makineye yönlendiriyor. Bu bu yönlenme işini Open DNS üzerinden yaptığımız için TTnet&amp;rsquo;in bizim girdiğimiz sitelere müdahale etme şansı kalmıyor.</description>
+      <description>&lt;p&gt;Yasaklı sitelere girebilmek için çok çeşitli yöntemler kullanabilirsiniz. Ben çok sıklıkla &lt;a href=&#34;http://www.gizlen.net&#34; title=&#34;İzlenme Gizlen&#34;&gt;www.gizlen.net&lt;/a&gt;&amp;lsquo;i kullanabilirsiniz. Bu siteye giriyorsunuz ve sayfanın üstündeki kutucuğa gireceğiniz siteyi yazıyorsunuz, oda size gireceğiniz siteyi sunuyor. Eğer daha kalıcı bir çözüm istiyorsanız proxy(vekil sunucu) kullanabilirsiniz. İnternetten ufak bir arama ile onlarca proxy adresine sahip olabilirsiniz. Ancak birçok kişi tarafınfan kullanılan ve tavsiye edilen &lt;a href=&#34;http://www.opendns.com/&#34; title=&#34;Open DNS sitesine gitmek için tıklayın: &#34;&gt;Open DNS&lt;/a&gt; işinizi çok rahatlıkla görebilir. Gerçi Open DNS bir proxy değil. O bir Name Server. Bizim &lt;a href=&#34;http://www.bobrektasi.org&#34;&gt;www.bobrektasi.org&lt;/a&gt; gibi girmeye çalıştığımız sitelerin ip adreslerini çözümleyip bizi doğru makineye yönlendiriyor. Bu bu yönlenme işini Open DNS üzerinden yaptığımız için TTnet&amp;rsquo;in bizim girdiğimiz sitelere müdahale etme şansı kalmıyor.&lt;br&gt;
+Adresi: &lt;a href=&#34;http://www.opendns.com/&#34;&gt;http://www.opendns.com/&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://www.opendns.com/start&#34;&gt;https://www.opendns.com/start&lt;/a&gt; Bu adresten ayarların nasıl yapıldığını öğrenebilirsiniz.&lt;/p&gt;
+&lt;p&gt;Ubuntu için ayarlar:&lt;br&gt;
+İlk önce Networ Admin Proramını açıyoruz:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sistem -&amp;gt;Yönetim -&amp;gt; Ağ yolunu takip ederekte çabilirsiniz.&lt;/li&gt;
+&lt;li&gt;[Alt + F2] yapıp &lt;em&gt;gksu network-admin&lt;/em&gt; yazarakta açabilirsiniz.&lt;/li&gt;
+&lt;li&gt;konsoldan &lt;code&gt;$ sudo network-admin&lt;/code&gt; komutunu vererekte açabilirsiniz.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Burda DNS sekmesi altına&lt;br&gt;
+&lt;code&gt;208.67.222.222 208.67.220.220&lt;/code&gt; iplerini ekliyorsunuz.&lt;/p&gt;
+&lt;p&gt;Ardından konsolda&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo cp /etc/resolv.conf /etc/resolv.conf.auto
+sudo gedit /etc/dhcp3/dhclient.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;komutlarını giriyorsunuz.&lt;br&gt;
+Karşınıza çıkan editöre&lt;br&gt;
+&lt;code&gt;# append the following line to the document prepend domain-name-servers 208.67.222.222,208.67.220.220; # save and exit&lt;/code&gt;&lt;br&gt;
+satırlarını ekliyorsunuz. ve&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ sudo ifdown eth0 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo ifup eth0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;komutunu veriyorsunuz. Eğer bu komutlarda bi hata verirse, ya da dns değişmemişse bilgisayarı açıp kapatın artık özgürsünüz.Şimdi &lt;a href=&#34;http://www.youtube.com,&#34;&gt;www.youtube.com&lt;/a&gt;&amp;lsquo;a girerek deneyebilirsiniz çalışıyormu diye:)&lt;/p&gt;</description>
     </item>
     
   </channel>

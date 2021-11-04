@@ -25,8 +25,28 @@ $ grep &amp;#39;ara&amp;#39; `find . -name &amp;#39;*&amp;#39;` </description>
       <pubDate>Thu, 08 Apr 2010 06:19:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/gtk-2-18-9-pencere-gizleme-sorunu/</guid>
-      <description>Gece gece uyku tutmadı var olan bir programı kurcalamaya başladım. Amacım programın sitem çekmecesinden çalışabilir hale getirmekti.
-Her şeyi yaptım fakat bir türlü pencereyi gizleyemiyordum :) Doküman gtk_window_get_mnemonics_visible () fonksiyonunu kullanmamı söylüyordu, fakat kullandığım gtk sürümünde bu fonksiyon tanımlı değildi(2.18.7). Eski sürüm için olan dokümanı incelediğimde bu işi yapan bir fonksiyon yoktu. Sistemde kurulu gtk ve python ile bu işi yapabiliyordum. Normal olarak c ile de yapabilmem lazımdı:) Biraz inceledikten sonra, önce pencereyi gizleyen, ardından boyutunu eski haline getirip sonra tekrar gösteren bir fonksiyon olduğunu fark ettim. Benim istediğim işi yapıyor fakat yanında birde fazlalığı vardı.(gtk_window_reshow_with_initial_size) İnternette biraz daha araştırıp umudumu kaybedince mecburen kaynak koda baktım.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://blog.askin.ws/uploads/2010/04/gtk.png&#34; alt=&#34;Gtk&#34; title=&#34;Gtk&#34;&gt;Gece gece uyku tutmadı var olan bir programı kurcalamaya başladım. Amacım programın sitem çekmecesinden çalışabilir hale getirmekti.&lt;/p&gt;
+&lt;p&gt;Her şeyi yaptım fakat bir türlü pencereyi gizleyemiyordum :) Doküman &lt;em&gt;gtk_window_get_mnemonics_visible ()&lt;/em&gt; fonksiyonunu kullanmamı söylüyordu, fakat kullandığım gtk sürümünde bu fonksiyon tanımlı değildi(2.18.7). Eski sürüm için olan dokümanı incelediğimde bu işi yapan bir fonksiyon yoktu.
+Sistemde kurulu gtk ve python ile bu işi yapabiliyordum. Normal olarak c ile de yapabilmem lazımdı:)
+Biraz inceledikten sonra, önce pencereyi gizleyen, ardından boyutunu eski haline getirip sonra tekrar gösteren bir fonksiyon olduğunu fark ettim. Benim istediğim işi yapıyor fakat yanında birde fazlalığı vardı.(gtk_window_reshow_with_initial_size)
+İnternette biraz daha araştırıp umudumu kaybedince mecburen kaynak koda baktım.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;grep -rHn gtk_window_reshow_with_initial_size *
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;bu komut bana gtk_window_reshow_with_initial_size fonksiyonun nerelerde olduğunu gösterdi.
+Bu fonksiyonunun içine bakınca istediğim kodu hemen buldum :)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-C&#34; data-lang=&#34;C&#34;&gt;gtk_window_reshow_with_initial_size (GtkWindow &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;window)
+{
+  GtkWidget &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;widget;
+
+  g_return_if_fail (GTK_IS_WINDOW (window));
+
+  widget &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; GTK_WIDGET (window);
+
+  gtk_widget_hide (widget);
+  gtk_widget_unrealize (widget);
+  gtk_widget_show (widget);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Önce pencereyi widgeta çevirebilme imkanım varmış, böyle basit bir şeyi nasıl bulamadım bilemiyorum.&lt;/p&gt;</description>
     </item>
     
   </channel>

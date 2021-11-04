@@ -8,9 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <title>Java ile server socket yapımı - Aşkın Özgür</title>
-  <meta name="description" content="Bir proje için server sockete ihtiyaç duydum. Öncelikli dilim python olmasına rağmen, sunucu solaris olunca java ile yazmak daha cazip geldi. Öncelikli olarak test amaçlı birkaç satır kod yazdım. Akla gelen ilk örnek echo server oluyor :) aşağıda multi thread çalışan, birden fazla kullanıcıya cevap verebilecek bir echo server var:)
-Server.java
-/** * @author: Aşkın Yollu */ import java.net.*; import java.io.*; class Server { public static void main(String args[]) throws Exception { ServerSocket myService = null; Socket client = null; Worker tmpworker = null; try { // 1234 nolu portu dinle  myService = new ServerSocket(1234); } catch (IOException e) { System.">
+  <meta name="description" content="Bir proje için server sockete ihtiyaç duydum. Öncelikli dilim python olmasına rağmen, sunucu solaris olunca java ile yazmak daha cazip geldi. Öncelikli olarak test amaçlı birkaç satır kod yazdım. Akla gelen ilk örnek echo server oluyor :) aşağıda multi thread çalışan, birden fazla kullanıcıya cevap verebilecek bir echo server var:)">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -59,7 +57,7 @@ Server.java
     "name" : "Aşkın Özgür"
   },
   "headline": "Java ile server socket yapımı",
-  "description" : "Bir proje için server sockete ihtiyaç duydum. Öncelikli dilim python olmasına rağmen, sunucu solaris olunca java ile yazmak daha cazip geldi. Öncelikli olarak test amaçlı birkaç satır kod yazdım. Akla gelen ilk örnek echo server oluyor :) aşağıda multi thread çalışan, birden fazla kullanıcıya cevap verebilecek bir echo server var:)\nServer.java\n\/** * @author: Aşkın Yollu *\/ import java.net.*; import java.io.*; class Server { public static void main(String args[]) throws Exception { ServerSocket myService = null; Socket client = null; Worker tmpworker = null; try { \/\/ 1234 nolu portu dinle  myService = new ServerSocket(1234); } catch (IOException e) { System.",
+  "description" : "Bir proje için server sockete ihtiyaç duydum. Öncelikli dilim python olmasına rağmen, sunucu solaris olunca java ile yazmak daha cazip geldi. Öncelikli olarak test amaçlı birkaç satır kod yazdım. Akla gelen ilk örnek echo server oluyor :) aşağıda multi thread çalışan, birden fazla kullanıcıya cevap verebilecek bir echo server var:)\n",
   "inLanguage" : "tr",
   "wordCount":  249 ,
   "datePublished" : "2010-12-11T04:25:00",
@@ -81,9 +79,7 @@ Server.java
 </script>
 
 <meta property="og:title" content="Java ile server socket yapımı" />
-<meta property="og:description" content="Bir proje için server sockete ihtiyaç duydum. Öncelikli dilim python olmasına rağmen, sunucu solaris olunca java ile yazmak daha cazip geldi. Öncelikli olarak test amaçlı birkaç satır kod yazdım. Akla gelen ilk örnek echo server oluyor :) aşağıda multi thread çalışan, birden fazla kullanıcıya cevap verebilecek bir echo server var:)
-Server.java
-/** * @author: Aşkın Yollu */ import java.net.*; import java.io.*; class Server { public static void main(String args[]) throws Exception { ServerSocket myService = null; Socket client = null; Worker tmpworker = null; try { // 1234 nolu portu dinle  myService = new ServerSocket(1234); } catch (IOException e) { System.">
+<meta property="og:description" content="Bir proje için server sockete ihtiyaç duydum. Öncelikli dilim python olmasına rağmen, sunucu solaris olunca java ile yazmak daha cazip geldi. Öncelikli olarak test amaçlı birkaç satır kod yazdım. Akla gelen ilk örnek echo server oluyor :) aşağıda multi thread çalışan, birden fazla kullanıcıya cevap verebilecek bir echo server var:)">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
 <meta property="og:url" content="https://blog.askin.ws/blog/java-ile-server-socket-yapimi/" />
 <meta property="og:type" content="website" />
@@ -252,7 +248,7 @@ Server.java
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
         <p>Bir proje için server sockete ihtiyaç duydum. Öncelikli dilim python olmasına rağmen, sunucu solaris olunca java ile yazmak daha cazip geldi. Öncelikli olarak test amaçlı birkaç satır kod yazdım. Akla gelen ilk örnek echo server oluyor :) aşağıda multi thread çalışan, birden fazla kullanıcıya cevap verebilecek bir echo server var:)</p>
-<p><em>Server.java</em></p>
+<p><code>Server.java</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">/**
 </span><span style="color:#75715e"> * @author: Aşkın Yollu 
 </span><span style="color:#75715e"> */</span>
@@ -290,7 +286,7 @@ Server.java
 
     <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
-</code></pre></div><p><em>Worker.java</em></p>
+</code></pre></div><p><code>Worker.java</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">/**
 </span><span style="color:#75715e"> * @author: Aşkın Yollu
 </span><span style="color:#75715e"> */</span>
@@ -332,7 +328,6 @@ Server.java
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">telnet localhost <span style="color:#ae81ff">1234</span>
 </code></pre></div><p>komutunu verip birşeyler yazmaya başlayın, bakalım ne olacak :)</p>
 <p>Client tarafını c ile yazacağım. Muhtemelen bir sonraki girdi c ile client socket olur.</p>
-
 
         
           <div class="blog-tags">

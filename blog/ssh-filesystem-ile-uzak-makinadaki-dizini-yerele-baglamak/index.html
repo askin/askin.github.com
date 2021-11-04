@@ -8,8 +8,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <title>SSH Filesystem ile uzak makinadaki dizini yerele bağlamak - Aşkın Özgür</title>
-  <meta name="description" content="Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz. Ben daha önce bahsettiğim internet canavarı:) için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu. Kullanacağımız programın adı sshfs yani SSH Filesystem. Kurulum:
- Debian &amp;&amp; Ubuntu &amp;&amp; vb.  aptitude install sshfs  Kaynak koddan derleme  ./configure make make install # root yetkileriyle  Kullanımı - Uzak makinadaki bir dizini bağlamak sshfs hostname:dizin bağlamanoktası (root yetkileriyle)  Umount - Bağı koparma umount bağlamanoktası # ya da fusermount -u bağlamanoktası   Bu şekide kullanırsanız bağladığınız dizine ancak root yetkileriyle ulaşabilirsiniz.">
+  <meta name="description" content="Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz.
+Ben daha önce bahsettiğim internet canavarı:) için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu.
+Kullanacağımız programın adı sshfs yani SSH Filesystem.
+Kurulum:
+
+Debian &amp;&amp; Ubuntu &amp;&amp; vb.
+
+aptitude install sshfs
+
+Kaynak koddan derleme
+
+./configure
+make
+make install # root yetkileriyle
+
+Kullanımı - Uzak makinadaki bir dizini bağlamak
+sshfs hostname:dizin bağlamanoktası (root yetkileriyle)
+
+Umount - Bağı koparma
+umount bağlamanoktası
+# ya da
+fusermount -u bağlamanoktası
+
+
+Bu şekide kullanırsanız bağladığınız dizine ancak root yetkileriyle ulaşabilirsiniz. Her kullanıcının tüm haklarla(hangi kullanıcı ile ssh bağlantısı gerçekleştirdiyseniz onun haklarına sahip oluyosunuz) bağladığınız dizini kulanabilmesini istiyorsanız
+sshfs -o allow_other hostname:dizin bağlamanoktası
+Parametreler
+-o parametresini kullanarak uid ve gid değerlerini ayarlayabilirsiniz.
+-o idmap=user
+-o uid=&lt;uid&gt;
+-o gid=&lt;gid&gt;
+-o ro # read only - salt okunur mod
+fstab dosyasını kullanarak mount etme
+sshfs#USERNAME@REMOTE_HOST:REMOTE_PATH MOUNT_POINT fuse SSHFS_OPTIONS 0 0
+örnek
+sshfs#guest@guest.login.com:data /mnt/guest fuse uid=1003,gid=100,umask=0,allow_other 0 0
+
+Proje sayfası :http://fuse.sourceforge.net/sshfs.html
+Wiki sayfası :http://fuse.sourceforge.net/sshfs.html. Wiki sayfasını kulanarak birçok bilgiye ulaşabilirsiniz..
+">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -58,7 +96,7 @@
     "name" : "Aşkın Özgür"
   },
   "headline": "SSH Filesystem ile uzak makinadaki dizini yerele bağlamak",
-  "description" : "Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz. Ben daha önce bahsettiğim internet canavarı:) için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu. Kullanacağımız programın adı sshfs yani SSH Filesystem. Kurulum:\n Debian \u0026amp;\u0026amp; Ubuntu \u0026amp;\u0026amp; vb.  aptitude install sshfs  Kaynak koddan derleme  .\/configure make make install # root yetkileriyle  Kullanımı - Uzak makinadaki bir dizini bağlamak sshfs hostname:dizin bağlamanoktası (root yetkileriyle)  Umount - Bağı koparma umount bağlamanoktası # ya da fusermount -u bağlamanoktası   Bu şekide kullanırsanız bağladığınız dizine ancak root yetkileriyle ulaşabilirsiniz.",
+  "description" : "Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz. Ben daha önce bahsettiğim internet canavarı:) için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu. Kullanacağımız programın adı sshfs yani SSH Filesystem. Kurulum:\n Debian \u0026amp;\u0026amp; Ubuntu \u0026amp;\u0026amp; vb.  aptitude install sshfs  Kaynak koddan derleme  .\/configure make make install # root yetkileriyle  Kullanımı - Uzak makinadaki bir dizini bağlamak sshfs hostname:dizin bağlamanoktası (root yetkileriyle)  Umount - Bağı koparma umount bağlamanoktası # ya da fusermount -u bağlamanoktası   Bu şekide kullanırsanız bağladığınız dizine ancak root yetkileriyle ulaşabilirsiniz. Her kullanıcının tüm haklarla(hangi kullanıcı ile ssh bağlantısı gerçekleştirdiyseniz onun haklarına sahip oluyosunuz) bağladığınız dizini kulanabilmesini istiyorsanız\nsshfs -o allow_other hostname:dizin bağlamanoktası Parametreler -o parametresini kullanarak uid ve gid değerlerini ayarlayabilirsiniz.\n-o idmap=user -o uid=\u0026lt;uid\u0026gt; -o gid=\u0026lt;gid\u0026gt; -o ro # read only - salt okunur mod fstab dosyasını kullanarak mount etme\nsshfs#USERNAME@REMOTE_HOST:REMOTE_PATH MOUNT_POINT fuse SSHFS_OPTIONS 0 0 örnek\nsshfs#guest@guest.login.com:data \/mnt\/guest fuse uid=1003,gid=100,umask=0,allow_other 0 0  Proje sayfası :http:\/\/fuse.sourceforge.net\/sshfs.html Wiki sayfası :http:\/\/fuse.sourceforge.net\/sshfs.html. Wiki sayfasını kulanarak birçok bilgiye ulaşabilirsiniz.. ",
   "inLanguage" : "tr",
   "wordCount":  205 ,
   "datePublished" : "2008-05-07T10:36:00",
@@ -80,8 +118,46 @@
 </script>
 
 <meta property="og:title" content="SSH Filesystem ile uzak makinadaki dizini yerele bağlamak" />
-<meta property="og:description" content="Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz. Ben daha önce bahsettiğim internet canavarı:) için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu. Kullanacağımız programın adı sshfs yani SSH Filesystem. Kurulum:
- Debian &amp;&amp; Ubuntu &amp;&amp; vb.  aptitude install sshfs  Kaynak koddan derleme  ./configure make make install # root yetkileriyle  Kullanımı - Uzak makinadaki bir dizini bağlamak sshfs hostname:dizin bağlamanoktası (root yetkileriyle)  Umount - Bağı koparma umount bağlamanoktası # ya da fusermount -u bağlamanoktası   Bu şekide kullanırsanız bağladığınız dizine ancak root yetkileriyle ulaşabilirsiniz.">
+<meta property="og:description" content="Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz.
+Ben daha önce bahsettiğim internet canavarı:) için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu.
+Kullanacağımız programın adı sshfs yani SSH Filesystem.
+Kurulum:
+
+Debian &amp;&amp; Ubuntu &amp;&amp; vb.
+
+aptitude install sshfs
+
+Kaynak koddan derleme
+
+./configure
+make
+make install # root yetkileriyle
+
+Kullanımı - Uzak makinadaki bir dizini bağlamak
+sshfs hostname:dizin bağlamanoktası (root yetkileriyle)
+
+Umount - Bağı koparma
+umount bağlamanoktası
+# ya da
+fusermount -u bağlamanoktası
+
+
+Bu şekide kullanırsanız bağladığınız dizine ancak root yetkileriyle ulaşabilirsiniz. Her kullanıcının tüm haklarla(hangi kullanıcı ile ssh bağlantısı gerçekleştirdiyseniz onun haklarına sahip oluyosunuz) bağladığınız dizini kulanabilmesini istiyorsanız
+sshfs -o allow_other hostname:dizin bağlamanoktası
+Parametreler
+-o parametresini kullanarak uid ve gid değerlerini ayarlayabilirsiniz.
+-o idmap=user
+-o uid=&lt;uid&gt;
+-o gid=&lt;gid&gt;
+-o ro # read only - salt okunur mod
+fstab dosyasını kullanarak mount etme
+sshfs#USERNAME@REMOTE_HOST:REMOTE_PATH MOUNT_POINT fuse SSHFS_OPTIONS 0 0
+örnek
+sshfs#guest@guest.login.com:data /mnt/guest fuse uid=1003,gid=100,umask=0,allow_other 0 0
+
+Proje sayfası :http://fuse.sourceforge.net/sshfs.html
+Wiki sayfası :http://fuse.sourceforge.net/sshfs.html. Wiki sayfasını kulanarak birçok bilgiye ulaşabilirsiniz..
+">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
 <meta property="og:url" content="https://blog.askin.ws/blog/ssh-filesystem-ile-uzak-makinadaki-dizini-yerele-baglamak/" />
 <meta property="og:type" content="website" />
@@ -289,7 +365,6 @@ fusermount -u bağlamanoktası
 <li><strong>Proje sayfası</strong> :<a href="%20http://fuse.sourceforge.net/sshfs.html">http://fuse.sourceforge.net/sshfs.html</a></li>
 <li><strong>Wiki sayfası</strong> :<a href="http://fuse.sourceforge.net/sshfs.html">http://fuse.sourceforge.net/sshfs.html</a>. Wiki sayfasını kulanarak birçok bilgiye ulaşabilirsiniz..</li>
 </ul>
-
 
         
           <div class="blog-tags">

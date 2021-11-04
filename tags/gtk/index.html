@@ -230,9 +230,28 @@
     </p>
     <div class="post-entry">
         
-        Gece gece uyku tutmadı var olan bir programı kurcalamaya başladım. Amacım programın sitem çekmecesinden çalışabilir hale getirmekti.
-Her şeyi yaptım fakat bir türlü pencereyi gizleyemiyordum :) Doküman gtk_window_get_mnemonics_visible () fonksiyonunu kullanmamı söylüyordu, fakat kullandığım gtk sürümünde bu fonksiyon tanımlı değildi(2.18.7). Eski sürüm için olan dokümanı incelediğimde bu işi yapan bir fonksiyon yoktu. Sistemde kurulu gtk ve python ile bu işi yapabiliyordum. Normal olarak c ile de yapabilmem lazımdı:) Biraz inceledikten sonra, önce pencereyi gizleyen, ardından boyutunu eski haline getirip sonra tekrar gösteren bir fonksiyon olduğunu fark ettim. Benim istediğim işi yapıyor fakat yanında birde fazlalığı vardı.(gtk_window_reshow_with_initial_size) İnternette biraz daha araştırıp umudumu kaybedince mecburen kaynak koda baktım.
-        <a href="https://blog.askin.ws/blog/gtk-2-18-9-pencere-gizleme-sorunu/" class="post-read-more">[Daha fazla oku]</a>
+        <p><img src="/uploads/2010/04/gtk.png" alt="Gtk" title="Gtk">Gece gece uyku tutmadı var olan bir programı kurcalamaya başladım. Amacım programın sitem çekmecesinden çalışabilir hale getirmekti.</p>
+<p>Her şeyi yaptım fakat bir türlü pencereyi gizleyemiyordum :) Doküman <em>gtk_window_get_mnemonics_visible ()</em> fonksiyonunu kullanmamı söylüyordu, fakat kullandığım gtk sürümünde bu fonksiyon tanımlı değildi(2.18.7). Eski sürüm için olan dokümanı incelediğimde bu işi yapan bir fonksiyon yoktu.
+Sistemde kurulu gtk ve python ile bu işi yapabiliyordum. Normal olarak c ile de yapabilmem lazımdı:)
+Biraz inceledikten sonra, önce pencereyi gizleyen, ardından boyutunu eski haline getirip sonra tekrar gösteren bir fonksiyon olduğunu fark ettim. Benim istediğim işi yapıyor fakat yanında birde fazlalığı vardı.(gtk_window_reshow_with_initial_size)
+İnternette biraz daha araştırıp umudumu kaybedince mecburen kaynak koda baktım.</p>
+<pre><code>grep -rHn gtk_window_reshow_with_initial_size *
+</code></pre>
+<p>bu komut bana gtk_window_reshow_with_initial_size fonksiyonun nerelerde olduğunu gösterdi.
+Bu fonksiyonunun içine bakınca istediğim kodu hemen buldum :)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C">gtk_window_reshow_with_initial_size (GtkWindow <span style="color:#f92672">*</span>window)
+{
+  GtkWidget <span style="color:#f92672">*</span>widget;
+
+  g_return_if_fail (GTK_IS_WINDOW (window));
+
+  widget <span style="color:#f92672">=</span> GTK_WIDGET (window);
+
+  gtk_widget_hide (widget);
+  gtk_widget_unrealize (widget);
+  gtk_widget_show (widget);
+}
+</code></pre></div><p>Önce pencereyi widgeta çevirebilme imkanım varmış, böyle basit bir şeyi nasıl bulamadım bilemiyorum.</p>
         
     </div>
 
@@ -282,13 +301,33 @@ Her şeyi yaptım fakat bir türlü pencereyi gizleyemiyordum :) Doküman gtk_wi
     </p>
     <div class="post-entry">
         
-        Gtk ile çok kolay bir şekilde geliştirdiğiniz uygulamayı sistem çekmecesinde gösterebilirsiniz.
-Ufak bir örnek kod veriyorum. Onun üzerinden anlatacağım.
-import pygtk import gtk class ShowIcon: def __init__(self): self.icon = gtk.StatusIcon() self.icon.set_from_file(&#39;gtk.png&#39;) self.icon.set_tooltip_text(&#39;Hello Python!!!&#39;) self.icon.set_visible(True) self.icon.connect(&#34;activate&#34;, self.hello) gtk.main() def hello(self, widget): print &#39;Hello Python !!!&#39; if __name__ == &#39;__main__&#39;: icon = ShowIcon() 6. satırda asıl işimizi yapacak olan StatusIcon nesnesini yaratıyoruz.
-7. satırda sistem çekmecesinde hangi ikonun görüntüleneceğini belirtiyoruz. set_from_file ikonu dosyadan alacağımız anlamına geliyor. Eğer gtk&rsquo;nın sunduğu standart ikonları kullanmak istiyorsanız set_from_stock kullanmalısınız.
-icon.set_from_stock(gtk.STOCK_ABOUT) 8. satırda ikonun üzerine geldiğimizde görünmesini istediğimiz yazıyı belirliyoruz.
-9. satırda ikonun başlangıçtaki görünürlüğünü belirliyoruz. Bu satırı yazmasak da görünür başlıyor.
-        <a href="https://blog.askin.ws/blog/pygtk-ile-sistem-cekmecesi/" class="post-read-more">[Daha fazla oku]</a>
+        <p><img src="/uploads/2010/04/gtk.png" alt="Gtk" title="Gtk">Gtk ile çok kolay bir şekilde geliştirdiğiniz uygulamayı sistem çekmecesinde gösterebilirsiniz.</p>
+<p>Ufak bir örnek kod veriyorum. Onun üzerinden anlatacağım.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pygtk
+<span style="color:#f92672">import</span> gtk
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ShowIcon</span>:
+    <span style="color:#66d9ef">def</span> __init__(self):
+    self<span style="color:#f92672">.</span>icon <span style="color:#f92672">=</span> gtk<span style="color:#f92672">.</span>StatusIcon()
+        self<span style="color:#f92672">.</span>icon<span style="color:#f92672">.</span>set_from_file(<span style="color:#e6db74">&#39;gtk.png&#39;</span>)
+        self<span style="color:#f92672">.</span>icon<span style="color:#f92672">.</span>set_tooltip_text(<span style="color:#e6db74">&#39;Hello Python!!!&#39;</span>)
+        self<span style="color:#f92672">.</span>icon<span style="color:#f92672">.</span>set_visible(<span style="color:#66d9ef">True</span>)
+        self<span style="color:#f92672">.</span>icon<span style="color:#f92672">.</span>connect(<span style="color:#e6db74">&#34;activate&#34;</span>, self<span style="color:#f92672">.</span>hello)
+        gtk<span style="color:#f92672">.</span>main()
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">hello</span>(self, widget):
+        print <span style="color:#e6db74">&#39;Hello Python !!!&#39;</span>
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+    icon <span style="color:#f92672">=</span> ShowIcon()
+</code></pre></div><p>6. satırda asıl işimizi yapacak olan <em>StatusIcon</em> nesnesini yaratıyoruz.<br>
+7. satırda sistem çekmecesinde hangi ikonun görüntüleneceğini belirtiyoruz. <em>set_from_file</em> ikonu dosyadan alacağımız anlamına geliyor. Eğer gtk&rsquo;nın sunduğu standart ikonları kullanmak istiyorsanız set_from_stock kullanmalısınız.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">icon<span style="color:#f92672">.</span>set_from_stock(gtk<span style="color:#f92672">.</span>STOCK_ABOUT)
+</code></pre></div><p>8. satırda ikonun üzerine geldiğimizde görünmesini istediğimiz yazıyı belirliyoruz.<br>
+9. satırda ikonun başlangıçtaki görünürlüğünü belirliyoruz. Bu satırı yazmasak da görünür başlıyor.<br>
+10. satırda ikonun <em>&ldquo;activate&rdquo;</em> sinyali aldığında çağırmasını istediğimiz metodu belirliyoruz. Kısacası üzerine tıklandığında ne iş yapacağını belirtiyoruz. <em>&ldquo;activate&rdquo;</em> yerine <em>&ldquo;popup_menu&rdquo;</em> yazarsak ikona sağ tıkladığımızda çağrılacak metodu belirliyoruz.<br>
+11. gkt.main() haydi yapalım şu işi manasında :)</p>
+<p>Ayrıntılı dökümanı <a href="http://www.pygtk.org/docs/pygtk/class-gtkstatusicon.html">PyGtk Belgelerinde</a> bulabilirisiniz. Yukarıda verdiğim kodu ve benim kullandığım ikonu <a href="/uploads/2010/04/python-system-tray.zip">buradan</a> indirebilirsiniz.</p>
         
     </div>
 

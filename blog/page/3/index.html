@@ -282,12 +282,24 @@
     </p>
     <div class="post-entry">
         
-        Malesef sd kart olmadan raspberry pi&rsquo;yı boot etmemiz mümkün olmuyor. Benim elimde 1GB&rsquo;lık bir sd kart vardı ve 2GB dan daha ufak imaj dosyaları bulamadım. Bu nedenle usb bellek ile boot etme ihtiyacı duydum.
-Benim sistemimde usb bellek ve sd kart aşağıdaki şekilde tanındı:
- usb: /dev/sdd sd: /dev/sde  Öncelikle indirdiğimiz imaj dosyasını usb belleğimize kopyalıyoruz
-dd if=2013-02-09-wheezy-raspbian.img of=/dev/sdd  Elimizde bulunan sd karta 1 adet fat32 bölüm oluşturuyoruz (oluşturduğunuz bölüm hem ilk sırada hem de birincil bir bölüm olmalı). Bunu ister Gparted gibi bir araçla yapın isterseniz fdisk kullanın. Bölümleme işlemlerini yaptıktan sonra aşağıdaki komutları uygulayın.
-mkdir /tmp/mnt_sd /tmp/mnt_usb mount /dev/sdd1 /tmp/mnt_usb mount /dev/sde1 /tmp/mnt_sd cp /tmp/mnt_usb/* /tmp/mnt_sd  Bu işlemleri yaptıktan sonra /tmp/mnt_sd/cmdline.
-        <a href="https://blog.askin.ws/blog/usb-bellek-uzerinde-raspberry-pi/" class="post-read-more">[Daha fazla oku]</a>
+        <p>Malesef sd kart olmadan raspberry pi&rsquo;yı boot etmemiz mümkün olmuyor. Benim elimde 1GB&rsquo;lık bir sd kart vardı ve 2GB dan daha ufak imaj dosyaları bulamadım. Bu nedenle usb bellek ile boot etme ihtiyacı duydum.<br>
+Benim sistemimde usb bellek ve sd kart aşağıdaki şekilde tanındı:</p>
+<ul>
+<li>usb: /dev/sdd</li>
+<li>sd: /dev/sde</li>
+</ul>
+<p>Öncelikle indirdiğimiz imaj dosyasını usb belleğimize kopyalıyoruz</p>
+<pre><code>dd if=2013-02-09-wheezy-raspbian.img of=/dev/sdd
+</code></pre>
+<p>Elimizde bulunan sd karta 1 adet fat32 bölüm oluşturuyoruz (oluşturduğunuz bölüm hem ilk sırada hem de birincil bir bölüm olmalı). Bunu ister Gparted gibi bir araçla yapın isterseniz fdisk kullanın. Bölümleme işlemlerini yaptıktan sonra aşağıdaki komutları uygulayın.</p>
+<pre><code>mkdir /tmp/mnt_sd /tmp/mnt_usb
+mount /dev/sdd1 /tmp/mnt_usb
+mount /dev/sde1 /tmp/mnt_sd
+
+cp /tmp/mnt_usb/* /tmp/mnt_sd
+</code></pre>
+<p>Bu işlemleri yaptıktan sonra /tmp/mnt_sd/cmdline.txt dosyasını düzenlememiz gerekmekte. Bu dosyada <em>root=/dev/mmcblk0p2</em> olan kısmı <em>root=/dev/sda2</em> olarak değiştirin.</p>
+<p><a href="http://www.networkinghowtos.com/howto/raspbian-on-raspberry-pi-using-sd-card-usb-memory-stick/">Kaynak</a></p>
         
     </div>
 
@@ -618,13 +630,39 @@ Bu arada yeni farkettim akismet bayağı detaylı istatistikler, göze hoş gör
     </p>
     <div class="post-entry">
         
-        Linux üzerinde kurulumdan bahsedeceğim. Öncelikle kullandığınız dağıtımın paket deposundan subversion paketini kurmalısınız. Ben debian kullandığım için
-sudo apt-get install subversion Kurulum tamamlandıktan sonra gerekli tüm araçlara sahip olmuş oluyoruz.
-Bir depo oluşturalım.
-svnadmin create depom depom adli dizinde bir depo oluşturmuş olduk. Bu depo üzerinde gerekli düzenlemeleri yapalım.
-depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu dosyayı açıp [general] başlığı altındaki ayarları düzenliyoruz. Burdaki tüm ayarlar yorum satırı haline getirişmiş, bunlardan işimize yarayanları aktif hale getirmemiz gerekiyor.
-# anon-access = read  Tanımladığımız kullanıcılar dışında kalan kişilerin yetkilerini düzenlemek için kullanıyoruz. Eğer yorum satırı halinde bırakırsak tanımsız kullanıcılar depo üzerinde okuma hakkına sahip oluyorlar.
-        <a href="https://blog.askin.ws/blog/subversion-sunucu-kurulumu/" class="post-read-more">[Daha fazla oku]</a>
+        <p>Linux üzerinde kurulumdan bahsedeceğim. Öncelikle kullandığınız dağıtımın paket deposundan subversion paketini kurmalısınız. Ben debian kullandığım için</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get install subversion
+</code></pre></div><p>Kurulum tamamlandıktan sonra gerekli tüm araçlara sahip olmuş oluyoruz.</p>
+<p>Bir depo oluşturalım.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">svnadmin create depom
+</code></pre></div><p>depom adli dizinde bir depo oluşturmuş olduk. Bu depo üzerinde gerekli düzenlemeleri yapalım.<br>
+<em>depom/conf/svnserve.conf</em> bu dosya temel ayarlarimizi yapacağımız dosya. Bu dosyayı açıp [general] başlığı altındaki ayarları düzenliyoruz. Burdaki tüm ayarlar yorum satırı haline getirişmiş, bunlardan işimize yarayanları aktif hale getirmemiz gerekiyor.</p>
+<pre><code># anon-access = read
+</code></pre>
+<p>Tanımladığımız kullanıcılar dışında kalan kişilerin yetkilerini düzenlemek için kullanıyoruz. Eğer yorum satırı halinde bırakırsak tanımsız kullanıcılar depo üzerinde okuma hakkına sahip oluyorlar. Eğer bu şekilde bırakırsak okuma yapamazlar. Eğer read yerine write yazarsak depomuzda herkes okur-yazar oluyor.</p>
+<pre><code># auth-access = write
+</code></pre>
+<p>Kayıtlı kullanıcıların yetkilerini burdan belirliyoruz. Yorum satırı olmaktan çıkartırsak depomuzda tanımlı kullanıcılar yazma hakkına sahip olur.</p>
+<pre><code># password-db = passwd
+</code></pre>
+<p>Depoya erişim yetkisi verdiğimiz kullanıcıların kullanıcı adı ve parolaların tutulduğu yeri belirtir. Kullanıcıları tanımlamak için yorum satırı halinden çıkartıp istediğimiz yolu belirtmeliyiz, daha sonra ilgili dosyayı düzenlemeliyiz.<br>
+Dosya içeriği</p>
+<pre><code>[users]
+askin = parolam
+</code></pre>
+<p>Parolalar şifrelenmemiş halde tutuluyor.</p>
+<pre><code># authz-db = authz
+</code></pre>
+<p>Kullanıcıların izinlerini daha detaylı olarak ayarlamak istersek bu satırı yorum satırı halinden çıkartıp, istediğimiz bir yolu girmemiz gerekmekte.</p>
+<pre><code># realm = My First Repository
+</code></pre>
+<p>Depomuzun adı, bu satırı yorum satırı olmaktan çıkartıp istediğimiz bir isim veriyoruz.</p>
+<p>Tüm bunları yaptıktan sonra depomuzu yayınlayabiliriz. Bunu yapmak için <em>svnserve</em> adında bir programdan yararlanıyoruz.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/usr/bin/svnserve -d -r /home/svn/repositories --log-file /var/log/svnserve
+</code></pre></div><p>Bu komut <em>/home/svn/repositories</em> dizinindeki tüm depoları yayınlar.</p>
+<p>Depoyu chekout etmek için</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">svn checkout svn://sunucu.com/depom
+</code></pre></div>
         
     </div>
 
@@ -676,9 +714,98 @@ depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu do
     </p>
     <div class="post-entry">
         
-        Sunucu:
-#include &lt;stdio.h&gt;#include &lt;string.h&gt;#include &lt;sys/types.h&gt;#include &lt;sys/socket.h&gt;#include &lt;netinet/in.h&gt; #define MY_PORT 3333  int main(int argc, char *argv[]) { int sockfd, new_fd; struct sockaddr_in my_addr; // hedef adres  struct sockaddr_in their_addr; // baglanti yapan adres  int sin_size, rt; // gelen verinin tutuldugu buffer  char buf[32]; // islem yapmak icin gerekli dosya gosterici  sockfd = socket(AF_INET, SOCK_DGRAM, 0); sin_size = sizeof(struct sockaddr_in); // adres ile ilgili ayarlar  my_addr.sin_family = AF_INET; my_addr.sin_port = htons(MY_PORT); // kullanilacak port  my_addr.sin_addr.s_addr = INADDR_ANY; // mevcut ip adresi  memset(&amp;(my_addr.sin_zero), 0, 8); // geri kalani 0la  // socket ile dosyayi iliskilendir  bind(sockfd, (struct sockaddr *)&amp;my_addr, sizeof(struct sockaddr)); while ( 1 ) { rt = recvfrom (sockfd, buf, 12, 0, (struct sockaddr *)&amp;their_addr, &amp;sin_size); if (rt &gt; 0) { printf (&#34;recv: %s\n&#34;, buf); } else if (rt &lt; 0) { printf(&#34;Baglanti koptu\n&#34;); break; } } close(sockfd); return 0; } İstemci:
-        <a href="https://blog.askin.ws/blog/udp-broadcast-sunucu-istemci/" class="post-read-more">[Daha fazla oku]</a>
+        <p>Sunucu:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;sys/types.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;sys/socket.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;netinet/in.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define MY_PORT 3333
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>argv[])
+{
+
+    <span style="color:#66d9ef">int</span> sockfd, new_fd;
+    <span style="color:#66d9ef">struct</span> sockaddr_in my_addr;    <span style="color:#75715e">// hedef adres
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">struct</span> sockaddr_in their_addr; <span style="color:#75715e">// baglanti yapan adres
+</span><span style="color:#75715e"></span>
+    <span style="color:#66d9ef">int</span> sin_size, rt;
+
+    <span style="color:#75715e">// gelen verinin tutuldugu buffer
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">char</span> buf[<span style="color:#ae81ff">32</span>];
+
+    <span style="color:#75715e">// islem yapmak icin gerekli dosya gosterici
+</span><span style="color:#75715e"></span>    sockfd <span style="color:#f92672">=</span> socket(AF_INET, SOCK_DGRAM, <span style="color:#ae81ff">0</span>);
+
+    sin_size <span style="color:#f92672">=</span> <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">struct</span> sockaddr_in);
+
+    <span style="color:#75715e">// adres ile ilgili ayarlar
+</span><span style="color:#75715e"></span>    my_addr.sin_family      <span style="color:#f92672">=</span> AF_INET;
+    my_addr.sin_port        <span style="color:#f92672">=</span> htons(MY_PORT); <span style="color:#75715e">// kullanilacak port
+</span><span style="color:#75715e"></span>    my_addr.sin_addr.s_addr <span style="color:#f92672">=</span> INADDR_ANY;     <span style="color:#75715e">// mevcut ip adresi
+</span><span style="color:#75715e"></span>    memset(<span style="color:#f92672">&amp;</span>(my_addr.sin_zero), <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">8</span>); <span style="color:#75715e">// geri kalani 0la
+</span><span style="color:#75715e"></span>
+    <span style="color:#75715e">// socket ile dosyayi iliskilendir
+</span><span style="color:#75715e"></span>    bind(sockfd, (<span style="color:#66d9ef">struct</span> sockaddr <span style="color:#f92672">*</span>)<span style="color:#f92672">&amp;</span>my_addr, <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">struct</span> sockaddr));
+
+    <span style="color:#66d9ef">while</span> ( <span style="color:#ae81ff">1</span> ) {
+        rt <span style="color:#f92672">=</span> recvfrom (sockfd, buf, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">0</span>, (<span style="color:#66d9ef">struct</span> sockaddr <span style="color:#f92672">*</span>)<span style="color:#f92672">&amp;</span>their_addr, <span style="color:#f92672">&amp;</span>sin_size);
+        <span style="color:#66d9ef">if</span> (rt <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+            printf (<span style="color:#e6db74">&#34;recv: %s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, buf);
+        } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (rt <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) {
+            printf(<span style="color:#e6db74">&#34;Baglanti koptu</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+            <span style="color:#66d9ef">break</span>;
+        }
+    }
+
+    close(sockfd);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><p>İstemci:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;sys/types.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;sys/socket.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;netinet/in.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define DEST_IP   &#34;255.255.255.255&#34;
+</span><span style="color:#75715e">#define DEST_PORT 3333
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>argv[])
+{
+
+    <span style="color:#66d9ef">int</span> sockfd, new_fd;
+    <span style="color:#66d9ef">struct</span> sockaddr_in dest_addr; <span style="color:#75715e">// hedef adres
+</span><span style="color:#75715e"></span>
+    <span style="color:#66d9ef">int</span> sin_size, rt;
+    sin_size <span style="color:#f92672">=</span> <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">struct</span> sockaddr_in);
+
+    <span style="color:#75715e">// islem yapmak icin gerekli dosya gosterici
+</span><span style="color:#75715e"></span>    sockfd <span style="color:#f92672">=</span> socket(AF_INET, SOCK_DGRAM, <span style="color:#ae81ff">0</span>);
+
+    <span style="color:#75715e">// adres ile ilgili ayarlar
+</span><span style="color:#75715e"></span>    dest_addr.sin_family      <span style="color:#f92672">=</span> AF_INET;
+    dest_addr.sin_port        <span style="color:#f92672">=</span> htons(DEST_PORT);
+    dest_addr.sin_addr.s_addr <span style="color:#f92672">=</span> inet_addr(DEST_IP);
+    memset(<span style="color:#f92672">&amp;</span>(dest_addr.sin_zero), <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">8</span>); <span style="color:#75715e">// geri kalani 0 la
+</span><span style="color:#75715e"></span>
+    <span style="color:#75715e">// Broadcast icin gerekli yetkiyi al
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> flag <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">if</span> (setsockopt (sockfd, SOL_SOCKET, SO_BROADCAST, <span style="color:#f92672">&amp;</span>flag, <span style="color:#66d9ef">sizeof</span>(flag)) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>)
+        perror(<span style="color:#e6db74">&#34;setsockopt&#34;</span>);
+
+    <span style="color:#75715e">// mesaji gonder
+</span><span style="color:#75715e"></span>    rt <span style="color:#f92672">=</span> sendto (sockfd, <span style="color:#e6db74">&#34;slm asl plz&#34;</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">0</span>, (<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> sockaddr <span style="color:#f92672">*</span>)<span style="color:#f92672">&amp;</span>dest_addr, sin_size);
+    <span style="color:#66d9ef">if</span> ( rt <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> )
+        perror(<span style="color:#e6db74">&#34;Hata: &#34;</span>);
+
+    <span style="color:#75715e">// socketi kapat
+</span><span style="color:#75715e"></span>    close(sockfd);
+
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div>
         
     </div>
 

@@ -15,9 +15,44 @@
       <pubDate>Tue, 27 Apr 2010 04:08:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/c-ile-nesne-yaratmak/</guid>
-      <description>Evet kışkırtıcı bir başlık attım :) Aslında yapacağımız olay bir structı nesne gibi kullanmak. Buna benzer bir kodu yıllar önce görmüştüm. O günden bu güne sürekli böyle bir şeyi nasıl yaparım diye araştırdım. Anca bugün çözebildim olayı ;) Kodu aşağıda yorum satırıyla beraber veriyorum. Yorumlarda gerekli açıklamaları yaptım.
-Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşıma bu çıktı, bende boş durmasın dedim :)
-/* * Sınıfımızı yaratıyoruz */ struct _myobject { // alt alanlar  int a, b; /* * Metod * Burada fonksiyon pointerı tanımlıyoruz */ int (*add)(struct _myobject*); }; // struct ön ekinden kurtuluyoruz typedef struct _myobject MyObject; /* * Asıl işi yapacak fonksiyonu tanımlıyoruz * MyObject structını parametre olarak alıyor */ int realAdd(MyObject* a) { return a-&amp;gt;a + a-&amp;gt;b; } int main ( void ) { /* * Nesnemizi oluşturuyoruz.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://blog.askin.ws/uploads/2010/04/c3po.jpg&#34; alt=&#34;&#34; title=&#34;C-3PO&#34;&gt;Evet kışkırtıcı bir başlık attım :)
+Aslında yapacağımız olay bir structı nesne gibi kullanmak. Buna benzer bir kodu yıllar önce görmüştüm. O günden bu güne sürekli böyle bir şeyi nasıl yaparım diye araştırdım. Anca bugün çözebildim olayı ;)
+Kodu aşağıda yorum satırıyla beraber veriyorum. Yorumlarda gerekli açıklamaları yaptım.&lt;/p&gt;
+&lt;p&gt;Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşıma bu çıktı, bende boş durmasın dedim :)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;/*
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; * Sınıfımızı yaratıyoruz
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; */&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; _myobject {
+  &lt;span style=&#34;color:#75715e&#34;&gt;// alt alanlar
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; a, b;
+  &lt;span style=&#34;color:#75715e&#34;&gt;/*
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;   * Metod
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;   * Burada fonksiyon pointerı tanımlıyoruz
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;   */&lt;/span&gt;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; (&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;add)(&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; _myobject&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;);
+};
+
+&lt;span style=&#34;color:#75715e&#34;&gt;// struct ön ekinden kurtuluyoruz
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;typedef&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; _myobject MyObject;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;/*
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; * Asıl işi yapacak fonksiyonu tanımlıyoruz
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; * MyObject structını parametre olarak alıyor
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; */&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;realAdd&lt;/span&gt;(MyObject&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; a) {
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; a&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;a &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; a&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;b;
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt; ( &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; ) {
+  &lt;span style=&#34;color:#75715e&#34;&gt;/*
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;   * Nesnemizi oluşturuyoruz.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;   * add pointerına fonksiyonu atıyoruz
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;   */&lt;/span&gt;
+  MyObject mo &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, realAdd};
+  printf(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;A + B = %d&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;, mo.add(&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;mo));
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Kodun başına stdio.h headerını eklemekte fayda var. WP sıkıntı çıkarttığı için silmek zorunda kaldım. Kodun düzgün halini &lt;a href=&#34;http://github.com/askin/misc/raw/master/fun/struct-function.c&#34;&gt;burada&lt;/a&gt; bulabilirsiniz.&lt;/p&gt;</description>
     </item>
     
   </channel>

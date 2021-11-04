@@ -15,10 +15,18 @@
       <pubDate>Tue, 14 Jul 2009 02:11:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/mysql-data-dizinini-degistirme/</guid>
-      <description>Mysql data dizini ön tanımlı /var/lib/mysql olarak belirlenmiştir. Çeşitli ihtiyaçlardan dolayı bunun yerini değiştirmemiz gerekebilir. Mesela ben ayrı bir bölümde tuttuğum /home dizini altına taşımak istiyorum. Tüm işlemleri root yetkisiyle yapıyoruz. Öncelikle mysql servisini durduralım. Ben pardus kullandığım için
-$ service mysql-server stop Diğer dağıtımlarda farklı olabilir. Ardından ilgili dizini yeni yerine kopyalayalım.
-$ cp -a /var/lib/mysql /home Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. /etc/mysql/my.cnf dosyasında datadir = /var/lib/mysql olan satırı datadir = /home/mysql olarak değiştirelim. Şimdi servisi yeniden başlatabiliriz.
-$ service mysql-server start Eğer düzgün bir şekilde çalışıyorsa /var/lib/mysql dizinini silebiliriz. Ama ismini değiştirip birkaç gün her ihtimale karşı saklamak çok mantıklı.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://blog.askin.ws/uploads/2009/07/mysql.png&#34; alt=&#34;Mysql&#34; title=&#34;Mysql&#34;&gt;Mysql data dizini ön tanımlı &lt;strong&gt;/var/lib/mysql&lt;/strong&gt; olarak belirlenmiştir. Çeşitli ihtiyaçlardan dolayı bunun yerini değiştirmemiz gerekebilir. Mesela ben ayrı bir bölümde tuttuğum &lt;strong&gt;/home&lt;/strong&gt; dizini altına taşımak istiyorum. Tüm işlemleri &lt;em&gt;root&lt;/em&gt; yetkisiyle yapıyoruz. Öncelikle mysql servisini durduralım.
+Ben pardus kullandığım için&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ service mysql-server stop
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Diğer dağıtımlarda farklı olabilir.
+Ardından ilgili dizini yeni yerine kopyalayalım.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ cp -a /var/lib/mysql /home
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. &lt;strong&gt;/etc/mysql/my.cnf&lt;/strong&gt; dosyasında
+&lt;code&gt;datadir = /var/lib/mysql&lt;/code&gt; olan satırı
+&lt;code&gt;datadir = /home/mysql&lt;/code&gt; olarak değiştirelim.
+Şimdi servisi yeniden başlatabiliriz.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ service mysql-server start
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Eğer düzgün bir şekilde çalışıyorsa &lt;strong&gt;/var/lib/mysql&lt;/strong&gt; dizinini silebiliriz. Ama ismini değiştirip birkaç gün her ihtimale karşı saklamak çok mantıklı.&lt;/p&gt;</description>
     </item>
     
   </channel>

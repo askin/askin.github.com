@@ -9,11 +9,38 @@
 
   <title>Subversion sunucu kurulumu - Aşkın Özgür</title>
   <meta name="description" content="Linux üzerinde kurulumdan bahsedeceğim. Öncelikle kullandığınız dağıtımın paket deposundan subversion paketini kurmalısınız. Ben debian kullandığım için
-sudo apt-get install subversion Kurulum tamamlandıktan sonra gerekli tüm araçlara sahip olmuş oluyoruz.
+sudo apt-get install subversion
+Kurulum tamamlandıktan sonra gerekli tüm araçlara sahip olmuş oluyoruz.
 Bir depo oluşturalım.
-svnadmin create depom depom adli dizinde bir depo oluşturmuş olduk. Bu depo üzerinde gerekli düzenlemeleri yapalım.
+svnadmin create depom
+depom adli dizinde bir depo oluşturmuş olduk. Bu depo üzerinde gerekli düzenlemeleri yapalım.
 depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu dosyayı açıp [general] başlığı altındaki ayarları düzenliyoruz. Burdaki tüm ayarlar yorum satırı haline getirişmiş, bunlardan işimize yarayanları aktif hale getirmemiz gerekiyor.
-# anon-access = read  Tanımladığımız kullanıcılar dışında kalan kişilerin yetkilerini düzenlemek için kullanıyoruz. Eğer yorum satırı halinde bırakırsak tanımsız kullanıcılar depo üzerinde okuma hakkına sahip oluyorlar.">
+# anon-access = read
+
+Tanımladığımız kullanıcılar dışında kalan kişilerin yetkilerini düzenlemek için kullanıyoruz. Eğer yorum satırı halinde bırakırsak tanımsız kullanıcılar depo üzerinde okuma hakkına sahip oluyorlar. Eğer bu şekilde bırakırsak okuma yapamazlar. Eğer read yerine write yazarsak depomuzda herkes okur-yazar oluyor.
+# auth-access = write
+
+Kayıtlı kullanıcıların yetkilerini burdan belirliyoruz. Yorum satırı olmaktan çıkartırsak depomuzda tanımlı kullanıcılar yazma hakkına sahip olur.
+# password-db = passwd
+
+Depoya erişim yetkisi verdiğimiz kullanıcıların kullanıcı adı ve parolaların tutulduğu yeri belirtir. Kullanıcıları tanımlamak için yorum satırı halinden çıkartıp istediğimiz yolu belirtmeliyiz, daha sonra ilgili dosyayı düzenlemeliyiz.
+Dosya içeriği
+[users]
+askin = parolam
+
+Parolalar şifrelenmemiş halde tutuluyor.
+# authz-db = authz
+
+Kullanıcıların izinlerini daha detaylı olarak ayarlamak istersek bu satırı yorum satırı halinden çıkartıp, istediğimiz bir yolu girmemiz gerekmekte.
+# realm = My First Repository
+
+Depomuzun adı, bu satırı yorum satırı olmaktan çıkartıp istediğimiz bir isim veriyoruz.
+Tüm bunları yaptıktan sonra depomuzu yayınlayabiliriz. Bunu yapmak için svnserve adında bir programdan yararlanıyoruz.
+/usr/bin/svnserve -d -r /home/svn/repositories --log-file /var/log/svnserve
+Bu komut /home/svn/repositories dizinindeki tüm depoları yayınlar.
+Depoyu chekout etmek için
+svn checkout svn://sunucu.com/depom
+">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -62,7 +89,7 @@ depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu do
     "name" : "Aşkın Özgür"
   },
   "headline": "Subversion sunucu kurulumu",
-  "description" : "Linux üzerinde kurulumdan bahsedeceğim. Öncelikle kullandığınız dağıtımın paket deposundan subversion paketini kurmalısınız. Ben debian kullandığım için\nsudo apt-get install subversion Kurulum tamamlandıktan sonra gerekli tüm araçlara sahip olmuş oluyoruz.\nBir depo oluşturalım.\nsvnadmin create depom depom adli dizinde bir depo oluşturmuş olduk. Bu depo üzerinde gerekli düzenlemeleri yapalım.\ndepom\/conf\/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu dosyayı açıp [general] başlığı altındaki ayarları düzenliyoruz. Burdaki tüm ayarlar yorum satırı haline getirişmiş, bunlardan işimize yarayanları aktif hale getirmemiz gerekiyor.\n# anon-access = read  Tanımladığımız kullanıcılar dışında kalan kişilerin yetkilerini düzenlemek için kullanıyoruz. Eğer yorum satırı halinde bırakırsak tanımsız kullanıcılar depo üzerinde okuma hakkına sahip oluyorlar.",
+  "description" : "Linux üzerinde kurulumdan bahsedeceğim. Öncelikle kullandığınız dağıtımın paket deposundan subversion paketini kurmalısınız. Ben debian kullandığım için\nsudo apt-get install subversion Kurulum tamamlandıktan sonra gerekli tüm araçlara sahip olmuş oluyoruz.\nBir depo oluşturalım.\nsvnadmin create depom depom adli dizinde bir depo oluşturmuş olduk. Bu depo üzerinde gerekli düzenlemeleri yapalım.\ndepom\/conf\/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu dosyayı açıp [general] başlığı altındaki ayarları düzenliyoruz. Burdaki tüm ayarlar yorum satırı haline getirişmiş, bunlardan işimize yarayanları aktif hale getirmemiz gerekiyor.\n# anon-access = read  Tanımladığımız kullanıcılar dışında kalan kişilerin yetkilerini düzenlemek için kullanıyoruz. Eğer yorum satırı halinde bırakırsak tanımsız kullanıcılar depo üzerinde okuma hakkına sahip oluyorlar. Eğer bu şekilde bırakırsak okuma yapamazlar. Eğer read yerine write yazarsak depomuzda herkes okur-yazar oluyor.\n# auth-access = write  Kayıtlı kullanıcıların yetkilerini burdan belirliyoruz. Yorum satırı olmaktan çıkartırsak depomuzda tanımlı kullanıcılar yazma hakkına sahip olur.\n# password-db = passwd  Depoya erişim yetkisi verdiğimiz kullanıcıların kullanıcı adı ve parolaların tutulduğu yeri belirtir. Kullanıcıları tanımlamak için yorum satırı halinden çıkartıp istediğimiz yolu belirtmeliyiz, daha sonra ilgili dosyayı düzenlemeliyiz.\nDosya içeriği\n[users] askin = parolam  Parolalar şifrelenmemiş halde tutuluyor.\n# authz-db = authz  Kullanıcıların izinlerini daha detaylı olarak ayarlamak istersek bu satırı yorum satırı halinden çıkartıp, istediğimiz bir yolu girmemiz gerekmekte.\n# realm = My First Repository  Depomuzun adı, bu satırı yorum satırı olmaktan çıkartıp istediğimiz bir isim veriyoruz.\nTüm bunları yaptıktan sonra depomuzu yayınlayabiliriz. Bunu yapmak için svnserve adında bir programdan yararlanıyoruz.\n\/usr\/bin\/svnserve -d -r \/home\/svn\/repositories --log-file \/var\/log\/svnserve Bu komut \/home\/svn\/repositories dizinindeki tüm depoları yayınlar.\nDepoyu chekout etmek için\nsvn checkout svn:\/\/sunucu.com\/depom ",
   "inLanguage" : "tr",
   "wordCount":  253 ,
   "datePublished" : "2012-08-23T18:16:00",
@@ -85,11 +112,38 @@ depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu do
 
 <meta property="og:title" content="Subversion sunucu kurulumu" />
 <meta property="og:description" content="Linux üzerinde kurulumdan bahsedeceğim. Öncelikle kullandığınız dağıtımın paket deposundan subversion paketini kurmalısınız. Ben debian kullandığım için
-sudo apt-get install subversion Kurulum tamamlandıktan sonra gerekli tüm araçlara sahip olmuş oluyoruz.
+sudo apt-get install subversion
+Kurulum tamamlandıktan sonra gerekli tüm araçlara sahip olmuş oluyoruz.
 Bir depo oluşturalım.
-svnadmin create depom depom adli dizinde bir depo oluşturmuş olduk. Bu depo üzerinde gerekli düzenlemeleri yapalım.
+svnadmin create depom
+depom adli dizinde bir depo oluşturmuş olduk. Bu depo üzerinde gerekli düzenlemeleri yapalım.
 depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu dosyayı açıp [general] başlığı altındaki ayarları düzenliyoruz. Burdaki tüm ayarlar yorum satırı haline getirişmiş, bunlardan işimize yarayanları aktif hale getirmemiz gerekiyor.
-# anon-access = read  Tanımladığımız kullanıcılar dışında kalan kişilerin yetkilerini düzenlemek için kullanıyoruz. Eğer yorum satırı halinde bırakırsak tanımsız kullanıcılar depo üzerinde okuma hakkına sahip oluyorlar.">
+# anon-access = read
+
+Tanımladığımız kullanıcılar dışında kalan kişilerin yetkilerini düzenlemek için kullanıyoruz. Eğer yorum satırı halinde bırakırsak tanımsız kullanıcılar depo üzerinde okuma hakkına sahip oluyorlar. Eğer bu şekilde bırakırsak okuma yapamazlar. Eğer read yerine write yazarsak depomuzda herkes okur-yazar oluyor.
+# auth-access = write
+
+Kayıtlı kullanıcıların yetkilerini burdan belirliyoruz. Yorum satırı olmaktan çıkartırsak depomuzda tanımlı kullanıcılar yazma hakkına sahip olur.
+# password-db = passwd
+
+Depoya erişim yetkisi verdiğimiz kullanıcıların kullanıcı adı ve parolaların tutulduğu yeri belirtir. Kullanıcıları tanımlamak için yorum satırı halinden çıkartıp istediğimiz yolu belirtmeliyiz, daha sonra ilgili dosyayı düzenlemeliyiz.
+Dosya içeriği
+[users]
+askin = parolam
+
+Parolalar şifrelenmemiş halde tutuluyor.
+# authz-db = authz
+
+Kullanıcıların izinlerini daha detaylı olarak ayarlamak istersek bu satırı yorum satırı halinden çıkartıp, istediğimiz bir yolu girmemiz gerekmekte.
+# realm = My First Repository
+
+Depomuzun adı, bu satırı yorum satırı olmaktan çıkartıp istediğimiz bir isim veriyoruz.
+Tüm bunları yaptıktan sonra depomuzu yayınlayabiliriz. Bunu yapmak için svnserve adında bir programdan yararlanıyoruz.
+/usr/bin/svnserve -d -r /home/svn/repositories --log-file /var/log/svnserve
+Bu komut /home/svn/repositories dizinindeki tüm depoları yayınlar.
+Depoyu chekout etmek için
+svn checkout svn://sunucu.com/depom
+">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
 <meta property="og:url" content="https://blog.askin.ws/blog/subversion-sunucu-kurulumu/" />
 <meta property="og:type" content="website" />
@@ -97,7 +151,8 @@ depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu do
 
   <meta name="twitter:title" content="Subversion sunucu kurulumu" />
   <meta name="twitter:description" content="Linux üzerinde kurulumdan bahsedeceğim. Öncelikle kullandığınız dağıtımın paket deposundan subversion paketini kurmalısınız. Ben debian kullandığım için
-sudo apt-get install subversion Kurulum …">
+sudo apt-get install subversion
+Kurulum …">
   <meta name="twitter:image" content="https://blog.askin.ws/uploads/avatar.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@kelebeks" />

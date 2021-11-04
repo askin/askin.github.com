@@ -15,10 +15,16 @@
       <pubDate>Fri, 01 Aug 2008 22:10:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/ilk-deb-paketim/</guid>
-      <description>Sonunda ilk .deb paketimi yapmayı başardım:) aslında okadar zor bi iş değilmiş, biraz kaynak koddan derleme pratiği yapıp, üzerine birkaç döküman okuyunca çabubak oluyor.
-Bu şanslı pakatimiz PCmanfm oldu. Normalde depoda bulunuyor ama ben experimental sürümünü kullanıyorum. Uzun zamandır derleyerek kullanıyordum. Ama aklıma birden esti hadi şunun .deb paketini yapayım dedim ve yaptım.
-Bu sürümde ssh, samba yada ftp üzerinden bir makinaya bağlanıp oranın dizinlerini kullanabiliyoruz. Bir kere ayarını yaptığında artık kenarda hazır bekleyip senin bağlan demeni bekliyor. Gayet hoş ve kullanışlı tavsiye ederim.
- Proje sayfası: http://pcmanfm.sourceforge.net/ İndirmek için: http://sourceforge.net/project/showfiles.php?group_id=156956 El yapımı .deb paketim: /packages/deb/pcmanfm_0.4.4.2-1_i386.deb  Buda ekran görüntüsü, büyütmek için üzerine tıklayın:</description>
+      <description>&lt;p&gt;Sonunda ilk .deb paketimi yapmayı başardım:) aslında okadar zor bi iş değilmiş, biraz kaynak koddan derleme pratiği yapıp, üzerine birkaç döküman okuyunca çabubak oluyor.&lt;br&gt;
+Bu şanslı pakatimiz &lt;a href=&#34;http://pcmanfm.sourceforge.net/&#34;&gt;PCmanfm&lt;/a&gt; oldu. Normalde depoda bulunuyor ama ben experimental sürümünü kullanıyorum. Uzun zamandır derleyerek kullanıyordum. Ama aklıma birden esti hadi şunun .deb paketini yapayım dedim ve yaptım.&lt;br&gt;
+Bu sürümde ssh, samba yada ftp üzerinden bir makinaya bağlanıp oranın dizinlerini kullanabiliyoruz. Bir kere ayarını yaptığında artık kenarda hazır bekleyip senin bağlan demeni bekliyor. Gayet hoş ve kullanışlı tavsiye ederim.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Proje sayfası: &lt;a href=&#34;http://pcmanfm.sourceforge.net/&#34;&gt;http://pcmanfm.sourceforge.net/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;İndirmek için: &lt;a href=&#34;http://sourceforge.net/project/showfiles.php?group_id=156956&#34;&gt;http://sourceforge.net/project/showfiles.php?group_id=156956&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;El yapımı .deb paketim: &lt;a href=&#34;https://blog.askin.ws/packages/deb/pcmanfm_0.4.4.2-1_i386.deb&#34;&gt;/packages/deb/pcmanfm_0.4.4.2-1_i386.deb&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Buda ekran görüntüsü, büyütmek için üzerine tıklayın:&lt;br&gt;
+&lt;a href=&#34;https://blog.askin.ws/images/pcmanfm.png&#34;&gt;&lt;img src=&#34;https://blog.askin.ws/images/pcmanfm.resized.png&#34; alt=&#34;PCman File Manager&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

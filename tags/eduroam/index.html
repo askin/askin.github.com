@@ -230,11 +230,21 @@
     </p>
     <div class="post-entry">
         
-        Bikaç gündür Pardus ve Eduroam ile uğraşıyordum. Eduroama bağlanmak için pratik yollar buldum fakat hiç birisi Ağ Yöneticisi kullanarak bağlanmanın zevkini vermiyordu.
-2 gün boyunca Ağ Yöneticisinin neresini değiştirmem gerektiğini arayıp durdum. Sonunda wireless-tools adlı paketin aradığım paket olduğunu keşfettim :) wireless tools paketi wpa_supplicant kullanarak wpa şifreleme kullanan ağlara bağlanmaya yarıyor. Sağolsun Pardus geliştiricileri wpa_supplicant paketi için dbus kullanan bir python betiği yazmışlar. Bu betik içinde tanımlanan methodlarla wpa_supplicantı yönetebiliyoruz. Bu betiğe eduroam ağına bağlanmak için gerekli parametreleri alan bir method ekledim.
-Daha sonra wireless-tools paketi içindeki comar betiğine bu methodu kullanmasını sağlayacak birkaç değişiklik yaptım.
-Sırf bu işi denemek için bugün okulum olmadığı halde sabahın 8&rsquo;inde okula gelip deneme yaptım.
-        <a href="https://blog.askin.ws/blog/pardus-ag-yoneticisi-ile-eduroam-agina-baglanmak/" class="post-read-more">[Daha fazla oku]</a>
+        <p><img src="/uploads/2009/05/pardus.png" alt="Pardus" title="Pardus">Bikaç gündür <a href="http://www.pardus.org.tr">Pardus</a> ve <a href="http://www.eduroam.org/">Eduroam</a> ile uğraşıyordum. Eduroama bağlanmak için pratik yollar buldum fakat hiç birisi Ağ Yöneticisi kullanarak bağlanmanın zevkini vermiyordu.</p>
+<p>2 gün boyunca Ağ Yöneticisinin neresini değiştirmem gerektiğini arayıp durdum. Sonunda wireless-tools adlı paketin aradığım paket olduğunu keşfettim :) wireless tools paketi wpa_supplicant kullanarak wpa şifreleme kullanan ağlara bağlanmaya yarıyor. Sağolsun Pardus geliştiricileri wpa_supplicant paketi için dbus kullanan bir python betiği yazmışlar. Bu betik içinde tanımlanan methodlarla wpa_supplicantı yönetebiliyoruz. Bu betiğe eduroam ağına bağlanmak için gerekli parametreleri alan bir method ekledim.<br>
+Daha sonra wireless-tools paketi içindeki comar betiğine bu methodu kullanmasını sağlayacak birkaç değişiklik yaptım.</p>
+<p>Sırf bu işi denemek için bugün okulum olmadığı halde sabahın 8&rsquo;inde okula gelip deneme yaptım. Ayarlarını evde yaptığım için bilgisayarı açar açmaz internete bağlandı :) Hayatımda ilk kez yazdığım bir kod direk çalıştı :P</p>
+<p>Düzenlediğim bu 2 pakete aşağıdaki adreslerden ulaşabilirsiniz.<br>
+<a href="http://github.com/askin/kelebekpisi/tree/master/wpa_supplicant/">http://github.com/askin/kelebekpisi/tree/master/wpa_supplicant/</a><br>
+<a href="http://github.com/askin/kelebekpisi/tree/master/wireless-tools/">http://github.com/askin/kelebekpisi/tree/master/wireless-tools/</a></p>
+<p>Paketleri kendiniz derlemek için root yetkileriyle</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pisi bi http://github.com/askin/kelebekpisi/raw/master/wpa_supplicant/pspec.xml
+pisi bi http://github.com/askin/kelebekpisi/raw/master/wireless-tools/pspec.xml
+</code></pre></div><p>komutlarını vermelisiniz, ardından oluşan pisi paketlerini kurabilirsiniz.</p>
+<p>Ya da hazır ikili pisi paketlerini <a href="http://askin.ws/pisi/eduroam/">http://askin.ws/pisi/eduroam/</a> adresinden bulabilirsiniz.</p>
+<p>Paketleri kurduktan sonra ayarları yaparken Güvenlik Türü seçeneğini &ldquo;WPA &amp; WPA2 Enterprise&rdquo; olarak seçmelisiniz.</p>
+<p>Son olarak wireless-tools paketi Pardus&rsquo;un temel paketlerinden birisidir, wpa_supplicant paketi de wpa ağlarına bağlanmak için gerekli temel bir pakettir. Bunları Pardus deposu dışında bir yerden kurmak sisteminize zarar verebilir. Sorumluluk kullanıcıya aittir :)</p>
+<p>Benim sistemime hiç bir şey olmadı, %99.99 olasılıkla sizin siteminize de zarar gelmez fakat ben yinede hiç bir sorumluluk almıyorum :)</p>
         
     </div>
 
@@ -290,14 +300,35 @@ Sırf bu işi denemek için bugün okulum olmadığı halde sabahın 8&rsquo;ind
     </p>
     <div class="post-entry">
         
-        Pardusun ağ yöneticisi gayet şık bir arayüze sahip, fakat bize Eduroam ağına bağlanma özelliği sunmuyor.
-Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız için yeterli. Bu araçlar wpa_supplicant ve dhcpcd. Wpa_supplicant ağda kimlik denetimini sağlamak için, dhcpcd ise ağdan ip almamız için gerekli.
-Öncelikle wpa_supplicant için ayar dosyası oluşturmamız gerekiyor.
-network={ ssid=&quot;eduroam&quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap=TTLS phase2=&quot;auth=PAP&quot; anonymous_identity=&quot;anonymous@ogr.deu.edu.tr&quot; identity=&quot;ogrencinumarasi@ogr.deu.edu.tr&quot; password=&quot;sifre&quot; } Bu ayarlar Dokuz Eylül Üniversitesi için. Kendi okulunuza göre düzenlemeniz gerekiyor. Sadece ogr.deu.edu.tr adresi yerine kendi okulunuzun adresini yazmalısınız.
-Bu dosyayı /etc/wpa_supplicant.con adıyla kaydediyoruz.
-Sıra geldi wpa_supplicantı çalıştırmaya.
-wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf -D parametresi hangi sürücüyü kullanacağımızı belirtiyor.
-        <a href="https://blog.askin.ws/blog/pardus-ile-eduroam-agina-baglanma/" class="post-read-more">[Daha fazla oku]</a>
+        <p><img src="/uploads/2009/12/eduroam_logo_trans.gif" alt="Eduroam" title="Eduroam"><a href="http://www.pardus.org.tr/">Pardus</a>un ağ yöneticisi gayet şık bir arayüze sahip, fakat bize <a href="http://www.eduroam.org/">Eduroam</a> ağına bağlanma özelliği sunmuyor.<br>
+Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız için yeterli. Bu araçlar <a href="http://hostap.epitest.fi/wpa_supplicant/">wpa_supplicant</a> ve <a href="http://roy.marples.name/projects/dhcpcd">dhcpcd</a>. Wpa_supplicant ağda kimlik denetimini sağlamak için, dhcpcd ise ağdan ip almamız için gerekli.</p>
+<p>Öncelikle wpa_supplicant için ayar dosyası oluşturmamız gerekiyor.</p>
+<pre tabindex="0"><code class="language-conf" data-lang="conf">network={
+        ssid=&quot;eduroam&quot;
+        key_mgmt=WPA-EAP
+        pairwise=TKIP
+        group=TKIP
+        eap=TTLS
+        phase2=&quot;auth=PAP&quot;
+        anonymous_identity=&quot;anonymous@ogr.deu.edu.tr&quot;
+        identity=&quot;ogrencinumarasi@ogr.deu.edu.tr&quot;
+        password=&quot;sifre&quot;
+}
+</code></pre><p>Bu ayarlar Dokuz Eylül Üniversitesi için. Kendi okulunuza göre düzenlemeniz gerekiyor. Sadece ogr.deu.edu.tr adresi yerine kendi okulunuzun adresini yazmalısınız.</p>
+<p>Bu dosyayı /etc/wpa_supplicant.con adıyla kaydediyoruz.</p>
+<p>Sıra geldi wpa_supplicantı çalıştırmaya.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf
+</code></pre></div><p>-D parametresi hangi sürücüyü kullanacağımızı belirtiyor. Wpa_supplicantın man dosyalarına bakarak kendinize uygun bir sürücü seçebilirsiniz.<br>
+-i hangi arayüzü kullanacağınızı belirtiyor. Genellikle wlan0 dır. iwconfig komutunun çıktısı size kablosuz ağ kartlarını gösterecektir.<br>
+-c ile ayar dosyamızın yerini belirtiyoruz.</p>
+<p>Eğer bu komut başarılı olursa artık ip alabiliriz.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dhcpcd wlan0
+</code></pre></div><p>Eğer bu komutta başarılı olduysa artık internete bağlanabilirsiniz hayırlı olsun :)</p>
+<p>Bu işlemi kolaylaştırmak için pem adında bi script yazdım.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git://github.com/askin/pem.git
+</code></pre></div><p>Bu komutla pem&rsquo;e ulaşabilirsiniz.<br>
+Bu aracı daha fazla geliştirecektim fakat ağ yöneticisiyle bu işleri nasıl yapabileceğimi öğrendim. Bugün oturup biraz network-managerın kodlarıyla uğraştım. Sanırım pazartesi günü bu işi ağ yöneticisiyle kolayca yapılabilecek bir hale getirebilirim. Şimdilik en güzel yöntem bu gibi :)</p>
+<p>Ayrıca sevgili dostum <a href="http://blog.metebilgin.com/">Mete</a> bu işin wicd kullanarak nasıl yapıldığını daha önce yazmış <a href="http://blog.metebilgin.com/2009/10/pardus-2009-da-eduroam-kafay-yemeden.html">buradan</a> o yazıya ulaşabilirsiniz.</p>
         
     </div>
 

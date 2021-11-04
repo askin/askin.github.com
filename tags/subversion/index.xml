@@ -15,12 +15,39 @@
       <pubDate>Thu, 23 Aug 2012 18:16:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/subversion-sunucu-kurulumu/</guid>
-      <description>Linux üzerinde kurulumdan bahsedeceğim. Öncelikle kullandığınız dağıtımın paket deposundan subversion paketini kurmalısınız. Ben debian kullandığım için
-sudo apt-get install subversion Kurulum tamamlandıktan sonra gerekli tüm araçlara sahip olmuş oluyoruz.
-Bir depo oluşturalım.
-svnadmin create depom depom adli dizinde bir depo oluşturmuş olduk. Bu depo üzerinde gerekli düzenlemeleri yapalım.
-depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu dosyayı açıp [general] başlığı altındaki ayarları düzenliyoruz. Burdaki tüm ayarlar yorum satırı haline getirişmiş, bunlardan işimize yarayanları aktif hale getirmemiz gerekiyor.
-# anon-access = read  Tanımladığımız kullanıcılar dışında kalan kişilerin yetkilerini düzenlemek için kullanıyoruz. Eğer yorum satırı halinde bırakırsak tanımsız kullanıcılar depo üzerinde okuma hakkına sahip oluyorlar.</description>
+      <description>&lt;p&gt;Linux üzerinde kurulumdan bahsedeceğim. Öncelikle kullandığınız dağıtımın paket deposundan subversion paketini kurmalısınız. Ben debian kullandığım için&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo apt-get install subversion
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Kurulum tamamlandıktan sonra gerekli tüm araçlara sahip olmuş oluyoruz.&lt;/p&gt;
+&lt;p&gt;Bir depo oluşturalım.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;svnadmin create depom
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;depom adli dizinde bir depo oluşturmuş olduk. Bu depo üzerinde gerekli düzenlemeleri yapalım.&lt;br&gt;
+&lt;em&gt;depom/conf/svnserve.conf&lt;/em&gt; bu dosya temel ayarlarimizi yapacağımız dosya. Bu dosyayı açıp [general] başlığı altındaki ayarları düzenliyoruz. Burdaki tüm ayarlar yorum satırı haline getirişmiş, bunlardan işimize yarayanları aktif hale getirmemiz gerekiyor.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# anon-access = read
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Tanımladığımız kullanıcılar dışında kalan kişilerin yetkilerini düzenlemek için kullanıyoruz. Eğer yorum satırı halinde bırakırsak tanımsız kullanıcılar depo üzerinde okuma hakkına sahip oluyorlar. Eğer bu şekilde bırakırsak okuma yapamazlar. Eğer read yerine write yazarsak depomuzda herkes okur-yazar oluyor.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# auth-access = write
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Kayıtlı kullanıcıların yetkilerini burdan belirliyoruz. Yorum satırı olmaktan çıkartırsak depomuzda tanımlı kullanıcılar yazma hakkına sahip olur.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# password-db = passwd
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Depoya erişim yetkisi verdiğimiz kullanıcıların kullanıcı adı ve parolaların tutulduğu yeri belirtir. Kullanıcıları tanımlamak için yorum satırı halinden çıkartıp istediğimiz yolu belirtmeliyiz, daha sonra ilgili dosyayı düzenlemeliyiz.&lt;br&gt;
+Dosya içeriği&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[users]
+askin = parolam
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Parolalar şifrelenmemiş halde tutuluyor.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# authz-db = authz
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Kullanıcıların izinlerini daha detaylı olarak ayarlamak istersek bu satırı yorum satırı halinden çıkartıp, istediğimiz bir yolu girmemiz gerekmekte.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# realm = My First Repository
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Depomuzun adı, bu satırı yorum satırı olmaktan çıkartıp istediğimiz bir isim veriyoruz.&lt;/p&gt;
+&lt;p&gt;Tüm bunları yaptıktan sonra depomuzu yayınlayabiliriz. Bunu yapmak için &lt;em&gt;svnserve&lt;/em&gt; adında bir programdan yararlanıyoruz.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;/usr/bin/svnserve -d -r /home/svn/repositories --log-file /var/log/svnserve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Bu komut &lt;em&gt;/home/svn/repositories&lt;/em&gt; dizinindeki tüm depoları yayınlar.&lt;/p&gt;
+&lt;p&gt;Depoyu chekout etmek için&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;svn checkout svn://sunucu.com/depom
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
   </channel>

@@ -8,9 +8,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <title>C ile Nesne Yaratmak - Aşkın Özgür</title>
-  <meta name="description" content="Evet kışkırtıcı bir başlık attım :) Aslında yapacağımız olay bir structı nesne gibi kullanmak. Buna benzer bir kodu yıllar önce görmüştüm. O günden bu güne sürekli böyle bir şeyi nasıl yaparım diye araştırdım. Anca bugün çözebildim olayı ;) Kodu aşağıda yorum satırıyla beraber veriyorum. Yorumlarda gerekli açıklamaları yaptım.
+  <meta name="description" content="Evet kışkırtıcı bir başlık attım :)
+Aslında yapacağımız olay bir structı nesne gibi kullanmak. Buna benzer bir kodu yıllar önce görmüştüm. O günden bu güne sürekli böyle bir şeyi nasıl yaparım diye araştırdım. Anca bugün çözebildim olayı ;)
+Kodu aşağıda yorum satırıyla beraber veriyorum. Yorumlarda gerekli açıklamaları yaptım.
 Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşıma bu çıktı, bende boş durmasın dedim :)
-/* * Sınıfımızı yaratıyoruz */ struct _myobject { // alt alanlar  int a, b; /* * Metod * Burada fonksiyon pointerı tanımlıyoruz */ int (*add)(struct _myobject*); }; // struct ön ekinden kurtuluyoruz typedef struct _myobject MyObject; /* * Asıl işi yapacak fonksiyonu tanımlıyoruz * MyObject structını parametre olarak alıyor */ int realAdd(MyObject* a) { return a-&gt;a &#43; a-&gt;b; } int main ( void ) { /* * Nesnemizi oluşturuyoruz.">
+/*
+ * Sınıfımızı yaratıyoruz
+ */
+struct _myobject {
+  // alt alanlar
+  int a, b;
+  /*
+   * Metod
+   * Burada fonksiyon pointerı tanımlıyoruz
+   */
+  int (*add)(struct _myobject*);
+};
+
+// struct ön ekinden kurtuluyoruz
+typedef struct _myobject MyObject;
+
+/*
+ * Asıl işi yapacak fonksiyonu tanımlıyoruz
+ * MyObject structını parametre olarak alıyor
+ */
+int realAdd(MyObject* a) {
+  return a-&gt;a &#43; a-&gt;b;
+}
+
+int main ( void ) {
+  /*
+   * Nesnemizi oluşturuyoruz.
+   * add pointerına fonksiyonu atıyoruz
+   */
+  MyObject mo = {1, 2, realAdd};
+  printf(&#34;A &#43; B = %d\n&#34;, mo.add(&amp;mo));
+  return 0;
+}
+Kodun başına stdio.h headerını eklemekte fayda var. WP sıkıntı çıkarttığı için silmek zorunda kaldım. Kodun düzgün halini burada bulabilirsiniz.">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -59,7 +94,7 @@ Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşı
     "name" : "Aşkın Özgür"
   },
   "headline": "C ile Nesne Yaratmak",
-  "description" : "Evet kışkırtıcı bir başlık attım :) Aslında yapacağımız olay bir structı nesne gibi kullanmak. Buna benzer bir kodu yıllar önce görmüştüm. O günden bu güne sürekli böyle bir şeyi nasıl yaparım diye araştırdım. Anca bugün çözebildim olayı ;) Kodu aşağıda yorum satırıyla beraber veriyorum. Yorumlarda gerekli açıklamaları yaptım.\nBu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşıma bu çıktı, bende boş durmasın dedim :)\n\/* * Sınıfımızı yaratıyoruz *\/ struct _myobject { \/\/ alt alanlar  int a, b; \/* * Metod * Burada fonksiyon pointerı tanımlıyoruz *\/ int (*add)(struct _myobject*); }; \/\/ struct ön ekinden kurtuluyoruz typedef struct _myobject MyObject; \/* * Asıl işi yapacak fonksiyonu tanımlıyoruz * MyObject structını parametre olarak alıyor *\/ int realAdd(MyObject* a) { return a-\u0026gt;a \u002b a-\u0026gt;b; } int main ( void ) { \/* * Nesnemizi oluşturuyoruz.",
+  "description" : "Evet kışkırtıcı bir başlık attım :) Aslında yapacağımız olay bir structı nesne gibi kullanmak. Buna benzer bir kodu yıllar önce görmüştüm. O günden bu güne sürekli böyle bir şeyi nasıl yaparım diye araştırdım. Anca bugün çözebildim olayı ;) Kodu aşağıda yorum satırıyla beraber veriyorum. Yorumlarda gerekli açıklamaları yaptım.\nBu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşıma bu çıktı, bende boş durmasın dedim :)\n\/* * Sınıfımızı yaratıyoruz *\/ struct _myobject { \/\/ alt alanlar  int a, b; \/* * Metod * Burada fonksiyon pointerı tanımlıyoruz *\/ int (*add)(struct _myobject*); }; \/\/ struct ön ekinden kurtuluyoruz typedef struct _myobject MyObject; \/* * Asıl işi yapacak fonksiyonu tanımlıyoruz * MyObject structını parametre olarak alıyor *\/ int realAdd(MyObject* a) { return a-\u0026gt;a \u002b a-\u0026gt;b; } int main ( void ) { \/* * Nesnemizi oluşturuyoruz. * add pointerına fonksiyonu atıyoruz *\/ MyObject mo = {1, 2, realAdd}; printf(\u0026#34;A \u002b B = %d\\n\u0026#34;, mo.add(\u0026amp;mo)); return 0; } Kodun başına stdio.h headerını eklemekte fayda var. WP sıkıntı çıkarttığı için silmek zorunda kaldım. Kodun düzgün halini burada bulabilirsiniz.\n",
   "inLanguage" : "tr",
   "wordCount":  177 ,
   "datePublished" : "2010-04-27T04:08:00",
@@ -81,16 +116,52 @@ Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşı
 </script>
 
 <meta property="og:title" content="C ile Nesne Yaratmak" />
-<meta property="og:description" content="Evet kışkırtıcı bir başlık attım :) Aslında yapacağımız olay bir structı nesne gibi kullanmak. Buna benzer bir kodu yıllar önce görmüştüm. O günden bu güne sürekli böyle bir şeyi nasıl yaparım diye araştırdım. Anca bugün çözebildim olayı ;) Kodu aşağıda yorum satırıyla beraber veriyorum. Yorumlarda gerekli açıklamaları yaptım.
+<meta property="og:description" content="Evet kışkırtıcı bir başlık attım :)
+Aslında yapacağımız olay bir structı nesne gibi kullanmak. Buna benzer bir kodu yıllar önce görmüştüm. O günden bu güne sürekli böyle bir şeyi nasıl yaparım diye araştırdım. Anca bugün çözebildim olayı ;)
+Kodu aşağıda yorum satırıyla beraber veriyorum. Yorumlarda gerekli açıklamaları yaptım.
 Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşıma bu çıktı, bende boş durmasın dedim :)
-/* * Sınıfımızı yaratıyoruz */ struct _myobject { // alt alanlar  int a, b; /* * Metod * Burada fonksiyon pointerı tanımlıyoruz */ int (*add)(struct _myobject*); }; // struct ön ekinden kurtuluyoruz typedef struct _myobject MyObject; /* * Asıl işi yapacak fonksiyonu tanımlıyoruz * MyObject structını parametre olarak alıyor */ int realAdd(MyObject* a) { return a-&gt;a &#43; a-&gt;b; } int main ( void ) { /* * Nesnemizi oluşturuyoruz.">
+/*
+ * Sınıfımızı yaratıyoruz
+ */
+struct _myobject {
+  // alt alanlar
+  int a, b;
+  /*
+   * Metod
+   * Burada fonksiyon pointerı tanımlıyoruz
+   */
+  int (*add)(struct _myobject*);
+};
+
+// struct ön ekinden kurtuluyoruz
+typedef struct _myobject MyObject;
+
+/*
+ * Asıl işi yapacak fonksiyonu tanımlıyoruz
+ * MyObject structını parametre olarak alıyor
+ */
+int realAdd(MyObject* a) {
+  return a-&gt;a &#43; a-&gt;b;
+}
+
+int main ( void ) {
+  /*
+   * Nesnemizi oluşturuyoruz.
+   * add pointerına fonksiyonu atıyoruz
+   */
+  MyObject mo = {1, 2, realAdd};
+  printf(&#34;A &#43; B = %d\n&#34;, mo.add(&amp;mo));
+  return 0;
+}
+Kodun başına stdio.h headerını eklemekte fayda var. WP sıkıntı çıkarttığı için silmek zorunda kaldım. Kodun düzgün halini burada bulabilirsiniz.">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
 <meta property="og:url" content="https://blog.askin.ws/blog/c-ile-nesne-yaratmak/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Aşkın Özgür" />
 
   <meta name="twitter:title" content="C ile Nesne Yaratmak" />
-  <meta name="twitter:description" content="Evet kışkırtıcı bir başlık attım :) Aslında yapacağımız olay bir structı nesne gibi kullanmak. Buna benzer bir kodu yıllar önce görmüştüm. O günden bu güne sürekli böyle bir şeyi nasıl yaparım diye …">
+  <meta name="twitter:description" content="Evet kışkırtıcı bir başlık attım :)
+Aslında yapacağımız olay bir structı nesne gibi kullanmak. Buna benzer bir kodu yıllar önce görmüştüm. O günden bu güne sürekli böyle bir şeyi nasıl yaparım diye …">
   <meta name="twitter:image" content="https://blog.askin.ws/uploads/avatar.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@kelebeks" />
@@ -289,7 +360,6 @@ Kodu aşağıda yorum satırıyla beraber veriyorum. Yorumlarda gerekli açıkla
   <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 }
 </code></pre></div><p>Kodun başına stdio.h headerını eklemekte fayda var. WP sıkıntı çıkarttığı için silmek zorunda kaldım. Kodun düzgün halini <a href="http://github.com/askin/misc/raw/master/fun/struct-function.c">burada</a> bulabilirsiniz.</p>
-
 
         
           <div class="blog-tags">

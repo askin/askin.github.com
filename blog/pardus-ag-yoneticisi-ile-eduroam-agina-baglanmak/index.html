@@ -11,7 +11,18 @@
   <meta name="description" content="Bikaç gündür Pardus ve Eduroam ile uğraşıyordum. Eduroama bağlanmak için pratik yollar buldum fakat hiç birisi Ağ Yöneticisi kullanarak bağlanmanın zevkini vermiyordu.
 2 gün boyunca Ağ Yöneticisinin neresini değiştirmem gerektiğini arayıp durdum. Sonunda wireless-tools adlı paketin aradığım paket olduğunu keşfettim :) wireless tools paketi wpa_supplicant kullanarak wpa şifreleme kullanan ağlara bağlanmaya yarıyor. Sağolsun Pardus geliştiricileri wpa_supplicant paketi için dbus kullanan bir python betiği yazmışlar. Bu betik içinde tanımlanan methodlarla wpa_supplicantı yönetebiliyoruz. Bu betiğe eduroam ağına bağlanmak için gerekli parametreleri alan bir method ekledim.
 Daha sonra wireless-tools paketi içindeki comar betiğine bu methodu kullanmasını sağlayacak birkaç değişiklik yaptım.
-Sırf bu işi denemek için bugün okulum olmadığı halde sabahın 8&rsquo;inde okula gelip deneme yaptım.">
+Sırf bu işi denemek için bugün okulum olmadığı halde sabahın 8&rsquo;inde okula gelip deneme yaptım. Ayarlarını evde yaptığım için bilgisayarı açar açmaz internete bağlandı :) Hayatımda ilk kez yazdığım bir kod direk çalıştı :P
+Düzenlediğim bu 2 pakete aşağıdaki adreslerden ulaşabilirsiniz.
+http://github.com/askin/kelebekpisi/tree/master/wpa_supplicant/
+http://github.com/askin/kelebekpisi/tree/master/wireless-tools/
+Paketleri kendiniz derlemek için root yetkileriyle
+pisi bi http://github.com/askin/kelebekpisi/raw/master/wpa_supplicant/pspec.xml
+pisi bi http://github.com/askin/kelebekpisi/raw/master/wireless-tools/pspec.xml
+komutlarını vermelisiniz, ardından oluşan pisi paketlerini kurabilirsiniz.
+Ya da hazır ikili pisi paketlerini http://askin.ws/pisi/eduroam/ adresinden bulabilirsiniz.
+Paketleri kurduktan sonra ayarları yaparken Güvenlik Türü seçeneğini &ldquo;WPA &amp; WPA2 Enterprise&rdquo; olarak seçmelisiniz.
+Son olarak wireless-tools paketi Pardus&rsquo;un temel paketlerinden birisidir, wpa_supplicant paketi de wpa ağlarına bağlanmak için gerekli temel bir pakettir. Bunları Pardus deposu dışında bir yerden kurmak sisteminize zarar verebilir. Sorumluluk kullanıcıya aittir :)
+Benim sistemime hiç bir şey olmadı, %99.99 olasılıkla sizin siteminize de zarar gelmez fakat ben yinede hiç bir sorumluluk almıyorum :)">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -60,7 +71,7 @@ Sırf bu işi denemek için bugün okulum olmadığı halde sabahın 8&rsquo;ind
     "name" : "Aşkın Özgür"
   },
   "headline": "Pardus Ağ Yöneticisi İle Eduroam Ağına Bağlanmak",
-  "description" : "Bikaç gündür Pardus ve Eduroam ile uğraşıyordum. Eduroama bağlanmak için pratik yollar buldum fakat hiç birisi Ağ Yöneticisi kullanarak bağlanmanın zevkini vermiyordu.\n2 gün boyunca Ağ Yöneticisinin neresini değiştirmem gerektiğini arayıp durdum. Sonunda wireless-tools adlı paketin aradığım paket olduğunu keşfettim :) wireless tools paketi wpa_supplicant kullanarak wpa şifreleme kullanan ağlara bağlanmaya yarıyor. Sağolsun Pardus geliştiricileri wpa_supplicant paketi için dbus kullanan bir python betiği yazmışlar. Bu betik içinde tanımlanan methodlarla wpa_supplicantı yönetebiliyoruz. Bu betiğe eduroam ağına bağlanmak için gerekli parametreleri alan bir method ekledim.\nDaha sonra wireless-tools paketi içindeki comar betiğine bu methodu kullanmasını sağlayacak birkaç değişiklik yaptım.\nSırf bu işi denemek için bugün okulum olmadığı halde sabahın 8\u0026rsquo;inde okula gelip deneme yaptım.",
+  "description" : "Bikaç gündür Pardus ve Eduroam ile uğraşıyordum. Eduroama bağlanmak için pratik yollar buldum fakat hiç birisi Ağ Yöneticisi kullanarak bağlanmanın zevkini vermiyordu.\n2 gün boyunca Ağ Yöneticisinin neresini değiştirmem gerektiğini arayıp durdum. Sonunda wireless-tools adlı paketin aradığım paket olduğunu keşfettim :) wireless tools paketi wpa_supplicant kullanarak wpa şifreleme kullanan ağlara bağlanmaya yarıyor. Sağolsun Pardus geliştiricileri wpa_supplicant paketi için dbus kullanan bir python betiği yazmışlar. Bu betik içinde tanımlanan methodlarla wpa_supplicantı yönetebiliyoruz. Bu betiğe eduroam ağına bağlanmak için gerekli parametreleri alan bir method ekledim.\nDaha sonra wireless-tools paketi içindeki comar betiğine bu methodu kullanmasını sağlayacak birkaç değişiklik yaptım.\nSırf bu işi denemek için bugün okulum olmadığı halde sabahın 8\u0026rsquo;inde okula gelip deneme yaptım. Ayarlarını evde yaptığım için bilgisayarı açar açmaz internete bağlandı :) Hayatımda ilk kez yazdığım bir kod direk çalıştı :P\nDüzenlediğim bu 2 pakete aşağıdaki adreslerden ulaşabilirsiniz.\nhttp:\/\/github.com\/askin\/kelebekpisi\/tree\/master\/wpa_supplicant\/\nhttp:\/\/github.com\/askin\/kelebekpisi\/tree\/master\/wireless-tools\/\nPaketleri kendiniz derlemek için root yetkileriyle\npisi bi http:\/\/github.com\/askin\/kelebekpisi\/raw\/master\/wpa_supplicant\/pspec.xml pisi bi http:\/\/github.com\/askin\/kelebekpisi\/raw\/master\/wireless-tools\/pspec.xml komutlarını vermelisiniz, ardından oluşan pisi paketlerini kurabilirsiniz.\nYa da hazır ikili pisi paketlerini http:\/\/askin.ws\/pisi\/eduroam\/ adresinden bulabilirsiniz.\nPaketleri kurduktan sonra ayarları yaparken Güvenlik Türü seçeneğini \u0026ldquo;WPA \u0026amp; WPA2 Enterprise\u0026rdquo; olarak seçmelisiniz.\nSon olarak wireless-tools paketi Pardus\u0026rsquo;un temel paketlerinden birisidir, wpa_supplicant paketi de wpa ağlarına bağlanmak için gerekli temel bir pakettir. Bunları Pardus deposu dışında bir yerden kurmak sisteminize zarar verebilir. Sorumluluk kullanıcıya aittir :)\nBenim sistemime hiç bir şey olmadı, %99.99 olasılıkla sizin siteminize de zarar gelmez fakat ben yinede hiç bir sorumluluk almıyorum :)\n",
   "inLanguage" : "tr",
   "wordCount":  236 ,
   "datePublished" : "2009-12-07T09:45:00",
@@ -85,7 +96,18 @@ Sırf bu işi denemek için bugün okulum olmadığı halde sabahın 8&rsquo;ind
 <meta property="og:description" content="Bikaç gündür Pardus ve Eduroam ile uğraşıyordum. Eduroama bağlanmak için pratik yollar buldum fakat hiç birisi Ağ Yöneticisi kullanarak bağlanmanın zevkini vermiyordu.
 2 gün boyunca Ağ Yöneticisinin neresini değiştirmem gerektiğini arayıp durdum. Sonunda wireless-tools adlı paketin aradığım paket olduğunu keşfettim :) wireless tools paketi wpa_supplicant kullanarak wpa şifreleme kullanan ağlara bağlanmaya yarıyor. Sağolsun Pardus geliştiricileri wpa_supplicant paketi için dbus kullanan bir python betiği yazmışlar. Bu betik içinde tanımlanan methodlarla wpa_supplicantı yönetebiliyoruz. Bu betiğe eduroam ağına bağlanmak için gerekli parametreleri alan bir method ekledim.
 Daha sonra wireless-tools paketi içindeki comar betiğine bu methodu kullanmasını sağlayacak birkaç değişiklik yaptım.
-Sırf bu işi denemek için bugün okulum olmadığı halde sabahın 8&rsquo;inde okula gelip deneme yaptım.">
+Sırf bu işi denemek için bugün okulum olmadığı halde sabahın 8&rsquo;inde okula gelip deneme yaptım. Ayarlarını evde yaptığım için bilgisayarı açar açmaz internete bağlandı :) Hayatımda ilk kez yazdığım bir kod direk çalıştı :P
+Düzenlediğim bu 2 pakete aşağıdaki adreslerden ulaşabilirsiniz.
+http://github.com/askin/kelebekpisi/tree/master/wpa_supplicant/
+http://github.com/askin/kelebekpisi/tree/master/wireless-tools/
+Paketleri kendiniz derlemek için root yetkileriyle
+pisi bi http://github.com/askin/kelebekpisi/raw/master/wpa_supplicant/pspec.xml
+pisi bi http://github.com/askin/kelebekpisi/raw/master/wireless-tools/pspec.xml
+komutlarını vermelisiniz, ardından oluşan pisi paketlerini kurabilirsiniz.
+Ya da hazır ikili pisi paketlerini http://askin.ws/pisi/eduroam/ adresinden bulabilirsiniz.
+Paketleri kurduktan sonra ayarları yaparken Güvenlik Türü seçeneğini &ldquo;WPA &amp; WPA2 Enterprise&rdquo; olarak seçmelisiniz.
+Son olarak wireless-tools paketi Pardus&rsquo;un temel paketlerinden birisidir, wpa_supplicant paketi de wpa ağlarına bağlanmak için gerekli temel bir pakettir. Bunları Pardus deposu dışında bir yerden kurmak sisteminize zarar verebilir. Sorumluluk kullanıcıya aittir :)
+Benim sistemime hiç bir şey olmadı, %99.99 olasılıkla sizin siteminize de zarar gelmez fakat ben yinede hiç bir sorumluluk almıyorum :)">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
 <meta property="og:url" content="https://blog.askin.ws/blog/pardus-ag-yoneticisi-ile-eduroam-agina-baglanmak/" />
 <meta property="og:type" content="website" />
@@ -269,7 +291,6 @@ pisi bi http://github.com/askin/kelebekpisi/raw/master/wireless-tools/pspec.xml
 <p>Paketleri kurduktan sonra ayarları yaparken Güvenlik Türü seçeneğini &ldquo;WPA &amp; WPA2 Enterprise&rdquo; olarak seçmelisiniz.</p>
 <p>Son olarak wireless-tools paketi Pardus&rsquo;un temel paketlerinden birisidir, wpa_supplicant paketi de wpa ağlarına bağlanmak için gerekli temel bir pakettir. Bunları Pardus deposu dışında bir yerden kurmak sisteminize zarar verebilir. Sorumluluk kullanıcıya aittir :)</p>
 <p>Benim sistemime hiç bir şey olmadı, %99.99 olasılıkla sizin siteminize de zarar gelmez fakat ben yinede hiç bir sorumluluk almıyorum :)</p>
-
 
         
           <div class="blog-tags">

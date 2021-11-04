@@ -15,9 +15,12 @@
       <pubDate>Sat, 25 Jul 2009 01:09:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/pardus-2009/</guid>
-      <description>Sonunda Pardus 2009&amp;rsquo;u bilgisayarıma kurabildim. Ailemin yanına geldiğim için Pardus&amp;rsquo;u indiremiyordum. Malum kotalı internet, sıkıntı yaratıyor.
-Kurulum sorunsuz tamamlandı. Kurulum arayüzü çok hoş olmuş. Çok kullanışlı ve çok kolay bir arayüzü olmuş. Bilgisayarıma en hızlı kurulabilen Pardus sürümü. Saat tutmadım ama, 20 dakka ile 30 dakka arasında bir sürede kurulduğunu tahmin ediyorum.
-Kablosuz ağ kartımı sorunsuz tanıdı ve WPA2 şifreli ağıma çok kolay bir şekilde bağlandı. Daha önce de tanıyordu, fakat ağımı göremiyordu, ben de mecburen ndiswraper ile kullanıyordum. Hiç bir ek program kurmama ve kapalı kodlu windows sürücülerine ihtiyaç duymamak beni gayet mutlu etti. Ve ilk defa wi-fi ledinin yanıp söndüğü gördüm:)</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://blog.askin.ws/uploads/2009/05/pardus.png&#34; alt=&#34;Pardus&#34; title=&#34;Pardus&#34;&gt;Sonunda Pardus 2009&amp;rsquo;u bilgisayarıma kurabildim. Ailemin yanına geldiğim için Pardus&amp;rsquo;u indiremiyordum. Malum kotalı internet, sıkıntı yaratıyor.&lt;br&gt;
+Kurulum sorunsuz tamamlandı. Kurulum arayüzü çok hoş olmuş. Çok kullanışlı ve çok kolay bir arayüzü olmuş. Bilgisayarıma en hızlı kurulabilen Pardus sürümü. Saat tutmadım ama, 20 dakka ile 30 dakka arasında bir sürede kurulduğunu tahmin ediyorum.&lt;br&gt;
+Kablosuz ağ kartımı sorunsuz tanıdı ve WPA2 şifreli ağıma çok kolay bir şekilde bağlandı. Daha önce de tanıyordu, fakat ağımı göremiyordu, ben de mecburen ndiswraper ile kullanıyordum. Hiç bir ek program kurmama ve kapalı kodlu windows sürücülerine ihtiyaç duymamak beni gayet mutlu etti. Ve ilk defa wi-fi ledinin yanıp söndüğü gördüm:)&lt;br&gt;
+KDE4 gerçekten çok güzel, çok hoş duruyor fakat bana göre değil. Arada açıp gönül eğlendirebilirim ama gnome herzamanki gibi 1 numaralı tercihim. Bu nedenle biraz KDE4 turu yaptıktan sonra hemen gnome&amp;rsquo;u kurdum. Bu nedenle &lt;a href=&#34;http://code.google.com/p/pardus-gnome-project/&#34;&gt;Burak Çalışkan&lt;/a&gt;&amp;lsquo;a teşekür ediyorum.&lt;br&gt;
+İhtiyaç duyduğum bazı programlar depoda bulunmuyordu. Bu nedenle devel deposundan bazı paketleri derleyip kurdum. Bi kaç program paketlenemedi, onlarda kısa sürede hazır olur diye umuyorum.&lt;br&gt;
+Her şeye rağmen güzel bi dağıtım olmuş. Emeği geçen herkese teşekür ediyorum.&lt;/p&gt;</description>
     </item>
     
   </channel>

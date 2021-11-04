@@ -15,19 +15,19 @@
       <pubDate>Tue, 02 Jun 2009 21:48:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/pardus-atheros-ar242x-wpa2/</guid>
-      <description>Pardus 2008 kurulumla beraber Atheros AR242x kablosuz ağ kartını tanıyor, fakat nedense başka ağları görmesine rağmen evimde WPA2 ile kurulu kablosuz ağımı göremiyordu. Bende diğer dağıtımlarda kullandığım ndiswrapper ile sorunumu çözmeyi denedim.
-Öncelikle ndiswrapperı kurduktan sonra windows için yazılmış driverları seçmemiz gerekiyor. Ardından
-/etc/modules.autoload.d/kernel-2.6
-dosyasına
-ndiswrapper
-satırını ve
-/etc/modprobe.d/blacklist-compat
-dosyasına da
-blacklist ath_pci
-satırını eklemek gerekiyor. Bunları ekledikten sonra kde&amp;rsquo;de ağ programcığıyla bağlanabiliyorsunuz.
-Fakat XFCE kullanıyorsanız wicd kullanmanız gerekiyor. Wicd ile doğrudan kullanamıyoruz. Öncelikle birkaç ufak düzenleme yapmak gerekiyor.
-Wicd -&amp;gt; Tercihler yolunu takip ettikten sonra WPA Suplicant Sürücüsü: kısmına wext, Kablosuz arabirim kısmına da wlan0 yazmak gerekiyor.
-Bu ayarlarla kolaylıkla kullanabilirsiniz, kolay gelsin.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://blog.askin.ws/uploads/2009/06/wifi.jpeg&#34; alt=&#34;Wi-Fi&#34; title=&#34;Wi-Fi&#34;&gt;Pardus 2008 kurulumla beraber Atheros AR242x kablosuz ağ kartını tanıyor, fakat nedense başka ağları görmesine rağmen evimde WPA2 ile kurulu kablosuz ağımı göremiyordu. Bende diğer dağıtımlarda kullandığım ndiswrapper ile sorunumu çözmeyi denedim.&lt;br&gt;
+Öncelikle ndiswrapperı kurduktan sonra windows için yazılmış driverları seçmemiz gerekiyor. Ardından&lt;br&gt;
+&lt;code&gt;/etc/modules.autoload.d/kernel-2.6&lt;/code&gt;&lt;br&gt;
+dosyasına&lt;br&gt;
+&lt;code&gt;ndiswrapper&lt;/code&gt;&lt;br&gt;
+satırını ve&lt;br&gt;
+&lt;code&gt;/etc/modprobe.d/blacklist-compat&lt;/code&gt;&lt;br&gt;
+dosyasına da&lt;br&gt;
+&lt;code&gt;blacklist ath_pci&lt;/code&gt;&lt;br&gt;
+satırını eklemek gerekiyor. Bunları ekledikten sonra kde&amp;rsquo;de ağ programcığıyla bağlanabiliyorsunuz.&lt;br&gt;
+Fakat XFCE kullanıyorsanız wicd kullanmanız gerekiyor. Wicd ile doğrudan kullanamıyoruz. Öncelikle birkaç ufak düzenleme yapmak gerekiyor.&lt;br&gt;
+Wicd -&amp;gt; Tercihler yolunu takip ettikten sonra WPA Suplicant Sürücüsü: kısmına &lt;em&gt;wext&lt;/em&gt;, Kablosuz arabirim kısmına da &lt;em&gt;wlan0&lt;/em&gt; yazmak gerekiyor.&lt;br&gt;
+Bu ayarlarla kolaylıkla kullanabilirsiniz, kolay gelsin.&lt;/p&gt;</description>
     </item>
     
   </channel>

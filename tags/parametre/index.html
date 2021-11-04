@@ -230,14 +230,28 @@
     </p>
     <div class="post-entry">
         
-        Bu yazıyı asıl yazma sebebim parametre olarak geçirilen fonksiyona geçirilecek parametreler :)
-Parametre olarak geçireceğimiz fonksiyonlar belli bir sayıda parametre alıyorsa yapacağımız iş basit,
-Mesela:
-def Merhaba(isim): print &#34;Merhaba %s&#34; % isim Bunun gibi sadece tek parametre alan bir fonksiyon için aşağıdaki gibi bir fonksiyon yeterli olacaktır.
-def BuyukAbi(func, param): func(param) BuyukAbi(Merhaba, &#34;kelebek&#34;) Merhaba kelebek Bu fonksiyon parametre olarak aldığı func fonksiyonuna param parametresini geçirecektir.
-Eğer fonksiyonun aldığı parametre sayısı belirsiz ise, yani farklı sayıda parametre alan fonksiyonlarla uğraşmak gerekiyorsa yanına birkaç ekleme daha yapmamız gerekiyor.
-def BuyukBuyukAbi(func, param): func(*param) param parametresi bir liste olmak durumunda. Geçirilen fonksiyon kaç parametre alıyorsa listenin uzunluğu okadar olmalı.
-        <a href="https://blog.askin.ws/blog/python-fonksiyona-parametre-olarak-fonksiyon-gecirmek/" class="post-read-more">[Daha fazla oku]</a>
+        <p>Bu yazıyı asıl yazma sebebim parametre olarak geçirilen fonksiyona geçirilecek parametreler :)<br>
+Parametre olarak geçireceğimiz fonksiyonlar belli bir sayıda parametre alıyorsa yapacağımız iş basit,</p>
+<p>Mesela:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Merhaba</span>(isim):
+    print <span style="color:#e6db74">&#34;Merhaba </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> isim
+</code></pre></div><p>Bunun gibi sadece tek parametre alan bir fonksiyon için aşağıdaki gibi bir fonksiyon yeterli olacaktır.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">BuyukAbi</span>(func, param):
+    func(param)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">BuyukAbi(Merhaba, <span style="color:#e6db74">&#34;kelebek&#34;</span>)
+Merhaba kelebek
+</code></pre></div><p>Bu fonksiyon parametre olarak aldığı func fonksiyonuna param parametresini geçirecektir.<br>
+Eğer fonksiyonun aldığı parametre sayısı belirsiz ise, yani farklı sayıda parametre alan fonksiyonlarla uğraşmak gerekiyorsa yanına birkaç ekleme daha yapmamız gerekiyor.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">BuyukBuyukAbi</span>(func, param):
+    func(<span style="color:#f92672">*</span>param)
+</code></pre></div><p>param parametresi bir liste olmak durumunda. Geçirilen fonksiyon kaç parametre alıyorsa listenin uzunluğu okadar olmalı.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">BuyukBuyukAbi(Merhaba, [<span style="color:#e6db74">&#34;kelebek&#34;</span>])
+Merhaba kelebek
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">HepinizeMerhaba</span>(isim1, isim2):
+    print <span style="color:#e6db74">&#34;Merhaba </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">, merhaba </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> (isim1, isim2)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">BuyukBuyukAbi(HerpinizeMerhaba, [<span style="color:#e6db74">&#34;kelebek&#34;</span>, <span style="color:#e6db74">&#34;Aşkın&#34;</span>])
+Merhaba kelebek, merhaba Aşkın
+</code></pre></div>
         
     </div>
 

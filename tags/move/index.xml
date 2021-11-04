@@ -15,10 +15,24 @@
       <pubDate>Mon, 06 Apr 2009 22:22:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/bir-gnulinux-kurulumunu-baska-bir-harddiskebolume-tasimak/</guid>
-      <description>Öncelikle bir çalışan cd ile sistem açılır, benim tercihim gparted live cd. Sizin elinizin altında ne varsa kabuldur. İlla çalışan cd olmasına gerek yok, herhangi bir linux cdside olabilir. Bize mount, cp ve nano komutları lazım. Bunları sağlayan herhangi bir cd kullanılabilir.
-Taşınacak kurulumun hangi disk bölümünde olduğu bilinmeli. Ben 2. bölümdeki kurulumu 1. bölüme taşıyacağım. Yani /dev/hdc3 den /dev/hdc1 e taşıma yapacağım(sizdeki disk isimleri muhtemelen farklıdır).
-Cd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte. Ctrl + Alt + F1 tuş kombinasyonu muhtemelen iş görecektir. Ben live cd kullandığım için grafik ekranla karşılaştım, burdan bi terminal açarak işimi göreceğim.
-Yapacağımız işlemler için root olmamız gerekiyor.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://blog.askin.ws/uploads/2009/04/linux-tux.jpg&#34; alt=&#34;GNU/Linux&#34; title=&#34;GNU/Linux&#34;&gt; Öncelikle bir çalışan cd ile sistem açılır, benim tercihim gparted live cd. Sizin elinizin altında ne varsa kabuldur. İlla çalışan cd olmasına gerek yok, herhangi bir linux cdside olabilir. Bize mount, cp ve nano komutları lazım. Bunları sağlayan herhangi bir cd kullanılabilir.&lt;/p&gt;
+&lt;p&gt;Taşınacak kurulumun hangi disk bölümünde olduğu bilinmeli. Ben 2. bölümdeki kurulumu 1. bölüme taşıyacağım. Yani /dev/hdc3 den /dev/hdc1 e taşıma yapacağım(sizdeki disk isimleri muhtemelen farklıdır).&lt;/p&gt;
+&lt;p&gt;Cd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte. Ctrl + Alt + F1 tuş kombinasyonu muhtemelen iş görecektir. Ben live cd kullandığım için grafik ekranla karşılaştım, burdan bi terminal açarak işimi göreceğim.&lt;/p&gt;
+&lt;p&gt;Yapacağımız işlemler için root olmamız gerekiyor. Bu işlemi yapacak cesaretiniz varsa, nasıl root olunur bilginizde vardır diye düşünüyorum :)&lt;/p&gt;
+&lt;p&gt;Önce diskleri mount ediyoruz&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mkdir /target /source
+mount /dev/hdc1 /target
+mount /dev/hdc3 -o ro /source
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Mount işleminden sonra kopyalamaya başlayabiliriz.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;cp -a /source/* /target
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Bu işlem kopyalanacak verinin boyutuna göre uzunca sürebilir.
+Kopyalama tamamlandıktan sonra yeni diskteki /etc/fstab dosyasını ve eski diskteki /boot/grub/menu.lst dosyalarını değiştirmemiz gerekiyor. fstab dosyasında &amp;ldquo;/&amp;rdquo; dizininin bağlanacağı yeni bölümü gösteriyoruz. menu.lst dosyasında ise yeni bölümün boot edilebilmesi için gerekli ayarları yapıyoruz.&lt;/p&gt;
+&lt;p&gt;Eğer eski bölümü silecek veya orayı başka amaç için kullanacaksanız mbr kaydını yenilemeniz gerekmektedir, yani grubu tekrar yeni disk için kurmalısınız.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;grub
+ &amp;gt; root (hd0, 0)
+ &amp;gt; setup (hd0)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Bende bu şekilde kuruldu, sizde bölüm numaralarına göre değişecektir kurulum.&lt;/p&gt;</description>
     </item>
     
   </channel>

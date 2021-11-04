@@ -8,10 +8,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <title>Bir GNU/Linux kurulumunu başka bir harddiske/bölüme taşımak - Aşkın Özgür</title>
-  <meta name="description" content="Öncelikle bir çalışan cd ile sistem açılır, benim tercihim gparted live cd. Sizin elinizin altında ne varsa kabuldur. İlla çalışan cd olmasına gerek yok, herhangi bir linux cdside olabilir. Bize mount, cp ve nano komutları lazım. Bunları sağlayan herhangi bir cd kullanılabilir.
+  <meta name="description" content=" Öncelikle bir çalışan cd ile sistem açılır, benim tercihim gparted live cd. Sizin elinizin altında ne varsa kabuldur. İlla çalışan cd olmasına gerek yok, herhangi bir linux cdside olabilir. Bize mount, cp ve nano komutları lazım. Bunları sağlayan herhangi bir cd kullanılabilir.
 Taşınacak kurulumun hangi disk bölümünde olduğu bilinmeli. Ben 2. bölümdeki kurulumu 1. bölüme taşıyacağım. Yani /dev/hdc3 den /dev/hdc1 e taşıma yapacağım(sizdeki disk isimleri muhtemelen farklıdır).
 Cd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte. Ctrl &#43; Alt &#43; F1 tuş kombinasyonu muhtemelen iş görecektir. Ben live cd kullandığım için grafik ekranla karşılaştım, burdan bi terminal açarak işimi göreceğim.
-Yapacağımız işlemler için root olmamız gerekiyor.">
+Yapacağımız işlemler için root olmamız gerekiyor. Bu işlemi yapacak cesaretiniz varsa, nasıl root olunur bilginizde vardır diye düşünüyorum :)
+Önce diskleri mount ediyoruz
+mkdir /target /source
+mount /dev/hdc1 /target
+mount /dev/hdc3 -o ro /source
+Mount işleminden sonra kopyalamaya başlayabiliriz.
+cp -a /source/* /target
+Bu işlem kopyalanacak verinin boyutuna göre uzunca sürebilir.
+Kopyalama tamamlandıktan sonra yeni diskteki /etc/fstab dosyasını ve eski diskteki /boot/grub/menu.lst dosyalarını değiştirmemiz gerekiyor. fstab dosyasında &ldquo;/&rdquo; dizininin bağlanacağı yeni bölümü gösteriyoruz. menu.lst dosyasında ise yeni bölümün boot edilebilmesi için gerekli ayarları yapıyoruz.
+Eğer eski bölümü silecek veya orayı başka amaç için kullanacaksanız mbr kaydını yenilemeniz gerekmektedir, yani grubu tekrar yeni disk için kurmalısınız.
+grub
+ &gt; root (hd0, 0)
+ &gt; setup (hd0)
+
+Bende bu şekilde kuruldu, sizde bölüm numaralarına göre değişecektir kurulum.">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -60,7 +74,7 @@ Yapacağımız işlemler için root olmamız gerekiyor.">
     "name" : "Aşkın Özgür"
   },
   "headline": "Bir GNU\/Linux kurulumunu başka bir harddiske\/bölüme taşımak",
-  "description" : "Öncelikle bir çalışan cd ile sistem açılır, benim tercihim gparted live cd. Sizin elinizin altında ne varsa kabuldur. İlla çalışan cd olmasına gerek yok, herhangi bir linux cdside olabilir. Bize mount, cp ve nano komutları lazım. Bunları sağlayan herhangi bir cd kullanılabilir.\nTaşınacak kurulumun hangi disk bölümünde olduğu bilinmeli. Ben 2. bölümdeki kurulumu 1. bölüme taşıyacağım. Yani \/dev\/hdc3 den \/dev\/hdc1 e taşıma yapacağım(sizdeki disk isimleri muhtemelen farklıdır).\nCd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte. Ctrl \u002b Alt \u002b F1 tuş kombinasyonu muhtemelen iş görecektir. Ben live cd kullandığım için grafik ekranla karşılaştım, burdan bi terminal açarak işimi göreceğim.\nYapacağımız işlemler için root olmamız gerekiyor.",
+  "description" : "Öncelikle bir çalışan cd ile sistem açılır, benim tercihim gparted live cd. Sizin elinizin altında ne varsa kabuldur. İlla çalışan cd olmasına gerek yok, herhangi bir linux cdside olabilir. Bize mount, cp ve nano komutları lazım. Bunları sağlayan herhangi bir cd kullanılabilir.\nTaşınacak kurulumun hangi disk bölümünde olduğu bilinmeli. Ben 2. bölümdeki kurulumu 1. bölüme taşıyacağım. Yani \/dev\/hdc3 den \/dev\/hdc1 e taşıma yapacağım(sizdeki disk isimleri muhtemelen farklıdır).\nCd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte. Ctrl \u002b Alt \u002b F1 tuş kombinasyonu muhtemelen iş görecektir. Ben live cd kullandığım için grafik ekranla karşılaştım, burdan bi terminal açarak işimi göreceğim.\nYapacağımız işlemler için root olmamız gerekiyor. Bu işlemi yapacak cesaretiniz varsa, nasıl root olunur bilginizde vardır diye düşünüyorum :)\nÖnce diskleri mount ediyoruz\nmkdir \/target \/source mount \/dev\/hdc1 \/target mount \/dev\/hdc3 -o ro \/source Mount işleminden sonra kopyalamaya başlayabiliriz.\ncp -a \/source\/* \/target Bu işlem kopyalanacak verinin boyutuna göre uzunca sürebilir. Kopyalama tamamlandıktan sonra yeni diskteki \/etc\/fstab dosyasını ve eski diskteki \/boot\/grub\/menu.lst dosyalarını değiştirmemiz gerekiyor. fstab dosyasında \u0026ldquo;\/\u0026rdquo; dizininin bağlanacağı yeni bölümü gösteriyoruz. menu.lst dosyasında ise yeni bölümün boot edilebilmesi için gerekli ayarları yapıyoruz.\nEğer eski bölümü silecek veya orayı başka amaç için kullanacaksanız mbr kaydını yenilemeniz gerekmektedir, yani grubu tekrar yeni disk için kurmalısınız.\ngrub \u0026gt; root (hd0, 0) \u0026gt; setup (hd0)  Bende bu şekilde kuruldu, sizde bölüm numaralarına göre değişecektir kurulum.\n",
   "inLanguage" : "tr",
   "wordCount":  222 ,
   "datePublished" : "2009-04-06T22:22:00",
@@ -82,17 +96,31 @@ Yapacağımız işlemler için root olmamız gerekiyor.">
 </script>
 
 <meta property="og:title" content="Bir GNU/Linux kurulumunu başka bir harddiske/bölüme taşımak" />
-<meta property="og:description" content="Öncelikle bir çalışan cd ile sistem açılır, benim tercihim gparted live cd. Sizin elinizin altında ne varsa kabuldur. İlla çalışan cd olmasına gerek yok, herhangi bir linux cdside olabilir. Bize mount, cp ve nano komutları lazım. Bunları sağlayan herhangi bir cd kullanılabilir.
+<meta property="og:description" content=" Öncelikle bir çalışan cd ile sistem açılır, benim tercihim gparted live cd. Sizin elinizin altında ne varsa kabuldur. İlla çalışan cd olmasına gerek yok, herhangi bir linux cdside olabilir. Bize mount, cp ve nano komutları lazım. Bunları sağlayan herhangi bir cd kullanılabilir.
 Taşınacak kurulumun hangi disk bölümünde olduğu bilinmeli. Ben 2. bölümdeki kurulumu 1. bölüme taşıyacağım. Yani /dev/hdc3 den /dev/hdc1 e taşıma yapacağım(sizdeki disk isimleri muhtemelen farklıdır).
 Cd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte. Ctrl &#43; Alt &#43; F1 tuş kombinasyonu muhtemelen iş görecektir. Ben live cd kullandığım için grafik ekranla karşılaştım, burdan bi terminal açarak işimi göreceğim.
-Yapacağımız işlemler için root olmamız gerekiyor.">
+Yapacağımız işlemler için root olmamız gerekiyor. Bu işlemi yapacak cesaretiniz varsa, nasıl root olunur bilginizde vardır diye düşünüyorum :)
+Önce diskleri mount ediyoruz
+mkdir /target /source
+mount /dev/hdc1 /target
+mount /dev/hdc3 -o ro /source
+Mount işleminden sonra kopyalamaya başlayabiliriz.
+cp -a /source/* /target
+Bu işlem kopyalanacak verinin boyutuna göre uzunca sürebilir.
+Kopyalama tamamlandıktan sonra yeni diskteki /etc/fstab dosyasını ve eski diskteki /boot/grub/menu.lst dosyalarını değiştirmemiz gerekiyor. fstab dosyasında &ldquo;/&rdquo; dizininin bağlanacağı yeni bölümü gösteriyoruz. menu.lst dosyasında ise yeni bölümün boot edilebilmesi için gerekli ayarları yapıyoruz.
+Eğer eski bölümü silecek veya orayı başka amaç için kullanacaksanız mbr kaydını yenilemeniz gerekmektedir, yani grubu tekrar yeni disk için kurmalısınız.
+grub
+ &gt; root (hd0, 0)
+ &gt; setup (hd0)
+
+Bende bu şekilde kuruldu, sizde bölüm numaralarına göre değişecektir kurulum.">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
 <meta property="og:url" content="https://blog.askin.ws/blog/bir-gnulinux-kurulumunu-baska-bir-harddiskebolume-tasimak/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Aşkın Özgür" />
 
   <meta name="twitter:title" content="Bir GNU/Linux kurulumunu başka bir harddiske/bölüme taşımak" />
-  <meta name="twitter:description" content="Öncelikle bir çalışan cd ile sistem açılır, benim tercihim gparted live cd. Sizin elinizin altında ne varsa kabuldur. İlla çalışan cd olmasına gerek yok, herhangi bir linux cdside olabilir. Bize …">
+  <meta name="twitter:description" content=" Öncelikle bir çalışan cd ile sistem açılır, benim tercihim gparted live cd. Sizin elinizin altında ne varsa kabuldur. İlla çalışan cd olmasına gerek yok, herhangi bir linux cdside olabilir. Bize …">
   <meta name="twitter:image" content="https://blog.askin.ws/uploads/avatar.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@kelebeks" />
@@ -271,7 +299,6 @@ Kopyalama tamamlandıktan sonra yeni diskteki /etc/fstab dosyasını ve eski dis
  &gt; setup (hd0)
 </code></pre>
 <p>Bende bu şekilde kuruldu, sizde bölüm numaralarına göre değişecektir kurulum.</p>
-
 
         
           <div class="blog-tags">

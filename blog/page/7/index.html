@@ -230,11 +230,15 @@
     </p>
     <div class="post-entry">
         
-        Pidginin en sevdiğim özelliklerinden bir tanesi, sohbet ettiğiniz kişi size tireşim gönderdiğinde ekrana sadece &quot;&hellip; size uyarı gönderdi&quot; yazması. Bu özelliğer sahip olmasının birde dezavantajı var tabiki, siz de başkalarına titreşim yollayamıyorsunuz. Bugün bu eksikliği fazlasıyla hissedince ufak çaplı bir araştırma yaptım ve Attention Button eklentisiyle karşılaştım.
-Kurulumu çok basit. Burdan en güncel sürümünü indiriyorsunuz (şimdilik 0.3), arşivden çıkartıp .so uzantılı dosyayı ev dizininiz altında .purple/plugins/ dizinine kopyalıyorsunuz. Ardından pidgine gidip eklentiler(plugins) kısmından aktif ediyorsunuz.
-Konsoldan halletmek isterseniz:
-$ wget http://pidgin-attentionbutton.googlecode.com/files/attentionbutton-0.3.tar.gz $ tar -xvzf attentionbutton-0.3.tar.gz $ mkdir $HOME/.purple/plugins $ mv attentionbutton.so $HOME/.purple/plugins/ $ rm attentionbutton-0.3.tar.gz attentionbutton.c Bu eklentinin birkaç güzel özelliğide var.
-        <a href="https://blog.askin.ws/blog/pidgin-titresim-eklentisi-attention-button/" class="post-read-more">[Daha fazla oku]</a>
+        <p><img src="/uploads/2009/06/pidgin.png" alt="Pidgin" title="Pidgin">Pidginin en sevdiğim özelliklerinden bir tanesi, sohbet ettiğiniz kişi size tireşim gönderdiğinde ekrana sadece <strong>&quot;&hellip; size uyarı gönderdi&quot;</strong> yazması. Bu özelliğer sahip olmasının birde dezavantajı var tabiki, siz de başkalarına titreşim yollayamıyorsunuz. Bugün bu eksikliği fazlasıyla hissedince ufak çaplı bir araştırma yaptım ve <a href="http://code.google.com/p/pidgin-attentionbutton/">Attention Button</a> eklentisiyle karşılaştım.<br>
+Kurulumu çok basit. <a href="http://code.google.com/p/pidgin-attentionbutton/downloads/list">Burdan</a> en güncel sürümünü indiriyorsunuz (şimdilik <a href="http://pidgin-attentionbutton.googlecode.com/files/attentionbutton-0.3.tar.gz">0.3</a>), arşivden çıkartıp <em>.so</em> uzantılı dosyayı ev dizininiz altında <em>.purple/plugins/</em> dizinine kopyalıyorsunuz. Ardından pidgine gidip eklentiler(plugins) kısmından aktif ediyorsunuz.<br>
+Konsoldan halletmek isterseniz:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ wget http://pidgin-attentionbutton.googlecode.com/files/attentionbutton-0.3.tar.gz
+$ tar -xvzf attentionbutton-0.3.tar.gz
+$ mkdir $HOME/.purple/plugins
+$ mv attentionbutton.so $HOME/.purple/plugins/
+$ rm attentionbutton-0.3.tar.gz attentionbutton.c 
+</code></pre></div><p>Bu eklentinin birkaç güzel özelliğide var. Mesela karşı tarafa sınırsız sayıda titreşim yollayabilirsiniz. Ve karşı taraf çevrim dışı bile görünse titretebilirsiniz. Tabi aşırı kullanım sağlığa zararlı :)</p>
         
     </div>
 
@@ -288,20 +292,19 @@ $ wget http://pidgin-attentionbutton.googlecode.com/files/attentionbutton-0.3.ta
     </p>
     <div class="post-entry">
         
-        Pardus 2008 kurulumla beraber Atheros AR242x kablosuz ağ kartını tanıyor, fakat nedense başka ağları görmesine rağmen evimde WPA2 ile kurulu kablosuz ağımı göremiyordu. Bende diğer dağıtımlarda kullandığım ndiswrapper ile sorunumu çözmeyi denedim.
-Öncelikle ndiswrapperı kurduktan sonra windows için yazılmış driverları seçmemiz gerekiyor. Ardından
-/etc/modules.autoload.d/kernel-2.6
-dosyasına
-ndiswrapper
-satırını ve
-/etc/modprobe.d/blacklist-compat
-dosyasına da
-blacklist ath_pci
-satırını eklemek gerekiyor. Bunları ekledikten sonra kde&rsquo;de ağ programcığıyla bağlanabiliyorsunuz.
-Fakat XFCE kullanıyorsanız wicd kullanmanız gerekiyor. Wicd ile doğrudan kullanamıyoruz. Öncelikle birkaç ufak düzenleme yapmak gerekiyor.
-Wicd -&gt; Tercihler yolunu takip ettikten sonra WPA Suplicant Sürücüsü: kısmına wext, Kablosuz arabirim kısmına da wlan0 yazmak gerekiyor.
-Bu ayarlarla kolaylıkla kullanabilirsiniz, kolay gelsin.
-        <a href="https://blog.askin.ws/blog/pardus-atheros-ar242x-wpa2/" class="post-read-more">[Daha fazla oku]</a>
+        <p><img src="/uploads/2009/06/wifi.jpeg" alt="Wi-Fi" title="Wi-Fi">Pardus 2008 kurulumla beraber Atheros AR242x kablosuz ağ kartını tanıyor, fakat nedense başka ağları görmesine rağmen evimde WPA2 ile kurulu kablosuz ağımı göremiyordu. Bende diğer dağıtımlarda kullandığım ndiswrapper ile sorunumu çözmeyi denedim.<br>
+Öncelikle ndiswrapperı kurduktan sonra windows için yazılmış driverları seçmemiz gerekiyor. Ardından<br>
+<code>/etc/modules.autoload.d/kernel-2.6</code><br>
+dosyasına<br>
+<code>ndiswrapper</code><br>
+satırını ve<br>
+<code>/etc/modprobe.d/blacklist-compat</code><br>
+dosyasına da<br>
+<code>blacklist ath_pci</code><br>
+satırını eklemek gerekiyor. Bunları ekledikten sonra kde&rsquo;de ağ programcığıyla bağlanabiliyorsunuz.<br>
+Fakat XFCE kullanıyorsanız wicd kullanmanız gerekiyor. Wicd ile doğrudan kullanamıyoruz. Öncelikle birkaç ufak düzenleme yapmak gerekiyor.<br>
+Wicd -&gt; Tercihler yolunu takip ettikten sonra WPA Suplicant Sürücüsü: kısmına <em>wext</em>, Kablosuz arabirim kısmına da <em>wlan0</em> yazmak gerekiyor.<br>
+Bu ayarlarla kolaylıkla kullanabilirsiniz, kolay gelsin.</p>
         
     </div>
 
@@ -407,11 +410,24 @@ Bu ayarlarla kolaylıkla kullanabilirsiniz, kolay gelsin.
     </p>
     <div class="post-entry">
         
-        Öncelikle bir çalışan cd ile sistem açılır, benim tercihim gparted live cd. Sizin elinizin altında ne varsa kabuldur. İlla çalışan cd olmasına gerek yok, herhangi bir linux cdside olabilir. Bize mount, cp ve nano komutları lazım. Bunları sağlayan herhangi bir cd kullanılabilir.
-Taşınacak kurulumun hangi disk bölümünde olduğu bilinmeli. Ben 2. bölümdeki kurulumu 1. bölüme taşıyacağım. Yani /dev/hdc3 den /dev/hdc1 e taşıma yapacağım(sizdeki disk isimleri muhtemelen farklıdır).
-Cd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte. Ctrl + Alt + F1 tuş kombinasyonu muhtemelen iş görecektir. Ben live cd kullandığım için grafik ekranla karşılaştım, burdan bi terminal açarak işimi göreceğim.
-Yapacağımız işlemler için root olmamız gerekiyor.
-        <a href="https://blog.askin.ws/blog/bir-gnulinux-kurulumunu-baska-bir-harddiskebolume-tasimak/" class="post-read-more">[Daha fazla oku]</a>
+        <p><img src="/uploads/2009/04/linux-tux.jpg" alt="GNU/Linux" title="GNU/Linux"> Öncelikle bir çalışan cd ile sistem açılır, benim tercihim gparted live cd. Sizin elinizin altında ne varsa kabuldur. İlla çalışan cd olmasına gerek yok, herhangi bir linux cdside olabilir. Bize mount, cp ve nano komutları lazım. Bunları sağlayan herhangi bir cd kullanılabilir.</p>
+<p>Taşınacak kurulumun hangi disk bölümünde olduğu bilinmeli. Ben 2. bölümdeki kurulumu 1. bölüme taşıyacağım. Yani /dev/hdc3 den /dev/hdc1 e taşıma yapacağım(sizdeki disk isimleri muhtemelen farklıdır).</p>
+<p>Cd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte. Ctrl + Alt + F1 tuş kombinasyonu muhtemelen iş görecektir. Ben live cd kullandığım için grafik ekranla karşılaştım, burdan bi terminal açarak işimi göreceğim.</p>
+<p>Yapacağımız işlemler için root olmamız gerekiyor. Bu işlemi yapacak cesaretiniz varsa, nasıl root olunur bilginizde vardır diye düşünüyorum :)</p>
+<p>Önce diskleri mount ediyoruz</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir /target /source
+mount /dev/hdc1 /target
+mount /dev/hdc3 -o ro /source
+</code></pre></div><p>Mount işleminden sonra kopyalamaya başlayabiliriz.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cp -a /source/* /target
+</code></pre></div><p>Bu işlem kopyalanacak verinin boyutuna göre uzunca sürebilir.
+Kopyalama tamamlandıktan sonra yeni diskteki /etc/fstab dosyasını ve eski diskteki /boot/grub/menu.lst dosyalarını değiştirmemiz gerekiyor. fstab dosyasında &ldquo;/&rdquo; dizininin bağlanacağı yeni bölümü gösteriyoruz. menu.lst dosyasında ise yeni bölümün boot edilebilmesi için gerekli ayarları yapıyoruz.</p>
+<p>Eğer eski bölümü silecek veya orayı başka amaç için kullanacaksanız mbr kaydını yenilemeniz gerekmektedir, yani grubu tekrar yeni disk için kurmalısınız.</p>
+<pre><code>grub
+ &gt; root (hd0, 0)
+ &gt; setup (hd0)
+</code></pre>
+<p>Bende bu şekilde kuruldu, sizde bölüm numaralarına göre değişecektir kurulum.</p>
         
     </div>
 
@@ -463,12 +479,27 @@ Yapacağımız işlemler için root olmamız gerekiyor.
     </p>
     <div class="post-entry">
         
-        Dergi son sayısında ki (Sayı 6) site tanıtımında benim bloguma yer verdi, kendilerine buradan çok teşekür ediyorum. Bu jestleri bana blog yazmada ve Özgür Yazılım çabalarımda güç verecek.
-Derginin bu sayısını gerçekten beğendim, hele hele tamamen özgür yazılım araçlarıyla oluşturulması, arkasında hiçbir mali destek olmadan sadece topluluk katkısıyla ve güzel bir motivasyon ile düzenli olarak çıkması derginin gönlümde olan yerini iyice pekiştirdi.
-Dergi kapağında 8 Mart Dünya Emekçi Kadınla Günü yazsaydı daha güzel ve anlamlı olurdu:) ama hatırlamak ve önem vermek çok daha önemli. Birde bu sayıda RMS ile olan röportajın devamını bekliyordum:)
-Dergide emeği geçen herkese teşekür ediyorum&hellip;
- C ile Programlama II GNU/Linux Haberleri GNU/Linux AntiVirüs Yazılımları Torrent ve KTorrent Pardus’ta Python 3.
-        <a href="https://blog.askin.ws/blog/pardus-linuxorg-e-dergi-bana-supriz-yapti/" class="post-read-more">[Daha fazla oku]</a>
+        <p><img src="/uploads/2009/03/plo-logo.png" alt="Pardus-Linux.Org" title="Pardus-Linux.Org">Dergi son sayısında ki (Sayı 6) site tanıtımında benim bloguma yer verdi, kendilerine buradan çok teşekür ediyorum. Bu jestleri bana blog yazmada ve Özgür Yazılım çabalarımda güç verecek.</p>
+<p>Derginin bu sayısını gerçekten beğendim, hele hele tamamen özgür yazılım araçlarıyla oluşturulması, arkasında hiçbir mali destek olmadan sadece topluluk katkısıyla ve güzel bir motivasyon ile düzenli olarak çıkması derginin gönlümde olan yerini iyice pekiştirdi.</p>
+<p>Dergi kapağında <strong>8 Mart Dünya Emekçi Kadınla Günü</strong> yazsaydı daha güzel ve anlamlı olurdu:) ama hatırlamak ve önem vermek çok daha önemli. Birde bu sayıda RMS ile olan röportajın devamını bekliyordum:)</p>
+<p>Dergide emeği geçen herkese teşekür ediyorum&hellip;</p>
+<p><img src="/uploads/2009/03/plo-e-dergi-6-kapak.png" alt="Pardus-Linux.Org e-dergi" title="Pardus-Linux.Org e-dergi"></p>
+<ul>
+<li>C ile Programlama II</li>
+<li>GNU/Linux Haberleri</li>
+<li>GNU/Linux AntiVirüs Yazılımları</li>
+<li>Torrent ve KTorrent</li>
+<li>Pardus’ta Python 3.0</li>
+<li>Happy Hacking : Pisi Search ‘te Küçük Değişiklikler</li>
+<li>Python Modülü : optparse</li>
+<li>Firefox Eklentileri</li>
+<li>Qucs ile DC Analiz</li>
+<li>Oyun İnceleme : Ri-Li</li>
+<li>Web Sİte Tanıtımları</li>
+<li>Pardusum</li>
+<li>Doruk Fişek Röportajı</li>
+</ul>
+<p>adres: <a href="http://www.pardus-edergi.org/">http://www.pardus-edergi.org/</a></p>
         
     </div>
 

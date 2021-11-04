@@ -230,13 +230,30 @@
     </p>
     <div class="post-entry">
         
-        Slurm temel olarak ağ trafiğini görüntülemek için kullanılan bir araçtır. Ağ kullanımını görselleştirerek kullanışlı bir çıktı üretir.
-Debian tabanlı sistemlerde aşağıdaki gibi kurulum yapabihlirsiniz.
-apt-get install slurm Kurulumu tamamladıktan sonra komut satırından ağ trafiğinizi takip edebilirsiniz. En basit şekliyle aşağıdaki formatta komutu kullanabilirsiniz.
-slurm -i [Ağ Arayüzü] -i parametresi hangi ağ arayüzünün kullanılacanı belirtir.
-slurm -i wlan0 slurm -i eth1 Klavye kısa yolları: Slurm etkileşim için birçok farklı tuşu destekler:
- s split moduna geçiş yapar c klasik moda geçiş yapar l büyük grafik moduna geçer L TX/RX ledini aktif eder m kasik, büyük ve split modları arasında geçiş yapar z sayaçları 0&rsquo;lar r ekranı yeniden çizer q çıkış yapar  Aynı zamanda bu kısayol tuşlarını parametre olarak da verebilirsiniz.
-        <a href="https://blog.askin.ws/blog/slurm-linux-icin-bant-genisligi-takip-araci/" class="post-read-more">[Daha fazla oku]</a>
+        <p>Slurm temel olarak ağ trafiğini görüntülemek için kullanılan bir araçtır. Ağ kullanımını görselleştirerek kullanışlı bir çıktı üretir.</p>
+<p>Debian tabanlı sistemlerde aşağıdaki gibi kurulum yapabihlirsiniz.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt-get install slurm
+</code></pre></div><p>Kurulumu tamamladıktan sonra komut satırından ağ trafiğinizi takip edebilirsiniz. En basit şekliyle aşağıdaki formatta komutu kullanabilirsiniz.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">slurm -i <span style="color:#f92672">[</span>Ağ Arayüzü<span style="color:#f92672">]</span>
+</code></pre></div><p>-i parametresi hangi ağ arayüzünün kullanılacanı belirtir.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">slurm -i wlan0
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">slurm -i eth1
+</code></pre></div><p><img src="/uploads/2013/12/slurm.png" alt="Slurm"></p>
+<p>Klavye kısa yolları:
+Slurm etkileşim için birçok farklı tuşu destekler:</p>
+<ul>
+<li>s split moduna geçiş yapar</li>
+<li>c klasik moda geçiş yapar</li>
+<li>l büyük grafik moduna geçer</li>
+<li>L TX/RX ledini aktif eder</li>
+<li>m kasik, büyük ve split modları arasında geçiş yapar</li>
+<li>z sayaçları 0&rsquo;lar</li>
+<li>r ekranı yeniden çizer</li>
+<li>q çıkış yapar</li>
+</ul>
+<p>Aynı zamanda bu kısayol tuşlarını parametre olarak da verebilirsiniz.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">slurm -i eth1 -L
+</code></pre></div><p>Kaynak: <a href="http://lintut.com/slurm-command-line-bandwidth-monitoring-tool-for-linux/">http://lintut.com/slurm-command-line-bandwidth-monitoring-tool-for-linux/</a></p>
         
     </div>
 

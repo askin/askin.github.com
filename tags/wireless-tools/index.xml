@@ -15,10 +15,21 @@
       <pubDate>Mon, 07 Dec 2009 09:45:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/pardus-ag-yoneticisi-ile-eduroam-agina-baglanmak/</guid>
-      <description>Bikaç gündür Pardus ve Eduroam ile uğraşıyordum. Eduroama bağlanmak için pratik yollar buldum fakat hiç birisi Ağ Yöneticisi kullanarak bağlanmanın zevkini vermiyordu.
-2 gün boyunca Ağ Yöneticisinin neresini değiştirmem gerektiğini arayıp durdum. Sonunda wireless-tools adlı paketin aradığım paket olduğunu keşfettim :) wireless tools paketi wpa_supplicant kullanarak wpa şifreleme kullanan ağlara bağlanmaya yarıyor. Sağolsun Pardus geliştiricileri wpa_supplicant paketi için dbus kullanan bir python betiği yazmışlar. Bu betik içinde tanımlanan methodlarla wpa_supplicantı yönetebiliyoruz. Bu betiğe eduroam ağına bağlanmak için gerekli parametreleri alan bir method ekledim.
-Daha sonra wireless-tools paketi içindeki comar betiğine bu methodu kullanmasını sağlayacak birkaç değişiklik yaptım.
-Sırf bu işi denemek için bugün okulum olmadığı halde sabahın 8&amp;rsquo;inde okula gelip deneme yaptım.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://blog.askin.ws/uploads/2009/05/pardus.png&#34; alt=&#34;Pardus&#34; title=&#34;Pardus&#34;&gt;Bikaç gündür &lt;a href=&#34;http://www.pardus.org.tr&#34;&gt;Pardus&lt;/a&gt; ve &lt;a href=&#34;http://www.eduroam.org/&#34;&gt;Eduroam&lt;/a&gt; ile uğraşıyordum. Eduroama bağlanmak için pratik yollar buldum fakat hiç birisi Ağ Yöneticisi kullanarak bağlanmanın zevkini vermiyordu.&lt;/p&gt;
+&lt;p&gt;2 gün boyunca Ağ Yöneticisinin neresini değiştirmem gerektiğini arayıp durdum. Sonunda wireless-tools adlı paketin aradığım paket olduğunu keşfettim :) wireless tools paketi wpa_supplicant kullanarak wpa şifreleme kullanan ağlara bağlanmaya yarıyor. Sağolsun Pardus geliştiricileri wpa_supplicant paketi için dbus kullanan bir python betiği yazmışlar. Bu betik içinde tanımlanan methodlarla wpa_supplicantı yönetebiliyoruz. Bu betiğe eduroam ağına bağlanmak için gerekli parametreleri alan bir method ekledim.&lt;br&gt;
+Daha sonra wireless-tools paketi içindeki comar betiğine bu methodu kullanmasını sağlayacak birkaç değişiklik yaptım.&lt;/p&gt;
+&lt;p&gt;Sırf bu işi denemek için bugün okulum olmadığı halde sabahın 8&amp;rsquo;inde okula gelip deneme yaptım. Ayarlarını evde yaptığım için bilgisayarı açar açmaz internete bağlandı :) Hayatımda ilk kez yazdığım bir kod direk çalıştı :P&lt;/p&gt;
+&lt;p&gt;Düzenlediğim bu 2 pakete aşağıdaki adreslerden ulaşabilirsiniz.&lt;br&gt;
+&lt;a href=&#34;http://github.com/askin/kelebekpisi/tree/master/wpa_supplicant/&#34;&gt;http://github.com/askin/kelebekpisi/tree/master/wpa_supplicant/&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;http://github.com/askin/kelebekpisi/tree/master/wireless-tools/&#34;&gt;http://github.com/askin/kelebekpisi/tree/master/wireless-tools/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Paketleri kendiniz derlemek için root yetkileriyle&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;pisi bi http://github.com/askin/kelebekpisi/raw/master/wpa_supplicant/pspec.xml
+pisi bi http://github.com/askin/kelebekpisi/raw/master/wireless-tools/pspec.xml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;komutlarını vermelisiniz, ardından oluşan pisi paketlerini kurabilirsiniz.&lt;/p&gt;
+&lt;p&gt;Ya da hazır ikili pisi paketlerini &lt;a href=&#34;http://askin.ws/pisi/eduroam/&#34;&gt;http://askin.ws/pisi/eduroam/&lt;/a&gt; adresinden bulabilirsiniz.&lt;/p&gt;
+&lt;p&gt;Paketleri kurduktan sonra ayarları yaparken Güvenlik Türü seçeneğini &amp;ldquo;WPA &amp;amp; WPA2 Enterprise&amp;rdquo; olarak seçmelisiniz.&lt;/p&gt;
+&lt;p&gt;Son olarak wireless-tools paketi Pardus&amp;rsquo;un temel paketlerinden birisidir, wpa_supplicant paketi de wpa ağlarına bağlanmak için gerekli temel bir pakettir. Bunları Pardus deposu dışında bir yerden kurmak sisteminize zarar verebilir. Sorumluluk kullanıcıya aittir :)&lt;/p&gt;
+&lt;p&gt;Benim sistemime hiç bir şey olmadı, %99.99 olasılıkla sizin siteminize de zarar gelmez fakat ben yinede hiç bir sorumluluk almıyorum :)&lt;/p&gt;</description>
     </item>
     
   </channel>

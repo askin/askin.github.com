@@ -15,16 +15,17 @@
       <pubDate>Thu, 08 Apr 2010 02:28:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/bloggera-kendi-alan-adinizi-yonlendirme/</guid>
-      <description>Daha önce birkaç kez yapmıştım, fakat her seferinde neler yaptığımı unutup acaba olmadı mı diye kuşkulanmıştım. En güzeli böyle bir yere yazıp gerektiğinde kopya çekmek :)
-Öncelikle bloggerda bir blogunuz olduğunu varsayıyorum :D
-Blooger hesabımıza giriş yapıyoruz.
-Şu adımları takip ediyoruz.
-Özelleştir -&amp;gt; Ayarlar -&amp;gt; Yayıncılık -&amp;gt; Özel Alan-&amp;gt; Gelişmiş Ayarlara Geçiş Yapın
-Buradaki kutuya alan adını yazın.
-&amp;ldquo;Eksik dosya barındırma sistemini mi kullanıyorsunuz?&amp;rdquo; kısmını olduğu gibi bırakıp, kelime doğrulamayı yapıp ayarları kaydediyoruz.
-Bu adımları geçtikten sonra google tarafında yapılacak ayarları tamamlamış oluyoruz.
-Alan adınızın bloggera yönlenmesi için CNAME kaydı oluşturmanız gerekiyor. Bunu alan adını aldığınız yerden yapacaksınız.
-CNAME kaydına değer olarak ghs.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://blog.askin.ws/uploads/2010/04/blogger-300x298.png&#34; alt=&#34;Blogger&#34; title=&#34;Blogger&#34;&gt;Daha önce birkaç kez yapmıştım, fakat her seferinde neler yaptığımı unutup acaba olmadı mı diye kuşkulanmıştım. En güzeli böyle bir yere yazıp gerektiğinde kopya çekmek :)&lt;/p&gt;
+&lt;p&gt;Öncelikle bloggerda bir blogunuz olduğunu varsayıyorum :D&lt;br&gt;
+Blooger hesabımıza giriş yapıyoruz.&lt;br&gt;
+Şu adımları takip ediyoruz.&lt;br&gt;
+Özelleştir -&amp;gt; Ayarlar -&amp;gt; Yayıncılık -&amp;gt; Özel Alan-&amp;gt; Gelişmiş Ayarlara Geçiş Yapın&lt;br&gt;
+Buradaki kutuya alan adını yazın.&lt;br&gt;
+&amp;ldquo;Eksik dosya barındırma sistemini mi kullanıyorsunuz?&amp;rdquo; kısmını olduğu gibi bırakıp, kelime doğrulamayı yapıp ayarları kaydediyoruz.&lt;/p&gt;
+&lt;p&gt;Bu adımları geçtikten sonra google tarafında yapılacak ayarları tamamlamış oluyoruz.&lt;br&gt;
+Alan adınızın bloggera yönlenmesi için CNAME kaydı oluşturmanız gerekiyor. Bunu alan adını aldığınız yerden yapacaksınız.&lt;br&gt;
+CNAME kaydına değer olarak &lt;em&gt;ghs.google.com&lt;/em&gt; adresini vermelisiniz. Domain firmanızın güncellenme hızına göre alan adının aktif olma süresi değişecektir.&lt;/p&gt;
+&lt;p&gt;Toplam 2 adımdan oluşuyor. Akılda tutmak kolay ama alan adının yönlenmesi biraz zaman aldığından dolayı insanın içinde bir şüphe oluyor her zaman :P&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -15,8 +15,7 @@
       <pubDate>Sat, 20 Jul 2013 15:32:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/python-sozluk-hizli-rehber/</guid>
-      <description>Başlığında söylediği gibi, Python sözlük hızlı rehber
-# Anahtar/değer çiftleriyle sözlük tanımlama dict = { &amp;#39;anahtar1′ : &amp;#39;deger1′, &amp;#39;anahtar2′ : &amp;#39;deger2′, &amp;#39;anahtar3′ : &amp;#39;deger3′ } # Tüm anahtarları al sozluk.keys() # Tüm değerleri al sozluk.values() # Düzenleme sozluk[&amp;#39;anahtar2&amp;#39;] = &amp;#39;deger8′ # Erişim print sozluk[&amp;#39;anahtar1&amp;#39;] # &amp;#39;deger2&amp;#39;yi yazdır print sozluk[&amp;#39;anahtar2&amp;#39;] # Boş sözlük tanımlama ve değer atama bosSozluk = {} bosSozluk[&amp;#39;anahtar4&amp;#39;] = &amp;#39;deger4&amp;#39; # Sözlük üzerinde döngü kurma (foreach) for anahtar in sozluk: print sozluk[anahtar] # Anahtarları sıralayıp, o sıraya göre değerleri yazdırmak anahtarlar = sozluk.keys() anahtarlar.sort() for anahtar in anahtarlar: print sozluk[anahtar] # Değerlere göre döngü kurmak (sıralı değil) for deger in sozluk.</description>
+      <description>&lt;p&gt;Başlığında söylediği gibi, Python sözlük hızlı rehber&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -15,12 +15,30 @@
       <pubDate>Thu, 19 Dec 2013 12:15:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/slurm-linux-icin-bant-genisligi-takip-araci/</guid>
-      <description>Slurm temel olarak ağ trafiğini görüntülemek için kullanılan bir araçtır. Ağ kullanımını görselleştirerek kullanışlı bir çıktı üretir.
-Debian tabanlı sistemlerde aşağıdaki gibi kurulum yapabihlirsiniz.
-apt-get install slurm Kurulumu tamamladıktan sonra komut satırından ağ trafiğinizi takip edebilirsiniz. En basit şekliyle aşağıdaki formatta komutu kullanabilirsiniz.
-slurm -i [Ağ Arayüzü] -i parametresi hangi ağ arayüzünün kullanılacanı belirtir.
-slurm -i wlan0 slurm -i eth1 Klavye kısa yolları: Slurm etkileşim için birçok farklı tuşu destekler:
- s split moduna geçiş yapar c klasik moda geçiş yapar l büyük grafik moduna geçer L TX/RX ledini aktif eder m kasik, büyük ve split modları arasında geçiş yapar z sayaçları 0&amp;rsquo;lar r ekranı yeniden çizer q çıkış yapar  Aynı zamanda bu kısayol tuşlarını parametre olarak da verebilirsiniz.</description>
+      <description>&lt;p&gt;Slurm temel olarak ağ trafiğini görüntülemek için kullanılan bir araçtır. Ağ kullanımını görselleştirerek kullanışlı bir çıktı üretir.&lt;/p&gt;
+&lt;p&gt;Debian tabanlı sistemlerde aşağıdaki gibi kurulum yapabihlirsiniz.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;apt-get install slurm
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Kurulumu tamamladıktan sonra komut satırından ağ trafiğinizi takip edebilirsiniz. En basit şekliyle aşağıdaki formatta komutu kullanabilirsiniz.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;slurm -i &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;Ağ Arayüzü&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;-i parametresi hangi ağ arayüzünün kullanılacanı belirtir.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;slurm -i wlan0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;slurm -i eth1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.askin.ws/uploads/2013/12/slurm.png&#34; alt=&#34;Slurm&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Klavye kısa yolları:
+Slurm etkileşim için birçok farklı tuşu destekler:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;s split moduna geçiş yapar&lt;/li&gt;
+&lt;li&gt;c klasik moda geçiş yapar&lt;/li&gt;
+&lt;li&gt;l büyük grafik moduna geçer&lt;/li&gt;
+&lt;li&gt;L TX/RX ledini aktif eder&lt;/li&gt;
+&lt;li&gt;m kasik, büyük ve split modları arasında geçiş yapar&lt;/li&gt;
+&lt;li&gt;z sayaçları 0&amp;rsquo;lar&lt;/li&gt;
+&lt;li&gt;r ekranı yeniden çizer&lt;/li&gt;
+&lt;li&gt;q çıkış yapar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Aynı zamanda bu kısayol tuşlarını parametre olarak da verebilirsiniz.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;slurm -i eth1 -L
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Kaynak: &lt;a href=&#34;http://lintut.com/slurm-command-line-bandwidth-monitoring-tool-for-linux/&#34;&gt;http://lintut.com/slurm-command-line-bandwidth-monitoring-tool-for-linux/&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

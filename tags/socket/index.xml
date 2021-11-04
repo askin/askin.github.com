@@ -15,8 +15,98 @@
       <pubDate>Fri, 03 Aug 2012 15:31:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/udp-broadcast-sunucu-istemci/</guid>
-      <description>Sunucu:
-#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;string.h&amp;gt;#include &amp;lt;sys/types.h&amp;gt;#include &amp;lt;sys/socket.h&amp;gt;#include &amp;lt;netinet/in.h&amp;gt; #define MY_PORT 3333  int main(int argc, char *argv[]) { int sockfd, new_fd; struct sockaddr_in my_addr; // hedef adres  struct sockaddr_in their_addr; // baglanti yapan adres  int sin_size, rt; // gelen verinin tutuldugu buffer  char buf[32]; // islem yapmak icin gerekli dosya gosterici  sockfd = socket(AF_INET, SOCK_DGRAM, 0); sin_size = sizeof(struct sockaddr_in); // adres ile ilgili ayarlar  my_addr.sin_family = AF_INET; my_addr.sin_port = htons(MY_PORT); // kullanilacak port  my_addr.sin_addr.s_addr = INADDR_ANY; // mevcut ip adresi  memset(&amp;amp;(my_addr.sin_zero), 0, 8); // geri kalani 0la  // socket ile dosyayi iliskilendir  bind(sockfd, (struct sockaddr *)&amp;amp;my_addr, sizeof(struct sockaddr)); while ( 1 ) { rt = recvfrom (sockfd, buf, 12, 0, (struct sockaddr *)&amp;amp;their_addr, &amp;amp;sin_size); if (rt &amp;gt; 0) { printf (&amp;#34;recv: %s\n&amp;#34;, buf); } else if (rt &amp;lt; 0) { printf(&amp;#34;Baglanti koptu\n&amp;#34;); break; } } close(sockfd); return 0; } İstemci:</description>
+      <description>&lt;p&gt;Sunucu:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;string.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;sys/types.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;sys/socket.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;netinet/in.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#define MY_PORT 3333
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; argc, &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;argv[])
+{
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; sockfd, new_fd;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; sockaddr_in my_addr;    &lt;span style=&#34;color:#75715e&#34;&gt;// hedef adres
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; sockaddr_in their_addr; &lt;span style=&#34;color:#75715e&#34;&gt;// baglanti yapan adres
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; sin_size, rt;
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;// gelen verinin tutuldugu buffer
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt; buf[&lt;span style=&#34;color:#ae81ff&#34;&gt;32&lt;/span&gt;];
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;// islem yapmak icin gerekli dosya gosterici
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    sockfd &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; socket(AF_INET, SOCK_DGRAM, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;);
+
+    sin_size &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;sizeof&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; sockaddr_in);
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;// adres ile ilgili ayarlar
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    my_addr.sin_family      &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; AF_INET;
+    my_addr.sin_port        &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; htons(MY_PORT); &lt;span style=&#34;color:#75715e&#34;&gt;// kullanilacak port
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    my_addr.sin_addr.s_addr &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; INADDR_ANY;     &lt;span style=&#34;color:#75715e&#34;&gt;// mevcut ip adresi
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    memset(&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;(my_addr.sin_zero), &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;); &lt;span style=&#34;color:#75715e&#34;&gt;// geri kalani 0la
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;// socket ile dosyayi iliskilendir
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    bind(sockfd, (&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; sockaddr &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;my_addr, &lt;span style=&#34;color:#66d9ef&#34;&gt;sizeof&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; sockaddr));
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; ( &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; ) {
+        rt &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; recvfrom (sockfd, buf, &lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, (&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; sockaddr &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;their_addr, &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;sin_size);
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (rt &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;) {
+            printf (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;recv: %s&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;, buf);
+        } &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (rt &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;) {
+            printf(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Baglanti koptu&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;);
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;;
+        }
+    }
+
+    close(sockfd);
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;İstemci:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;string.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;sys/types.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;sys/socket.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;netinet/in.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#define DEST_IP   &amp;#34;255.255.255.255&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#define DEST_PORT 3333
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; argc, &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;argv[])
+{
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; sockfd, new_fd;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; sockaddr_in dest_addr; &lt;span style=&#34;color:#75715e&#34;&gt;// hedef adres
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; sin_size, rt;
+    sin_size &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;sizeof&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; sockaddr_in);
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;// islem yapmak icin gerekli dosya gosterici
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    sockfd &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; socket(AF_INET, SOCK_DGRAM, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;);
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;// adres ile ilgili ayarlar
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    dest_addr.sin_family      &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; AF_INET;
+    dest_addr.sin_port        &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; htons(DEST_PORT);
+    dest_addr.sin_addr.s_addr &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; inet_addr(DEST_IP);
+    memset(&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;(dest_addr.sin_zero), &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;); &lt;span style=&#34;color:#75715e&#34;&gt;// geri kalani 0 la
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;// Broadcast icin gerekli yetkiyi al
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; flag &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (setsockopt (sockfd, SOL_SOCKET, SO_BROADCAST, &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;flag, &lt;span style=&#34;color:#66d9ef&#34;&gt;sizeof&lt;/span&gt;(flag)) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+        perror(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;setsockopt&amp;#34;&lt;/span&gt;);
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;// mesaji gonder
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    rt &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; sendto (sockfd, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;slm asl plz&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, (&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; sockaddr &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;dest_addr, sin_size);
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; ( rt &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; )
+        perror(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hata: &amp;#34;&lt;/span&gt;);
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;// socketi kapat
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    close(sockfd);
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -25,9 +115,7 @@
       <pubDate>Sat, 11 Dec 2010 04:25:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/java-ile-server-socket-yapimi/</guid>
-      <description>Bir proje için server sockete ihtiyaç duydum. Öncelikli dilim python olmasına rağmen, sunucu solaris olunca java ile yazmak daha cazip geldi. Öncelikli olarak test amaçlı birkaç satır kod yazdım. Akla gelen ilk örnek echo server oluyor :) aşağıda multi thread çalışan, birden fazla kullanıcıya cevap verebilecek bir echo server var:)
-Server.java
-/** * @author: Aşkın Yollu */ import java.net.*; import java.io.*; class Server { public static void main(String args[]) throws Exception { ServerSocket myService = null; Socket client = null; Worker tmpworker = null; try { // 1234 nolu portu dinle  myService = new ServerSocket(1234); } catch (IOException e) { System.</description>
+      <description>&lt;p&gt;Bir proje için server sockete ihtiyaç duydum. Öncelikli dilim python olmasına rağmen, sunucu solaris olunca java ile yazmak daha cazip geldi. Öncelikli olarak test amaçlı birkaç satır kod yazdım. Akla gelen ilk örnek echo server oluyor :) aşağıda multi thread çalışan, birden fazla kullanıcıya cevap verebilecek bir echo server var:)&lt;/p&gt;</description>
     </item>
     
   </channel>

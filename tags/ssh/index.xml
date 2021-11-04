@@ -25,8 +25,46 @@ cd /destination/directory ssh user@remote.host &amp;#34;cd /original/directory; 
       <pubDate>Wed, 07 May 2008 10:36:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/ssh-filesystem-ile-uzak-makinadaki-dizini-yerele-baglamak/</guid>
-      <description>Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz. Ben daha önce bahsettiğim internet canavarı:) için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu. Kullanacağımız programın adı sshfs yani SSH Filesystem. Kurulum:
- Debian &amp;amp;&amp;amp; Ubuntu &amp;amp;&amp;amp; vb.  aptitude install sshfs  Kaynak koddan derleme  ./configure make make install # root yetkileriyle  Kullanımı - Uzak makinadaki bir dizini bağlamak sshfs hostname:dizin bağlamanoktası (root yetkileriyle)  Umount - Bağı koparma umount bağlamanoktası # ya da fusermount -u bağlamanoktası   Bu şekide kullanırsanız bağladığınız dizine ancak root yetkileriyle ulaşabilirsiniz.</description>
+      <description>&lt;p&gt;Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz.
+Ben daha önce bahsettiğim &lt;a href=&#34;http://blog.yollu.com/2008/02/21/telekom-artik-kork-benden/&#34;&gt;internet canavarı:)&lt;/a&gt; için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu.
+Kullanacağımız programın adı sshfs yani SSH Filesystem.
+Kurulum:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Debian &amp;amp;&amp;amp; Ubuntu &amp;amp;&amp;amp; vb.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;aptitude install sshfs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Kaynak koddan derleme&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;./configure
+make
+make install &lt;span style=&#34;color:#75715e&#34;&gt;# root yetkileriyle&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Kullanımı - Uzak makinadaki bir dizini bağlamak
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sshfs hostname:dizin bağlamanoktası &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;root yetkileriyle&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;Umount - Bağı koparma
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;umount bağlamanoktası
+&lt;span style=&#34;color:#75715e&#34;&gt;# ya da&lt;/span&gt;
+fusermount -u bağlamanoktası
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Bu şekide kullanırsanız bağladığınız dizine ancak root yetkileriyle ulaşabilirsiniz. Her kullanıcının tüm haklarla(hangi kullanıcı ile ssh bağlantısı gerçekleştirdiyseniz onun haklarına sahip oluyosunuz) bağladığınız dizini kulanabilmesini istiyorsanız&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sshfs -o allow_other hostname:dizin bağlamanoktası
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Parametreler&lt;/strong&gt;
+-o parametresini kullanarak uid ve gid değerlerini ayarlayabilirsiniz.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;-o idmap&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;user
+-o uid&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&amp;lt;uid&amp;gt;
+-o gid&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&amp;lt;gid&amp;gt;
+-o ro &lt;span style=&#34;color:#75715e&#34;&gt;# read only - salt okunur mod&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;fstab dosyasını kullanarak mount etme&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sshfs#USERNAME@REMOTE_HOST:REMOTE_PATH MOUNT_POINT fuse SSHFS_OPTIONS 0 0
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;örnek&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sshfs#guest@guest.login.com:data /mnt/guest fuse uid=1003,gid=100,umask=0,allow_other 0 0
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Proje sayfası&lt;/strong&gt; :&lt;a href=&#34;%20http://fuse.sourceforge.net/sshfs.html&#34;&gt;http://fuse.sourceforge.net/sshfs.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Wiki sayfası&lt;/strong&gt; :&lt;a href=&#34;http://fuse.sourceforge.net/sshfs.html&#34;&gt;http://fuse.sourceforge.net/sshfs.html&lt;/a&gt;. Wiki sayfasını kulanarak birçok bilgiye ulaşabilirsiniz..&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
   </channel>

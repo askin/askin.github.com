@@ -9,7 +9,32 @@
 
   <title>Bubble sort  algoritması ve scheme çözümü - Aşkın Özgür</title>
   <meta name="description" content="Bubble sort algoritması kabaca: verilen dizideki elemanları ikili olarak karşılaştırıp gerekli olduğunda yerlerini değiştirmek esasına dayanır. Elimizde 11 5 8 4 6 84 7 sayılarında oluşan bir dizi olduğunu var sayalım ve bu diziyi küçükten büyüğe sıralamak isteyelim.
- önce 11 ile 5i karşılaştırırız, 11 5&rsquo;ten büyük olduğu için 11 ile 5in yerini değiştiririz; 5 11 8 4 6 84 7 sonra 11 ile 8i karşılaştırırız ve 11 ile 8&rsquo;in yerini değiştiririz 5 8 11 4 6 84 7 11 ile 4; 5 8 4 11 6 84 7 11 ile 6; 5 8 4 6 11 84 7 11 ile 84; 84 büyük olduğu için sıralamaya dokunmayız.">
+
+önce 11 ile 5i karşılaştırırız, 11 5&rsquo;ten büyük olduğu için 11 ile 5in yerini değiştiririz; 5 11 8 4 6 84 7
+sonra 11 ile 8i karşılaştırırız ve 11 ile 8&rsquo;in yerini değiştiririz 5 8 11 4 6 84 7
+11 ile 4; 5 8 4 11 6 84 7
+11 ile 6; 5 8 4 6 11 84 7
+11 ile 84; 84 büyük olduğu için sıralamaya dokunmayız. 5 8 4 6 11 84 7
+şimdi 84 ile 7&rsquo;yi karşılaştırırız; 5 8 4 6 11 7 84
+
+Son durumda 7 elemanlı bir dizi için 6 kontrol yaptık ve en büyük elemanı sona attık. Şimdiki karşılaştırmalarımızda artık son elamanı yok sayabiliriz. Yani problemimiz artık 6 elemanlı bir diziyi sıralamak oldu. Aynı işlemleri 6 eleman varsayarak yaptığımızda sırasıyla problem 5, 4, 3, 2 ve 1 elemanlı dizileri sıralamaya dönüşecek. 1 elemanlı dizi herzaman sıralı olduğu için hiç bi derdimiz sıkıntımızda kalmayacak:) Bu şekilde işlemleride 6 defa yaptık.
+Şimdi sıra geldi koda
+(define vector-bubble-sort 
+  (lambda (vec op)
+    (let ((tmp 0) (stop-do #f))
+      (do ((i 0 (&#43; i 1))) ((or (= i (vector-length vec)) stop-do))
+        (set! stop-do #t)
+        (do ((j 0 (&#43; j 1))) ((= j (- (vector-length vec) i 1)))
+          (if (not (op (vector-ref vec j) (vector-ref vec (&#43; j 1))))
+              (begin 
+                (set! tmp (vector-ref vec j))
+                (vector-set! vec j (vector-ref vec (&#43; j 1)))
+                (vector-set! vec (&#43; j 1) tmp)
+                (set! stop-do #f))))))
+    vec))
+DrScheme de etkileşim penceresine
+(vector-bubble-sort #(5 11 8 4 6 84 7) &lt; )
+şeklide giriş yapmamız gerekiyor. &ldquo;&lt; &quot; işareti yerine &ldquo;&gt;&rdquo; işaretide koyabiliriz. Bu sayede birde büyükten küçüğe sıralamak için aynı kodları yazmamıza gerek kalmayacak.">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -58,7 +83,7 @@
     "name" : "Aşkın Özgür"
   },
   "headline": "Bubble sort  algoritması ve scheme çözümü",
-  "description" : "Bubble sort algoritması kabaca: verilen dizideki elemanları ikili olarak karşılaştırıp gerekli olduğunda yerlerini değiştirmek esasına dayanır. Elimizde 11 5 8 4 6 84 7 sayılarında oluşan bir dizi olduğunu var sayalım ve bu diziyi küçükten büyüğe sıralamak isteyelim.\n önce 11 ile 5i karşılaştırırız, 11 5\u0026rsquo;ten büyük olduğu için 11 ile 5in yerini değiştiririz; 5 11 8 4 6 84 7 sonra 11 ile 8i karşılaştırırız ve 11 ile 8\u0026rsquo;in yerini değiştiririz 5 8 11 4 6 84 7 11 ile 4; 5 8 4 11 6 84 7 11 ile 6; 5 8 4 6 11 84 7 11 ile 84; 84 büyük olduğu için sıralamaya dokunmayız.",
+  "description" : "Bubble sort algoritması kabaca: verilen dizideki elemanları ikili olarak karşılaştırıp gerekli olduğunda yerlerini değiştirmek esasına dayanır. Elimizde 11 5 8 4 6 84 7 sayılarında oluşan bir dizi olduğunu var sayalım ve bu diziyi küçükten büyüğe sıralamak isteyelim.\n önce 11 ile 5i karşılaştırırız, 11 5\u0026rsquo;ten büyük olduğu için 11 ile 5in yerini değiştiririz; 5 11 8 4 6 84 7 sonra 11 ile 8i karşılaştırırız ve 11 ile 8\u0026rsquo;in yerini değiştiririz 5 8 11 4 6 84 7 11 ile 4; 5 8 4 11 6 84 7 11 ile 6; 5 8 4 6 11 84 7 11 ile 84; 84 büyük olduğu için sıralamaya dokunmayız. 5 8 4 6 11 84 7 şimdi 84 ile 7\u0026rsquo;yi karşılaştırırız; 5 8 4 6 11 7 84  Son durumda 7 elemanlı bir dizi için 6 kontrol yaptık ve en büyük elemanı sona attık. Şimdiki karşılaştırmalarımızda artık son elamanı yok sayabiliriz. Yani problemimiz artık 6 elemanlı bir diziyi sıralamak oldu. Aynı işlemleri 6 eleman varsayarak yaptığımızda sırasıyla problem 5, 4, 3, 2 ve 1 elemanlı dizileri sıralamaya dönüşecek. 1 elemanlı dizi herzaman sıralı olduğu için hiç bi derdimiz sıkıntımızda kalmayacak:) Bu şekilde işlemleride 6 defa yaptık.\nŞimdi sıra geldi koda\n(define vector-bubble-sort (lambda (vec op) (let ((tmp 0) (stop-do #f)) (do ((i 0 (\u002b i 1))) ((or (= i (vector-length vec)) stop-do)) (set! stop-do #t) (do ((j 0 (\u002b j 1))) ((= j (- (vector-length vec) i 1))) (if (not (op (vector-ref vec j) (vector-ref vec (\u002b j 1)))) (begin  (set! tmp (vector-ref vec j)) (vector-set! vec j (vector-ref vec (\u002b j 1))) (vector-set! vec (\u002b j 1) tmp) (set! stop-do #f)))))) vec)) DrScheme de etkileşim penceresine\n(vector-bubble-sort #(5 11 8 4 6 84 7) \u0026lt; ) şeklide giriş yapmamız gerekiyor. \u0026ldquo;\u0026lt; \u0026quot; işareti yerine \u0026ldquo;\u0026gt;\u0026rdquo; işaretide koyabiliriz. Bu sayede birde büyükten küçüğe sıralamak için aynı kodları yazmamıza gerek kalmayacak.\n",
   "inLanguage" : "tr",
   "wordCount":  308 ,
   "datePublished" : "2007-12-17T15:11:00",
@@ -81,7 +106,32 @@
 
 <meta property="og:title" content="Bubble sort  algoritması ve scheme çözümü" />
 <meta property="og:description" content="Bubble sort algoritması kabaca: verilen dizideki elemanları ikili olarak karşılaştırıp gerekli olduğunda yerlerini değiştirmek esasına dayanır. Elimizde 11 5 8 4 6 84 7 sayılarında oluşan bir dizi olduğunu var sayalım ve bu diziyi küçükten büyüğe sıralamak isteyelim.
- önce 11 ile 5i karşılaştırırız, 11 5&rsquo;ten büyük olduğu için 11 ile 5in yerini değiştiririz; 5 11 8 4 6 84 7 sonra 11 ile 8i karşılaştırırız ve 11 ile 8&rsquo;in yerini değiştiririz 5 8 11 4 6 84 7 11 ile 4; 5 8 4 11 6 84 7 11 ile 6; 5 8 4 6 11 84 7 11 ile 84; 84 büyük olduğu için sıralamaya dokunmayız.">
+
+önce 11 ile 5i karşılaştırırız, 11 5&rsquo;ten büyük olduğu için 11 ile 5in yerini değiştiririz; 5 11 8 4 6 84 7
+sonra 11 ile 8i karşılaştırırız ve 11 ile 8&rsquo;in yerini değiştiririz 5 8 11 4 6 84 7
+11 ile 4; 5 8 4 11 6 84 7
+11 ile 6; 5 8 4 6 11 84 7
+11 ile 84; 84 büyük olduğu için sıralamaya dokunmayız. 5 8 4 6 11 84 7
+şimdi 84 ile 7&rsquo;yi karşılaştırırız; 5 8 4 6 11 7 84
+
+Son durumda 7 elemanlı bir dizi için 6 kontrol yaptık ve en büyük elemanı sona attık. Şimdiki karşılaştırmalarımızda artık son elamanı yok sayabiliriz. Yani problemimiz artık 6 elemanlı bir diziyi sıralamak oldu. Aynı işlemleri 6 eleman varsayarak yaptığımızda sırasıyla problem 5, 4, 3, 2 ve 1 elemanlı dizileri sıralamaya dönüşecek. 1 elemanlı dizi herzaman sıralı olduğu için hiç bi derdimiz sıkıntımızda kalmayacak:) Bu şekilde işlemleride 6 defa yaptık.
+Şimdi sıra geldi koda
+(define vector-bubble-sort 
+  (lambda (vec op)
+    (let ((tmp 0) (stop-do #f))
+      (do ((i 0 (&#43; i 1))) ((or (= i (vector-length vec)) stop-do))
+        (set! stop-do #t)
+        (do ((j 0 (&#43; j 1))) ((= j (- (vector-length vec) i 1)))
+          (if (not (op (vector-ref vec j) (vector-ref vec (&#43; j 1))))
+              (begin 
+                (set! tmp (vector-ref vec j))
+                (vector-set! vec j (vector-ref vec (&#43; j 1)))
+                (vector-set! vec (&#43; j 1) tmp)
+                (set! stop-do #f))))))
+    vec))
+DrScheme de etkileşim penceresine
+(vector-bubble-sort #(5 11 8 4 6 84 7) &lt; )
+şeklide giriş yapmamız gerekiyor. &ldquo;&lt; &quot; işareti yerine &ldquo;&gt;&rdquo; işaretide koyabiliriz. Bu sayede birde büyükten küçüğe sıralamak için aynı kodları yazmamıza gerek kalmayacak.">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
 <meta property="og:url" content="https://blog.askin.ws/blog/bubble-sort-algoritmasi-ve-scheme-cozumu/" />
 <meta property="og:type" content="website" />
@@ -276,7 +326,6 @@
 </code></pre></div><p>DrScheme de etkileşim penceresine</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scheme" data-lang="scheme">(<span style="color:#a6e22e">vector-bubble-sort</span> <span style="color:#f92672">#</span>(<span style="color:#ae81ff">5</span> <span style="color:#ae81ff">11</span> <span style="color:#ae81ff">8</span> <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">6</span> <span style="color:#ae81ff">84</span> <span style="color:#ae81ff">7</span>) &lt; )
 </code></pre></div><p>şeklide giriş yapmamız gerekiyor. &ldquo;&lt; &quot; işareti yerine &ldquo;&gt;&rdquo; işaretide koyabiliriz. Bu sayede birde büyükten küçüğe sıralamak için aynı kodları yazmamıza gerek kalmayacak.</p>
-
 
         
           <div class="blog-tags">

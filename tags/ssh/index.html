@@ -286,9 +286,46 @@ ssh user@remote.host <span style="color:#e6db74">&#34;cd /original/directory; ta
     </p>
     <div class="post-entry">
         
-        Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz. Ben daha önce bahsettiğim internet canavarı:) için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu. Kullanacağımız programın adı sshfs yani SSH Filesystem. Kurulum:
- Debian &amp;&amp; Ubuntu &amp;&amp; vb.  aptitude install sshfs  Kaynak koddan derleme  ./configure make make install # root yetkileriyle  Kullanımı - Uzak makinadaki bir dizini bağlamak sshfs hostname:dizin bağlamanoktası (root yetkileriyle)  Umount - Bağı koparma umount bağlamanoktası # ya da fusermount -u bağlamanoktası   Bu şekide kullanırsanız bağladığınız dizine ancak root yetkileriyle ulaşabilirsiniz.
-        <a href="https://blog.askin.ws/blog/ssh-filesystem-ile-uzak-makinadaki-dizini-yerele-baglamak/" class="post-read-more">[Daha fazla oku]</a>
+        <p>Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz.
+Ben daha önce bahsettiğim <a href="http://blog.yollu.com/2008/02/21/telekom-artik-kork-benden/">internet canavarı:)</a> için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu.
+Kullanacağımız programın adı sshfs yani SSH Filesystem.
+Kurulum:</p>
+<ul>
+<li>Debian &amp;&amp; Ubuntu &amp;&amp; vb.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aptitude install sshfs
+</code></pre></div><ul>
+<li>Kaynak koddan derleme</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./configure
+make
+make install <span style="color:#75715e"># root yetkileriyle</span>
+</code></pre></div><ul>
+<li>Kullanımı - Uzak makinadaki bir dizini bağlamak
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sshfs hostname:dizin bağlamanoktası <span style="color:#f92672">(</span>root yetkileriyle<span style="color:#f92672">)</span>
+</code></pre></div></li>
+<li>Umount - Bağı koparma
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">umount bağlamanoktası
+<span style="color:#75715e"># ya da</span>
+fusermount -u bağlamanoktası
+</code></pre></div></li>
+</ul>
+<p>Bu şekide kullanırsanız bağladığınız dizine ancak root yetkileriyle ulaşabilirsiniz. Her kullanıcının tüm haklarla(hangi kullanıcı ile ssh bağlantısı gerçekleştirdiyseniz onun haklarına sahip oluyosunuz) bağladığınız dizini kulanabilmesini istiyorsanız</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sshfs -o allow_other hostname:dizin bağlamanoktası
+</code></pre></div><p><strong>Parametreler</strong>
+-o parametresini kullanarak uid ve gid değerlerini ayarlayabilirsiniz.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">-o idmap<span style="color:#f92672">=</span>user
+-o uid<span style="color:#f92672">=</span>&lt;uid&gt;
+-o gid<span style="color:#f92672">=</span>&lt;gid&gt;
+-o ro <span style="color:#75715e"># read only - salt okunur mod</span>
+</code></pre></div><p><strong>fstab dosyasını kullanarak mount etme</strong></p>
+<pre tabindex="0"><code>sshfs#USERNAME@REMOTE_HOST:REMOTE_PATH MOUNT_POINT fuse SSHFS_OPTIONS 0 0
+</code></pre><p><strong>örnek</strong></p>
+<pre tabindex="0"><code>sshfs#guest@guest.login.com:data /mnt/guest fuse uid=1003,gid=100,umask=0,allow_other 0 0
+</code></pre><ul>
+<li><strong>Proje sayfası</strong> :<a href="%20http://fuse.sourceforge.net/sshfs.html">http://fuse.sourceforge.net/sshfs.html</a></li>
+<li><strong>Wiki sayfası</strong> :<a href="http://fuse.sourceforge.net/sshfs.html">http://fuse.sourceforge.net/sshfs.html</a>. Wiki sayfasını kulanarak birçok bilgiye ulaşabilirsiniz..</li>
+</ul>
         
     </div>
 

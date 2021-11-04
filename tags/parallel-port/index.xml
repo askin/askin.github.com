@@ -15,8 +15,62 @@
       <pubDate>Sun, 27 Feb 2011 03:08:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/linux-paralel-port-ile-2x16-lcd-ekran-kullanimi/</guid>
-      <description>Çalıştığım projede linuxta paralel port ile lcd ekran kullanmam gerekti. Neredeyse internetin altını üstüne getirdim ama işime yarar çok birşey bulamadım. Sonunda DOS için yazılmış bir kod buldum. Bu kodu biraz inceleyip, gerekli püf noktaları bulunca kodu linux&amp;rsquo;a uydurmak çok zor olmadı. Hatta neredeyse sadece kullanılan fonksiyonun adını ve parametre yerlerini değiştirdim :)
-Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read/write seçimi için kullanılıyor. Geri kalan 3 bacak güç bağlantısı ve kontrast için kullanılıyor. Burdaki şemaya göre bağlantıları yapabilirsiniz. Ayrıca örnek aldığım kodda aynı sayfada bulunmakta.</description>
+      <description>&lt;p&gt;Çalıştığım projede linuxta paralel port ile lcd ekran kullanmam gerekti. Neredeyse internetin altını üstüne getirdim ama işime yarar çok birşey bulamadım. Sonunda DOS için yazılmış bir kod buldum. Bu kodu biraz inceleyip, gerekli püf noktaları bulunca kodu linux&amp;rsquo;a uydurmak çok zor olmadı. Hatta neredeyse sadece kullanılan fonksiyonun adını ve parametre yerlerini değiştirdim :)&lt;/p&gt;
+&lt;p&gt;Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read/write seçimi için kullanılıyor. Geri kalan 3 bacak güç bağlantısı ve kontrast için kullanılıyor. &lt;a href=&#34;http://www.beyondlogic.org/parlcd/parlcd.htm&#34;&gt;Burdaki&lt;/a&gt; şemaya göre bağlantıları yapabilirsiniz. Ayrıca örnek aldığım kodda aynı sayfada bulunmakta.&lt;/p&gt;
+&lt;p&gt;Yorum satırları pek çok şeyi açıklıyor. Ama birkaç noktaya değinmekte fayda var. Data bacaklarına gerekli inputları verdikten sonra, enable bacağını 1&amp;rsquo;den 0&amp;rsquo;a düşürerek lcd&amp;rsquo;nin data bacaklarında sinyali alıp işleme sokmasını sağlıyoruz. init array&amp;rsquo;i içinde lcd&amp;rsquo;nin temizlenmesi ve çalışmaya uygun hale gelmesi için gerekli komutlar tutuluyor. 0x378 paralel portun adresi.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;string.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;stdlib.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;unistd.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;asm/io.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#define PORTADDRESS 0x378  &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;/* Enter Your Port Address Here */&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#define DATA PORTADDRESS+0
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#define STATUS PORTADDRESS+1
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#define CONTROL PORTADDRESS+2
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;()
+{
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (ioperm(DATA , &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)) {perror(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ioperm&amp;#34;&lt;/span&gt;); exit(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;);}
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt; string[] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Testing 1,2,3                           &amp;#34;&lt;/span&gt;
+                     &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;It&amp;#39; Works !                             &amp;#34;&lt;/span&gt;};
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt; init[&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;];
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; count;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; len;
+    init[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0x0F&lt;/span&gt;; &lt;span style=&#34;color:#75715e&#34;&gt;/* Init Display */&lt;/span&gt;
+    init[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0x01&lt;/span&gt;; &lt;span style=&#34;color:#75715e&#34;&gt;/* Clear Display */&lt;/span&gt;
+    init[&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0x38&lt;/span&gt;; &lt;span style=&#34;color:#75715e&#34;&gt;/* Dual Line / 8 Bits */&lt;/span&gt;
+
+    outb(inb(CONTROL) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0xDF&lt;/span&gt;, CONTROL); &lt;span style=&#34;color:#75715e&#34;&gt;/* Reset Control Port - Make sure Forward Direction */&lt;/span&gt;
+    outb(inb(CONTROL) &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0x08&lt;/span&gt;, CONTROL); &lt;span style=&#34;color:#75715e&#34;&gt;/* Set Select Printer (Register Select) */&lt;/span&gt;
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (count &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; count &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;; count&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;)
+    {
+        outb(init[count], DATA);
+        outb(inb(CONTROL) &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0x01&lt;/span&gt;, CONTROL); &lt;span style=&#34;color:#75715e&#34;&gt;/* Set Strobe (Enable)*/&lt;/span&gt;
+        usleep(&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;);                                 &lt;span style=&#34;color:#75715e&#34;&gt;/* Larger Delay for INIT */&lt;/span&gt;
+        outb(inb(CONTROL) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0xFE&lt;/span&gt;, CONTROL); &lt;span style=&#34;color:#75715e&#34;&gt;/* Reset Strobe (Enable)*/&lt;/span&gt;
+        usleep(&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;);                                 &lt;span style=&#34;color:#75715e&#34;&gt;/* Larger Delay for INIT */&lt;/span&gt;
+    }
+
+    outb(inb(CONTROL) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0xF7&lt;/span&gt;, CONTROL);  &lt;span style=&#34;color:#75715e&#34;&gt;/* Reset Select Printer (Register Select) */&lt;/span&gt;
+
+    len &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; strlen(string);
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (count &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; count &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; len; count&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;)
+    {
+        outb(string[count], DATA);
+        outb(inb(CONTROL) &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0x01&lt;/span&gt;, CONTROL); &lt;span style=&#34;color:#75715e&#34;&gt;/* Set Strobe */&lt;/span&gt;
+        usleep(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;);
+        outb(inb(CONTROL) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0xFE&lt;/span&gt;, CONTROL); &lt;span style=&#34;color:#75715e&#34;&gt;/* Reset Strobe */&lt;/span&gt;
+        usleep(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;);
+    }
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Linke birşey olması durumunda &lt;a href=&#34;https://blog.askin.ws/uploads/2011/02/parlcd.gif&#34;&gt;bu adresten gerekli şemayı indirebilirsiniz.&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

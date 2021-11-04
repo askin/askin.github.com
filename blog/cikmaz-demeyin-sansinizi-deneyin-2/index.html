@@ -9,7 +9,46 @@
 
   <title>Çıkmaz demeyin şansınızı deneyin - 2 - Aşkın Özgür</title>
   <meta name="description" content="Buradaki yazımdan esinlenip yazdım bunu. Azıcık java öğrendim artık uygulama yapma zamanıdır. Eminim daha güzel (hatta belki benim ki iğrenç bi koddur(:) yazılabilir. Ama şimdilik bunu yapabiliyorum.
-public class Sayisal { int[] _kupon = new int[6]; int _num; public Sayisal(){ int sira = 0; while (sira &lt; 6) { _num = (int) (1 &#43; Math.random() * 49); if (!varmi(_kupon, _num)) _kupon[sira&#43;&#43;] = _num; } } private boolean varmi(int[] kupon, int num) { for (int x: kupon) {if (x == num) return true;} return false; } public String toString(){ String kuponStr = &#34;&#34;; for (int i = 0; i &lt; 6; i&#43;&#43;) kuponStr &#43;= (_kupon[i] &#43; &#34; &#34;); return kuponStr; } public static void main(String[] args){ byte kuponSayisi; if (args.">
+public class Sayisal {
+    int[] _kupon = new int[6];
+    int _num;
+    public Sayisal(){
+        int sira = 0;
+        while (sira &lt; 6) {
+            _num = (int) (1 &#43; Math.random() * 49);
+            if (!varmi(_kupon, _num)) 
+                _kupon[sira&#43;&#43;] = _num;
+        }
+    }
+    
+    private boolean varmi(int[] kupon, int num) {
+        for (int x: kupon) {if (x == num) return true;}
+        return false;
+    }
+    
+    public String toString(){
+       String kuponStr = &#34;&#34;;
+       for (int i = 0; i &lt; 6; i&#43;&#43;) kuponStr &#43;= (_kupon[i] &#43; &#34; &#34;);
+        return kuponStr;
+    }
+    
+    public static void main(String[] args){
+        byte kuponSayisi;
+        if (args.length == 0) kuponSayisi = 1;
+            else kuponSayisi = Byte.parseByte(args[0]);
+            
+        for (int i = 1; i &lt;= kuponSayisi; i&#43;&#43;){
+            System.out.print(&#34; &#34; &#43; i &#43; &#34;.kupon: &#34;);
+        System.out.println((new Sayisal()).toString());
+        }
+    }
+}
+java Sayisal
+şeklinde girerseniz tek kolon oynayacaktır. eğer
+java Sayisal 4 
+derseniz 4 kolon oynayacaktır.
+Sayısal Kaynak kodları.
+Sayısal derlenmiş hali.">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -58,7 +97,7 @@ public class Sayisal { int[] _kupon = new int[6]; int _num; public Sayisal(){ in
     "name" : "Aşkın Özgür"
   },
   "headline": "Çıkmaz demeyin şansınızı deneyin - 2",
-  "description" : "Buradaki yazımdan esinlenip yazdım bunu. Azıcık java öğrendim artık uygulama yapma zamanıdır. Eminim daha güzel (hatta belki benim ki iğrenç bi koddur(:) yazılabilir. Ama şimdilik bunu yapabiliyorum.\npublic class Sayisal { int[] _kupon = new int[6]; int _num; public Sayisal(){ int sira = 0; while (sira \u0026lt; 6) { _num = (int) (1 \u002b Math.random() * 49); if (!varmi(_kupon, _num)) _kupon[sira\u002b\u002b] = _num; } } private boolean varmi(int[] kupon, int num) { for (int x: kupon) {if (x == num) return true;} return false; } public String toString(){ String kuponStr = \u0026#34;\u0026#34;; for (int i = 0; i \u0026lt; 6; i\u002b\u002b) kuponStr \u002b= (_kupon[i] \u002b \u0026#34; \u0026#34;); return kuponStr; } public static void main(String[] args){ byte kuponSayisi; if (args.",
+  "description" : "Buradaki yazımdan esinlenip yazdım bunu. Azıcık java öğrendim artık uygulama yapma zamanıdır. Eminim daha güzel (hatta belki benim ki iğrenç bi koddur(:) yazılabilir. Ama şimdilik bunu yapabiliyorum.\npublic class Sayisal { int[] _kupon = new int[6]; int _num; public Sayisal(){ int sira = 0; while (sira \u0026lt; 6) { _num = (int) (1 \u002b Math.random() * 49); if (!varmi(_kupon, _num)) _kupon[sira\u002b\u002b] = _num; } } private boolean varmi(int[] kupon, int num) { for (int x: kupon) {if (x == num) return true;} return false; } public String toString(){ String kuponStr = \u0026#34;\u0026#34;; for (int i = 0; i \u0026lt; 6; i\u002b\u002b) kuponStr \u002b= (_kupon[i] \u002b \u0026#34; \u0026#34;); return kuponStr; } public static void main(String[] args){ byte kuponSayisi; if (args.length == 0) kuponSayisi = 1; else kuponSayisi = Byte.parseByte(args[0]); for (int i = 1; i \u0026lt;= kuponSayisi; i\u002b\u002b){ System.out.print(\u0026#34; \u0026#34; \u002b i \u002b \u0026#34;.kupon: \u0026#34;); System.out.println((new Sayisal()).toString()); } } } java Sayisal\nşeklinde girerseniz tek kolon oynayacaktır. eğer\njava Sayisal 4 \nderseniz 4 kolon oynayacaktır.\nSayısal Kaynak kodları.\nSayısal derlenmiş hali.\n",
   "inLanguage" : "tr",
   "wordCount":  170 ,
   "datePublished" : "2008-04-17T12:27:00",
@@ -81,7 +120,46 @@ public class Sayisal { int[] _kupon = new int[6]; int _num; public Sayisal(){ in
 
 <meta property="og:title" content="Çıkmaz demeyin şansınızı deneyin - 2" />
 <meta property="og:description" content="Buradaki yazımdan esinlenip yazdım bunu. Azıcık java öğrendim artık uygulama yapma zamanıdır. Eminim daha güzel (hatta belki benim ki iğrenç bi koddur(:) yazılabilir. Ama şimdilik bunu yapabiliyorum.
-public class Sayisal { int[] _kupon = new int[6]; int _num; public Sayisal(){ int sira = 0; while (sira &lt; 6) { _num = (int) (1 &#43; Math.random() * 49); if (!varmi(_kupon, _num)) _kupon[sira&#43;&#43;] = _num; } } private boolean varmi(int[] kupon, int num) { for (int x: kupon) {if (x == num) return true;} return false; } public String toString(){ String kuponStr = &#34;&#34;; for (int i = 0; i &lt; 6; i&#43;&#43;) kuponStr &#43;= (_kupon[i] &#43; &#34; &#34;); return kuponStr; } public static void main(String[] args){ byte kuponSayisi; if (args.">
+public class Sayisal {
+    int[] _kupon = new int[6];
+    int _num;
+    public Sayisal(){
+        int sira = 0;
+        while (sira &lt; 6) {
+            _num = (int) (1 &#43; Math.random() * 49);
+            if (!varmi(_kupon, _num)) 
+                _kupon[sira&#43;&#43;] = _num;
+        }
+    }
+    
+    private boolean varmi(int[] kupon, int num) {
+        for (int x: kupon) {if (x == num) return true;}
+        return false;
+    }
+    
+    public String toString(){
+       String kuponStr = &#34;&#34;;
+       for (int i = 0; i &lt; 6; i&#43;&#43;) kuponStr &#43;= (_kupon[i] &#43; &#34; &#34;);
+        return kuponStr;
+    }
+    
+    public static void main(String[] args){
+        byte kuponSayisi;
+        if (args.length == 0) kuponSayisi = 1;
+            else kuponSayisi = Byte.parseByte(args[0]);
+            
+        for (int i = 1; i &lt;= kuponSayisi; i&#43;&#43;){
+            System.out.print(&#34; &#34; &#43; i &#43; &#34;.kupon: &#34;);
+        System.out.println((new Sayisal()).toString());
+        }
+    }
+}
+java Sayisal
+şeklinde girerseniz tek kolon oynayacaktır. eğer
+java Sayisal 4 
+derseniz 4 kolon oynayacaktır.
+Sayısal Kaynak kodları.
+Sayısal derlenmiş hali.">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
 <meta property="og:url" content="https://blog.askin.ws/blog/cikmaz-demeyin-sansinizi-deneyin-2/" />
 <meta property="og:type" content="website" />
@@ -290,7 +368,6 @@ public class Sayisal { int[] _kupon = new int[6]; int _num; public Sayisal(){ in
 derseniz 4 kolon oynayacaktır.<br>
 <a href="/uploads/2008/04/Sayisal.java">Sayısal Kaynak kodları.</a><br>
 <a href="/uploads/2008/04/Sayisal.class">Sayısal derlenmiş hali.</a></p>
-
 
         
           <div class="blog-tags">

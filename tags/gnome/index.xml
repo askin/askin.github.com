@@ -15,9 +15,12 @@
       <pubDate>Sat, 25 Jul 2009 01:09:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/pardus-2009/</guid>
-      <description>Sonunda Pardus 2009&amp;rsquo;u bilgisayarıma kurabildim. Ailemin yanına geldiğim için Pardus&amp;rsquo;u indiremiyordum. Malum kotalı internet, sıkıntı yaratıyor.
-Kurulum sorunsuz tamamlandı. Kurulum arayüzü çok hoş olmuş. Çok kullanışlı ve çok kolay bir arayüzü olmuş. Bilgisayarıma en hızlı kurulabilen Pardus sürümü. Saat tutmadım ama, 20 dakka ile 30 dakka arasında bir sürede kurulduğunu tahmin ediyorum.
-Kablosuz ağ kartımı sorunsuz tanıdı ve WPA2 şifreli ağıma çok kolay bir şekilde bağlandı. Daha önce de tanıyordu, fakat ağımı göremiyordu, ben de mecburen ndiswraper ile kullanıyordum. Hiç bir ek program kurmama ve kapalı kodlu windows sürücülerine ihtiyaç duymamak beni gayet mutlu etti. Ve ilk defa wi-fi ledinin yanıp söndüğü gördüm:)</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://blog.askin.ws/uploads/2009/05/pardus.png&#34; alt=&#34;Pardus&#34; title=&#34;Pardus&#34;&gt;Sonunda Pardus 2009&amp;rsquo;u bilgisayarıma kurabildim. Ailemin yanına geldiğim için Pardus&amp;rsquo;u indiremiyordum. Malum kotalı internet, sıkıntı yaratıyor.&lt;br&gt;
+Kurulum sorunsuz tamamlandı. Kurulum arayüzü çok hoş olmuş. Çok kullanışlı ve çok kolay bir arayüzü olmuş. Bilgisayarıma en hızlı kurulabilen Pardus sürümü. Saat tutmadım ama, 20 dakka ile 30 dakka arasında bir sürede kurulduğunu tahmin ediyorum.&lt;br&gt;
+Kablosuz ağ kartımı sorunsuz tanıdı ve WPA2 şifreli ağıma çok kolay bir şekilde bağlandı. Daha önce de tanıyordu, fakat ağımı göremiyordu, ben de mecburen ndiswraper ile kullanıyordum. Hiç bir ek program kurmama ve kapalı kodlu windows sürücülerine ihtiyaç duymamak beni gayet mutlu etti. Ve ilk defa wi-fi ledinin yanıp söndüğü gördüm:)&lt;br&gt;
+KDE4 gerçekten çok güzel, çok hoş duruyor fakat bana göre değil. Arada açıp gönül eğlendirebilirim ama gnome herzamanki gibi 1 numaralı tercihim. Bu nedenle biraz KDE4 turu yaptıktan sonra hemen gnome&amp;rsquo;u kurdum. Bu nedenle &lt;a href=&#34;http://code.google.com/p/pardus-gnome-project/&#34;&gt;Burak Çalışkan&lt;/a&gt;&amp;lsquo;a teşekür ediyorum.&lt;br&gt;
+İhtiyaç duyduğum bazı programlar depoda bulunmuyordu. Bu nedenle devel deposundan bazı paketleri derleyip kurdum. Bi kaç program paketlenemedi, onlarda kısa sürede hazır olur diye umuyorum.&lt;br&gt;
+Her şeye rağmen güzel bi dağıtım olmuş. Emeği geçen herkese teşekür ediyorum.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -26,10 +29,15 @@ Kablosuz ağ kartımı sorunsuz tanıdı ve WPA2 şifreli ağıma çok kolay bir
       <pubDate>Sun, 07 Jun 2009 21:20:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/pidgin-titresim-eklentisi-attention-button/</guid>
-      <description>Pidginin en sevdiğim özelliklerinden bir tanesi, sohbet ettiğiniz kişi size tireşim gönderdiğinde ekrana sadece &amp;quot;&amp;hellip; size uyarı gönderdi&amp;quot; yazması. Bu özelliğer sahip olmasının birde dezavantajı var tabiki, siz de başkalarına titreşim yollayamıyorsunuz. Bugün bu eksikliği fazlasıyla hissedince ufak çaplı bir araştırma yaptım ve Attention Button eklentisiyle karşılaştım.
-Kurulumu çok basit. Burdan en güncel sürümünü indiriyorsunuz (şimdilik 0.3), arşivden çıkartıp .so uzantılı dosyayı ev dizininiz altında .purple/plugins/ dizinine kopyalıyorsunuz. Ardından pidgine gidip eklentiler(plugins) kısmından aktif ediyorsunuz.
-Konsoldan halletmek isterseniz:
-$ wget http://pidgin-attentionbutton.googlecode.com/files/attentionbutton-0.3.tar.gz $ tar -xvzf attentionbutton-0.3.tar.gz $ mkdir $HOME/.purple/plugins $ mv attentionbutton.so $HOME/.purple/plugins/ $ rm attentionbutton-0.3.tar.gz attentionbutton.c Bu eklentinin birkaç güzel özelliğide var.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://blog.askin.ws/uploads/2009/06/pidgin.png&#34; alt=&#34;Pidgin&#34; title=&#34;Pidgin&#34;&gt;Pidginin en sevdiğim özelliklerinden bir tanesi, sohbet ettiğiniz kişi size tireşim gönderdiğinde ekrana sadece &lt;strong&gt;&amp;quot;&amp;hellip; size uyarı gönderdi&amp;quot;&lt;/strong&gt; yazması. Bu özelliğer sahip olmasının birde dezavantajı var tabiki, siz de başkalarına titreşim yollayamıyorsunuz. Bugün bu eksikliği fazlasıyla hissedince ufak çaplı bir araştırma yaptım ve &lt;a href=&#34;http://code.google.com/p/pidgin-attentionbutton/&#34;&gt;Attention Button&lt;/a&gt; eklentisiyle karşılaştım.&lt;br&gt;
+Kurulumu çok basit. &lt;a href=&#34;http://code.google.com/p/pidgin-attentionbutton/downloads/list&#34;&gt;Burdan&lt;/a&gt; en güncel sürümünü indiriyorsunuz (şimdilik &lt;a href=&#34;http://pidgin-attentionbutton.googlecode.com/files/attentionbutton-0.3.tar.gz&#34;&gt;0.3&lt;/a&gt;), arşivden çıkartıp &lt;em&gt;.so&lt;/em&gt; uzantılı dosyayı ev dizininiz altında &lt;em&gt;.purple/plugins/&lt;/em&gt; dizinine kopyalıyorsunuz. Ardından pidgine gidip eklentiler(plugins) kısmından aktif ediyorsunuz.&lt;br&gt;
+Konsoldan halletmek isterseniz:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ wget http://pidgin-attentionbutton.googlecode.com/files/attentionbutton-0.3.tar.gz
+$ tar -xvzf attentionbutton-0.3.tar.gz
+$ mkdir $HOME/.purple/plugins
+$ mv attentionbutton.so $HOME/.purple/plugins/
+$ rm attentionbutton-0.3.tar.gz attentionbutton.c 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Bu eklentinin birkaç güzel özelliğide var. Mesela karşı tarafa sınırsız sayıda titreşim yollayabilirsiniz. Ve karşı taraf çevrim dışı bile görünse titretebilirsiniz. Tabi aşırı kullanım sağlığa zararlı :)&lt;/p&gt;</description>
     </item>
     
     <item>

@@ -15,10 +15,25 @@
       <pubDate>Tue, 22 Jan 2008 17:29:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/cikmaz-demeyin-sansinizi-deneyin/</guid>
-      <description>Bu girdi Burdaki girdiden esinlenilerek yazıldı.
-E madem pyton ile sayısal kuponu yapılıyor biz niye scheme ile yapmayalım bunu demi:)
-Probleme göre kod bana çok uzun geldi. Belki ilerde optimize edebilirim. Ama şimdilik böyle oynayalım demi:)
-(define (sayisal) (display &amp;#34;Oynamak istediginiz kolan sayisini giriniz: \n&amp;#34;) (let ((kolon (read))) (do ((i 1 (+ i 1))) ((&amp;gt; i kolon)) (let loop ((lst (list (+ (random 49) 1))) (sayi (+ 1 (random 49)))) (if (= (length lst) 6) (printf &amp;#34;~a. kolon: ~a\n&amp;#34; i (sort lst &amp;lt; )) (if (member sayi lst) (loop lst (+ (random 49) 1)) (loop (append lst (list sayi)) (+ (random 49) 1)))))))) (sayisal);burası kodun çalıştırılması için.</description>
+      <description>&lt;p&gt;Bu girdi &lt;a href=&#34;http://tutkudalmaz.org/gunluk/?p=21&#34;&gt;Burdaki&lt;/a&gt; girdiden esinlenilerek yazıldı.&lt;/p&gt;
+&lt;p&gt;E madem pyton ile sayısal kuponu yapılıyor biz niye scheme ile yapmayalım bunu demi:)&lt;br&gt;
+Probleme göre kod bana çok uzun geldi. Belki ilerde optimize edebilirim. Ama şimdilik böyle oynayalım demi:)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-scheme&#34; data-lang=&#34;scheme&#34;&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;define &lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;sayisal&lt;/span&gt;)
+  (display &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Oynamak istediginiz kolan sayisini giriniz: \n&amp;#34;&lt;/span&gt;)
+  (&lt;span style=&#34;color:#66d9ef&#34;&gt;let &lt;/span&gt;((&lt;span style=&#34;color:#a6e22e&#34;&gt;kolon&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;read&lt;/span&gt;)))
+    (&lt;span style=&#34;color:#66d9ef&#34;&gt;do &lt;/span&gt;((&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; (+ i &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;))) ((&amp;gt; i kolon))
+      (&lt;span style=&#34;color:#66d9ef&#34;&gt;let &lt;/span&gt;loop ((&lt;span style=&#34;color:#a6e22e&#34;&gt;lst&lt;/span&gt; (list (+ (&lt;span style=&#34;color:#a6e22e&#34;&gt;random&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;49&lt;/span&gt;) &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;))) 
+                   (&lt;span style=&#34;color:#a6e22e&#34;&gt;sayi&lt;/span&gt; (+ &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;random&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;49&lt;/span&gt;))))
+        (&lt;span style=&#34;color:#66d9ef&#34;&gt;if &lt;/span&gt;(= (length lst) &lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt;)
+            (&lt;span style=&#34;color:#a6e22e&#34;&gt;printf&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;~a. kolon: ~a\n&amp;#34;&lt;/span&gt; i (&lt;span style=&#34;color:#a6e22e&#34;&gt;sort&lt;/span&gt; lst &amp;lt; ))
+            (&lt;span style=&#34;color:#66d9ef&#34;&gt;if &lt;/span&gt;(member sayi lst)
+                (&lt;span style=&#34;color:#a6e22e&#34;&gt;loop&lt;/span&gt; lst (+ (&lt;span style=&#34;color:#a6e22e&#34;&gt;random&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;49&lt;/span&gt;) &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;))
+                (&lt;span style=&#34;color:#a6e22e&#34;&gt;loop&lt;/span&gt; (append lst (list sayi)) 
+                       (+ (&lt;span style=&#34;color:#a6e22e&#34;&gt;random&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;49&lt;/span&gt;) &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;))))))))
+(&lt;span style=&#34;color:#a6e22e&#34;&gt;sayisal&lt;/span&gt;)&lt;span style=&#34;color:#75715e&#34;&gt;;burası kodun çalıştırılması için. &lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;;aslında define kısmı çıkartılarak buna gerek kalmamayabilir&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;;ama  ilerde belki başka birşey içinde kullanırım:)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>

@@ -487,14 +487,28 @@ ssh user@remote.host <span style="color:#e6db74">&#34;cd /original/directory; ta
     </p>
     <div class="post-entry">
         
-        Bu yazıyı asıl yazma sebebim parametre olarak geçirilen fonksiyona geçirilecek parametreler :)
-Parametre olarak geçireceğimiz fonksiyonlar belli bir sayıda parametre alıyorsa yapacağımız iş basit,
-Mesela:
-def Merhaba(isim): print &#34;Merhaba %s&#34; % isim Bunun gibi sadece tek parametre alan bir fonksiyon için aşağıdaki gibi bir fonksiyon yeterli olacaktır.
-def BuyukAbi(func, param): func(param) BuyukAbi(Merhaba, &#34;kelebek&#34;) Merhaba kelebek Bu fonksiyon parametre olarak aldığı func fonksiyonuna param parametresini geçirecektir.
-Eğer fonksiyonun aldığı parametre sayısı belirsiz ise, yani farklı sayıda parametre alan fonksiyonlarla uğraşmak gerekiyorsa yanına birkaç ekleme daha yapmamız gerekiyor.
-def BuyukBuyukAbi(func, param): func(*param) param parametresi bir liste olmak durumunda. Geçirilen fonksiyon kaç parametre alıyorsa listenin uzunluğu okadar olmalı.
-        <a href="https://blog.askin.ws/blog/python-fonksiyona-parametre-olarak-fonksiyon-gecirmek/" class="post-read-more">[Daha fazla oku]</a>
+        <p>Bu yazıyı asıl yazma sebebim parametre olarak geçirilen fonksiyona geçirilecek parametreler :)<br>
+Parametre olarak geçireceğimiz fonksiyonlar belli bir sayıda parametre alıyorsa yapacağımız iş basit,</p>
+<p>Mesela:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Merhaba</span>(isim):
+    print <span style="color:#e6db74">&#34;Merhaba </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> isim
+</code></pre></div><p>Bunun gibi sadece tek parametre alan bir fonksiyon için aşağıdaki gibi bir fonksiyon yeterli olacaktır.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">BuyukAbi</span>(func, param):
+    func(param)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">BuyukAbi(Merhaba, <span style="color:#e6db74">&#34;kelebek&#34;</span>)
+Merhaba kelebek
+</code></pre></div><p>Bu fonksiyon parametre olarak aldığı func fonksiyonuna param parametresini geçirecektir.<br>
+Eğer fonksiyonun aldığı parametre sayısı belirsiz ise, yani farklı sayıda parametre alan fonksiyonlarla uğraşmak gerekiyorsa yanına birkaç ekleme daha yapmamız gerekiyor.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">BuyukBuyukAbi</span>(func, param):
+    func(<span style="color:#f92672">*</span>param)
+</code></pre></div><p>param parametresi bir liste olmak durumunda. Geçirilen fonksiyon kaç parametre alıyorsa listenin uzunluğu okadar olmalı.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">BuyukBuyukAbi(Merhaba, [<span style="color:#e6db74">&#34;kelebek&#34;</span>])
+Merhaba kelebek
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">HepinizeMerhaba</span>(isim1, isim2):
+    print <span style="color:#e6db74">&#34;Merhaba </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">, merhaba </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> (isim1, isim2)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">BuyukBuyukAbi(HerpinizeMerhaba, [<span style="color:#e6db74">&#34;kelebek&#34;</span>, <span style="color:#e6db74">&#34;Aşkın&#34;</span>])
+Merhaba kelebek, merhaba Aşkın
+</code></pre></div>
         
     </div>
 
@@ -544,10 +558,44 @@ def BuyukBuyukAbi(func, param): func(*param) param parametresi bir liste olmak d
     </p>
     <div class="post-entry">
         
-        Evet kışkırtıcı bir başlık attım :) Aslında yapacağımız olay bir structı nesne gibi kullanmak. Buna benzer bir kodu yıllar önce görmüştüm. O günden bu güne sürekli böyle bir şeyi nasıl yaparım diye araştırdım. Anca bugün çözebildim olayı ;) Kodu aşağıda yorum satırıyla beraber veriyorum. Yorumlarda gerekli açıklamaları yaptım.
-Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşıma bu çıktı, bende boş durmasın dedim :)
-/* * Sınıfımızı yaratıyoruz */ struct _myobject { // alt alanlar  int a, b; /* * Metod * Burada fonksiyon pointerı tanımlıyoruz */ int (*add)(struct _myobject*); }; // struct ön ekinden kurtuluyoruz typedef struct _myobject MyObject; /* * Asıl işi yapacak fonksiyonu tanımlıyoruz * MyObject structını parametre olarak alıyor */ int realAdd(MyObject* a) { return a-&gt;a + a-&gt;b; } int main ( void ) { /* * Nesnemizi oluşturuyoruz.
-        <a href="https://blog.askin.ws/blog/c-ile-nesne-yaratmak/" class="post-read-more">[Daha fazla oku]</a>
+        <p><img src="/uploads/2010/04/c3po.jpg" alt="" title="C-3PO">Evet kışkırtıcı bir başlık attım :)
+Aslında yapacağımız olay bir structı nesne gibi kullanmak. Buna benzer bir kodu yıllar önce görmüştüm. O günden bu güne sürekli böyle bir şeyi nasıl yaparım diye araştırdım. Anca bugün çözebildim olayı ;)
+Kodu aşağıda yorum satırıyla beraber veriyorum. Yorumlarda gerekli açıklamaları yaptım.</p>
+<p>Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşıma bu çıktı, bende boş durmasın dedim :)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">/*
+</span><span style="color:#75715e"> * Sınıfımızı yaratıyoruz
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">struct</span> _myobject {
+  <span style="color:#75715e">// alt alanlar
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> a, b;
+  <span style="color:#75715e">/*
+</span><span style="color:#75715e">   * Metod
+</span><span style="color:#75715e">   * Burada fonksiyon pointerı tanımlıyoruz
+</span><span style="color:#75715e">   */</span>
+  <span style="color:#66d9ef">int</span> (<span style="color:#f92672">*</span>add)(<span style="color:#66d9ef">struct</span> _myobject<span style="color:#f92672">*</span>);
+};
+
+<span style="color:#75715e">// struct ön ekinden kurtuluyoruz
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> _myobject MyObject;
+
+<span style="color:#75715e">/*
+</span><span style="color:#75715e"> * Asıl işi yapacak fonksiyonu tanımlıyoruz
+</span><span style="color:#75715e"> * MyObject structını parametre olarak alıyor
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">realAdd</span>(MyObject<span style="color:#f92672">*</span> a) {
+  <span style="color:#66d9ef">return</span> a<span style="color:#f92672">-&gt;</span>a <span style="color:#f92672">+</span> a<span style="color:#f92672">-&gt;</span>b;
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span> ( <span style="color:#66d9ef">void</span> ) {
+  <span style="color:#75715e">/*
+</span><span style="color:#75715e">   * Nesnemizi oluşturuyoruz.
+</span><span style="color:#75715e">   * add pointerına fonksiyonu atıyoruz
+</span><span style="color:#75715e">   */</span>
+  MyObject mo <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, realAdd};
+  printf(<span style="color:#e6db74">&#34;A + B = %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, mo.add(<span style="color:#f92672">&amp;</span>mo));
+  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><p>Kodun başına stdio.h headerını eklemekte fayda var. WP sıkıntı çıkarttığı için silmek zorunda kaldım. Kodun düzgün halini <a href="http://github.com/askin/misc/raw/master/fun/struct-function.c">burada</a> bulabilirsiniz.</p>
         
     </div>
 
@@ -597,9 +645,28 @@ Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşı
     </p>
     <div class="post-entry">
         
-        Gece gece uyku tutmadı var olan bir programı kurcalamaya başladım. Amacım programın sitem çekmecesinden çalışabilir hale getirmekti.
-Her şeyi yaptım fakat bir türlü pencereyi gizleyemiyordum :) Doküman gtk_window_get_mnemonics_visible () fonksiyonunu kullanmamı söylüyordu, fakat kullandığım gtk sürümünde bu fonksiyon tanımlı değildi(2.18.7). Eski sürüm için olan dokümanı incelediğimde bu işi yapan bir fonksiyon yoktu. Sistemde kurulu gtk ve python ile bu işi yapabiliyordum. Normal olarak c ile de yapabilmem lazımdı:) Biraz inceledikten sonra, önce pencereyi gizleyen, ardından boyutunu eski haline getirip sonra tekrar gösteren bir fonksiyon olduğunu fark ettim. Benim istediğim işi yapıyor fakat yanında birde fazlalığı vardı.(gtk_window_reshow_with_initial_size) İnternette biraz daha araştırıp umudumu kaybedince mecburen kaynak koda baktım.
-        <a href="https://blog.askin.ws/blog/gtk-2-18-9-pencere-gizleme-sorunu/" class="post-read-more">[Daha fazla oku]</a>
+        <p><img src="/uploads/2010/04/gtk.png" alt="Gtk" title="Gtk">Gece gece uyku tutmadı var olan bir programı kurcalamaya başladım. Amacım programın sitem çekmecesinden çalışabilir hale getirmekti.</p>
+<p>Her şeyi yaptım fakat bir türlü pencereyi gizleyemiyordum :) Doküman <em>gtk_window_get_mnemonics_visible ()</em> fonksiyonunu kullanmamı söylüyordu, fakat kullandığım gtk sürümünde bu fonksiyon tanımlı değildi(2.18.7). Eski sürüm için olan dokümanı incelediğimde bu işi yapan bir fonksiyon yoktu.
+Sistemde kurulu gtk ve python ile bu işi yapabiliyordum. Normal olarak c ile de yapabilmem lazımdı:)
+Biraz inceledikten sonra, önce pencereyi gizleyen, ardından boyutunu eski haline getirip sonra tekrar gösteren bir fonksiyon olduğunu fark ettim. Benim istediğim işi yapıyor fakat yanında birde fazlalığı vardı.(gtk_window_reshow_with_initial_size)
+İnternette biraz daha araştırıp umudumu kaybedince mecburen kaynak koda baktım.</p>
+<pre><code>grep -rHn gtk_window_reshow_with_initial_size *
+</code></pre>
+<p>bu komut bana gtk_window_reshow_with_initial_size fonksiyonun nerelerde olduğunu gösterdi.
+Bu fonksiyonunun içine bakınca istediğim kodu hemen buldum :)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C">gtk_window_reshow_with_initial_size (GtkWindow <span style="color:#f92672">*</span>window)
+{
+  GtkWidget <span style="color:#f92672">*</span>widget;
+
+  g_return_if_fail (GTK_IS_WINDOW (window));
+
+  widget <span style="color:#f92672">=</span> GTK_WIDGET (window);
+
+  gtk_widget_hide (widget);
+  gtk_widget_unrealize (widget);
+  gtk_widget_show (widget);
+}
+</code></pre></div><p>Önce pencereyi widgeta çevirebilme imkanım varmış, böyle basit bir şeyi nasıl bulamadım bilemiyorum.</p>
         
     </div>
 
@@ -649,17 +716,17 @@ Her şeyi yaptım fakat bir türlü pencereyi gizleyemiyordum :) Doküman gtk_wi
     </p>
     <div class="post-entry">
         
-        Daha önce birkaç kez yapmıştım, fakat her seferinde neler yaptığımı unutup acaba olmadı mı diye kuşkulanmıştım. En güzeli böyle bir yere yazıp gerektiğinde kopya çekmek :)
-Öncelikle bloggerda bir blogunuz olduğunu varsayıyorum :D
-Blooger hesabımıza giriş yapıyoruz.
-Şu adımları takip ediyoruz.
-Özelleştir -&gt; Ayarlar -&gt; Yayıncılık -&gt; Özel Alan-&gt; Gelişmiş Ayarlara Geçiş Yapın
-Buradaki kutuya alan adını yazın.
-&ldquo;Eksik dosya barındırma sistemini mi kullanıyorsunuz?&rdquo; kısmını olduğu gibi bırakıp, kelime doğrulamayı yapıp ayarları kaydediyoruz.
-Bu adımları geçtikten sonra google tarafında yapılacak ayarları tamamlamış oluyoruz.
-Alan adınızın bloggera yönlenmesi için CNAME kaydı oluşturmanız gerekiyor. Bunu alan adını aldığınız yerden yapacaksınız.
-CNAME kaydına değer olarak ghs.
-        <a href="https://blog.askin.ws/blog/bloggera-kendi-alan-adinizi-yonlendirme/" class="post-read-more">[Daha fazla oku]</a>
+        <p><img src="/uploads/2010/04/blogger-300x298.png" alt="Blogger" title="Blogger">Daha önce birkaç kez yapmıştım, fakat her seferinde neler yaptığımı unutup acaba olmadı mı diye kuşkulanmıştım. En güzeli böyle bir yere yazıp gerektiğinde kopya çekmek :)</p>
+<p>Öncelikle bloggerda bir blogunuz olduğunu varsayıyorum :D<br>
+Blooger hesabımıza giriş yapıyoruz.<br>
+Şu adımları takip ediyoruz.<br>
+Özelleştir -&gt; Ayarlar -&gt; Yayıncılık -&gt; Özel Alan-&gt; Gelişmiş Ayarlara Geçiş Yapın<br>
+Buradaki kutuya alan adını yazın.<br>
+&ldquo;Eksik dosya barındırma sistemini mi kullanıyorsunuz?&rdquo; kısmını olduğu gibi bırakıp, kelime doğrulamayı yapıp ayarları kaydediyoruz.</p>
+<p>Bu adımları geçtikten sonra google tarafında yapılacak ayarları tamamlamış oluyoruz.<br>
+Alan adınızın bloggera yönlenmesi için CNAME kaydı oluşturmanız gerekiyor. Bunu alan adını aldığınız yerden yapacaksınız.<br>
+CNAME kaydına değer olarak <em>ghs.google.com</em> adresini vermelisiniz. Domain firmanızın güncellenme hızına göre alan adının aktif olma süresi değişecektir.</p>
+<p>Toplam 2 adımdan oluşuyor. Akılda tutmak kolay ama alan adının yönlenmesi biraz zaman aldığından dolayı insanın içinde bir şüphe oluyor her zaman :P</p>
         
     </div>
 
@@ -711,13 +778,33 @@ CNAME kaydına değer olarak ghs.
     </p>
     <div class="post-entry">
         
-        Gtk ile çok kolay bir şekilde geliştirdiğiniz uygulamayı sistem çekmecesinde gösterebilirsiniz.
-Ufak bir örnek kod veriyorum. Onun üzerinden anlatacağım.
-import pygtk import gtk class ShowIcon: def __init__(self): self.icon = gtk.StatusIcon() self.icon.set_from_file(&#39;gtk.png&#39;) self.icon.set_tooltip_text(&#39;Hello Python!!!&#39;) self.icon.set_visible(True) self.icon.connect(&#34;activate&#34;, self.hello) gtk.main() def hello(self, widget): print &#39;Hello Python !!!&#39; if __name__ == &#39;__main__&#39;: icon = ShowIcon() 6. satırda asıl işimizi yapacak olan StatusIcon nesnesini yaratıyoruz.
-7. satırda sistem çekmecesinde hangi ikonun görüntüleneceğini belirtiyoruz. set_from_file ikonu dosyadan alacağımız anlamına geliyor. Eğer gtk&rsquo;nın sunduğu standart ikonları kullanmak istiyorsanız set_from_stock kullanmalısınız.
-icon.set_from_stock(gtk.STOCK_ABOUT) 8. satırda ikonun üzerine geldiğimizde görünmesini istediğimiz yazıyı belirliyoruz.
-9. satırda ikonun başlangıçtaki görünürlüğünü belirliyoruz. Bu satırı yazmasak da görünür başlıyor.
-        <a href="https://blog.askin.ws/blog/pygtk-ile-sistem-cekmecesi/" class="post-read-more">[Daha fazla oku]</a>
+        <p><img src="/uploads/2010/04/gtk.png" alt="Gtk" title="Gtk">Gtk ile çok kolay bir şekilde geliştirdiğiniz uygulamayı sistem çekmecesinde gösterebilirsiniz.</p>
+<p>Ufak bir örnek kod veriyorum. Onun üzerinden anlatacağım.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pygtk
+<span style="color:#f92672">import</span> gtk
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ShowIcon</span>:
+    <span style="color:#66d9ef">def</span> __init__(self):
+    self<span style="color:#f92672">.</span>icon <span style="color:#f92672">=</span> gtk<span style="color:#f92672">.</span>StatusIcon()
+        self<span style="color:#f92672">.</span>icon<span style="color:#f92672">.</span>set_from_file(<span style="color:#e6db74">&#39;gtk.png&#39;</span>)
+        self<span style="color:#f92672">.</span>icon<span style="color:#f92672">.</span>set_tooltip_text(<span style="color:#e6db74">&#39;Hello Python!!!&#39;</span>)
+        self<span style="color:#f92672">.</span>icon<span style="color:#f92672">.</span>set_visible(<span style="color:#66d9ef">True</span>)
+        self<span style="color:#f92672">.</span>icon<span style="color:#f92672">.</span>connect(<span style="color:#e6db74">&#34;activate&#34;</span>, self<span style="color:#f92672">.</span>hello)
+        gtk<span style="color:#f92672">.</span>main()
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">hello</span>(self, widget):
+        print <span style="color:#e6db74">&#39;Hello Python !!!&#39;</span>
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+    icon <span style="color:#f92672">=</span> ShowIcon()
+</code></pre></div><p>6. satırda asıl işimizi yapacak olan <em>StatusIcon</em> nesnesini yaratıyoruz.<br>
+7. satırda sistem çekmecesinde hangi ikonun görüntüleneceğini belirtiyoruz. <em>set_from_file</em> ikonu dosyadan alacağımız anlamına geliyor. Eğer gtk&rsquo;nın sunduğu standart ikonları kullanmak istiyorsanız set_from_stock kullanmalısınız.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">icon<span style="color:#f92672">.</span>set_from_stock(gtk<span style="color:#f92672">.</span>STOCK_ABOUT)
+</code></pre></div><p>8. satırda ikonun üzerine geldiğimizde görünmesini istediğimiz yazıyı belirliyoruz.<br>
+9. satırda ikonun başlangıçtaki görünürlüğünü belirliyoruz. Bu satırı yazmasak da görünür başlıyor.<br>
+10. satırda ikonun <em>&ldquo;activate&rdquo;</em> sinyali aldığında çağırmasını istediğimiz metodu belirliyoruz. Kısacası üzerine tıklandığında ne iş yapacağını belirtiyoruz. <em>&ldquo;activate&rdquo;</em> yerine <em>&ldquo;popup_menu&rdquo;</em> yazarsak ikona sağ tıkladığımızda çağrılacak metodu belirliyoruz.<br>
+11. gkt.main() haydi yapalım şu işi manasında :)</p>
+<p>Ayrıntılı dökümanı <a href="http://www.pygtk.org/docs/pygtk/class-gtkstatusicon.html">PyGtk Belgelerinde</a> bulabilirisiniz. Yukarıda verdiğim kodu ve benim kullandığım ikonu <a href="/uploads/2010/04/python-system-tray.zip">buradan</a> indirebilirsiniz.</p>
         
     </div>
 

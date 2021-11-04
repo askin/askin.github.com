@@ -14,8 +14,98 @@
       <pubDate>Fri, 03 Aug 2012 15:31:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/udp-broadcast-sunucu-istemci/</guid>
-      <description>Sunucu:
-#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;string.h&amp;gt;#include &amp;lt;sys/types.h&amp;gt;#include &amp;lt;sys/socket.h&amp;gt;#include &amp;lt;netinet/in.h&amp;gt; #define MY_PORT 3333  int main(int argc, char *argv[]) { int sockfd, new_fd; struct sockaddr_in my_addr; // hedef adres  struct sockaddr_in their_addr; // baglanti yapan adres  int sin_size, rt; // gelen verinin tutuldugu buffer  char buf[32]; // islem yapmak icin gerekli dosya gosterici  sockfd = socket(AF_INET, SOCK_DGRAM, 0); sin_size = sizeof(struct sockaddr_in); // adres ile ilgili ayarlar  my_addr.sin_family = AF_INET; my_addr.sin_port = htons(MY_PORT); // kullanilacak port  my_addr.sin_addr.s_addr = INADDR_ANY; // mevcut ip adresi  memset(&amp;amp;(my_addr.sin_zero), 0, 8); // geri kalani 0la  // socket ile dosyayi iliskilendir  bind(sockfd, (struct sockaddr *)&amp;amp;my_addr, sizeof(struct sockaddr)); while ( 1 ) { rt = recvfrom (sockfd, buf, 12, 0, (struct sockaddr *)&amp;amp;their_addr, &amp;amp;sin_size); if (rt &amp;gt; 0) { printf (&amp;#34;recv: %s\n&amp;#34;, buf); } else if (rt &amp;lt; 0) { printf(&amp;#34;Baglanti koptu\n&amp;#34;); break; } } close(sockfd); return 0; } İstemci:</description>
+      <description>&lt;p&gt;Sunucu:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;string.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;sys/types.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;sys/socket.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;netinet/in.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#define MY_PORT 3333
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; argc, &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;argv[])
+{
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; sockfd, new_fd;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; sockaddr_in my_addr;    &lt;span style=&#34;color:#75715e&#34;&gt;// hedef adres
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; sockaddr_in their_addr; &lt;span style=&#34;color:#75715e&#34;&gt;// baglanti yapan adres
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; sin_size, rt;
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;// gelen verinin tutuldugu buffer
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt; buf[&lt;span style=&#34;color:#ae81ff&#34;&gt;32&lt;/span&gt;];
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;// islem yapmak icin gerekli dosya gosterici
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    sockfd &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; socket(AF_INET, SOCK_DGRAM, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;);
+
+    sin_size &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;sizeof&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; sockaddr_in);
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;// adres ile ilgili ayarlar
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    my_addr.sin_family      &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; AF_INET;
+    my_addr.sin_port        &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; htons(MY_PORT); &lt;span style=&#34;color:#75715e&#34;&gt;// kullanilacak port
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    my_addr.sin_addr.s_addr &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; INADDR_ANY;     &lt;span style=&#34;color:#75715e&#34;&gt;// mevcut ip adresi
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    memset(&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;(my_addr.sin_zero), &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;); &lt;span style=&#34;color:#75715e&#34;&gt;// geri kalani 0la
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;// socket ile dosyayi iliskilendir
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    bind(sockfd, (&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; sockaddr &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;my_addr, &lt;span style=&#34;color:#66d9ef&#34;&gt;sizeof&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; sockaddr));
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; ( &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; ) {
+        rt &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; recvfrom (sockfd, buf, &lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, (&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; sockaddr &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;their_addr, &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;sin_size);
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (rt &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;) {
+            printf (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;recv: %s&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;, buf);
+        } &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (rt &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;) {
+            printf(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Baglanti koptu&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;);
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;;
+        }
+    }
+
+    close(sockfd);
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;İstemci:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;string.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;sys/types.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;sys/socket.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;netinet/in.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#define DEST_IP   &amp;#34;255.255.255.255&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#define DEST_PORT 3333
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; argc, &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;argv[])
+{
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; sockfd, new_fd;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; sockaddr_in dest_addr; &lt;span style=&#34;color:#75715e&#34;&gt;// hedef adres
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; sin_size, rt;
+    sin_size &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;sizeof&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; sockaddr_in);
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;// islem yapmak icin gerekli dosya gosterici
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    sockfd &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; socket(AF_INET, SOCK_DGRAM, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;);
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;// adres ile ilgili ayarlar
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    dest_addr.sin_family      &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; AF_INET;
+    dest_addr.sin_port        &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; htons(DEST_PORT);
+    dest_addr.sin_addr.s_addr &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; inet_addr(DEST_IP);
+    memset(&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;(dest_addr.sin_zero), &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;); &lt;span style=&#34;color:#75715e&#34;&gt;// geri kalani 0 la
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;// Broadcast icin gerekli yetkiyi al
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; flag &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (setsockopt (sockfd, SOL_SOCKET, SO_BROADCAST, &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;flag, &lt;span style=&#34;color:#66d9ef&#34;&gt;sizeof&lt;/span&gt;(flag)) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+        perror(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;setsockopt&amp;#34;&lt;/span&gt;);
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;// mesaji gonder
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    rt &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; sendto (sockfd, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;slm asl plz&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, (&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; sockaddr &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;dest_addr, sin_size);
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; ( rt &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; )
+        perror(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hata: &amp;#34;&lt;/span&gt;);
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;// socketi kapat
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    close(sockfd);
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -24,8 +114,62 @@
       <pubDate>Sun, 27 Feb 2011 03:08:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/linux-paralel-port-ile-2x16-lcd-ekran-kullanimi/</guid>
-      <description>Çalıştığım projede linuxta paralel port ile lcd ekran kullanmam gerekti. Neredeyse internetin altını üstüne getirdim ama işime yarar çok birşey bulamadım. Sonunda DOS için yazılmış bir kod buldum. Bu kodu biraz inceleyip, gerekli püf noktaları bulunca kodu linux&amp;rsquo;a uydurmak çok zor olmadı. Hatta neredeyse sadece kullanılan fonksiyonun adını ve parametre yerlerini değiştirdim :)
-Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read/write seçimi için kullanılıyor. Geri kalan 3 bacak güç bağlantısı ve kontrast için kullanılıyor. Burdaki şemaya göre bağlantıları yapabilirsiniz. Ayrıca örnek aldığım kodda aynı sayfada bulunmakta.</description>
+      <description>&lt;p&gt;Çalıştığım projede linuxta paralel port ile lcd ekran kullanmam gerekti. Neredeyse internetin altını üstüne getirdim ama işime yarar çok birşey bulamadım. Sonunda DOS için yazılmış bir kod buldum. Bu kodu biraz inceleyip, gerekli püf noktaları bulunca kodu linux&amp;rsquo;a uydurmak çok zor olmadı. Hatta neredeyse sadece kullanılan fonksiyonun adını ve parametre yerlerini değiştirdim :)&lt;/p&gt;
+&lt;p&gt;Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read/write seçimi için kullanılıyor. Geri kalan 3 bacak güç bağlantısı ve kontrast için kullanılıyor. &lt;a href=&#34;http://www.beyondlogic.org/parlcd/parlcd.htm&#34;&gt;Burdaki&lt;/a&gt; şemaya göre bağlantıları yapabilirsiniz. Ayrıca örnek aldığım kodda aynı sayfada bulunmakta.&lt;/p&gt;
+&lt;p&gt;Yorum satırları pek çok şeyi açıklıyor. Ama birkaç noktaya değinmekte fayda var. Data bacaklarına gerekli inputları verdikten sonra, enable bacağını 1&amp;rsquo;den 0&amp;rsquo;a düşürerek lcd&amp;rsquo;nin data bacaklarında sinyali alıp işleme sokmasını sağlıyoruz. init array&amp;rsquo;i içinde lcd&amp;rsquo;nin temizlenmesi ve çalışmaya uygun hale gelmesi için gerekli komutlar tutuluyor. 0x378 paralel portun adresi.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;string.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;stdlib.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;unistd.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;asm/io.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#define PORTADDRESS 0x378  &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;/* Enter Your Port Address Here */&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#define DATA PORTADDRESS+0
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#define STATUS PORTADDRESS+1
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#define CONTROL PORTADDRESS+2
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;()
+{
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (ioperm(DATA , &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)) {perror(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ioperm&amp;#34;&lt;/span&gt;); exit(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;);}
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt; string[] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Testing 1,2,3                           &amp;#34;&lt;/span&gt;
+                     &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;It&amp;#39; Works !                             &amp;#34;&lt;/span&gt;};
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt; init[&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;];
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; count;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; len;
+    init[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0x0F&lt;/span&gt;; &lt;span style=&#34;color:#75715e&#34;&gt;/* Init Display */&lt;/span&gt;
+    init[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0x01&lt;/span&gt;; &lt;span style=&#34;color:#75715e&#34;&gt;/* Clear Display */&lt;/span&gt;
+    init[&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0x38&lt;/span&gt;; &lt;span style=&#34;color:#75715e&#34;&gt;/* Dual Line / 8 Bits */&lt;/span&gt;
+
+    outb(inb(CONTROL) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0xDF&lt;/span&gt;, CONTROL); &lt;span style=&#34;color:#75715e&#34;&gt;/* Reset Control Port - Make sure Forward Direction */&lt;/span&gt;
+    outb(inb(CONTROL) &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0x08&lt;/span&gt;, CONTROL); &lt;span style=&#34;color:#75715e&#34;&gt;/* Set Select Printer (Register Select) */&lt;/span&gt;
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (count &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; count &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;; count&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;)
+    {
+        outb(init[count], DATA);
+        outb(inb(CONTROL) &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0x01&lt;/span&gt;, CONTROL); &lt;span style=&#34;color:#75715e&#34;&gt;/* Set Strobe (Enable)*/&lt;/span&gt;
+        usleep(&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;);                                 &lt;span style=&#34;color:#75715e&#34;&gt;/* Larger Delay for INIT */&lt;/span&gt;
+        outb(inb(CONTROL) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0xFE&lt;/span&gt;, CONTROL); &lt;span style=&#34;color:#75715e&#34;&gt;/* Reset Strobe (Enable)*/&lt;/span&gt;
+        usleep(&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;);                                 &lt;span style=&#34;color:#75715e&#34;&gt;/* Larger Delay for INIT */&lt;/span&gt;
+    }
+
+    outb(inb(CONTROL) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0xF7&lt;/span&gt;, CONTROL);  &lt;span style=&#34;color:#75715e&#34;&gt;/* Reset Select Printer (Register Select) */&lt;/span&gt;
+
+    len &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; strlen(string);
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (count &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; count &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; len; count&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;)
+    {
+        outb(string[count], DATA);
+        outb(inb(CONTROL) &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0x01&lt;/span&gt;, CONTROL); &lt;span style=&#34;color:#75715e&#34;&gt;/* Set Strobe */&lt;/span&gt;
+        usleep(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;);
+        outb(inb(CONTROL) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0xFE&lt;/span&gt;, CONTROL); &lt;span style=&#34;color:#75715e&#34;&gt;/* Reset Strobe */&lt;/span&gt;
+        usleep(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;);
+    }
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Linke birşey olması durumunda &lt;a href=&#34;https://blog.askin.ws/uploads/2011/02/parlcd.gif&#34;&gt;bu adresten gerekli şemayı indirebilirsiniz.&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -34,9 +178,44 @@ Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data v
       <pubDate>Tue, 27 Apr 2010 04:08:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/c-ile-nesne-yaratmak/</guid>
-      <description>Evet kışkırtıcı bir başlık attım :) Aslında yapacağımız olay bir structı nesne gibi kullanmak. Buna benzer bir kodu yıllar önce görmüştüm. O günden bu güne sürekli böyle bir şeyi nasıl yaparım diye araştırdım. Anca bugün çözebildim olayı ;) Kodu aşağıda yorum satırıyla beraber veriyorum. Yorumlarda gerekli açıklamaları yaptım.
-Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşıma bu çıktı, bende boş durmasın dedim :)
-/* * Sınıfımızı yaratıyoruz */ struct _myobject { // alt alanlar  int a, b; /* * Metod * Burada fonksiyon pointerı tanımlıyoruz */ int (*add)(struct _myobject*); }; // struct ön ekinden kurtuluyoruz typedef struct _myobject MyObject; /* * Asıl işi yapacak fonksiyonu tanımlıyoruz * MyObject structını parametre olarak alıyor */ int realAdd(MyObject* a) { return a-&amp;gt;a + a-&amp;gt;b; } int main ( void ) { /* * Nesnemizi oluşturuyoruz.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://blog.askin.ws/uploads/2010/04/c3po.jpg&#34; alt=&#34;&#34; title=&#34;C-3PO&#34;&gt;Evet kışkırtıcı bir başlık attım :)
+Aslında yapacağımız olay bir structı nesne gibi kullanmak. Buna benzer bir kodu yıllar önce görmüştüm. O günden bu güne sürekli böyle bir şeyi nasıl yaparım diye araştırdım. Anca bugün çözebildim olayı ;)
+Kodu aşağıda yorum satırıyla beraber veriyorum. Yorumlarda gerekli açıklamaları yaptım.&lt;/p&gt;
+&lt;p&gt;Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşıma bu çıktı, bende boş durmasın dedim :)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;/*
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; * Sınıfımızı yaratıyoruz
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; */&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; _myobject {
+  &lt;span style=&#34;color:#75715e&#34;&gt;// alt alanlar
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; a, b;
+  &lt;span style=&#34;color:#75715e&#34;&gt;/*
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;   * Metod
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;   * Burada fonksiyon pointerı tanımlıyoruz
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;   */&lt;/span&gt;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; (&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;add)(&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; _myobject&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;);
+};
+
+&lt;span style=&#34;color:#75715e&#34;&gt;// struct ön ekinden kurtuluyoruz
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;typedef&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; _myobject MyObject;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;/*
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; * Asıl işi yapacak fonksiyonu tanımlıyoruz
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; * MyObject structını parametre olarak alıyor
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; */&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;realAdd&lt;/span&gt;(MyObject&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; a) {
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; a&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;a &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; a&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;b;
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt; ( &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; ) {
+  &lt;span style=&#34;color:#75715e&#34;&gt;/*
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;   * Nesnemizi oluşturuyoruz.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;   * add pointerına fonksiyonu atıyoruz
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;   */&lt;/span&gt;
+  MyObject mo &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, realAdd};
+  printf(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;A + B = %d&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;, mo.add(&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;mo));
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Kodun başına stdio.h headerını eklemekte fayda var. WP sıkıntı çıkarttığı için silmek zorunda kaldım. Kodun düzgün halini &lt;a href=&#34;http://github.com/askin/misc/raw/master/fun/struct-function.c&#34;&gt;burada&lt;/a&gt; bulabilirsiniz.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -45,8 +224,28 @@ Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşı
       <pubDate>Thu, 08 Apr 2010 06:19:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/gtk-2-18-9-pencere-gizleme-sorunu/</guid>
-      <description>Gece gece uyku tutmadı var olan bir programı kurcalamaya başladım. Amacım programın sitem çekmecesinden çalışabilir hale getirmekti.
-Her şeyi yaptım fakat bir türlü pencereyi gizleyemiyordum :) Doküman gtk_window_get_mnemonics_visible () fonksiyonunu kullanmamı söylüyordu, fakat kullandığım gtk sürümünde bu fonksiyon tanımlı değildi(2.18.7). Eski sürüm için olan dokümanı incelediğimde bu işi yapan bir fonksiyon yoktu. Sistemde kurulu gtk ve python ile bu işi yapabiliyordum. Normal olarak c ile de yapabilmem lazımdı:) Biraz inceledikten sonra, önce pencereyi gizleyen, ardından boyutunu eski haline getirip sonra tekrar gösteren bir fonksiyon olduğunu fark ettim. Benim istediğim işi yapıyor fakat yanında birde fazlalığı vardı.(gtk_window_reshow_with_initial_size) İnternette biraz daha araştırıp umudumu kaybedince mecburen kaynak koda baktım.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://blog.askin.ws/uploads/2010/04/gtk.png&#34; alt=&#34;Gtk&#34; title=&#34;Gtk&#34;&gt;Gece gece uyku tutmadı var olan bir programı kurcalamaya başladım. Amacım programın sitem çekmecesinden çalışabilir hale getirmekti.&lt;/p&gt;
+&lt;p&gt;Her şeyi yaptım fakat bir türlü pencereyi gizleyemiyordum :) Doküman &lt;em&gt;gtk_window_get_mnemonics_visible ()&lt;/em&gt; fonksiyonunu kullanmamı söylüyordu, fakat kullandığım gtk sürümünde bu fonksiyon tanımlı değildi(2.18.7). Eski sürüm için olan dokümanı incelediğimde bu işi yapan bir fonksiyon yoktu.
+Sistemde kurulu gtk ve python ile bu işi yapabiliyordum. Normal olarak c ile de yapabilmem lazımdı:)
+Biraz inceledikten sonra, önce pencereyi gizleyen, ardından boyutunu eski haline getirip sonra tekrar gösteren bir fonksiyon olduğunu fark ettim. Benim istediğim işi yapıyor fakat yanında birde fazlalığı vardı.(gtk_window_reshow_with_initial_size)
+İnternette biraz daha araştırıp umudumu kaybedince mecburen kaynak koda baktım.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;grep -rHn gtk_window_reshow_with_initial_size *
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;bu komut bana gtk_window_reshow_with_initial_size fonksiyonun nerelerde olduğunu gösterdi.
+Bu fonksiyonunun içine bakınca istediğim kodu hemen buldum :)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-C&#34; data-lang=&#34;C&#34;&gt;gtk_window_reshow_with_initial_size (GtkWindow &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;window)
+{
+  GtkWidget &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;widget;
+
+  g_return_if_fail (GTK_IS_WINDOW (window));
+
+  widget &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; GTK_WIDGET (window);
+
+  gtk_widget_hide (widget);
+  gtk_widget_unrealize (widget);
+  gtk_widget_show (widget);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Önce pencereyi widgeta çevirebilme imkanım varmış, böyle basit bir şeyi nasıl bulamadım bilemiyorum.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -55,8 +254,96 @@ Her şeyi yaptım fakat bir türlü pencereyi gizleyemiyordum :) Doküman gtk_wi
       <pubDate>Fri, 10 Jul 2009 18:01:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/c-ile-komut-satiri-argumanlari-ve-parametreleri/</guid>
-      <description>Komut satırı programları -h yada &amp;ndash;help gibi parametreler alırlar. Bu alınan parametrelerin kolay kullanılması için getopt adında bir kütüphane yaratılmış. Bu kütüphane kullanlanılarak çok rahat böyle programlar yazılabilir. Bende bunun için küçük bir örnek yazdım.
-#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;#include &amp;lt;getopt.h&amp;gt; int print_usage ( void ); int main (int argc, char* argv[]) { int next_option; char* output; char* input; char color = 47; /** * kisa parametler burda tanimli * ardindan parametre alanlar : ile bitiyor * orn: o: bir parametre aliyor b almiyor * -o kelebek yada -b gibi */ const char* const short_options = &amp;#34;hbro:i:&amp;#34;; /** * Burdada uzun hallerini tanimliyoruz.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://blog.askin.ws/uploads/2009/07/gnome-terminal.png&#34; alt=&#34;Terminal&#34; title=&#34;Terminal&#34;&gt;Komut satırı programları -h yada &amp;ndash;help gibi parametreler alırlar. Bu alınan parametrelerin kolay kullanılması için &lt;em&gt;getopt&lt;/em&gt; adında bir kütüphane yaratılmış. Bu kütüphane kullanlanılarak çok rahat böyle programlar yazılabilir.
+Bende bunun için küçük bir örnek yazdım.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-C&#34; data-lang=&#34;C&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;stdlib.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;getopt.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;print_usage&lt;/span&gt; ( &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; );
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; argc, &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; argv[])
+{
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; next_option;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; output;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; input;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt; color &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;47&lt;/span&gt;;
+
+  &lt;span style=&#34;color:#75715e&#34;&gt;/**
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;   * kisa parametler burda tanimli
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;   *  ardindan parametre alanlar : ile bitiyor
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;   *  orn: o: bir parametre aliyor b almiyor
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;   *  -o kelebek yada -b gibi
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;   */&lt;/span&gt;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; short_options &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;hbro:i:&amp;#34;&lt;/span&gt;;
+
+  &lt;span style=&#34;color:#75715e&#34;&gt;/**
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;   * Burdada uzun hallerini tanimliyoruz.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;   *  beraberinde kisa karsiliklarida var.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;   */&lt;/span&gt;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; option long_options[] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
+    {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;help&amp;#34;&lt;/span&gt;,   no_argument, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;h&amp;#39;&lt;/span&gt;},
+    {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;blue&amp;#34;&lt;/span&gt;,   no_argument, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;b&amp;#39;&lt;/span&gt;},
+    {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;red&amp;#34;&lt;/span&gt;,    no_argument, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;r&amp;#39;&lt;/span&gt;},
+    {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;input&amp;#34;&lt;/span&gt;,  required_argument, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;i&amp;#39;&lt;/span&gt;},
+    {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;output&amp;#34;&lt;/span&gt;, required_argument, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;o&amp;#39;&lt;/span&gt;}
+  };
+
+  &lt;span style=&#34;color:#75715e&#34;&gt;/**
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;   * Burda sirayla verilen argumalari aliyoruz
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;   */&lt;/span&gt;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt; {
+    next_option &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; getopt_long(argc,
+			      argv,
+			      short_options,
+			      long_options,
+			      NULL);
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;switch&lt;/span&gt;(next_option) {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;h&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// -h or --help
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;      print_usage();
+      &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+      &lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;;
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;o&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// -o or --or
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;      output &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; optarg;
+      &lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;;
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;i&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// -i or --i
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;      input &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; optarg;
+      &lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;;
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;b&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// -b or --blue
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;      color &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;44&lt;/span&gt;;
+      &lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;;
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;r&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// -r or --red
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;      color &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;41&lt;/span&gt;;
+      &lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;;
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;
+      &lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;;
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;
+      abort();
+    }
+  } &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; (next_option &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;);
+
+  printf(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%c[%d;%dmInput : %s%c[%dm&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;27&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, color, input, &lt;span style=&#34;color:#ae81ff&#34;&gt;27&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;);
+  printf(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%c[%d;%dmOutput: %s%c[%dm&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;27&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, color, output, &lt;span style=&#34;color:#ae81ff&#34;&gt;27&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;);
+
+
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;print_usage&lt;/span&gt; ( &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; ) {
+  printf(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;   --help   or -h for help&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+	 &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;   --output or -o for output&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+	 &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;   --input  or -i for input&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+	 &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;   --blue   or -b for blue output&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+	 &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;   --red    or -r for red output&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;);
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://blog.askin.ws/uploads/2009/07/clexmp.c&#34;&gt;Örnek&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

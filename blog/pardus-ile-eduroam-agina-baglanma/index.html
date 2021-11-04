@@ -11,10 +11,32 @@
   <meta name="description" content="Pardusun ağ yöneticisi gayet şık bir arayüze sahip, fakat bize Eduroam ağına bağlanma özelliği sunmuyor.
 Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız için yeterli. Bu araçlar wpa_supplicant ve dhcpcd. Wpa_supplicant ağda kimlik denetimini sağlamak için, dhcpcd ise ağdan ip almamız için gerekli.
 Öncelikle wpa_supplicant için ayar dosyası oluşturmamız gerekiyor.
-network={ ssid=&quot;eduroam&quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap=TTLS phase2=&quot;auth=PAP&quot; anonymous_identity=&quot;anonymous@ogr.deu.edu.tr&quot; identity=&quot;ogrencinumarasi@ogr.deu.edu.tr&quot; password=&quot;sifre&quot; } Bu ayarlar Dokuz Eylül Üniversitesi için. Kendi okulunuza göre düzenlemeniz gerekiyor. Sadece ogr.deu.edu.tr adresi yerine kendi okulunuzun adresini yazmalısınız.
+network={
+        ssid=&quot;eduroam&quot;
+        key_mgmt=WPA-EAP
+        pairwise=TKIP
+        group=TKIP
+        eap=TTLS
+        phase2=&quot;auth=PAP&quot;
+        anonymous_identity=&quot;anonymous@ogr.deu.edu.tr&quot;
+        identity=&quot;ogrencinumarasi@ogr.deu.edu.tr&quot;
+        password=&quot;sifre&quot;
+}
+Bu ayarlar Dokuz Eylül Üniversitesi için. Kendi okulunuza göre düzenlemeniz gerekiyor. Sadece ogr.deu.edu.tr adresi yerine kendi okulunuzun adresini yazmalısınız.
 Bu dosyayı /etc/wpa_supplicant.con adıyla kaydediyoruz.
 Sıra geldi wpa_supplicantı çalıştırmaya.
-wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf -D parametresi hangi sürücüyü kullanacağımızı belirtiyor.">
+wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf
+-D parametresi hangi sürücüyü kullanacağımızı belirtiyor. Wpa_supplicantın man dosyalarına bakarak kendinize uygun bir sürücü seçebilirsiniz.
+-i hangi arayüzü kullanacağınızı belirtiyor. Genellikle wlan0 dır. iwconfig komutunun çıktısı size kablosuz ağ kartlarını gösterecektir.
+-c ile ayar dosyamızın yerini belirtiyoruz.
+Eğer bu komut başarılı olursa artık ip alabiliriz.
+dhcpcd wlan0
+Eğer bu komutta başarılı olduysa artık internete bağlanabilirsiniz hayırlı olsun :)
+Bu işlemi kolaylaştırmak için pem adında bi script yazdım.
+git clone git://github.com/askin/pem.git
+Bu komutla pem&rsquo;e ulaşabilirsiniz.
+Bu aracı daha fazla geliştirecektim fakat ağ yöneticisiyle bu işleri nasıl yapabileceğimi öğrendim. Bugün oturup biraz network-managerın kodlarıyla uğraştım. Sanırım pazartesi günü bu işi ağ yöneticisiyle kolayca yapılabilecek bir hale getirebilirim. Şimdilik en güzel yöntem bu gibi :)
+Ayrıca sevgili dostum Mete bu işin wicd kullanarak nasıl yapıldığını daha önce yazmış buradan o yazıya ulaşabilirsiniz.">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -63,7 +85,7 @@ wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf -D parametresi hangi s�
     "name" : "Aşkın Özgür"
   },
   "headline": "Pardus ile Eduroam ağına bağlanma",
-  "description" : "Pardusun ağ yöneticisi gayet şık bir arayüze sahip, fakat bize Eduroam ağına bağlanma özelliği sunmuyor.\nAncak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız için yeterli. Bu araçlar wpa_supplicant ve dhcpcd. Wpa_supplicant ağda kimlik denetimini sağlamak için, dhcpcd ise ağdan ip almamız için gerekli.\nÖncelikle wpa_supplicant için ayar dosyası oluşturmamız gerekiyor.\nnetwork={ ssid=\u0026quot;eduroam\u0026quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap=TTLS phase2=\u0026quot;auth=PAP\u0026quot; anonymous_identity=\u0026quot;anonymous@ogr.deu.edu.tr\u0026quot; identity=\u0026quot;ogrencinumarasi@ogr.deu.edu.tr\u0026quot; password=\u0026quot;sifre\u0026quot; } Bu ayarlar Dokuz Eylül Üniversitesi için. Kendi okulunuza göre düzenlemeniz gerekiyor. Sadece ogr.deu.edu.tr adresi yerine kendi okulunuzun adresini yazmalısınız.\nBu dosyayı \/etc\/wpa_supplicant.con adıyla kaydediyoruz.\nSıra geldi wpa_supplicantı çalıştırmaya.\nwpa_supplicant -Dwext -iwlan0 -c\/etc\/wpa_supplicant.conf -D parametresi hangi sürücüyü kullanacağımızı belirtiyor.",
+  "description" : "Pardusun ağ yöneticisi gayet şık bir arayüze sahip, fakat bize Eduroam ağına bağlanma özelliği sunmuyor.\nAncak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız için yeterli. Bu araçlar wpa_supplicant ve dhcpcd. Wpa_supplicant ağda kimlik denetimini sağlamak için, dhcpcd ise ağdan ip almamız için gerekli.\nÖncelikle wpa_supplicant için ayar dosyası oluşturmamız gerekiyor.\nnetwork={ ssid=\u0026quot;eduroam\u0026quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap=TTLS phase2=\u0026quot;auth=PAP\u0026quot; anonymous_identity=\u0026quot;anonymous@ogr.deu.edu.tr\u0026quot; identity=\u0026quot;ogrencinumarasi@ogr.deu.edu.tr\u0026quot; password=\u0026quot;sifre\u0026quot; } Bu ayarlar Dokuz Eylül Üniversitesi için. Kendi okulunuza göre düzenlemeniz gerekiyor. Sadece ogr.deu.edu.tr adresi yerine kendi okulunuzun adresini yazmalısınız.\nBu dosyayı \/etc\/wpa_supplicant.con adıyla kaydediyoruz.\nSıra geldi wpa_supplicantı çalıştırmaya.\nwpa_supplicant -Dwext -iwlan0 -c\/etc\/wpa_supplicant.conf -D parametresi hangi sürücüyü kullanacağımızı belirtiyor. Wpa_supplicantın man dosyalarına bakarak kendinize uygun bir sürücü seçebilirsiniz.\n-i hangi arayüzü kullanacağınızı belirtiyor. Genellikle wlan0 dır. iwconfig komutunun çıktısı size kablosuz ağ kartlarını gösterecektir.\n-c ile ayar dosyamızın yerini belirtiyoruz.\nEğer bu komut başarılı olursa artık ip alabiliriz.\ndhcpcd wlan0 Eğer bu komutta başarılı olduysa artık internete bağlanabilirsiniz hayırlı olsun :)\nBu işlemi kolaylaştırmak için pem adında bi script yazdım.\ngit clone git:\/\/github.com\/askin\/pem.git Bu komutla pem\u0026rsquo;e ulaşabilirsiniz.\nBu aracı daha fazla geliştirecektim fakat ağ yöneticisiyle bu işleri nasıl yapabileceğimi öğrendim. Bugün oturup biraz network-managerın kodlarıyla uğraştım. Sanırım pazartesi günü bu işi ağ yöneticisiyle kolayca yapılabilecek bir hale getirebilirim. Şimdilik en güzel yöntem bu gibi :)\nAyrıca sevgili dostum Mete bu işin wicd kullanarak nasıl yapıldığını daha önce yazmış buradan o yazıya ulaşabilirsiniz.\n",
   "inLanguage" : "tr",
   "wordCount":  226 ,
   "datePublished" : "2009-12-05T02:02:00",
@@ -88,10 +110,32 @@ wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf -D parametresi hangi s�
 <meta property="og:description" content="Pardusun ağ yöneticisi gayet şık bir arayüze sahip, fakat bize Eduroam ağına bağlanma özelliği sunmuyor.
 Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız için yeterli. Bu araçlar wpa_supplicant ve dhcpcd. Wpa_supplicant ağda kimlik denetimini sağlamak için, dhcpcd ise ağdan ip almamız için gerekli.
 Öncelikle wpa_supplicant için ayar dosyası oluşturmamız gerekiyor.
-network={ ssid=&quot;eduroam&quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap=TTLS phase2=&quot;auth=PAP&quot; anonymous_identity=&quot;anonymous@ogr.deu.edu.tr&quot; identity=&quot;ogrencinumarasi@ogr.deu.edu.tr&quot; password=&quot;sifre&quot; } Bu ayarlar Dokuz Eylül Üniversitesi için. Kendi okulunuza göre düzenlemeniz gerekiyor. Sadece ogr.deu.edu.tr adresi yerine kendi okulunuzun adresini yazmalısınız.
+network={
+        ssid=&quot;eduroam&quot;
+        key_mgmt=WPA-EAP
+        pairwise=TKIP
+        group=TKIP
+        eap=TTLS
+        phase2=&quot;auth=PAP&quot;
+        anonymous_identity=&quot;anonymous@ogr.deu.edu.tr&quot;
+        identity=&quot;ogrencinumarasi@ogr.deu.edu.tr&quot;
+        password=&quot;sifre&quot;
+}
+Bu ayarlar Dokuz Eylül Üniversitesi için. Kendi okulunuza göre düzenlemeniz gerekiyor. Sadece ogr.deu.edu.tr adresi yerine kendi okulunuzun adresini yazmalısınız.
 Bu dosyayı /etc/wpa_supplicant.con adıyla kaydediyoruz.
 Sıra geldi wpa_supplicantı çalıştırmaya.
-wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf -D parametresi hangi sürücüyü kullanacağımızı belirtiyor.">
+wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf
+-D parametresi hangi sürücüyü kullanacağımızı belirtiyor. Wpa_supplicantın man dosyalarına bakarak kendinize uygun bir sürücü seçebilirsiniz.
+-i hangi arayüzü kullanacağınızı belirtiyor. Genellikle wlan0 dır. iwconfig komutunun çıktısı size kablosuz ağ kartlarını gösterecektir.
+-c ile ayar dosyamızın yerini belirtiyoruz.
+Eğer bu komut başarılı olursa artık ip alabiliriz.
+dhcpcd wlan0
+Eğer bu komutta başarılı olduysa artık internete bağlanabilirsiniz hayırlı olsun :)
+Bu işlemi kolaylaştırmak için pem adında bi script yazdım.
+git clone git://github.com/askin/pem.git
+Bu komutla pem&rsquo;e ulaşabilirsiniz.
+Bu aracı daha fazla geliştirecektim fakat ağ yöneticisiyle bu işleri nasıl yapabileceğimi öğrendim. Bugün oturup biraz network-managerın kodlarıyla uğraştım. Sanırım pazartesi günü bu işi ağ yöneticisiyle kolayca yapılabilecek bir hale getirebilirim. Şimdilik en güzel yöntem bu gibi :)
+Ayrıca sevgili dostum Mete bu işin wicd kullanarak nasıl yapıldığını daha önce yazmış buradan o yazıya ulaşabilirsiniz.">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
 <meta property="og:url" content="https://blog.askin.ws/blog/pardus-ile-eduroam-agina-baglanma/" />
 <meta property="og:type" content="website" />
@@ -289,7 +333,6 @@ Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız iç
 </code></pre></div><p>Bu komutla pem&rsquo;e ulaşabilirsiniz.<br>
 Bu aracı daha fazla geliştirecektim fakat ağ yöneticisiyle bu işleri nasıl yapabileceğimi öğrendim. Bugün oturup biraz network-managerın kodlarıyla uğraştım. Sanırım pazartesi günü bu işi ağ yöneticisiyle kolayca yapılabilecek bir hale getirebilirim. Şimdilik en güzel yöntem bu gibi :)</p>
 <p>Ayrıca sevgili dostum <a href="http://blog.metebilgin.com/">Mete</a> bu işin wicd kullanarak nasıl yapıldığını daha önce yazmış <a href="http://blog.metebilgin.com/2009/10/pardus-2009-da-eduroam-kafay-yemeden.html">buradan</a> o yazıya ulaşabilirsiniz.</p>
-
 
         
           <div class="blog-tags">

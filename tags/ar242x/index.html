@@ -230,20 +230,19 @@
     </p>
     <div class="post-entry">
         
-        Pardus 2008 kurulumla beraber Atheros AR242x kablosuz ağ kartını tanıyor, fakat nedense başka ağları görmesine rağmen evimde WPA2 ile kurulu kablosuz ağımı göremiyordu. Bende diğer dağıtımlarda kullandığım ndiswrapper ile sorunumu çözmeyi denedim.
-Öncelikle ndiswrapperı kurduktan sonra windows için yazılmış driverları seçmemiz gerekiyor. Ardından
-/etc/modules.autoload.d/kernel-2.6
-dosyasına
-ndiswrapper
-satırını ve
-/etc/modprobe.d/blacklist-compat
-dosyasına da
-blacklist ath_pci
-satırını eklemek gerekiyor. Bunları ekledikten sonra kde&rsquo;de ağ programcığıyla bağlanabiliyorsunuz.
-Fakat XFCE kullanıyorsanız wicd kullanmanız gerekiyor. Wicd ile doğrudan kullanamıyoruz. Öncelikle birkaç ufak düzenleme yapmak gerekiyor.
-Wicd -&gt; Tercihler yolunu takip ettikten sonra WPA Suplicant Sürücüsü: kısmına wext, Kablosuz arabirim kısmına da wlan0 yazmak gerekiyor.
-Bu ayarlarla kolaylıkla kullanabilirsiniz, kolay gelsin.
-        <a href="https://blog.askin.ws/blog/pardus-atheros-ar242x-wpa2/" class="post-read-more">[Daha fazla oku]</a>
+        <p><img src="/uploads/2009/06/wifi.jpeg" alt="Wi-Fi" title="Wi-Fi">Pardus 2008 kurulumla beraber Atheros AR242x kablosuz ağ kartını tanıyor, fakat nedense başka ağları görmesine rağmen evimde WPA2 ile kurulu kablosuz ağımı göremiyordu. Bende diğer dağıtımlarda kullandığım ndiswrapper ile sorunumu çözmeyi denedim.<br>
+Öncelikle ndiswrapperı kurduktan sonra windows için yazılmış driverları seçmemiz gerekiyor. Ardından<br>
+<code>/etc/modules.autoload.d/kernel-2.6</code><br>
+dosyasına<br>
+<code>ndiswrapper</code><br>
+satırını ve<br>
+<code>/etc/modprobe.d/blacklist-compat</code><br>
+dosyasına da<br>
+<code>blacklist ath_pci</code><br>
+satırını eklemek gerekiyor. Bunları ekledikten sonra kde&rsquo;de ağ programcığıyla bağlanabiliyorsunuz.<br>
+Fakat XFCE kullanıyorsanız wicd kullanmanız gerekiyor. Wicd ile doğrudan kullanamıyoruz. Öncelikle birkaç ufak düzenleme yapmak gerekiyor.<br>
+Wicd -&gt; Tercihler yolunu takip ettikten sonra WPA Suplicant Sürücüsü: kısmına <em>wext</em>, Kablosuz arabirim kısmına da <em>wlan0</em> yazmak gerekiyor.<br>
+Bu ayarlarla kolaylıkla kullanabilirsiniz, kolay gelsin.</p>
         
     </div>
 

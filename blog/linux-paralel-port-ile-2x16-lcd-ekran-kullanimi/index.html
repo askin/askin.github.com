@@ -9,7 +9,61 @@
 
   <title>Linux, Paralel Port ile 2x16 LCD Ekran Kullanımı - Aşkın Özgür</title>
   <meta name="description" content="Çalıştığım projede linuxta paralel port ile lcd ekran kullanmam gerekti. Neredeyse internetin altını üstüne getirdim ama işime yarar çok birşey bulamadım. Sonunda DOS için yazılmış bir kod buldum. Bu kodu biraz inceleyip, gerekli püf noktaları bulunca kodu linux&rsquo;a uydurmak çok zor olmadı. Hatta neredeyse sadece kullanılan fonksiyonun adını ve parametre yerlerini değiştirdim :)
-Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read/write seçimi için kullanılıyor. Geri kalan 3 bacak güç bağlantısı ve kontrast için kullanılıyor. Burdaki şemaya göre bağlantıları yapabilirsiniz. Ayrıca örnek aldığım kodda aynı sayfada bulunmakta.">
+Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read/write seçimi için kullanılıyor. Geri kalan 3 bacak güç bağlantısı ve kontrast için kullanılıyor. Burdaki şemaya göre bağlantıları yapabilirsiniz. Ayrıca örnek aldığım kodda aynı sayfada bulunmakta.
+Yorum satırları pek çok şeyi açıklıyor. Ama birkaç noktaya değinmekte fayda var. Data bacaklarına gerekli inputları verdikten sonra, enable bacağını 1&rsquo;den 0&rsquo;a düşürerek lcd&rsquo;nin data bacaklarında sinyali alıp işleme sokmasını sağlıyoruz. init array&rsquo;i içinde lcd&rsquo;nin temizlenmesi ve çalışmaya uygun hale gelmesi için gerekli komutlar tutuluyor. 0x378 paralel portun adresi.
+#include &lt;string.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;asm/io.h&gt;
+
+#define PORTADDRESS 0x378  /* Enter Your Port Address Here */
+
+#define DATA PORTADDRESS&#43;0
+#define STATUS PORTADDRESS&#43;1
+#define CONTROL PORTADDRESS&#43;2
+
+int main()
+{
+    if (ioperm(DATA , 3, 1)) {perror(&#34;ioperm&#34;); exit(1);}
+    char string[] = {&#34;Testing 1,2,3                           &#34;
+                     &#34;It&#39; Works !                             &#34;};
+
+    char init[10];
+    int count;
+    int len;
+    init[0] = 0x0F; /* Init Display */
+    init[1] = 0x01; /* Clear Display */
+    init[2] = 0x38; /* Dual Line / 8 Bits */
+
+    outb(inb(CONTROL) &amp; 0xDF, CONTROL); /* Reset Control Port - Make sure Forward Direction */
+    outb(inb(CONTROL) | 0x08, CONTROL); /* Set Select Printer (Register Select) */
+
+    for (count = 0; count &lt; = 2; count&#43;&#43;)
+    {
+        outb(init[count], DATA);
+        outb(inb(CONTROL) | 0x01, CONTROL); /* Set Strobe (Enable)*/
+        usleep(20);                                 /* Larger Delay for INIT */
+        outb(inb(CONTROL) &amp; 0xFE, CONTROL); /* Reset Strobe (Enable)*/
+        usleep(20);                                 /* Larger Delay for INIT */
+    }
+
+    outb(inb(CONTROL) &amp; 0xF7, CONTROL);  /* Reset Select Printer (Register Select) */
+
+    len = strlen(string);
+
+    for (count = 0; count &lt; len; count&#43;&#43;)
+    {
+        outb(string[count], DATA);
+        outb(inb(CONTROL) | 0x01, CONTROL); /* Set Strobe */
+        usleep(2);
+        outb(inb(CONTROL) &amp; 0xFE, CONTROL); /* Reset Strobe */
+        usleep(2);
+    }
+
+    return 0;
+}
+Linke birşey olması durumunda bu adresten gerekli şemayı indirebilirsiniz.">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -58,7 +112,7 @@ Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data v
     "name" : "Aşkın Özgür"
   },
   "headline": "Linux, Paralel Port ile 2x16 LCD Ekran Kullanımı",
-  "description" : "Çalıştığım projede linuxta paralel port ile lcd ekran kullanmam gerekti. Neredeyse internetin altını üstüne getirdim ama işime yarar çok birşey bulamadım. Sonunda DOS için yazılmış bir kod buldum. Bu kodu biraz inceleyip, gerekli püf noktaları bulunca kodu linux\u0026rsquo;a uydurmak çok zor olmadı. Hatta neredeyse sadece kullanılan fonksiyonun adını ve parametre yerlerini değiştirdim :)\nAslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read\/write seçimi için kullanılıyor. Geri kalan 3 bacak güç bağlantısı ve kontrast için kullanılıyor. Burdaki şemaya göre bağlantıları yapabilirsiniz. Ayrıca örnek aldığım kodda aynı sayfada bulunmakta.",
+  "description" : "Çalıştığım projede linuxta paralel port ile lcd ekran kullanmam gerekti. Neredeyse internetin altını üstüne getirdim ama işime yarar çok birşey bulamadım. Sonunda DOS için yazılmış bir kod buldum. Bu kodu biraz inceleyip, gerekli püf noktaları bulunca kodu linux\u0026rsquo;a uydurmak çok zor olmadı. Hatta neredeyse sadece kullanılan fonksiyonun adını ve parametre yerlerini değiştirdim :)\nAslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read\/write seçimi için kullanılıyor. Geri kalan 3 bacak güç bağlantısı ve kontrast için kullanılıyor. Burdaki şemaya göre bağlantıları yapabilirsiniz. Ayrıca örnek aldığım kodda aynı sayfada bulunmakta.\nYorum satırları pek çok şeyi açıklıyor. Ama birkaç noktaya değinmekte fayda var. Data bacaklarına gerekli inputları verdikten sonra, enable bacağını 1\u0026rsquo;den 0\u0026rsquo;a düşürerek lcd\u0026rsquo;nin data bacaklarında sinyali alıp işleme sokmasını sağlıyoruz. init array\u0026rsquo;i içinde lcd\u0026rsquo;nin temizlenmesi ve çalışmaya uygun hale gelmesi için gerekli komutlar tutuluyor. 0x378 paralel portun adresi.\n#include \u0026lt;string.h\u0026gt;#include \u0026lt;stdio.h\u0026gt;#include \u0026lt;stdlib.h\u0026gt;#include \u0026lt;unistd.h\u0026gt;#include \u0026lt;asm\/io.h\u0026gt; #define PORTADDRESS 0x378 \/* Enter Your Port Address Here *\/ #define DATA PORTADDRESS\u002b0 #define STATUS PORTADDRESS\u002b1 #define CONTROL PORTADDRESS\u002b2  int main() { if (ioperm(DATA , 3, 1)) {perror(\u0026#34;ioperm\u0026#34;); exit(1);} char string[] = {\u0026#34;Testing 1,2,3 \u0026#34; \u0026#34;It\u0026#39; Works ! \u0026#34;}; char init[10]; int count; int len; init[0] = 0x0F; \/* Init Display *\/ init[1] = 0x01; \/* Clear Display *\/ init[2] = 0x38; \/* Dual Line \/ 8 Bits *\/ outb(inb(CONTROL) \u0026amp; 0xDF, CONTROL); \/* Reset Control Port - Make sure Forward Direction *\/ outb(inb(CONTROL) | 0x08, CONTROL); \/* Set Select Printer (Register Select) *\/ for (count = 0; count \u0026lt; = 2; count\u002b\u002b) { outb(init[count], DATA); outb(inb(CONTROL) | 0x01, CONTROL); \/* Set Strobe (Enable)*\/ usleep(20); \/* Larger Delay for INIT *\/ outb(inb(CONTROL) \u0026amp; 0xFE, CONTROL); \/* Reset Strobe (Enable)*\/ usleep(20); \/* Larger Delay for INIT *\/ } outb(inb(CONTROL) \u0026amp; 0xF7, CONTROL); \/* Reset Select Printer (Register Select) *\/ len = strlen(string); for (count = 0; count \u0026lt; len; count\u002b\u002b) { outb(string[count], DATA); outb(inb(CONTROL) | 0x01, CONTROL); \/* Set Strobe *\/ usleep(2); outb(inb(CONTROL) \u0026amp; 0xFE, CONTROL); \/* Reset Strobe *\/ usleep(2); } return 0; } Linke birşey olması durumunda bu adresten gerekli şemayı indirebilirsiniz.\n",
   "inLanguage" : "tr",
   "wordCount":  354 ,
   "datePublished" : "2011-02-27T03:08:00",
@@ -81,7 +135,61 @@ Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data v
 
 <meta property="og:title" content="Linux, Paralel Port ile 2x16 LCD Ekran Kullanımı" />
 <meta property="og:description" content="Çalıştığım projede linuxta paralel port ile lcd ekran kullanmam gerekti. Neredeyse internetin altını üstüne getirdim ama işime yarar çok birşey bulamadım. Sonunda DOS için yazılmış bir kod buldum. Bu kodu biraz inceleyip, gerekli püf noktaları bulunca kodu linux&rsquo;a uydurmak çok zor olmadı. Hatta neredeyse sadece kullanılan fonksiyonun adını ve parametre yerlerini değiştirdim :)
-Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read/write seçimi için kullanılıyor. Geri kalan 3 bacak güç bağlantısı ve kontrast için kullanılıyor. Burdaki şemaya göre bağlantıları yapabilirsiniz. Ayrıca örnek aldığım kodda aynı sayfada bulunmakta.">
+Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read/write seçimi için kullanılıyor. Geri kalan 3 bacak güç bağlantısı ve kontrast için kullanılıyor. Burdaki şemaya göre bağlantıları yapabilirsiniz. Ayrıca örnek aldığım kodda aynı sayfada bulunmakta.
+Yorum satırları pek çok şeyi açıklıyor. Ama birkaç noktaya değinmekte fayda var. Data bacaklarına gerekli inputları verdikten sonra, enable bacağını 1&rsquo;den 0&rsquo;a düşürerek lcd&rsquo;nin data bacaklarında sinyali alıp işleme sokmasını sağlıyoruz. init array&rsquo;i içinde lcd&rsquo;nin temizlenmesi ve çalışmaya uygun hale gelmesi için gerekli komutlar tutuluyor. 0x378 paralel portun adresi.
+#include &lt;string.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;asm/io.h&gt;
+
+#define PORTADDRESS 0x378  /* Enter Your Port Address Here */
+
+#define DATA PORTADDRESS&#43;0
+#define STATUS PORTADDRESS&#43;1
+#define CONTROL PORTADDRESS&#43;2
+
+int main()
+{
+    if (ioperm(DATA , 3, 1)) {perror(&#34;ioperm&#34;); exit(1);}
+    char string[] = {&#34;Testing 1,2,3                           &#34;
+                     &#34;It&#39; Works !                             &#34;};
+
+    char init[10];
+    int count;
+    int len;
+    init[0] = 0x0F; /* Init Display */
+    init[1] = 0x01; /* Clear Display */
+    init[2] = 0x38; /* Dual Line / 8 Bits */
+
+    outb(inb(CONTROL) &amp; 0xDF, CONTROL); /* Reset Control Port - Make sure Forward Direction */
+    outb(inb(CONTROL) | 0x08, CONTROL); /* Set Select Printer (Register Select) */
+
+    for (count = 0; count &lt; = 2; count&#43;&#43;)
+    {
+        outb(init[count], DATA);
+        outb(inb(CONTROL) | 0x01, CONTROL); /* Set Strobe (Enable)*/
+        usleep(20);                                 /* Larger Delay for INIT */
+        outb(inb(CONTROL) &amp; 0xFE, CONTROL); /* Reset Strobe (Enable)*/
+        usleep(20);                                 /* Larger Delay for INIT */
+    }
+
+    outb(inb(CONTROL) &amp; 0xF7, CONTROL);  /* Reset Select Printer (Register Select) */
+
+    len = strlen(string);
+
+    for (count = 0; count &lt; len; count&#43;&#43;)
+    {
+        outb(string[count], DATA);
+        outb(inb(CONTROL) | 0x01, CONTROL); /* Set Strobe */
+        usleep(2);
+        outb(inb(CONTROL) &amp; 0xFE, CONTROL); /* Reset Strobe */
+        usleep(2);
+    }
+
+    return 0;
+}
+Linke birşey olması durumunda bu adresten gerekli şemayı indirebilirsiniz.">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
 <meta property="og:url" content="https://blog.askin.ws/blog/linux-paralel-port-ile-2x16-lcd-ekran-kullanimi/" />
 <meta property="og:type" content="website" />
@@ -305,7 +413,6 @@ Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data v
     <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 }
 </code></pre></div><p>Linke birşey olması durumunda <a href="/uploads/2011/02/parlcd.gif">bu adresten gerekli şemayı indirebilirsiniz.</a></p>
-
 
         
           <div class="blog-tags">

@@ -15,11 +15,9 @@
       <pubDate>Sat, 13 Jul 2013 15:50:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/listeler-ile-ilgili-garip-bir-dokuman/</guid>
-      <description>Bu yazı oluşturulurken http://www.pythonforbeginners.com/python-lists-cheat-sheet/ adresindeki yazı referans alınmıştır. Bir çok yeri doğrudan çeviri olmakla beraber bir kısmını kendim baştan yazdım. Yazım - Mantık hataları vs. bulursanız yorum yazmaktan çekinmeyin.
- Liste Nedir?  Bir veya birden fazla elemanı tutmak için kullanılan en basit veri yapısıdır. Liste elemanlar topluluğudur (string, integer ve hatta diğer listeler). Listedeki her bir elemana index değeri atanır.
-Listeler köşeli parantezler ile açılıp kapatılır. Listedeki her bir eleman virgül ile ayrılır. Stringlerin aksine listeler mutable - değişkendir, bunun manası listeler değiştirilebilir.
- Liste Yaratma  Listeler köşeli parantez ile açılıp kapatılan, virgülle ayrılmış elamanlarla yaratılır.
-Listeler bir takım değerler tutar (aynı stringlerin karakter serileri barındırması gibi).</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Bu yazı oluşturulurken &lt;a href=&#34;http://www.pythonforbeginners.com/python-lists-cheat-sheet/&#34;&gt;http://www.pythonforbeginners.com/python-lists-cheat-sheet/&lt;/a&gt; adresindeki yazı referans alınmıştır. Bir çok yeri doğrudan çeviri olmakla beraber bir kısmını kendim baştan yazdım. Yazım - Mantık hataları vs. bulursanız yorum yazmaktan çekinmeyin.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
   </channel>

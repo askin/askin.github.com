@@ -26,11 +26,7 @@ du -sh .[!.]* * | sort -h Bu komutun da biraz sıkıntılar var. Mesela dosya is
       <pubDate>Fri, 15 Nov 2013 17:17:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/screen-ile-irssi-kullanim-kilavuzu/</guid>
-      <description>irssi komut satırından çalışan ve bir çok geliştirici için popüler olan bir IRC istemcisidir. Irssi GNU Screen programı ile birlikte kullanılarak çıkış yapmadan bir veya birden fazla kabuk yaratabilirsiniz. Sürekli biligisayar değiltirip fakat irssi&amp;rsquo;a kaldığınız yerden devam etmek istediğinizde çok kullanılışılır.
-Avantajları:
- Kişiler size mesaj bırakabilir. Siz dışardayken yapılan görüşmeleri sonradan yakalayabilirsiniz (genellikle &amp;ldquo;scroolback&amp;rdquo; olarak adlandırılır).  Yönergeler:
-  Bir adet linux VPS edinin ya da sık sık yeniden başlatılmayacak, ihtiyacınız olan yerden bağlanabileceğiniz *nix makina üzerinde ssh hesabı edinin.
-  Bu hesaba bağlanmak için ssh kullanın. Windowsta PuTTY gibi bir istemci kullanın. Eğer Linux yada Unix temelli bir işletim sistemi kullanıyorsanız zaten ssh kuruludur.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.irssi.org/&#34; title=&#34;irssi web sitesi&#34;&gt;irssi&lt;/a&gt; komut satırından çalışan ve bir çok geliştirici için popüler olan bir IRC istemcisidir. Irssi &lt;a href=&#34;http://en.wikipedia.org/wiki/GNU_Screen&#34; title=&#34;Screen Wiki Sayfası&#34;&gt;GNU Screen&lt;/a&gt; programı ile birlikte kullanılarak çıkış yapmadan bir veya birden fazla kabuk yaratabilirsiniz. Sürekli biligisayar değiltirip fakat irssi&amp;rsquo;a kaldığınız yerden devam etmek istediğinizde çok kullanılışılır.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -39,11 +35,24 @@ Avantajları:
       <pubDate>Sun, 24 Mar 2013 20:39:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/usb-bellek-uzerinde-raspberry-pi/</guid>
-      <description>Malesef sd kart olmadan raspberry pi&amp;rsquo;yı boot etmemiz mümkün olmuyor. Benim elimde 1GB&amp;rsquo;lık bir sd kart vardı ve 2GB dan daha ufak imaj dosyaları bulamadım. Bu nedenle usb bellek ile boot etme ihtiyacı duydum.
-Benim sistemimde usb bellek ve sd kart aşağıdaki şekilde tanındı:
- usb: /dev/sdd sd: /dev/sde  Öncelikle indirdiğimiz imaj dosyasını usb belleğimize kopyalıyoruz
-dd if=2013-02-09-wheezy-raspbian.img of=/dev/sdd  Elimizde bulunan sd karta 1 adet fat32 bölüm oluşturuyoruz (oluşturduğunuz bölüm hem ilk sırada hem de birincil bir bölüm olmalı). Bunu ister Gparted gibi bir araçla yapın isterseniz fdisk kullanın. Bölümleme işlemlerini yaptıktan sonra aşağıdaki komutları uygulayın.
-mkdir /tmp/mnt_sd /tmp/mnt_usb mount /dev/sdd1 /tmp/mnt_usb mount /dev/sde1 /tmp/mnt_sd cp /tmp/mnt_usb/* /tmp/mnt_sd  Bu işlemleri yaptıktan sonra /tmp/mnt_sd/cmdline.</description>
+      <description>&lt;p&gt;Malesef sd kart olmadan raspberry pi&amp;rsquo;yı boot etmemiz mümkün olmuyor. Benim elimde 1GB&amp;rsquo;lık bir sd kart vardı ve 2GB dan daha ufak imaj dosyaları bulamadım. Bu nedenle usb bellek ile boot etme ihtiyacı duydum.&lt;br&gt;
+Benim sistemimde usb bellek ve sd kart aşağıdaki şekilde tanındı:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;usb: /dev/sdd&lt;/li&gt;
+&lt;li&gt;sd: /dev/sde&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Öncelikle indirdiğimiz imaj dosyasını usb belleğimize kopyalıyoruz&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;dd if=2013-02-09-wheezy-raspbian.img of=/dev/sdd
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Elimizde bulunan sd karta 1 adet fat32 bölüm oluşturuyoruz (oluşturduğunuz bölüm hem ilk sırada hem de birincil bir bölüm olmalı). Bunu ister Gparted gibi bir araçla yapın isterseniz fdisk kullanın. Bölümleme işlemlerini yaptıktan sonra aşağıdaki komutları uygulayın.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mkdir /tmp/mnt_sd /tmp/mnt_usb
+mount /dev/sdd1 /tmp/mnt_usb
+mount /dev/sde1 /tmp/mnt_sd
+
+cp /tmp/mnt_usb/* /tmp/mnt_sd
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Bu işlemleri yaptıktan sonra /tmp/mnt_sd/cmdline.txt dosyasını düzenlememiz gerekmekte. Bu dosyada &lt;em&gt;root=/dev/mmcblk0p2&lt;/em&gt; olan kısmı &lt;em&gt;root=/dev/sda2&lt;/em&gt; olarak değiştirin.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.networkinghowtos.com/howto/raspbian-on-raspberry-pi-using-sd-card-usb-memory-stick/&#34;&gt;Kaynak&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -63,12 +72,39 @@ if [ -s dosyaadi ]; then echo &amp;#34;Dosya dolu&amp;#34;; else echo &amp;#34;D
       <pubDate>Thu, 23 Aug 2012 18:16:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/subversion-sunucu-kurulumu/</guid>
-      <description>Linux üzerinde kurulumdan bahsedeceğim. Öncelikle kullandığınız dağıtımın paket deposundan subversion paketini kurmalısınız. Ben debian kullandığım için
-sudo apt-get install subversion Kurulum tamamlandıktan sonra gerekli tüm araçlara sahip olmuş oluyoruz.
-Bir depo oluşturalım.
-svnadmin create depom depom adli dizinde bir depo oluşturmuş olduk. Bu depo üzerinde gerekli düzenlemeleri yapalım.
-depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu dosyayı açıp [general] başlığı altındaki ayarları düzenliyoruz. Burdaki tüm ayarlar yorum satırı haline getirişmiş, bunlardan işimize yarayanları aktif hale getirmemiz gerekiyor.
-# anon-access = read  Tanımladığımız kullanıcılar dışında kalan kişilerin yetkilerini düzenlemek için kullanıyoruz. Eğer yorum satırı halinde bırakırsak tanımsız kullanıcılar depo üzerinde okuma hakkına sahip oluyorlar.</description>
+      <description>&lt;p&gt;Linux üzerinde kurulumdan bahsedeceğim. Öncelikle kullandığınız dağıtımın paket deposundan subversion paketini kurmalısınız. Ben debian kullandığım için&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo apt-get install subversion
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Kurulum tamamlandıktan sonra gerekli tüm araçlara sahip olmuş oluyoruz.&lt;/p&gt;
+&lt;p&gt;Bir depo oluşturalım.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;svnadmin create depom
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;depom adli dizinde bir depo oluşturmuş olduk. Bu depo üzerinde gerekli düzenlemeleri yapalım.&lt;br&gt;
+&lt;em&gt;depom/conf/svnserve.conf&lt;/em&gt; bu dosya temel ayarlarimizi yapacağımız dosya. Bu dosyayı açıp [general] başlığı altındaki ayarları düzenliyoruz. Burdaki tüm ayarlar yorum satırı haline getirişmiş, bunlardan işimize yarayanları aktif hale getirmemiz gerekiyor.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# anon-access = read
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Tanımladığımız kullanıcılar dışında kalan kişilerin yetkilerini düzenlemek için kullanıyoruz. Eğer yorum satırı halinde bırakırsak tanımsız kullanıcılar depo üzerinde okuma hakkına sahip oluyorlar. Eğer bu şekilde bırakırsak okuma yapamazlar. Eğer read yerine write yazarsak depomuzda herkes okur-yazar oluyor.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# auth-access = write
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Kayıtlı kullanıcıların yetkilerini burdan belirliyoruz. Yorum satırı olmaktan çıkartırsak depomuzda tanımlı kullanıcılar yazma hakkına sahip olur.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# password-db = passwd
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Depoya erişim yetkisi verdiğimiz kullanıcıların kullanıcı adı ve parolaların tutulduğu yeri belirtir. Kullanıcıları tanımlamak için yorum satırı halinden çıkartıp istediğimiz yolu belirtmeliyiz, daha sonra ilgili dosyayı düzenlemeliyiz.&lt;br&gt;
+Dosya içeriği&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[users]
+askin = parolam
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Parolalar şifrelenmemiş halde tutuluyor.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# authz-db = authz
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Kullanıcıların izinlerini daha detaylı olarak ayarlamak istersek bu satırı yorum satırı halinden çıkartıp, istediğimiz bir yolu girmemiz gerekmekte.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# realm = My First Repository
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Depomuzun adı, bu satırı yorum satırı olmaktan çıkartıp istediğimiz bir isim veriyoruz.&lt;/p&gt;
+&lt;p&gt;Tüm bunları yaptıktan sonra depomuzu yayınlayabiliriz. Bunu yapmak için &lt;em&gt;svnserve&lt;/em&gt; adında bir programdan yararlanıyoruz.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;/usr/bin/svnserve -d -r /home/svn/repositories --log-file /var/log/svnserve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Bu komut &lt;em&gt;/home/svn/repositories&lt;/em&gt; dizinindeki tüm depoları yayınlar.&lt;/p&gt;
+&lt;p&gt;Depoyu chekout etmek için&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;svn checkout svn://sunucu.com/depom
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -77,8 +113,98 @@ depom/conf/svnserve.conf bu dosya temel ayarlarimizi yapacağımız dosya. Bu do
       <pubDate>Fri, 03 Aug 2012 15:31:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/udp-broadcast-sunucu-istemci/</guid>
-      <description>Sunucu:
-#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;string.h&amp;gt;#include &amp;lt;sys/types.h&amp;gt;#include &amp;lt;sys/socket.h&amp;gt;#include &amp;lt;netinet/in.h&amp;gt; #define MY_PORT 3333  int main(int argc, char *argv[]) { int sockfd, new_fd; struct sockaddr_in my_addr; // hedef adres  struct sockaddr_in their_addr; // baglanti yapan adres  int sin_size, rt; // gelen verinin tutuldugu buffer  char buf[32]; // islem yapmak icin gerekli dosya gosterici  sockfd = socket(AF_INET, SOCK_DGRAM, 0); sin_size = sizeof(struct sockaddr_in); // adres ile ilgili ayarlar  my_addr.sin_family = AF_INET; my_addr.sin_port = htons(MY_PORT); // kullanilacak port  my_addr.sin_addr.s_addr = INADDR_ANY; // mevcut ip adresi  memset(&amp;amp;(my_addr.sin_zero), 0, 8); // geri kalani 0la  // socket ile dosyayi iliskilendir  bind(sockfd, (struct sockaddr *)&amp;amp;my_addr, sizeof(struct sockaddr)); while ( 1 ) { rt = recvfrom (sockfd, buf, 12, 0, (struct sockaddr *)&amp;amp;their_addr, &amp;amp;sin_size); if (rt &amp;gt; 0) { printf (&amp;#34;recv: %s\n&amp;#34;, buf); } else if (rt &amp;lt; 0) { printf(&amp;#34;Baglanti koptu\n&amp;#34;); break; } } close(sockfd); return 0; } İstemci:</description>
+      <description>&lt;p&gt;Sunucu:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;string.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;sys/types.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;sys/socket.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;netinet/in.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#define MY_PORT 3333
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; argc, &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;argv[])
+{
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; sockfd, new_fd;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; sockaddr_in my_addr;    &lt;span style=&#34;color:#75715e&#34;&gt;// hedef adres
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; sockaddr_in their_addr; &lt;span style=&#34;color:#75715e&#34;&gt;// baglanti yapan adres
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; sin_size, rt;
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;// gelen verinin tutuldugu buffer
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt; buf[&lt;span style=&#34;color:#ae81ff&#34;&gt;32&lt;/span&gt;];
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;// islem yapmak icin gerekli dosya gosterici
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    sockfd &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; socket(AF_INET, SOCK_DGRAM, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;);
+
+    sin_size &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;sizeof&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; sockaddr_in);
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;// adres ile ilgili ayarlar
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    my_addr.sin_family      &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; AF_INET;
+    my_addr.sin_port        &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; htons(MY_PORT); &lt;span style=&#34;color:#75715e&#34;&gt;// kullanilacak port
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    my_addr.sin_addr.s_addr &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; INADDR_ANY;     &lt;span style=&#34;color:#75715e&#34;&gt;// mevcut ip adresi
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    memset(&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;(my_addr.sin_zero), &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;); &lt;span style=&#34;color:#75715e&#34;&gt;// geri kalani 0la
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;// socket ile dosyayi iliskilendir
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    bind(sockfd, (&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; sockaddr &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;my_addr, &lt;span style=&#34;color:#66d9ef&#34;&gt;sizeof&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; sockaddr));
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; ( &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; ) {
+        rt &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; recvfrom (sockfd, buf, &lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, (&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; sockaddr &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;their_addr, &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;sin_size);
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (rt &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;) {
+            printf (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;recv: %s&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;, buf);
+        } &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (rt &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;) {
+            printf(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Baglanti koptu&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;);
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;;
+        }
+    }
+
+    close(sockfd);
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;İstemci:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;string.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;sys/types.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;sys/socket.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;netinet/in.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#define DEST_IP   &amp;#34;255.255.255.255&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#define DEST_PORT 3333
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; argc, &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;argv[])
+{
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; sockfd, new_fd;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; sockaddr_in dest_addr; &lt;span style=&#34;color:#75715e&#34;&gt;// hedef adres
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; sin_size, rt;
+    sin_size &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;sizeof&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; sockaddr_in);
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;// islem yapmak icin gerekli dosya gosterici
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    sockfd &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; socket(AF_INET, SOCK_DGRAM, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;);
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;// adres ile ilgili ayarlar
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    dest_addr.sin_family      &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; AF_INET;
+    dest_addr.sin_port        &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; htons(DEST_PORT);
+    dest_addr.sin_addr.s_addr &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; inet_addr(DEST_IP);
+    memset(&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;(dest_addr.sin_zero), &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;); &lt;span style=&#34;color:#75715e&#34;&gt;// geri kalani 0 la
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;// Broadcast icin gerekli yetkiyi al
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; flag &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (setsockopt (sockfd, SOL_SOCKET, SO_BROADCAST, &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;flag, &lt;span style=&#34;color:#66d9ef&#34;&gt;sizeof&lt;/span&gt;(flag)) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+        perror(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;setsockopt&amp;#34;&lt;/span&gt;);
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;// mesaji gonder
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    rt &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; sendto (sockfd, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;slm asl plz&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, (&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; sockaddr &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;dest_addr, sin_size);
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; ( rt &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; )
+        perror(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hata: &amp;#34;&lt;/span&gt;);
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;// socketi kapat
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    close(sockfd);
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -114,8 +240,62 @@ Bukadar basitmiş :)</description>
       <pubDate>Sun, 27 Feb 2011 03:08:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/linux-paralel-port-ile-2x16-lcd-ekran-kullanimi/</guid>
-      <description>Çalıştığım projede linuxta paralel port ile lcd ekran kullanmam gerekti. Neredeyse internetin altını üstüne getirdim ama işime yarar çok birşey bulamadım. Sonunda DOS için yazılmış bir kod buldum. Bu kodu biraz inceleyip, gerekli püf noktaları bulunca kodu linux&amp;rsquo;a uydurmak çok zor olmadı. Hatta neredeyse sadece kullanılan fonksiyonun adını ve parametre yerlerini değiştirdim :)
-Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read/write seçimi için kullanılıyor. Geri kalan 3 bacak güç bağlantısı ve kontrast için kullanılıyor. Burdaki şemaya göre bağlantıları yapabilirsiniz. Ayrıca örnek aldığım kodda aynı sayfada bulunmakta.</description>
+      <description>&lt;p&gt;Çalıştığım projede linuxta paralel port ile lcd ekran kullanmam gerekti. Neredeyse internetin altını üstüne getirdim ama işime yarar çok birşey bulamadım. Sonunda DOS için yazılmış bir kod buldum. Bu kodu biraz inceleyip, gerekli püf noktaları bulunca kodu linux&amp;rsquo;a uydurmak çok zor olmadı. Hatta neredeyse sadece kullanılan fonksiyonun adını ve parametre yerlerini değiştirdim :)&lt;/p&gt;
+&lt;p&gt;Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read/write seçimi için kullanılıyor. Geri kalan 3 bacak güç bağlantısı ve kontrast için kullanılıyor. &lt;a href=&#34;http://www.beyondlogic.org/parlcd/parlcd.htm&#34;&gt;Burdaki&lt;/a&gt; şemaya göre bağlantıları yapabilirsiniz. Ayrıca örnek aldığım kodda aynı sayfada bulunmakta.&lt;/p&gt;
+&lt;p&gt;Yorum satırları pek çok şeyi açıklıyor. Ama birkaç noktaya değinmekte fayda var. Data bacaklarına gerekli inputları verdikten sonra, enable bacağını 1&amp;rsquo;den 0&amp;rsquo;a düşürerek lcd&amp;rsquo;nin data bacaklarında sinyali alıp işleme sokmasını sağlıyoruz. init array&amp;rsquo;i içinde lcd&amp;rsquo;nin temizlenmesi ve çalışmaya uygun hale gelmesi için gerekli komutlar tutuluyor. 0x378 paralel portun adresi.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;string.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;stdlib.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;unistd.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;asm/io.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#define PORTADDRESS 0x378  &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;/* Enter Your Port Address Here */&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#define DATA PORTADDRESS+0
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#define STATUS PORTADDRESS+1
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#define CONTROL PORTADDRESS+2
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;()
+{
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (ioperm(DATA , &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)) {perror(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ioperm&amp;#34;&lt;/span&gt;); exit(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;);}
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt; string[] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Testing 1,2,3                           &amp;#34;&lt;/span&gt;
+                     &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;It&amp;#39; Works !                             &amp;#34;&lt;/span&gt;};
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt; init[&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;];
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; count;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; len;
+    init[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0x0F&lt;/span&gt;; &lt;span style=&#34;color:#75715e&#34;&gt;/* Init Display */&lt;/span&gt;
+    init[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0x01&lt;/span&gt;; &lt;span style=&#34;color:#75715e&#34;&gt;/* Clear Display */&lt;/span&gt;
+    init[&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0x38&lt;/span&gt;; &lt;span style=&#34;color:#75715e&#34;&gt;/* Dual Line / 8 Bits */&lt;/span&gt;
+
+    outb(inb(CONTROL) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0xDF&lt;/span&gt;, CONTROL); &lt;span style=&#34;color:#75715e&#34;&gt;/* Reset Control Port - Make sure Forward Direction */&lt;/span&gt;
+    outb(inb(CONTROL) &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0x08&lt;/span&gt;, CONTROL); &lt;span style=&#34;color:#75715e&#34;&gt;/* Set Select Printer (Register Select) */&lt;/span&gt;
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (count &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; count &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;; count&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;)
+    {
+        outb(init[count], DATA);
+        outb(inb(CONTROL) &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0x01&lt;/span&gt;, CONTROL); &lt;span style=&#34;color:#75715e&#34;&gt;/* Set Strobe (Enable)*/&lt;/span&gt;
+        usleep(&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;);                                 &lt;span style=&#34;color:#75715e&#34;&gt;/* Larger Delay for INIT */&lt;/span&gt;
+        outb(inb(CONTROL) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0xFE&lt;/span&gt;, CONTROL); &lt;span style=&#34;color:#75715e&#34;&gt;/* Reset Strobe (Enable)*/&lt;/span&gt;
+        usleep(&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;);                                 &lt;span style=&#34;color:#75715e&#34;&gt;/* Larger Delay for INIT */&lt;/span&gt;
+    }
+
+    outb(inb(CONTROL) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0xF7&lt;/span&gt;, CONTROL);  &lt;span style=&#34;color:#75715e&#34;&gt;/* Reset Select Printer (Register Select) */&lt;/span&gt;
+
+    len &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; strlen(string);
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (count &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; count &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; len; count&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;)
+    {
+        outb(string[count], DATA);
+        outb(inb(CONTROL) &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0x01&lt;/span&gt;, CONTROL); &lt;span style=&#34;color:#75715e&#34;&gt;/* Set Strobe */&lt;/span&gt;
+        usleep(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;);
+        outb(inb(CONTROL) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0xFE&lt;/span&gt;, CONTROL); &lt;span style=&#34;color:#75715e&#34;&gt;/* Reset Strobe */&lt;/span&gt;
+        usleep(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;);
+    }
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Linke birşey olması durumunda &lt;a href=&#34;https://blog.askin.ws/uploads/2011/02/parlcd.gif&#34;&gt;bu adresten gerekli şemayı indirebilirsiniz.&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -166,13 +346,35 @@ cd /destination/directory ssh user@remote.host &amp;#34;cd /original/directory; 
       <pubDate>Sat, 05 Dec 2009 02:02:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/pardus-ile-eduroam-agina-baglanma/</guid>
-      <description>Pardusun ağ yöneticisi gayet şık bir arayüze sahip, fakat bize Eduroam ağına bağlanma özelliği sunmuyor.
-Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız için yeterli. Bu araçlar wpa_supplicant ve dhcpcd. Wpa_supplicant ağda kimlik denetimini sağlamak için, dhcpcd ise ağdan ip almamız için gerekli.
-Öncelikle wpa_supplicant için ayar dosyası oluşturmamız gerekiyor.
-network={ ssid=&amp;quot;eduroam&amp;quot; key_mgmt=WPA-EAP pairwise=TKIP group=TKIP eap=TTLS phase2=&amp;quot;auth=PAP&amp;quot; anonymous_identity=&amp;quot;anonymous@ogr.deu.edu.tr&amp;quot; identity=&amp;quot;ogrencinumarasi@ogr.deu.edu.tr&amp;quot; password=&amp;quot;sifre&amp;quot; } Bu ayarlar Dokuz Eylül Üniversitesi için. Kendi okulunuza göre düzenlemeniz gerekiyor. Sadece ogr.deu.edu.tr adresi yerine kendi okulunuzun adresini yazmalısınız.
-Bu dosyayı /etc/wpa_supplicant.con adıyla kaydediyoruz.
-Sıra geldi wpa_supplicantı çalıştırmaya.
-wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf -D parametresi hangi sürücüyü kullanacağımızı belirtiyor.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://blog.askin.ws/uploads/2009/12/eduroam_logo_trans.gif&#34; alt=&#34;Eduroam&#34; title=&#34;Eduroam&#34;&gt;&lt;a href=&#34;http://www.pardus.org.tr/&#34;&gt;Pardus&lt;/a&gt;un ağ yöneticisi gayet şık bir arayüze sahip, fakat bize &lt;a href=&#34;http://www.eduroam.org/&#34;&gt;Eduroam&lt;/a&gt; ağına bağlanma özelliği sunmuyor.&lt;br&gt;
+Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız için yeterli. Bu araçlar &lt;a href=&#34;http://hostap.epitest.fi/wpa_supplicant/&#34;&gt;wpa_supplicant&lt;/a&gt; ve &lt;a href=&#34;http://roy.marples.name/projects/dhcpcd&#34;&gt;dhcpcd&lt;/a&gt;. Wpa_supplicant ağda kimlik denetimini sağlamak için, dhcpcd ise ağdan ip almamız için gerekli.&lt;/p&gt;
+&lt;p&gt;Öncelikle wpa_supplicant için ayar dosyası oluşturmamız gerekiyor.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-conf&#34; data-lang=&#34;conf&#34;&gt;network={
+        ssid=&amp;quot;eduroam&amp;quot;
+        key_mgmt=WPA-EAP
+        pairwise=TKIP
+        group=TKIP
+        eap=TTLS
+        phase2=&amp;quot;auth=PAP&amp;quot;
+        anonymous_identity=&amp;quot;anonymous@ogr.deu.edu.tr&amp;quot;
+        identity=&amp;quot;ogrencinumarasi@ogr.deu.edu.tr&amp;quot;
+        password=&amp;quot;sifre&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Bu ayarlar Dokuz Eylül Üniversitesi için. Kendi okulunuza göre düzenlemeniz gerekiyor. Sadece ogr.deu.edu.tr adresi yerine kendi okulunuzun adresini yazmalısınız.&lt;/p&gt;
+&lt;p&gt;Bu dosyayı /etc/wpa_supplicant.con adıyla kaydediyoruz.&lt;/p&gt;
+&lt;p&gt;Sıra geldi wpa_supplicantı çalıştırmaya.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;-D parametresi hangi sürücüyü kullanacağımızı belirtiyor. Wpa_supplicantın man dosyalarına bakarak kendinize uygun bir sürücü seçebilirsiniz.&lt;br&gt;
+-i hangi arayüzü kullanacağınızı belirtiyor. Genellikle wlan0 dır. iwconfig komutunun çıktısı size kablosuz ağ kartlarını gösterecektir.&lt;br&gt;
+-c ile ayar dosyamızın yerini belirtiyoruz.&lt;/p&gt;
+&lt;p&gt;Eğer bu komut başarılı olursa artık ip alabiliriz.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;dhcpcd wlan0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Eğer bu komutta başarılı olduysa artık internete bağlanabilirsiniz hayırlı olsun :)&lt;/p&gt;
+&lt;p&gt;Bu işlemi kolaylaştırmak için pem adında bi script yazdım.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;git clone git://github.com/askin/pem.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Bu komutla pem&amp;rsquo;e ulaşabilirsiniz.&lt;br&gt;
+Bu aracı daha fazla geliştirecektim fakat ağ yöneticisiyle bu işleri nasıl yapabileceğimi öğrendim. Bugün oturup biraz network-managerın kodlarıyla uğraştım. Sanırım pazartesi günü bu işi ağ yöneticisiyle kolayca yapılabilecek bir hale getirebilirim. Şimdilik en güzel yöntem bu gibi :)&lt;/p&gt;
+&lt;p&gt;Ayrıca sevgili dostum &lt;a href=&#34;http://blog.metebilgin.com/&#34;&gt;Mete&lt;/a&gt; bu işin wicd kullanarak nasıl yapıldığını daha önce yazmış &lt;a href=&#34;http://blog.metebilgin.com/2009/10/pardus-2009-da-eduroam-kafay-yemeden.html&#34;&gt;buradan&lt;/a&gt; o yazıya ulaşabilirsiniz.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -181,9 +383,12 @@ wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf -D parametresi hangi s�
       <pubDate>Sat, 25 Jul 2009 01:09:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/pardus-2009/</guid>
-      <description>Sonunda Pardus 2009&amp;rsquo;u bilgisayarıma kurabildim. Ailemin yanına geldiğim için Pardus&amp;rsquo;u indiremiyordum. Malum kotalı internet, sıkıntı yaratıyor.
-Kurulum sorunsuz tamamlandı. Kurulum arayüzü çok hoş olmuş. Çok kullanışlı ve çok kolay bir arayüzü olmuş. Bilgisayarıma en hızlı kurulabilen Pardus sürümü. Saat tutmadım ama, 20 dakka ile 30 dakka arasında bir sürede kurulduğunu tahmin ediyorum.
-Kablosuz ağ kartımı sorunsuz tanıdı ve WPA2 şifreli ağıma çok kolay bir şekilde bağlandı. Daha önce de tanıyordu, fakat ağımı göremiyordu, ben de mecburen ndiswraper ile kullanıyordum. Hiç bir ek program kurmama ve kapalı kodlu windows sürücülerine ihtiyaç duymamak beni gayet mutlu etti. Ve ilk defa wi-fi ledinin yanıp söndüğü gördüm:)</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://blog.askin.ws/uploads/2009/05/pardus.png&#34; alt=&#34;Pardus&#34; title=&#34;Pardus&#34;&gt;Sonunda Pardus 2009&amp;rsquo;u bilgisayarıma kurabildim. Ailemin yanına geldiğim için Pardus&amp;rsquo;u indiremiyordum. Malum kotalı internet, sıkıntı yaratıyor.&lt;br&gt;
+Kurulum sorunsuz tamamlandı. Kurulum arayüzü çok hoş olmuş. Çok kullanışlı ve çok kolay bir arayüzü olmuş. Bilgisayarıma en hızlı kurulabilen Pardus sürümü. Saat tutmadım ama, 20 dakka ile 30 dakka arasında bir sürede kurulduğunu tahmin ediyorum.&lt;br&gt;
+Kablosuz ağ kartımı sorunsuz tanıdı ve WPA2 şifreli ağıma çok kolay bir şekilde bağlandı. Daha önce de tanıyordu, fakat ağımı göremiyordu, ben de mecburen ndiswraper ile kullanıyordum. Hiç bir ek program kurmama ve kapalı kodlu windows sürücülerine ihtiyaç duymamak beni gayet mutlu etti. Ve ilk defa wi-fi ledinin yanıp söndüğü gördüm:)&lt;br&gt;
+KDE4 gerçekten çok güzel, çok hoş duruyor fakat bana göre değil. Arada açıp gönül eğlendirebilirim ama gnome herzamanki gibi 1 numaralı tercihim. Bu nedenle biraz KDE4 turu yaptıktan sonra hemen gnome&amp;rsquo;u kurdum. Bu nedenle &lt;a href=&#34;http://code.google.com/p/pardus-gnome-project/&#34;&gt;Burak Çalışkan&lt;/a&gt;&amp;lsquo;a teşekür ediyorum.&lt;br&gt;
+İhtiyaç duyduğum bazı programlar depoda bulunmuyordu. Bu nedenle devel deposundan bazı paketleri derleyip kurdum. Bi kaç program paketlenemedi, onlarda kısa sürede hazır olur diye umuyorum.&lt;br&gt;
+Her şeye rağmen güzel bi dağıtım olmuş. Emeği geçen herkese teşekür ediyorum.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -192,10 +397,18 @@ Kablosuz ağ kartımı sorunsuz tanıdı ve WPA2 şifreli ağıma çok kolay bir
       <pubDate>Tue, 14 Jul 2009 02:11:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/mysql-data-dizinini-degistirme/</guid>
-      <description>Mysql data dizini ön tanımlı /var/lib/mysql olarak belirlenmiştir. Çeşitli ihtiyaçlardan dolayı bunun yerini değiştirmemiz gerekebilir. Mesela ben ayrı bir bölümde tuttuğum /home dizini altına taşımak istiyorum. Tüm işlemleri root yetkisiyle yapıyoruz. Öncelikle mysql servisini durduralım. Ben pardus kullandığım için
-$ service mysql-server stop Diğer dağıtımlarda farklı olabilir. Ardından ilgili dizini yeni yerine kopyalayalım.
-$ cp -a /var/lib/mysql /home Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. /etc/mysql/my.cnf dosyasında datadir = /var/lib/mysql olan satırı datadir = /home/mysql olarak değiştirelim. Şimdi servisi yeniden başlatabiliriz.
-$ service mysql-server start Eğer düzgün bir şekilde çalışıyorsa /var/lib/mysql dizinini silebiliriz. Ama ismini değiştirip birkaç gün her ihtimale karşı saklamak çok mantıklı.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://blog.askin.ws/uploads/2009/07/mysql.png&#34; alt=&#34;Mysql&#34; title=&#34;Mysql&#34;&gt;Mysql data dizini ön tanımlı &lt;strong&gt;/var/lib/mysql&lt;/strong&gt; olarak belirlenmiştir. Çeşitli ihtiyaçlardan dolayı bunun yerini değiştirmemiz gerekebilir. Mesela ben ayrı bir bölümde tuttuğum &lt;strong&gt;/home&lt;/strong&gt; dizini altına taşımak istiyorum. Tüm işlemleri &lt;em&gt;root&lt;/em&gt; yetkisiyle yapıyoruz. Öncelikle mysql servisini durduralım.
+Ben pardus kullandığım için&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ service mysql-server stop
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Diğer dağıtımlarda farklı olabilir.
+Ardından ilgili dizini yeni yerine kopyalayalım.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ cp -a /var/lib/mysql /home
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. &lt;strong&gt;/etc/mysql/my.cnf&lt;/strong&gt; dosyasında
+&lt;code&gt;datadir = /var/lib/mysql&lt;/code&gt; olan satırı
+&lt;code&gt;datadir = /home/mysql&lt;/code&gt; olarak değiştirelim.
+Şimdi servisi yeniden başlatabiliriz.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ service mysql-server start
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Eğer düzgün bir şekilde çalışıyorsa &lt;strong&gt;/var/lib/mysql&lt;/strong&gt; dizinini silebiliriz. Ama ismini değiştirip birkaç gün her ihtimale karşı saklamak çok mantıklı.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -204,10 +417,15 @@ $ service mysql-server start Eğer düzgün bir şekilde çalışıyorsa /var/li
       <pubDate>Sun, 07 Jun 2009 21:20:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/pidgin-titresim-eklentisi-attention-button/</guid>
-      <description>Pidginin en sevdiğim özelliklerinden bir tanesi, sohbet ettiğiniz kişi size tireşim gönderdiğinde ekrana sadece &amp;quot;&amp;hellip; size uyarı gönderdi&amp;quot; yazması. Bu özelliğer sahip olmasının birde dezavantajı var tabiki, siz de başkalarına titreşim yollayamıyorsunuz. Bugün bu eksikliği fazlasıyla hissedince ufak çaplı bir araştırma yaptım ve Attention Button eklentisiyle karşılaştım.
-Kurulumu çok basit. Burdan en güncel sürümünü indiriyorsunuz (şimdilik 0.3), arşivden çıkartıp .so uzantılı dosyayı ev dizininiz altında .purple/plugins/ dizinine kopyalıyorsunuz. Ardından pidgine gidip eklentiler(plugins) kısmından aktif ediyorsunuz.
-Konsoldan halletmek isterseniz:
-$ wget http://pidgin-attentionbutton.googlecode.com/files/attentionbutton-0.3.tar.gz $ tar -xvzf attentionbutton-0.3.tar.gz $ mkdir $HOME/.purple/plugins $ mv attentionbutton.so $HOME/.purple/plugins/ $ rm attentionbutton-0.3.tar.gz attentionbutton.c Bu eklentinin birkaç güzel özelliğide var.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://blog.askin.ws/uploads/2009/06/pidgin.png&#34; alt=&#34;Pidgin&#34; title=&#34;Pidgin&#34;&gt;Pidginin en sevdiğim özelliklerinden bir tanesi, sohbet ettiğiniz kişi size tireşim gönderdiğinde ekrana sadece &lt;strong&gt;&amp;quot;&amp;hellip; size uyarı gönderdi&amp;quot;&lt;/strong&gt; yazması. Bu özelliğer sahip olmasının birde dezavantajı var tabiki, siz de başkalarına titreşim yollayamıyorsunuz. Bugün bu eksikliği fazlasıyla hissedince ufak çaplı bir araştırma yaptım ve &lt;a href=&#34;http://code.google.com/p/pidgin-attentionbutton/&#34;&gt;Attention Button&lt;/a&gt; eklentisiyle karşılaştım.&lt;br&gt;
+Kurulumu çok basit. &lt;a href=&#34;http://code.google.com/p/pidgin-attentionbutton/downloads/list&#34;&gt;Burdan&lt;/a&gt; en güncel sürümünü indiriyorsunuz (şimdilik &lt;a href=&#34;http://pidgin-attentionbutton.googlecode.com/files/attentionbutton-0.3.tar.gz&#34;&gt;0.3&lt;/a&gt;), arşivden çıkartıp &lt;em&gt;.so&lt;/em&gt; uzantılı dosyayı ev dizininiz altında &lt;em&gt;.purple/plugins/&lt;/em&gt; dizinine kopyalıyorsunuz. Ardından pidgine gidip eklentiler(plugins) kısmından aktif ediyorsunuz.&lt;br&gt;
+Konsoldan halletmek isterseniz:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ wget http://pidgin-attentionbutton.googlecode.com/files/attentionbutton-0.3.tar.gz
+$ tar -xvzf attentionbutton-0.3.tar.gz
+$ mkdir $HOME/.purple/plugins
+$ mv attentionbutton.so $HOME/.purple/plugins/
+$ rm attentionbutton-0.3.tar.gz attentionbutton.c 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Bu eklentinin birkaç güzel özelliğide var. Mesela karşı tarafa sınırsız sayıda titreşim yollayabilirsiniz. Ve karşı taraf çevrim dışı bile görünse titretebilirsiniz. Tabi aşırı kullanım sağlığa zararlı :)&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -216,19 +434,19 @@ $ wget http://pidgin-attentionbutton.googlecode.com/files/attentionbutton-0.3.ta
       <pubDate>Tue, 02 Jun 2009 21:48:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/pardus-atheros-ar242x-wpa2/</guid>
-      <description>Pardus 2008 kurulumla beraber Atheros AR242x kablosuz ağ kartını tanıyor, fakat nedense başka ağları görmesine rağmen evimde WPA2 ile kurulu kablosuz ağımı göremiyordu. Bende diğer dağıtımlarda kullandığım ndiswrapper ile sorunumu çözmeyi denedim.
-Öncelikle ndiswrapperı kurduktan sonra windows için yazılmış driverları seçmemiz gerekiyor. Ardından
-/etc/modules.autoload.d/kernel-2.6
-dosyasına
-ndiswrapper
-satırını ve
-/etc/modprobe.d/blacklist-compat
-dosyasına da
-blacklist ath_pci
-satırını eklemek gerekiyor. Bunları ekledikten sonra kde&amp;rsquo;de ağ programcığıyla bağlanabiliyorsunuz.
-Fakat XFCE kullanıyorsanız wicd kullanmanız gerekiyor. Wicd ile doğrudan kullanamıyoruz. Öncelikle birkaç ufak düzenleme yapmak gerekiyor.
-Wicd -&amp;gt; Tercihler yolunu takip ettikten sonra WPA Suplicant Sürücüsü: kısmına wext, Kablosuz arabirim kısmına da wlan0 yazmak gerekiyor.
-Bu ayarlarla kolaylıkla kullanabilirsiniz, kolay gelsin.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://blog.askin.ws/uploads/2009/06/wifi.jpeg&#34; alt=&#34;Wi-Fi&#34; title=&#34;Wi-Fi&#34;&gt;Pardus 2008 kurulumla beraber Atheros AR242x kablosuz ağ kartını tanıyor, fakat nedense başka ağları görmesine rağmen evimde WPA2 ile kurulu kablosuz ağımı göremiyordu. Bende diğer dağıtımlarda kullandığım ndiswrapper ile sorunumu çözmeyi denedim.&lt;br&gt;
+Öncelikle ndiswrapperı kurduktan sonra windows için yazılmış driverları seçmemiz gerekiyor. Ardından&lt;br&gt;
+&lt;code&gt;/etc/modules.autoload.d/kernel-2.6&lt;/code&gt;&lt;br&gt;
+dosyasına&lt;br&gt;
+&lt;code&gt;ndiswrapper&lt;/code&gt;&lt;br&gt;
+satırını ve&lt;br&gt;
+&lt;code&gt;/etc/modprobe.d/blacklist-compat&lt;/code&gt;&lt;br&gt;
+dosyasına da&lt;br&gt;
+&lt;code&gt;blacklist ath_pci&lt;/code&gt;&lt;br&gt;
+satırını eklemek gerekiyor. Bunları ekledikten sonra kde&amp;rsquo;de ağ programcığıyla bağlanabiliyorsunuz.&lt;br&gt;
+Fakat XFCE kullanıyorsanız wicd kullanmanız gerekiyor. Wicd ile doğrudan kullanamıyoruz. Öncelikle birkaç ufak düzenleme yapmak gerekiyor.&lt;br&gt;
+Wicd -&amp;gt; Tercihler yolunu takip ettikten sonra WPA Suplicant Sürücüsü: kısmına &lt;em&gt;wext&lt;/em&gt;, Kablosuz arabirim kısmına da &lt;em&gt;wlan0&lt;/em&gt; yazmak gerekiyor.&lt;br&gt;
+Bu ayarlarla kolaylıkla kullanabilirsiniz, kolay gelsin.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -247,10 +465,24 @@ http://www.ozgurlukicin.com/haber/pardus09-yaz-staji-sonuclari/</description>
       <pubDate>Mon, 06 Apr 2009 22:22:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/bir-gnulinux-kurulumunu-baska-bir-harddiskebolume-tasimak/</guid>
-      <description>Öncelikle bir çalışan cd ile sistem açılır, benim tercihim gparted live cd. Sizin elinizin altında ne varsa kabuldur. İlla çalışan cd olmasına gerek yok, herhangi bir linux cdside olabilir. Bize mount, cp ve nano komutları lazım. Bunları sağlayan herhangi bir cd kullanılabilir.
-Taşınacak kurulumun hangi disk bölümünde olduğu bilinmeli. Ben 2. bölümdeki kurulumu 1. bölüme taşıyacağım. Yani /dev/hdc3 den /dev/hdc1 e taşıma yapacağım(sizdeki disk isimleri muhtemelen farklıdır).
-Cd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte. Ctrl + Alt + F1 tuş kombinasyonu muhtemelen iş görecektir. Ben live cd kullandığım için grafik ekranla karşılaştım, burdan bi terminal açarak işimi göreceğim.
-Yapacağımız işlemler için root olmamız gerekiyor.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://blog.askin.ws/uploads/2009/04/linux-tux.jpg&#34; alt=&#34;GNU/Linux&#34; title=&#34;GNU/Linux&#34;&gt; Öncelikle bir çalışan cd ile sistem açılır, benim tercihim gparted live cd. Sizin elinizin altında ne varsa kabuldur. İlla çalışan cd olmasına gerek yok, herhangi bir linux cdside olabilir. Bize mount, cp ve nano komutları lazım. Bunları sağlayan herhangi bir cd kullanılabilir.&lt;/p&gt;
+&lt;p&gt;Taşınacak kurulumun hangi disk bölümünde olduğu bilinmeli. Ben 2. bölümdeki kurulumu 1. bölüme taşıyacağım. Yani /dev/hdc3 den /dev/hdc1 e taşıma yapacağım(sizdeki disk isimleri muhtemelen farklıdır).&lt;/p&gt;
+&lt;p&gt;Cd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte. Ctrl + Alt + F1 tuş kombinasyonu muhtemelen iş görecektir. Ben live cd kullandığım için grafik ekranla karşılaştım, burdan bi terminal açarak işimi göreceğim.&lt;/p&gt;
+&lt;p&gt;Yapacağımız işlemler için root olmamız gerekiyor. Bu işlemi yapacak cesaretiniz varsa, nasıl root olunur bilginizde vardır diye düşünüyorum :)&lt;/p&gt;
+&lt;p&gt;Önce diskleri mount ediyoruz&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mkdir /target /source
+mount /dev/hdc1 /target
+mount /dev/hdc3 -o ro /source
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Mount işleminden sonra kopyalamaya başlayabiliriz.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;cp -a /source/* /target
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Bu işlem kopyalanacak verinin boyutuna göre uzunca sürebilir.
+Kopyalama tamamlandıktan sonra yeni diskteki /etc/fstab dosyasını ve eski diskteki /boot/grub/menu.lst dosyalarını değiştirmemiz gerekiyor. fstab dosyasında &amp;ldquo;/&amp;rdquo; dizininin bağlanacağı yeni bölümü gösteriyoruz. menu.lst dosyasında ise yeni bölümün boot edilebilmesi için gerekli ayarları yapıyoruz.&lt;/p&gt;
+&lt;p&gt;Eğer eski bölümü silecek veya orayı başka amaç için kullanacaksanız mbr kaydını yenilemeniz gerekmektedir, yani grubu tekrar yeni disk için kurmalısınız.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;grub
+ &amp;gt; root (hd0, 0)
+ &amp;gt; setup (hd0)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Bende bu şekilde kuruldu, sizde bölüm numaralarına göre değişecektir kurulum.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -259,11 +491,27 @@ Yapacağımız işlemler için root olmamız gerekiyor.</description>
       <pubDate>Wed, 11 Mar 2009 01:36:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/pardus-linuxorg-e-dergi-bana-supriz-yapti/</guid>
-      <description>Dergi son sayısında ki (Sayı 6) site tanıtımında benim bloguma yer verdi, kendilerine buradan çok teşekür ediyorum. Bu jestleri bana blog yazmada ve Özgür Yazılım çabalarımda güç verecek.
-Derginin bu sayısını gerçekten beğendim, hele hele tamamen özgür yazılım araçlarıyla oluşturulması, arkasında hiçbir mali destek olmadan sadece topluluk katkısıyla ve güzel bir motivasyon ile düzenli olarak çıkması derginin gönlümde olan yerini iyice pekiştirdi.
-Dergi kapağında 8 Mart Dünya Emekçi Kadınla Günü yazsaydı daha güzel ve anlamlı olurdu:) ama hatırlamak ve önem vermek çok daha önemli. Birde bu sayıda RMS ile olan röportajın devamını bekliyordum:)
-Dergide emeği geçen herkese teşekür ediyorum&amp;hellip;
- C ile Programlama II GNU/Linux Haberleri GNU/Linux AntiVirüs Yazılımları Torrent ve KTorrent Pardus’ta Python 3.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://blog.askin.ws/uploads/2009/03/plo-logo.png&#34; alt=&#34;Pardus-Linux.Org&#34; title=&#34;Pardus-Linux.Org&#34;&gt;Dergi son sayısında ki (Sayı 6) site tanıtımında benim bloguma yer verdi, kendilerine buradan çok teşekür ediyorum. Bu jestleri bana blog yazmada ve Özgür Yazılım çabalarımda güç verecek.&lt;/p&gt;
+&lt;p&gt;Derginin bu sayısını gerçekten beğendim, hele hele tamamen özgür yazılım araçlarıyla oluşturulması, arkasında hiçbir mali destek olmadan sadece topluluk katkısıyla ve güzel bir motivasyon ile düzenli olarak çıkması derginin gönlümde olan yerini iyice pekiştirdi.&lt;/p&gt;
+&lt;p&gt;Dergi kapağında &lt;strong&gt;8 Mart Dünya Emekçi Kadınla Günü&lt;/strong&gt; yazsaydı daha güzel ve anlamlı olurdu:) ama hatırlamak ve önem vermek çok daha önemli. Birde bu sayıda RMS ile olan röportajın devamını bekliyordum:)&lt;/p&gt;
+&lt;p&gt;Dergide emeği geçen herkese teşekür ediyorum&amp;hellip;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.askin.ws/uploads/2009/03/plo-e-dergi-6-kapak.png&#34; alt=&#34;Pardus-Linux.Org e-dergi&#34; title=&#34;Pardus-Linux.Org e-dergi&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;C ile Programlama II&lt;/li&gt;
+&lt;li&gt;GNU/Linux Haberleri&lt;/li&gt;
+&lt;li&gt;GNU/Linux AntiVirüs Yazılımları&lt;/li&gt;
+&lt;li&gt;Torrent ve KTorrent&lt;/li&gt;
+&lt;li&gt;Pardus’ta Python 3.0&lt;/li&gt;
+&lt;li&gt;Happy Hacking : Pisi Search ‘te Küçük Değişiklikler&lt;/li&gt;
+&lt;li&gt;Python Modülü : optparse&lt;/li&gt;
+&lt;li&gt;Firefox Eklentileri&lt;/li&gt;
+&lt;li&gt;Qucs ile DC Analiz&lt;/li&gt;
+&lt;li&gt;Oyun İnceleme : Ri-Li&lt;/li&gt;
+&lt;li&gt;Web Sİte Tanıtımları&lt;/li&gt;
+&lt;li&gt;Pardusum&lt;/li&gt;
+&lt;li&gt;Doruk Fişek Röportajı&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;adres: &lt;a href=&#34;http://www.pardus-edergi.org/&#34;&gt;http://www.pardus-edergi.org/&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -302,10 +550,16 @@ Müzik dinlerken kullandığım programın elimin altında dolaşmasını pek se
       <pubDate>Fri, 01 Aug 2008 22:10:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/ilk-deb-paketim/</guid>
-      <description>Sonunda ilk .deb paketimi yapmayı başardım:) aslında okadar zor bi iş değilmiş, biraz kaynak koddan derleme pratiği yapıp, üzerine birkaç döküman okuyunca çabubak oluyor.
-Bu şanslı pakatimiz PCmanfm oldu. Normalde depoda bulunuyor ama ben experimental sürümünü kullanıyorum. Uzun zamandır derleyerek kullanıyordum. Ama aklıma birden esti hadi şunun .deb paketini yapayım dedim ve yaptım.
-Bu sürümde ssh, samba yada ftp üzerinden bir makinaya bağlanıp oranın dizinlerini kullanabiliyoruz. Bir kere ayarını yaptığında artık kenarda hazır bekleyip senin bağlan demeni bekliyor. Gayet hoş ve kullanışlı tavsiye ederim.
- Proje sayfası: http://pcmanfm.sourceforge.net/ İndirmek için: http://sourceforge.net/project/showfiles.php?group_id=156956 El yapımı .deb paketim: /packages/deb/pcmanfm_0.4.4.2-1_i386.deb  Buda ekran görüntüsü, büyütmek için üzerine tıklayın:</description>
+      <description>&lt;p&gt;Sonunda ilk .deb paketimi yapmayı başardım:) aslında okadar zor bi iş değilmiş, biraz kaynak koddan derleme pratiği yapıp, üzerine birkaç döküman okuyunca çabubak oluyor.&lt;br&gt;
+Bu şanslı pakatimiz &lt;a href=&#34;http://pcmanfm.sourceforge.net/&#34;&gt;PCmanfm&lt;/a&gt; oldu. Normalde depoda bulunuyor ama ben experimental sürümünü kullanıyorum. Uzun zamandır derleyerek kullanıyordum. Ama aklıma birden esti hadi şunun .deb paketini yapayım dedim ve yaptım.&lt;br&gt;
+Bu sürümde ssh, samba yada ftp üzerinden bir makinaya bağlanıp oranın dizinlerini kullanabiliyoruz. Bir kere ayarını yaptığında artık kenarda hazır bekleyip senin bağlan demeni bekliyor. Gayet hoş ve kullanışlı tavsiye ederim.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Proje sayfası: &lt;a href=&#34;http://pcmanfm.sourceforge.net/&#34;&gt;http://pcmanfm.sourceforge.net/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;İndirmek için: &lt;a href=&#34;http://sourceforge.net/project/showfiles.php?group_id=156956&#34;&gt;http://sourceforge.net/project/showfiles.php?group_id=156956&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;El yapımı .deb paketim: &lt;a href=&#34;https://blog.askin.ws/packages/deb/pcmanfm_0.4.4.2-1_i386.deb&#34;&gt;/packages/deb/pcmanfm_0.4.4.2-1_i386.deb&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Buda ekran görüntüsü, büyütmek için üzerine tıklayın:&lt;br&gt;
+&lt;a href=&#34;https://blog.askin.ws/images/pcmanfm.png&#34;&gt;&lt;img src=&#34;https://blog.askin.ws/images/pcmanfm.resized.png&#34; alt=&#34;PCman File Manager&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -354,8 +608,46 @@ aptitude install faad</description>
       <pubDate>Wed, 07 May 2008 10:36:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/ssh-filesystem-ile-uzak-makinadaki-dizini-yerele-baglamak/</guid>
-      <description>Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz. Ben daha önce bahsettiğim internet canavarı:) için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu. Kullanacağımız programın adı sshfs yani SSH Filesystem. Kurulum:
- Debian &amp;amp;&amp;amp; Ubuntu &amp;amp;&amp;amp; vb.  aptitude install sshfs  Kaynak koddan derleme  ./configure make make install # root yetkileriyle  Kullanımı - Uzak makinadaki bir dizini bağlamak sshfs hostname:dizin bağlamanoktası (root yetkileriyle)  Umount - Bağı koparma umount bağlamanoktası # ya da fusermount -u bağlamanoktası   Bu şekide kullanırsanız bağladığınız dizine ancak root yetkileriyle ulaşabilirsiniz.</description>
+      <description>&lt;p&gt;Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz.
+Ben daha önce bahsettiğim &lt;a href=&#34;http://blog.yollu.com/2008/02/21/telekom-artik-kork-benden/&#34;&gt;internet canavarı:)&lt;/a&gt; için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu.
+Kullanacağımız programın adı sshfs yani SSH Filesystem.
+Kurulum:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Debian &amp;amp;&amp;amp; Ubuntu &amp;amp;&amp;amp; vb.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;aptitude install sshfs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Kaynak koddan derleme&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;./configure
+make
+make install &lt;span style=&#34;color:#75715e&#34;&gt;# root yetkileriyle&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Kullanımı - Uzak makinadaki bir dizini bağlamak
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sshfs hostname:dizin bağlamanoktası &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;root yetkileriyle&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;Umount - Bağı koparma
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;umount bağlamanoktası
+&lt;span style=&#34;color:#75715e&#34;&gt;# ya da&lt;/span&gt;
+fusermount -u bağlamanoktası
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Bu şekide kullanırsanız bağladığınız dizine ancak root yetkileriyle ulaşabilirsiniz. Her kullanıcının tüm haklarla(hangi kullanıcı ile ssh bağlantısı gerçekleştirdiyseniz onun haklarına sahip oluyosunuz) bağladığınız dizini kulanabilmesini istiyorsanız&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sshfs -o allow_other hostname:dizin bağlamanoktası
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Parametreler&lt;/strong&gt;
+-o parametresini kullanarak uid ve gid değerlerini ayarlayabilirsiniz.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;-o idmap&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;user
+-o uid&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&amp;lt;uid&amp;gt;
+-o gid&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&amp;lt;gid&amp;gt;
+-o ro &lt;span style=&#34;color:#75715e&#34;&gt;# read only - salt okunur mod&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;fstab dosyasını kullanarak mount etme&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sshfs#USERNAME@REMOTE_HOST:REMOTE_PATH MOUNT_POINT fuse SSHFS_OPTIONS 0 0
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;örnek&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sshfs#guest@guest.login.com:data /mnt/guest fuse uid=1003,gid=100,umask=0,allow_other 0 0
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Proje sayfası&lt;/strong&gt; :&lt;a href=&#34;%20http://fuse.sourceforge.net/sshfs.html&#34;&gt;http://fuse.sourceforge.net/sshfs.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Wiki sayfası&lt;/strong&gt; :&lt;a href=&#34;http://fuse.sourceforge.net/sshfs.html&#34;&gt;http://fuse.sourceforge.net/sshfs.html&lt;/a&gt;. Wiki sayfasını kulanarak birçok bilgiye ulaşabilirsiniz..&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
   </channel>

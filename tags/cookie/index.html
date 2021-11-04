@@ -216,7 +216,7 @@
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;dakika
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;154&nbsp;kelime
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;155&nbsp;kelime
   
   
     
@@ -230,13 +230,24 @@
     </p>
     <div class="post-entry">
         
-        cURL kullanarak komut satırından istediğimiz bir web sayfasına get/post istekleri yapabiliriz. &ndash;data parametresi ile post edilecek verileri gönderebiliryoruz. Url sonuna ekleyeceğimiz parametreler de get olarak gönderilecektir.
-curl --data &quot;param1=value1&amp;param2=value2&quot; http://example.com/index.php  Web sayfasının döndürdüğü sonu doğrudan ekrana basılacaktır, bunu bir dosyaya aktarmak için
-curl --data &quot;param1=value1&amp;param2=value2&quot; http://example.com/index.php &gt; result.html  bir değişkene aktarmak için
-result=$(curl --data &quot;param1=value1&amp;param2=value2&quot; http://example.com/index.php)  kullanabiliriz. Erişmek istediğimiz web sayfası kullanıcı girişi istiyorsa cookie kullanrak bunu yapabiliriz.
-curl --data &quot;username=askin&amp;password=pasw0rd&quot; http://example.com/login.php -c cookie.cook  Bu komutla giriş yapıp, oluşturulan cookie&rsquo;yi cookie.cook dosyasına kaydettik.
-Tabi burda username ve password parametreleri değişiklik gösterebilir, gönderilen form verisini inceleyerek, gerekli parametreleri bulup uygun formatta göndermek gerekir.
-        <a href="https://blog.askin.ws/blog/curl-ile-getpost-ve-cookie-kullanimi/" class="post-read-more">[Daha fazla oku]</a>
+        <p>cURL kullanarak komut satırından istediğimiz bir web sayfasına get/post istekleri yapabiliriz. &ndash;data parametresi ile post edilecek verileri gönderebiliryoruz. Url sonuna ekleyeceğimiz parametreler de get olarak gönderilecektir.</p>
+<pre><code>curl --data &quot;param1=value1&amp;param2=value2&quot; http://example.com/index.php
+</code></pre>
+<p>Web sayfasının döndürdüğü sonu doğrudan ekrana basılacaktır, bunu bir dosyaya aktarmak için</p>
+<pre><code>curl --data &quot;param1=value1&amp;param2=value2&quot; http://example.com/index.php &gt; result.html
+</code></pre>
+<p>bir değişkene aktarmak için</p>
+<pre><code>result=$(curl --data &quot;param1=value1&amp;param2=value2&quot; http://example.com/index.php)
+</code></pre>
+<p>kullanabiliriz. Erişmek istediğimiz web sayfası kullanıcı girişi istiyorsa cookie kullanrak bunu yapabiliriz.</p>
+<pre><code>curl --data &quot;username=askin&amp;password=pasw0rd&quot; http://example.com/login.php -c cookie.cook
+</code></pre>
+<p>Bu komutla giriş yapıp, oluşturulan cookie&rsquo;yi cookie.cook dosyasına kaydettik.<br>
+Tabi burda username ve password parametreleri değişiklik gösterebilir, gönderilen form verisini inceleyerek, gerekli parametreleri bulup uygun formatta göndermek gerekir.</p>
+<pre><code>curl --data &quot;param1=value1&amp;param2=value2&quot; http://example.com/user_info.php -b cookie.cook
+</code></pre>
+<p>Bu şekilde de bir önceki komutla elde ettiğimiz cookie&rsquo;yi kullanarak bir web sayfasına istekte bulunabiliyoruz.</p>
+<p>Eğer https ile istek yapmak istediğinizde sorun yaşıyorsanız &ldquo;-k&rdquo; parametresini kullanarak bu sorunu aşabilirsiniz. <a href="https://gist.github.com/askin/5966708" title="Create Asterisk Extension"><strong>Bu adreste</strong></a> asterisk sunucu üzerinde extension oluşturan bir shell script var, yazıda anlattıklarım için güzel bir örnek olacaktır.</p>
         
     </div>
 

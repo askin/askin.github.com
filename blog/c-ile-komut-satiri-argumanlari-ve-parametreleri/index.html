@@ -8,8 +8,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <title>C ile Komut Satırı Argumanları ve Parametreleri - Aşkın Özgür</title>
-  <meta name="description" content="Komut satırı programları -h yada &ndash;help gibi parametreler alırlar. Bu alınan parametrelerin kolay kullanılması için getopt adında bir kütüphane yaratılmış. Bu kütüphane kullanlanılarak çok rahat böyle programlar yazılabilir. Bende bunun için küçük bir örnek yazdım.
-#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;getopt.h&gt; int print_usage ( void ); int main (int argc, char* argv[]) { int next_option; char* output; char* input; char color = 47; /** * kisa parametler burda tanimli * ardindan parametre alanlar : ile bitiyor * orn: o: bir parametre aliyor b almiyor * -o kelebek yada -b gibi */ const char* const short_options = &#34;hbro:i:&#34;; /** * Burdada uzun hallerini tanimliyoruz.">
+  <meta name="description" content="Komut satırı programları -h yada &ndash;help gibi parametreler alırlar. Bu alınan parametrelerin kolay kullanılması için getopt adında bir kütüphane yaratılmış. Bu kütüphane kullanlanılarak çok rahat böyle programlar yazılabilir.
+Bende bunun için küçük bir örnek yazdım.
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;getopt.h&gt;
+
+int print_usage ( void );
+
+int main (int argc, char* argv[])
+{
+  int next_option;
+  char* output;
+  char* input;
+  char color = 47;
+
+  /**
+   * kisa parametler burda tanimli
+   *  ardindan parametre alanlar : ile bitiyor
+   *  orn: o: bir parametre aliyor b almiyor
+   *  -o kelebek yada -b gibi
+   */
+  const char* const short_options = &#34;hbro:i:&#34;;
+
+  /**
+   * Burdada uzun hallerini tanimliyoruz.
+   *  beraberinde kisa karsiliklarida var.
+   */
+  const struct option long_options[] = {
+    {&#34;help&#34;,   no_argument, 0, &#39;h&#39;},
+    {&#34;blue&#34;,   no_argument, 0, &#39;b&#39;},
+    {&#34;red&#34;,    no_argument, 0, &#39;r&#39;},
+    {&#34;input&#34;,  required_argument, 0, &#39;i&#39;},
+    {&#34;output&#34;, required_argument, 0, &#39;o&#39;}
+  };
+
+  /**
+   * Burda sirayla verilen argumalari aliyoruz
+   */
+  do {
+    next_option = getopt_long(argc,
+			      argv,
+			      short_options,
+			      long_options,
+			      NULL);
+    switch(next_option) {
+    case &#39;h&#39;: // -h or --help
+      print_usage();
+      return 0;
+      break;
+
+    case &#39;o&#39;: // -o or --or
+      output = optarg;
+      break;
+
+    case &#39;i&#39;: // -i or --i
+      input = optarg;
+      break;
+
+    case &#39;b&#39;: // -b or --blue
+      color = 44;
+      break;
+
+    case &#39;r&#39;: // -r or --red
+      color = 41;
+      break;
+
+    case -1:
+      break;
+
+    default:
+      abort();
+    }
+  } while (next_option != -1);
+
+  printf(&#34;%c[%d;%dmInput : %s%c[%dm\n&#34;, 27, 1, color, input, 27, 0);
+  printf(&#34;%c[%d;%dmOutput: %s%c[%dm\n&#34;, 27, 1, color, output, 27, 0);
+
+
+  return 0;
+}
+
+int print_usage ( void ) {
+  printf(&#34;   --help   or -h for help\n&#34;
+	 &#34;   --output or -o for output\n&#34;
+	 &#34;   --input  or -i for input\n&#34;
+	 &#34;   --blue   or -b for blue output\n&#34;
+	 &#34;   --red    or -r for red output\n&#34;);
+  return 0;
+}
+Örnek">
   <meta name="author" content="Aşkın Özgür"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -58,7 +146,7 @@
     "name" : "Aşkın Özgür"
   },
   "headline": "C ile Komut Satırı Argumanları ve Parametreleri",
-  "description" : "Komut satırı programları -h yada \u0026ndash;help gibi parametreler alırlar. Bu alınan parametrelerin kolay kullanılması için getopt adında bir kütüphane yaratılmış. Bu kütüphane kullanlanılarak çok rahat böyle programlar yazılabilir. Bende bunun için küçük bir örnek yazdım.\n#include \u0026lt;stdio.h\u0026gt;#include \u0026lt;stdlib.h\u0026gt;#include \u0026lt;getopt.h\u0026gt; int print_usage ( void ); int main (int argc, char* argv[]) { int next_option; char* output; char* input; char color = 47; \/** * kisa parametler burda tanimli * ardindan parametre alanlar : ile bitiyor * orn: o: bir parametre aliyor b almiyor * -o kelebek yada -b gibi *\/ const char* const short_options = \u0026#34;hbro:i:\u0026#34;; \/** * Burdada uzun hallerini tanimliyoruz.",
+  "description" : "Komut satırı programları -h yada \u0026ndash;help gibi parametreler alırlar. Bu alınan parametrelerin kolay kullanılması için getopt adında bir kütüphane yaratılmış. Bu kütüphane kullanlanılarak çok rahat böyle programlar yazılabilir. Bende bunun için küçük bir örnek yazdım.\n#include \u0026lt;stdio.h\u0026gt;#include \u0026lt;stdlib.h\u0026gt;#include \u0026lt;getopt.h\u0026gt; int print_usage ( void ); int main (int argc, char* argv[]) { int next_option; char* output; char* input; char color = 47; \/** * kisa parametler burda tanimli * ardindan parametre alanlar : ile bitiyor * orn: o: bir parametre aliyor b almiyor * -o kelebek yada -b gibi *\/ const char* const short_options = \u0026#34;hbro:i:\u0026#34;; \/** * Burdada uzun hallerini tanimliyoruz. * beraberinde kisa karsiliklarida var. *\/ const struct option long_options[] = { {\u0026#34;help\u0026#34;, no_argument, 0, \u0026#39;h\u0026#39;}, {\u0026#34;blue\u0026#34;, no_argument, 0, \u0026#39;b\u0026#39;}, {\u0026#34;red\u0026#34;, no_argument, 0, \u0026#39;r\u0026#39;}, {\u0026#34;input\u0026#34;, required_argument, 0, \u0026#39;i\u0026#39;}, {\u0026#34;output\u0026#34;, required_argument, 0, \u0026#39;o\u0026#39;} }; \/** * Burda sirayla verilen argumalari aliyoruz *\/ do { next_option = getopt_long(argc, argv, short_options, long_options, NULL); switch(next_option) { case \u0026#39;h\u0026#39;: \/\/ -h or --help  print_usage(); return 0; break; case \u0026#39;o\u0026#39;: \/\/ -o or --or  output = optarg; break; case \u0026#39;i\u0026#39;: \/\/ -i or --i  input = optarg; break; case \u0026#39;b\u0026#39;: \/\/ -b or --blue  color = 44; break; case \u0026#39;r\u0026#39;: \/\/ -r or --red  color = 41; break; case -1: break; default: abort(); } } while (next_option != -1); printf(\u0026#34;%c[%d;%dmInput : %s%c[%dm\\n\u0026#34;, 27, 1, color, input, 27, 0); printf(\u0026#34;%c[%d;%dmOutput: %s%c[%dm\\n\u0026#34;, 27, 1, color, output, 27, 0); return 0; } int print_usage ( void ) { printf(\u0026#34; --help or -h for help\\n\u0026#34; \u0026#34; --output or -o for output\\n\u0026#34; \u0026#34; --input or -i for input\\n\u0026#34; \u0026#34; --blue or -b for blue output\\n\u0026#34; \u0026#34; --red or -r for red output\\n\u0026#34;); return 0; } Örnek\n",
   "inLanguage" : "tr",
   "wordCount":  276 ,
   "datePublished" : "2009-07-10T18:01:00",
@@ -80,8 +168,96 @@
 </script>
 
 <meta property="og:title" content="C ile Komut Satırı Argumanları ve Parametreleri" />
-<meta property="og:description" content="Komut satırı programları -h yada &ndash;help gibi parametreler alırlar. Bu alınan parametrelerin kolay kullanılması için getopt adında bir kütüphane yaratılmış. Bu kütüphane kullanlanılarak çok rahat böyle programlar yazılabilir. Bende bunun için küçük bir örnek yazdım.
-#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;getopt.h&gt; int print_usage ( void ); int main (int argc, char* argv[]) { int next_option; char* output; char* input; char color = 47; /** * kisa parametler burda tanimli * ardindan parametre alanlar : ile bitiyor * orn: o: bir parametre aliyor b almiyor * -o kelebek yada -b gibi */ const char* const short_options = &#34;hbro:i:&#34;; /** * Burdada uzun hallerini tanimliyoruz.">
+<meta property="og:description" content="Komut satırı programları -h yada &ndash;help gibi parametreler alırlar. Bu alınan parametrelerin kolay kullanılması için getopt adında bir kütüphane yaratılmış. Bu kütüphane kullanlanılarak çok rahat böyle programlar yazılabilir.
+Bende bunun için küçük bir örnek yazdım.
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;getopt.h&gt;
+
+int print_usage ( void );
+
+int main (int argc, char* argv[])
+{
+  int next_option;
+  char* output;
+  char* input;
+  char color = 47;
+
+  /**
+   * kisa parametler burda tanimli
+   *  ardindan parametre alanlar : ile bitiyor
+   *  orn: o: bir parametre aliyor b almiyor
+   *  -o kelebek yada -b gibi
+   */
+  const char* const short_options = &#34;hbro:i:&#34;;
+
+  /**
+   * Burdada uzun hallerini tanimliyoruz.
+   *  beraberinde kisa karsiliklarida var.
+   */
+  const struct option long_options[] = {
+    {&#34;help&#34;,   no_argument, 0, &#39;h&#39;},
+    {&#34;blue&#34;,   no_argument, 0, &#39;b&#39;},
+    {&#34;red&#34;,    no_argument, 0, &#39;r&#39;},
+    {&#34;input&#34;,  required_argument, 0, &#39;i&#39;},
+    {&#34;output&#34;, required_argument, 0, &#39;o&#39;}
+  };
+
+  /**
+   * Burda sirayla verilen argumalari aliyoruz
+   */
+  do {
+    next_option = getopt_long(argc,
+			      argv,
+			      short_options,
+			      long_options,
+			      NULL);
+    switch(next_option) {
+    case &#39;h&#39;: // -h or --help
+      print_usage();
+      return 0;
+      break;
+
+    case &#39;o&#39;: // -o or --or
+      output = optarg;
+      break;
+
+    case &#39;i&#39;: // -i or --i
+      input = optarg;
+      break;
+
+    case &#39;b&#39;: // -b or --blue
+      color = 44;
+      break;
+
+    case &#39;r&#39;: // -r or --red
+      color = 41;
+      break;
+
+    case -1:
+      break;
+
+    default:
+      abort();
+    }
+  } while (next_option != -1);
+
+  printf(&#34;%c[%d;%dmInput : %s%c[%dm\n&#34;, 27, 1, color, input, 27, 0);
+  printf(&#34;%c[%d;%dmOutput: %s%c[%dm\n&#34;, 27, 1, color, output, 27, 0);
+
+
+  return 0;
+}
+
+int print_usage ( void ) {
+  printf(&#34;   --help   or -h for help\n&#34;
+	 &#34;   --output or -o for output\n&#34;
+	 &#34;   --input  or -i for input\n&#34;
+	 &#34;   --blue   or -b for blue output\n&#34;
+	 &#34;   --red    or -r for red output\n&#34;);
+  return 0;
+}
+Örnek">
 <meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png" />
 <meta property="og:url" content="https://blog.askin.ws/blog/c-ile-komut-satiri-argumanlari-ve-parametreleri/" />
 <meta property="og:type" content="website" />
@@ -339,7 +515,6 @@ Bende bunun için küçük bir örnek yazdım.</p>
   <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 }
 </code></pre></div><p><a href="/uploads/2009/07/clexmp.c">Örnek</a></p>
-
 
         
           <div class="blog-tags">

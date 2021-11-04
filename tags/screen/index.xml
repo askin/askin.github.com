@@ -15,11 +15,7 @@
       <pubDate>Fri, 15 Nov 2013 17:17:00 +0300</pubDate>
       <author>askin@askin.ws (Aşkın Özgür)</author>
       <guid>https://blog.askin.ws/blog/screen-ile-irssi-kullanim-kilavuzu/</guid>
-      <description>irssi komut satırından çalışan ve bir çok geliştirici için popüler olan bir IRC istemcisidir. Irssi GNU Screen programı ile birlikte kullanılarak çıkış yapmadan bir veya birden fazla kabuk yaratabilirsiniz. Sürekli biligisayar değiltirip fakat irssi&amp;rsquo;a kaldığınız yerden devam etmek istediğinizde çok kullanılışılır.
-Avantajları:
- Kişiler size mesaj bırakabilir. Siz dışardayken yapılan görüşmeleri sonradan yakalayabilirsiniz (genellikle &amp;ldquo;scroolback&amp;rdquo; olarak adlandırılır).  Yönergeler:
-  Bir adet linux VPS edinin ya da sık sık yeniden başlatılmayacak, ihtiyacınız olan yerden bağlanabileceğiniz *nix makina üzerinde ssh hesabı edinin.
-  Bu hesaba bağlanmak için ssh kullanın. Windowsta PuTTY gibi bir istemci kullanın. Eğer Linux yada Unix temelli bir işletim sistemi kullanıyorsanız zaten ssh kuruludur.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.irssi.org/&#34; title=&#34;irssi web sitesi&#34;&gt;irssi&lt;/a&gt; komut satırından çalışan ve bir çok geliştirici için popüler olan bir IRC istemcisidir. Irssi &lt;a href=&#34;http://en.wikipedia.org/wiki/GNU_Screen&#34; title=&#34;Screen Wiki Sayfası&#34;&gt;GNU Screen&lt;/a&gt; programı ile birlikte kullanılarak çıkış yapmadan bir veya birden fazla kabuk yaratabilirsiniz. Sürekli biligisayar değiltirip fakat irssi&amp;rsquo;a kaldığınız yerden devam etmek istediğinizde çok kullanılışılır.&lt;/p&gt;</description>
     </item>
     
   </channel>
