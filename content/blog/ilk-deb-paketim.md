@@ -18,3 +18,4 @@ Bu sürümde ssh, samba yada ftp üzerinden bir makinaya bağlanıp oranın dizi
 
 Buda ekran görüntüsü, büyütmek için üzerine tıklayın:  
 [![PCman File Manager](/images/pcmanfm.resized.png)](/images/pcmanfm.png)
+<!--more-->

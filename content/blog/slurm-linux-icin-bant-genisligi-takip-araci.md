@@ -53,3 +53,5 @@ slurm -i eth1 -L
 ```
 
 Kaynak: <http://lintut.com/slurm-command-line-bandwidth-monitoring-tool-for-linux/>
+
+<!--more-->

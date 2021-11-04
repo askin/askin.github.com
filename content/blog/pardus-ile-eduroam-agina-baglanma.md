@@ -59,3 +59,5 @@ Bu komutla pem'e ulaşabilirsiniz.
 Bu aracı daha fazla geliştirecektim fakat ağ yöneticisiyle bu işleri nasıl yapabileceğimi öğrendim. Bugün oturup biraz network-managerın kodlarıyla uğraştım. Sanırım pazartesi günü bu işi ağ yöneticisiyle kolayca yapılabilecek bir hale getirebilirim. Şimdilik en güzel yöntem bu gibi :)
 
 Ayrıca sevgili dostum [Mete](http://blog.metebilgin.com/) bu işin wicd kullanarak nasıl yapıldığını daha önce yazmış [buradan](http://blog.metebilgin.com/2009/10/pardus-2009-da-eduroam-kafay-yemeden.html) o yazıya ulaşabilirsiniz.
+
+<!--more-->

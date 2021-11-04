@@ -10,12 +10,14 @@ Status: published
 
 Başlığında söylediği gibi, Python sözlük hızlı rehber
 
+<!--more-->
+
 ```python
 # Anahtar/değer çiftleriyle sözlük tanımlama
 dict = {
-    'anahtar1′ : 'deger1′,
-    'anahtar2′ : 'deger2′,
-    'anahtar3′ : 'deger3′
+    'anahtar1' : 'deger1',
+    'anahtar2' : 'deger2',
+    'anahtar3' : 'deger3'
 }
 
 # Tüm anahtarları al
@@ -25,7 +27,7 @@ sozluk.keys()
 sozluk.values()
 
 # Düzenleme
-sozluk['anahtar2'] = 'deger8′
+sozluk['anahtar2'] = 'deger8'
 
 # Erişim
 print sozluk['anahtar1']

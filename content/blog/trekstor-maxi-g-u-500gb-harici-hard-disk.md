@@ -19,3 +19,5 @@ Kutu üzerinde 500GB yazmasına rağmen 466GB. Disk üreticilerine göre 1GB, 10
 Piyasayı çok araştırmama rağmen fiyatı bana çok makul geldi. Teknosadan 100TLye aldım. Herkese tavsiye ederim.  
 Buda resmi.  
 ![TrekStor maxi g.u](/uploads/2009/09/trekstor_maxi_gu.jpg "TrekStor maxi g.u")
+
+<!--more-->

@@ -30,3 +30,5 @@ Probleme göre kod bana çok uzun geldi. Belki ilerde optimize edebilirim. Ama �
 ;aslında define kısmı çıkartılarak buna gerek kalmamayabilir
 ;ama  ilerde belki başka birşey içinde kullanırım:)
 ```
+
+<!--more-->

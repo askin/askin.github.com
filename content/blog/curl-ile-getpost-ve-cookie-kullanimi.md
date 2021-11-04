@@ -31,4 +31,6 @@ Tabi burda username ve password parametreleri değişiklik gösterebilir, gönde
 
 Bu şekilde de bir önceki komutla elde ettiğimiz cookie'yi kullanarak bir web sayfasına istekte bulunabiliyoruz.
 
-Eğer https ile istek yapmak istediğinizde sorun yaşıyorsanız "-k" parametresini kullanarak bu sorunu aşabilirsiniz.[Bu adreste](https://gist.github.com/askin/5966708 "Create Asterisk Extension") asterisk sunucu üzerinde extension oluşturan bir shell script var, yazıda anlattıklarım için güzel bir örnek olacaktır.
+Eğer https ile istek yapmak istediğinizde sorun yaşıyorsanız "-k" parametresini kullanarak bu sorunu aşabilirsiniz. [**Bu adreste**](https://gist.github.com/askin/5966708 "Create Asterisk Extension") asterisk sunucu üzerinde extension oluşturan bir shell script var, yazıda anlattıklarım için güzel bir örnek olacaktır.
+
+<!--more-->

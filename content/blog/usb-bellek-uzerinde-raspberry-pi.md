@@ -28,3 +28,5 @@ Elimizde bulunan sd karta 1 adet fat32 bölüm oluşturuyoruz (oluşturduğunuz 
 Bu işlemleri yaptıktan sonra /tmp/mnt\_sd/cmdline.txt dosyasını düzenlememiz gerekmekte. Bu dosyada *root=/dev/mmcblk0p2* olan kısmı *root=/dev/sda2* olarak değiştirin.
 
 [Kaynak](http://www.networkinghowtos.com/howto/raspbian-on-raspberry-pi-using-sd-card-usb-memory-stick/)
+
+<!--more-->

@@ -51,3 +51,5 @@ int main ( void ) {
 ```
 
 Kodun başına stdio.h headerını eklemekte fayda var. WP sıkıntı çıkarttığı için silmek zorunda kaldım. Kodun düzgün halini [burada](http://github.com/askin/misc/raw/master/fun/struct-function.c) bulabilirsiniz.
+
+<!--more-->

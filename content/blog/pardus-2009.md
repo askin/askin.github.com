@@ -14,3 +14,5 @@ Kablosuz ağ kartımı sorunsuz tanıdı ve WPA2 şifreli ağıma çok kolay bir
 KDE4 gerçekten çok güzel, çok hoş duruyor fakat bana göre değil. Arada açıp gönül eğlendirebilirim ama gnome herzamanki gibi 1 numaralı tercihim. Bu nedenle biraz KDE4 turu yaptıktan sonra hemen gnome'u kurdum. Bu nedenle [Burak Çalışkan](http://code.google.com/p/pardus-gnome-project/)'a teşekür ediyorum.  
 İhtiyaç duyduğum bazı programlar depoda bulunmuyordu. Bu nedenle devel deposundan bazı paketleri derleyip kurdum. Bi kaç program paketlenemedi, onlarda kısa sürede hazır olur diye umuyorum.  
 Her şeye rağmen güzel bi dağıtım olmuş. Emeği geçen herkese teşekür ediyorum.
+
+<!--more-->

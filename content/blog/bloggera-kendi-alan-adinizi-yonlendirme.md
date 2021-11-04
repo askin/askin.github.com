@@ -22,3 +22,5 @@ Alan adınızın bloggera yönlenmesi için CNAME kaydı oluşturmanız gerekiyo
 CNAME kaydına değer olarak *ghs.google.com* adresini vermelisiniz. Domain firmanızın güncellenme hızına göre alan adının aktif olma süresi değişecektir.
 
 Toplam 2 adımdan oluşuyor. Akılda tutmak kolay ama alan adının yönlenmesi biraz zaman aldığından dolayı insanın içinde bir şüphe oluyor her zaman :P
+
+<!--more-->

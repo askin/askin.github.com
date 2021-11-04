@@ -40,3 +40,5 @@ Eğer eski bölümü silecek veya orayı başka amaç için kullanacaksanız mbr
      > setup (hd0)
 
 Bende bu şekilde kuruldu, sizde bölüm numaralarına göre değişecektir kurulum.
+
+<!--more-->

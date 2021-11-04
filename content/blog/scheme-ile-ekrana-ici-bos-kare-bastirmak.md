@@ -65,3 +65,5 @@ Bu kod
 ```
 
 şeklini oluşturacaktır. Tabiki etkileşim penceresinde şekil daha düzgün çıkacaktır.
+
+<!--more-->

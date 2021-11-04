@@ -53,3 +53,5 @@ public class Sayisal {
 derseniz 4 kolon oynayacaktır.  
 [Sayısal Kaynak kodları.](/uploads/2008/04/Sayisal.java)  
 [Sayısal derlenmiş hali.](/uploads/2008/04/Sayisal.class)
+
+<!--more-->

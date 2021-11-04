@@ -13,6 +13,8 @@ Status: published
 1.  Dosya bir program tarafından okumak için açılır.
 2.  Başka bir program bu dosyayı siler.
 
+<!--more-->
+
 Bu senaryo gerçekleştiğinde, her ne kadar dosya silinmiş olsa da, hala diskte yer tutmaya devam edecektir. "du" komutuyla baktığınızda yer tutmayacaktır, ancak df ile kontrol ettiğimizde disk dolu olarak görünecektir.
 
 Basit bir demo yapacağım:

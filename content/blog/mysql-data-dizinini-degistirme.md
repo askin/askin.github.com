@@ -32,3 +32,5 @@ $ service mysql-server start
 ```
 
 Eğer düzgün bir şekilde çalışıyorsa **/var/lib/mysql** dizinini silebiliriz. Ama ismini değiştirip birkaç gün her ihtimale karşı saklamak çok mantıklı.
+
+<!--more-->

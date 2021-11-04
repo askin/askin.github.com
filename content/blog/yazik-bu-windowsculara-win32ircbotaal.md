@@ -16,3 +16,4 @@ Bu günlerde bi msn virüsü yayılmaya başladı. Msn üzerinden kişilere bu s
 4.  Şimdi msni kaldırıp bide sağlam bi programla (bu virüs için Nod32 tavsiye ediliyor) virüs taraması yapın.
 5.  Geçmiş olsun
 
+<!--more-->

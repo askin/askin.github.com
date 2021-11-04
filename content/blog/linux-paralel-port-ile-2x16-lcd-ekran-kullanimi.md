@@ -70,3 +70,4 @@ int main()
 ```
 
 Linke birşey olması durumunda [bu adresten gerekli şemayı indirebilirsiniz.](/uploads/2011/02/parlcd.gif)
+<!--more-->

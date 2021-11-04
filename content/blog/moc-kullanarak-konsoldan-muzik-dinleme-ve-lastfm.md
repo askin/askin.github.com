@@ -71,3 +71,4 @@ Eğer sorunlarınız olursa yazıyı baştan birdaha okuyun. Hala sorunlarınız
 -   [/home/plb](http://devnulll.blogspot.com/2007/08/how-to-submit-songs-to-lastfm-whilst_03.html)
 -   [Lapis Wiki](http://wiki.linux-sevenler.org/index.php/Mpd)
 
+<!--more-->

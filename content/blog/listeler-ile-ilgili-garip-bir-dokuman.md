@@ -12,6 +12,8 @@ Status: published
 
 > Bu yazı oluşturulurken <http://www.pythonforbeginners.com/python-lists-cheat-sheet/> adresindeki yazı referans alınmıştır. Bir çok yeri doğrudan çeviri olmakla beraber bir kısmını kendim baştan yazdım. Yazım - Mantık hataları vs. bulursanız yorum yazmaktan çekinmeyin.
 
+<!--more-->
+
 Liste Nedir?
 ------------
 
@@ -26,7 +28,7 @@ Liste Yaratma
 > Listeler çok kolay yaratılır, aşağıda liste oluşturmanın birkaç yolu vardır
 
 ```python
-emptyList = [ ]  
+emptyList = [ ]
 
 list1 = ['one, two, three, four, five']
  

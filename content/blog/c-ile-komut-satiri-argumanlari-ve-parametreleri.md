@@ -102,3 +102,4 @@ int print_usage ( void ) {
 ```
 
 [Örnek](/uploads/2009/07/clexmp.c)
+<!--more-->

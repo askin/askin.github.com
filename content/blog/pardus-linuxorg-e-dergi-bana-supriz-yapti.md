@@ -33,3 +33,5 @@ Dergide emeği geçen herkese teşekür ediyorum...
 -   Doruk Fişek Röportajı
 
 adres: <http://www.pardus-edergi.org/>
+
+<!--more-->

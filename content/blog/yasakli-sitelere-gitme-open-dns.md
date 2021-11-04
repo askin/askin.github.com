@@ -39,3 +39,5 @@ $ sudo ifdown eth0 && sudo ifup eth0
 ```
 
 komutunu veriyorsunuz. Eğer bu komutlarda bi hata verirse, ya da dns değişmemişse bilgisayarı açıp kapatın artık özgürsünüz.Şimdi [www.youtube.com](http://www.youtube.com,)'a girerek deneyebilirsiniz çalışıyormu diye:)
+
+<!--more-->

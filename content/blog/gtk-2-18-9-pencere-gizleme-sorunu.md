@@ -36,3 +36,4 @@ gtk_window_reshow_with_initial_size (GtkWindow *window)
 ```
 
 Önce pencereyi widgeta çevirebilme imkanım varmış, böyle basit bir şeyi nasıl bulamadım bilemiyorum.
+<!--more-->

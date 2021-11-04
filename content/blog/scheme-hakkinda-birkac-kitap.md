@@ -34,3 +34,5 @@ Dr.Scheme Ortamını indirebileceğimiz ve onunla ilgili hatta scheme ile ilgili
 Son olarakta schemers  
 Scheme programlama dili hakkında son haberleri, kütüphaneleri vs. bulabileceğiniz bir site.  
 <http://www.schemers.org/>
+
+<!--more-->

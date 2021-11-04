@@ -21,3 +21,5 @@ $ rm attentionbutton-0.3.tar.gz attentionbutton.c
 ```
 
 Bu eklentinin birkaç güzel özelliğide var. Mesela karşı tarafa sınırsız sayıda titreşim yollayabilirsiniz. Ve karşı taraf çevrim dışı bile görünse titretebilirsiniz. Tabi aşırı kullanım sağlığa zararlı :)
+
+<!--more-->

@@ -43,3 +43,5 @@ DrScheme de etkileşim penceresine
 ```
 
 şeklide giriş yapmamız gerekiyor. "&lt; " işareti yerine "&gt;" işaretide koyabiliriz. Bu sayede birde büyükten küçüğe sıralamak için aynı kodları yazmamıza gerek kalmayacak.
+
+<!--more-->

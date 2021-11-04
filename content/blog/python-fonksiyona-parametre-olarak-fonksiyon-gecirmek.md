@@ -54,3 +54,4 @@ def HepinizeMerhaba(isim1, isim2):
 BuyukBuyukAbi(HerpinizeMerhaba, ["kelebek", "Aşkın"])
 Merhaba kelebek, merhaba Aşkın
 ```
+<!--more-->

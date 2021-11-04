@@ -35,3 +35,5 @@ Paketleri kurduktan sonra ayarları yaparken Güvenlik Türü seçeneğini "WPA 
 Son olarak wireless-tools paketi Pardus'un temel paketlerinden birisidir, wpa\_supplicant paketi de wpa ağlarına bağlanmak için gerekli temel bir pakettir. Bunları Pardus deposu dışında bir yerden kurmak sisteminize zarar verebilir. Sorumluluk kullanıcıya aittir :)
 
 Benim sistemime hiç bir şey olmadı, %99.99 olasılıkla sizin siteminize de zarar gelmez fakat ben yinede hiç bir sorumluluk almıyorum :)
+
+<!--more-->

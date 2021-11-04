@@ -64,3 +64,5 @@ Depoyu chekout etmek için
 ```bash
 svn checkout svn://sunucu.com/depom
 ```
+
+<!--more-->

@@ -10,6 +10,8 @@ Status: published
 
 [irssi](http://www.irssi.org/ "irssi web sitesi") komut satırından çalışan ve bir çok geliştirici için popüler olan bir IRC istemcisidir. Irssi [GNU Screen](http://en.wikipedia.org/wiki/GNU\_Screen "Screen Wiki Sayfası") programı ile birlikte kullanılarak çıkış yapmadan bir veya birden fazla kabuk yaratabilirsiniz. Sürekli biligisayar değiltirip fakat irssi'a kaldığınız yerden devam etmek istediğinizde çok kullanılışılır.
 
+<!--more-->
+
 Avantajları:
 
 -   Kişiler size mesaj bırakabilir.

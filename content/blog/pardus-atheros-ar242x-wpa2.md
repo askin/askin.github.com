@@ -21,3 +21,5 @@ satırını eklemek gerekiyor. Bunları ekledikten sonra kde'de ağ programcığ
 Fakat XFCE kullanıyorsanız wicd kullanmanız gerekiyor. Wicd ile doğrudan kullanamıyoruz. Öncelikle birkaç ufak düzenleme yapmak gerekiyor.  
 Wicd -&gt; Tercihler yolunu takip ettikten sonra WPA Suplicant Sürücüsü: kısmına *wext*, Kablosuz arabirim kısmına da *wlan0* yazmak gerekiyor.  
 Bu ayarlarla kolaylıkla kullanabilirsiniz, kolay gelsin.
+
+<!--more-->

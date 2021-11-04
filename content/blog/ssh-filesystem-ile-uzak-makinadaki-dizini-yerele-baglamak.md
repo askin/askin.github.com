@@ -60,3 +60,5 @@ sshfs#guest@guest.login.com:data /mnt/guest fuse uid=1003,gid=100,umask=0,allow_
 
 - **Proje sayfası** :[http://fuse.sourceforge.net/sshfs.html](%20http://fuse.sourceforge.net/sshfs.html)
 - **Wiki sayfası** :[http://fuse.sourceforge.net/sshfs.html](http://fuse.sourceforge.net/sshfs.html). Wiki sayfasını kulanarak birçok bilgiye ulaşabilirsiniz..
+
+<!--more-->

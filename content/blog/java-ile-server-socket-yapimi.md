@@ -10,7 +10,9 @@ Status: published
 
 Bir proje için server sockete ihtiyaç duydum. Öncelikli dilim python olmasına rağmen, sunucu solaris olunca java ile yazmak daha cazip geldi. Öncelikli olarak test amaçlı birkaç satır kod yazdım. Akla gelen ilk örnek echo server oluyor :) aşağıda multi thread çalışan, birden fazla kullanıcıya cevap verebilecek bir echo server var:)
 
-*Server.java*
+<!--more-->
+
+`Server.java`
 
 ```java
 /**
@@ -52,7 +54,7 @@ class Server {
 }
 ```
 
-*Worker.java*
+`Worker.java`
 
 ```java
 /**

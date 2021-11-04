@@ -45,3 +45,5 @@ icon.set_from_stock(gtk.STOCK_ABOUT)
 11. gkt.main() haydi yapalım şu işi manasında :)
 
 Ayrıntılı dökümanı [PyGtk Belgelerinde](http://www.pygtk.org/docs/pygtk/class-gtkstatusicon.html) bulabilirisiniz. Yukarıda verdiğim kodu ve benim kullandığım ikonu [buradan](/uploads/2010/04/python-system-tray.zip) indirebilirsiniz.
+
+<!--more-->
