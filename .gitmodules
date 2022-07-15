@@ -2,7 +2,3 @@
 	path = themes/beautifulhugo
 	url = git@github.com:askin/beautifulhugo.git
 	branch = master
-[submodule "public"]
-	path = public
-	url = git@github.com:askin/askin.github.com.git
-	branch = master
