@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sezar on Aşkın Özgür</title><link>https://blog.askin.ws/tags/sezar/</link><description>Recent content in Sezar on Aşkın Özgür</description><generator>Hugo -- gohugo.io</generator><language>tr-TR</language><managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor><webMaster>askin@askin.ws (Aşkın Özgür)</webMaster><lastBuildDate>Wed, 12 Dec 2007 05:35:00 +0300</lastBuildDate><atom:link href="https://blog.askin.ws/tags/sezar/index.xml" rel="self" type="application/rss+xml"/><item><title>Sezar şifreleme</title><link>https://blog.askin.ws/blog/sezar-sifreleme/</link><pubDate>Wed, 12 Dec 2007 05:35:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/sezar-sifreleme/</guid><description>&lt;p>Sezar şifreleme için yazdığım ilk kod aşağıdaki gibiydi&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scheme" data-lang="scheme">(&lt;span style="color:#66d9ef">define &lt;/span>str2 &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>)
+(&lt;span style="color:#66d9ef">define &lt;/span>(&lt;span style="color:#a6e22e">sezar&lt;/span> str lst)
+(&lt;span style="color:#66d9ef">do &lt;/span>((&lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> (+ i &lt;span style="color:#ae81ff">1&lt;/span>)) (&lt;span style="color:#a6e22e">j&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> (+ j &lt;span style="color:#ae81ff">1&lt;/span>))) ((= j (string-length str)))
+(&lt;span style="color:#66d9ef">if &lt;/span>(= i (length lst))
+(&lt;span style="color:#66d9ef">set! &lt;/span>i &lt;span style="color:#ae81ff">0&lt;/span>))
+(&lt;span style="color:#66d9ef">set! &lt;/span>str2
+(&lt;span style="color:#a6e22e">string-append&lt;/span>
+str2
+(string (&lt;span style="color:#a6e22e">integer-&amp;gt;char&lt;/span>
+(+ (list-ref lst i )
+(char-&amp;gt;integer (string-ref str j)))))))))
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Ancak bu kod pek hoşuma gitmedi üzerinde biraz daha oynama yapmak gerekiyordu. Mesela en baştaki&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scheme" data-lang="scheme">(&lt;span style="color:#66d9ef">define &lt;/span>str2 &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>)
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>pek hoş durmuyordu ve hiç bir sonuç gönmüyordu. Ekstradan srt2 nin değerini sorgulamak gerekiyordu.&lt;/p></description></item></channel></rss>

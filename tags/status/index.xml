@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>status on Aşkın Özgür</title><link>https://blog.askin.ws/tags/status/</link><description>Recent content in status on Aşkın Özgür</description><generator>Hugo -- gohugo.io</generator><language>tr-TR</language><managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor><webMaster>askin@askin.ws (Aşkın Özgür)</webMaster><lastBuildDate>Wed, 07 Apr 2010 21:53:00 +0300</lastBuildDate><atom:link href="https://blog.askin.ws/tags/status/index.xml" rel="self" type="application/rss+xml"/><item><title>PyGtk ile Sistem Çekmecesi</title><link>https://blog.askin.ws/blog/pygtk-ile-sistem-cekmecesi/</link><pubDate>Wed, 07 Apr 2010 21:53:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/pygtk-ile-sistem-cekmecesi/</guid><description>&lt;p>&lt;img src="https://blog.askin.ws/uploads/2010/04/gtk.png" alt="Gtk" title="Gtk">Gtk ile çok kolay bir şekilde geliştirdiğiniz uygulamayı sistem çekmecesinde gösterebilirsiniz.&lt;/p>
+&lt;p>Ufak bir örnek kod veriyorum. Onun üzerinden anlatacağım.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#f92672">import&lt;/span> pygtk
+&lt;span style="color:#f92672">import&lt;/span> gtk
+&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">ShowIcon&lt;/span>:
+&lt;span style="color:#66d9ef">def&lt;/span> __init__(self):
+self&lt;span style="color:#f92672">.&lt;/span>icon &lt;span style="color:#f92672">=&lt;/span> gtk&lt;span style="color:#f92672">.&lt;/span>StatusIcon()
+self&lt;span style="color:#f92672">.&lt;/span>icon&lt;span style="color:#f92672">.&lt;/span>set_from_file(&lt;span style="color:#e6db74">&amp;#39;gtk.png&amp;#39;&lt;/span>)
+self&lt;span style="color:#f92672">.&lt;/span>icon&lt;span style="color:#f92672">.&lt;/span>set_tooltip_text(&lt;span style="color:#e6db74">&amp;#39;Hello Python!!!&amp;#39;&lt;/span>)
+self&lt;span style="color:#f92672">.&lt;/span>icon&lt;span style="color:#f92672">.&lt;/span>set_visible(&lt;span style="color:#66d9ef">True&lt;/span>)
+self&lt;span style="color:#f92672">.&lt;/span>icon&lt;span style="color:#f92672">.&lt;/span>connect(&lt;span style="color:#e6db74">&amp;#34;activate&amp;#34;&lt;/span>, self&lt;span style="color:#f92672">.&lt;/span>hello)
+gtk&lt;span style="color:#f92672">.&lt;/span>main()
+&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">hello&lt;/span>(self, widget):
+print &lt;span style="color:#e6db74">&amp;#39;Hello Python !!!&amp;#39;&lt;/span>
+&lt;span style="color:#66d9ef">if&lt;/span> __name__ &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#39;__main__&amp;#39;&lt;/span>:
+icon &lt;span style="color:#f92672">=&lt;/span> ShowIcon()
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>6. satırda asıl işimizi yapacak olan &lt;em>StatusIcon&lt;/em> nesnesini yaratıyoruz.&lt;br>
+7. satırda sistem çekmecesinde hangi ikonun görüntüleneceğini belirtiyoruz. &lt;em>set_from_file&lt;/em> ikonu dosyadan alacağımız anlamına geliyor. Eğer gtk&amp;rsquo;nın sunduğu standart ikonları kullanmak istiyorsanız set_from_stock kullanmalısınız.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">icon&lt;span style="color:#f92672">.&lt;/span>set_from_stock(gtk&lt;span style="color:#f92672">.&lt;/span>STOCK_ABOUT)
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>8. satırda ikonun üzerine geldiğimizde görünmesini istediğimiz yazıyı belirliyoruz.&lt;br>
+9. satırda ikonun başlangıçtaki görünürlüğünü belirliyoruz. Bu satırı yazmasak da görünür başlıyor.&lt;br>
+10. satırda ikonun &lt;em>&amp;ldquo;activate&amp;rdquo;&lt;/em> sinyali aldığında çağırmasını istediğimiz metodu belirliyoruz. Kısacası üzerine tıklandığında ne iş yapacağını belirtiyoruz. &lt;em>&amp;ldquo;activate&amp;rdquo;&lt;/em> yerine &lt;em>&amp;ldquo;popup_menu&amp;rdquo;&lt;/em> yazarsak ikona sağ tıkladığımızda çağrılacak metodu belirliyoruz.&lt;br>
+11. gkt.main() haydi yapalım şu işi manasında :)&lt;/p>
+&lt;p>Ayrıntılı dökümanı &lt;a href="http://www.pygtk.org/docs/pygtk/class-gtkstatusicon.html">PyGtk Belgelerinde&lt;/a> bulabilirisiniz. Yukarıda verdiğim kodu ve benim kullandığım ikonu &lt;a href="https://blog.askin.ws/uploads/2010/04/python-system-tray.zip">buradan&lt;/a> indirebilirsiniz.&lt;/p></description></item></channel></rss>

@@ -1,0 +1,563 @@
+<!doctype html><html lang=tr itemscope itemtype=http://schema.org/WebPage>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>C ile Komut Satırı Argumanları ve Parametreleri - Aşkın Özgür</title>
+<meta name=description content="Komut satırı programları -h yada &ndash;help gibi parametreler alırlar. Bu alınan parametrelerin kolay kullanılması için getopt adında bir kütüphane yaratılmış. Bu kütüphane kullanlanılarak çok rahat böyle programlar yazılabilir.
+Bende bunun için küçük bir örnek yazdım.
+#include <stdio.h>
+#include <stdlib.h>
+#include <getopt.h>
+
+int print_usage ( void );
+
+int main (int argc, char* argv[])
+{
+  int next_option;
+  char* output;
+  char* input;
+  char color = 47;
+
+  /**
+   * kisa parametler burda tanimli
+   *  ardindan parametre alanlar : ile bitiyor
+   *  orn: o: bir parametre aliyor b almiyor
+   *  -o kelebek yada -b gibi
+   */
+  const char* const short_options = &#34;hbro:i:&#34;;
+
+  /**
+   * Burdada uzun hallerini tanimliyoruz.
+   *  beraberinde kisa karsiliklarida var.
+   */
+  const struct option long_options[] = {
+    {&#34;help&#34;,   no_argument, 0, 'h'},
+    {&#34;blue&#34;,   no_argument, 0, 'b'},
+    {&#34;red&#34;,    no_argument, 0, 'r'},
+    {&#34;input&#34;,  required_argument, 0, 'i'},
+    {&#34;output&#34;, required_argument, 0, 'o'}
+  };
+
+  /**
+   * Burda sirayla verilen argumalari aliyoruz
+   */
+  do {
+    next_option = getopt_long(argc,
+			      argv,
+			      short_options,
+			      long_options,
+			      NULL);
+    switch(next_option) {
+    case 'h': // -h or --help
+      print_usage();
+      return 0;
+      break;
+
+    case 'o': // -o or --or
+      output = optarg;
+      break;
+
+    case 'i': // -i or --i
+      input = optarg;
+      break;
+
+    case 'b': // -b or --blue
+      color = 44;
+      break;
+
+    case 'r': // -r or --red
+      color = 41;
+      break;
+
+    case -1:
+      break;
+
+    default:
+      abort();
+    }
+  } while (next_option != -1);
+
+  printf(&#34;%c[%d;%dmInput : %s%c[%dm\n&#34;, 27, 1, color, input, 27, 0);
+  printf(&#34;%c[%d;%dmOutput: %s%c[%dm\n&#34;, 27, 1, color, output, 27, 0);
+
+
+  return 0;
+}
+
+int print_usage ( void ) {
+  printf(&#34;   --help   or -h for help\n&#34;
+	 &#34;   --output or -o for output\n&#34;
+	 &#34;   --input  or -i for input\n&#34;
+	 &#34;   --blue   or -b for blue output\n&#34;
+	 &#34;   --red    or -r for red output\n&#34;);
+  return 0;
+}
+Örnek">
+<meta name=author content="Aşkın Özgür"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Aşkın Özgür","url":"https:\/\/blog.askin.ws"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/blog.askin.ws"}</script>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/blog.askin.ws","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/blog.askin.ws\/blog\/c-ile-komut-satiri-argumanlari-ve-parametreleri\/","name":"C ile komut satırı argumanları ve parametreleri"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"Aşkın Özgür"},"headline":"C ile Komut Satırı Argumanları ve Parametreleri","description":"Komut satırı programları -h yada \u0026ndash;help gibi parametreler alırlar. Bu alınan parametrelerin kolay kullanılması için getopt adında bir kütüphane yaratılmış. Bu kütüphane kullanlanılarak çok rahat böyle programlar yazılabilir. Bende bunun için küçük bir örnek yazdım.\n#include \u0026lt;stdio.h\u0026gt;#include \u0026lt;stdlib.h\u0026gt;#include \u0026lt;getopt.h\u0026gt; int print_usage ( void ); int main (int argc, char* argv[]) { int next_option; char* output; char* input; char color = 47; \/** * kisa parametler burda tanimli * ardindan parametre alanlar : ile bitiyor * orn: o: bir parametre aliyor b almiyor * -o kelebek yada -b gibi *\/ const char* const short_options = \u0026#34;hbro:i:\u0026#34;; \/** * Burdada uzun hallerini tanimliyoruz. * beraberinde kisa karsiliklarida var. *\/ const struct option long_options[] = { {\u0026#34;help\u0026#34;, no_argument, 0, \u0026#39;h\u0026#39;}, {\u0026#34;blue\u0026#34;, no_argument, 0, \u0026#39;b\u0026#39;}, {\u0026#34;red\u0026#34;, no_argument, 0, \u0026#39;r\u0026#39;}, {\u0026#34;input\u0026#34;, required_argument, 0, \u0026#39;i\u0026#39;}, {\u0026#34;output\u0026#34;, required_argument, 0, \u0026#39;o\u0026#39;} }; \/** * Burda sirayla verilen argumalari aliyoruz *\/ do { next_option = getopt_long(argc, argv, short_options, long_options, NULL); switch(next_option) { case \u0026#39;h\u0026#39;: \/\/ -h or --help  print_usage(); return 0; break; case \u0026#39;o\u0026#39;: \/\/ -o or --or  output = optarg; break; case \u0026#39;i\u0026#39;: \/\/ -i or --i  input = optarg; break; case \u0026#39;b\u0026#39;: \/\/ -b or --blue  color = 44; break; case \u0026#39;r\u0026#39;: \/\/ -r or --red  color = 41; break; case -1: break; default: abort(); } } while (next_option != -1); printf(\u0026#34;%c[%d;%dmInput : %s%c[%dm\\n\u0026#34;, 27, 1, color, input, 27, 0); printf(\u0026#34;%c[%d;%dmOutput: %s%c[%dm\\n\u0026#34;, 27, 1, color, output, 27, 0); return 0; } int print_usage ( void ) { printf(\u0026#34; --help or -h for help\\n\u0026#34; \u0026#34; --output or -o for output\\n\u0026#34; \u0026#34; --input or -i for input\\n\u0026#34; \u0026#34; --blue or -b for blue output\\n\u0026#34; \u0026#34; --red or -r for red output\\n\u0026#34;); return 0; } Örnek\n","inLanguage":"tr","wordCount":276,"datePublished":"2009-07-10T18:01:00","dateModified":"2009-07-10T18:01:00","image":"https:\/\/blog.askin.ws\/uploads\/avatar.png","keywords":["c\/c\u002b\u002b"],"mainEntityOfPage":"https:\/\/blog.askin.ws\/blog\/c-ile-komut-satiri-argumanlari-ve-parametreleri\/","publisher":{"@type":"Organization","name":"https:\/\/blog.askin.ws","logo":{"@type":"ImageObject","url":"https:\/\/blog.askin.ws\/uploads\/avatar.png","height":60,"width":60}}}</script>
+<meta property="og:title" content="C ile Komut Satırı Argumanları ve Parametreleri">
+<meta property="og:description" content="Komut satırı programları -h yada &ndash;help gibi parametreler alırlar. Bu alınan parametrelerin kolay kullanılması için getopt adında bir kütüphane yaratılmış. Bu kütüphane kullanlanılarak çok rahat böyle programlar yazılabilir.
+Bende bunun için küçük bir örnek yazdım.
+#include <stdio.h>
+#include <stdlib.h>
+#include <getopt.h>
+
+int print_usage ( void );
+
+int main (int argc, char* argv[])
+{
+  int next_option;
+  char* output;
+  char* input;
+  char color = 47;
+
+  /**
+   * kisa parametler burda tanimli
+   *  ardindan parametre alanlar : ile bitiyor
+   *  orn: o: bir parametre aliyor b almiyor
+   *  -o kelebek yada -b gibi
+   */
+  const char* const short_options = &#34;hbro:i:&#34;;
+
+  /**
+   * Burdada uzun hallerini tanimliyoruz.
+   *  beraberinde kisa karsiliklarida var.
+   */
+  const struct option long_options[] = {
+    {&#34;help&#34;,   no_argument, 0, 'h'},
+    {&#34;blue&#34;,   no_argument, 0, 'b'},
+    {&#34;red&#34;,    no_argument, 0, 'r'},
+    {&#34;input&#34;,  required_argument, 0, 'i'},
+    {&#34;output&#34;, required_argument, 0, 'o'}
+  };
+
+  /**
+   * Burda sirayla verilen argumalari aliyoruz
+   */
+  do {
+    next_option = getopt_long(argc,
+			      argv,
+			      short_options,
+			      long_options,
+			      NULL);
+    switch(next_option) {
+    case 'h': // -h or --help
+      print_usage();
+      return 0;
+      break;
+
+    case 'o': // -o or --or
+      output = optarg;
+      break;
+
+    case 'i': // -i or --i
+      input = optarg;
+      break;
+
+    case 'b': // -b or --blue
+      color = 44;
+      break;
+
+    case 'r': // -r or --red
+      color = 41;
+      break;
+
+    case -1:
+      break;
+
+    default:
+      abort();
+    }
+  } while (next_option != -1);
+
+  printf(&#34;%c[%d;%dmInput : %s%c[%dm\n&#34;, 27, 1, color, input, 27, 0);
+  printf(&#34;%c[%d;%dmOutput: %s%c[%dm\n&#34;, 27, 1, color, output, 27, 0);
+
+
+  return 0;
+}
+
+int print_usage ( void ) {
+  printf(&#34;   --help   or -h for help\n&#34;
+	 &#34;   --output or -o for output\n&#34;
+	 &#34;   --input  or -i for input\n&#34;
+	 &#34;   --blue   or -b for blue output\n&#34;
+	 &#34;   --red    or -r for red output\n&#34;);
+  return 0;
+}
+Örnek">
+<meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png">
+<meta property="og:url" content="https://blog.askin.ws/blog/c-ile-komut-satiri-argumanlari-ve-parametreleri/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Aşkın Özgür">
+<meta name=twitter:title content="C ile Komut Satırı Argumanları ve Parametreleri">
+<meta name=twitter:description content="Komut satırı programları -h yada &ndash;help gibi parametreler alırlar. Bu alınan parametrelerin kolay kullanılması için getopt adında bir kütüphane yaratılmış. Bu kütüphane kullanlanılarak çok rahat …">
+<meta name=twitter:image content="https://blog.askin.ws/uploads/avatar.png">
+<meta name=twitter:card content="summary">
+<meta name=twitter:site content="@kelebeks">
+<meta name=twitter:creator content="@kelebeks">
+<link href=https://blog.askin.ws/uploads/avatar.png rel=icon type=image/x-icon>
+<meta name=generator content="Hugo 0.89.1">
+<link rel=alternate href=https://blog.askin.ws/index.xml type=application/rss+xml title="Aşkın Özgür"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css integrity=sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y crossorigin=anonymous>
+<link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous>
+<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://blog.askin.ws/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+<link rel=stylesheet href=https://blog.askin.ws/css/highlight.min.css><link rel=stylesheet href=https://blog.askin.ws/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+<div class=container-fluid>
+<div class=navbar-header>
+<button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
+<span class=sr-only>Gezinmeyi aktifleştirin</span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+</button>
+<a class=navbar-brand href=https://blog.askin.ws>Aşkın Özgür</a>
+</div>
+<div class="collapse navbar-collapse" id=main-navbar>
+<ul class="nav navbar-nav navbar-right">
+<li>
+<a title=Anasayfa href=/>Anasayfa</a>
+</li>
+<li>
+<a title=Hakkımda href=/about/>Hakkımda</a>
+</li>
+<li>
+<a title=Tags href=/tags>Tags</a>
+</li>
+</ul>
+</div>
+<div class=avatar-container>
+<div class=avatar-img-border>
+<a title="Aşkın Özgür" href=https://blog.askin.ws>
+<img class=avatar-img src=https://blog.askin.ws/uploads/avatar.png alt="Aşkın Özgür">
+</a>
+</div>
+</div>
+</div>
+</nav>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div>
+<header class=header-section>
+<div class="intro-header no-img">
+<div class=container>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class=blog-heading>
+<h1>C ile Komut Satırı Argumanları ve Parametreleri</h1>
+<hr class=small>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class=container role=main>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<article role=main class=blog-post>
+<p><img src=/uploads/2009/07/gnome-terminal.png alt=Terminal title=Terminal>Komut satırı programları -h yada &ndash;help gibi parametreler alırlar. Bu alınan parametrelerin kolay kullanılması için <em>getopt</em> adında bir kütüphane yaratılmış. Bu kütüphane kullanlanılarak çok rahat böyle programlar yazılabilir.
+Bende bunun için küçük bir örnek yazdım.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-C data-lang=C><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stdio.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stdlib.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;getopt.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span>
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>print_usage</span> ( <span style=color:#66d9ef>void</span> );
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span> (<span style=color:#66d9ef>int</span> argc, <span style=color:#66d9ef>char</span><span style=color:#f92672>*</span> argv[])
+{
+  <span style=color:#66d9ef>int</span> next_option;
+  <span style=color:#66d9ef>char</span><span style=color:#f92672>*</span> output;
+  <span style=color:#66d9ef>char</span><span style=color:#f92672>*</span> input;
+  <span style=color:#66d9ef>char</span> color <span style=color:#f92672>=</span> <span style=color:#ae81ff>47</span>;
+
+  <span style=color:#75715e>/**
+</span><span style=color:#75715e>   * kisa parametler burda tanimli
+</span><span style=color:#75715e>   *  ardindan parametre alanlar : ile bitiyor
+</span><span style=color:#75715e>   *  orn: o: bir parametre aliyor b almiyor
+</span><span style=color:#75715e>   *  -o kelebek yada -b gibi
+</span><span style=color:#75715e>   */</span>
+  <span style=color:#66d9ef>const</span> <span style=color:#66d9ef>char</span><span style=color:#f92672>*</span> <span style=color:#66d9ef>const</span> short_options <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;hbro:i:&#34;</span>;
+
+  <span style=color:#75715e>/**
+</span><span style=color:#75715e>   * Burdada uzun hallerini tanimliyoruz.
+</span><span style=color:#75715e>   *  beraberinde kisa karsiliklarida var.
+</span><span style=color:#75715e>   */</span>
+  <span style=color:#66d9ef>const</span> <span style=color:#66d9ef>struct</span> option long_options[] <span style=color:#f92672>=</span> {
+    {<span style=color:#e6db74>&#34;help&#34;</span>,   no_argument, <span style=color:#ae81ff>0</span>, <span style=color:#e6db74>&#39;h&#39;</span>},
+    {<span style=color:#e6db74>&#34;blue&#34;</span>,   no_argument, <span style=color:#ae81ff>0</span>, <span style=color:#e6db74>&#39;b&#39;</span>},
+    {<span style=color:#e6db74>&#34;red&#34;</span>,    no_argument, <span style=color:#ae81ff>0</span>, <span style=color:#e6db74>&#39;r&#39;</span>},
+    {<span style=color:#e6db74>&#34;input&#34;</span>,  required_argument, <span style=color:#ae81ff>0</span>, <span style=color:#e6db74>&#39;i&#39;</span>},
+    {<span style=color:#e6db74>&#34;output&#34;</span>, required_argument, <span style=color:#ae81ff>0</span>, <span style=color:#e6db74>&#39;o&#39;</span>}
+  };
+
+  <span style=color:#75715e>/**
+</span><span style=color:#75715e>   * Burda sirayla verilen argumalari aliyoruz
+</span><span style=color:#75715e>   */</span>
+  <span style=color:#66d9ef>do</span> {
+    next_option <span style=color:#f92672>=</span> getopt_long(argc,
+			      argv,
+			      short_options,
+			      long_options,
+			      NULL);
+    <span style=color:#66d9ef>switch</span>(next_option) {
+    <span style=color:#66d9ef>case</span> <span style=color:#e6db74>&#39;h&#39;</span><span style=color:#f92672>:</span> <span style=color:#75715e>// -h or --help
+</span><span style=color:#75715e></span>      print_usage();
+      <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+      <span style=color:#66d9ef>break</span>;
+
+    <span style=color:#66d9ef>case</span> <span style=color:#e6db74>&#39;o&#39;</span><span style=color:#f92672>:</span> <span style=color:#75715e>// -o or --or
+</span><span style=color:#75715e></span>      output <span style=color:#f92672>=</span> optarg;
+      <span style=color:#66d9ef>break</span>;
+
+    <span style=color:#66d9ef>case</span> <span style=color:#e6db74>&#39;i&#39;</span><span style=color:#f92672>:</span> <span style=color:#75715e>// -i or --i
+</span><span style=color:#75715e></span>      input <span style=color:#f92672>=</span> optarg;
+      <span style=color:#66d9ef>break</span>;
+
+    <span style=color:#66d9ef>case</span> <span style=color:#e6db74>&#39;b&#39;</span><span style=color:#f92672>:</span> <span style=color:#75715e>// -b or --blue
+</span><span style=color:#75715e></span>      color <span style=color:#f92672>=</span> <span style=color:#ae81ff>44</span>;
+      <span style=color:#66d9ef>break</span>;
+
+    <span style=color:#66d9ef>case</span> <span style=color:#e6db74>&#39;r&#39;</span><span style=color:#f92672>:</span> <span style=color:#75715e>// -r or --red
+</span><span style=color:#75715e></span>      color <span style=color:#f92672>=</span> <span style=color:#ae81ff>41</span>;
+      <span style=color:#66d9ef>break</span>;
+
+    <span style=color:#66d9ef>case</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span><span style=color:#f92672>:</span>
+      <span style=color:#66d9ef>break</span>;
+
+    <span style=color:#66d9ef>default</span><span style=color:#f92672>:</span>
+      abort();
+    }
+  } <span style=color:#66d9ef>while</span> (next_option <span style=color:#f92672>!=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>);
+
+  printf(<span style=color:#e6db74>&#34;%c[%d;%dmInput : %s%c[%dm</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, <span style=color:#ae81ff>27</span>, <span style=color:#ae81ff>1</span>, color, input, <span style=color:#ae81ff>27</span>, <span style=color:#ae81ff>0</span>);
+  printf(<span style=color:#e6db74>&#34;%c[%d;%dmOutput: %s%c[%dm</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, <span style=color:#ae81ff>27</span>, <span style=color:#ae81ff>1</span>, color, output, <span style=color:#ae81ff>27</span>, <span style=color:#ae81ff>0</span>);
+
+
+  <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+}
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>print_usage</span> ( <span style=color:#66d9ef>void</span> ) {
+  printf(<span style=color:#e6db74>&#34;   --help   or -h for help</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+	 <span style=color:#e6db74>&#34;   --output or -o for output</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+	 <span style=color:#e6db74>&#34;   --input  or -i for input</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+	 <span style=color:#e6db74>&#34;   --blue   or -b for blue output</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+	 <span style=color:#e6db74>&#34;   --red    or -r for red output</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
+  <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+}
+</code></pre></div><p><a href=/uploads/2009/07/clexmp.c>Örnek</a></p>
+<div class=blog-tags>
+<a href=https://blog.askin.ws/tags/c/c++/>c/c++</a>&nbsp;
+</div>
+<hr>
+<section id=social-share>
+<div class="list-inline footer-links">
+<div class=share-box aria-hidden=true>
+<ul class=share>
+<li>
+<a href="//twitter.com/share?url=https%3a%2f%2fblog.askin.ws%2fblog%2fc-ile-komut-satiri-argumanlari-ve-parametreleri%2f&text=C%20ile%20Komut%20Sat%c4%b1r%c4%b1%20Argumanlar%c4%b1%20ve%20Parametreleri&via=kelebeks" target=_blank title="Share on Twitter">
+<i class="fab fa-twitter"></i>
+</a>
+</li>
+<li>
+<a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.askin.ws%2fblog%2fc-ile-komut-satiri-argumanlari-ve-parametreleri%2f" target=_blank title="Share on Facebook">
+<i class="fab fa-facebook"></i>
+</a>
+</li>
+<li>
+<a href="//reddit.com/submit?url=https%3a%2f%2fblog.askin.ws%2fblog%2fc-ile-komut-satiri-argumanlari-ve-parametreleri%2f&title=C%20ile%20Komut%20Sat%c4%b1r%c4%b1%20Argumanlar%c4%b1%20ve%20Parametreleri" target=_blank title="Share on Reddit">
+<i class="fab fa-reddit"></i>
+</a>
+</li>
+<li>
+<a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fblog.askin.ws%2fblog%2fc-ile-komut-satiri-argumanlari-ve-parametreleri%2f&title=C%20ile%20Komut%20Sat%c4%b1r%c4%b1%20Argumanlar%c4%b1%20ve%20Parametreleri" target=_blank title="Share on LinkedIn">
+<i class="fab fa-linkedin"></i>
+</a>
+</li>
+<li>
+<a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fblog.askin.ws%2fblog%2fc-ile-komut-satiri-argumanlari-ve-parametreleri%2f&title=C%20ile%20Komut%20Sat%c4%b1r%c4%b1%20Argumanlar%c4%b1%20ve%20Parametreleri" target=_blank title="Share on StumbleUpon">
+<i class="fab fa-stumbleupon"></i>
+</a>
+</li>
+<li>
+<a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fblog.askin.ws%2fblog%2fc-ile-komut-satiri-argumanlari-ve-parametreleri%2f&description=C%20ile%20Komut%20Sat%c4%b1r%c4%b1%20Argumanlar%c4%b1%20ve%20Parametreleri" target=_blank title="Share on Pinterest">
+<i class="fab fa-pinterest"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<h4 class=see-also>Ayrıca bakınız</h4>
+<ul>
+<li><a href=/blog/udp-broadcast-sunucu-istemci/>UDP Broadcast sunucu - istemci</a></li>
+<li><a href=/blog/linux-paralel-port-ile-2x16-lcd-ekran-kullanimi/>Linux, Paralel Port ile 2x16 LCD Ekran Kullanımı</a></li>
+<li><a href=/blog/c-ile-nesne-yaratmak/>C ile Nesne Yaratmak</a></li>
+<li><a href=/blog/gtk-2-18-9-pencere-gizleme-sorunu/>Gtk &lt;= 2.18.9 Pencere Gizleme Sorunu</a></li>
+</ul>
+</article>
+<ul class="pager blog-pager">
+<li class=previous>
+<a href=https://blog.askin.ws/blog/pidgin-titresim-eklentisi-attention-button/ data-toggle=tooltip data-placement=top title="Pidgin Titreşim Eklentisi - Attention Button">&larr; Önceki gönderi</a>
+</li>
+<li class=next>
+<a href=https://blog.askin.ws/blog/mysql-data-dizinini-degistirme/ data-toggle=tooltip data-placement=top title="Mysql Data Dizinini Değiştirme">Sonraki gönderi &rarr;</a>
+</li>
+</ul>
+<div class=disqus-comments>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//askin-ozgurun-web-gunlugu.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
+</div>
+</div>
+</div>
+</div>
+<footer>
+<div class=container>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<ul class="list-inline text-center footer-links">
+<li>
+<a href=mailto:askin@askin.ws title="Email me">
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://www.facebook.com/askinyollu title=Facebook>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://github.com/askin title=GitHub>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-github fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://gitlab.com/askinozgur title=GitLab>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-gitlab fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://bitbucket.org/askin title=Bitbucket>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-bitbucket fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://twitter.com/kelebeks title=Twitter>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://linkedin.com/in/askin.yollu title=LinkedIn>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://open.spotify.com/user/kelebex title=Spotify>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-spotify fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://telegram.me/kelebeks title=Telegram>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-telegram fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href title=RSS>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+</ul>
+<p class="credits copyright text-muted">
+<a href=https://askin.ws>Aşkın Özgür</a>
+&nbsp;&bull;&nbsp;&copy;
+2021
+&nbsp;&bull;&nbsp;
+<a href=https://blog.askin.ws>Aşkın Özgür</a>
+</p>
+<p class="credits theme-by text-muted">
+<a href=https://gohugo.io>Hugo v0.89.1</a> altyapısı &nbsp;&bull;&nbsp; <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a> temasından uyarlanan <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> teması kullanılmaktadır.
+</p>
+</div>
+</div>
+</div>
+</footer><script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js integrity=sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js integrity=sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe crossorigin=anonymous></script>
+<script src=https://code.jquery.com/jquery-1.12.4.min.js integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin=anonymous></script>
+<script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script>
+<script src=https://blog.askin.ws/js/main.js></script>
+<script src=https://blog.askin.ws/js/highlight.min.js></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script>$(document).ready(function(){$("pre.chroma").css("padding","0")})</script><script>renderMathInElement(document.body)</script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js integrity=sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js integrity=sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q crossorigin=anonymous></script><script src=https://blog.askin.ws/js/load-photoswipe.js></script>
+</body>
+</html>

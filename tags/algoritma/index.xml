@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Algoritma on Aşkın Özgür</title><link>https://blog.askin.ws/tags/algoritma/</link><description>Recent content in Algoritma on Aşkın Özgür</description><generator>Hugo -- gohugo.io</generator><language>tr-TR</language><managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor><webMaster>askin@askin.ws (Aşkın Özgür)</webMaster><lastBuildDate>Thu, 27 Dec 2007 10:32:00 +0300</lastBuildDate><atom:link href="https://blog.askin.ws/tags/algoritma/index.xml" rel="self" type="application/rss+xml"/><item><title>Project Euler - Problem sitesi:)</title><link>https://blog.askin.ws/blog/project-euler-problem-sitesi/</link><pubDate>Thu, 27 Dec 2007 10:32:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/project-euler-problem-sitesi/</guid><description>Project Euler adlı bir site ile karşılaştım. Bu sitede yaklaşık 170 adet problem var ve bu problemleri sizden çözmeniz bekleniyor. Aralarında 14163 kez çözülmüş olanıda var 116kez çözülenide. İstediğiniz bir dilde çözüp çözümlerinizi yayınlayabiliyorsunuz. Kolay gelsin.
+Adres: http://www.projecteuler.net/</description></item><item><title>Bubble sort algoritması ve scheme çözümü</title><link>https://blog.askin.ws/blog/bubble-sort-algoritmasi-ve-scheme-cozumu/</link><pubDate>Mon, 17 Dec 2007 15:11:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/bubble-sort-algoritmasi-ve-scheme-cozumu/</guid><description>&lt;p>Bubble sort algoritması kabaca: verilen dizideki elemanları ikili olarak karşılaştırıp gerekli olduğunda yerlerini değiştirmek esasına dayanır. Elimizde 11 5 8 4 6 84 7 sayılarında oluşan bir dizi olduğunu var sayalım ve bu diziyi küçükten büyüğe sıralamak isteyelim.&lt;/p>
+&lt;ol>
+&lt;li>önce 11 ile 5i karşılaştırırız, 11 5&amp;rsquo;ten büyük olduğu için 11 ile 5in yerini değiştiririz; 5 11 8 4 6 84 7&lt;/li>
+&lt;li>sonra 11 ile 8i karşılaştırırız ve 11 ile 8&amp;rsquo;in yerini değiştiririz 5 8 11 4 6 84 7&lt;/li>
+&lt;li>11 ile 4; 5 8 4 11 6 84 7&lt;/li>
+&lt;li>11 ile 6; 5 8 4 6 11 84 7&lt;/li>
+&lt;li>11 ile 84; 84 büyük olduğu için sıralamaya dokunmayız. 5 8 4 6 11 84 7&lt;/li>
+&lt;li>şimdi 84 ile 7&amp;rsquo;yi karşılaştırırız; 5 8 4 6 11 7 84&lt;/li>
+&lt;/ol>
+&lt;p>Son durumda 7 elemanlı bir dizi için 6 kontrol yaptık ve en büyük elemanı sona attık. Şimdiki karşılaştırmalarımızda artık son elamanı yok sayabiliriz. Yani problemimiz artık 6 elemanlı bir diziyi sıralamak oldu. Aynı işlemleri 6 eleman varsayarak yaptığımızda sırasıyla problem 5, 4, 3, 2 ve 1 elemanlı dizileri sıralamaya dönüşecek. 1 elemanlı dizi herzaman sıralı olduğu için hiç bi derdimiz sıkıntımızda kalmayacak:) Bu şekilde işlemleride 6 defa yaptık.&lt;br>
+Şimdi sıra geldi koda&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scheme" data-lang="scheme">(&lt;span style="color:#66d9ef">define &lt;/span>vector-bubble-sort
+(&lt;span style="color:#66d9ef">lambda &lt;/span>(&lt;span style="color:#a6e22e">vec&lt;/span> op)
+(&lt;span style="color:#66d9ef">let &lt;/span>((&lt;span style="color:#a6e22e">tmp&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>) (&lt;span style="color:#a6e22e">stop-do&lt;/span> &lt;span style="color:#66d9ef">#f&lt;/span>))
+(&lt;span style="color:#66d9ef">do &lt;/span>((&lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> (+ i &lt;span style="color:#ae81ff">1&lt;/span>))) ((&lt;span style="color:#66d9ef">or &lt;/span>(= i (vector-length vec)) stop-do))
+(&lt;span style="color:#66d9ef">set! &lt;/span>stop-do &lt;span style="color:#66d9ef">#t&lt;/span>)
+(&lt;span style="color:#66d9ef">do &lt;/span>((&lt;span style="color:#a6e22e">j&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> (+ j &lt;span style="color:#ae81ff">1&lt;/span>))) ((= j (- (vector-length vec) i &lt;span style="color:#ae81ff">1&lt;/span>)))
+(&lt;span style="color:#66d9ef">if &lt;/span>(not (&lt;span style="color:#a6e22e">op&lt;/span> (vector-ref vec j) (vector-ref vec (+ j &lt;span style="color:#ae81ff">1&lt;/span>))))
+(&lt;span style="color:#66d9ef">begin &lt;/span>
+(&lt;span style="color:#66d9ef">set! &lt;/span>tmp (vector-ref vec j))
+(vector-set! vec j (vector-ref vec (+ j &lt;span style="color:#ae81ff">1&lt;/span>)))
+(vector-set! vec (+ j &lt;span style="color:#ae81ff">1&lt;/span>) tmp)
+(&lt;span style="color:#66d9ef">set! &lt;/span>stop-do &lt;span style="color:#66d9ef">#f&lt;/span>))))))
+vec))
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>DrScheme de etkileşim penceresine&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scheme" data-lang="scheme">(&lt;span style="color:#a6e22e">vector-bubble-sort&lt;/span> &lt;span style="color:#f92672">#&lt;/span>(&lt;span style="color:#ae81ff">5&lt;/span> &lt;span style="color:#ae81ff">11&lt;/span> &lt;span style="color:#ae81ff">8&lt;/span> &lt;span style="color:#ae81ff">4&lt;/span> &lt;span style="color:#ae81ff">6&lt;/span> &lt;span style="color:#ae81ff">84&lt;/span> &lt;span style="color:#ae81ff">7&lt;/span>) &amp;lt; )
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>şeklide giriş yapmamız gerekiyor. &amp;ldquo;&amp;lt; &amp;quot; işareti yerine &amp;ldquo;&amp;gt;&amp;rdquo; işaretide koyabiliriz. Bu sayede birde büyükten küçüğe sıralamak için aynı kodları yazmamıza gerek kalmayacak.&lt;/p></description></item><item><title>Sezar şifreleme</title><link>https://blog.askin.ws/blog/sezar-sifreleme/</link><pubDate>Wed, 12 Dec 2007 05:35:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/sezar-sifreleme/</guid><description>&lt;p>Sezar şifreleme için yazdığım ilk kod aşağıdaki gibiydi&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scheme" data-lang="scheme">(&lt;span style="color:#66d9ef">define &lt;/span>str2 &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>)
+(&lt;span style="color:#66d9ef">define &lt;/span>(&lt;span style="color:#a6e22e">sezar&lt;/span> str lst)
+(&lt;span style="color:#66d9ef">do &lt;/span>((&lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> (+ i &lt;span style="color:#ae81ff">1&lt;/span>)) (&lt;span style="color:#a6e22e">j&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> (+ j &lt;span style="color:#ae81ff">1&lt;/span>))) ((= j (string-length str)))
+(&lt;span style="color:#66d9ef">if &lt;/span>(= i (length lst))
+(&lt;span style="color:#66d9ef">set! &lt;/span>i &lt;span style="color:#ae81ff">0&lt;/span>))
+(&lt;span style="color:#66d9ef">set! &lt;/span>str2
+(&lt;span style="color:#a6e22e">string-append&lt;/span>
+str2
+(string (&lt;span style="color:#a6e22e">integer-&amp;gt;char&lt;/span>
+(+ (list-ref lst i )
+(char-&amp;gt;integer (string-ref str j)))))))))
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Ancak bu kod pek hoşuma gitmedi üzerinde biraz daha oynama yapmak gerekiyordu. Mesela en baştaki&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scheme" data-lang="scheme">(&lt;span style="color:#66d9ef">define &lt;/span>str2 &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>)
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>pek hoş durmuyordu ve hiç bir sonuç gönmüyordu. Ekstradan srt2 nin değerini sorgulamak gerekiyordu.&lt;/p></description></item></channel></rss>

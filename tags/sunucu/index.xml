@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>sunucu on Aşkın Özgür</title><link>https://blog.askin.ws/tags/sunucu/</link><description>Recent content in sunucu on Aşkın Özgür</description><generator>Hugo -- gohugo.io</generator><language>tr-TR</language><managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor><webMaster>askin@askin.ws (Aşkın Özgür)</webMaster><lastBuildDate>Thu, 23 Aug 2012 18:16:00 +0300</lastBuildDate><atom:link href="https://blog.askin.ws/tags/sunucu/index.xml" rel="self" type="application/rss+xml"/><item><title>Subversion sunucu kurulumu</title><link>https://blog.askin.ws/blog/subversion-sunucu-kurulumu/</link><pubDate>Thu, 23 Aug 2012 18:16:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/subversion-sunucu-kurulumu/</guid><description>&lt;p>Linux üzerinde kurulumdan bahsedeceğim. Öncelikle kullandığınız dağıtımın paket deposundan subversion paketini kurmalısınız. Ben debian kullandığım için&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo apt-get install subversion
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Kurulum tamamlandıktan sonra gerekli tüm araçlara sahip olmuş oluyoruz.&lt;/p>
+&lt;p>Bir depo oluşturalım.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">svnadmin create depom
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>depom adli dizinde bir depo oluşturmuş olduk. Bu depo üzerinde gerekli düzenlemeleri yapalım.&lt;br>
+&lt;em>depom/conf/svnserve.conf&lt;/em> bu dosya temel ayarlarimizi yapacağımız dosya. Bu dosyayı açıp [general] başlığı altındaki ayarları düzenliyoruz. Burdaki tüm ayarlar yorum satırı haline getirişmiş, bunlardan işimize yarayanları aktif hale getirmemiz gerekiyor.&lt;/p>
+&lt;pre>&lt;code># anon-access = read
+&lt;/code>&lt;/pre>
+&lt;p>Tanımladığımız kullanıcılar dışında kalan kişilerin yetkilerini düzenlemek için kullanıyoruz. Eğer yorum satırı halinde bırakırsak tanımsız kullanıcılar depo üzerinde okuma hakkına sahip oluyorlar. Eğer bu şekilde bırakırsak okuma yapamazlar. Eğer read yerine write yazarsak depomuzda herkes okur-yazar oluyor.&lt;/p>
+&lt;pre>&lt;code># auth-access = write
+&lt;/code>&lt;/pre>
+&lt;p>Kayıtlı kullanıcıların yetkilerini burdan belirliyoruz. Yorum satırı olmaktan çıkartırsak depomuzda tanımlı kullanıcılar yazma hakkına sahip olur.&lt;/p>
+&lt;pre>&lt;code># password-db = passwd
+&lt;/code>&lt;/pre>
+&lt;p>Depoya erişim yetkisi verdiğimiz kullanıcıların kullanıcı adı ve parolaların tutulduğu yeri belirtir. Kullanıcıları tanımlamak için yorum satırı halinden çıkartıp istediğimiz yolu belirtmeliyiz, daha sonra ilgili dosyayı düzenlemeliyiz.&lt;br>
+Dosya içeriği&lt;/p>
+&lt;pre>&lt;code>[users]
+askin = parolam
+&lt;/code>&lt;/pre>
+&lt;p>Parolalar şifrelenmemiş halde tutuluyor.&lt;/p>
+&lt;pre>&lt;code># authz-db = authz
+&lt;/code>&lt;/pre>
+&lt;p>Kullanıcıların izinlerini daha detaylı olarak ayarlamak istersek bu satırı yorum satırı halinden çıkartıp, istediğimiz bir yolu girmemiz gerekmekte.&lt;/p>
+&lt;pre>&lt;code># realm = My First Repository
+&lt;/code>&lt;/pre>
+&lt;p>Depomuzun adı, bu satırı yorum satırı olmaktan çıkartıp istediğimiz bir isim veriyoruz.&lt;/p>
+&lt;p>Tüm bunları yaptıktan sonra depomuzu yayınlayabiliriz. Bunu yapmak için &lt;em>svnserve&lt;/em> adında bir programdan yararlanıyoruz.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">/usr/bin/svnserve -d -r /home/svn/repositories --log-file /var/log/svnserve
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Bu komut &lt;em>/home/svn/repositories&lt;/em> dizinindeki tüm depoları yayınlar.&lt;/p>
+&lt;p>Depoyu chekout etmek için&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">svn checkout svn://sunucu.com/depom
+&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

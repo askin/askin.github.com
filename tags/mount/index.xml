@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>mount on Aşkın Özgür</title><link>https://blog.askin.ws/tags/mount/</link><description>Recent content in mount on Aşkın Özgür</description><generator>Hugo -- gohugo.io</generator><language>tr-TR</language><managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor><webMaster>askin@askin.ws (Aşkın Özgür)</webMaster><lastBuildDate>Wed, 07 May 2008 10:36:00 +0300</lastBuildDate><atom:link href="https://blog.askin.ws/tags/mount/index.xml" rel="self" type="application/rss+xml"/><item><title>SSH Filesystem ile uzak makinadaki dizini yerele bağlamak</title><link>https://blog.askin.ws/blog/ssh-filesystem-ile-uzak-makinadaki-dizini-yerele-baglamak/</link><pubDate>Wed, 07 May 2008 10:36:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/ssh-filesystem-ile-uzak-makinadaki-dizini-yerele-baglamak/</guid><description>&lt;p>Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz.
+Ben daha önce bahsettiğim &lt;a href="http://blog.yollu.com/2008/02/21/telekom-artik-kork-benden/">internet canavarı:)&lt;/a> için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu.
+Kullanacağımız programın adı sshfs yani SSH Filesystem.
+Kurulum:&lt;/p>
+&lt;ul>
+&lt;li>Debian &amp;amp;&amp;amp; Ubuntu &amp;amp;&amp;amp; vb.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">aptitude install sshfs
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Kaynak koddan derleme&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">./configure
+make
+make install &lt;span style="color:#75715e"># root yetkileriyle&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Kullanımı - Uzak makinadaki bir dizini bağlamak
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sshfs hostname:dizin bağlamanoktası &lt;span style="color:#f92672">(&lt;/span>root yetkileriyle&lt;span style="color:#f92672">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>Umount - Bağı koparma
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">umount bağlamanoktası
+&lt;span style="color:#75715e"># ya da&lt;/span>
+fusermount -u bağlamanoktası
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;p>Bu şekide kullanırsanız bağladığınız dizine ancak root yetkileriyle ulaşabilirsiniz. Her kullanıcının tüm haklarla(hangi kullanıcı ile ssh bağlantısı gerçekleştirdiyseniz onun haklarına sahip oluyosunuz) bağladığınız dizini kulanabilmesini istiyorsanız&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sshfs -o allow_other hostname:dizin bağlamanoktası
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Parametreler&lt;/strong>
+-o parametresini kullanarak uid ve gid değerlerini ayarlayabilirsiniz.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">-o idmap&lt;span style="color:#f92672">=&lt;/span>user
+-o uid&lt;span style="color:#f92672">=&lt;/span>&amp;lt;uid&amp;gt;
+-o gid&lt;span style="color:#f92672">=&lt;/span>&amp;lt;gid&amp;gt;
+-o ro &lt;span style="color:#75715e"># read only - salt okunur mod&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>fstab dosyasını kullanarak mount etme&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>sshfs#USERNAME@REMOTE_HOST:REMOTE_PATH MOUNT_POINT fuse SSHFS_OPTIONS 0 0
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>örnek&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>sshfs#guest@guest.login.com:data /mnt/guest fuse uid=1003,gid=100,umask=0,allow_other 0 0
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>&lt;strong>Proje sayfası&lt;/strong> :&lt;a href="%20http://fuse.sourceforge.net/sshfs.html">http://fuse.sourceforge.net/sshfs.html&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Wiki sayfası&lt;/strong> :&lt;a href="http://fuse.sourceforge.net/sshfs.html">http://fuse.sourceforge.net/sshfs.html&lt;/a>. Wiki sayfasını kulanarak birçok bilgiye ulaşabilirsiniz..&lt;/li>
+&lt;/ul></description></item></channel></rss>

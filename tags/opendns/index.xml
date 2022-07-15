@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenDNS on Aşkın Özgür</title><link>https://blog.askin.ws/tags/opendns/</link><description>Recent content in OpenDNS on Aşkın Özgür</description><generator>Hugo -- gohugo.io</generator><language>tr-TR</language><managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor><webMaster>askin@askin.ws (Aşkın Özgür)</webMaster><lastBuildDate>Fri, 18 Jan 2008 18:52:00 +0300</lastBuildDate><atom:link href="https://blog.askin.ws/tags/opendns/index.xml" rel="self" type="application/rss+xml"/><item><title>Yasaklı sitelere girme - Open DNS</title><link>https://blog.askin.ws/blog/yasakli-sitelere-gitme-open-dns/</link><pubDate>Fri, 18 Jan 2008 18:52:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/yasakli-sitelere-gitme-open-dns/</guid><description>&lt;p>Yasaklı sitelere girebilmek için çok çeşitli yöntemler kullanabilirsiniz. Ben çok sıklıkla &lt;a href="http://www.gizlen.net" title="İzlenme Gizlen">www.gizlen.net&lt;/a>&amp;lsquo;i kullanabilirsiniz. Bu siteye giriyorsunuz ve sayfanın üstündeki kutucuğa gireceğiniz siteyi yazıyorsunuz, oda size gireceğiniz siteyi sunuyor. Eğer daha kalıcı bir çözüm istiyorsanız proxy(vekil sunucu) kullanabilirsiniz. İnternetten ufak bir arama ile onlarca proxy adresine sahip olabilirsiniz. Ancak birçok kişi tarafınfan kullanılan ve tavsiye edilen &lt;a href="http://www.opendns.com/" title="Open DNS sitesine gitmek için tıklayın: ">Open DNS&lt;/a> işinizi çok rahatlıkla görebilir. Gerçi Open DNS bir proxy değil. O bir Name Server. Bizim &lt;a href="http://www.bobrektasi.org">www.bobrektasi.org&lt;/a> gibi girmeye çalıştığımız sitelerin ip adreslerini çözümleyip bizi doğru makineye yönlendiriyor. Bu bu yönlenme işini Open DNS üzerinden yaptığımız için TTnet&amp;rsquo;in bizim girdiğimiz sitelere müdahale etme şansı kalmıyor.&lt;br>
+Adresi: &lt;a href="http://www.opendns.com/">http://www.opendns.com/&lt;/a>&lt;br>
+&lt;a href="https://www.opendns.com/start">https://www.opendns.com/start&lt;/a> Bu adresten ayarların nasıl yapıldığını öğrenebilirsiniz.&lt;/p>
+&lt;p>Ubuntu için ayarlar:&lt;br>
+İlk önce Networ Admin Proramını açıyoruz:&lt;/p>
+&lt;ul>
+&lt;li>Sistem -&amp;gt;Yönetim -&amp;gt; Ağ yolunu takip ederekte çabilirsiniz.&lt;/li>
+&lt;li>[Alt + F2] yapıp &lt;em>gksu network-admin&lt;/em> yazarakta açabilirsiniz.&lt;/li>
+&lt;li>konsoldan &lt;code>$ sudo network-admin&lt;/code> komutunu vererekte açabilirsiniz.&lt;/li>
+&lt;/ul>
+&lt;p>Burda DNS sekmesi altına&lt;br>
+&lt;code>208.67.222.222 208.67.220.220&lt;/code> iplerini ekliyorsunuz.&lt;/p>
+&lt;p>Ardından konsolda&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo cp /etc/resolv.conf /etc/resolv.conf.auto
+sudo gedit /etc/dhcp3/dhclient.conf
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>komutlarını giriyorsunuz.&lt;br>
+Karşınıza çıkan editöre&lt;br>
+&lt;code># append the following line to the document prepend domain-name-servers 208.67.222.222,208.67.220.220; # save and exit&lt;/code>&lt;br>
+satırlarını ekliyorsunuz. ve&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ sudo ifdown eth0 &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> sudo ifup eth0
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>komutunu veriyorsunuz. Eğer bu komutlarda bi hata verirse, ya da dns değişmemişse bilgisayarı açıp kapatın artık özgürsünüz.Şimdi &lt;a href="http://www.youtube.com,">www.youtube.com&lt;/a>&amp;lsquo;a girerek deneyebilirsiniz çalışıyormu diye:)&lt;/p></description></item></channel></rss>

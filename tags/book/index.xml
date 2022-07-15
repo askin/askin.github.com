@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>book on Aşkın Özgür</title><link>https://blog.askin.ws/tags/book/</link><description>Recent content in book on Aşkın Özgür</description><generator>Hugo -- gohugo.io</generator><language>tr-TR</language><managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor><webMaster>askin@askin.ws (Aşkın Özgür)</webMaster><lastBuildDate>Thu, 18 Oct 2007 06:37:00 +0300</lastBuildDate><atom:link href="https://blog.askin.ws/tags/book/index.xml" rel="self" type="application/rss+xml"/><item><title>Scheme hakkında birkaç kitap</title><link>https://blog.askin.ws/blog/scheme-hakkinda-birkac-kitap/</link><pubDate>Thu, 18 Oct 2007 06:37:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/scheme-hakkinda-birkac-kitap/</guid><description>&lt;p>Madem tekrardan scheme öğrenmeye başladım o konu hakkında braz yazı yazalım değilmi. İşe bir kitap ile başlayalım.&lt;/p>
+&lt;p>Öncelikle scheme kitaplarıyla başlasak mantıklı olacak gibi geliyor.scheme hakkında birçok kitap bulunabilir fakat ben aramada ilk karşıma çıkan seçenekleri burda vereceğim biraz google güvenilir gibi geldi bu konuda.&lt;/p>
+&lt;p>How to Design Programs // Dr scheme projesiyle birlikte yürüyen bir kitap bu açıdan en sağlam kaynaklardan biri olduğu görüşündeyim. Sitesi aşağıda. Site üzerinden e-book olarak kitaba ulaşabilirsiniz.&lt;br>
+&lt;a href="http://www.htdp.org">http://www.htdp.org&lt;/a>&lt;/p>
+&lt;p>The Scheme Programming Language // Scheme için kullandığım tek kaynaktı. Ancak tek kaynak hiç bir şekilde yetmiyor.&lt;br>
+Aynı şekilde site üzerinden bu kitabada ulaşabilirsiniz.&lt;br>
+&lt;a href="http://www.scheme.com/tspl3/">http://www.scheme.com/tspl3/&lt;/a>&lt;/p>
+&lt;p>Teach Yourself Scheme in Fixnum days // Yeni başlayanlar için iyi bir başlangıç olacağını düşünüyorum&lt;br>
+&lt;a href="http://www.ccs.neu.edu/home/dorai/t-y-scheme/t-y-scheme.html">http://www.ccs.neu.edu/home/dorai/t-y-scheme/t-y-scheme.html&lt;/a>&lt;/p>
+&lt;p>Ayrıca&lt;br>
+&lt;a href="http://www.yollu.com/documents/programming/scheme">http://www.yollu.com/documents/programming/scheme&lt;/a>&lt;br>
+adresinden scheme hakkındaki kitapları sıkıtırılmış haliyle indirebilirsiniz&lt;/p>
+&lt;p>Kitapları bitirdik sıra geldi internet sitelerine&lt;/p>
+&lt;p>Dr.Scheme Ortamını indirebileceğimiz ve onunla ilgili hatta scheme ile ilgili çeşitli kaynaklara ulaşabileceğimiz bir site.&lt;br>
+&lt;a href="http://www.drscheme.org">http://www.drscheme.org&lt;/a>&lt;/p>
+&lt;p>Son olarakta schemers&lt;br>
+Scheme programlama dili hakkında son haberleri, kütüphaneleri vs. bulabileceğiniz bir site.&lt;br>
+&lt;a href="http://www.schemers.org/">http://www.schemers.org/&lt;/a>&lt;/p></description></item></channel></rss>

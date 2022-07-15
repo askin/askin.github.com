@@ -1,0 +1,627 @@
+<!doctype html><html lang=tr itemscope itemtype=http://schema.org/WebPage>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>c/c++ - Aşkın Özgür</title>
+<meta name=author content="Aşkın Özgür"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Aşkın Özgür","url":"https:\/\/blog.askin.ws"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/blog.askin.ws"}</script>
+<meta property="og:title" content="c/c++">
+<meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png">
+<meta property="og:url" content="https://blog.askin.ws/tags/c/c++/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Aşkın Özgür">
+<meta name=twitter:title content="c/c++">
+<meta name=twitter:image content="https://blog.askin.ws/uploads/avatar.png">
+<meta name=twitter:card content="summary">
+<meta name=twitter:site content="@kelebeks">
+<meta name=twitter:creator content="@kelebeks">
+<link href=https://blog.askin.ws/uploads/avatar.png rel=icon type=image/x-icon>
+<meta name=generator content="Hugo 0.89.1">
+<link rel=alternate href=https://blog.askin.ws/index.xml type=application/rss+xml title="Aşkın Özgür"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css integrity=sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y crossorigin=anonymous>
+<link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous>
+<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://blog.askin.ws/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+<link rel=stylesheet href=https://blog.askin.ws/css/highlight.min.css><link rel=stylesheet href=https://blog.askin.ws/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+<div class=container-fluid>
+<div class=navbar-header>
+<button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
+<span class=sr-only>Gezinmeyi aktifleştirin</span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+</button>
+<a class=navbar-brand href=https://blog.askin.ws>Aşkın Özgür</a>
+</div>
+<div class="collapse navbar-collapse" id=main-navbar>
+<ul class="nav navbar-nav navbar-right">
+<li>
+<a title=Anasayfa href=/>Anasayfa</a>
+</li>
+<li>
+<a title=Hakkımda href=/about/>Hakkımda</a>
+</li>
+<li>
+<a title=Tags href=/tags>Tags</a>
+</li>
+</ul>
+</div>
+<div class=avatar-container>
+<div class=avatar-img-border>
+<a title="Aşkın Özgür" href=https://blog.askin.ws>
+<img class=avatar-img src=https://blog.askin.ws/uploads/avatar.png alt="Aşkın Özgür">
+</a>
+</div>
+</div>
+</div>
+</nav>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div>
+<header class=header-section>
+<div class="intro-header no-img">
+<div class=container>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class=tags-heading>
+<h1>c/c++</h1>
+<hr class=small>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class=container role=main>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class=posts-list>
+<article class=post-preview>
+<a href=https://blog.askin.ws/blog/udp-broadcast-sunucu-istemci/>
+<h2 class=post-title>UDP Broadcast sunucu - istemci</h2>
+</a>
+<p class=post-meta>
+<span class=post-meta>
+<i class="fas fa-calendar"></i>&nbsp;2012/08/03 tarihinde paylaşıldı
+&nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;dakika
+&nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;259&nbsp;kelime
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Aşkın Özgür
+</span>
+</p>
+<div class=post-entry>
+<p>Sunucu:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stdio.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;string.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;sys/types.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;sys/socket.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;netinet/in.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span>
+<span style=color:#75715e>#define MY_PORT 3333
+</span><span style=color:#75715e></span>
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(<span style=color:#66d9ef>int</span> argc, <span style=color:#66d9ef>char</span> <span style=color:#f92672>*</span>argv[])
+{
+
+    <span style=color:#66d9ef>int</span> sockfd, new_fd;
+    <span style=color:#66d9ef>struct</span> sockaddr_in my_addr;    <span style=color:#75715e>// hedef adres
+</span><span style=color:#75715e></span>    <span style=color:#66d9ef>struct</span> sockaddr_in their_addr; <span style=color:#75715e>// baglanti yapan adres
+</span><span style=color:#75715e></span>
+    <span style=color:#66d9ef>int</span> sin_size, rt;
+
+    <span style=color:#75715e>// gelen verinin tutuldugu buffer
+</span><span style=color:#75715e></span>    <span style=color:#66d9ef>char</span> buf[<span style=color:#ae81ff>32</span>];
+
+    <span style=color:#75715e>// islem yapmak icin gerekli dosya gosterici
+</span><span style=color:#75715e></span>    sockfd <span style=color:#f92672>=</span> socket(AF_INET, SOCK_DGRAM, <span style=color:#ae81ff>0</span>);
+
+    sin_size <span style=color:#f92672>=</span> <span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>struct</span> sockaddr_in);
+
+    <span style=color:#75715e>// adres ile ilgili ayarlar
+</span><span style=color:#75715e></span>    my_addr.sin_family      <span style=color:#f92672>=</span> AF_INET;
+    my_addr.sin_port        <span style=color:#f92672>=</span> htons(MY_PORT); <span style=color:#75715e>// kullanilacak port
+</span><span style=color:#75715e></span>    my_addr.sin_addr.s_addr <span style=color:#f92672>=</span> INADDR_ANY;     <span style=color:#75715e>// mevcut ip adresi
+</span><span style=color:#75715e></span>    memset(<span style=color:#f92672>&amp;</span>(my_addr.sin_zero), <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>8</span>); <span style=color:#75715e>// geri kalani 0la
+</span><span style=color:#75715e></span>
+    <span style=color:#75715e>// socket ile dosyayi iliskilendir
+</span><span style=color:#75715e></span>    bind(sockfd, (<span style=color:#66d9ef>struct</span> sockaddr <span style=color:#f92672>*</span>)<span style=color:#f92672>&amp;</span>my_addr, <span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>struct</span> sockaddr));
+
+    <span style=color:#66d9ef>while</span> ( <span style=color:#ae81ff>1</span> ) {
+        rt <span style=color:#f92672>=</span> recvfrom (sockfd, buf, <span style=color:#ae81ff>12</span>, <span style=color:#ae81ff>0</span>, (<span style=color:#66d9ef>struct</span> sockaddr <span style=color:#f92672>*</span>)<span style=color:#f92672>&amp;</span>their_addr, <span style=color:#f92672>&amp;</span>sin_size);
+        <span style=color:#66d9ef>if</span> (rt <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span>) {
+            printf (<span style=color:#e6db74>&#34;recv: %s</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, buf);
+        } <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (rt <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>) {
+            printf(<span style=color:#e6db74>&#34;Baglanti koptu</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
+            <span style=color:#66d9ef>break</span>;
+        }
+    }
+
+    close(sockfd);
+    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+}
+</code></pre></div><p>İstemci:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stdio.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;string.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;sys/types.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;sys/socket.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;netinet/in.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span>
+<span style=color:#75715e>#define DEST_IP   &#34;255.255.255.255&#34;
+</span><span style=color:#75715e>#define DEST_PORT 3333
+</span><span style=color:#75715e></span>
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(<span style=color:#66d9ef>int</span> argc, <span style=color:#66d9ef>char</span> <span style=color:#f92672>*</span>argv[])
+{
+
+    <span style=color:#66d9ef>int</span> sockfd, new_fd;
+    <span style=color:#66d9ef>struct</span> sockaddr_in dest_addr; <span style=color:#75715e>// hedef adres
+</span><span style=color:#75715e></span>
+    <span style=color:#66d9ef>int</span> sin_size, rt;
+    sin_size <span style=color:#f92672>=</span> <span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>struct</span> sockaddr_in);
+
+    <span style=color:#75715e>// islem yapmak icin gerekli dosya gosterici
+</span><span style=color:#75715e></span>    sockfd <span style=color:#f92672>=</span> socket(AF_INET, SOCK_DGRAM, <span style=color:#ae81ff>0</span>);
+
+    <span style=color:#75715e>// adres ile ilgili ayarlar
+</span><span style=color:#75715e></span>    dest_addr.sin_family      <span style=color:#f92672>=</span> AF_INET;
+    dest_addr.sin_port        <span style=color:#f92672>=</span> htons(DEST_PORT);
+    dest_addr.sin_addr.s_addr <span style=color:#f92672>=</span> inet_addr(DEST_IP);
+    memset(<span style=color:#f92672>&amp;</span>(dest_addr.sin_zero), <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>8</span>); <span style=color:#75715e>// geri kalani 0 la
+</span><span style=color:#75715e></span>
+    <span style=color:#75715e>// Broadcast icin gerekli yetkiyi al
+</span><span style=color:#75715e></span>    <span style=color:#66d9ef>int</span> flag <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>;
+    <span style=color:#66d9ef>if</span> (setsockopt (sockfd, SOL_SOCKET, SO_BROADCAST, <span style=color:#f92672>&amp;</span>flag, <span style=color:#66d9ef>sizeof</span>(flag)) <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>)
+        perror(<span style=color:#e6db74>&#34;setsockopt&#34;</span>);
+
+    <span style=color:#75715e>// mesaji gonder
+</span><span style=color:#75715e></span>    rt <span style=color:#f92672>=</span> sendto (sockfd, <span style=color:#e6db74>&#34;slm asl plz&#34;</span>, <span style=color:#ae81ff>12</span>, <span style=color:#ae81ff>0</span>, (<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>struct</span> sockaddr <span style=color:#f92672>*</span>)<span style=color:#f92672>&amp;</span>dest_addr, sin_size);
+    <span style=color:#66d9ef>if</span> ( rt <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span> )
+        perror(<span style=color:#e6db74>&#34;Hata: &#34;</span>);
+
+    <span style=color:#75715e>// socketi kapat
+</span><span style=color:#75715e></span>    close(sockfd);
+
+    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+}
+</code></pre></div>
+</div>
+<div class=blog-tags>
+<a href=https://blog.askin.ws/tags/c/c++/>c/c++</a>&nbsp;
+<a href=https://blog.askin.ws/tags/linux/>Linux</a>&nbsp;
+<a href=https://blog.askin.ws/tags/network/>network</a>&nbsp;
+<a href=https://blog.askin.ws/tags/programming/>programming</a>&nbsp;
+<a href=https://blog.askin.ws/tags/socket/>socket</a>&nbsp;
+</div>
+</article>
+<article class=post-preview>
+<a href=https://blog.askin.ws/blog/linux-paralel-port-ile-2x16-lcd-ekran-kullanimi/>
+<h2 class=post-title>Linux, Paralel Port ile 2x16 LCD Ekran Kullanımı</h2>
+</a>
+<p class=post-meta>
+<span class=post-meta>
+<i class="fas fa-calendar"></i>&nbsp;2011/02/27 tarihinde paylaşıldı
+&nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;dakika
+&nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;354&nbsp;kelime
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Aşkın Özgür
+</span>
+</p>
+<div class=post-entry>
+<p>Çalıştığım projede linuxta paralel port ile lcd ekran kullanmam gerekti. Neredeyse internetin altını üstüne getirdim ama işime yarar çok birşey bulamadım. Sonunda DOS için yazılmış bir kod buldum. Bu kodu biraz inceleyip, gerekli püf noktaları bulunca kodu linux&rsquo;a uydurmak çok zor olmadı. Hatta neredeyse sadece kullanılan fonksiyonun adını ve parametre yerlerini değiştirdim :)</p>
+<p>Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read/write seçimi için kullanılıyor. Geri kalan 3 bacak güç bağlantısı ve kontrast için kullanılıyor. <a href=http://www.beyondlogic.org/parlcd/parlcd.htm>Burdaki</a> şemaya göre bağlantıları yapabilirsiniz. Ayrıca örnek aldığım kodda aynı sayfada bulunmakta.</p>
+<p>Yorum satırları pek çok şeyi açıklıyor. Ama birkaç noktaya değinmekte fayda var. Data bacaklarına gerekli inputları verdikten sonra, enable bacağını 1&rsquo;den 0&rsquo;a düşürerek lcd&rsquo;nin data bacaklarında sinyali alıp işleme sokmasını sağlıyoruz. init array&rsquo;i içinde lcd&rsquo;nin temizlenmesi ve çalışmaya uygun hale gelmesi için gerekli komutlar tutuluyor. 0x378 paralel portun adresi.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;string.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stdio.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stdlib.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;unistd.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;asm/io.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span>
+<span style=color:#75715e>#define PORTADDRESS 0x378  </span><span style=color:#75715e>/* Enter Your Port Address Here */</span><span style=color:#75715e>
+</span><span style=color:#75715e></span>
+<span style=color:#75715e>#define DATA PORTADDRESS+0
+</span><span style=color:#75715e>#define STATUS PORTADDRESS+1
+</span><span style=color:#75715e>#define CONTROL PORTADDRESS+2
+</span><span style=color:#75715e></span>
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>()
+{
+    <span style=color:#66d9ef>if</span> (ioperm(DATA , <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>1</span>)) {perror(<span style=color:#e6db74>&#34;ioperm&#34;</span>); exit(<span style=color:#ae81ff>1</span>);}
+    <span style=color:#66d9ef>char</span> string[] <span style=color:#f92672>=</span> {<span style=color:#e6db74>&#34;Testing 1,2,3                           &#34;</span>
+                     <span style=color:#e6db74>&#34;It&#39; Works !                             &#34;</span>};
+
+    <span style=color:#66d9ef>char</span> init[<span style=color:#ae81ff>10</span>];
+    <span style=color:#66d9ef>int</span> count;
+    <span style=color:#66d9ef>int</span> len;
+    init[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> <span style=color:#ae81ff>0x0F</span>; <span style=color:#75715e>/* Init Display */</span>
+    init[<span style=color:#ae81ff>1</span>] <span style=color:#f92672>=</span> <span style=color:#ae81ff>0x01</span>; <span style=color:#75715e>/* Clear Display */</span>
+    init[<span style=color:#ae81ff>2</span>] <span style=color:#f92672>=</span> <span style=color:#ae81ff>0x38</span>; <span style=color:#75715e>/* Dual Line / 8 Bits */</span>
+
+    outb(inb(CONTROL) <span style=color:#f92672>&amp;</span> <span style=color:#ae81ff>0xDF</span>, CONTROL); <span style=color:#75715e>/* Reset Control Port - Make sure Forward Direction */</span>
+    outb(inb(CONTROL) <span style=color:#f92672>|</span> <span style=color:#ae81ff>0x08</span>, CONTROL); <span style=color:#75715e>/* Set Select Printer (Register Select) */</span>
+
+    <span style=color:#66d9ef>for</span> (count <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; count <span style=color:#f92672>&lt;</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>; count<span style=color:#f92672>++</span>)
+    {
+        outb(init[count], DATA);
+        outb(inb(CONTROL) <span style=color:#f92672>|</span> <span style=color:#ae81ff>0x01</span>, CONTROL); <span style=color:#75715e>/* Set Strobe (Enable)*/</span>
+        usleep(<span style=color:#ae81ff>20</span>);                                 <span style=color:#75715e>/* Larger Delay for INIT */</span>
+        outb(inb(CONTROL) <span style=color:#f92672>&amp;</span> <span style=color:#ae81ff>0xFE</span>, CONTROL); <span style=color:#75715e>/* Reset Strobe (Enable)*/</span>
+        usleep(<span style=color:#ae81ff>20</span>);                                 <span style=color:#75715e>/* Larger Delay for INIT */</span>
+    }
+
+    outb(inb(CONTROL) <span style=color:#f92672>&amp;</span> <span style=color:#ae81ff>0xF7</span>, CONTROL);  <span style=color:#75715e>/* Reset Select Printer (Register Select) */</span>
+
+    len <span style=color:#f92672>=</span> strlen(string);
+
+    <span style=color:#66d9ef>for</span> (count <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; count <span style=color:#f92672>&lt;</span> len; count<span style=color:#f92672>++</span>)
+    {
+        outb(string[count], DATA);
+        outb(inb(CONTROL) <span style=color:#f92672>|</span> <span style=color:#ae81ff>0x01</span>, CONTROL); <span style=color:#75715e>/* Set Strobe */</span>
+        usleep(<span style=color:#ae81ff>2</span>);
+        outb(inb(CONTROL) <span style=color:#f92672>&amp;</span> <span style=color:#ae81ff>0xFE</span>, CONTROL); <span style=color:#75715e>/* Reset Strobe */</span>
+        usleep(<span style=color:#ae81ff>2</span>);
+    }
+
+    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+}
+</code></pre></div><p>Linke birşey olması durumunda <a href=/uploads/2011/02/parlcd.gif>bu adresten gerekli şemayı indirebilirsiniz.</a></p>
+</div>
+<div class=blog-tags>
+<a href=https://blog.askin.ws/tags/c/c++/>c/c++</a>&nbsp;
+<a href=https://blog.askin.ws/tags/lcd/>lcd</a>&nbsp;
+<a href=https://blog.askin.ws/tags/linux/>linux</a>&nbsp;
+<a href=https://blog.askin.ws/tags/parallel-port/>parallel port</a>&nbsp;
+</div>
+</article>
+<article class=post-preview>
+<a href=https://blog.askin.ws/blog/c-ile-nesne-yaratmak/>
+<h2 class=post-title>C ile Nesne Yaratmak</h2>
+</a>
+<p class=post-meta>
+<span class=post-meta>
+<i class="fas fa-calendar"></i>&nbsp;2010/04/27 tarihinde paylaşıldı
+&nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;dakika
+&nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;177&nbsp;kelime
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Aşkın Özgür
+</span>
+</p>
+<div class=post-entry>
+<p><img src=/uploads/2010/04/c3po.jpg alt title=C-3PO>Evet kışkırtıcı bir başlık attım :)
+Aslında yapacağımız olay bir structı nesne gibi kullanmak. Buna benzer bir kodu yıllar önce görmüştüm. O günden bu güne sürekli böyle bir şeyi nasıl yaparım diye araştırdım. Anca bugün çözebildim olayı ;)
+Kodu aşağıda yorum satırıyla beraber veriyorum. Yorumlarda gerekli açıklamaları yaptım.</p>
+<p>Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşıma bu çıktı, bende boş durmasın dedim :)</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c><span style=color:#75715e>/*
+</span><span style=color:#75715e> * Sınıfımızı yaratıyoruz
+</span><span style=color:#75715e> */</span>
+<span style=color:#66d9ef>struct</span> _myobject {
+  <span style=color:#75715e>// alt alanlar
+</span><span style=color:#75715e></span>  <span style=color:#66d9ef>int</span> a, b;
+  <span style=color:#75715e>/*
+</span><span style=color:#75715e>   * Metod
+</span><span style=color:#75715e>   * Burada fonksiyon pointerı tanımlıyoruz
+</span><span style=color:#75715e>   */</span>
+  <span style=color:#66d9ef>int</span> (<span style=color:#f92672>*</span>add)(<span style=color:#66d9ef>struct</span> _myobject<span style=color:#f92672>*</span>);
+};
+
+<span style=color:#75715e>// struct ön ekinden kurtuluyoruz
+</span><span style=color:#75715e></span><span style=color:#66d9ef>typedef</span> <span style=color:#66d9ef>struct</span> _myobject MyObject;
+
+<span style=color:#75715e>/*
+</span><span style=color:#75715e> * Asıl işi yapacak fonksiyonu tanımlıyoruz
+</span><span style=color:#75715e> * MyObject structını parametre olarak alıyor
+</span><span style=color:#75715e> */</span>
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>realAdd</span>(MyObject<span style=color:#f92672>*</span> a) {
+  <span style=color:#66d9ef>return</span> a<span style=color:#f92672>-&gt;</span>a <span style=color:#f92672>+</span> a<span style=color:#f92672>-&gt;</span>b;
+}
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span> ( <span style=color:#66d9ef>void</span> ) {
+  <span style=color:#75715e>/*
+</span><span style=color:#75715e>   * Nesnemizi oluşturuyoruz.
+</span><span style=color:#75715e>   * add pointerına fonksiyonu atıyoruz
+</span><span style=color:#75715e>   */</span>
+  MyObject mo <span style=color:#f92672>=</span> {<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, realAdd};
+  printf(<span style=color:#e6db74>&#34;A + B = %d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, mo.add(<span style=color:#f92672>&amp;</span>mo));
+  <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+}
+</code></pre></div><p>Kodun başına stdio.h headerını eklemekte fayda var. WP sıkıntı çıkarttığı için silmek zorunda kaldım. Kodun düzgün halini <a href=http://github.com/askin/misc/raw/master/fun/struct-function.c>burada</a> bulabilirsiniz.</p>
+</div>
+<div class=blog-tags>
+<a href=https://blog.askin.ws/tags/c/c++/>c/c++</a>&nbsp;
+<a href=https://blog.askin.ws/tags/nesne/>Nesne</a>&nbsp;
+<a href=https://blog.askin.ws/tags/oop/>OOP</a>&nbsp;
+</div>
+</article>
+<article class=post-preview>
+<a href=https://blog.askin.ws/blog/gtk-2-18-9-pencere-gizleme-sorunu/>
+<h2 class=post-title>Gtk &lt;= 2.18.9 Pencere Gizleme Sorunu</h2>
+</a>
+<p class=post-meta>
+<span class=post-meta>
+<i class="fas fa-calendar"></i>&nbsp;2010/04/08 tarihinde paylaşıldı
+&nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;dakika
+&nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;160&nbsp;kelime
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Aşkın Özgür
+</span>
+</p>
+<div class=post-entry>
+<p><img src=/uploads/2010/04/gtk.png alt=Gtk title=Gtk>Gece gece uyku tutmadı var olan bir programı kurcalamaya başladım. Amacım programın sitem çekmecesinden çalışabilir hale getirmekti.</p>
+<p>Her şeyi yaptım fakat bir türlü pencereyi gizleyemiyordum :) Doküman <em>gtk_window_get_mnemonics_visible ()</em> fonksiyonunu kullanmamı söylüyordu, fakat kullandığım gtk sürümünde bu fonksiyon tanımlı değildi(2.18.7). Eski sürüm için olan dokümanı incelediğimde bu işi yapan bir fonksiyon yoktu.
+Sistemde kurulu gtk ve python ile bu işi yapabiliyordum. Normal olarak c ile de yapabilmem lazımdı:)
+Biraz inceledikten sonra, önce pencereyi gizleyen, ardından boyutunu eski haline getirip sonra tekrar gösteren bir fonksiyon olduğunu fark ettim. Benim istediğim işi yapıyor fakat yanında birde fazlalığı vardı.(gtk_window_reshow_with_initial_size)
+İnternette biraz daha araştırıp umudumu kaybedince mecburen kaynak koda baktım.</p>
+<pre><code>grep -rHn gtk_window_reshow_with_initial_size *
+</code></pre>
+<p>bu komut bana gtk_window_reshow_with_initial_size fonksiyonun nerelerde olduğunu gösterdi.
+Bu fonksiyonunun içine bakınca istediğim kodu hemen buldum :)</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-C data-lang=C>gtk_window_reshow_with_initial_size (GtkWindow <span style=color:#f92672>*</span>window)
+{
+  GtkWidget <span style=color:#f92672>*</span>widget;
+
+  g_return_if_fail (GTK_IS_WINDOW (window));
+
+  widget <span style=color:#f92672>=</span> GTK_WIDGET (window);
+
+  gtk_widget_hide (widget);
+  gtk_widget_unrealize (widget);
+  gtk_widget_show (widget);
+}
+</code></pre></div><p>Önce pencereyi widgeta çevirebilme imkanım varmış, böyle basit bir şeyi nasıl bulamadım bilemiyorum.</p>
+</div>
+<div class=blog-tags>
+<a href=https://blog.askin.ws/tags/c/c++/>c/c++</a>&nbsp;
+<a href=https://blog.askin.ws/tags/grep/>grep</a>&nbsp;
+<a href=https://blog.askin.ws/tags/gtk/>gtk</a>&nbsp;
+</div>
+</article>
+<article class=post-preview>
+<a href=https://blog.askin.ws/blog/c-ile-komut-satiri-argumanlari-ve-parametreleri/>
+<h2 class=post-title>C ile Komut Satırı Argumanları ve Parametreleri</h2>
+</a>
+<p class=post-meta>
+<span class=post-meta>
+<i class="fas fa-calendar"></i>&nbsp;2009/07/10 tarihinde paylaşıldı
+&nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;dakika
+&nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;276&nbsp;kelime
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Aşkın Özgür
+</span>
+</p>
+<div class=post-entry>
+<p><img src=/uploads/2009/07/gnome-terminal.png alt=Terminal title=Terminal>Komut satırı programları -h yada &ndash;help gibi parametreler alırlar. Bu alınan parametrelerin kolay kullanılması için <em>getopt</em> adında bir kütüphane yaratılmış. Bu kütüphane kullanlanılarak çok rahat böyle programlar yazılabilir.
+Bende bunun için küçük bir örnek yazdım.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-C data-lang=C><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stdio.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stdlib.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;getopt.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span>
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>print_usage</span> ( <span style=color:#66d9ef>void</span> );
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span> (<span style=color:#66d9ef>int</span> argc, <span style=color:#66d9ef>char</span><span style=color:#f92672>*</span> argv[])
+{
+  <span style=color:#66d9ef>int</span> next_option;
+  <span style=color:#66d9ef>char</span><span style=color:#f92672>*</span> output;
+  <span style=color:#66d9ef>char</span><span style=color:#f92672>*</span> input;
+  <span style=color:#66d9ef>char</span> color <span style=color:#f92672>=</span> <span style=color:#ae81ff>47</span>;
+
+  <span style=color:#75715e>/**
+</span><span style=color:#75715e>   * kisa parametler burda tanimli
+</span><span style=color:#75715e>   *  ardindan parametre alanlar : ile bitiyor
+</span><span style=color:#75715e>   *  orn: o: bir parametre aliyor b almiyor
+</span><span style=color:#75715e>   *  -o kelebek yada -b gibi
+</span><span style=color:#75715e>   */</span>
+  <span style=color:#66d9ef>const</span> <span style=color:#66d9ef>char</span><span style=color:#f92672>*</span> <span style=color:#66d9ef>const</span> short_options <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;hbro:i:&#34;</span>;
+
+  <span style=color:#75715e>/**
+</span><span style=color:#75715e>   * Burdada uzun hallerini tanimliyoruz.
+</span><span style=color:#75715e>   *  beraberinde kisa karsiliklarida var.
+</span><span style=color:#75715e>   */</span>
+  <span style=color:#66d9ef>const</span> <span style=color:#66d9ef>struct</span> option long_options[] <span style=color:#f92672>=</span> {
+    {<span style=color:#e6db74>&#34;help&#34;</span>,   no_argument, <span style=color:#ae81ff>0</span>, <span style=color:#e6db74>&#39;h&#39;</span>},
+    {<span style=color:#e6db74>&#34;blue&#34;</span>,   no_argument, <span style=color:#ae81ff>0</span>, <span style=color:#e6db74>&#39;b&#39;</span>},
+    {<span style=color:#e6db74>&#34;red&#34;</span>,    no_argument, <span style=color:#ae81ff>0</span>, <span style=color:#e6db74>&#39;r&#39;</span>},
+    {<span style=color:#e6db74>&#34;input&#34;</span>,  required_argument, <span style=color:#ae81ff>0</span>, <span style=color:#e6db74>&#39;i&#39;</span>},
+    {<span style=color:#e6db74>&#34;output&#34;</span>, required_argument, <span style=color:#ae81ff>0</span>, <span style=color:#e6db74>&#39;o&#39;</span>}
+  };
+
+  <span style=color:#75715e>/**
+</span><span style=color:#75715e>   * Burda sirayla verilen argumalari aliyoruz
+</span><span style=color:#75715e>   */</span>
+  <span style=color:#66d9ef>do</span> {
+    next_option <span style=color:#f92672>=</span> getopt_long(argc,
+			      argv,
+			      short_options,
+			      long_options,
+			      NULL);
+    <span style=color:#66d9ef>switch</span>(next_option) {
+    <span style=color:#66d9ef>case</span> <span style=color:#e6db74>&#39;h&#39;</span><span style=color:#f92672>:</span> <span style=color:#75715e>// -h or --help
+</span><span style=color:#75715e></span>      print_usage();
+      <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+      <span style=color:#66d9ef>break</span>;
+
+    <span style=color:#66d9ef>case</span> <span style=color:#e6db74>&#39;o&#39;</span><span style=color:#f92672>:</span> <span style=color:#75715e>// -o or --or
+</span><span style=color:#75715e></span>      output <span style=color:#f92672>=</span> optarg;
+      <span style=color:#66d9ef>break</span>;
+
+    <span style=color:#66d9ef>case</span> <span style=color:#e6db74>&#39;i&#39;</span><span style=color:#f92672>:</span> <span style=color:#75715e>// -i or --i
+</span><span style=color:#75715e></span>      input <span style=color:#f92672>=</span> optarg;
+      <span style=color:#66d9ef>break</span>;
+
+    <span style=color:#66d9ef>case</span> <span style=color:#e6db74>&#39;b&#39;</span><span style=color:#f92672>:</span> <span style=color:#75715e>// -b or --blue
+</span><span style=color:#75715e></span>      color <span style=color:#f92672>=</span> <span style=color:#ae81ff>44</span>;
+      <span style=color:#66d9ef>break</span>;
+
+    <span style=color:#66d9ef>case</span> <span style=color:#e6db74>&#39;r&#39;</span><span style=color:#f92672>:</span> <span style=color:#75715e>// -r or --red
+</span><span style=color:#75715e></span>      color <span style=color:#f92672>=</span> <span style=color:#ae81ff>41</span>;
+      <span style=color:#66d9ef>break</span>;
+
+    <span style=color:#66d9ef>case</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span><span style=color:#f92672>:</span>
+      <span style=color:#66d9ef>break</span>;
+
+    <span style=color:#66d9ef>default</span><span style=color:#f92672>:</span>
+      abort();
+    }
+  } <span style=color:#66d9ef>while</span> (next_option <span style=color:#f92672>!=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>);
+
+  printf(<span style=color:#e6db74>&#34;%c[%d;%dmInput : %s%c[%dm</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, <span style=color:#ae81ff>27</span>, <span style=color:#ae81ff>1</span>, color, input, <span style=color:#ae81ff>27</span>, <span style=color:#ae81ff>0</span>);
+  printf(<span style=color:#e6db74>&#34;%c[%d;%dmOutput: %s%c[%dm</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, <span style=color:#ae81ff>27</span>, <span style=color:#ae81ff>1</span>, color, output, <span style=color:#ae81ff>27</span>, <span style=color:#ae81ff>0</span>);
+
+
+  <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+}
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>print_usage</span> ( <span style=color:#66d9ef>void</span> ) {
+  printf(<span style=color:#e6db74>&#34;   --help   or -h for help</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+	 <span style=color:#e6db74>&#34;   --output or -o for output</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+	 <span style=color:#e6db74>&#34;   --input  or -i for input</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+	 <span style=color:#e6db74>&#34;   --blue   or -b for blue output</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+	 <span style=color:#e6db74>&#34;   --red    or -r for red output</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
+  <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+}
+</code></pre></div><p><a href=/uploads/2009/07/clexmp.c>Örnek</a></p>
+</div>
+<div class=blog-tags>
+<a href=https://blog.askin.ws/tags/c/c++/>c/c++</a>&nbsp;
+</div>
+</article>
+</div>
+</div>
+</div>
+</div>
+<footer>
+<div class=container>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<ul class="list-inline text-center footer-links">
+<li>
+<a href=mailto:askin@askin.ws title="Email me">
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://www.facebook.com/askinyollu title=Facebook>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://github.com/askin title=GitHub>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-github fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://gitlab.com/askinozgur title=GitLab>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-gitlab fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://bitbucket.org/askin title=Bitbucket>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-bitbucket fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://twitter.com/kelebeks title=Twitter>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://linkedin.com/in/askin.yollu title=LinkedIn>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://open.spotify.com/user/kelebex title=Spotify>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-spotify fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://telegram.me/kelebeks title=Telegram>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-telegram fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=/tags/c/c++/index.xml title=RSS>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+</ul>
+<p class="credits copyright text-muted">
+<a href=https://askin.ws>Aşkın Özgür</a>
+&nbsp;&bull;&nbsp;&copy;
+2021
+&nbsp;&bull;&nbsp;
+<a href=https://blog.askin.ws>Aşkın Özgür</a>
+</p>
+<p class="credits theme-by text-muted">
+<a href=https://gohugo.io>Hugo v0.89.1</a> altyapısı &nbsp;&bull;&nbsp; <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a> temasından uyarlanan <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> teması kullanılmaktadır.
+</p>
+</div>
+</div>
+</div>
+</footer><script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js integrity=sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js integrity=sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe crossorigin=anonymous></script>
+<script src=https://code.jquery.com/jquery-1.12.4.min.js integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin=anonymous></script>
+<script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script>
+<script src=https://blog.askin.ws/js/main.js></script>
+<script src=https://blog.askin.ws/js/highlight.min.js></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script>$(document).ready(function(){$("pre.chroma").css("padding","0")})</script><script>renderMathInElement(document.body)</script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js integrity=sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js integrity=sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q crossorigin=anonymous></script><script src=https://blog.askin.ws/js/load-photoswipe.js></script>
+</body>
+</html>

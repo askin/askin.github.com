@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>lastfmsubmitd on Aşkın Özgür</title><link>https://blog.askin.ws/tags/lastfmsubmitd/</link><description>Recent content in lastfmsubmitd on Aşkın Özgür</description><generator>Hugo -- gohugo.io</generator><language>tr-TR</language><managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor><webMaster>askin@askin.ws (Aşkın Özgür)</webMaster><lastBuildDate>Thu, 12 Jun 2008 16:25:00 +0300</lastBuildDate><atom:link href="https://blog.askin.ws/tags/lastfmsubmitd/index.xml" rel="self" type="application/rss+xml"/><item><title>Moc kullanarak konsoldan müzik dinleme ve lastfm</title><link>https://blog.askin.ws/blog/moc-kullanarak-konsoldan-muzik-dinleme-ve-lastfm/</link><pubDate>Thu, 12 Jun 2008 16:25:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/moc-kullanarak-konsoldan-muzik-dinleme-ve-lastfm/</guid><description>&lt;p>&lt;a href="http://moc.daper.net/">Moc&lt;/a> player konsolda çalışan bir müzik çalıcı. Açılımı Music on Console. Mocun en çok sevdiğim özelliği x ortamı yeniden başlasa, kapansa, göçse bile hiç sorun çıkarmadan çalmaya devam ediyor. Yani depremde, selde ve yangında 7*24 hizmet:)&lt;br>
+&lt;strong>Kurulum&lt;/strong>&lt;br>
+* debian - ubuntu - vs.&lt;br>
+&lt;code>sudo apt-get install moc&lt;/code>&lt;/p>
+&lt;p>* pardus&lt;br>
+&lt;code>sudo pisi it moc&lt;/code>&lt;/p>
+&lt;p>Şimdi konsoldan&lt;br>
+&lt;code>mocp&lt;/code>&lt;br>
+komutunu verelim. Gerçekten renkli şık bi tasarımı var. Grafik ekranı hiç aratmıyor:). Eğer renkleri beğenmezseniz &lt;strong>[Shift] + [T]&lt;/strong> kombinasyonu ile farklı renkler seçebilirsiniz. Bunun bi kötü yanı var moc temayı bir sonraki açılışında hatırlamayacak. Hatırlaması için &lt;em>~/.moc/config&lt;/em> dosyasını oluşturup içeriğini düzenlemeniz gerekiyor. Ben düzenlemedim tam olarak nasıl yapılıyor bilmiyorum. Bunun için &lt;a href="http://dreamore.wordpress.com/2007/07/01/konsol-fantazyasi-3/">burayı&lt;/a> biraz zorlasanız fena olmaz.&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;p>Tamamdır olay çözüldü. &lt;a href="https://blog.askin.ws/uploads/2008/06/config.example">Burdan&lt;/a> benim config dosyamı indirebilirsiniz. Yapmanız gereken bu dosyayı &lt;em>~/.moc/&lt;/em> dizinine &lt;em>config&lt;/em> adı ile kaydetmek.&lt;br>
+Aşağıda config dosyasına bi satır daha eklemeniz gerekiyor. bu örnek dosyada o satır eklenmiş durumda. Eğer Bu örnek dosyadı kullanırsanız o adımı atlayabilirsiniz.&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;p>Şimdi gelelim moc ile dinlediğimiz parçaların last.fm&amp;rsquo;e gönderilmesine.&lt;br>
+Bunun için lastfmsubmitd adında bir program kullanacağız. Bu program deamon olarak çalışarak göndermesini istediğimiz bilgileri last.fm&amp;rsquo;e yollamayı kendine amaç edinmiş bir servis.&lt;/p>
+&lt;p>&lt;strong>Kurulum:&lt;/strong>:&lt;br>
+* debian - ubuntu - vs.&lt;br>
+&lt;code>sudo apt-get install lastfmsubmitd&lt;/code>&lt;/p>
+&lt;p>* pardus (varlığından emin değilim)&lt;br>
+&lt;code>sudo pisi it lastfmsubmitd&lt;/code>&lt;/p>
+&lt;p>kurulum sırasında sizden lastfmde kullandığınız kullanıcı adı ve şifresi isteniyor. Eğer bu sırada yanlış girdiyseniz &lt;em>/etc/lastfmsubmitd.conf&lt;/em> dosyasını düzenleyebilirsiniz. Kurulum sırasında &lt;em>lastfm&lt;/em> adında bir kullanıcı ve grup yaratılacak. Güvenlik açısından bu dosyanın sahibinin &lt;em>lastfm&lt;/em> olduğunu ve iznininde 0600 olduğuna emin olun. Yoksa herhangi birisi&lt;br>
+&lt;code>cat /etc/lastfmsubmitd.conf &lt;/code>&lt;br>
+komutu ile lastfm kullanıcı adınızı ve şifrenizi elegeçirebilir.&lt;/p>
+&lt;p>&lt;code>sudo addgroup kullanici_adi lastfm&lt;/code>&lt;br>
+komutu ile kullanıcı adınızı &lt;em>lastfm&lt;/em> grubuna ekleyin.&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;p>ubuntuda kullanıcı adının gruba eklenmesi için sistemi yeniden başlatmam gerekiyor. sanırım benim eksik yaptığım birşeyler var:( bu nedenle eğer last.fm e şarkıları yollayamıyorsanız sistemi yeniden başlatmayı deneyin(ama şimdi değil daha yapacaklarımız var).&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;p>Bir metin düzenleyici ile &lt;em>~/.moc/config&lt;/em> dosyasını açın ve içine&lt;/p>
+&lt;p>&lt;code>OnSongChange = &amp;quot;/usr/lib/lastfmsubmitd/lastfmsubmit --artist %a --title %t --length %d --album %b&amp;quot;&lt;/code>&lt;/p>
+&lt;p>satırını ekleyin.&lt;/p>
+&lt;p>&lt;strong>Lastfmsubmitd servisini başlatın.&lt;/strong>&lt;br>
+* debian - ubuntu - vs.&lt;br>
+&lt;code>sudo /etc/init.d/lastfmsubmitd start&lt;/code>&lt;/p>
+&lt;p>* pardus&lt;br>
+&lt;code>service lastfmsubmitd start&lt;/code>&lt;/p>
+&lt;p>Eğer sorunlarınız olursa yazıyı baştan birdaha okuyun. Hala sorunlarınız devam ediyorsa aşağıdaki kaynaklara bir göz atın, ve hala sorunları çözemediyseniz yorum yazın:)&lt;/p>
+&lt;p>&lt;strong>Kaynaklar&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="http://dreamore.wordpress.com/2007/07/01/konsol-fantazyasi-3/">Dreamore&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://devnulll.blogspot.com/2007/08/how-to-submit-songs-to-lastfm-whilst_03.html">/home/plb&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://wiki.linux-sevenler.org/index.php/Mpd">Lapis Wiki&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

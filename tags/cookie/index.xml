@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>cookie on Aşkın Özgür</title><link>https://blog.askin.ws/tags/cookie/</link><description>Recent content in cookie on Aşkın Özgür</description><generator>Hugo -- gohugo.io</generator><language>tr-TR</language><managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor><webMaster>askin@askin.ws (Aşkın Özgür)</webMaster><lastBuildDate>Wed, 10 Jul 2013 17:18:00 +0300</lastBuildDate><atom:link href="https://blog.askin.ws/tags/cookie/index.xml" rel="self" type="application/rss+xml"/><item><title>cURL ile GET/POST ve cookie kullanımı</title><link>https://blog.askin.ws/blog/curl-ile-getpost-ve-cookie-kullanimi/</link><pubDate>Wed, 10 Jul 2013 17:18:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/curl-ile-getpost-ve-cookie-kullanimi/</guid><description>&lt;p>cURL kullanarak komut satırından istediğimiz bir web sayfasına get/post istekleri yapabiliriz. &amp;ndash;data parametresi ile post edilecek verileri gönderebiliryoruz. Url sonuna ekleyeceğimiz parametreler de get olarak gönderilecektir.&lt;/p>
+&lt;pre>&lt;code>curl --data &amp;quot;param1=value1&amp;amp;param2=value2&amp;quot; http://example.com/index.php
+&lt;/code>&lt;/pre>
+&lt;p>Web sayfasının döndürdüğü sonu doğrudan ekrana basılacaktır, bunu bir dosyaya aktarmak için&lt;/p>
+&lt;pre>&lt;code>curl --data &amp;quot;param1=value1&amp;amp;param2=value2&amp;quot; http://example.com/index.php &amp;gt; result.html
+&lt;/code>&lt;/pre>
+&lt;p>bir değişkene aktarmak için&lt;/p>
+&lt;pre>&lt;code>result=$(curl --data &amp;quot;param1=value1&amp;amp;param2=value2&amp;quot; http://example.com/index.php)
+&lt;/code>&lt;/pre>
+&lt;p>kullanabiliriz. Erişmek istediğimiz web sayfası kullanıcı girişi istiyorsa cookie kullanrak bunu yapabiliriz.&lt;/p>
+&lt;pre>&lt;code>curl --data &amp;quot;username=askin&amp;amp;password=pasw0rd&amp;quot; http://example.com/login.php -c cookie.cook
+&lt;/code>&lt;/pre>
+&lt;p>Bu komutla giriş yapıp, oluşturulan cookie&amp;rsquo;yi cookie.cook dosyasına kaydettik.&lt;br>
+Tabi burda username ve password parametreleri değişiklik gösterebilir, gönderilen form verisini inceleyerek, gerekli parametreleri bulup uygun formatta göndermek gerekir.&lt;/p>
+&lt;pre>&lt;code>curl --data &amp;quot;param1=value1&amp;amp;param2=value2&amp;quot; http://example.com/user_info.php -b cookie.cook
+&lt;/code>&lt;/pre>
+&lt;p>Bu şekilde de bir önceki komutla elde ettiğimiz cookie&amp;rsquo;yi kullanarak bir web sayfasına istekte bulunabiliyoruz.&lt;/p>
+&lt;p>Eğer https ile istek yapmak istediğinizde sorun yaşıyorsanız &amp;ldquo;-k&amp;rdquo; parametresini kullanarak bu sorunu aşabilirsiniz. &lt;a href="https://gist.github.com/askin/5966708" title="Create Asterisk Extension">&lt;strong>Bu adreste&lt;/strong>&lt;/a> asterisk sunucu üzerinde extension oluşturan bir shell script var, yazıda anlattıklarım için güzel bir örnek olacaktır.&lt;/p></description></item></channel></rss>

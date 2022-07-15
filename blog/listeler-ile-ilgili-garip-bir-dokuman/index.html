@@ -1,0 +1,552 @@
+<!doctype html><html lang=tr itemscope itemtype=http://schema.org/WebPage>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Listeler ile ilgili garip bir döküman - Aşkın Özgür</title>
+<meta name=description content="
+Bu yazı oluşturulurken http://www.pythonforbeginners.com/python-lists-cheat-sheet/ adresindeki yazı referans alınmıştır. Bir çok yeri doğrudan çeviri olmakla beraber bir kısmını kendim baştan yazdım. Yazım - Mantık hataları vs. bulursanız yorum yazmaktan çekinmeyin.
+">
+<meta name=author content="Aşkın Özgür"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Aşkın Özgür","url":"https:\/\/blog.askin.ws"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/blog.askin.ws"}</script>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/blog.askin.ws","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/blog.askin.ws\/blog\/listeler-ile-ilgili-garip-bir-dokuman\/","name":"Listeler ile ilgili garip bir döküman"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"Aşkın Özgür"},"headline":"Listeler ile ilgili garip bir döküman","description":" Bu yazı oluşturulurken http:\/\/www.pythonforbeginners.com\/python-lists-cheat-sheet\/ adresindeki yazı referans alınmıştır. Bir çok yeri doğrudan çeviri olmakla beraber bir kısmını kendim baştan yazdım. Yazım - Mantık hataları vs. bulursanız yorum yazmaktan çekinmeyin.\n","inLanguage":"tr","wordCount":1125,"datePublished":"2013-07-13T15:50:00","dateModified":"2013-07-13T15:50:00","image":"https:\/\/blog.askin.ws\/uploads\/avatar.png","keywords":["list"],"mainEntityOfPage":"https:\/\/blog.askin.ws\/blog\/listeler-ile-ilgili-garip-bir-dokuman\/","publisher":{"@type":"Organization","name":"https:\/\/blog.askin.ws","logo":{"@type":"ImageObject","url":"https:\/\/blog.askin.ws\/uploads\/avatar.png","height":60,"width":60}}}</script>
+<meta property="og:title" content="Listeler ile ilgili garip bir döküman">
+<meta property="og:description" content="
+Bu yazı oluşturulurken http://www.pythonforbeginners.com/python-lists-cheat-sheet/ adresindeki yazı referans alınmıştır. Bir çok yeri doğrudan çeviri olmakla beraber bir kısmını kendim baştan yazdım. Yazım - Mantık hataları vs. bulursanız yorum yazmaktan çekinmeyin.
+">
+<meta property="og:image" content="https://blog.askin.ws/uploads/avatar.png">
+<meta property="og:url" content="https://blog.askin.ws/blog/listeler-ile-ilgili-garip-bir-dokuman/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Aşkın Özgür">
+<meta name=twitter:title content="Listeler ile ilgili garip bir döküman">
+<meta name=twitter:description content="
+Bu yazı oluşturulurken http://www.pythonforbeginners.com/python-lists-cheat-sheet/ adresindeki yazı referans alınmıştır. Bir çok yeri doğrudan çeviri olmakla beraber bir kısmını kendim baştan yazdım. …">
+<meta name=twitter:image content="https://blog.askin.ws/uploads/avatar.png">
+<meta name=twitter:card content="summary">
+<meta name=twitter:site content="@kelebeks">
+<meta name=twitter:creator content="@kelebeks">
+<link href=https://blog.askin.ws/uploads/avatar.png rel=icon type=image/x-icon>
+<meta name=generator content="Hugo 0.89.1">
+<link rel=alternate href=https://blog.askin.ws/index.xml type=application/rss+xml title="Aşkın Özgür"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css integrity=sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y crossorigin=anonymous>
+<link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous>
+<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://blog.askin.ws/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+<link rel=stylesheet href=https://blog.askin.ws/css/highlight.min.css><link rel=stylesheet href=https://blog.askin.ws/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+<div class=container-fluid>
+<div class=navbar-header>
+<button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
+<span class=sr-only>Gezinmeyi aktifleştirin</span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+</button>
+<a class=navbar-brand href=https://blog.askin.ws>Aşkın Özgür</a>
+</div>
+<div class="collapse navbar-collapse" id=main-navbar>
+<ul class="nav navbar-nav navbar-right">
+<li>
+<a title=Anasayfa href=/>Anasayfa</a>
+</li>
+<li>
+<a title=Hakkımda href=/about/>Hakkımda</a>
+</li>
+<li>
+<a title=Tags href=/tags>Tags</a>
+</li>
+</ul>
+</div>
+<div class=avatar-container>
+<div class=avatar-img-border>
+<a title="Aşkın Özgür" href=https://blog.askin.ws>
+<img class=avatar-img src=https://blog.askin.ws/uploads/avatar.png alt="Aşkın Özgür">
+</a>
+</div>
+</div>
+</div>
+</nav>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div>
+<header class=header-section>
+<div class="intro-header no-img">
+<div class=container>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class=blog-heading>
+<h1>Listeler ile ilgili garip bir döküman</h1>
+<hr class=small>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class=container role=main>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<article role=main class=blog-post>
+<blockquote>
+<p>Bu yazı oluşturulurken <a href=http://www.pythonforbeginners.com/python-lists-cheat-sheet/>http://www.pythonforbeginners.com/python-lists-cheat-sheet/</a> adresindeki yazı referans alınmıştır. Bir çok yeri doğrudan çeviri olmakla beraber bir kısmını kendim baştan yazdım. Yazım - Mantık hataları vs. bulursanız yorum yazmaktan çekinmeyin.</p>
+</blockquote>
+<h2 id=liste-nedir>Liste Nedir?</h2>
+<blockquote>
+<p>Bir veya birden fazla elemanı tutmak için kullanılan en basit veri yapısıdır. Liste elemanlar topluluğudur (string, integer ve hatta diğer listeler). Listedeki her bir elemana index değeri atanır.<br>
+Listeler köşeli parantezler ile açılıp kapatılır. Listedeki her bir eleman virgül ile ayrılır. Stringlerin aksine listeler mutable - değişkendir, bunun manası listeler değiştirilebilir.</p>
+</blockquote>
+<h2 id=liste-yaratma>Liste Yaratma</h2>
+<blockquote>
+<p>Listeler köşeli parantez ile açılıp kapatılan, virgülle ayrılmış elamanlarla yaratılır.<br>
+Listeler bir takım değerler tutar (aynı stringlerin karakter serileri barındırması gibi).<br>
+Listeler çok kolay yaratılır, aşağıda liste oluşturmanın birkaç yolu vardır</p>
+</blockquote>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>emptyList <span style=color:#f92672>=</span> [ ]
+
+list1 <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#39;one, two, three, four, five&#39;</span>]
+ 
+numlist <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>7</span>, <span style=color:#ae81ff>9</span>]
+ 
+mixlist <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#39;yellow&#39;</span>, <span style=color:#e6db74>&#39;red&#39;</span>, <span style=color:#e6db74>&#39;blue&#39;</span>, <span style=color:#e6db74>&#39;green&#39;</span>, <span style=color:#e6db74>&#39;black&#39;</span>]
+ 
+<span style=color:#75715e># Boş bir liste adece köşeli parantez kullanılarak oluşturulur:</span>
+list <span style=color:#f92672>=</span> []
+</code></pre></div><h2 id=liste-boyu>Liste Boyu</h2>
+<blockquote>
+<p>len fonksiyonunu kullanarak listenin boyunu alabiliriz.</p>
+</blockquote>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>list <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;1&#34;</span>, <span style=color:#e6db74>&#34;hello&#34;</span>, <span style=color:#ae81ff>2</span>, <span style=color:#e6db74>&#34;world&#34;</span>]
+len(list)
+<span style=color:#f92672>&gt;&gt;&gt;</span> <span style=color:#ae81ff>4</span>
+</code></pre></div><h2 id=list-append-ekleme>List Append (Ekleme)</h2>
+<blockquote>
+<p>Append listenin sonuna eleman ekleyecektir. Eğer listenin başına ekleme yapmak istiyorsanız insert fonksiyonunu kullanabilirsiniz.<br>
+list.insert(0, &ldquo;Files&rdquo;)</p>
+</blockquote>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>list <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;Movies&#34;</span>, <span style=color:#e6db74>&#34;Music&#34;</span>, <span style=color:#e6db74>&#34;Pictures&#34;</span>]
+  
+<span style=color:#75715e># list.append(x) listenin sonuna bir eleman ekleyecektir</span>
+list<span style=color:#f92672>.</span>append(<span style=color:#e6db74>&#34;Files&#34;</span>)
+ 
+print list
+<span style=color:#f92672>&gt;&gt;&gt;</span> [<span style=color:#e6db74>&#39;Movies&#39;</span>, <span style=color:#e6db74>&#39;Music&#39;</span>, <span style=color:#e6db74>&#39;Pictures&#39;</span>, <span style=color:#e6db74>&#39;Files&#39;</span>]
+</code></pre></div><h2 id=list-insert-araya-ekleme>List Insert (Araya ekleme)</h2>
+<blockquote>
+<p>Syntax: list.insert(x, y) # y elemanını x. elemanın önüne yerleştirecektir</p>
+</blockquote>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>list <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;Movies&#34;</span>, <span style=color:#e6db74>&#34;Music&#34;</span>, <span style=color:#e6db74>&#34;Pictures&#34;</span>] 
+ 
+list<span style=color:#f92672>.</span>insert(<span style=color:#ae81ff>2</span>,<span style=color:#e6db74>&#34;Documents&#34;</span>)
+ 
+print list
+[<span style=color:#e6db74>&#39;Movies&#39;</span>, <span style=color:#e6db74>&#39;Music&#39;</span>, <span style=color:#e6db74>&#39;Documents&#39;</span>, <span style=color:#e6db74>&#39;Pictures&#39;</span>, <span style=color:#e6db74>&#39;Files&#39;</span>]
+ 
+<span style=color:#75715e># Listede istediğiniz bir yere eleman ekleyebilirsiniz</span>
+ 
+list <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;Movies&#34;</span>, <span style=color:#e6db74>&#34;Music&#34;</span>, <span style=color:#e6db74>&#34;Pictures&#34;</span>] 
+list<span style=color:#f92672>.</span>insert(<span style=color:#ae81ff>3</span>, <span style=color:#e6db74>&#34;Apps&#34;</span>)
+</code></pre></div><h2 id=list-remove-eleman-çıkartma>List Remove (eleman çıkartma)</h2>
+<blockquote>
+<p>Listeden bir elemanı çıkartmak için remove metodu kullanılır. Eğer eleman listede birden fazla tekrar ediyorsa, sadece ilk eleman çıkartılır, diğerleri kalır.</p>
+<p>Syntax: list.remove(x)</p>
+</blockquote>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>List <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#39;Movies&#39;</span>, <span style=color:#e6db74>&#39;Music&#39;</span>, <span style=color:#e6db74>&#39;Files&#39;</span>, <span style=color:#e6db74>&#39;Documents&#39;</span>, <span style=color:#e6db74>&#39;Pictures&#39;</span>]
+ 
+list<span style=color:#f92672>.</span>remove(<span style=color:#e6db74>&#34;Files&#34;</span>)
+ 
+print list
+[<span style=color:#e6db74>&#39;Movies&#39;</span>, <span style=color:#e6db74>&#39;Music&#39;</span>, <span style=color:#e6db74>&#39;Documents&#39;</span>, <span style=color:#e6db74>&#39;Pictures&#39;</span>]
+ 
+a <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>4</span>]
+a<span style=color:#f92672>.</span>remove(<span style=color:#ae81ff>2</span>)
+print a
+<span style=color:#f92672>&gt;&gt;&gt;</span> [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>4</span>]
+</code></pre></div><h2 id=list-extend-liste-genişletme>List Extend (Liste genişletme)</h2>
+<blockquote>
+<p>Listeleri birleştirmek istediğimz zaman extend metodunu kullanabiliriz.<br>
+Syntax: list.extend(x) # x listesinin elamanlarını listeye ekleyecektir</p>
+</blockquote>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>list2 <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;Music2&#34;</span>, <span style=color:#e6db74>&#34;Movies2&#34;</span>]
+list1<span style=color:#f92672>.</span>extend(list2)
+ 
+print list1
+<span style=color:#f92672>&gt;&gt;&gt;</span> [<span style=color:#e6db74>&#39;Movies&#39;</span>, <span style=color:#e6db74>&#39;Music&#39;</span>, <span style=color:#e6db74>&#39;Documents&#39;</span>, <span style=color:#e6db74>&#39;Pictures&#39;</span>, <span style=color:#e6db74>&#39;Music2&#39;</span>, <span style=color:#e6db74>&#39;Movies2&#39;</span>]
+</code></pre></div><h2 id=list-del-listeden-silme>List Del (Listeden silme)</h2>
+<blockquote>
+<p>Belli bir indexteki elemanı çıkartmak için del fonksiyonunu kullanırız.</p>
+</blockquote>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>list <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;Matthew&#34;</span>, <span style=color:#e6db74>&#34;Mark&#34;</span>, <span style=color:#e6db74>&#34;Luke&#34;</span>, <span style=color:#e6db74>&#34;John&#34;</span>]
+<span style=color:#66d9ef>del</span> list[<span style=color:#ae81ff>1</span>]
+ 
+print list
+<span style=color:#f92672>&gt;&gt;&gt;</span> [<span style=color:#e6db74>&#34;Matthew&#34;</span>, <span style=color:#e6db74>&#34;Luke&#34;</span>, <span style=color:#e6db74>&#34;John&#34;</span>]
+</code></pre></div><h2 id=list-keywords>List Keywords</h2>
+<blockquote>
+<p>&ldquo;in&rdquo; terimi bir elemanın listede olup olmadığını kontrol etmek için kullanılabilir.</p>
+</blockquote>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>list <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;red&#34;</span>, <span style=color:#e6db74>&#34;orange&#34;</span>, <span style=color:#e6db74>&#34;green&#34;</span>, <span style=color:#e6db74>&#34;blue&#34;</span>]
+<span style=color:#66d9ef>if</span> <span style=color:#e6db74>&#34;red&#34;</span> <span style=color:#f92672>in</span> list:
+    do_something()
+     
+<span style=color:#75715e># &#34;not&#34; terimi &#34;in&#34; ile birlikte kullanılabilir</span>
+ 
+list <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;red&#34;</span>, <span style=color:#e6db74>&#34;orange&#34;</span>, <span style=color:#e6db74>&#34;green&#34;</span>, <span style=color:#e6db74>&#34;blue&#34;</span>]
+<span style=color:#66d9ef>if</span> <span style=color:#e6db74>&#34;purple&#34;</span> <span style=color:#f92672>not</span> <span style=color:#f92672>in</span> list:
+    do_something()
+</code></pre></div><h2 id=list-reverse-liste-tersi>List Reverse (Liste tersi)</h2>
+<blockquote>
+<p>Reverse metodu tüm listenin sıralamasını tersine çevirecektir.</p>
+</blockquote>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>L1 <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;One&#34;</span>, <span style=color:#e6db74>&#34;two&#34;</span>, <span style=color:#e6db74>&#34;three&#34;</span>, <span style=color:#e6db74>&#34;four&#34;</span>, <span style=color:#e6db74>&#34;five&#34;</span>]
+  
+<span style=color:#75715e># Listeyi olduğu gibi yazdır</span>
+print L1
+<span style=color:#f92672>&gt;&gt;&gt;</span> [<span style=color:#e6db74>&#34;One&#34;</span>, <span style=color:#e6db74>&#34;two&#34;</span>, <span style=color:#e6db74>&#34;three&#34;</span>, <span style=color:#e6db74>&#34;four&#34;</span>, <span style=color:#e6db74>&#34;five&#34;</span>]
+
+<span style=color:#75715e># Listeyi tersten yazdır</span>
+<span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> L1[::<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]:
+    print i
+ 
+<span style=color:#75715e># YADA</span>
+ 
+L <span style=color:#f92672>=</span> [<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>20</span>, <span style=color:#ae81ff>40</span>]
+L<span style=color:#f92672>.</span>reverse()
+ 
+print L
+<span style=color:#f92672>&gt;&gt;&gt;</span> [<span style=color:#ae81ff>40</span>, <span style=color:#ae81ff>20</span>, <span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0</span>]
+</code></pre></div><h2 id=list-sorting-sıralama>List Sorting (Sıralama)</h2>
+<blockquote>
+<p>Bir listeyi sıralamanın en kolay yolu sorted fonksiyonunu kullanmaktır.<br>
+Bu fonksiyon parametre olarak bir fonksiyon alır ve sıralanmış olarak yeni bir liste döndürür. Asıl liste değişikliğe uğramaz.</p>
+<p>sorted() fonksiyonu opsiyonel parametrelerle özelleştirilebilir. &ldquo;reverse=True&rdquo; parametresi listeyi tersten sıralanmış olarak döndürecektir. sorted(list, reverse=True)</p>
+</blockquote>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># içinde bazı numaralar olan bir liste oluştur</span>
+numbers <span style=color:#f92672>=</span> [<span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>6</span>, <span style=color:#ae81ff>7</span>, <span style=color:#ae81ff>9</span>]
+  
+<span style=color:#75715e># numaraları sıralı olarak yazdır</span>
+print sorted(numbers)
+  
+<span style=color:#75715e># asıl listenin elemanları bir değişikliğe uğramadı</span>
+print numbers
+my_string <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#39;aa&#39;</span>, <span style=color:#e6db74>&#39;BB&#39;</span>, <span style=color:#e6db74>&#39;zz&#39;</span>, <span style=color:#e6db74>&#39;CC&#39;</span>, <span style=color:#e6db74>&#39;dd&#39;</span>, <span style=color:#e6db74>&#34;EE&#34;</span>]
+ 
+<span style=color:#75715e># Eğer hiç bir parametre kullanılmazsa ön tanımlı değerler kullanılacaktır (Büyük - Küçük duyarlı)</span>
+print sorted(my_string)
+ 
+<span style=color:#75715e># reverse parametresi ile tersten sıralayacaktır</span>
+print sorted(strs, reverse<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>)   <span style=color:#75715e># [&#39;zz&#39;, &#39;aa&#39;, &#39;CC&#39;, &#39;BB&#39;]</span>
+
+<span style=color:#75715e># Bu bir sonuç döndürmeyecektir, listeyi değiştirecektir</span>
+list<span style=color:#f92672>.</span>sort()
+</code></pre></div><h2 id=list-split-dilimleme>List Split (Dilimleme)</h2>
+<blockquote>
+<p>Bir stringi dilimleyip liste haline getirebiliriz. Bunu yapmak için split metodunu kullanırız. Eğer metoda parametre geçirmezsek boşluk karakterine göre dilimleyecektir.</p>
+</blockquote>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>list <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;one, two, three, four, five&#39;</span>
+newlist <span style=color:#f92672>=</span> list<span style=color:#f92672>.</span>split(<span style=color:#e6db74>&#39;,&#39;</span>)
+ 
+print newlist
+<span style=color:#f92672>&gt;&gt;&gt;</span> [<span style=color:#e6db74>&#39;one&#39;</span>, <span style=color:#e6db74>&#39; two&#39;</span>, <span style=color:#e6db74>&#39; three&#39;</span>, <span style=color:#e6db74>&#39; four&#39;</span>, <span style=color:#e6db74>&#39;five&#39;</span>]
+</code></pre></div><h2 id=list-indexing>List Indexing</h2>
+<blockquote>
+<p>Listedeki her bir elamana 0dan başlayacak şekilde bir numara atanır. Bu numaraya index adı verilir. Bu index kullanılarak listenin elemanına doğrudan erişebiliriz.</p>
+</blockquote>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>list    <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;first&#34;</span>, <span style=color:#e6db74>&#34;second&#34;</span>, <span style=color:#e6db74>&#34;third&#34;</span>]
+list[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;first&#34;</span>
+list[<span style=color:#ae81ff>1</span>] <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;second&#34;</span>
+list[<span style=color:#ae81ff>2</span>] <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;third&#34;</span>
+</code></pre></div><h2 id=list-slicing>List Slicing</h2>
+<blockquote>
+<p>Bazen listenin bir kısmına ulaşmak isteyebiliriz. Python bunu dahali olarak destekler. Bir listenin elemanına ulaşmaya çalışır gibi, başlangıç ve bitiş indexleri vererek belirli bir aralıktaki değerleri liste olarak alabiliriz.</p>
+</blockquote>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>colors <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#39;yellow&#39;</span>, <span style=color:#e6db74>&#39;red&#39;</span>, <span style=color:#e6db74>&#39;blue&#39;</span>, <span style=color:#e6db74>&#39;green&#39;</span>, <span style=color:#e6db74>&#39;black&#39;</span>]
+ 
+print colors[<span style=color:#ae81ff>0</span>]
+<span style=color:#f92672>&gt;&gt;&gt;</span> yellow
+     
+print colors [<span style=color:#ae81ff>1</span>:]
+<span style=color:#f92672>&gt;&gt;&gt;</span> red, blue, green, black
+</code></pre></div><p><a href=http://stackoverflow.com/questions/509211/the-python-slice-notation>Bu</a> stackoverflow sayfasından alınan örneğe bakalım.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># baslangictan, son indexine kadar (son dahil değil)</span>
+a[baslangic:son]
+<span style=color:#75715e># baslangic indexinden listenin sonuna kadar</span>
+a[baslangic:]
+<span style=color:#75715e># listenin basindan, son indexine kadar (son dahil değil)</span>
+a[:son]
+<span style=color:#75715e># tüm listenin kopyası</span>
+a[:]
+</code></pre></div><p>Birde kullanabileceğimiz adım sayısı vardır.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># belirli adimlara göre</span>
+a[start:end:step]
+</code></pre></div><p>FIXME: hem anlatım bozukluğuna bak, hemde test et<br>
+Bir diğer özellik de başlangıç ve bitiş değerleri negatif sayı olabilir, bu durumda listenin başından değilde sonundan itibaren saymamız gerekir.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># listedeki son eleman</span>
+a[<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]
+<span style=color:#75715e># listenin son iki elemanı</span>
+a[<span style=color:#f92672>-</span><span style=color:#ae81ff>2</span>:]
+<span style=color:#75715e># son iki eleman hariç listenin tüm elemanları</span>
+a[:<span style=color:#f92672>-</span><span style=color:#ae81ff>2</span>]
+</code></pre></div><h2 id=list-loops>List Loops</h2>
+<blockquote>
+<p>Bazen bir liste üzerindeki elemanları kullanacak bir döngü kurmak isteriz. Pythonda bunu &ldquo;in&rdquo; terimi kullanarak rahatlıkla yapabiliriz.</p>
+</blockquote>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># Buna benzeyebilir</span>
+matching <span style=color:#f92672>=</span> []
+<span style=color:#66d9ef>for</span> term <span style=color:#f92672>in</span> mylist:
+    do something
+ 
+<span style=color:#75715e># Bir koşulu saylayan liste elemanlarını başka bir listeye atmak</span>
+matching <span style=color:#f92672>=</span> []    <span style=color:#75715e># Boş bir liste oluştur</span>
+<span style=color:#66d9ef>for</span> term <span style=color:#f92672>in</span> mylist:
+    <span style=color:#66d9ef>if</span> test(term):
+        matching<span style=color:#f92672>.</span>append(term)
+ 
+<span style=color:#75715e># İçinde eleman olan bir listeyi bu şekilde döngüye sokabiliriz</span>
+items <span style=color:#f92672>=</span> [ <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>5</span> ]
+<span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> items:
+    print i
+</code></pre></div><h2 id=list-methods>List Methods</h2>
+<blockquote>
+<p>Calls to list methods have the list they operate on appear before the method name.</p>
+<p>Any other values the method needs to do its job is provided in the normal way as<br>
+an extra argument inside the round brackets.</p>
+</blockquote>
+<pre><code>s = ['h','e','l','l','o']  # liste oluştur
+s.append('d')               # listenin sonuna ekle
+len(s)                      # listedeki eleman sayısı
+s.sort()                    # listeyi sırala
+s.reverse()                 # listeyi ters çevir
+s.extend(['w','o'])         # listeyi genişlet
+s.insert(1,2)               # araya eleman ekle
+s.remove('d')               # listedeki ilk 'd' elemanını çıkart
+s.pop()                     # listedeki son elemanı çıkart
+s.pop(1)                    # 1 nolu indexteki elemanı çıkart
+s.count('o')                # listede bulunan 'o' ların sayısı
+s = range(0,10)             # 0 - 10 aralığındaki sayılardan oluşan bir liste oluştur
+s = range(0,10,2)           # yukardaki benzeri fakat bir de adım değeri belirle
+</code></pre>
+<h2 id=örnekler>Örnekler</h2>
+<blockquote>
+<p>Bu makaleyi bazı liste örnekleri göstererek bitirelim.</p>
+</blockquote>
+<p>İlk olarak sadece sayılardan oluşan bir liste oluşturalım.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>list <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span>,<span style=color:#ae81ff>2</span>,<span style=color:#ae81ff>3</span>,<span style=color:#ae81ff>5</span>,<span style=color:#ae81ff>8</span>,<span style=color:#ae81ff>2</span>,<span style=color:#ae81ff>5.2</span>]    <span style=color:#75715e># 1,2,3,5,8,2,5.2 değerlerini tutan bir liste oluştur</span>
+i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+<span style=color:#66d9ef>while</span> i <span style=color:#f92672>&lt;</span> len(list):     <span style=color:#75715e># Listenin her bir elemanını yazdıran while döngüsüin the list</span>
+    print list[i]        <span style=color:#75715e># Her elemana index değeriyle ulaşılıyor</span>
+    i <span style=color:#f92672>=</span> i <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>            <span style=color:#75715e># While döngüsü her çalıştığında i değişkenini 1 arttır</span>
+</code></pre></div><p>Bir sonraki örnek listedeki elemanların ortalama değerini hesaplama.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>list <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span>,<span style=color:#ae81ff>2</span>,<span style=color:#ae81ff>3</span>,<span style=color:#ae81ff>5</span>,<span style=color:#ae81ff>8</span>,<span style=color:#ae81ff>2</span>,<span style=color:#ae81ff>5.2</span>]
+total <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+<span style=color:#66d9ef>while</span> i <span style=color:#f92672>&lt;</span> len(list):
+    total <span style=color:#f92672>=</span> total <span style=color:#f92672>+</span> list[i]
+    i <span style=color:#f92672>=</span> i <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>
+ 
+average <span style=color:#f92672>=</span> total <span style=color:#f92672>/</span> len(list)
+print average
+</code></pre></div>
+<div class=blog-tags>
+<a href=https://blog.askin.ws/tags/list/>list</a>&nbsp;
+</div>
+<hr>
+<section id=social-share>
+<div class="list-inline footer-links">
+<div class=share-box aria-hidden=true>
+<ul class=share>
+<li>
+<a href="//twitter.com/share?url=https%3a%2f%2fblog.askin.ws%2fblog%2flisteler-ile-ilgili-garip-bir-dokuman%2f&text=Listeler%20ile%20ilgili%20garip%20bir%20d%c3%b6k%c3%bcman&via=kelebeks" target=_blank title="Share on Twitter">
+<i class="fab fa-twitter"></i>
+</a>
+</li>
+<li>
+<a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.askin.ws%2fblog%2flisteler-ile-ilgili-garip-bir-dokuman%2f" target=_blank title="Share on Facebook">
+<i class="fab fa-facebook"></i>
+</a>
+</li>
+<li>
+<a href="//reddit.com/submit?url=https%3a%2f%2fblog.askin.ws%2fblog%2flisteler-ile-ilgili-garip-bir-dokuman%2f&title=Listeler%20ile%20ilgili%20garip%20bir%20d%c3%b6k%c3%bcman" target=_blank title="Share on Reddit">
+<i class="fab fa-reddit"></i>
+</a>
+</li>
+<li>
+<a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fblog.askin.ws%2fblog%2flisteler-ile-ilgili-garip-bir-dokuman%2f&title=Listeler%20ile%20ilgili%20garip%20bir%20d%c3%b6k%c3%bcman" target=_blank title="Share on LinkedIn">
+<i class="fab fa-linkedin"></i>
+</a>
+</li>
+<li>
+<a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fblog.askin.ws%2fblog%2flisteler-ile-ilgili-garip-bir-dokuman%2f&title=Listeler%20ile%20ilgili%20garip%20bir%20d%c3%b6k%c3%bcman" target=_blank title="Share on StumbleUpon">
+<i class="fab fa-stumbleupon"></i>
+</a>
+</li>
+<li>
+<a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fblog.askin.ws%2fblog%2flisteler-ile-ilgili-garip-bir-dokuman%2f&description=Listeler%20ile%20ilgili%20garip%20bir%20d%c3%b6k%c3%bcman" target=_blank title="Share on Pinterest">
+<i class="fab fa-pinterest"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</section>
+</article>
+<ul class="pager blog-pager">
+<li class=previous>
+<a href=https://blog.askin.ws/blog/off-the-record-messaging-otr/ data-toggle=tooltip data-placement=top title="Off the Record Messaging (OTR)">&larr; Önceki gönderi</a>
+</li>
+<li class=next>
+<a href=https://blog.askin.ws/blog/python-sozluk-hizli-rehber/ data-toggle=tooltip data-placement=top title="Python Sözlük Hızlı Rehber">Sonraki gönderi &rarr;</a>
+</li>
+</ul>
+<div class=disqus-comments>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//askin-ozgurun-web-gunlugu.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
+</div>
+</div>
+</div>
+</div>
+<footer>
+<div class=container>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<ul class="list-inline text-center footer-links">
+<li>
+<a href=mailto:askin@askin.ws title="Email me">
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://www.facebook.com/askinyollu title=Facebook>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://github.com/askin title=GitHub>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-github fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://gitlab.com/askinozgur title=GitLab>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-gitlab fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://bitbucket.org/askin title=Bitbucket>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-bitbucket fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://twitter.com/kelebeks title=Twitter>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://linkedin.com/in/askin.yollu title=LinkedIn>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://open.spotify.com/user/kelebex title=Spotify>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-spotify fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://telegram.me/kelebeks title=Telegram>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-telegram fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href title=RSS>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+</ul>
+<p class="credits copyright text-muted">
+<a href=https://askin.ws>Aşkın Özgür</a>
+&nbsp;&bull;&nbsp;&copy;
+2021
+&nbsp;&bull;&nbsp;
+<a href=https://blog.askin.ws>Aşkın Özgür</a>
+</p>
+<p class="credits theme-by text-muted">
+<a href=https://gohugo.io>Hugo v0.89.1</a> altyapısı &nbsp;&bull;&nbsp; <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a> temasından uyarlanan <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> teması kullanılmaktadır.
+</p>
+</div>
+</div>
+</div>
+</footer><script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js integrity=sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js integrity=sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe crossorigin=anonymous></script>
+<script src=https://code.jquery.com/jquery-1.12.4.min.js integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin=anonymous></script>
+<script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script>
+<script src=https://blog.askin.ws/js/main.js></script>
+<script src=https://blog.askin.ws/js/highlight.min.js></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script>$(document).ready(function(){$("pre.chroma").css("padding","0")})</script><script>renderMathInElement(document.body)</script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js integrity=sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js integrity=sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q crossorigin=anonymous></script><script src=https://blog.askin.ws/js/load-photoswipe.js></script>
+</body>
+</html>

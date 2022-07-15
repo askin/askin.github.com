@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blog on Aşkın Özgür</title><link>https://blog.askin.ws/tags/blog/</link><description>Recent content in Blog on Aşkın Özgür</description><generator>Hugo -- gohugo.io</generator><language>tr-TR</language><managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor><webMaster>askin@askin.ws (Aşkın Özgür)</webMaster><lastBuildDate>Thu, 08 Apr 2010 02:28:00 +0300</lastBuildDate><atom:link href="https://blog.askin.ws/tags/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Blogger'a Kendi Alan Adınızı Yönlendirme</title><link>https://blog.askin.ws/blog/bloggera-kendi-alan-adinizi-yonlendirme/</link><pubDate>Thu, 08 Apr 2010 02:28:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/bloggera-kendi-alan-adinizi-yonlendirme/</guid><description>&lt;p>&lt;img src="https://blog.askin.ws/uploads/2010/04/blogger-300x298.png" alt="Blogger" title="Blogger">Daha önce birkaç kez yapmıştım, fakat her seferinde neler yaptığımı unutup acaba olmadı mı diye kuşkulanmıştım. En güzeli böyle bir yere yazıp gerektiğinde kopya çekmek :)&lt;/p>
+&lt;p>Öncelikle bloggerda bir blogunuz olduğunu varsayıyorum :D&lt;br>
+Blooger hesabımıza giriş yapıyoruz.&lt;br>
+Şu adımları takip ediyoruz.&lt;br>
+Özelleştir -&amp;gt; Ayarlar -&amp;gt; Yayıncılık -&amp;gt; Özel Alan-&amp;gt; Gelişmiş Ayarlara Geçiş Yapın&lt;br>
+Buradaki kutuya alan adını yazın.&lt;br>
+&amp;ldquo;Eksik dosya barındırma sistemini mi kullanıyorsunuz?&amp;rdquo; kısmını olduğu gibi bırakıp, kelime doğrulamayı yapıp ayarları kaydediyoruz.&lt;/p>
+&lt;p>Bu adımları geçtikten sonra google tarafında yapılacak ayarları tamamlamış oluyoruz.&lt;br>
+Alan adınızın bloggera yönlenmesi için CNAME kaydı oluşturmanız gerekiyor. Bunu alan adını aldığınız yerden yapacaksınız.&lt;br>
+CNAME kaydına değer olarak &lt;em>ghs.google.com&lt;/em> adresini vermelisiniz. Domain firmanızın güncellenme hızına göre alan adının aktif olma süresi değişecektir.&lt;/p>
+&lt;p>Toplam 2 adımdan oluşuyor. Akılda tutmak kolay ama alan adının yönlenmesi biraz zaman aldığından dolayı insanın içinde bir şüphe oluyor her zaman :P&lt;/p></description></item><item><title>2000'i devirdik, yaşasın SPAM</title><link>https://blog.askin.ws/blog/2000i-devirdik-yasasin-spam/</link><pubDate>Mon, 03 Aug 2009 22:17:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/2000i-devirdik-yasasin-spam/</guid><description>An itibariyle bloguma 2004 adet spam yorum atılmış. Bıkmayıp usanmayıp spam bot hazılıyan spamcılara ve bu spam yorumları yakalayan akismet&amp;lsquo;e teşekürlerimi sunuyorum.
+Tabi gmailin üstün spam ayıklama kabiliyetini de unutmamak lazım. Arada sırada spam olmayan mailleride engellemesine rağmen çok iyi iş çıkartıyor.</description></item><item><title>Pardus-Linux.Org e-dergi bana süpriz yaptı...</title><link>https://blog.askin.ws/blog/pardus-linuxorg-e-dergi-bana-supriz-yapti/</link><pubDate>Wed, 11 Mar 2009 01:36:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/pardus-linuxorg-e-dergi-bana-supriz-yapti/</guid><description>&lt;p>&lt;img src="https://blog.askin.ws/uploads/2009/03/plo-logo.png" alt="Pardus-Linux.Org" title="Pardus-Linux.Org">Dergi son sayısında ki (Sayı 6) site tanıtımında benim bloguma yer verdi, kendilerine buradan çok teşekür ediyorum. Bu jestleri bana blog yazmada ve Özgür Yazılım çabalarımda güç verecek.&lt;/p>
+&lt;p>Derginin bu sayısını gerçekten beğendim, hele hele tamamen özgür yazılım araçlarıyla oluşturulması, arkasında hiçbir mali destek olmadan sadece topluluk katkısıyla ve güzel bir motivasyon ile düzenli olarak çıkması derginin gönlümde olan yerini iyice pekiştirdi.&lt;/p>
+&lt;p>Dergi kapağında &lt;strong>8 Mart Dünya Emekçi Kadınla Günü&lt;/strong> yazsaydı daha güzel ve anlamlı olurdu:) ama hatırlamak ve önem vermek çok daha önemli. Birde bu sayıda RMS ile olan röportajın devamını bekliyordum:)&lt;/p>
+&lt;p>Dergide emeği geçen herkese teşekür ediyorum&amp;hellip;&lt;/p>
+&lt;p>&lt;img src="https://blog.askin.ws/uploads/2009/03/plo-e-dergi-6-kapak.png" alt="Pardus-Linux.Org e-dergi" title="Pardus-Linux.Org e-dergi">&lt;/p>
+&lt;ul>
+&lt;li>C ile Programlama II&lt;/li>
+&lt;li>GNU/Linux Haberleri&lt;/li>
+&lt;li>GNU/Linux AntiVirüs Yazılımları&lt;/li>
+&lt;li>Torrent ve KTorrent&lt;/li>
+&lt;li>Pardus’ta Python 3.0&lt;/li>
+&lt;li>Happy Hacking : Pisi Search ‘te Küçük Değişiklikler&lt;/li>
+&lt;li>Python Modülü : optparse&lt;/li>
+&lt;li>Firefox Eklentileri&lt;/li>
+&lt;li>Qucs ile DC Analiz&lt;/li>
+&lt;li>Oyun İnceleme : Ri-Li&lt;/li>
+&lt;li>Web Sİte Tanıtımları&lt;/li>
+&lt;li>Pardusum&lt;/li>
+&lt;li>Doruk Fişek Röportajı&lt;/li>
+&lt;/ul>
+&lt;p>adres: &lt;a href="http://www.pardus-edergi.org/">http://www.pardus-edergi.org/&lt;/a>&lt;/p></description></item></channel></rss>

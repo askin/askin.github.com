@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>mysql on Aşkın Özgür</title><link>https://blog.askin.ws/tags/mysql/</link><description>Recent content in mysql on Aşkın Özgür</description><generator>Hugo -- gohugo.io</generator><language>tr-TR</language><managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor><webMaster>askin@askin.ws (Aşkın Özgür)</webMaster><lastBuildDate>Fri, 06 Sep 2013 12:59:00 +0300</lastBuildDate><atom:link href="https://blog.askin.ws/tags/mysql/index.xml" rel="self" type="application/rss+xml"/><item><title>MySQL veritabanı ile ilgili bazı bilgileri öğrenmek</title><link>https://blog.askin.ws/blog/mysql-veritabani-ile-ilgili-bazi-bilgileri-ogrenmek/</link><pubDate>Fri, 06 Sep 2013 12:59:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/mysql-veritabani-ile-ilgili-bazi-bilgileri-ogrenmek/</guid><description>MySQL kullanıyorsanız, phpMyAdmin gibi bir arayüzünüz olmadığı zaman veritabanı ile ilgili bilgi almak için aşağıdaki sorguları kullanabilirsiniz.
+Var olan veritabanlarını görmek:
+show databases; Bir veritabanını kullanmak için seçmek:
+use veritabani_ismi; Bir veritabanındaki tabloları listelemek:
+show tables; show tables from veritabani_ismi; Bir tablonun oluşturulma scriptini görme:
+show create table tablo_ismi Bir tablonun kolonlarını görme:
+describe tablo_adi</description></item><item><title>MySQL Yedek Alma</title><link>https://blog.askin.ws/blog/mysql-yedek-alma/</link><pubDate>Mon, 11 Mar 2013 16:42:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/mysql-yedek-alma/</guid><description>Yedek almak için mysqldump aracını kullanıyoruz.
+mysqldump -u kullanici_adi -h sunucu_adi db_adi -p &amp;gt; db_adi_yedek.sql Alınan yedeği tekrar yüklemek için mysql komutunu kullanıyoruz
+mysql -u kullanici_adi -h sunucu_adi db_adi -p &amp;lt; db_adi_yedek.sql</description></item><item><title>Mysql Kullanıcı - Database Oluşturma</title><link>https://blog.askin.ws/blog/mysql-kullanici-database-olusturma/</link><pubDate>Wed, 11 Jul 2012 13:54:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/mysql-kullanici-database-olusturma/</guid><description>Herzaman unutup google&amp;rsquo;a bakacağıma buraya bakayım daha kolay :)
+Önce mysql sunucusuna bağlanalım:
+mysql -u root -p Kullanıcı oluşturma:
+create user kullaniciadi; Veritabanı oluşturma:
+create database veritabaniadi; Kullanıcı yetkilerini verme: Tüm yetkiler:
+grant all on veritabaniadi.* to kullaniciadi@localhost identified by &amp;#39;parola&amp;#39;; Sadece okuma (select):
+grant select on veritabaniadi.* to kullaniciadi@localhost; Yetkiler hemen devreye girsin:
+flush privileges;</description></item><item><title>Mysql Data Dizinini Değiştirme</title><link>https://blog.askin.ws/blog/mysql-data-dizinini-degistirme/</link><pubDate>Tue, 14 Jul 2009 02:11:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/mysql-data-dizinini-degistirme/</guid><description>&lt;p>&lt;img src="https://blog.askin.ws/uploads/2009/07/mysql.png" alt="Mysql" title="Mysql">Mysql data dizini ön tanımlı &lt;strong>/var/lib/mysql&lt;/strong> olarak belirlenmiştir. Çeşitli ihtiyaçlardan dolayı bunun yerini değiştirmemiz gerekebilir. Mesela ben ayrı bir bölümde tuttuğum &lt;strong>/home&lt;/strong> dizini altına taşımak istiyorum. Tüm işlemleri &lt;em>root&lt;/em> yetkisiyle yapıyoruz. Öncelikle mysql servisini durduralım.
+Ben pardus kullandığım için&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ service mysql-server stop
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Diğer dağıtımlarda farklı olabilir.
+Ardından ilgili dizini yeni yerine kopyalayalım.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ cp -a /var/lib/mysql /home
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. &lt;strong>/etc/mysql/my.cnf&lt;/strong> dosyasında
+&lt;code>datadir = /var/lib/mysql&lt;/code> olan satırı
+&lt;code>datadir = /home/mysql&lt;/code> olarak değiştirelim.
+Şimdi servisi yeniden başlatabiliriz.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ service mysql-server start
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Eğer düzgün bir şekilde çalışıyorsa &lt;strong>/var/lib/mysql&lt;/strong> dizinini silebiliriz. Ama ismini değiştirip birkaç gün her ihtimale karşı saklamak çok mantıklı.&lt;/p></description></item></channel></rss>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>wpa on Aşkın Özgür</title><link>https://blog.askin.ws/tags/wpa/</link><description>Recent content in wpa on Aşkın Özgür</description><generator>Hugo -- gohugo.io</generator><language>tr-TR</language><managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor><webMaster>askin@askin.ws (Aşkın Özgür)</webMaster><lastBuildDate>Sat, 05 Dec 2009 02:02:00 +0300</lastBuildDate><atom:link href="https://blog.askin.ws/tags/wpa/index.xml" rel="self" type="application/rss+xml"/><item><title>Pardus ile Eduroam ağına bağlanma</title><link>https://blog.askin.ws/blog/pardus-ile-eduroam-agina-baglanma/</link><pubDate>Sat, 05 Dec 2009 02:02:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/pardus-ile-eduroam-agina-baglanma/</guid><description>&lt;p>&lt;img src="https://blog.askin.ws/uploads/2009/12/eduroam_logo_trans.gif" alt="Eduroam" title="Eduroam">&lt;a href="http://www.pardus.org.tr/">Pardus&lt;/a>un ağ yöneticisi gayet şık bir arayüze sahip, fakat bize &lt;a href="http://www.eduroam.org/">Eduroam&lt;/a> ağına bağlanma özelliği sunmuyor.&lt;br>
+Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız için yeterli. Bu araçlar &lt;a href="http://hostap.epitest.fi/wpa_supplicant/">wpa_supplicant&lt;/a> ve &lt;a href="http://roy.marples.name/projects/dhcpcd">dhcpcd&lt;/a>. Wpa_supplicant ağda kimlik denetimini sağlamak için, dhcpcd ise ağdan ip almamız için gerekli.&lt;/p>
+&lt;p>Öncelikle wpa_supplicant için ayar dosyası oluşturmamız gerekiyor.&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-conf" data-lang="conf">network={
+ssid=&amp;quot;eduroam&amp;quot;
+key_mgmt=WPA-EAP
+pairwise=TKIP
+group=TKIP
+eap=TTLS
+phase2=&amp;quot;auth=PAP&amp;quot;
+anonymous_identity=&amp;quot;anonymous@ogr.deu.edu.tr&amp;quot;
+identity=&amp;quot;ogrencinumarasi@ogr.deu.edu.tr&amp;quot;
+password=&amp;quot;sifre&amp;quot;
+}
+&lt;/code>&lt;/pre>&lt;p>Bu ayarlar Dokuz Eylül Üniversitesi için. Kendi okulunuza göre düzenlemeniz gerekiyor. Sadece ogr.deu.edu.tr adresi yerine kendi okulunuzun adresini yazmalısınız.&lt;/p>
+&lt;p>Bu dosyayı /etc/wpa_supplicant.con adıyla kaydediyoruz.&lt;/p>
+&lt;p>Sıra geldi wpa_supplicantı çalıştırmaya.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>-D parametresi hangi sürücüyü kullanacağımızı belirtiyor. Wpa_supplicantın man dosyalarına bakarak kendinize uygun bir sürücü seçebilirsiniz.&lt;br>
+-i hangi arayüzü kullanacağınızı belirtiyor. Genellikle wlan0 dır. iwconfig komutunun çıktısı size kablosuz ağ kartlarını gösterecektir.&lt;br>
+-c ile ayar dosyamızın yerini belirtiyoruz.&lt;/p>
+&lt;p>Eğer bu komut başarılı olursa artık ip alabiliriz.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">dhcpcd wlan0
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Eğer bu komutta başarılı olduysa artık internete bağlanabilirsiniz hayırlı olsun :)&lt;/p>
+&lt;p>Bu işlemi kolaylaştırmak için pem adında bi script yazdım.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">git clone git://github.com/askin/pem.git
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Bu komutla pem&amp;rsquo;e ulaşabilirsiniz.&lt;br>
+Bu aracı daha fazla geliştirecektim fakat ağ yöneticisiyle bu işleri nasıl yapabileceğimi öğrendim. Bugün oturup biraz network-managerın kodlarıyla uğraştım. Sanırım pazartesi günü bu işi ağ yöneticisiyle kolayca yapılabilecek bir hale getirebilirim. Şimdilik en güzel yöntem bu gibi :)&lt;/p>
+&lt;p>Ayrıca sevgili dostum &lt;a href="http://blog.metebilgin.com/">Mete&lt;/a> bu işin wicd kullanarak nasıl yapıldığını daha önce yazmış &lt;a href="http://blog.metebilgin.com/2009/10/pardus-2009-da-eduroam-kafay-yemeden.html">buradan&lt;/a> o yazıya ulaşabilirsiniz.&lt;/p></description></item></channel></rss>

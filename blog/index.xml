@@ -1,0 +1,950 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blogs on Aşkın Özgür</title><link>https://blog.askin.ws/blog/</link><description>Recent content in Blogs on Aşkın Özgür</description><generator>Hugo -- gohugo.io</generator><language>tr-TR</language><managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor><webMaster>askin@askin.ws (Aşkın Özgür)</webMaster><lastBuildDate>Wed, 03 Nov 2021 19:04:25 +0300</lastBuildDate><atom:link href="https://blog.askin.ws/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Maven İle Versiyon Numarası Güncelleme</title><link>https://blog.askin.ws/blog/maven-ile-versiyon-numarasi-guncelleme/</link><pubDate>Wed, 03 Nov 2021 19:04:25 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/maven-ile-versiyon-numarasi-guncelleme/</guid><description>&lt;p>Bir &lt;code>maven&lt;/code> projeniz varsa ve versiyon numarasını güncellemek istiyorsanız, &lt;code>pom.xml&lt;/code>i bir editör ile açıp versiyon numarasını güncelleyebileceğiniz gibi, maven kullanarak da bunu yapabilirsiniz.&lt;/p>
+&lt;p>Aşağıdaki gibi bir &lt;code>pom.xml&lt;/code> dosyaminizin olduğunu düşünelim.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-xml" data-lang="xml">&lt;span style="color:#75715e">&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;project&lt;/span> &lt;span style="color:#a6e22e">xmlns=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;http://maven.apache.org/POM/4.0.0&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">xmlns:xsi=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34;&lt;/span>
+&lt;span style="color:#a6e22e">xsi:schemaLocation=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;modelVersion&amp;gt;&lt;/span>4.0.0&lt;span style="color:#f92672">&amp;lt;/modelVersion&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>com.mycompany.app&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>my-app&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>1.0.0&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;name&amp;gt;&lt;/span>my-app&lt;span style="color:#f92672">&amp;lt;/name&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;/project&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Aşağıdaki komut ile &lt;code>1.0.0&lt;/code> olan versiyon numarasını &lt;code>1.0.5&lt;/code> olarak güncelledik.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sh" data-lang="sh">mvn versions:set -DnewVersion&lt;span style="color:#f92672">=&lt;/span>1.0.5 versions:commit
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Eğer otomatik olarak versiyon numarasını yükseltmek istersek aşağıdaki komut işimizi görecek.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sh" data-lang="sh">mvn build-helper:parse-version versions:set &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;span style="color:#ae81ff">&lt;/span> -DnewVersion&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">\$&lt;/span>&lt;span style="color:#f92672">{&lt;/span>parsedVersion.majorVersion&lt;span style="color:#f92672">}&lt;/span>.&lt;span style="color:#ae81ff">\$&lt;/span>&lt;span style="color:#f92672">{&lt;/span>parsedVersion.minorVersion&lt;span style="color:#f92672">}&lt;/span>.&lt;span style="color:#ae81ff">\$&lt;/span>&lt;span style="color:#f92672">{&lt;/span>parsedVersion.nextIncrementalVersion&lt;span style="color:#f92672">}&lt;/span> &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;span style="color:#ae81ff">&lt;/span> versions:commit
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Artık versiyon numaramız &lt;code>1.0.6&lt;/code>&lt;/p>
+&lt;p>Minör versiyon yükseltmek isterseniz&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sh" data-lang="sh">mvn build-helper:parse-version &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;span style="color:#ae81ff">&lt;/span> versions:set &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;span style="color:#ae81ff">&lt;/span> -DnewVersion&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">\$&lt;/span>&lt;span style="color:#f92672">{&lt;/span>parsedVersion.majorVersion&lt;span style="color:#f92672">}&lt;/span>.&lt;span style="color:#ae81ff">\$&lt;/span>&lt;span style="color:#f92672">{&lt;/span>parsedVersion.nextMinorVersion&lt;span style="color:#f92672">}&lt;/span>.&lt;span style="color:#ae81ff">\$&lt;/span>&lt;span style="color:#f92672">{&lt;/span>parsedVersion.buildNumber&lt;span style="color:#f92672">}&lt;/span> &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;span style="color:#ae81ff">&lt;/span> versions:commit
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Major versiyon yükseltmek isterseniz&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sh" data-lang="sh">mvn build-helper:parse-version versions:set &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;span style="color:#ae81ff">&lt;/span> -DnewVersion&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">\$&lt;/span>&lt;span style="color:#f92672">{&lt;/span>parsedVersion.nextMajorVersion&lt;span style="color:#f92672">}&lt;/span>.0.0 &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;span style="color:#ae81ff">&lt;/span> versions:commit
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Daha detaylı bilgi için aşağıdaki linki kullanabilirsiniz.&lt;/p>
+&lt;p>&lt;a href="https://www.mojohaus.org/build-helper-maven-plugin/parse-version-mojo.html" title="Build Helper Maven Plugin">https://www.mojohaus.org/build-helper-maven-plugin/parse-version-mojo.html&lt;/a>&lt;/p></description></item><item><title>Let's Encrypt ile Wildcard SSL Sertifika Oluşturma</title><link>https://blog.askin.ws/blog/lets-encrypt-ile-wildcard-ssl-sertifika-olusturma/</link><pubDate>Wed, 10 Mar 2021 22:00:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/lets-encrypt-ile-wildcard-ssl-sertifika-olusturma/</guid><description>&lt;p>Let&amp;rsquo;s Encrypt kullanarak &lt;strong>wildcard&lt;/strong> sertifika oluşturabiliyoruz. Normal şartlarda sertifika oluştururken &lt;code>http://domain.com/.well-known&lt;/code> altında bir dosya oluşturularak o alan adının sahibi doğrulanıyor. Fakat wildcard sertifika icin işler değişiyor. Bazı &lt;strong>dns&lt;/strong> kayıtları girmemiz gerekiyor. Bunu kendimiz yapabileceğimiz gibi bu işi otomatize eden scriptler de kullanabiliyoruz.&lt;/p></description></item><item><title>Apache Tomcat Paralel Deploy</title><link>https://blog.askin.ws/blog/apache-tomcat-parallel-deploy/</link><pubDate>Sat, 12 Sep 2020 00:00:00 +0000</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/apache-tomcat-parallel-deploy/</guid><description>&lt;p>Apache Tomcat kullanıyorsanız aynı uygulamanın birden fazla sürümünü
+aynı anda aynı path üzerinde çalıştırabilirsiniz. Bu deploy yaparken
+kesintisiz hizmet sağlamak için çok yardımcı oluyor. Buna &lt;strong>Parallel
+Deployment&lt;/strong> deniyor. Paralel deploy sırasında eğer uygulamanın bir
+önceki versiyonunda oturum açılmışsa istekler oraya gitmeye devam
+ediyor, yeni oturumlar yeni sürüme gitmeye başlıyor.&lt;/p></description></item><item><title>Cron Timezone Problemi</title><link>https://blog.askin.ws/blog/cron-timezone-problemi/</link><pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/cron-timezone-problemi/</guid><description>Zamanlanmış görevler için cron&amp;rsquo;u sık sık kullanıyorum. Bugüne kadar beni yarı yolda bıraktığı hiç olmadı. Birkaç gün önce iş arkadaşım gece 12de çalışması gereken bir işin, gece 3te çalıştığını bildirdi. Önce böyle birşey olmaz dedim ama loglara bakınca doğru olduğunu anladım.
+Biraz araştırınca şunu öğrendim, timezona değiştiğinde eğer cron servisi yeniden başlatılmazsa eski timezone&amp;rsquo;u kullanmaya devam ediyor.
+Kullandığız sistem göre aşağıdaki gibi bir komutla cron servisini yeniden başlatabilirsiniz.
+service cron restart</description></item><item><title>Emacs Fill Column Indicator</title><link>https://blog.askin.ws/blog/emacs-fill-column-indicator/</link><pubDate>Tue, 25 Aug 2020 00:00:00 +0000</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/emacs-fill-column-indicator/</guid><description>Editörde 80. kolonun nerede bittiğini görmek için Alp Aker tarafından yazılmış olan fill-column-indicator kullanıyordum. Emacs 27.0.90 ile birlikte bu özellik yerleşik gelmeye başladı.
+Aşağıdaki kodu .emacs dosyanıza ekleyerek versiyona göre uygun fill-column-indicator kullanabilirsiniz.
+(if (version&amp;lt; emacs-version &amp;#34;27.0.90&amp;#34;) (add-hook &amp;#39;prog-mode-hook #&amp;#39;fci-mode) (global-display-fill-column-indicator-mode)) Eğer 80 karekter yetmiyorsa aşağıdaki kodla 120 karektere çıkartabilirsiniz.
+(setq-default fill-column 120)</description></item><item><title>Linuxda du kullanırken gizli dosyaları dahil etmek</title><link>https://blog.askin.ws/blog/du-wildcard-ile-gizli-dosyalar/</link><pubDate>Fri, 04 Oct 2019 12:04:25 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/du-wildcard-ile-gizli-dosyalar/</guid><description>du komutunu çok sık kullanıyorum. Makinede yer sıkıntısı yaşadığım zaman kesinlikle hayat kurtarıyor. Genellikle aşağıdaki şekilde kullanıyorum.
+du -sh * | sort -h Bu komut anlaşılır bir birimle tüm alt dizinlerin boyutlarını hesaplayıp küçükten büyüğe doğru sıralıyor. Bu komutun ve birçok linux komutunun sıkıntısı, wildcard kullanıldığında gizli dosyaları/dizinleri göstermiyor. Tabi bu kullandığınız kabukla ilgili. Ben bash kullanıyorum. Bunu aşmak için komutu aşağıdaki şekilde kullanabilirsiniz.
+du -sh .[!.]* * | sort -h Bu komutun da biraz sıkıntılar var. Mesela dosya ismi iki nokta ile başlıyorsa listelemeyecek malesef. Fakat bu şekilde işimi görüyor.</description></item><item><title>Soyadım Değişti</title><link>https://blog.askin.ws/blog/soyadim-degisti/</link><pubDate>Thu, 07 Jun 2018 10:40:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/soyadim-degisti/</guid><description>Malum sıkıntılı bir soyada sahiptim, 3 aylık uğraş sonucunda soyadımı değiştirmeyi başardım. İleride belki bunun için bir blog yazarım. Yeni soyadım Özgür :)</description></item><item><title>Let's Encrypt</title><link>https://blog.askin.ws/blog/lets-encrypt/</link><pubDate>Mon, 06 Feb 2017 15:09:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/lets-encrypt/</guid><description>Daha önceki yazılarımda belirtiğim gibi ssl için startssl kullanıyordum. Ücretsiz sertifika verdiği için startssl uzun süre işimi gördü. Fakat son dönemde Let&amp;rsquo;s Encrypti keşfettim. Çok basit bir şekilde sertifika oluşturmamızı sağlıyor. İlk denememden sonra tüm kullandığım websitelerinde ve servislerde Let&amp;rsquo;s Encrypt kullanmaya karar verdim. Sizde seveceksiniz bundan eminim. Yaklaşık 12 sertifika oluşturdum, bunların takibini yapmak biraz sıkıntılı olacak. Bir de Let&amp;rsquo;s Encrypt sertifikaları 3 aylık oluşturuyor. Birşeylerin gözden kaçması çok mümkün. Bu sebeple bunu toplu olarak kontrol eden bir script yazdım. Bu scripte GitHub hesabımdan ulaşabilirsiniz.
+Aşağıdaki resimde destekleyen kurumlardan bazıları yeralmakta.</description></item><item><title>SSL Enabled</title><link>https://blog.askin.ws/blog/ssl-enabled/</link><pubDate>Tue, 11 Mar 2014 18:51:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/ssl-enabled/</guid><description>Son çıkan internet yasalarından sonra her siteye bir ssl sertifikası lazım olacak gibi. Sağolsun StartSSL ücretsiz SSL sertifikası veriyor, onu kullanarak başta blogum olmak üzere kendi host ettiğim her web sistesine sertifika ekliyorum. Şuan hem http hem de https olarak çalışıyor. Bir süre sonra tüm http trafiğini ssl&amp;rsquo;e yönlendireceğim.</description></item><item><title>Slurm - Linux için bant genişliği takip aracı</title><link>https://blog.askin.ws/blog/slurm-linux-icin-bant-genisligi-takip-araci/</link><pubDate>Thu, 19 Dec 2013 12:15:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/slurm-linux-icin-bant-genisligi-takip-araci/</guid><description>&lt;p>Slurm temel olarak ağ trafiğini görüntülemek için kullanılan bir araçtır. Ağ kullanımını görselleştirerek kullanışlı bir çıktı üretir.&lt;/p>
+&lt;p>Debian tabanlı sistemlerde aşağıdaki gibi kurulum yapabihlirsiniz.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">apt-get install slurm
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Kurulumu tamamladıktan sonra komut satırından ağ trafiğinizi takip edebilirsiniz. En basit şekliyle aşağıdaki formatta komutu kullanabilirsiniz.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">slurm -i &lt;span style="color:#f92672">[&lt;/span>Ağ Arayüzü&lt;span style="color:#f92672">]&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>-i parametresi hangi ağ arayüzünün kullanılacanı belirtir.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">slurm -i wlan0
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">slurm -i eth1
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://blog.askin.ws/uploads/2013/12/slurm.png" alt="Slurm">&lt;/p>
+&lt;p>Klavye kısa yolları:
+Slurm etkileşim için birçok farklı tuşu destekler:&lt;/p>
+&lt;ul>
+&lt;li>s split moduna geçiş yapar&lt;/li>
+&lt;li>c klasik moda geçiş yapar&lt;/li>
+&lt;li>l büyük grafik moduna geçer&lt;/li>
+&lt;li>L TX/RX ledini aktif eder&lt;/li>
+&lt;li>m kasik, büyük ve split modları arasında geçiş yapar&lt;/li>
+&lt;li>z sayaçları 0&amp;rsquo;lar&lt;/li>
+&lt;li>r ekranı yeniden çizer&lt;/li>
+&lt;li>q çıkış yapar&lt;/li>
+&lt;/ul>
+&lt;p>Aynı zamanda bu kısayol tuşlarını parametre olarak da verebilirsiniz.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">slurm -i eth1 -L
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Kaynak: &lt;a href="http://lintut.com/slurm-command-line-bandwidth-monitoring-tool-for-linux/">http://lintut.com/slurm-command-line-bandwidth-monitoring-tool-for-linux/&lt;/a>&lt;/p></description></item><item><title>Screen ile Irssi Kullanım Kılavuzu</title><link>https://blog.askin.ws/blog/screen-ile-irssi-kullanim-kilavuzu/</link><pubDate>Fri, 15 Nov 2013 17:17:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/screen-ile-irssi-kullanim-kilavuzu/</guid><description>&lt;p>&lt;a href="http://www.irssi.org/" title="irssi web sitesi">irssi&lt;/a> komut satırından çalışan ve bir çok geliştirici için popüler olan bir IRC istemcisidir. Irssi &lt;a href="http://en.wikipedia.org/wiki/GNU_Screen" title="Screen Wiki Sayfası">GNU Screen&lt;/a> programı ile birlikte kullanılarak çıkış yapmadan bir veya birden fazla kabuk yaratabilirsiniz. Sürekli biligisayar değiltirip fakat irssi&amp;rsquo;a kaldığınız yerden devam etmek istediğinizde çok kullanılışılır.&lt;/p></description></item><item><title>Hediyemiz Emeğimiz 2 - Adana Demirspor</title><link>https://blog.askin.ws/blog/hediyemiz-emegimiz-2-adana-demirspor/</link><pubDate>Sat, 19 Oct 2013 18:16:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/hediyemiz-emegimiz-2-adana-demirspor/</guid><description>Ev arkadaşım İdris ile birlikte onun odasına Adana Demirspor arması çizdir. Bu sefer bayağı bir uğraştık. Birçok yerini silip yeniden çizdik. Sonunda içimize sinen başarılı bir çalışma oldu.</description></item><item><title>Hediyemiz Emeğimiz</title><link>https://blog.askin.ws/blog/hediyemiz-emegimiz/</link><pubDate>Sun, 29 Sep 2013 18:47:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/hediyemiz-emegimiz/</guid><description>Ablamın doğum günü için arkadaşım İdris ile birlikte ablamın odasının duvarına aşağıdak armayı çizdik. Sanırım bir Karşıyaka fanatiği için daha güzel bir hediye olmazdı :)</description></item><item><title>MySQL veritabanı ile ilgili bazı bilgileri öğrenmek</title><link>https://blog.askin.ws/blog/mysql-veritabani-ile-ilgili-bazi-bilgileri-ogrenmek/</link><pubDate>Fri, 06 Sep 2013 12:59:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/mysql-veritabani-ile-ilgili-bazi-bilgileri-ogrenmek/</guid><description>MySQL kullanıyorsanız, phpMyAdmin gibi bir arayüzünüz olmadığı zaman veritabanı ile ilgili bilgi almak için aşağıdaki sorguları kullanabilirsiniz.
+Var olan veritabanlarını görmek:
+show databases; Bir veritabanını kullanmak için seçmek:
+use veritabani_ismi; Bir veritabanındaki tabloları listelemek:
+show tables; show tables from veritabani_ismi; Bir tablonun oluşturulma scriptini görme:
+show create table tablo_ismi Bir tablonun kolonlarını görme:
+describe tablo_adi</description></item><item><title>Konsoldan Rastgele String Oluşturma</title><link>https://blog.askin.ws/blog/konsoldan-rastgele-string-olusturma/</link><pubDate>Tue, 13 Aug 2013 12:34:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/konsoldan-rastgele-string-olusturma/</guid><description>&lt;p>Konsoldan rastgele stringler oluşturmak için bir çok yöntem var, bunların bir çoğu random ve urandom aygıtlarını kullanıyor. Benim şimdi anlatacağım yöntemle urandom aygıtını kullanıyoruz.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&amp;lt; /dev/urandom tr -dc A-Za-z0-9
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Burada tr komutuna standart girdi olarak /dev/urandom aygıtını gösteriyoruz. urandom rastgele değerler üretir, bu üretilen değerlerin bazıları yazdırılabilir bazıları da yazdırılamayan karakterlere denk gelir. Biz tr komutu ile bu rastgele üretilen değerlerden alfanümerik olanları ayıklıyoruz. Tabi bu komut sonsuza kadar çıktı üretir, sadece istediğimiz kadarını almak için head komutunu kullanabiliriz.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&amp;lt; /dev/urandom tr -dc A-Za-z0-9 | head -c32
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Bu komutla çıktının ilk 32 karakterini alıyoruz.&lt;/p>
+&lt;p>tr kullanarak yapacaklarımızın limiti hayal gücümüz kadar. Mesela sadece sol elimizi kullanarak girebileceğiniz bir parola üretmek istiyoruz. Aşağıdaki komut bunu üretecektir :)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&amp;lt; /dev/urandom tr -dc &lt;span style="color:#e6db74">&amp;#39;12345!@#$%qwertQWERTasdfgASDFGzxcvbZXCVB&amp;#39;&lt;/span> | head -c8
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>[1] adresinde konsoldan rastgele string üretmek için 10 farklı yol gösterilmiş. Ufuk genişletmek için faydalı bir yazı bence.&lt;/p>
+&lt;p>[1] &lt;a href="http://www.howtogeek.com/howto/30184/10-ways-to-generate-a-random-password-from-the-command-line/">http://www.howtogeek.com/howto/30184/10-ways-to-generate-a-random-password-from-the-command-line/&lt;/a>&lt;/p></description></item><item><title>Linux'ta disk doluluk oranının yanlış hesaplanması</title><link>https://blog.askin.ws/blog/linuxta-disk-doluluk-oraninin-yanlis-hesaplanmasi/</link><pubDate>Mon, 22 Jul 2013 15:13:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/linuxta-disk-doluluk-oraninin-yanlis-hesaplanmasi/</guid><description>&lt;p>&lt;img src="https://blog.askin.ws/uploads/2013/07/disk.png" alt="disk">Bir sunucuda garip bir problemle karşılaştım, diskte yer kalmadığını söylüyordu fakat ne yaparsam yapayım diski dolduran dosyaları bulamıyordum. Biraz araştırınca sorunu ve çözümünü buldum. Senaryo şöyle idi:&lt;/p>
+&lt;ol>
+&lt;li>Dosya bir program tarafından okumak için açılır.&lt;/li>
+&lt;li>Başka bir program bu dosyayı siler.&lt;/li>
+&lt;/ol></description></item><item><title>Python Sözlük Hızlı Rehber</title><link>https://blog.askin.ws/blog/python-sozluk-hizli-rehber/</link><pubDate>Sat, 20 Jul 2013 15:32:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/python-sozluk-hizli-rehber/</guid><description>&lt;p>Başlığında söylediği gibi, Python sözlük hızlı rehber&lt;/p></description></item><item><title>Listeler ile ilgili garip bir döküman</title><link>https://blog.askin.ws/blog/listeler-ile-ilgili-garip-bir-dokuman/</link><pubDate>Sat, 13 Jul 2013 15:50:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/listeler-ile-ilgili-garip-bir-dokuman/</guid><description>&lt;blockquote>
+&lt;p>Bu yazı oluşturulurken &lt;a href="http://www.pythonforbeginners.com/python-lists-cheat-sheet/">http://www.pythonforbeginners.com/python-lists-cheat-sheet/&lt;/a> adresindeki yazı referans alınmıştır. Bir çok yeri doğrudan çeviri olmakla beraber bir kısmını kendim baştan yazdım. Yazım - Mantık hataları vs. bulursanız yorum yazmaktan çekinmeyin.&lt;/p>
+&lt;/blockquote></description></item><item><title>Off the Record Messaging (OTR)</title><link>https://blog.askin.ws/blog/off-the-record-messaging-otr/</link><pubDate>Sat, 13 Jul 2013 14:35:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/off-the-record-messaging-otr/</guid><description>Off the Record Messaging (OTR) anlık mesajlaşma servislerinde güvenli olarak mesajlaşmak için geliştirilmiş bir protokoldür. Birçok anlık mesajlaşma uygulaması için eklentileri geliştirilmiştir. Ben pidgin ile birlikte kullanıyorum. Özel olarak kalmasını istediğiniz sohbetlerinizi OTR kullanarak güvenli bir şekilde yapabilirsiniz. [1] adresinde OTR ile ilgili wikipedia sayfasını bulabilirsiniz. [2] adresinde OTR ana sayfası bulunmakta.
+Pidgin ve Ubuntu kullanıcıları için kurulum çok basit:
+sudo apt-get install pidgin-otr Bir çok dağıtım deposunda OTR hazır olarak gelmektedir. Windows kullanıcıları da pidgin için kurulum dosyasını OTR&amp;rsquo;ın web sayfasından indirebilir.
+Aşağıda kullanım ile ilgili videoyu izleyebilirsiniz.
+[1] http://en.wikipedia.org/wiki/Off-the-Record_Messaging
+[2] http://www.cypherpunks.ca/otr/index.php</description></item><item><title>cURL ile GET/POST ve cookie kullanımı</title><link>https://blog.askin.ws/blog/curl-ile-getpost-ve-cookie-kullanimi/</link><pubDate>Wed, 10 Jul 2013 17:18:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/curl-ile-getpost-ve-cookie-kullanimi/</guid><description>&lt;p>cURL kullanarak komut satırından istediğimiz bir web sayfasına get/post istekleri yapabiliriz. &amp;ndash;data parametresi ile post edilecek verileri gönderebiliryoruz. Url sonuna ekleyeceğimiz parametreler de get olarak gönderilecektir.&lt;/p>
+&lt;pre>&lt;code>curl --data &amp;quot;param1=value1&amp;amp;param2=value2&amp;quot; http://example.com/index.php
+&lt;/code>&lt;/pre>
+&lt;p>Web sayfasının döndürdüğü sonu doğrudan ekrana basılacaktır, bunu bir dosyaya aktarmak için&lt;/p>
+&lt;pre>&lt;code>curl --data &amp;quot;param1=value1&amp;amp;param2=value2&amp;quot; http://example.com/index.php &amp;gt; result.html
+&lt;/code>&lt;/pre>
+&lt;p>bir değişkene aktarmak için&lt;/p>
+&lt;pre>&lt;code>result=$(curl --data &amp;quot;param1=value1&amp;amp;param2=value2&amp;quot; http://example.com/index.php)
+&lt;/code>&lt;/pre>
+&lt;p>kullanabiliriz. Erişmek istediğimiz web sayfası kullanıcı girişi istiyorsa cookie kullanrak bunu yapabiliriz.&lt;/p>
+&lt;pre>&lt;code>curl --data &amp;quot;username=askin&amp;amp;password=pasw0rd&amp;quot; http://example.com/login.php -c cookie.cook
+&lt;/code>&lt;/pre>
+&lt;p>Bu komutla giriş yapıp, oluşturulan cookie&amp;rsquo;yi cookie.cook dosyasına kaydettik.&lt;br>
+Tabi burda username ve password parametreleri değişiklik gösterebilir, gönderilen form verisini inceleyerek, gerekli parametreleri bulup uygun formatta göndermek gerekir.&lt;/p>
+&lt;pre>&lt;code>curl --data &amp;quot;param1=value1&amp;amp;param2=value2&amp;quot; http://example.com/user_info.php -b cookie.cook
+&lt;/code>&lt;/pre>
+&lt;p>Bu şekilde de bir önceki komutla elde ettiğimiz cookie&amp;rsquo;yi kullanarak bir web sayfasına istekte bulunabiliyoruz.&lt;/p>
+&lt;p>Eğer https ile istek yapmak istediğinizde sorun yaşıyorsanız &amp;ldquo;-k&amp;rdquo; parametresini kullanarak bu sorunu aşabilirsiniz. &lt;a href="https://gist.github.com/askin/5966708" title="Create Asterisk Extension">&lt;strong>Bu adreste&lt;/strong>&lt;/a> asterisk sunucu üzerinde extension oluşturan bir shell script var, yazıda anlattıklarım için güzel bir örnek olacaktır.&lt;/p></description></item><item><title>Pidgin ile kendi domain'imizden gtalk</title><link>https://blog.askin.ws/blog/pidgin-ile-kendi-domainimizden-gtalk/</link><pubDate>Wed, 03 Apr 2013 16:53:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/pidgin-ile-kendi-domainimizden-gtalk/</guid><description>Eğer kendi domain adımızla gmail kullanıyorsak, aynı adres ile gtalk da kullanabiliyoruz. Gmail web arayüzünden doğrudan gtalk kullanabiliyoruz, fakat iş pidgin gibi harici bir programla bunu yapmaya geldiğinde bir iki ayar yapmamız gerekiyor.
+Kendi adresim için nasıl bir ayar yaptığımı göstereceğim. Adresim askin [at] askin.ws. Aşağıdaki resimde yapılması gereken ayarlar yazıyor.</description></item><item><title>Usb bellek üzerinde Raspberry PI</title><link>https://blog.askin.ws/blog/usb-bellek-uzerinde-raspberry-pi/</link><pubDate>Sun, 24 Mar 2013 20:39:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/usb-bellek-uzerinde-raspberry-pi/</guid><description>&lt;p>Malesef sd kart olmadan raspberry pi&amp;rsquo;yı boot etmemiz mümkün olmuyor. Benim elimde 1GB&amp;rsquo;lık bir sd kart vardı ve 2GB dan daha ufak imaj dosyaları bulamadım. Bu nedenle usb bellek ile boot etme ihtiyacı duydum.&lt;br>
+Benim sistemimde usb bellek ve sd kart aşağıdaki şekilde tanındı:&lt;/p>
+&lt;ul>
+&lt;li>usb: /dev/sdd&lt;/li>
+&lt;li>sd: /dev/sde&lt;/li>
+&lt;/ul>
+&lt;p>Öncelikle indirdiğimiz imaj dosyasını usb belleğimize kopyalıyoruz&lt;/p>
+&lt;pre>&lt;code>dd if=2013-02-09-wheezy-raspbian.img of=/dev/sdd
+&lt;/code>&lt;/pre>
+&lt;p>Elimizde bulunan sd karta 1 adet fat32 bölüm oluşturuyoruz (oluşturduğunuz bölüm hem ilk sırada hem de birincil bir bölüm olmalı). Bunu ister Gparted gibi bir araçla yapın isterseniz fdisk kullanın. Bölümleme işlemlerini yaptıktan sonra aşağıdaki komutları uygulayın.&lt;/p>
+&lt;pre>&lt;code>mkdir /tmp/mnt_sd /tmp/mnt_usb
+mount /dev/sdd1 /tmp/mnt_usb
+mount /dev/sde1 /tmp/mnt_sd
+cp /tmp/mnt_usb/* /tmp/mnt_sd
+&lt;/code>&lt;/pre>
+&lt;p>Bu işlemleri yaptıktan sonra /tmp/mnt_sd/cmdline.txt dosyasını düzenlememiz gerekmekte. Bu dosyada &lt;em>root=/dev/mmcblk0p2&lt;/em> olan kısmı &lt;em>root=/dev/sda2&lt;/em> olarak değiştirin.&lt;/p>
+&lt;p>&lt;a href="http://www.networkinghowtos.com/howto/raspbian-on-raspberry-pi-using-sd-card-usb-memory-stick/">Kaynak&lt;/a>&lt;/p></description></item><item><title>MySQL Yedek Alma</title><link>https://blog.askin.ws/blog/mysql-yedek-alma/</link><pubDate>Mon, 11 Mar 2013 16:42:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/mysql-yedek-alma/</guid><description>Yedek almak için mysqldump aracını kullanıyoruz.
+mysqldump -u kullanici_adi -h sunucu_adi db_adi -p &amp;gt; db_adi_yedek.sql Alınan yedeği tekrar yüklemek için mysql komutunu kullanıyoruz
+mysql -u kullanici_adi -h sunucu_adi db_adi -p &amp;lt; db_adi_yedek.sql</description></item><item><title>Emacs ile identi.ca kullanımı</title><link>https://blog.askin.ws/blog/emacs-ile-identi-ca-kullanimi/</link><pubDate>Mon, 04 Mar 2013 11:55:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/emacs-ile-identi-ca-kullanimi/</guid><description>Identi.ca hesabini emacs ile takip etmek çok basit ve eğlenceli. identica-mode kullanarak identi.ca hesabini takip edebiliyoruz. identica-mode elpa ya da marmalade deposunda bulunmuyor. Bunun için eski yöntemle kurmak gerek.
+Öncelikle gerekli dosyaları gerekli yerlere indiriyoruz(git deposundan alacağım).
+cd ~/.elisp git clone http://git.savannah.gnu.org/cgit/identica-mode.git Şimdi .emacs dosyamıza gerekli satırları ekleyelim.
+(setq load-path (cons &amp;quot;~/.elisp/identica-mode&amp;quot; load-path)) (require 'identica-mode) (setq identica-username &amp;quot;userName&amp;quot;) Parolasız giriş yapabilmek için ~/.authinfo adinda bir dosya olusturup içini aşağıdaki gibi dolduralım.
+machine identi.ca login kullaniciAdi password parola</description></item><item><title>web2py demo mode</title><link>https://blog.askin.ws/blog/web2py-demo-mod/</link><pubDate>Tue, 26 Feb 2013 15:28:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/web2py-demo-mod/</guid><description>Bugün web2py ile uğraşırken, localhost üzerinde çalıştırmadığım için oluşan ticketları göremedim, o an için localhost&amp;rsquo;ta çalıştıramadığımdan dolayı web2py&amp;rsquo;yi demo modundan çalıştırmak zorunda kaldım. Bunu yapmak için applications/admin/models/0.py dosyasında 7. satırdaki
+DEMO_MODE = False satırını
+DEMO_MODE = True olarak değiştirmem yetti.</description></item><item><title>Spam</title><link>https://blog.askin.ws/blog/spam/</link><pubDate>Thu, 07 Feb 2013 15:57:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/spam/</guid><description>Buradaki yazımda 8000 spam olunca tekrar yazacağım demiştim. 8000&amp;rsquo;i geçeli çok olmuş şuan akismet tarafından engelenen toplam 15292 spam mesaj bulunmakta. Son 6 ayda 4297 spam yorum almışım :)
+Bu arada yeni farkettim akismet bayağı detaylı istatistikler, göze hoş görünen grafikler sunuyor. İncelemenizi tavsiye ederim.</description></item><item><title>Bir dosyanın boş olup olmadığını kontrol etme</title><link>https://blog.askin.ws/blog/bir-dosyanin-bos-olup-olmadigini-kontrol-etme/</link><pubDate>Wed, 07 Nov 2012 13:44:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/bir-dosyanin-bos-olup-olmadigini-kontrol-etme/</guid><description>Shell script yazarken bir dosyanın boş olup olmadığını kontrol etmemiz gerekebilir. Bunu yapmak için birkaç yöntem yazacağım.
+satirsayisi=`wc -l 194.27.108.90 | awk &amp;#39;{split($0,a,&amp;#34; &amp;#34;); print a[1]}&amp;#39;` if [ $satirsayisi == 0 ]; then echo &amp;#34;dosya bos&amp;#34;; fi if [ -z $(cat dosyaadi) ]; then echo &amp;#34;dosya bos&amp;#34;; fi if [ -z `cat dosyaadi` ]; then echo &amp;#34;dosya bos&amp;#34;; fi Ve en güzeli
+if [ -s dosyaadi ]; then echo &amp;#34;Dosya dolu&amp;#34;; else echo &amp;#34;Dosya bos&amp;#34;; fi</description></item><item><title>Subversion sunucu kurulumu</title><link>https://blog.askin.ws/blog/subversion-sunucu-kurulumu/</link><pubDate>Thu, 23 Aug 2012 18:16:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/subversion-sunucu-kurulumu/</guid><description>&lt;p>Linux üzerinde kurulumdan bahsedeceğim. Öncelikle kullandığınız dağıtımın paket deposundan subversion paketini kurmalısınız. Ben debian kullandığım için&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo apt-get install subversion
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Kurulum tamamlandıktan sonra gerekli tüm araçlara sahip olmuş oluyoruz.&lt;/p>
+&lt;p>Bir depo oluşturalım.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">svnadmin create depom
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>depom adli dizinde bir depo oluşturmuş olduk. Bu depo üzerinde gerekli düzenlemeleri yapalım.&lt;br>
+&lt;em>depom/conf/svnserve.conf&lt;/em> bu dosya temel ayarlarimizi yapacağımız dosya. Bu dosyayı açıp [general] başlığı altındaki ayarları düzenliyoruz. Burdaki tüm ayarlar yorum satırı haline getirişmiş, bunlardan işimize yarayanları aktif hale getirmemiz gerekiyor.&lt;/p>
+&lt;pre>&lt;code># anon-access = read
+&lt;/code>&lt;/pre>
+&lt;p>Tanımladığımız kullanıcılar dışında kalan kişilerin yetkilerini düzenlemek için kullanıyoruz. Eğer yorum satırı halinde bırakırsak tanımsız kullanıcılar depo üzerinde okuma hakkına sahip oluyorlar. Eğer bu şekilde bırakırsak okuma yapamazlar. Eğer read yerine write yazarsak depomuzda herkes okur-yazar oluyor.&lt;/p>
+&lt;pre>&lt;code># auth-access = write
+&lt;/code>&lt;/pre>
+&lt;p>Kayıtlı kullanıcıların yetkilerini burdan belirliyoruz. Yorum satırı olmaktan çıkartırsak depomuzda tanımlı kullanıcılar yazma hakkına sahip olur.&lt;/p>
+&lt;pre>&lt;code># password-db = passwd
+&lt;/code>&lt;/pre>
+&lt;p>Depoya erişim yetkisi verdiğimiz kullanıcıların kullanıcı adı ve parolaların tutulduğu yeri belirtir. Kullanıcıları tanımlamak için yorum satırı halinden çıkartıp istediğimiz yolu belirtmeliyiz, daha sonra ilgili dosyayı düzenlemeliyiz.&lt;br>
+Dosya içeriği&lt;/p>
+&lt;pre>&lt;code>[users]
+askin = parolam
+&lt;/code>&lt;/pre>
+&lt;p>Parolalar şifrelenmemiş halde tutuluyor.&lt;/p>
+&lt;pre>&lt;code># authz-db = authz
+&lt;/code>&lt;/pre>
+&lt;p>Kullanıcıların izinlerini daha detaylı olarak ayarlamak istersek bu satırı yorum satırı halinden çıkartıp, istediğimiz bir yolu girmemiz gerekmekte.&lt;/p>
+&lt;pre>&lt;code># realm = My First Repository
+&lt;/code>&lt;/pre>
+&lt;p>Depomuzun adı, bu satırı yorum satırı olmaktan çıkartıp istediğimiz bir isim veriyoruz.&lt;/p>
+&lt;p>Tüm bunları yaptıktan sonra depomuzu yayınlayabiliriz. Bunu yapmak için &lt;em>svnserve&lt;/em> adında bir programdan yararlanıyoruz.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">/usr/bin/svnserve -d -r /home/svn/repositories --log-file /var/log/svnserve
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Bu komut &lt;em>/home/svn/repositories&lt;/em> dizinindeki tüm depoları yayınlar.&lt;/p>
+&lt;p>Depoyu chekout etmek için&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">svn checkout svn://sunucu.com/depom
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>UDP Broadcast sunucu - istemci</title><link>https://blog.askin.ws/blog/udp-broadcast-sunucu-istemci/</link><pubDate>Fri, 03 Aug 2012 15:31:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/udp-broadcast-sunucu-istemci/</guid><description>&lt;p>Sunucu:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c" data-lang="c">&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;stdio.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;string.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;sys/types.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;sys/socket.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;netinet/in.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#75715e">#define MY_PORT 3333
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>(&lt;span style="color:#66d9ef">int&lt;/span> argc, &lt;span style="color:#66d9ef">char&lt;/span> &lt;span style="color:#f92672">*&lt;/span>argv[])
+{
+&lt;span style="color:#66d9ef">int&lt;/span> sockfd, new_fd;
+&lt;span style="color:#66d9ef">struct&lt;/span> sockaddr_in my_addr; &lt;span style="color:#75715e">// hedef adres
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">struct&lt;/span> sockaddr_in their_addr; &lt;span style="color:#75715e">// baglanti yapan adres
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> sin_size, rt;
+&lt;span style="color:#75715e">// gelen verinin tutuldugu buffer
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">char&lt;/span> buf[&lt;span style="color:#ae81ff">32&lt;/span>];
+&lt;span style="color:#75715e">// islem yapmak icin gerekli dosya gosterici
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> sockfd &lt;span style="color:#f92672">=&lt;/span> socket(AF_INET, SOCK_DGRAM, &lt;span style="color:#ae81ff">0&lt;/span>);
+sin_size &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">sizeof&lt;/span>(&lt;span style="color:#66d9ef">struct&lt;/span> sockaddr_in);
+&lt;span style="color:#75715e">// adres ile ilgili ayarlar
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> my_addr.sin_family &lt;span style="color:#f92672">=&lt;/span> AF_INET;
+my_addr.sin_port &lt;span style="color:#f92672">=&lt;/span> htons(MY_PORT); &lt;span style="color:#75715e">// kullanilacak port
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> my_addr.sin_addr.s_addr &lt;span style="color:#f92672">=&lt;/span> INADDR_ANY; &lt;span style="color:#75715e">// mevcut ip adresi
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> memset(&lt;span style="color:#f92672">&amp;amp;&lt;/span>(my_addr.sin_zero), &lt;span style="color:#ae81ff">0&lt;/span>, &lt;span style="color:#ae81ff">8&lt;/span>); &lt;span style="color:#75715e">// geri kalani 0la
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#75715e">// socket ile dosyayi iliskilendir
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> bind(sockfd, (&lt;span style="color:#66d9ef">struct&lt;/span> sockaddr &lt;span style="color:#f92672">*&lt;/span>)&lt;span style="color:#f92672">&amp;amp;&lt;/span>my_addr, &lt;span style="color:#66d9ef">sizeof&lt;/span>(&lt;span style="color:#66d9ef">struct&lt;/span> sockaddr));
+&lt;span style="color:#66d9ef">while&lt;/span> ( &lt;span style="color:#ae81ff">1&lt;/span> ) {
+rt &lt;span style="color:#f92672">=&lt;/span> recvfrom (sockfd, buf, &lt;span style="color:#ae81ff">12&lt;/span>, &lt;span style="color:#ae81ff">0&lt;/span>, (&lt;span style="color:#66d9ef">struct&lt;/span> sockaddr &lt;span style="color:#f92672">*&lt;/span>)&lt;span style="color:#f92672">&amp;amp;&lt;/span>their_addr, &lt;span style="color:#f92672">&amp;amp;&lt;/span>sin_size);
+&lt;span style="color:#66d9ef">if&lt;/span> (rt &lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>) {
+printf (&lt;span style="color:#e6db74">&amp;#34;recv: %s&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>, buf);
+} &lt;span style="color:#66d9ef">else&lt;/span> &lt;span style="color:#66d9ef">if&lt;/span> (rt &lt;span style="color:#f92672">&amp;lt;&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>) {
+printf(&lt;span style="color:#e6db74">&amp;#34;Baglanti koptu&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>);
+&lt;span style="color:#66d9ef">break&lt;/span>;
+}
+}
+close(sockfd);
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>İstemci:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c" data-lang="c">&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;stdio.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;string.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;sys/types.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;sys/socket.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;netinet/in.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#75715e">#define DEST_IP &amp;#34;255.255.255.255&amp;#34;
+&lt;/span>&lt;span style="color:#75715e">#define DEST_PORT 3333
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>(&lt;span style="color:#66d9ef">int&lt;/span> argc, &lt;span style="color:#66d9ef">char&lt;/span> &lt;span style="color:#f92672">*&lt;/span>argv[])
+{
+&lt;span style="color:#66d9ef">int&lt;/span> sockfd, new_fd;
+&lt;span style="color:#66d9ef">struct&lt;/span> sockaddr_in dest_addr; &lt;span style="color:#75715e">// hedef adres
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> sin_size, rt;
+sin_size &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">sizeof&lt;/span>(&lt;span style="color:#66d9ef">struct&lt;/span> sockaddr_in);
+&lt;span style="color:#75715e">// islem yapmak icin gerekli dosya gosterici
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> sockfd &lt;span style="color:#f92672">=&lt;/span> socket(AF_INET, SOCK_DGRAM, &lt;span style="color:#ae81ff">0&lt;/span>);
+&lt;span style="color:#75715e">// adres ile ilgili ayarlar
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> dest_addr.sin_family &lt;span style="color:#f92672">=&lt;/span> AF_INET;
+dest_addr.sin_port &lt;span style="color:#f92672">=&lt;/span> htons(DEST_PORT);
+dest_addr.sin_addr.s_addr &lt;span style="color:#f92672">=&lt;/span> inet_addr(DEST_IP);
+memset(&lt;span style="color:#f92672">&amp;amp;&lt;/span>(dest_addr.sin_zero), &lt;span style="color:#ae81ff">0&lt;/span>, &lt;span style="color:#ae81ff">8&lt;/span>); &lt;span style="color:#75715e">// geri kalani 0 la
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#75715e">// Broadcast icin gerekli yetkiyi al
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> flag &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;span style="color:#66d9ef">if&lt;/span> (setsockopt (sockfd, SOL_SOCKET, SO_BROADCAST, &lt;span style="color:#f92672">&amp;amp;&lt;/span>flag, &lt;span style="color:#66d9ef">sizeof&lt;/span>(flag)) &lt;span style="color:#f92672">&amp;lt;&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>)
+perror(&lt;span style="color:#e6db74">&amp;#34;setsockopt&amp;#34;&lt;/span>);
+&lt;span style="color:#75715e">// mesaji gonder
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> rt &lt;span style="color:#f92672">=&lt;/span> sendto (sockfd, &lt;span style="color:#e6db74">&amp;#34;slm asl plz&amp;#34;&lt;/span>, &lt;span style="color:#ae81ff">12&lt;/span>, &lt;span style="color:#ae81ff">0&lt;/span>, (&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#66d9ef">struct&lt;/span> sockaddr &lt;span style="color:#f92672">*&lt;/span>)&lt;span style="color:#f92672">&amp;amp;&lt;/span>dest_addr, sin_size);
+&lt;span style="color:#66d9ef">if&lt;/span> ( rt &lt;span style="color:#f92672">&amp;lt;&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> )
+perror(&lt;span style="color:#e6db74">&amp;#34;Hata: &amp;#34;&lt;/span>);
+&lt;span style="color:#75715e">// socketi kapat
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> close(sockfd);
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+}
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Mysql Kullanıcı - Database Oluşturma</title><link>https://blog.askin.ws/blog/mysql-kullanici-database-olusturma/</link><pubDate>Wed, 11 Jul 2012 13:54:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/mysql-kullanici-database-olusturma/</guid><description>Herzaman unutup google&amp;rsquo;a bakacağıma buraya bakayım daha kolay :)
+Önce mysql sunucusuna bağlanalım:
+mysql -u root -p Kullanıcı oluşturma:
+create user kullaniciadi; Veritabanı oluşturma:
+create database veritabaniadi; Kullanıcı yetkilerini verme: Tüm yetkiler:
+grant all on veritabaniadi.* to kullaniciadi@localhost identified by &amp;#39;parola&amp;#39;; Sadece okuma (select):
+grant select on veritabaniadi.* to kullaniciadi@localhost; Yetkiler hemen devreye girsin:
+flush privileges;</description></item><item><title>FSF</title><link>https://blog.askin.ws/blog/fsf-10889/</link><pubDate>Fri, 22 Jun 2012 12:21:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/fsf-10889/</guid><description/></item><item><title>Solariste Özyinelemeli grep</title><link>https://blog.askin.ws/blog/solariste-ozyinelemeli-grep/</link><pubDate>Wed, 06 Jun 2012 16:43:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/solariste-ozyinelemeli-grep/</guid><description>Özyinelemeli grep çok kullanışlı bir araç. Malesef solariste bulunan grep öz yinelemeli çalışmıyor. Ama bunu aşmak çok zor değil.
+$ grep &amp;#39;ara&amp;#39; `find . -name &amp;#39;*&amp;#39;`</description></item><item><title>Var olan bir SVN deposunun adresini değiştirme</title><link>https://blog.askin.ws/blog/var-olan-bir-svn-deposunun-adresini-degistirme/</link><pubDate>Mon, 09 Apr 2012 10:48:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/var-olan-bir-svn-deposunun-adresini-degistirme/</guid><description>Herhangi bir nedenle üzerinde çalıştığınız svn deposunun adresi değişirse aşağıdaki komutla gerekli değişikliği yapabilirsiniz.
+svn switch --relocate \ http://svn.example.com/path/to/repository/path/within/repository \ http://svnnew.example.com/new/repository/path/within/repository</description></item><item><title>Android Galaxy Ace ile ekran görüntüsü alma</title><link>https://blog.askin.ws/blog/android-galaxy-ace-ile-ekran-goruntusu-alma/</link><pubDate>Sun, 08 Apr 2012 18:07:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/android-galaxy-ace-ile-ekran-goruntusu-alma/</guid><description>Android telefonumla uzun zamandır yanlışlıkla ekran görüntüsü alıyordum, birçok tuş kombinasyonunu denememe rağmen nasıl yapıldığını bulamamıştım. Bugün şans eseri nasıl yapıldığını buldum.
+Önce &amp;ldquo;Ana Sayfa&amp;rdquo; tuşu ile &amp;ldquo;Geri&amp;rdquo; tuşuna birlikte basıyoruz. Ardından &amp;ldquo;Geri&amp;rdquo; tuşuna tekrar basınca ekran görüntüsü alınıp kaydediliyor.
+Bukadar basitmiş :)</description></item><item><title>HY-1602B9 16x2 LCD Display</title><link>https://blog.askin.ws/blog/hy-1602b9-16x2-lcd-display/</link><pubDate>Thu, 04 Aug 2011 16:40:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/hy-1602b9-16x2-lcd-display/</guid><description>Eğer elinizde yukardaki gibi bir LCD ekran varsa, aman dikkatli olunuz. Üzerinde yazan bacak numaralarına inanmayınız. Sonra bizim gibi ekranları tek tek yakarsınız.
+Normalde üzerinde
+1 2 3 4 &amp;hellip;. 16
+şeklinde bir numaralandırma var. Ama aslında
+14 13 12 &amp;hellip;&amp;hellip;. 1 15 16
+şeklinde numaralandırılıyor.</description></item><item><title>Caps Lock'a ne gerek var.</title><link>https://blog.askin.ws/blog/caps-locka-ne-gerek-var/</link><pubDate>Sun, 27 Mar 2011 21:37:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/caps-locka-ne-gerek-var/</guid><description>Hiç gerek yok.
+setxkbmap -option ctrl:nocaps</description></item><item><title>Yaşasın Spam</title><link>https://blog.askin.ws/blog/yasasin-spam/</link><pubDate>Sun, 27 Feb 2011 03:12:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/yasasin-spam/</guid><description>buradaki yazımda 2000spamı devirdiğimi yazmıştım. Şimdi olmuş toplam spam sayısı 4000, ikiye katlandıkça tekrar bir girdi yazmayı düşünüyorum :) 8000. spamda buluşmak dileğiyle :P</description></item><item><title>Linux, Paralel Port ile 2x16 LCD Ekran Kullanımı</title><link>https://blog.askin.ws/blog/linux-paralel-port-ile-2x16-lcd-ekran-kullanimi/</link><pubDate>Sun, 27 Feb 2011 03:08:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/linux-paralel-port-ile-2x16-lcd-ekran-kullanimi/</guid><description>&lt;p>Çalıştığım projede linuxta paralel port ile lcd ekran kullanmam gerekti. Neredeyse internetin altını üstüne getirdim ama işime yarar çok birşey bulamadım. Sonunda DOS için yazılmış bir kod buldum. Bu kodu biraz inceleyip, gerekli püf noktaları bulunca kodu linux&amp;rsquo;a uydurmak çok zor olmadı. Hatta neredeyse sadece kullanılan fonksiyonun adını ve parametre yerlerini değiştirdim :)&lt;/p>
+&lt;p>Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read/write seçimi için kullanılıyor. Geri kalan 3 bacak güç bağlantısı ve kontrast için kullanılıyor. &lt;a href="http://www.beyondlogic.org/parlcd/parlcd.htm">Burdaki&lt;/a> şemaya göre bağlantıları yapabilirsiniz. Ayrıca örnek aldığım kodda aynı sayfada bulunmakta.&lt;/p>
+&lt;p>Yorum satırları pek çok şeyi açıklıyor. Ama birkaç noktaya değinmekte fayda var. Data bacaklarına gerekli inputları verdikten sonra, enable bacağını 1&amp;rsquo;den 0&amp;rsquo;a düşürerek lcd&amp;rsquo;nin data bacaklarında sinyali alıp işleme sokmasını sağlıyoruz. init array&amp;rsquo;i içinde lcd&amp;rsquo;nin temizlenmesi ve çalışmaya uygun hale gelmesi için gerekli komutlar tutuluyor. 0x378 paralel portun adresi.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c" data-lang="c">&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;string.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;stdio.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;stdlib.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;unistd.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;asm/io.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#75715e">#define PORTADDRESS 0x378 &lt;/span>&lt;span style="color:#75715e">/* Enter Your Port Address Here */&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#75715e">#define DATA PORTADDRESS+0
+&lt;/span>&lt;span style="color:#75715e">#define STATUS PORTADDRESS+1
+&lt;/span>&lt;span style="color:#75715e">#define CONTROL PORTADDRESS+2
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>()
+{
+&lt;span style="color:#66d9ef">if&lt;/span> (ioperm(DATA , &lt;span style="color:#ae81ff">3&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>)) {perror(&lt;span style="color:#e6db74">&amp;#34;ioperm&amp;#34;&lt;/span>); exit(&lt;span style="color:#ae81ff">1&lt;/span>);}
+&lt;span style="color:#66d9ef">char&lt;/span> string[] &lt;span style="color:#f92672">=&lt;/span> {&lt;span style="color:#e6db74">&amp;#34;Testing 1,2,3 &amp;#34;&lt;/span>
+&lt;span style="color:#e6db74">&amp;#34;It&amp;#39; Works ! &amp;#34;&lt;/span>};
+&lt;span style="color:#66d9ef">char&lt;/span> init[&lt;span style="color:#ae81ff">10&lt;/span>];
+&lt;span style="color:#66d9ef">int&lt;/span> count;
+&lt;span style="color:#66d9ef">int&lt;/span> len;
+init[&lt;span style="color:#ae81ff">0&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0x0F&lt;/span>; &lt;span style="color:#75715e">/* Init Display */&lt;/span>
+init[&lt;span style="color:#ae81ff">1&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0x01&lt;/span>; &lt;span style="color:#75715e">/* Clear Display */&lt;/span>
+init[&lt;span style="color:#ae81ff">2&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0x38&lt;/span>; &lt;span style="color:#75715e">/* Dual Line / 8 Bits */&lt;/span>
+outb(inb(CONTROL) &lt;span style="color:#f92672">&amp;amp;&lt;/span> &lt;span style="color:#ae81ff">0xDF&lt;/span>, CONTROL); &lt;span style="color:#75715e">/* Reset Control Port - Make sure Forward Direction */&lt;/span>
+outb(inb(CONTROL) &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">0x08&lt;/span>, CONTROL); &lt;span style="color:#75715e">/* Set Select Printer (Register Select) */&lt;/span>
+&lt;span style="color:#66d9ef">for&lt;/span> (count &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>; count &lt;span style="color:#f92672">&amp;lt;&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">2&lt;/span>; count&lt;span style="color:#f92672">++&lt;/span>)
+{
+outb(init[count], DATA);
+outb(inb(CONTROL) &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">0x01&lt;/span>, CONTROL); &lt;span style="color:#75715e">/* Set Strobe (Enable)*/&lt;/span>
+usleep(&lt;span style="color:#ae81ff">20&lt;/span>); &lt;span style="color:#75715e">/* Larger Delay for INIT */&lt;/span>
+outb(inb(CONTROL) &lt;span style="color:#f92672">&amp;amp;&lt;/span> &lt;span style="color:#ae81ff">0xFE&lt;/span>, CONTROL); &lt;span style="color:#75715e">/* Reset Strobe (Enable)*/&lt;/span>
+usleep(&lt;span style="color:#ae81ff">20&lt;/span>); &lt;span style="color:#75715e">/* Larger Delay for INIT */&lt;/span>
+}
+outb(inb(CONTROL) &lt;span style="color:#f92672">&amp;amp;&lt;/span> &lt;span style="color:#ae81ff">0xF7&lt;/span>, CONTROL); &lt;span style="color:#75715e">/* Reset Select Printer (Register Select) */&lt;/span>
+len &lt;span style="color:#f92672">=&lt;/span> strlen(string);
+&lt;span style="color:#66d9ef">for&lt;/span> (count &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>; count &lt;span style="color:#f92672">&amp;lt;&lt;/span> len; count&lt;span style="color:#f92672">++&lt;/span>)
+{
+outb(string[count], DATA);
+outb(inb(CONTROL) &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">0x01&lt;/span>, CONTROL); &lt;span style="color:#75715e">/* Set Strobe */&lt;/span>
+usleep(&lt;span style="color:#ae81ff">2&lt;/span>);
+outb(inb(CONTROL) &lt;span style="color:#f92672">&amp;amp;&lt;/span> &lt;span style="color:#ae81ff">0xFE&lt;/span>, CONTROL); &lt;span style="color:#75715e">/* Reset Strobe */&lt;/span>
+usleep(&lt;span style="color:#ae81ff">2&lt;/span>);
+}
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Linke birşey olması durumunda &lt;a href="https://blog.askin.ws/uploads/2011/02/parlcd.gif">bu adresten gerekli şemayı indirebilirsiniz.&lt;/a>&lt;/p></description></item><item><title>Java ile server socket yapımı</title><link>https://blog.askin.ws/blog/java-ile-server-socket-yapimi/</link><pubDate>Sat, 11 Dec 2010 04:25:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/java-ile-server-socket-yapimi/</guid><description>&lt;p>Bir proje için server sockete ihtiyaç duydum. Öncelikli dilim python olmasına rağmen, sunucu solaris olunca java ile yazmak daha cazip geldi. Öncelikli olarak test amaçlı birkaç satır kod yazdım. Akla gelen ilk örnek echo server oluyor :) aşağıda multi thread çalışan, birden fazla kullanıcıya cevap verebilecek bir echo server var:)&lt;/p></description></item><item><title>Saçmalayan konsol ekranını temizleme</title><link>https://blog.askin.ws/blog/sacmalayan-konsol-ekranini-temizleme/</link><pubDate>Wed, 08 Dec 2010 11:51:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/sacmalayan-konsol-ekranini-temizleme/</guid><description>Bir binary dosyayı cat ile görüntüleyince konsol ekranı sapıtabiliyor :) Böyle bir durumda konsolu adam etmek için
+reset komutunu kullanabiliriz. Her seferinde komutu unutup neydi neydi diye düşünüyorum. Buraya yazıyorum ki bir daha unutursam hemen bakıp bulayım :)</description></item><item><title>Emacs ile bul değiştir / find and replace</title><link>https://blog.askin.ws/blog/emacs-ile-bul-degistir-find-and-replace/</link><pubDate>Mon, 06 Dec 2010 18:04:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/emacs-ile-bul-degistir-find-and-replace/</guid><description>M-x replace-string RET aranan_string RET yerine_konulacak_string Bunu regexli yapmak için replace-string yerine replace-regex kullanabilirsiniz. Birde buna kısayol eklesek tadından yenmez.
+.emacs dosyamıza aşağıdaki satırı ekliyoruz.
+;; Find and Replace (global-set-key (kbd &amp;#34;C-q&amp;#34;) &amp;#39;replace-string) C-q kombinasyonuna bastığımıza işlem başlamış oluyor.</description></item><item><title>BusyBox - date ile saat ve tarihi ayarlamak</title><link>https://blog.askin.ws/blog/busybox-date-ile-saat-ve-tarihi-ayarlamak/</link><pubDate>Wed, 01 Dec 2010 13:42:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/busybox-date-ile-saat-ve-tarihi-ayarlamak/</guid><description>BusyBox içinde gelen date komutunun kullanımı biraz daha farklı. Saat ayarlamada bir değişiklik yok fakat tarihi ayarlamak biraz daha farklı. Saat ayarlama:
+date -s &amp;#34;23:59:59&amp;#34; Tarih ve saati ayarlama
+date -s AAGGSSDDYYYY date -s 123123592010 12-31-2010 23:59&amp;rsquo;a karşılık geliyor.</description></item><item><title>Genius!</title><link>https://blog.askin.ws/blog/genius/</link><pubDate>Wed, 24 Nov 2010 14:11:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/genius/</guid><description>Scp ile sembolik linkleri takip etmeden indirme işlemi yapmak için araştırma yaptığımda, aşağıdaki kodu buldum. Böyle bir kullanım 40 yıl düşünsem aklıma gelmezdi.
+cd /destination/directory ssh user@remote.host &amp;#34;cd /original/directory; tar cf - ./&amp;#34; | tar xvf - Kaynak</description></item><item><title>Java ile Oracle Veritabanına bağlanmak.</title><link>https://blog.askin.ws/blog/java-ile-oracle-veritabanina-baglanmak/</link><pubDate>Mon, 08 Nov 2010 20:29:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/java-ile-oracle-veritabanina-baglanmak/</guid><description>Öncelikle http://www.oracle.com/technetwork/database/enterprise-edition/jdbc101040-094982.html adresinden classes12.jar dosyasını indiriyoruz.
+Bu dosyayı bir dizine atıp, içeriğini bu dizine çıkartıyoruz. Bu dizini classpath değişkeninde belirtip kodlamaya başlıyoruz.
+import java.io.*; import java.sql.*; public class OraThin { public static void main(String[] args) { try { Connection con = null; Class.forName(&amp;#34;oracle.jdbc.driver.OracleDriver&amp;#34;); con=DriverManager.getConnection( &amp;#34;jdbc:oracle:thin:@localhost:1521:dbname&amp;#34;, &amp;#34;username&amp;#34;, &amp;#34;password&amp;#34;); Statement s = con.createStatement(); ResultSet rs = s.executeQuery(&amp;#34;SELECT * FROM KISI&amp;#34;); String name; String surname; while(rs.next()) { name = rs.getString(&amp;#34;AD&amp;#34;); surname = rs.getString(&amp;#34;SOYAD&amp;#34;); System.out.println(&amp;#34;Name: &amp;#34; + name + &amp;#34;, Surmame: &amp;#34; + surname); } s.close(); con.close(); } catch(Exception e){e.printStackTrace();} } }</description></item><item><title>Python, Fonksiyona Parametre Olarak Fonksiyon Geçirmek</title><link>https://blog.askin.ws/blog/python-fonksiyona-parametre-olarak-fonksiyon-gecirmek/</link><pubDate>Sat, 01 May 2010 03:51:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/python-fonksiyona-parametre-olarak-fonksiyon-gecirmek/</guid><description>&lt;p>Bu yazıyı asıl yazma sebebim parametre olarak geçirilen fonksiyona geçirilecek parametreler :)&lt;br>
+Parametre olarak geçireceğimiz fonksiyonlar belli bir sayıda parametre alıyorsa yapacağımız iş basit,&lt;/p>
+&lt;p>Mesela:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">Merhaba&lt;/span>(isim):
+print &lt;span style="color:#e6db74">&amp;#34;Merhaba &lt;/span>&lt;span style="color:#e6db74">%s&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span> &lt;span style="color:#f92672">%&lt;/span> isim
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Bunun gibi sadece tek parametre alan bir fonksiyon için aşağıdaki gibi bir fonksiyon yeterli olacaktır.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">BuyukAbi&lt;/span>(func, param):
+func(param)
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">BuyukAbi(Merhaba, &lt;span style="color:#e6db74">&amp;#34;kelebek&amp;#34;&lt;/span>)
+Merhaba kelebek
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Bu fonksiyon parametre olarak aldığı func fonksiyonuna param parametresini geçirecektir.&lt;br>
+Eğer fonksiyonun aldığı parametre sayısı belirsiz ise, yani farklı sayıda parametre alan fonksiyonlarla uğraşmak gerekiyorsa yanına birkaç ekleme daha yapmamız gerekiyor.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">BuyukBuyukAbi&lt;/span>(func, param):
+func(&lt;span style="color:#f92672">*&lt;/span>param)
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>param parametresi bir liste olmak durumunda. Geçirilen fonksiyon kaç parametre alıyorsa listenin uzunluğu okadar olmalı.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">BuyukBuyukAbi(Merhaba, [&lt;span style="color:#e6db74">&amp;#34;kelebek&amp;#34;&lt;/span>])
+Merhaba kelebek
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">HepinizeMerhaba&lt;/span>(isim1, isim2):
+print &lt;span style="color:#e6db74">&amp;#34;Merhaba &lt;/span>&lt;span style="color:#e6db74">%s&lt;/span>&lt;span style="color:#e6db74">, merhaba &lt;/span>&lt;span style="color:#e6db74">%s&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span> &lt;span style="color:#f92672">%&lt;/span> (isim1, isim2)
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">BuyukBuyukAbi(HerpinizeMerhaba, [&lt;span style="color:#e6db74">&amp;#34;kelebek&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;Aşkın&amp;#34;&lt;/span>])
+Merhaba kelebek, merhaba Aşkın
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>C ile Nesne Yaratmak</title><link>https://blog.askin.ws/blog/c-ile-nesne-yaratmak/</link><pubDate>Tue, 27 Apr 2010 04:08:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/c-ile-nesne-yaratmak/</guid><description>&lt;p>&lt;img src="https://blog.askin.ws/uploads/2010/04/c3po.jpg" alt="" title="C-3PO">Evet kışkırtıcı bir başlık attım :)
+Aslında yapacağımız olay bir structı nesne gibi kullanmak. Buna benzer bir kodu yıllar önce görmüştüm. O günden bu güne sürekli böyle bir şeyi nasıl yaparım diye araştırdım. Anca bugün çözebildim olayı ;)
+Kodu aşağıda yorum satırıyla beraber veriyorum. Yorumlarda gerekli açıklamaları yaptım.&lt;/p>
+&lt;p>Bu yazıyla C-3PO nun ne lakası var diyebilirsiniz. C ile resim ararken karşıma bu çıktı, bende boş durmasın dedim :)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c" data-lang="c">&lt;span style="color:#75715e">/*
+&lt;/span>&lt;span style="color:#75715e"> * Sınıfımızı yaratıyoruz
+&lt;/span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;span style="color:#66d9ef">struct&lt;/span> _myobject {
+&lt;span style="color:#75715e">// alt alanlar
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> a, b;
+&lt;span style="color:#75715e">/*
+&lt;/span>&lt;span style="color:#75715e"> * Metod
+&lt;/span>&lt;span style="color:#75715e"> * Burada fonksiyon pointerı tanımlıyoruz
+&lt;/span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> (&lt;span style="color:#f92672">*&lt;/span>add)(&lt;span style="color:#66d9ef">struct&lt;/span> _myobject&lt;span style="color:#f92672">*&lt;/span>);
+};
+&lt;span style="color:#75715e">// struct ön ekinden kurtuluyoruz
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">typedef&lt;/span> &lt;span style="color:#66d9ef">struct&lt;/span> _myobject MyObject;
+&lt;span style="color:#75715e">/*
+&lt;/span>&lt;span style="color:#75715e"> * Asıl işi yapacak fonksiyonu tanımlıyoruz
+&lt;/span>&lt;span style="color:#75715e"> * MyObject structını parametre olarak alıyor
+&lt;/span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">realAdd&lt;/span>(MyObject&lt;span style="color:#f92672">*&lt;/span> a) {
+&lt;span style="color:#66d9ef">return&lt;/span> a&lt;span style="color:#f92672">-&amp;gt;&lt;/span>a &lt;span style="color:#f92672">+&lt;/span> a&lt;span style="color:#f92672">-&amp;gt;&lt;/span>b;
+}
+&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span> ( &lt;span style="color:#66d9ef">void&lt;/span> ) {
+&lt;span style="color:#75715e">/*
+&lt;/span>&lt;span style="color:#75715e"> * Nesnemizi oluşturuyoruz.
+&lt;/span>&lt;span style="color:#75715e"> * add pointerına fonksiyonu atıyoruz
+&lt;/span>&lt;span style="color:#75715e"> */&lt;/span>
+MyObject mo &lt;span style="color:#f92672">=&lt;/span> {&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#ae81ff">2&lt;/span>, realAdd};
+printf(&lt;span style="color:#e6db74">&amp;#34;A + B = %d&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>, mo.add(&lt;span style="color:#f92672">&amp;amp;&lt;/span>mo));
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Kodun başına stdio.h headerını eklemekte fayda var. WP sıkıntı çıkarttığı için silmek zorunda kaldım. Kodun düzgün halini &lt;a href="http://github.com/askin/misc/raw/master/fun/struct-function.c">burada&lt;/a> bulabilirsiniz.&lt;/p></description></item><item><title>Gtk &lt;= 2.18.9 Pencere Gizleme Sorunu</title><link>https://blog.askin.ws/blog/gtk-2-18-9-pencere-gizleme-sorunu/</link><pubDate>Thu, 08 Apr 2010 06:19:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/gtk-2-18-9-pencere-gizleme-sorunu/</guid><description>&lt;p>&lt;img src="https://blog.askin.ws/uploads/2010/04/gtk.png" alt="Gtk" title="Gtk">Gece gece uyku tutmadı var olan bir programı kurcalamaya başladım. Amacım programın sitem çekmecesinden çalışabilir hale getirmekti.&lt;/p>
+&lt;p>Her şeyi yaptım fakat bir türlü pencereyi gizleyemiyordum :) Doküman &lt;em>gtk_window_get_mnemonics_visible ()&lt;/em> fonksiyonunu kullanmamı söylüyordu, fakat kullandığım gtk sürümünde bu fonksiyon tanımlı değildi(2.18.7). Eski sürüm için olan dokümanı incelediğimde bu işi yapan bir fonksiyon yoktu.
+Sistemde kurulu gtk ve python ile bu işi yapabiliyordum. Normal olarak c ile de yapabilmem lazımdı:)
+Biraz inceledikten sonra, önce pencereyi gizleyen, ardından boyutunu eski haline getirip sonra tekrar gösteren bir fonksiyon olduğunu fark ettim. Benim istediğim işi yapıyor fakat yanında birde fazlalığı vardı.(gtk_window_reshow_with_initial_size)
+İnternette biraz daha araştırıp umudumu kaybedince mecburen kaynak koda baktım.&lt;/p>
+&lt;pre>&lt;code>grep -rHn gtk_window_reshow_with_initial_size *
+&lt;/code>&lt;/pre>
+&lt;p>bu komut bana gtk_window_reshow_with_initial_size fonksiyonun nerelerde olduğunu gösterdi.
+Bu fonksiyonunun içine bakınca istediğim kodu hemen buldum :)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-C" data-lang="C">gtk_window_reshow_with_initial_size (GtkWindow &lt;span style="color:#f92672">*&lt;/span>window)
+{
+GtkWidget &lt;span style="color:#f92672">*&lt;/span>widget;
+g_return_if_fail (GTK_IS_WINDOW (window));
+widget &lt;span style="color:#f92672">=&lt;/span> GTK_WIDGET (window);
+gtk_widget_hide (widget);
+gtk_widget_unrealize (widget);
+gtk_widget_show (widget);
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Önce pencereyi widgeta çevirebilme imkanım varmış, böyle basit bir şeyi nasıl bulamadım bilemiyorum.&lt;/p></description></item><item><title>Blogger'a Kendi Alan Adınızı Yönlendirme</title><link>https://blog.askin.ws/blog/bloggera-kendi-alan-adinizi-yonlendirme/</link><pubDate>Thu, 08 Apr 2010 02:28:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/bloggera-kendi-alan-adinizi-yonlendirme/</guid><description>&lt;p>&lt;img src="https://blog.askin.ws/uploads/2010/04/blogger-300x298.png" alt="Blogger" title="Blogger">Daha önce birkaç kez yapmıştım, fakat her seferinde neler yaptığımı unutup acaba olmadı mı diye kuşkulanmıştım. En güzeli böyle bir yere yazıp gerektiğinde kopya çekmek :)&lt;/p>
+&lt;p>Öncelikle bloggerda bir blogunuz olduğunu varsayıyorum :D&lt;br>
+Blooger hesabımıza giriş yapıyoruz.&lt;br>
+Şu adımları takip ediyoruz.&lt;br>
+Özelleştir -&amp;gt; Ayarlar -&amp;gt; Yayıncılık -&amp;gt; Özel Alan-&amp;gt; Gelişmiş Ayarlara Geçiş Yapın&lt;br>
+Buradaki kutuya alan adını yazın.&lt;br>
+&amp;ldquo;Eksik dosya barındırma sistemini mi kullanıyorsunuz?&amp;rdquo; kısmını olduğu gibi bırakıp, kelime doğrulamayı yapıp ayarları kaydediyoruz.&lt;/p>
+&lt;p>Bu adımları geçtikten sonra google tarafında yapılacak ayarları tamamlamış oluyoruz.&lt;br>
+Alan adınızın bloggera yönlenmesi için CNAME kaydı oluşturmanız gerekiyor. Bunu alan adını aldığınız yerden yapacaksınız.&lt;br>
+CNAME kaydına değer olarak &lt;em>ghs.google.com&lt;/em> adresini vermelisiniz. Domain firmanızın güncellenme hızına göre alan adının aktif olma süresi değişecektir.&lt;/p>
+&lt;p>Toplam 2 adımdan oluşuyor. Akılda tutmak kolay ama alan adının yönlenmesi biraz zaman aldığından dolayı insanın içinde bir şüphe oluyor her zaman :P&lt;/p></description></item><item><title>PyGtk ile Sistem Çekmecesi</title><link>https://blog.askin.ws/blog/pygtk-ile-sistem-cekmecesi/</link><pubDate>Wed, 07 Apr 2010 21:53:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/pygtk-ile-sistem-cekmecesi/</guid><description>&lt;p>&lt;img src="https://blog.askin.ws/uploads/2010/04/gtk.png" alt="Gtk" title="Gtk">Gtk ile çok kolay bir şekilde geliştirdiğiniz uygulamayı sistem çekmecesinde gösterebilirsiniz.&lt;/p>
+&lt;p>Ufak bir örnek kod veriyorum. Onun üzerinden anlatacağım.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#f92672">import&lt;/span> pygtk
+&lt;span style="color:#f92672">import&lt;/span> gtk
+&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">ShowIcon&lt;/span>:
+&lt;span style="color:#66d9ef">def&lt;/span> __init__(self):
+self&lt;span style="color:#f92672">.&lt;/span>icon &lt;span style="color:#f92672">=&lt;/span> gtk&lt;span style="color:#f92672">.&lt;/span>StatusIcon()
+self&lt;span style="color:#f92672">.&lt;/span>icon&lt;span style="color:#f92672">.&lt;/span>set_from_file(&lt;span style="color:#e6db74">&amp;#39;gtk.png&amp;#39;&lt;/span>)
+self&lt;span style="color:#f92672">.&lt;/span>icon&lt;span style="color:#f92672">.&lt;/span>set_tooltip_text(&lt;span style="color:#e6db74">&amp;#39;Hello Python!!!&amp;#39;&lt;/span>)
+self&lt;span style="color:#f92672">.&lt;/span>icon&lt;span style="color:#f92672">.&lt;/span>set_visible(&lt;span style="color:#66d9ef">True&lt;/span>)
+self&lt;span style="color:#f92672">.&lt;/span>icon&lt;span style="color:#f92672">.&lt;/span>connect(&lt;span style="color:#e6db74">&amp;#34;activate&amp;#34;&lt;/span>, self&lt;span style="color:#f92672">.&lt;/span>hello)
+gtk&lt;span style="color:#f92672">.&lt;/span>main()
+&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">hello&lt;/span>(self, widget):
+print &lt;span style="color:#e6db74">&amp;#39;Hello Python !!!&amp;#39;&lt;/span>
+&lt;span style="color:#66d9ef">if&lt;/span> __name__ &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#39;__main__&amp;#39;&lt;/span>:
+icon &lt;span style="color:#f92672">=&lt;/span> ShowIcon()
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>6. satırda asıl işimizi yapacak olan &lt;em>StatusIcon&lt;/em> nesnesini yaratıyoruz.&lt;br>
+7. satırda sistem çekmecesinde hangi ikonun görüntüleneceğini belirtiyoruz. &lt;em>set_from_file&lt;/em> ikonu dosyadan alacağımız anlamına geliyor. Eğer gtk&amp;rsquo;nın sunduğu standart ikonları kullanmak istiyorsanız set_from_stock kullanmalısınız.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">icon&lt;span style="color:#f92672">.&lt;/span>set_from_stock(gtk&lt;span style="color:#f92672">.&lt;/span>STOCK_ABOUT)
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>8. satırda ikonun üzerine geldiğimizde görünmesini istediğimiz yazıyı belirliyoruz.&lt;br>
+9. satırda ikonun başlangıçtaki görünürlüğünü belirliyoruz. Bu satırı yazmasak da görünür başlıyor.&lt;br>
+10. satırda ikonun &lt;em>&amp;ldquo;activate&amp;rdquo;&lt;/em> sinyali aldığında çağırmasını istediğimiz metodu belirliyoruz. Kısacası üzerine tıklandığında ne iş yapacağını belirtiyoruz. &lt;em>&amp;ldquo;activate&amp;rdquo;&lt;/em> yerine &lt;em>&amp;ldquo;popup_menu&amp;rdquo;&lt;/em> yazarsak ikona sağ tıkladığımızda çağrılacak metodu belirliyoruz.&lt;br>
+11. gkt.main() haydi yapalım şu işi manasında :)&lt;/p>
+&lt;p>Ayrıntılı dökümanı &lt;a href="http://www.pygtk.org/docs/pygtk/class-gtkstatusicon.html">PyGtk Belgelerinde&lt;/a> bulabilirisiniz. Yukarıda verdiğim kodu ve benim kullandığım ikonu &lt;a href="https://blog.askin.ws/uploads/2010/04/python-system-tray.zip">buradan&lt;/a> indirebilirsiniz.&lt;/p></description></item><item><title>PyGtk ve Thread Sorunu</title><link>https://blog.askin.ws/blog/pygtk-ve-thread-sorunu/</link><pubDate>Tue, 06 Apr 2010 23:03:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/pygtk-ve-thread-sorunu/</guid><description>PyGtk ile ara yüzüzünü hazırladığım bir program içinde thread kullanmam gerekiyordu. Kod çalışıyordu fakat thread işlemi istediğim gibi çalışmıyordu. Arayüzde bir değişiklik olduğu zaman thread çalışıyor, onun dışında hiç bir şekilde tepki vermiyordu.
+Uzun süre hatanın kodda olabileceğini düşündüm. Ama sonunda python gtk.main() ve thread 3&amp;rsquo;lüsünü aynı sorgu içinde googleda aratınca cevabı buldum. Gtk&amp;rsquo;ya thread kullandığımı anlatmam gerekiyordu :)
+gtk.gdk.threads_init() Bu satırı kodumun başına eklediğimde herşey istediğim gibi çalışmaya başladı :)
+Sizde böyle bir sorunla karşılaşırsanız aklınızda bulunsun :)</description></item><item><title>Pardus Ağ Yöneticisi İle Eduroam Ağına Bağlanmak</title><link>https://blog.askin.ws/blog/pardus-ag-yoneticisi-ile-eduroam-agina-baglanmak/</link><pubDate>Mon, 07 Dec 2009 09:45:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/pardus-ag-yoneticisi-ile-eduroam-agina-baglanmak/</guid><description>&lt;p>&lt;img src="https://blog.askin.ws/uploads/2009/05/pardus.png" alt="Pardus" title="Pardus">Bikaç gündür &lt;a href="http://www.pardus.org.tr">Pardus&lt;/a> ve &lt;a href="http://www.eduroam.org/">Eduroam&lt;/a> ile uğraşıyordum. Eduroama bağlanmak için pratik yollar buldum fakat hiç birisi Ağ Yöneticisi kullanarak bağlanmanın zevkini vermiyordu.&lt;/p>
+&lt;p>2 gün boyunca Ağ Yöneticisinin neresini değiştirmem gerektiğini arayıp durdum. Sonunda wireless-tools adlı paketin aradığım paket olduğunu keşfettim :) wireless tools paketi wpa_supplicant kullanarak wpa şifreleme kullanan ağlara bağlanmaya yarıyor. Sağolsun Pardus geliştiricileri wpa_supplicant paketi için dbus kullanan bir python betiği yazmışlar. Bu betik içinde tanımlanan methodlarla wpa_supplicantı yönetebiliyoruz. Bu betiğe eduroam ağına bağlanmak için gerekli parametreleri alan bir method ekledim.&lt;br>
+Daha sonra wireless-tools paketi içindeki comar betiğine bu methodu kullanmasını sağlayacak birkaç değişiklik yaptım.&lt;/p>
+&lt;p>Sırf bu işi denemek için bugün okulum olmadığı halde sabahın 8&amp;rsquo;inde okula gelip deneme yaptım. Ayarlarını evde yaptığım için bilgisayarı açar açmaz internete bağlandı :) Hayatımda ilk kez yazdığım bir kod direk çalıştı :P&lt;/p>
+&lt;p>Düzenlediğim bu 2 pakete aşağıdaki adreslerden ulaşabilirsiniz.&lt;br>
+&lt;a href="http://github.com/askin/kelebekpisi/tree/master/wpa_supplicant/">http://github.com/askin/kelebekpisi/tree/master/wpa_supplicant/&lt;/a>&lt;br>
+&lt;a href="http://github.com/askin/kelebekpisi/tree/master/wireless-tools/">http://github.com/askin/kelebekpisi/tree/master/wireless-tools/&lt;/a>&lt;/p>
+&lt;p>Paketleri kendiniz derlemek için root yetkileriyle&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">pisi bi http://github.com/askin/kelebekpisi/raw/master/wpa_supplicant/pspec.xml
+pisi bi http://github.com/askin/kelebekpisi/raw/master/wireless-tools/pspec.xml
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>komutlarını vermelisiniz, ardından oluşan pisi paketlerini kurabilirsiniz.&lt;/p>
+&lt;p>Ya da hazır ikili pisi paketlerini &lt;a href="http://askin.ws/pisi/eduroam/">http://askin.ws/pisi/eduroam/&lt;/a> adresinden bulabilirsiniz.&lt;/p>
+&lt;p>Paketleri kurduktan sonra ayarları yaparken Güvenlik Türü seçeneğini &amp;ldquo;WPA &amp;amp; WPA2 Enterprise&amp;rdquo; olarak seçmelisiniz.&lt;/p>
+&lt;p>Son olarak wireless-tools paketi Pardus&amp;rsquo;un temel paketlerinden birisidir, wpa_supplicant paketi de wpa ağlarına bağlanmak için gerekli temel bir pakettir. Bunları Pardus deposu dışında bir yerden kurmak sisteminize zarar verebilir. Sorumluluk kullanıcıya aittir :)&lt;/p>
+&lt;p>Benim sistemime hiç bir şey olmadı, %99.99 olasılıkla sizin siteminize de zarar gelmez fakat ben yinede hiç bir sorumluluk almıyorum :)&lt;/p></description></item><item><title>Pardus ile Eduroam ağına bağlanma</title><link>https://blog.askin.ws/blog/pardus-ile-eduroam-agina-baglanma/</link><pubDate>Sat, 05 Dec 2009 02:02:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/pardus-ile-eduroam-agina-baglanma/</guid><description>&lt;p>&lt;img src="https://blog.askin.ws/uploads/2009/12/eduroam_logo_trans.gif" alt="Eduroam" title="Eduroam">&lt;a href="http://www.pardus.org.tr/">Pardus&lt;/a>un ağ yöneticisi gayet şık bir arayüze sahip, fakat bize &lt;a href="http://www.eduroam.org/">Eduroam&lt;/a> ağına bağlanma özelliği sunmuyor.&lt;br>
+Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız için yeterli. Bu araçlar &lt;a href="http://hostap.epitest.fi/wpa_supplicant/">wpa_supplicant&lt;/a> ve &lt;a href="http://roy.marples.name/projects/dhcpcd">dhcpcd&lt;/a>. Wpa_supplicant ağda kimlik denetimini sağlamak için, dhcpcd ise ağdan ip almamız için gerekli.&lt;/p>
+&lt;p>Öncelikle wpa_supplicant için ayar dosyası oluşturmamız gerekiyor.&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-conf" data-lang="conf">network={
+ssid=&amp;quot;eduroam&amp;quot;
+key_mgmt=WPA-EAP
+pairwise=TKIP
+group=TKIP
+eap=TTLS
+phase2=&amp;quot;auth=PAP&amp;quot;
+anonymous_identity=&amp;quot;anonymous@ogr.deu.edu.tr&amp;quot;
+identity=&amp;quot;ogrencinumarasi@ogr.deu.edu.tr&amp;quot;
+password=&amp;quot;sifre&amp;quot;
+}
+&lt;/code>&lt;/pre>&lt;p>Bu ayarlar Dokuz Eylül Üniversitesi için. Kendi okulunuza göre düzenlemeniz gerekiyor. Sadece ogr.deu.edu.tr adresi yerine kendi okulunuzun adresini yazmalısınız.&lt;/p>
+&lt;p>Bu dosyayı /etc/wpa_supplicant.con adıyla kaydediyoruz.&lt;/p>
+&lt;p>Sıra geldi wpa_supplicantı çalıştırmaya.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>-D parametresi hangi sürücüyü kullanacağımızı belirtiyor. Wpa_supplicantın man dosyalarına bakarak kendinize uygun bir sürücü seçebilirsiniz.&lt;br>
+-i hangi arayüzü kullanacağınızı belirtiyor. Genellikle wlan0 dır. iwconfig komutunun çıktısı size kablosuz ağ kartlarını gösterecektir.&lt;br>
+-c ile ayar dosyamızın yerini belirtiyoruz.&lt;/p>
+&lt;p>Eğer bu komut başarılı olursa artık ip alabiliriz.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">dhcpcd wlan0
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Eğer bu komutta başarılı olduysa artık internete bağlanabilirsiniz hayırlı olsun :)&lt;/p>
+&lt;p>Bu işlemi kolaylaştırmak için pem adında bi script yazdım.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">git clone git://github.com/askin/pem.git
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Bu komutla pem&amp;rsquo;e ulaşabilirsiniz.&lt;br>
+Bu aracı daha fazla geliştirecektim fakat ağ yöneticisiyle bu işleri nasıl yapabileceğimi öğrendim. Bugün oturup biraz network-managerın kodlarıyla uğraştım. Sanırım pazartesi günü bu işi ağ yöneticisiyle kolayca yapılabilecek bir hale getirebilirim. Şimdilik en güzel yöntem bu gibi :)&lt;/p>
+&lt;p>Ayrıca sevgili dostum &lt;a href="http://blog.metebilgin.com/">Mete&lt;/a> bu işin wicd kullanarak nasıl yapıldığını daha önce yazmış &lt;a href="http://blog.metebilgin.com/2009/10/pardus-2009-da-eduroam-kafay-yemeden.html">buradan&lt;/a> o yazıya ulaşabilirsiniz.&lt;/p></description></item><item><title>TrekStor maxi g.u 500GB harici hard disk</title><link>https://blog.askin.ws/blog/trekstor-maxi-g-u-500gb-harici-hard-disk/</link><pubDate>Wed, 16 Sep 2009 20:32:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/trekstor-maxi-g-u-500gb-harici-hard-disk/</guid><description>&lt;p>&lt;img src="https://blog.askin.ws/uploads/2009/09/TrekStor.png" alt="TrekStor" title="TrekStor">Geçen hafta bilgisayarım bozulunca, verilerimi kurtarmak için bir harici disk almak zorunda kaldım.&lt;br>
+Malum servisler arıza ne olursa olsun hemen format atma merakındalar.&lt;br>
+Tekrar bulamayacağım 20GB kadar, film müzik derken 100GB kadar verim vardı. Diski alınca benim hard diski arkadaşın bilgisayarına takıp hepsini aldım.&lt;/p>
+&lt;p>Birazda harici diskten bahsedeyim.&lt;br>
+Disk biraz büyük gibi. Gerçi daha büyüklerini de gördüm, ama biraz daha ufak olabilirdi. Gayet hafif, Yanında taşımamız gereken bir adaptörü olmasa tadından yenmez. Hızı gayet tatmin edici. Saniyede 30MB&amp;rsquo;ı görebildim. Gecikme süresi rahatsız edici boyutta değil. Üzerine &lt;a href="http://www.pardus.org.tr/">Pardus&lt;/a> kurdum normal disk üzerinde gibi hızlı açılıp kapanıyor.&lt;br>
+Kutu üzerinde 500GB yazmasına rağmen 466GB. Disk üreticilerine göre 1GB, 1073741824 yerine 1000000000 Byte. Bu nedenle arada 34GB oynuyor. Kutu üzerinde de zaten bunu belirtmişler.&lt;/p>
+&lt;p>Piyasayı çok araştırmama rağmen fiyatı bana çok makul geldi. Teknosadan 100TLye aldım. Herkese tavsiye ederim.&lt;br>
+Buda resmi.&lt;br>
+&lt;img src="https://blog.askin.ws/uploads/2009/09/trekstor_maxi_gu.jpg" alt="TrekStor maxi g.u" title="TrekStor maxi g.u">&lt;/p></description></item><item><title>post 2 del.icio.us</title><link>https://blog.askin.ws/blog/post-2-del-icio-us/</link><pubDate>Tue, 15 Sep 2009 20:15:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/post-2-del-icio-us/</guid><description>Daha önce post to del.icio.us eklentisinden bahsetmiştim.
+Hazır eklentiye el atmışken birkaç özellik ekledim.
+Gizli gönderim Var olan linkin üzerine yazılma seçeneği Türkçe desteği Ön tanımlı atanan kısayolu linuxta gizli gezinme kısayolu ile çakıştığı için değiştirdim. Fakat windowsta yer imleri kısayolu ile çakışmaya başladı bu sefer.
+Bir sonraki ekleyeceğim özellik bu kısa yolun kullanıcı tarafından değiştirilebilmesini sağlamak olacak.
+Eklentinin proje sayfası burası. Proje sayfasından eklentinin ekran görüntülerine bakabilirsiniz.
+Eklentiyi burdan kurabilirsiniz.</description></item><item><title>Ah şu spamcılar</title><link>https://blog.askin.ws/blog/ah-su-spamcilar/</link><pubDate>Tue, 01 Sep 2009 20:25:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/ah-su-spamcilar/</guid><description>Bugün akismet&amp;lsquo;e takılmış 34 spam vardı kutumda. Silmeden önce hep bi göz atarım ne yazmışlar diye. Genelde mesajın tamamı linklerden oluşur. Çok nadir olarak sadece 1 link olur ve ingilizcedir herzaman.
+Bugün gelen spamlardan biri türkçeydi ve hiç link yoktu. Sadece websitesi bömünde acayip bi site vardı. Mesajın içeriği de yazıyla tamamen uyumluydu. Tam elim spam değil tuşuna gideceği sırada garip duygularla yorumun yapıldığı yazıya bakma ihtiyacı duydum ve ardından gülümsedim :) Kahraman spamcımız gelen mesajı aynen almış, site kısmına reklamını yapacağı siteyi yazıp tekrar yollamış. Biraz daha dikkatsiz olsaydım neredeyse bu oyuna düşecektim, aman dikkat bu oyunlara düşmeyin. Akismet&amp;lsquo;e güvenin, bi bildiği vardır.</description></item><item><title>Post to del.icio.us</title><link>https://blog.askin.ws/blog/post-to-del-icio-us/</link><pubDate>Sat, 29 Aug 2009 23:48:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/post-to-del-icio-us/</guid><description>Delicious için kullanılabilecek en güze eklenti bence Post to del.icio.us eklentisi. Fakat firefox 3.5 ile uyumsuz olduğu için kurmak sıkıntılı oluyordu. Bugune kadar .mozilla dizinimi hiç silmediğim için uyumsuz demesine rağmen kullanabildim. Fakat nedense bugün çalışmıyordu. Bende açtım içini baktım nesi var diye :)
+install.rdf dosyası içinde maxVersion tagları arasında 3.0.* yazıyordu, buda 3.1 ve üzeri sürümde çalışmaz manasına geliyor. Düzenleyip bide xpi dosyası haline getirdim. Burdan kullanabilirsiniz.</description></item><item><title>2000'i devirdik, yaşasın SPAM</title><link>https://blog.askin.ws/blog/2000i-devirdik-yasasin-spam/</link><pubDate>Mon, 03 Aug 2009 22:17:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/2000i-devirdik-yasasin-spam/</guid><description>An itibariyle bloguma 2004 adet spam yorum atılmış. Bıkmayıp usanmayıp spam bot hazılıyan spamcılara ve bu spam yorumları yakalayan akismet&amp;lsquo;e teşekürlerimi sunuyorum.
+Tabi gmailin üstün spam ayıklama kabiliyetini de unutmamak lazım. Arada sırada spam olmayan mailleride engellemesine rağmen çok iyi iş çıkartıyor.</description></item><item><title>Pardus 2009</title><link>https://blog.askin.ws/blog/pardus-2009/</link><pubDate>Sat, 25 Jul 2009 01:09:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/pardus-2009/</guid><description>&lt;p>&lt;img src="https://blog.askin.ws/uploads/2009/05/pardus.png" alt="Pardus" title="Pardus">Sonunda Pardus 2009&amp;rsquo;u bilgisayarıma kurabildim. Ailemin yanına geldiğim için Pardus&amp;rsquo;u indiremiyordum. Malum kotalı internet, sıkıntı yaratıyor.&lt;br>
+Kurulum sorunsuz tamamlandı. Kurulum arayüzü çok hoş olmuş. Çok kullanışlı ve çok kolay bir arayüzü olmuş. Bilgisayarıma en hızlı kurulabilen Pardus sürümü. Saat tutmadım ama, 20 dakka ile 30 dakka arasında bir sürede kurulduğunu tahmin ediyorum.&lt;br>
+Kablosuz ağ kartımı sorunsuz tanıdı ve WPA2 şifreli ağıma çok kolay bir şekilde bağlandı. Daha önce de tanıyordu, fakat ağımı göremiyordu, ben de mecburen ndiswraper ile kullanıyordum. Hiç bir ek program kurmama ve kapalı kodlu windows sürücülerine ihtiyaç duymamak beni gayet mutlu etti. Ve ilk defa wi-fi ledinin yanıp söndüğü gördüm:)&lt;br>
+KDE4 gerçekten çok güzel, çok hoş duruyor fakat bana göre değil. Arada açıp gönül eğlendirebilirim ama gnome herzamanki gibi 1 numaralı tercihim. Bu nedenle biraz KDE4 turu yaptıktan sonra hemen gnome&amp;rsquo;u kurdum. Bu nedenle &lt;a href="http://code.google.com/p/pardus-gnome-project/">Burak Çalışkan&lt;/a>&amp;lsquo;a teşekür ediyorum.&lt;br>
+İhtiyaç duyduğum bazı programlar depoda bulunmuyordu. Bu nedenle devel deposundan bazı paketleri derleyip kurdum. Bi kaç program paketlenemedi, onlarda kısa sürede hazır olur diye umuyorum.&lt;br>
+Her şeye rağmen güzel bi dağıtım olmuş. Emeği geçen herkese teşekür ediyorum.&lt;/p></description></item><item><title>Mysql Data Dizinini Değiştirme</title><link>https://blog.askin.ws/blog/mysql-data-dizinini-degistirme/</link><pubDate>Tue, 14 Jul 2009 02:11:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/mysql-data-dizinini-degistirme/</guid><description>&lt;p>&lt;img src="https://blog.askin.ws/uploads/2009/07/mysql.png" alt="Mysql" title="Mysql">Mysql data dizini ön tanımlı &lt;strong>/var/lib/mysql&lt;/strong> olarak belirlenmiştir. Çeşitli ihtiyaçlardan dolayı bunun yerini değiştirmemiz gerekebilir. Mesela ben ayrı bir bölümde tuttuğum &lt;strong>/home&lt;/strong> dizini altına taşımak istiyorum. Tüm işlemleri &lt;em>root&lt;/em> yetkisiyle yapıyoruz. Öncelikle mysql servisini durduralım.
+Ben pardus kullandığım için&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ service mysql-server stop
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Diğer dağıtımlarda farklı olabilir.
+Ardından ilgili dizini yeni yerine kopyalayalım.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ cp -a /var/lib/mysql /home
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. &lt;strong>/etc/mysql/my.cnf&lt;/strong> dosyasında
+&lt;code>datadir = /var/lib/mysql&lt;/code> olan satırı
+&lt;code>datadir = /home/mysql&lt;/code> olarak değiştirelim.
+Şimdi servisi yeniden başlatabiliriz.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ service mysql-server start
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Eğer düzgün bir şekilde çalışıyorsa &lt;strong>/var/lib/mysql&lt;/strong> dizinini silebiliriz. Ama ismini değiştirip birkaç gün her ihtimale karşı saklamak çok mantıklı.&lt;/p></description></item><item><title>C ile Komut Satırı Argumanları ve Parametreleri</title><link>https://blog.askin.ws/blog/c-ile-komut-satiri-argumanlari-ve-parametreleri/</link><pubDate>Fri, 10 Jul 2009 18:01:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/c-ile-komut-satiri-argumanlari-ve-parametreleri/</guid><description>&lt;p>&lt;img src="https://blog.askin.ws/uploads/2009/07/gnome-terminal.png" alt="Terminal" title="Terminal">Komut satırı programları -h yada &amp;ndash;help gibi parametreler alırlar. Bu alınan parametrelerin kolay kullanılması için &lt;em>getopt&lt;/em> adında bir kütüphane yaratılmış. Bu kütüphane kullanlanılarak çok rahat böyle programlar yazılabilir.
+Bende bunun için küçük bir örnek yazdım.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-C" data-lang="C">&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;stdio.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;stdlib.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;getopt.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">print_usage&lt;/span> ( &lt;span style="color:#66d9ef">void&lt;/span> );
+&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span> (&lt;span style="color:#66d9ef">int&lt;/span> argc, &lt;span style="color:#66d9ef">char&lt;/span>&lt;span style="color:#f92672">*&lt;/span> argv[])
+{
+&lt;span style="color:#66d9ef">int&lt;/span> next_option;
+&lt;span style="color:#66d9ef">char&lt;/span>&lt;span style="color:#f92672">*&lt;/span> output;
+&lt;span style="color:#66d9ef">char&lt;/span>&lt;span style="color:#f92672">*&lt;/span> input;
+&lt;span style="color:#66d9ef">char&lt;/span> color &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">47&lt;/span>;
+&lt;span style="color:#75715e">/**
+&lt;/span>&lt;span style="color:#75715e"> * kisa parametler burda tanimli
+&lt;/span>&lt;span style="color:#75715e"> * ardindan parametre alanlar : ile bitiyor
+&lt;/span>&lt;span style="color:#75715e"> * orn: o: bir parametre aliyor b almiyor
+&lt;/span>&lt;span style="color:#75715e"> * -o kelebek yada -b gibi
+&lt;/span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#66d9ef">char&lt;/span>&lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#66d9ef">const&lt;/span> short_options &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;hbro:i:&amp;#34;&lt;/span>;
+&lt;span style="color:#75715e">/**
+&lt;/span>&lt;span style="color:#75715e"> * Burdada uzun hallerini tanimliyoruz.
+&lt;/span>&lt;span style="color:#75715e"> * beraberinde kisa karsiliklarida var.
+&lt;/span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#66d9ef">struct&lt;/span> option long_options[] &lt;span style="color:#f92672">=&lt;/span> {
+{&lt;span style="color:#e6db74">&amp;#34;help&amp;#34;&lt;/span>, no_argument, &lt;span style="color:#ae81ff">0&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;h&amp;#39;&lt;/span>},
+{&lt;span style="color:#e6db74">&amp;#34;blue&amp;#34;&lt;/span>, no_argument, &lt;span style="color:#ae81ff">0&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;b&amp;#39;&lt;/span>},
+{&lt;span style="color:#e6db74">&amp;#34;red&amp;#34;&lt;/span>, no_argument, &lt;span style="color:#ae81ff">0&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;r&amp;#39;&lt;/span>},
+{&lt;span style="color:#e6db74">&amp;#34;input&amp;#34;&lt;/span>, required_argument, &lt;span style="color:#ae81ff">0&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;i&amp;#39;&lt;/span>},
+{&lt;span style="color:#e6db74">&amp;#34;output&amp;#34;&lt;/span>, required_argument, &lt;span style="color:#ae81ff">0&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;o&amp;#39;&lt;/span>}
+};
+&lt;span style="color:#75715e">/**
+&lt;/span>&lt;span style="color:#75715e"> * Burda sirayla verilen argumalari aliyoruz
+&lt;/span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;span style="color:#66d9ef">do&lt;/span> {
+next_option &lt;span style="color:#f92672">=&lt;/span> getopt_long(argc,
+argv,
+short_options,
+long_options,
+NULL);
+&lt;span style="color:#66d9ef">switch&lt;/span>(next_option) {
+&lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#e6db74">&amp;#39;h&amp;#39;&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#75715e">// -h or --help
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> print_usage();
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;span style="color:#66d9ef">break&lt;/span>;
+&lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#e6db74">&amp;#39;o&amp;#39;&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#75715e">// -o or --or
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> output &lt;span style="color:#f92672">=&lt;/span> optarg;
+&lt;span style="color:#66d9ef">break&lt;/span>;
+&lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#e6db74">&amp;#39;i&amp;#39;&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#75715e">// -i or --i
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> input &lt;span style="color:#f92672">=&lt;/span> optarg;
+&lt;span style="color:#66d9ef">break&lt;/span>;
+&lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#e6db74">&amp;#39;b&amp;#39;&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#75715e">// -b or --blue
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> color &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">44&lt;/span>;
+&lt;span style="color:#66d9ef">break&lt;/span>;
+&lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#e6db74">&amp;#39;r&amp;#39;&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#75715e">// -r or --red
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> color &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">41&lt;/span>;
+&lt;span style="color:#66d9ef">break&lt;/span>;
+&lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">:&lt;/span>
+&lt;span style="color:#66d9ef">break&lt;/span>;
+&lt;span style="color:#66d9ef">default&lt;/span>&lt;span style="color:#f92672">:&lt;/span>
+abort();
+}
+} &lt;span style="color:#66d9ef">while&lt;/span> (next_option &lt;span style="color:#f92672">!=&lt;/span> &lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>);
+printf(&lt;span style="color:#e6db74">&amp;#34;%c[%d;%dmInput : %s%c[%dm&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>, &lt;span style="color:#ae81ff">27&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>, color, input, &lt;span style="color:#ae81ff">27&lt;/span>, &lt;span style="color:#ae81ff">0&lt;/span>);
+printf(&lt;span style="color:#e6db74">&amp;#34;%c[%d;%dmOutput: %s%c[%dm&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>, &lt;span style="color:#ae81ff">27&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>, color, output, &lt;span style="color:#ae81ff">27&lt;/span>, &lt;span style="color:#ae81ff">0&lt;/span>);
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+}
+&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">print_usage&lt;/span> ( &lt;span style="color:#66d9ef">void&lt;/span> ) {
+printf(&lt;span style="color:#e6db74">&amp;#34; --help or -h for help&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;span style="color:#e6db74">&amp;#34; --output or -o for output&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;span style="color:#e6db74">&amp;#34; --input or -i for input&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;span style="color:#e6db74">&amp;#34; --blue or -b for blue output&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;span style="color:#e6db74">&amp;#34; --red or -r for red output&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>);
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://blog.askin.ws/uploads/2009/07/clexmp.c">Örnek&lt;/a>&lt;/p></description></item><item><title>Pidgin Titreşim Eklentisi - Attention Button</title><link>https://blog.askin.ws/blog/pidgin-titresim-eklentisi-attention-button/</link><pubDate>Sun, 07 Jun 2009 21:20:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/pidgin-titresim-eklentisi-attention-button/</guid><description>&lt;p>&lt;img src="https://blog.askin.ws/uploads/2009/06/pidgin.png" alt="Pidgin" title="Pidgin">Pidginin en sevdiğim özelliklerinden bir tanesi, sohbet ettiğiniz kişi size tireşim gönderdiğinde ekrana sadece &lt;strong>&amp;quot;&amp;hellip; size uyarı gönderdi&amp;quot;&lt;/strong> yazması. Bu özelliğer sahip olmasının birde dezavantajı var tabiki, siz de başkalarına titreşim yollayamıyorsunuz. Bugün bu eksikliği fazlasıyla hissedince ufak çaplı bir araştırma yaptım ve &lt;a href="http://code.google.com/p/pidgin-attentionbutton/">Attention Button&lt;/a> eklentisiyle karşılaştım.&lt;br>
+Kurulumu çok basit. &lt;a href="http://code.google.com/p/pidgin-attentionbutton/downloads/list">Burdan&lt;/a> en güncel sürümünü indiriyorsunuz (şimdilik &lt;a href="http://pidgin-attentionbutton.googlecode.com/files/attentionbutton-0.3.tar.gz">0.3&lt;/a>), arşivden çıkartıp &lt;em>.so&lt;/em> uzantılı dosyayı ev dizininiz altında &lt;em>.purple/plugins/&lt;/em> dizinine kopyalıyorsunuz. Ardından pidgine gidip eklentiler(plugins) kısmından aktif ediyorsunuz.&lt;br>
+Konsoldan halletmek isterseniz:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ wget http://pidgin-attentionbutton.googlecode.com/files/attentionbutton-0.3.tar.gz
+$ tar -xvzf attentionbutton-0.3.tar.gz
+$ mkdir $HOME/.purple/plugins
+$ mv attentionbutton.so $HOME/.purple/plugins/
+$ rm attentionbutton-0.3.tar.gz attentionbutton.c
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Bu eklentinin birkaç güzel özelliğide var. Mesela karşı tarafa sınırsız sayıda titreşim yollayabilirsiniz. Ve karşı taraf çevrim dışı bile görünse titretebilirsiniz. Tabi aşırı kullanım sağlığa zararlı :)&lt;/p></description></item><item><title>Pardus - Atheros AR242x - WPA2</title><link>https://blog.askin.ws/blog/pardus-atheros-ar242x-wpa2/</link><pubDate>Tue, 02 Jun 2009 21:48:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/pardus-atheros-ar242x-wpa2/</guid><description>&lt;p>&lt;img src="https://blog.askin.ws/uploads/2009/06/wifi.jpeg" alt="Wi-Fi" title="Wi-Fi">Pardus 2008 kurulumla beraber Atheros AR242x kablosuz ağ kartını tanıyor, fakat nedense başka ağları görmesine rağmen evimde WPA2 ile kurulu kablosuz ağımı göremiyordu. Bende diğer dağıtımlarda kullandığım ndiswrapper ile sorunumu çözmeyi denedim.&lt;br>
+Öncelikle ndiswrapperı kurduktan sonra windows için yazılmış driverları seçmemiz gerekiyor. Ardından&lt;br>
+&lt;code>/etc/modules.autoload.d/kernel-2.6&lt;/code>&lt;br>
+dosyasına&lt;br>
+&lt;code>ndiswrapper&lt;/code>&lt;br>
+satırını ve&lt;br>
+&lt;code>/etc/modprobe.d/blacklist-compat&lt;/code>&lt;br>
+dosyasına da&lt;br>
+&lt;code>blacklist ath_pci&lt;/code>&lt;br>
+satırını eklemek gerekiyor. Bunları ekledikten sonra kde&amp;rsquo;de ağ programcığıyla bağlanabiliyorsunuz.&lt;br>
+Fakat XFCE kullanıyorsanız wicd kullanmanız gerekiyor. Wicd ile doğrudan kullanamıyoruz. Öncelikle birkaç ufak düzenleme yapmak gerekiyor.&lt;br>
+Wicd -&amp;gt; Tercihler yolunu takip ettikten sonra WPA Suplicant Sürücüsü: kısmına &lt;em>wext&lt;/em>, Kablosuz arabirim kısmına da &lt;em>wlan0&lt;/em> yazmak gerekiyor.&lt;br>
+Bu ayarlarla kolaylıkla kullanabilirsiniz, kolay gelsin.&lt;/p></description></item><item><title>Pardus 2009 yaz stajı ve ben:)</title><link>https://blog.askin.ws/blog/pardus-2009-yaz-staji-ve-ben/</link><pubDate>Sat, 09 May 2009 01:23:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/pardus-2009-yaz-staji-ve-ben/</guid><description>Bugün hayatımdaki en güzel günlerden biri. Pardus 2009 yaz stajı için kabul edilen 13 kişiden birisi oldum. Yazın staj yapmak için adam akıllı bi yer ararken Pardusa kabul edilmem çok muhteşem birşey. Yazın pardus ve özgür yazılım için elimden geleni yapacağım. Benimle beraber kabul edilen diğer arkadaşlara başarılar diliyorum.
+http://www.ozgurlukicin.com/haber/pardus09-yaz-staji-sonuclari/</description></item><item><title>Bir GNU/Linux kurulumunu başka bir harddiske/bölüme taşımak</title><link>https://blog.askin.ws/blog/bir-gnulinux-kurulumunu-baska-bir-harddiskebolume-tasimak/</link><pubDate>Mon, 06 Apr 2009 22:22:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/bir-gnulinux-kurulumunu-baska-bir-harddiskebolume-tasimak/</guid><description>&lt;p>&lt;img src="https://blog.askin.ws/uploads/2009/04/linux-tux.jpg" alt="GNU/Linux" title="GNU/Linux"> Öncelikle bir çalışan cd ile sistem açılır, benim tercihim gparted live cd. Sizin elinizin altında ne varsa kabuldur. İlla çalışan cd olmasına gerek yok, herhangi bir linux cdside olabilir. Bize mount, cp ve nano komutları lazım. Bunları sağlayan herhangi bir cd kullanılabilir.&lt;/p>
+&lt;p>Taşınacak kurulumun hangi disk bölümünde olduğu bilinmeli. Ben 2. bölümdeki kurulumu 1. bölüme taşıyacağım. Yani /dev/hdc3 den /dev/hdc1 e taşıma yapacağım(sizdeki disk isimleri muhtemelen farklıdır).&lt;/p>
+&lt;p>Cd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte. Ctrl + Alt + F1 tuş kombinasyonu muhtemelen iş görecektir. Ben live cd kullandığım için grafik ekranla karşılaştım, burdan bi terminal açarak işimi göreceğim.&lt;/p>
+&lt;p>Yapacağımız işlemler için root olmamız gerekiyor. Bu işlemi yapacak cesaretiniz varsa, nasıl root olunur bilginizde vardır diye düşünüyorum :)&lt;/p>
+&lt;p>Önce diskleri mount ediyoruz&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">mkdir /target /source
+mount /dev/hdc1 /target
+mount /dev/hdc3 -o ro /source
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Mount işleminden sonra kopyalamaya başlayabiliriz.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">cp -a /source/* /target
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Bu işlem kopyalanacak verinin boyutuna göre uzunca sürebilir.
+Kopyalama tamamlandıktan sonra yeni diskteki /etc/fstab dosyasını ve eski diskteki /boot/grub/menu.lst dosyalarını değiştirmemiz gerekiyor. fstab dosyasında &amp;ldquo;/&amp;rdquo; dizininin bağlanacağı yeni bölümü gösteriyoruz. menu.lst dosyasında ise yeni bölümün boot edilebilmesi için gerekli ayarları yapıyoruz.&lt;/p>
+&lt;p>Eğer eski bölümü silecek veya orayı başka amaç için kullanacaksanız mbr kaydını yenilemeniz gerekmektedir, yani grubu tekrar yeni disk için kurmalısınız.&lt;/p>
+&lt;pre>&lt;code>grub
+&amp;gt; root (hd0, 0)
+&amp;gt; setup (hd0)
+&lt;/code>&lt;/pre>
+&lt;p>Bende bu şekilde kuruldu, sizde bölüm numaralarına göre değişecektir kurulum.&lt;/p></description></item><item><title>Pardus-Linux.Org e-dergi bana süpriz yaptı...</title><link>https://blog.askin.ws/blog/pardus-linuxorg-e-dergi-bana-supriz-yapti/</link><pubDate>Wed, 11 Mar 2009 01:36:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/pardus-linuxorg-e-dergi-bana-supriz-yapti/</guid><description>&lt;p>&lt;img src="https://blog.askin.ws/uploads/2009/03/plo-logo.png" alt="Pardus-Linux.Org" title="Pardus-Linux.Org">Dergi son sayısında ki (Sayı 6) site tanıtımında benim bloguma yer verdi, kendilerine buradan çok teşekür ediyorum. Bu jestleri bana blog yazmada ve Özgür Yazılım çabalarımda güç verecek.&lt;/p>
+&lt;p>Derginin bu sayısını gerçekten beğendim, hele hele tamamen özgür yazılım araçlarıyla oluşturulması, arkasında hiçbir mali destek olmadan sadece topluluk katkısıyla ve güzel bir motivasyon ile düzenli olarak çıkması derginin gönlümde olan yerini iyice pekiştirdi.&lt;/p>
+&lt;p>Dergi kapağında &lt;strong>8 Mart Dünya Emekçi Kadınla Günü&lt;/strong> yazsaydı daha güzel ve anlamlı olurdu:) ama hatırlamak ve önem vermek çok daha önemli. Birde bu sayıda RMS ile olan röportajın devamını bekliyordum:)&lt;/p>
+&lt;p>Dergide emeği geçen herkese teşekür ediyorum&amp;hellip;&lt;/p>
+&lt;p>&lt;img src="https://blog.askin.ws/uploads/2009/03/plo-e-dergi-6-kapak.png" alt="Pardus-Linux.Org e-dergi" title="Pardus-Linux.Org e-dergi">&lt;/p>
+&lt;ul>
+&lt;li>C ile Programlama II&lt;/li>
+&lt;li>GNU/Linux Haberleri&lt;/li>
+&lt;li>GNU/Linux AntiVirüs Yazılımları&lt;/li>
+&lt;li>Torrent ve KTorrent&lt;/li>
+&lt;li>Pardus’ta Python 3.0&lt;/li>
+&lt;li>Happy Hacking : Pisi Search ‘te Küçük Değişiklikler&lt;/li>
+&lt;li>Python Modülü : optparse&lt;/li>
+&lt;li>Firefox Eklentileri&lt;/li>
+&lt;li>Qucs ile DC Analiz&lt;/li>
+&lt;li>Oyun İnceleme : Ri-Li&lt;/li>
+&lt;li>Web Sİte Tanıtımları&lt;/li>
+&lt;li>Pardusum&lt;/li>
+&lt;li>Doruk Fişek Röportajı&lt;/li>
+&lt;/ul>
+&lt;p>adres: &lt;a href="http://www.pardus-edergi.org/">http://www.pardus-edergi.org/&lt;/a>&lt;/p></description></item><item><title>Komut satırından resimleri pdf slaytına dönüştürme</title><link>https://blog.askin.ws/blog/komut-satirindan-resimleri-pdf-slaytina-donusturme/</link><pubDate>Fri, 27 Feb 2009 20:29:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/komut-satirindan-resimleri-pdf-slaytina-donusturme/</guid><description>Lanet dersimiz File System için hocamız pptx uzantılı bir dosya verince banada bunu bir şekilde pdf&amp;rsquo;e çevirmek düştü.
+Önce openoffice ile açmayı denedim, açıyordu fakat anlaşılır bir halde değildi. Bende alıp arkadaşımın bilgisayarına gittim, fakat onda da pdf&amp;rsquo;e dönüştüremiyordum. Dönüştürebildiğim formatlara bakarken .jpg&amp;rsquo;i gördüm. Nasılsa linuxta bu bi şekilde pdf&amp;rsquo;e dönüştürüm diyerek kendimden emin bi şekilde dönüşümü yapıp odama geçtim.
+2 buçuk dakikalık bir arama ile aradığımı buldum, ImageMagick bu işi yapabiliyormuş.
+convert *.jpg slayt.pdf komutu iş görüyor.
+Tam tersini yapmak isterseniz
+convert slayt.pdf resim.jpg
+Artıntılı bilgi için:
+man convert :)
+Bu sıralar inek moduna geçtiğim için ders maceralarım hakkında bol bol girdi yazacağım gibi:)</description></item><item><title>Linuxta kullandığım programlar - Güncellendi</title><link>https://blog.askin.ws/blog/linuxta-kullandigim-programlar-guncellendi/</link><pubDate>Sun, 15 Feb 2009 02:56:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/linuxta-kullandigim-programlar-guncellendi/</guid><description>&lt;p>Uzun zamandır canım sıkılıyor, yapacak bir iş bulamıyordum, can sıkıntısından eski yazılarımı kurcalarken kullandığım programların çoğunun değiştiğini farkettim, ve bu yazıyı güncellemeye karar verdim. Sıkıntıdan bir yarım saat çaldım:) mutlu sayılırım, umarım işinize yarar.&lt;/p>
+&lt;p>&lt;strong>Metin Düzenleyici: &lt;a href="http://www.xfce.org/projects/mousepad/">Mousepad&lt;/a>&lt;/strong>&lt;br>
+Uzun zaman gedit kullandım, hatta program yazarken bile gedit kullandım. Ancak yaptığım işlere bakarak, programın çok kastığını farkettim. Birde üstüne geany programının geditten hızlı açıldığı görünce başka arayışlara girdim, bu noktada mousepad beni tatmin etti. Bir xfce projesi olan mousepad gerçekten basit, sade ve hızlı.&lt;/p>
+&lt;p>&lt;strong>Müzik: &lt;a href="http://mpd.wikia.com/">MPD&lt;/a> &lt;a href="http://sonata.berlios.de/">Sonata&lt;/a>&lt;/strong>&lt;br>
+Müzik dinlerken kullandığım programın elimin altında dolaşmasını pek sevmem, gerçi birçok program kendini araç çubuğunda saklayabiliyor, ancak her bilgisayarı açtığımda yeniden müzik programını açmak pek hoşuma gitmiyor. MPD daha x açılmadan bana müziğimi sunmaya başlıyor. Gerçi okulda bilgisayarı açtığımda sıkıntı çıkabiliyor:)&lt;/p></description></item><item><title>Wordpress 2.7</title><link>https://blog.askin.ws/blog/wordpress-27/</link><pubDate>Thu, 11 Dec 2008 23:23:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/wordpress-27/</guid><description>Az önce wordpress&amp;rsquo;i güncelledim. 2.5&amp;rsquo;in arayüzü çok hoştu ama biraz kullanışsız gelmişti bana, şimdi çok hoş olmuş. Yazı yaz, yazı yaz diye bağırıyor sanki. Bende kırmıyor yazıyorum&amp;hellip;</description></item><item><title>Gentoo Karasuları</title><link>https://blog.askin.ws/blog/gentoo-karasulari/</link><pubDate>Fri, 05 Sep 2008 17:54:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/gentoo-karasulari/</guid><description>06-09-2008 saat 00:25 itibariyle gentooda temel sorunlarımı çözmüş bulunmaktayım. Bugünden itiberen bilgisayarın güç düğmesine bastıktan sonra açılacak olan sistem gentoo. Umarım bu birlikteliğim uzun sürer.
+Temel sorunlarım:
+Ses: Artık benim de bilgisayarım ses çıkartıyor:) Wifi: Artık benim de bilgisayarım kablosuz internete bağlanabiliyor:)</description></item><item><title>Firefox'ta ferahlık</title><link>https://blog.askin.ws/blog/firefoxta-ferahlik/</link><pubDate>Wed, 20 Aug 2008 08:36:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/firefoxta-ferahlik/</guid><description>Firefoxta araç çubuklarının çok yer kaplamasına sinir oluyorum, bu nedenle elimden geldiğince ekranı genişletmeye çalışıyorum.
+Yaklaşık 1 yıldır bookmark toolbar olmadan kullanıyorum, site adreslerini aklımda tutabildiğim için elimin altında bookmarklara ihtiyaç duymuyorum, gerektiğinde zaten birkaç tıkla yer imlerine ulaşabiliyorum. Bugünde adres çubuğunu, ileri - geri - yenile - durdur düğmeleriyle google arama kutusunu yukarı çıkartıp navigation toolbarı sildim, Tiny Menu adlı eklentiyi kurup menuleri tek bir başlık altında topladım, artık 4 çubukta yaptığım işi 2 çubukta yapıyorum, hatta tek sayfa açıksa ortalıkta sadece 1 çubuk oluyor :)</description></item><item><title>İlk .deb paketim</title><link>https://blog.askin.ws/blog/ilk-deb-paketim/</link><pubDate>Fri, 01 Aug 2008 22:10:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/ilk-deb-paketim/</guid><description>&lt;p>Sonunda ilk .deb paketimi yapmayı başardım:) aslında okadar zor bi iş değilmiş, biraz kaynak koddan derleme pratiği yapıp, üzerine birkaç döküman okuyunca çabubak oluyor.&lt;br>
+Bu şanslı pakatimiz &lt;a href="http://pcmanfm.sourceforge.net/">PCmanfm&lt;/a> oldu. Normalde depoda bulunuyor ama ben experimental sürümünü kullanıyorum. Uzun zamandır derleyerek kullanıyordum. Ama aklıma birden esti hadi şunun .deb paketini yapayım dedim ve yaptım.&lt;br>
+Bu sürümde ssh, samba yada ftp üzerinden bir makinaya bağlanıp oranın dizinlerini kullanabiliyoruz. Bir kere ayarını yaptığında artık kenarda hazır bekleyip senin bağlan demeni bekliyor. Gayet hoş ve kullanışlı tavsiye ederim.&lt;/p>
+&lt;ul>
+&lt;li>Proje sayfası: &lt;a href="http://pcmanfm.sourceforge.net/">http://pcmanfm.sourceforge.net/&lt;/a>&lt;/li>
+&lt;li>İndirmek için: &lt;a href="http://sourceforge.net/project/showfiles.php?group_id=156956">http://sourceforge.net/project/showfiles.php?group_id=156956&lt;/a>&lt;/li>
+&lt;li>El yapımı .deb paketim: &lt;a href="https://blog.askin.ws/packages/deb/pcmanfm_0.4.4.2-1_i386.deb">/packages/deb/pcmanfm_0.4.4.2-1_i386.deb&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Buda ekran görüntüsü, büyütmek için üzerine tıklayın:&lt;br>
+&lt;a href="https://blog.askin.ws/images/pcmanfm.png">&lt;img src="https://blog.askin.ws/images/pcmanfm.resized.png" alt="PCman File Manager">&lt;/a>&lt;/p></description></item><item><title>Moc kullanarak konsoldan müzik dinleme ve lastfm</title><link>https://blog.askin.ws/blog/moc-kullanarak-konsoldan-muzik-dinleme-ve-lastfm/</link><pubDate>Thu, 12 Jun 2008 16:25:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/moc-kullanarak-konsoldan-muzik-dinleme-ve-lastfm/</guid><description>&lt;p>&lt;a href="http://moc.daper.net/">Moc&lt;/a> player konsolda çalışan bir müzik çalıcı. Açılımı Music on Console. Mocun en çok sevdiğim özelliği x ortamı yeniden başlasa, kapansa, göçse bile hiç sorun çıkarmadan çalmaya devam ediyor. Yani depremde, selde ve yangında 7*24 hizmet:)&lt;br>
+&lt;strong>Kurulum&lt;/strong>&lt;br>
+* debian - ubuntu - vs.&lt;br>
+&lt;code>sudo apt-get install moc&lt;/code>&lt;/p>
+&lt;p>* pardus&lt;br>
+&lt;code>sudo pisi it moc&lt;/code>&lt;/p>
+&lt;p>Şimdi konsoldan&lt;br>
+&lt;code>mocp&lt;/code>&lt;br>
+komutunu verelim. Gerçekten renkli şık bi tasarımı var. Grafik ekranı hiç aratmıyor:). Eğer renkleri beğenmezseniz &lt;strong>[Shift] + [T]&lt;/strong> kombinasyonu ile farklı renkler seçebilirsiniz. Bunun bi kötü yanı var moc temayı bir sonraki açılışında hatırlamayacak. Hatırlaması için &lt;em>~/.moc/config&lt;/em> dosyasını oluşturup içeriğini düzenlemeniz gerekiyor. Ben düzenlemedim tam olarak nasıl yapılıyor bilmiyorum. Bunun için &lt;a href="http://dreamore.wordpress.com/2007/07/01/konsol-fantazyasi-3/">burayı&lt;/a> biraz zorlasanız fena olmaz.&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;p>Tamamdır olay çözüldü. &lt;a href="https://blog.askin.ws/uploads/2008/06/config.example">Burdan&lt;/a> benim config dosyamı indirebilirsiniz. Yapmanız gereken bu dosyayı &lt;em>~/.moc/&lt;/em> dizinine &lt;em>config&lt;/em> adı ile kaydetmek.&lt;br>
+Aşağıda config dosyasına bi satır daha eklemeniz gerekiyor. bu örnek dosyada o satır eklenmiş durumda. Eğer Bu örnek dosyadı kullanırsanız o adımı atlayabilirsiniz.&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;p>Şimdi gelelim moc ile dinlediğimiz parçaların last.fm&amp;rsquo;e gönderilmesine.&lt;br>
+Bunun için lastfmsubmitd adında bir program kullanacağız. Bu program deamon olarak çalışarak göndermesini istediğimiz bilgileri last.fm&amp;rsquo;e yollamayı kendine amaç edinmiş bir servis.&lt;/p>
+&lt;p>&lt;strong>Kurulum:&lt;/strong>:&lt;br>
+* debian - ubuntu - vs.&lt;br>
+&lt;code>sudo apt-get install lastfmsubmitd&lt;/code>&lt;/p>
+&lt;p>* pardus (varlığından emin değilim)&lt;br>
+&lt;code>sudo pisi it lastfmsubmitd&lt;/code>&lt;/p>
+&lt;p>kurulum sırasında sizden lastfmde kullandığınız kullanıcı adı ve şifresi isteniyor. Eğer bu sırada yanlış girdiyseniz &lt;em>/etc/lastfmsubmitd.conf&lt;/em> dosyasını düzenleyebilirsiniz. Kurulum sırasında &lt;em>lastfm&lt;/em> adında bir kullanıcı ve grup yaratılacak. Güvenlik açısından bu dosyanın sahibinin &lt;em>lastfm&lt;/em> olduğunu ve iznininde 0600 olduğuna emin olun. Yoksa herhangi birisi&lt;br>
+&lt;code>cat /etc/lastfmsubmitd.conf &lt;/code>&lt;br>
+komutu ile lastfm kullanıcı adınızı ve şifrenizi elegeçirebilir.&lt;/p>
+&lt;p>&lt;code>sudo addgroup kullanici_adi lastfm&lt;/code>&lt;br>
+komutu ile kullanıcı adınızı &lt;em>lastfm&lt;/em> grubuna ekleyin.&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;p>ubuntuda kullanıcı adının gruba eklenmesi için sistemi yeniden başlatmam gerekiyor. sanırım benim eksik yaptığım birşeyler var:( bu nedenle eğer last.fm e şarkıları yollayamıyorsanız sistemi yeniden başlatmayı deneyin(ama şimdi değil daha yapacaklarımız var).&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;p>Bir metin düzenleyici ile &lt;em>~/.moc/config&lt;/em> dosyasını açın ve içine&lt;/p>
+&lt;p>&lt;code>OnSongChange = &amp;quot;/usr/lib/lastfmsubmitd/lastfmsubmit --artist %a --title %t --length %d --album %b&amp;quot;&lt;/code>&lt;/p>
+&lt;p>satırını ekleyin.&lt;/p>
+&lt;p>&lt;strong>Lastfmsubmitd servisini başlatın.&lt;/strong>&lt;br>
+* debian - ubuntu - vs.&lt;br>
+&lt;code>sudo /etc/init.d/lastfmsubmitd start&lt;/code>&lt;/p>
+&lt;p>* pardus&lt;br>
+&lt;code>service lastfmsubmitd start&lt;/code>&lt;/p>
+&lt;p>Eğer sorunlarınız olursa yazıyı baştan birdaha okuyun. Hala sorunlarınız devam ediyorsa aşağıdaki kaynaklara bir göz atın, ve hala sorunları çözemediyseniz yorum yazın:)&lt;/p>
+&lt;p>&lt;strong>Kaynaklar&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="http://dreamore.wordpress.com/2007/07/01/konsol-fantazyasi-3/">Dreamore&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://devnulll.blogspot.com/2007/08/how-to-submit-songs-to-lastfm-whilst_03.html">/home/plb&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://wiki.linux-sevenler.org/index.php/Mpd">Lapis Wiki&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Linux - Bir dizin yada dosyanın hangi uygulama tarafından kullanıldığını öğrenme</title><link>https://blog.askin.ws/blog/linux-bir-dizin-yada-dosyanin-hangi-uygulama-tarafindan-kullanildigini-ogrenme/</link><pubDate>Sat, 24 May 2008 13:30:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/linux-bir-dizin-yada-dosyanin-hangi-uygulama-tarafindan-kullanildigini-ogrenme/</guid><description>Bazen bir dosyayı silmeye çalıştığımızda yada bir diski ayırmaya çalıştığımızda, dosyanın meşgul olduğunu belirten bir uyarı çıkar ve işimizi yapmamızı engeller. Bu gibi durumlarda
+fuser -m -u /dosya-dizin
+komutunu kullanarak hangi sürecin (process) bize engel olduğunu öğreniriz.
+-u paramatresi sürecin sahibini gösterir.
+kill
+komutunu kullanarak süreci sonlandırıp işimizi tamamlayabiliriz, yada
+ps auxw
+komutunu kullanarak sürecin hangi uygulamaya ait olduğunuz öğrenebiliriz.
+kaynak: linux focus</description></item><item><title>Linuxda kullandığım programlar</title><link>https://blog.askin.ws/blog/linuxda-kullandigim-programlar/</link><pubDate>Thu, 15 May 2008 14:20:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/linuxda-kullandigim-programlar/</guid><description>&lt;p>&lt;strong>Metin Düzenleyici: &lt;a href="http://www.gedit.org">Gedit&lt;/a>&lt;/strong>&lt;br>
+Linuxda düz metinlerle uğraşırken genelde gedit kullanıyorum. Hatta çoğu zaman program yazarken gedit kullanıyorum. Kodları renklendirebilmesi sayesinde ne yazdığımı sorun yaşamadan anlıyorum. Ayırıca eklentilerden Embeded terminal(tümleşik terminal)i kullanarak terminal açmaya gerek duymadan kodlarımı derleyebiliyorum.&lt;/p>
+&lt;p>&lt;strong>Müzik: &lt;a href="http://www.gnome.org/projects/rhythmbox">Rhythmbox&lt;/a>&lt;/strong>&lt;br>
+Müzik dinlerken kullandığım programın elime ayağıma dolaşmasını pek sevmem, ve gerektiği zamanda hemen ulaşabilmek isterim. Rhythmbox araç çubuğuna yerleşebildiği için hem elime dolaşmıyor hemde istediğimde hemen ulaşabiliyrum. Lastfm ekletsi ile lastfm&amp;rsquo;in niğmetlerinden yararlanabiliyorum,&lt;/p></description></item><item><title>Rhythmbox m4a - mp4 faad</title><link>https://blog.askin.ws/blog/rhythmbox-m4a-mp4-faad/</link><pubDate>Tue, 13 May 2008 14:07:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/rhythmbox-m4a-mp4-faad/</guid><description>Bügün m4a uzantılı mp4 dosyalarını rhythmboxda çalma listesine eklemeye çalışırken, rhythmbox bana hiç bir tepki vermiyordu. Aynı dosyayı totem ile sorunsuz açabiliyordum. Biraz araştırınca rhythmboxın faad adlı eklentiye(aslında konsoldan çalışan bir nevi medya oynatıcı) ihtiyaç duyduğunu öğrendim.
+Eğer debian temelli bir dağıtım kullanıyorsanız aşağıdaki komut işinizi görecektir.
+aptitude install faad</description></item><item><title>SSH Filesystem ile uzak makinadaki dizini yerele bağlamak</title><link>https://blog.askin.ws/blog/ssh-filesystem-ile-uzak-makinadaki-dizini-yerele-baglamak/</link><pubDate>Wed, 07 May 2008 10:36:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/ssh-filesystem-ile-uzak-makinadaki-dizini-yerele-baglamak/</guid><description>&lt;p>Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz.
+Ben daha önce bahsettiğim &lt;a href="http://blog.yollu.com/2008/02/21/telekom-artik-kork-benden/">internet canavarı:)&lt;/a> için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu.
+Kullanacağımız programın adı sshfs yani SSH Filesystem.
+Kurulum:&lt;/p>
+&lt;ul>
+&lt;li>Debian &amp;amp;&amp;amp; Ubuntu &amp;amp;&amp;amp; vb.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">aptitude install sshfs
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Kaynak koddan derleme&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">./configure
+make
+make install &lt;span style="color:#75715e"># root yetkileriyle&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Kullanımı - Uzak makinadaki bir dizini bağlamak
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sshfs hostname:dizin bağlamanoktası &lt;span style="color:#f92672">(&lt;/span>root yetkileriyle&lt;span style="color:#f92672">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>Umount - Bağı koparma
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">umount bağlamanoktası
+&lt;span style="color:#75715e"># ya da&lt;/span>
+fusermount -u bağlamanoktası
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;p>Bu şekide kullanırsanız bağladığınız dizine ancak root yetkileriyle ulaşabilirsiniz. Her kullanıcının tüm haklarla(hangi kullanıcı ile ssh bağlantısı gerçekleştirdiyseniz onun haklarına sahip oluyosunuz) bağladığınız dizini kulanabilmesini istiyorsanız&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sshfs -o allow_other hostname:dizin bağlamanoktası
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Parametreler&lt;/strong>
+-o parametresini kullanarak uid ve gid değerlerini ayarlayabilirsiniz.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">-o idmap&lt;span style="color:#f92672">=&lt;/span>user
+-o uid&lt;span style="color:#f92672">=&lt;/span>&amp;lt;uid&amp;gt;
+-o gid&lt;span style="color:#f92672">=&lt;/span>&amp;lt;gid&amp;gt;
+-o ro &lt;span style="color:#75715e"># read only - salt okunur mod&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>fstab dosyasını kullanarak mount etme&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>sshfs#USERNAME@REMOTE_HOST:REMOTE_PATH MOUNT_POINT fuse SSHFS_OPTIONS 0 0
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>örnek&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>sshfs#guest@guest.login.com:data /mnt/guest fuse uid=1003,gid=100,umask=0,allow_other 0 0
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>&lt;strong>Proje sayfası&lt;/strong> :&lt;a href="%20http://fuse.sourceforge.net/sshfs.html">http://fuse.sourceforge.net/sshfs.html&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Wiki sayfası&lt;/strong> :&lt;a href="http://fuse.sourceforge.net/sshfs.html">http://fuse.sourceforge.net/sshfs.html&lt;/a>. Wiki sayfasını kulanarak birçok bilgiye ulaşabilirsiniz..&lt;/li>
+&lt;/ul></description></item><item><title>Çıkmaz demeyin şansınızı deneyin - 2</title><link>https://blog.askin.ws/blog/cikmaz-demeyin-sansinizi-deneyin-2/</link><pubDate>Thu, 17 Apr 2008 12:27:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/cikmaz-demeyin-sansinizi-deneyin-2/</guid><description>&lt;p>&lt;a href="http://blog.yollu.com/2008/01/22/cikmaz-demeyin-sansinizi-deneyin/">Buradaki&lt;/a> yazımdan esinlenip yazdım bunu. Azıcık java öğrendim artık uygulama yapma zamanıdır. Eminim daha güzel (hatta belki benim ki iğrenç bi koddur(:) yazılabilir. Ama şimdilik bunu yapabiliyorum.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Sayisal&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span>&lt;span style="color:#f92672">[]&lt;/span> _kupon &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span>&lt;span style="color:#f92672">[&lt;/span>6&lt;span style="color:#f92672">];&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> _num&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#a6e22e">Sayisal&lt;/span>&lt;span style="color:#f92672">(){&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> sira &lt;span style="color:#f92672">=&lt;/span> 0&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">while&lt;/span> &lt;span style="color:#f92672">(&lt;/span>sira &lt;span style="color:#f92672">&amp;lt;&lt;/span> 6&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+_num &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">int&lt;/span>&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">(&lt;/span>1 &lt;span style="color:#f92672">+&lt;/span> Math&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">random&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">*&lt;/span> 49&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">(!&lt;/span>varmi&lt;span style="color:#f92672">(&lt;/span>_kupon&lt;span style="color:#f92672">,&lt;/span> _num&lt;span style="color:#f92672">))&lt;/span>
+_kupon&lt;span style="color:#f92672">[&lt;/span>sira&lt;span style="color:#f92672">++]&lt;/span> &lt;span style="color:#f92672">=&lt;/span> _num&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">boolean&lt;/span> &lt;span style="color:#a6e22e">varmi&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">int&lt;/span>&lt;span style="color:#f92672">[]&lt;/span> kupon&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> num&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">for&lt;/span> &lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">int&lt;/span> x&lt;span style="color:#f92672">:&lt;/span> kupon&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">(&lt;/span>x &lt;span style="color:#f92672">==&lt;/span> num&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>&lt;span style="color:#f92672">;}&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">false&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> String &lt;span style="color:#a6e22e">toString&lt;/span>&lt;span style="color:#f92672">(){&lt;/span>
+String kuponStr &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">for&lt;/span> &lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">int&lt;/span> i &lt;span style="color:#f92672">=&lt;/span> 0&lt;span style="color:#f92672">;&lt;/span> i &lt;span style="color:#f92672">&amp;lt;&lt;/span> 6&lt;span style="color:#f92672">;&lt;/span> i&lt;span style="color:#f92672">++)&lt;/span> kuponStr &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#f92672">(&lt;/span>_kupon&lt;span style="color:#f92672">[&lt;/span>i&lt;span style="color:#f92672">]&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#e6db74">&amp;#34; &amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> kuponStr&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>&lt;span style="color:#f92672">(&lt;/span>String&lt;span style="color:#f92672">[]&lt;/span> args&lt;span style="color:#f92672">){&lt;/span>
+&lt;span style="color:#66d9ef">byte&lt;/span> kuponSayisi&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">(&lt;/span>args&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">length&lt;/span> &lt;span style="color:#f92672">==&lt;/span> 0&lt;span style="color:#f92672">)&lt;/span> kuponSayisi &lt;span style="color:#f92672">=&lt;/span> 1&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">else&lt;/span> kuponSayisi &lt;span style="color:#f92672">=&lt;/span> Byte&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">parseByte&lt;/span>&lt;span style="color:#f92672">(&lt;/span>args&lt;span style="color:#f92672">[&lt;/span>0&lt;span style="color:#f92672">]);&lt;/span>
+&lt;span style="color:#66d9ef">for&lt;/span> &lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">int&lt;/span> i &lt;span style="color:#f92672">=&lt;/span> 1&lt;span style="color:#f92672">;&lt;/span> i &lt;span style="color:#f92672">&amp;lt;=&lt;/span> kuponSayisi&lt;span style="color:#f92672">;&lt;/span> i&lt;span style="color:#f92672">++){&lt;/span>
+System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">print&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34; &amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> i &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#e6db74">&amp;#34;.kupon: &amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">((&lt;/span>&lt;span style="color:#66d9ef">new&lt;/span> Sayisal&lt;span style="color:#f92672">()).&lt;/span>&lt;span style="color:#a6e22e">toString&lt;/span>&lt;span style="color:#f92672">());&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>java Sayisal&lt;/code>&lt;br>
+şeklinde girerseniz tek kolon oynayacaktır. eğer&lt;br>
+&lt;code>java Sayisal 4 &lt;/code>&lt;br>
+derseniz 4 kolon oynayacaktır.&lt;br>
+&lt;a href="https://blog.askin.ws/uploads/2008/04/Sayisal.java">Sayısal Kaynak kodları.&lt;/a>&lt;br>
+&lt;a href="https://blog.askin.ws/uploads/2008/04/Sayisal.class">Sayısal derlenmiş hali.&lt;/a>&lt;/p></description></item><item><title>Güzel bir java dökümanı</title><link>https://blog.askin.ws/blog/guzel-bir-java-dokumani/</link><pubDate>Tue, 15 Apr 2008 19:44:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/guzel-bir-java-dokumani/</guid><description>Bugun harıl harıl güzel bir java dökümanı arıyordum. Karşıma http://www.godoro.com çıktı. İçinde gayet güzel bilgiler bulunuyor.Şuraya da güzel bir java kitabı koymuşlar. Giriş için gayet hoş bir kitap olmuş, yeterince açıklayıcı ve bol örnekleri de koymayı unutmamışlar. Arkadaşlara yaptıklarından dolayı teşekür ediyorum. Kitabı çevrim dışı kullanmak isterseniz buradan indirip kullanabilirsiniz.</description></item><item><title>Yine Yasak - Proxy nedir? Nasıl ayarlanır.</title><link>https://blog.askin.ws/blog/yine-yasak-proxy-nedir-nasil-ayarlanir/</link><pubDate>Fri, 25 Jan 2008 17:43:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/yine-yasak-proxy-nedir-nasil-ayarlanir/</guid><description>&lt;p>Youtube son haberlere göre arka arkaya 3. kez kapatılacak. Şuan girebiliyorum sorun yok. Ama yakında bişiler olacak:) Geçen kapandığında DNS adresini değiştirmemiz de işe yaramamıştı. Şimdi yapacağımız şey ise proxy kullanmak olacak. Gerçi proxy kullanmak sakat bi yöntem, bütün trafiğimiz başka bir bilgisayar üzerinden geçeceği için verilerimizin dinlenme ihtimali var. Bu nedenle proxy kullanırken dikkatli olmakta fayda var.&lt;/p>
+&lt;p>Proxy olayında biz isteklerimizi bir vekil sunucuya iletiyoruz. Sunucuda bizim yerimize ilgili sitenin içeriğini alıyor ve bize sunuyor. Kabaca bu şekilde tanımlayabiliriz.&lt;/p></description></item><item><title>Bir dönem daha bitti</title><link>https://blog.askin.ws/blog/bir-donem-daha-bitti/</link><pubDate>Fri, 25 Jan 2008 09:18:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/bir-donem-daha-bitti/</guid><description>Sonunda bir dönem daha bitti. Yav aslında çokta olmadı başlayalı. Neyse ikinci döneme bomba gibi başlamak dileğiyle bu dönemi bitirelim.</description></item><item><title>Çıkmaz Demeyin Şansınızı Deneyin</title><link>https://blog.askin.ws/blog/cikmaz-demeyin-sansinizi-deneyin/</link><pubDate>Tue, 22 Jan 2008 17:29:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/cikmaz-demeyin-sansinizi-deneyin/</guid><description>&lt;p>Bu girdi &lt;a href="http://tutkudalmaz.org/gunluk/?p=21">Burdaki&lt;/a> girdiden esinlenilerek yazıldı.&lt;/p>
+&lt;p>E madem pyton ile sayısal kuponu yapılıyor biz niye scheme ile yapmayalım bunu demi:)&lt;br>
+Probleme göre kod bana çok uzun geldi. Belki ilerde optimize edebilirim. Ama şimdilik böyle oynayalım demi:)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scheme" data-lang="scheme">(&lt;span style="color:#66d9ef">define &lt;/span>(&lt;span style="color:#a6e22e">sayisal&lt;/span>)
+(display &lt;span style="color:#e6db74">&amp;#34;Oynamak istediginiz kolan sayisini giriniz: \n&amp;#34;&lt;/span>)
+(&lt;span style="color:#66d9ef">let &lt;/span>((&lt;span style="color:#a6e22e">kolon&lt;/span> (&lt;span style="color:#a6e22e">read&lt;/span>)))
+(&lt;span style="color:#66d9ef">do &lt;/span>((&lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> (+ i &lt;span style="color:#ae81ff">1&lt;/span>))) ((&amp;gt; i kolon))
+(&lt;span style="color:#66d9ef">let &lt;/span>loop ((&lt;span style="color:#a6e22e">lst&lt;/span> (list (+ (&lt;span style="color:#a6e22e">random&lt;/span> &lt;span style="color:#ae81ff">49&lt;/span>) &lt;span style="color:#ae81ff">1&lt;/span>)))
+(&lt;span style="color:#a6e22e">sayi&lt;/span> (+ &lt;span style="color:#ae81ff">1&lt;/span> (&lt;span style="color:#a6e22e">random&lt;/span> &lt;span style="color:#ae81ff">49&lt;/span>))))
+(&lt;span style="color:#66d9ef">if &lt;/span>(= (length lst) &lt;span style="color:#ae81ff">6&lt;/span>)
+(&lt;span style="color:#a6e22e">printf&lt;/span> &lt;span style="color:#e6db74">&amp;#34;~a. kolon: ~a\n&amp;#34;&lt;/span> i (&lt;span style="color:#a6e22e">sort&lt;/span> lst &amp;lt; ))
+(&lt;span style="color:#66d9ef">if &lt;/span>(member sayi lst)
+(&lt;span style="color:#a6e22e">loop&lt;/span> lst (+ (&lt;span style="color:#a6e22e">random&lt;/span> &lt;span style="color:#ae81ff">49&lt;/span>) &lt;span style="color:#ae81ff">1&lt;/span>))
+(&lt;span style="color:#a6e22e">loop&lt;/span> (append lst (list sayi))
+(+ (&lt;span style="color:#a6e22e">random&lt;/span> &lt;span style="color:#ae81ff">49&lt;/span>) &lt;span style="color:#ae81ff">1&lt;/span>))))))))
+(&lt;span style="color:#a6e22e">sayisal&lt;/span>)&lt;span style="color:#75715e">;burası kodun çalıştırılması için. &lt;/span>
+&lt;span style="color:#75715e">;aslında define kısmı çıkartılarak buna gerek kalmamayabilir&lt;/span>
+&lt;span style="color:#75715e">;ama ilerde belki başka birşey içinde kullanırım:)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Yazık bu windowsçulara - Win32/IRCBot.AAL</title><link>https://blog.askin.ws/blog/yazik-bu-windowsculara-win32ircbotaal/</link><pubDate>Tue, 22 Jan 2008 10:10:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/yazik-bu-windowsculara-win32ircbotaal/</guid><description>&lt;p>Bu günlerde bi msn virüsü yayılmaya başladı. Msn üzerinden kişilere bu senin resmin mi?, oh sen çıplak gibisinden mesajlar ve bir adet link (&lt;a href="http://members.lycos.co.uk/facebookphotos/?msn">http://members.lycos.co.uk/facebookphotos/?msn&lt;/a>_adresiniz gibisinden) yolluyor. eğer bu linke tıklarsanız size resim dosyası görünümünde bir virüs yolluyor. Sizde buna tıklayınca olan oluyor:) Artık sizin kişi listenizdeki kişilere bu mesajlar gidiyor ve onlara da olan oluyor. Geçen gün bu virüsü bir bilgisayardan temizledim. Belki işinize yarar diye yazıyorum buraya.&lt;/p>
+&lt;ol>
+&lt;li>&lt;a href="https://blog.askin.ws/uploads/2008/01/temizle.zip" title="Yazık bu windowsçulara - Win32/IRCBot.AAL">Bu linkteki&lt;/a> dosyayı indirin. Sıkıştırılmış dosyadan çıkartın.&lt;/li>
+&lt;li>&lt;strong>omg-fix10-en.reg&lt;/strong> dosyasına çift tıklayıp yada sağ tıklayıp birleştir deyin. Ardından bilgisayarı yeniden başlatın.&lt;/li>
+&lt;li>&lt;strong>omg-delete10-en.bat&lt;/strong> dosyasını çalıştırın. Garanti olsun diye bilgisayarı yeniden başlatın.&lt;/li>
+&lt;li>Şimdi msni kaldırıp bide sağlam bi programla (bu virüs için Nod32 tavsiye ediliyor) virüs taraması yapın.&lt;/li>
+&lt;li>Geçmiş olsun&lt;/li>
+&lt;/ol></description></item><item><title>Yasaklı sitelere girme - Open DNS</title><link>https://blog.askin.ws/blog/yasakli-sitelere-gitme-open-dns/</link><pubDate>Fri, 18 Jan 2008 18:52:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/yasakli-sitelere-gitme-open-dns/</guid><description>&lt;p>Yasaklı sitelere girebilmek için çok çeşitli yöntemler kullanabilirsiniz. Ben çok sıklıkla &lt;a href="http://www.gizlen.net" title="İzlenme Gizlen">www.gizlen.net&lt;/a>&amp;lsquo;i kullanabilirsiniz. Bu siteye giriyorsunuz ve sayfanın üstündeki kutucuğa gireceğiniz siteyi yazıyorsunuz, oda size gireceğiniz siteyi sunuyor. Eğer daha kalıcı bir çözüm istiyorsanız proxy(vekil sunucu) kullanabilirsiniz. İnternetten ufak bir arama ile onlarca proxy adresine sahip olabilirsiniz. Ancak birçok kişi tarafınfan kullanılan ve tavsiye edilen &lt;a href="http://www.opendns.com/" title="Open DNS sitesine gitmek için tıklayın: ">Open DNS&lt;/a> işinizi çok rahatlıkla görebilir. Gerçi Open DNS bir proxy değil. O bir Name Server. Bizim &lt;a href="http://www.bobrektasi.org">www.bobrektasi.org&lt;/a> gibi girmeye çalıştığımız sitelerin ip adreslerini çözümleyip bizi doğru makineye yönlendiriyor. Bu bu yönlenme işini Open DNS üzerinden yaptığımız için TTnet&amp;rsquo;in bizim girdiğimiz sitelere müdahale etme şansı kalmıyor.&lt;br>
+Adresi: &lt;a href="http://www.opendns.com/">http://www.opendns.com/&lt;/a>&lt;br>
+&lt;a href="https://www.opendns.com/start">https://www.opendns.com/start&lt;/a> Bu adresten ayarların nasıl yapıldığını öğrenebilirsiniz.&lt;/p>
+&lt;p>Ubuntu için ayarlar:&lt;br>
+İlk önce Networ Admin Proramını açıyoruz:&lt;/p>
+&lt;ul>
+&lt;li>Sistem -&amp;gt;Yönetim -&amp;gt; Ağ yolunu takip ederekte çabilirsiniz.&lt;/li>
+&lt;li>[Alt + F2] yapıp &lt;em>gksu network-admin&lt;/em> yazarakta açabilirsiniz.&lt;/li>
+&lt;li>konsoldan &lt;code>$ sudo network-admin&lt;/code> komutunu vererekte açabilirsiniz.&lt;/li>
+&lt;/ul>
+&lt;p>Burda DNS sekmesi altına&lt;br>
+&lt;code>208.67.222.222 208.67.220.220&lt;/code> iplerini ekliyorsunuz.&lt;/p>
+&lt;p>Ardından konsolda&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo cp /etc/resolv.conf /etc/resolv.conf.auto
+sudo gedit /etc/dhcp3/dhclient.conf
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>komutlarını giriyorsunuz.&lt;br>
+Karşınıza çıkan editöre&lt;br>
+&lt;code># append the following line to the document prepend domain-name-servers 208.67.222.222,208.67.220.220; # save and exit&lt;/code>&lt;br>
+satırlarını ekliyorsunuz. ve&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ sudo ifdown eth0 &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> sudo ifup eth0
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>komutunu veriyorsunuz. Eğer bu komutlarda bi hata verirse, ya da dns değişmemişse bilgisayarı açıp kapatın artık özgürsünüz.Şimdi &lt;a href="http://www.youtube.com,">www.youtube.com&lt;/a>&amp;lsquo;a girerek deneyebilirsiniz çalışıyormu diye:)&lt;/p></description></item><item><title>DrScheme v372 Çıktı</title><link>https://blog.askin.ws/blog/drscheme-v372-cikti/</link><pubDate>Sat, 29 Dec 2007 13:40:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/drscheme-v372-cikti/</guid><description>DrScheme v372 çıktı. Bu versiyonunda birçok hatanın düzeltildiği ve birkaç yeni özellik eklendiği belirtiliyor. Sanırım beni ençok etkileyen özellik kod tamamlama özelliği. Siz bir kod yazarken o size ekleyebileceğiniz konutları sıralıyor. Ancak bu özellik çok kullanışlı bir halde gelmiyor. Tamamlama istediğimiz zaman [ Ctrl / ] tuş kombinasyonunu kullanmamız gerekmekte. Bende [ Ctrl Shift 7 ] kombinasyonunun kullanılması gerekiyor.
+Ayrıca burdan indirebilirsiniz.</description></item><item><title>Alın size bir güzel kod:)</title><link>https://blog.askin.ws/blog/alin-size-bir-guzel-kod/</link><pubDate>Fri, 28 Dec 2007 16:29:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/alin-size-bir-guzel-kod/</guid><description>Alın size bir güzel kod:) Benim hoşuma gitti eminim sizin hoşunuzada gidecek.
+(define (goster str) (let loop ((str str)) (if (equal? str &amp;#34;&amp;#34;) (begin (sleep 0) (display &amp;#34;&amp;#34;)) (begin (sleep 1/2) (display (string-ref str 0)) (loop (substring str 1))))))</description></item><item><title>Project Euler - Problem sitesi:)</title><link>https://blog.askin.ws/blog/project-euler-problem-sitesi/</link><pubDate>Thu, 27 Dec 2007 10:32:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/project-euler-problem-sitesi/</guid><description>Project Euler adlı bir site ile karşılaştım. Bu sitede yaklaşık 170 adet problem var ve bu problemleri sizden çözmeniz bekleniyor. Aralarında 14163 kez çözülmüş olanıda var 116kez çözülenide. İstediğiniz bir dilde çözüp çözümlerinizi yayınlayabiliyorsunuz. Kolay gelsin.
+Adres: http://www.projecteuler.net/</description></item><item><title>Scheme ile ekrana içi boş dikdörtgen bastırmak</title><link>https://blog.askin.ws/blog/scheme-ile-ekrana-ici-bos-kare-bastirmak/</link><pubDate>Thu, 20 Dec 2007 09:13:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/scheme-ile-ekrana-ici-bos-kare-bastirmak/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scheme" data-lang="scheme">(&lt;span style="color:#66d9ef">define &lt;/span>(&lt;span style="color:#a6e22e">kare&lt;/span> x y)
+(&lt;span style="color:#66d9ef">do &lt;/span>((&lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> (+ i &lt;span style="color:#ae81ff">1&lt;/span>))) ((= i x))
+(&lt;span style="color:#a6e22e">newline&lt;/span>)
+(&lt;span style="color:#66d9ef">do &lt;/span>((&lt;span style="color:#a6e22e">j&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> (+ j &lt;span style="color:#ae81ff">1&lt;/span>))) ((= j y))
+(&lt;span style="color:#66d9ef">if &lt;/span>(&lt;span style="color:#66d9ef">or &lt;/span>(= i &lt;span style="color:#ae81ff">0&lt;/span>) (= i (- x &lt;span style="color:#ae81ff">1&lt;/span>)))
+(display &lt;span style="color:#e6db74">&amp;#34;*&amp;#34;&lt;/span>)
+(&lt;span style="color:#66d9ef">if &lt;/span>(&lt;span style="color:#66d9ef">or &lt;/span>(= j &lt;span style="color:#ae81ff">0&lt;/span>) (= j (- y &lt;span style="color:#ae81ff">1&lt;/span>)))
+(display &lt;span style="color:#e6db74">&amp;#34;*&amp;#34;&lt;/span>)
+(display &lt;span style="color:#e6db74">&amp;#34; &amp;#34;&lt;/span>))))))
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>bu kod aşağıdaki gibi bir şekil oluşruracak&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scheme" data-lang="scheme">**********
+* *
+* *
+* *
+* *
+* *
+* *
+* *
+* *
+**********
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Ancak bu şekil pek hoş değil. Eğer display&amp;rsquo;in içini biraz düzenlersek çok dahahoş şekilerle karşılaşırız.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scheme" data-lang="scheme">(&lt;span style="color:#66d9ef">define &lt;/span>(&lt;span style="color:#a6e22e">kare&lt;/span> x y)
+(&lt;span style="color:#66d9ef">do &lt;/span>((&lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> (+ i &lt;span style="color:#ae81ff">1&lt;/span>))) ((= i x))
+(&lt;span style="color:#a6e22e">newline&lt;/span>)
+(&lt;span style="color:#66d9ef">do &lt;/span>((&lt;span style="color:#a6e22e">j&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> (+ j &lt;span style="color:#ae81ff">1&lt;/span>))) ((= j y))
+(&lt;span style="color:#66d9ef">if &lt;/span>(&lt;span style="color:#66d9ef">or &lt;/span>(= i &lt;span style="color:#ae81ff">0&lt;/span>) (= i (- x &lt;span style="color:#ae81ff">1&lt;/span>)))
+(display &lt;span style="color:#e6db74">&amp;#34;* &amp;#34;&lt;/span>)
+(&lt;span style="color:#66d9ef">if &lt;/span>(&lt;span style="color:#66d9ef">or &lt;/span>(= j &lt;span style="color:#ae81ff">0&lt;/span>) (= j (- y &lt;span style="color:#ae81ff">1&lt;/span>)))
+(display &lt;span style="color:#e6db74">&amp;#34;* &amp;#34;&lt;/span>)
+(display &lt;span style="color:#e6db74">&amp;#34; &amp;#34;&lt;/span>))))))
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Bu kod&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scheme" data-lang="scheme">* * * * * * * * * *
+* *
+* *
+* *
+* *
+* *
+* *
+* *
+* *
+* * * * * * * * * *
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>şeklini oluşturacaktır. Tabiki etkileşim penceresinde şekil daha düzgün çıkacaktır.&lt;/p></description></item><item><title>Tanrı Kent</title><link>https://blog.askin.ws/blog/tanri-kent/</link><pubDate>Thu, 20 Dec 2007 07:23:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/tanri-kent/</guid><description>&lt;p>Tanrıkent tv8 23.15 20/12/2007&lt;/p>
+&lt;p>&lt;img src="https://blog.askin.ws/uploads/2007/12/tanri_kent.jpg" alt="Tanrı Kent">&lt;/p>
+&lt;blockquote>
+&lt;p>Film, Rio de Janeiro’nun gecekondu mahallelerinde geçiyor ve şehre hakim olan çetelerin arasında büyüyen ve acımasız uyuşturucu pazarında kendilerine bir yer kapmaya, daha da önemlisi hayatta kalmaya çalışan küçük çocukların yaşamını anlatıyor. Tanrıkent, 1960’larda, sefil koşullarda yaşayan halkı ev sahibi yapmak için başlatılan bir toplu konut bölgesine verilen isimdir. Film, 1980’lerde Rio de Janeiro’nun en tehlikeli mahallelerinden biri haline gelen Tanrıkent’te yaşayan ve yolları defalarca keşişen insanların yıllar boyunca süren hikayelerini anlatır. Yoksulluğun yaşam tarzı olduğu, uyuşturucu, açgözlülük ve şiddetin sokakları kapladığı bir yerdir burası. Bol ödüllü, etkileyici bir film.&lt;/p>
+&lt;/blockquote>
+&lt;p>Kesinlikle izlemenizi tavsiye edeceğim bir film.&lt;/p></description></item><item><title>Bubble sort algoritması ve scheme çözümü</title><link>https://blog.askin.ws/blog/bubble-sort-algoritmasi-ve-scheme-cozumu/</link><pubDate>Mon, 17 Dec 2007 15:11:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/bubble-sort-algoritmasi-ve-scheme-cozumu/</guid><description>&lt;p>Bubble sort algoritması kabaca: verilen dizideki elemanları ikili olarak karşılaştırıp gerekli olduğunda yerlerini değiştirmek esasına dayanır. Elimizde 11 5 8 4 6 84 7 sayılarında oluşan bir dizi olduğunu var sayalım ve bu diziyi küçükten büyüğe sıralamak isteyelim.&lt;/p>
+&lt;ol>
+&lt;li>önce 11 ile 5i karşılaştırırız, 11 5&amp;rsquo;ten büyük olduğu için 11 ile 5in yerini değiştiririz; 5 11 8 4 6 84 7&lt;/li>
+&lt;li>sonra 11 ile 8i karşılaştırırız ve 11 ile 8&amp;rsquo;in yerini değiştiririz 5 8 11 4 6 84 7&lt;/li>
+&lt;li>11 ile 4; 5 8 4 11 6 84 7&lt;/li>
+&lt;li>11 ile 6; 5 8 4 6 11 84 7&lt;/li>
+&lt;li>11 ile 84; 84 büyük olduğu için sıralamaya dokunmayız. 5 8 4 6 11 84 7&lt;/li>
+&lt;li>şimdi 84 ile 7&amp;rsquo;yi karşılaştırırız; 5 8 4 6 11 7 84&lt;/li>
+&lt;/ol>
+&lt;p>Son durumda 7 elemanlı bir dizi için 6 kontrol yaptık ve en büyük elemanı sona attık. Şimdiki karşılaştırmalarımızda artık son elamanı yok sayabiliriz. Yani problemimiz artık 6 elemanlı bir diziyi sıralamak oldu. Aynı işlemleri 6 eleman varsayarak yaptığımızda sırasıyla problem 5, 4, 3, 2 ve 1 elemanlı dizileri sıralamaya dönüşecek. 1 elemanlı dizi herzaman sıralı olduğu için hiç bi derdimiz sıkıntımızda kalmayacak:) Bu şekilde işlemleride 6 defa yaptık.&lt;br>
+Şimdi sıra geldi koda&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scheme" data-lang="scheme">(&lt;span style="color:#66d9ef">define &lt;/span>vector-bubble-sort
+(&lt;span style="color:#66d9ef">lambda &lt;/span>(&lt;span style="color:#a6e22e">vec&lt;/span> op)
+(&lt;span style="color:#66d9ef">let &lt;/span>((&lt;span style="color:#a6e22e">tmp&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>) (&lt;span style="color:#a6e22e">stop-do&lt;/span> &lt;span style="color:#66d9ef">#f&lt;/span>))
+(&lt;span style="color:#66d9ef">do &lt;/span>((&lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> (+ i &lt;span style="color:#ae81ff">1&lt;/span>))) ((&lt;span style="color:#66d9ef">or &lt;/span>(= i (vector-length vec)) stop-do))
+(&lt;span style="color:#66d9ef">set! &lt;/span>stop-do &lt;span style="color:#66d9ef">#t&lt;/span>)
+(&lt;span style="color:#66d9ef">do &lt;/span>((&lt;span style="color:#a6e22e">j&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> (+ j &lt;span style="color:#ae81ff">1&lt;/span>))) ((= j (- (vector-length vec) i &lt;span style="color:#ae81ff">1&lt;/span>)))
+(&lt;span style="color:#66d9ef">if &lt;/span>(not (&lt;span style="color:#a6e22e">op&lt;/span> (vector-ref vec j) (vector-ref vec (+ j &lt;span style="color:#ae81ff">1&lt;/span>))))
+(&lt;span style="color:#66d9ef">begin &lt;/span>
+(&lt;span style="color:#66d9ef">set! &lt;/span>tmp (vector-ref vec j))
+(vector-set! vec j (vector-ref vec (+ j &lt;span style="color:#ae81ff">1&lt;/span>)))
+(vector-set! vec (+ j &lt;span style="color:#ae81ff">1&lt;/span>) tmp)
+(&lt;span style="color:#66d9ef">set! &lt;/span>stop-do &lt;span style="color:#66d9ef">#f&lt;/span>))))))
+vec))
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>DrScheme de etkileşim penceresine&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scheme" data-lang="scheme">(&lt;span style="color:#a6e22e">vector-bubble-sort&lt;/span> &lt;span style="color:#f92672">#&lt;/span>(&lt;span style="color:#ae81ff">5&lt;/span> &lt;span style="color:#ae81ff">11&lt;/span> &lt;span style="color:#ae81ff">8&lt;/span> &lt;span style="color:#ae81ff">4&lt;/span> &lt;span style="color:#ae81ff">6&lt;/span> &lt;span style="color:#ae81ff">84&lt;/span> &lt;span style="color:#ae81ff">7&lt;/span>) &amp;lt; )
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>şeklide giriş yapmamız gerekiyor. &amp;ldquo;&amp;lt; &amp;quot; işareti yerine &amp;ldquo;&amp;gt;&amp;rdquo; işaretide koyabiliriz. Bu sayede birde büyükten küçüğe sıralamak için aynı kodları yazmamıza gerek kalmayacak.&lt;/p></description></item><item><title>Sezar şifreleme</title><link>https://blog.askin.ws/blog/sezar-sifreleme/</link><pubDate>Wed, 12 Dec 2007 05:35:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/sezar-sifreleme/</guid><description>&lt;p>Sezar şifreleme için yazdığım ilk kod aşağıdaki gibiydi&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scheme" data-lang="scheme">(&lt;span style="color:#66d9ef">define &lt;/span>str2 &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>)
+(&lt;span style="color:#66d9ef">define &lt;/span>(&lt;span style="color:#a6e22e">sezar&lt;/span> str lst)
+(&lt;span style="color:#66d9ef">do &lt;/span>((&lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> (+ i &lt;span style="color:#ae81ff">1&lt;/span>)) (&lt;span style="color:#a6e22e">j&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> (+ j &lt;span style="color:#ae81ff">1&lt;/span>))) ((= j (string-length str)))
+(&lt;span style="color:#66d9ef">if &lt;/span>(= i (length lst))
+(&lt;span style="color:#66d9ef">set! &lt;/span>i &lt;span style="color:#ae81ff">0&lt;/span>))
+(&lt;span style="color:#66d9ef">set! &lt;/span>str2
+(&lt;span style="color:#a6e22e">string-append&lt;/span>
+str2
+(string (&lt;span style="color:#a6e22e">integer-&amp;gt;char&lt;/span>
+(+ (list-ref lst i )
+(char-&amp;gt;integer (string-ref str j)))))))))
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Ancak bu kod pek hoşuma gitmedi üzerinde biraz daha oynama yapmak gerekiyordu. Mesela en baştaki&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scheme" data-lang="scheme">(&lt;span style="color:#66d9ef">define &lt;/span>str2 &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>)
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>pek hoş durmuyordu ve hiç bir sonuç gönmüyordu. Ekstradan srt2 nin değerini sorgulamak gerekiyordu.&lt;/p></description></item><item><title>Bir son dakka görevi daha başarıyla tamamlandı</title><link>https://blog.askin.ws/blog/bir-son-dakka-gorevi-daha-basariyla-tamamlandi/</link><pubDate>Tue, 11 Dec 2007 18:02:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/bir-son-dakka-gorevi-daha-basariyla-tamamlandi/</guid><description>Kim demişse iyi demiş son dakkalar olmazsa hiç bir iş yeteişmez diye:) Bir son dakka görevimi daha başarıyla tamamladım. Pbl ödevimden sonra (bknz: http://blog.yollu.com/2007/11/21/same-oyunu/) proje ödevimi de son anda teslim ettim. Şimdi sırada yeni pbl ödevim var. Hadi hayırlısı.</description></item><item><title>Same oyunu</title><link>https://blog.askin.ws/blog/same-oyunu/</link><pubDate>Wed, 21 Nov 2007 17:10:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/same-oyunu/</guid><description>Merhaba arkadaşlarımın isteği üzerine ödev olarak verilmiş olan same oyununun kendi yazdığım scheme kodlarını internete koydum. Olaki bigün sizden de scheme ile same oyunu yazmanızı isterlerse bu kodlardan faydalanabilirsiniz.
+http://www.askin.ws/doc/same.scm</description></item><item><title>jaguar veya jtech ic100 webcam sürücüleri</title><link>https://blog.askin.ws/blog/jaguar-veya-jtech-ic100-webcam-suruculeri/</link><pubDate>Sun, 28 Oct 2007 15:32:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/jaguar-veya-jtech-ic100-webcam-suruculeri/</guid><description>Yaklaşık 1 saat boyunda jaguar ic100 webcam sürücüsü aradım dün. Kimi siteler üyelik istiyor kimisi bilgisayardaki eksik sürücüleri bulacağını vaad eden programlar yüklemmek istiyor. Ama biliyorum ki hiç birisi benim isteğimle ilgilenmiyor. Ancak sonunda bir site bana o sürücülerin olduğu adresi verdi. İsmini hatırlamamakla birlikte googleda baya arkalarda olduğunu hatırlıyorum. Eger olaki bu sitenin başına bir iş gelmezse ve size de bu sürücü lazım olursa burdan indirebilirsiniz.
+jaguar - jtech ic100 webcam driver - sürücü</description></item><item><title>En basit recursion - özyineleme mantığı</title><link>https://blog.askin.ws/blog/en-basit-recursion-ozyineleme-mantigi/</link><pubDate>Fri, 26 Oct 2007 16:09:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/en-basit-recursion-ozyineleme-mantigi/</guid><description>&lt;p>Benin algılamakta en zorluk çektiğim kavramdı. Ancak öğrenince çok çok işe yarıyor.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scm" data-lang="scm">(&lt;span style="color:#a6e22e">define&lt;/span>
+(&lt;span style="color:#a6e22e">lst-length&lt;/span> lst)
+(&lt;span style="color:#66d9ef">if &lt;/span>(null? lst)
+&lt;span style="color:#ae81ff">0&lt;/span>
+(+ &lt;span style="color:#ae81ff">1&lt;/span> (&lt;span style="color:#a6e22e">lst-length&lt;/span> (cdr lst)))))
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Kodu tanımlayacak olursak (null? lst) lst değişkeninde tuttuğumuz listenin boş olup olmadığını kontrol ediyor. Boş listenin eleman sayısının 0 olduğunu biliyoruz. Listemiz genelde ilk halinde boş olmayacağı için if condition direk #f verip 2. satıra geçecek. özyinelemenin can damarı aslında burda. Biz 1 eksik elemanlı listenin eleman sayısıyla 1i topluyoruz. Sonra tekrar 1 eksik elemanlı listenin 1 elemanını daha çıkartıp, o listenin eleman sayısıyla topluyoruz. Taki (null? lst) #t olana kadar. Ozamanda zaten fonkiyon 0 verecek ve tüm o 1leri toplayacak. size tavsiyem bu konu hakkında çok düşüünün elinizde olan örnekleri tekrar tekrar uygulayın.&lt;/p></description></item><item><title>Scheme hakkında birkaç kitap</title><link>https://blog.askin.ws/blog/scheme-hakkinda-birkac-kitap/</link><pubDate>Thu, 18 Oct 2007 06:37:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/scheme-hakkinda-birkac-kitap/</guid><description>&lt;p>Madem tekrardan scheme öğrenmeye başladım o konu hakkında braz yazı yazalım değilmi. İşe bir kitap ile başlayalım.&lt;/p>
+&lt;p>Öncelikle scheme kitaplarıyla başlasak mantıklı olacak gibi geliyor.scheme hakkında birçok kitap bulunabilir fakat ben aramada ilk karşıma çıkan seçenekleri burda vereceğim biraz google güvenilir gibi geldi bu konuda.&lt;/p>
+&lt;p>How to Design Programs // Dr scheme projesiyle birlikte yürüyen bir kitap bu açıdan en sağlam kaynaklardan biri olduğu görüşündeyim. Sitesi aşağıda. Site üzerinden e-book olarak kitaba ulaşabilirsiniz.&lt;br>
+&lt;a href="http://www.htdp.org">http://www.htdp.org&lt;/a>&lt;/p>
+&lt;p>The Scheme Programming Language // Scheme için kullandığım tek kaynaktı. Ancak tek kaynak hiç bir şekilde yetmiyor.&lt;br>
+Aynı şekilde site üzerinden bu kitabada ulaşabilirsiniz.&lt;br>
+&lt;a href="http://www.scheme.com/tspl3/">http://www.scheme.com/tspl3/&lt;/a>&lt;/p>
+&lt;p>Teach Yourself Scheme in Fixnum days // Yeni başlayanlar için iyi bir başlangıç olacağını düşünüyorum&lt;br>
+&lt;a href="http://www.ccs.neu.edu/home/dorai/t-y-scheme/t-y-scheme.html">http://www.ccs.neu.edu/home/dorai/t-y-scheme/t-y-scheme.html&lt;/a>&lt;/p>
+&lt;p>Ayrıca&lt;br>
+&lt;a href="http://www.yollu.com/documents/programming/scheme">http://www.yollu.com/documents/programming/scheme&lt;/a>&lt;br>
+adresinden scheme hakkındaki kitapları sıkıtırılmış haliyle indirebilirsiniz&lt;/p>
+&lt;p>Kitapları bitirdik sıra geldi internet sitelerine&lt;/p>
+&lt;p>Dr.Scheme Ortamını indirebileceğimiz ve onunla ilgili hatta scheme ile ilgili çeşitli kaynaklara ulaşabileceğimiz bir site.&lt;br>
+&lt;a href="http://www.drscheme.org">http://www.drscheme.org&lt;/a>&lt;/p>
+&lt;p>Son olarakta schemers&lt;br>
+Scheme programlama dili hakkında son haberleri, kütüphaneleri vs. bulabileceğiniz bir site.&lt;br>
+&lt;a href="http://www.schemers.org/">http://www.schemers.org/&lt;/a>&lt;/p></description></item><item><title>Merhaba!</title><link>https://blog.askin.ws/blog/hello-world/</link><pubDate>Wed, 02 May 2007 10:46:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/hello-world/</guid><description>Merhaba işte yeniden karşınızdayım.
+Hostumuzu değiştirip geldik. .</description></item></channel></rss>

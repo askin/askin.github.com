@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>sd on Aşkın Özgür</title><link>https://blog.askin.ws/tags/sd/</link><description>Recent content in sd on Aşkın Özgür</description><generator>Hugo -- gohugo.io</generator><language>tr-TR</language><managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor><webMaster>askin@askin.ws (Aşkın Özgür)</webMaster><lastBuildDate>Sun, 24 Mar 2013 20:39:00 +0300</lastBuildDate><atom:link href="https://blog.askin.ws/tags/sd/index.xml" rel="self" type="application/rss+xml"/><item><title>Usb bellek üzerinde Raspberry PI</title><link>https://blog.askin.ws/blog/usb-bellek-uzerinde-raspberry-pi/</link><pubDate>Sun, 24 Mar 2013 20:39:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/usb-bellek-uzerinde-raspberry-pi/</guid><description>&lt;p>Malesef sd kart olmadan raspberry pi&amp;rsquo;yı boot etmemiz mümkün olmuyor. Benim elimde 1GB&amp;rsquo;lık bir sd kart vardı ve 2GB dan daha ufak imaj dosyaları bulamadım. Bu nedenle usb bellek ile boot etme ihtiyacı duydum.&lt;br>
+Benim sistemimde usb bellek ve sd kart aşağıdaki şekilde tanındı:&lt;/p>
+&lt;ul>
+&lt;li>usb: /dev/sdd&lt;/li>
+&lt;li>sd: /dev/sde&lt;/li>
+&lt;/ul>
+&lt;p>Öncelikle indirdiğimiz imaj dosyasını usb belleğimize kopyalıyoruz&lt;/p>
+&lt;pre>&lt;code>dd if=2013-02-09-wheezy-raspbian.img of=/dev/sdd
+&lt;/code>&lt;/pre>
+&lt;p>Elimizde bulunan sd karta 1 adet fat32 bölüm oluşturuyoruz (oluşturduğunuz bölüm hem ilk sırada hem de birincil bir bölüm olmalı). Bunu ister Gparted gibi bir araçla yapın isterseniz fdisk kullanın. Bölümleme işlemlerini yaptıktan sonra aşağıdaki komutları uygulayın.&lt;/p>
+&lt;pre>&lt;code>mkdir /tmp/mnt_sd /tmp/mnt_usb
+mount /dev/sdd1 /tmp/mnt_usb
+mount /dev/sde1 /tmp/mnt_sd
+cp /tmp/mnt_usb/* /tmp/mnt_sd
+&lt;/code>&lt;/pre>
+&lt;p>Bu işlemleri yaptıktan sonra /tmp/mnt_sd/cmdline.txt dosyasını düzenlememiz gerekmekte. Bu dosyada &lt;em>root=/dev/mmcblk0p2&lt;/em> olan kısmı &lt;em>root=/dev/sda2&lt;/em> olarak değiştirin.&lt;/p>
+&lt;p>&lt;a href="http://www.networkinghowtos.com/howto/raspbian-on-raspberry-pi-using-sd-card-usb-memory-stick/">Kaynak&lt;/a>&lt;/p></description></item></channel></rss>
