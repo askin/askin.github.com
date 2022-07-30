@@ -114,6 +114,49 @@
 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 <div class=posts-list>
 <article class=post-preview>
+<a href=https://blog.askin.ws/blog/emacs-tramp-ssh-hostname-tamamlama/>
+<h2 class=post-title>Emacs Tramp SSH Hostname Tamamlama</h2>
+</a>
+<p class=post-meta>
+<span class=post-meta>
+<i class="fas fa-calendar"></i>&nbsp;2022/07/30 tarihinde paylaşıldı
+&nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;dakika
+&nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;111&nbsp;kelime
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Aşkın Özgür
+</span>
+</p>
+<div class=post-entry>
+<p><code>Ssh</code> ile baglandigim makineleri kategorilerine göre farklı dosyalarda tutup <code>~/.ssh/config</code> dosyasında <code>Include</code> ile tanımlıyorum.
+Aşağıdaki gibi bir tanımlama güzel oluyor</p>
+<pre tabindex=0><code class=language-config data-lang=config># ~/.ssh/ssh_config_company1
+Host top-secret-prod-host
+  Hostname prod.example.com
+  User root
+  
+# ~/.ssh/ssh_config_company2
+Host top-secret-dev-host
+  Hostname dev.example.com
+  User root
+
+# ~/.ssh/config
+Include ssh_config_company1
+Include ssh_config_company2
+</code></pre><p>Fakat <code>emacs tramp</code> ile sunuculara erişmeye çalıştığım zaman makine isimlerinin otomatik tamamlanmadığını farkettim.
+İsmi tam yazıp bağlandığımda güzelce çalışıyor, fakat <code>TAB</code> ile tamamlamaya çalıştığımda bir tepki alamıyordum.
+Biraz araştırdıktan sonra bir sonuç elde edemedim. Ya herkes bunun çözümünü biliyordu ya da ben doğru anahtar kelimeleri kullanmamıştım.
+Sonunda ilgisizi bir stackoverflow postunda aşağıdaki kod parçasını gördüm. Denediğimde işe yaradı.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-elisp data-lang=elisp>(tramp-set-completion-function
+ <span style=color:#e6db74>&#34;ssh&#34;</span>
+ <span style=color:#f92672>&#39;</span>((tramp-parse-sconfig <span style=color:#e6db74>&#34;/etc/ssh_config&#34;</span>)
+   (tramp-parse-sconfig <span style=color:#e6db74>&#34;~/.ssh/config&#34;</span>)))
+</code></pre></div><p>Benzer bir problemde işinizi görebilir.</p>
+</div>
+<div class=blog-tags>
+<a href=https://blog.askin.ws/tags/emacs/>emacs</a>&nbsp;
+<a href=https://blog.askin.ws/tags/ssh/>ssh</a>&nbsp;
+</div>
+</article>
+<article class=post-preview>
 <a href=https://blog.askin.ws/blog/maven-ile-versiyon-numarasi-guncelleme/>
 <h2 class=post-title>Maven İle Versiyon Numarası Güncelleme</h2>
 </a>
@@ -358,50 +401,6 @@ Daha önceki yazılarımda belirtiğim gibi ssl için startssl kullanıyordum. �
 <p>Son çıkan internet yasalarından sonra her siteye bir ssl sertifikası lazım olacak gibi. Sağolsun <a href=https://www.startssl.com/ title=StartSSL>StartSSL</a> ücretsiz SSL sertifikası veriyor, onu kullanarak başta blogum olmak üzere kendi host ettiğim her web sistesine sertifika ekliyorum. Şuan hem http hem de https olarak çalışıyor. Bir süre sonra tüm http trafiğini ssl&rsquo;e yönlendireceğim.</p>
 </div>
 </article>
-<article class=post-preview>
-<a href=https://blog.askin.ws/blog/slurm-linux-icin-bant-genisligi-takip-araci/>
-<h2 class=post-title>Slurm - Linux için bant genişliği takip aracı</h2>
-</a>
-<p class=post-meta>
-<span class=post-meta>
-<i class="fas fa-calendar"></i>&nbsp;2013/12/19 tarihinde paylaşıldı
-&nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;dakika
-&nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;124&nbsp;kelime
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Aşkın Özgür
-</span>
-</p>
-<div class=post-entry>
-<p>Slurm temel olarak ağ trafiğini görüntülemek için kullanılan bir araçtır. Ağ kullanımını görselleştirerek kullanışlı bir çıktı üretir.</p>
-<p>Debian tabanlı sistemlerde aşağıdaki gibi kurulum yapabihlirsiniz.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>apt-get install slurm
-</code></pre></div><p>Kurulumu tamamladıktan sonra komut satırından ağ trafiğinizi takip edebilirsiniz. En basit şekliyle aşağıdaki formatta komutu kullanabilirsiniz.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>slurm -i <span style=color:#f92672>[</span>Ağ Arayüzü<span style=color:#f92672>]</span>
-</code></pre></div><p>-i parametresi hangi ağ arayüzünün kullanılacanı belirtir.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>slurm -i wlan0
-</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>slurm -i eth1
-</code></pre></div><p><img src=/uploads/2013/12/slurm.png alt=Slurm></p>
-<p>Klavye kısa yolları:
-Slurm etkileşim için birçok farklı tuşu destekler:</p>
-<ul>
-<li>s split moduna geçiş yapar</li>
-<li>c klasik moda geçiş yapar</li>
-<li>l büyük grafik moduna geçer</li>
-<li>L TX/RX ledini aktif eder</li>
-<li>m kasik, büyük ve split modları arasında geçiş yapar</li>
-<li>z sayaçları 0&rsquo;lar</li>
-<li>r ekranı yeniden çizer</li>
-<li>q çıkış yapar</li>
-</ul>
-<p>Aynı zamanda bu kısayol tuşlarını parametre olarak da verebilirsiniz.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>slurm -i eth1 -L
-</code></pre></div><p>Kaynak: <a href=http://lintut.com/slurm-command-line-bandwidth-monitoring-tool-for-linux/>http://lintut.com/slurm-command-line-bandwidth-monitoring-tool-for-linux/</a></p>
-</div>
-<div class=blog-tags>
-<a href=https://blog.askin.ws/tags/a%C4%9F/>ağ</a>&nbsp;
-<a href=https://blog.askin.ws/tags/monitoring/>monitoring</a>&nbsp;
-<a href=https://blog.askin.ws/tags/network/>network</a>&nbsp;
-</div>
-</article>
 </div>
 <ul class="pager main-pager">
 <li class=next>
@@ -502,7 +501,7 @@ Slurm etkileşim için birçok farklı tuşu destekler:</p>
 <p class="credits copyright text-muted">
 <a href=https://askin.ws>Aşkın Özgür</a>
 &nbsp;&bull;&nbsp;&copy;
-2021
+2022
 &nbsp;&bull;&nbsp;
 <a href=https://blog.askin.ws>Aşkın Özgür</a>
 </p>

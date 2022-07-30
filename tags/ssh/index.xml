@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ssh on Aşkın Özgür</title><link>https://blog.askin.ws/tags/ssh/</link><description>Recent content in ssh on Aşkın Özgür</description><generator>Hugo -- gohugo.io</generator><language>tr-TR</language><managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor><webMaster>askin@askin.ws (Aşkın Özgür)</webMaster><lastBuildDate>Wed, 24 Nov 2010 14:11:00 +0300</lastBuildDate><atom:link href="https://blog.askin.ws/tags/ssh/index.xml" rel="self" type="application/rss+xml"/><item><title>Genius!</title><link>https://blog.askin.ws/blog/genius/</link><pubDate>Wed, 24 Nov 2010 14:11:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/genius/</guid><description>Scp ile sembolik linkleri takip etmeden indirme işlemi yapmak için araştırma yaptığımda, aşağıdaki kodu buldum. Böyle bir kullanım 40 yıl düşünsem aklıma gelmezdi.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ssh on Aşkın Özgür</title><link>https://blog.askin.ws/tags/ssh/</link><description>Recent content in ssh on Aşkın Özgür</description><generator>Hugo -- gohugo.io</generator><language>tr-TR</language><managingEditor>askin@askin.ws (Aşkın Özgür)</managingEditor><webMaster>askin@askin.ws (Aşkın Özgür)</webMaster><lastBuildDate>Sat, 30 Jul 2022 18:18:00 +0300</lastBuildDate><atom:link href="https://blog.askin.ws/tags/ssh/index.xml" rel="self" type="application/rss+xml"/><item><title>Emacs Tramp SSH Hostname Tamamlama</title><link>https://blog.askin.ws/blog/emacs-tramp-ssh-hostname-tamamlama/</link><pubDate>Sat, 30 Jul 2022 18:18:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/emacs-tramp-ssh-hostname-tamamlama/</guid><description>&lt;p>&lt;code>Ssh&lt;/code> ile baglandigim makineleri kategorilerine göre farklı dosyalarda tutup &lt;code>~/.ssh/config&lt;/code> dosyasında &lt;code>Include&lt;/code> ile tanımlıyorum.
+Aşağıdaki gibi bir tanımlama güzel oluyor&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-config" data-lang="config"># ~/.ssh/ssh_config_company1
+Host top-secret-prod-host
+Hostname prod.example.com
+User root
+# ~/.ssh/ssh_config_company2
+Host top-secret-dev-host
+Hostname dev.example.com
+User root
+# ~/.ssh/config
+Include ssh_config_company1
+Include ssh_config_company2
+&lt;/code>&lt;/pre>&lt;p>Fakat &lt;code>emacs tramp&lt;/code> ile sunuculara erişmeye çalıştığım zaman makine isimlerinin otomatik tamamlanmadığını farkettim.
+İsmi tam yazıp bağlandığımda güzelce çalışıyor, fakat &lt;code>TAB&lt;/code> ile tamamlamaya çalıştığımda bir tepki alamıyordum.
+Biraz araştırdıktan sonra bir sonuç elde edemedim. Ya herkes bunun çözümünü biliyordu ya da ben doğru anahtar kelimeleri kullanmamıştım.
+Sonunda ilgisizi bir stackoverflow postunda aşağıdaki kod parçasını gördüm. Denediğimde işe yaradı.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-elisp" data-lang="elisp">(tramp-set-completion-function
+&lt;span style="color:#e6db74">&amp;#34;ssh&amp;#34;&lt;/span>
+&lt;span style="color:#f92672">&amp;#39;&lt;/span>((tramp-parse-sconfig &lt;span style="color:#e6db74">&amp;#34;/etc/ssh_config&amp;#34;&lt;/span>)
+(tramp-parse-sconfig &lt;span style="color:#e6db74">&amp;#34;~/.ssh/config&amp;#34;&lt;/span>)))
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Benzer bir problemde işinizi görebilir.&lt;/p></description></item><item><title>Genius!</title><link>https://blog.askin.ws/blog/genius/</link><pubDate>Wed, 24 Nov 2010 14:11:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/genius/</guid><description>Scp ile sembolik linkleri takip etmeden indirme işlemi yapmak için araştırma yaptığımda, aşağıdaki kodu buldum. Böyle bir kullanım 40 yıl düşünsem aklıma gelmezdi.
 cd /destination/directory ssh user@remote.host &amp;#34;cd /original/directory; tar cf - ./&amp;#34; | tar xvf - Kaynak</description></item><item><title>SSH Filesystem ile uzak makinadaki dizini yerele bağlamak</title><link>https://blog.askin.ws/blog/ssh-filesystem-ile-uzak-makinadaki-dizini-yerele-baglamak/</link><pubDate>Wed, 07 May 2008 10:36:00 +0300</pubDate><author>askin@askin.ws (Aşkın Özgür)</author><guid>https://blog.askin.ws/blog/ssh-filesystem-ile-uzak-makinadaki-dizini-yerele-baglamak/</guid><description>&lt;p>Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz.
 Ben daha önce bahsettiğim &lt;a href="http://blog.yollu.com/2008/02/21/telekom-artik-kork-benden/">internet canavarı:)&lt;/a> için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu.
 Kullanacağımız programın adı sshfs yani SSH Filesystem.
